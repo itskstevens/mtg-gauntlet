@@ -1,0 +1,1574 @@
+{
+ "meta": {
+  "date": "2026-10-02",
+  "deck": "rankle",
+  "series_per_cat": 300,
+  "series_total": 1200,
+  "games_total": 2537,
+  "list_snapshot": [
+   "Rankle, Master of Pranks",
+   "Arcane Signet",
+   "Charcoal Diamond",
+   "Cloak and Dagger",
+   "Geth's Grimoire",
+   "Jet Medallion",
+   "Lightning Greaves",
+   "Mind Stone",
+   "Monument to Endurance",
+   "Skullclamp",
+   "Sol Ring",
+   "Bojuka Bog",
+   "Cabal Coffers",
+   "Cabal Stronghold",
+   "Castle Locthwain",
+   "Geier Reach Sanitarium",
+   "Phyrexian Tower",
+   "Rogue's Passage",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Urborg, Tomb of Yawgmoth",
+   "Aclazotz, Deepest Betrayal",
+   "Bitterbloom Bearer",
+   "Bloodghast",
+   "Bloodsoaked Champion",
+   "Braids, Arisen Nightmare",
+   "Crypt Ghast",
+   "Dauthi Voidwalker",
+   "Gray Merchant of Asphodel",
+   "Jadar, Ghoulcaller of Nephalia",
+   "Junji, the Midnight Sky",
+   "Massacre Wurm",
+   "Morbid Opportunist",
+   "Necrogoyf",
+   "Ophiomancer",
+   "Orcish Bowmasters",
+   "Plaguecrafter",
+   "Reassembling Skeleton",
+   "Sangromancer",
+   "Sheoldred, Whispering One",
+   "Sheoldred, the Apocalypse",
+   "Syr Konrad, the Grim",
+   "Tergrid, God of Fright",
+   "The Raven Man",
+   "Tinybones, Bauble Burglar",
+   "Tinybones, Trinket Thief",
+   "Animate Dead",
+   "Bitterblossom",
+   "Black Market Connections",
+   "Liliana's Caress",
+   "Megrim",
+   "Oppression",
+   "Painful Quandary",
+   "Phyrexian Arena",
+   "Waste Not",
+   "Dark Ritual",
+   "Deadly Rollick",
+   "Defile",
+   "Fell the Profane",
+   "Imp's Mischief",
+   "Malakir Rebirth",
+   "Sheoldred's Edict",
+   "Withering Torment",
+   "Liliana of the Veil",
+   "Blasphemous Edict",
+   "Damnation",
+   "Dark Deal",
+   "Feed the Swarm",
+   "Night's Whisper",
+   "Reanimate",
+   "Sign in Blood",
+   "Syphon Mind",
+   "Torment of Hailfire",
+   "Toxic Deluge",
+   "Victimize"
+  ]
+ },
+ "groups": [
+  {
+   "name": "Combo & storm",
+   "slug": "combo-storm",
+   "games": 657,
+   "series": 300,
+   "series_win": 3.7,
+   "game_win": 11.3,
+   "avg_place": 2.65,
+   "avg_rounds": 9.5,
+   "place": {
+    "4": 149,
+    "3": 206,
+    "2": 225,
+    "1": 77
+   },
+   "draws": 11,
+   "first_out": 22.7,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Spellslinger",
+     185
+    ],
+    [
+     "Infinite combo",
+     "Turbo combo",
+     132
+    ],
+    [
+     "Combat damage",
+     "Storm",
+     83
+    ],
+    [
+     "Burn spells",
+     "Storm",
+     78
+    ],
+    [
+     "Combat damage",
+     "Spellslinger",
+     57
+    ],
+    [
+     "Burn spells",
+     "Spellslinger",
+     25
+    ],
+    [
+     "Combat damage",
+     "Turbo combo",
+     20
+    ]
+   ],
+   "losses": 583,
+   "kills": [
+    [
+     "Combat damage",
+     117
+    ],
+    [
+     "Burn spells",
+     47
+    ],
+    [
+     "discard",
+     42
+    ],
+    [
+     "rankle",
+     34
+    ],
+    [
+     "Death-trigger drains",
+     18
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.63,
+    "wipes": 0.15,
+    "removal": 1.32,
+    "dmg": 32.38
+   },
+   "countered": [
+    [
+     "Rankle, Master of Pranks",
+     305
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     15
+    ],
+    [
+     "Tergrid, God of Fright",
+     15
+    ],
+    [
+     "Torment of Hailfire",
+     13
+    ]
+   ],
+   "removed": [
+    [
+     "Rankle, Master of Pranks",
+     204
+    ],
+    [
+     "The Raven Man",
+     78
+    ],
+    [
+     "Jadar, Ghoulcaller of Nephalia",
+     69
+    ],
+    [
+     "Bitterbloom Bearer",
+     54
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     45
+    ],
+    [
+     "Blasphemous Act",
+     36
+    ],
+    [
+     "Vandalblast",
+     15
+    ]
+   ],
+   "impact": [
+    [
+     "Torment of Hailfire",
+     26,
+     58,
+     9
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     101,
+     40,
+     6
+    ],
+    [
+     "Syr Konrad, the Grim",
+     55,
+     29,
+     10
+    ],
+    [
+     "Gray Merchant of Asphodel",
+     54,
+     28,
+     10
+    ],
+    [
+     "Sangromancer",
+     85,
+     27,
+     9
+    ],
+    [
+     "Tergrid, God of Fright",
+     104,
+     23,
+     9
+    ],
+    [
+     "Crypt Ghast",
+     83,
+     23,
+     10
+    ],
+    [
+     "Ophiomancer",
+     124,
+     21,
+     9
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Kinnan, Bonder Prodigy",
+     "arch": "Turbo combo",
+     "key": "kinnan",
+     "link": "https://edhrec.com/average-decks/kinnan-bonder-prodigy",
+     "fetched": "2026-10-02",
+     "win_share": 22.4,
+     "killed_me": 23.1,
+     "i_killed": 18.0,
+     "my_vs_b3": 10.5,
+     "my_vs_b4": 12.1,
+     "how": [
+      [
+       "Kinnan, Bonder Prodigy + Basalt Monolith",
+       114
+      ],
+      [
+       "Combat damage",
+       20
+      ],
+      [
+       "Hullbreaker Horror + Sol Ring",
+       8
+      ],
+      [
+       "Hullbreaker Horror + Mana Vault",
+       5
+      ]
+     ],
+     "threats": [
+      "Fyndhorn Elves",
+      "Talisman of Curiosity",
+      "Birds of Paradise",
+      "Badgermole Cub",
+      "Mystic Remora"
+     ]
+    },
+    {
+     "cmd": "Birgi, God of Storytelling",
+     "arch": "Storm",
+     "key": "birgi",
+     "link": "https://edhrec.com/average-decks/birgi-god-of-storytelling",
+     "fetched": "2026-10-02",
+     "win_share": 19.9,
+     "killed_me": 24.5,
+     "i_killed": 10.7,
+     "my_vs_b3": 8.5,
+     "my_vs_b4": 14.3,
+     "how": [
+      [
+       "Combat damage",
+       83
+      ],
+      [
+       "Burn spells",
+       78
+      ]
+     ],
+     "threats": [
+      "Mind Stone",
+      "Springleaf Drum",
+      "Might of the Meek",
+      "Firebrand Archer",
+      "Fiery Inscription"
+     ]
+    },
+    {
+     "cmd": "Niv-Mizzet, Parun",
+     "arch": "Spellslinger",
+     "key": "niv",
+     "link": "https://edhrec.com/average-decks/niv-mizzet-parun",
+     "fetched": "2026-10-02",
+     "win_share": 44.7,
+     "killed_me": 41.1,
+     "i_killed": 11.3,
+     "my_vs_b3": 10.7,
+     "my_vs_b4": 11.9,
+     "how": [
+      [
+       "Niv-Mizzet, Parun + Curiosity",
+       68
+      ],
+      [
+       "Niv-Mizzet, Parun + Tandem Lookout",
+       60
+      ],
+      [
+       "Combat damage",
+       57
+      ],
+      [
+       "Niv-Mizzet, Parun + Ophidian Eye",
+       45
+      ]
+     ],
+     "threats": [
+      "Ophidian Eye",
+      "Baral, Chief of Compliance",
+      "Mana Geyser",
+      "Cyclonic Rift",
+      "Tandem Lookout"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 13.5,
+    "1": 12.0,
+    "2": 10.8,
+    "3": 8.6
+   },
+   "attack_share": 8.6,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 5,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T3 Niv-Mizzet counters Birgi's Birgi, God of Storytelling with Mana Drain",
+      "T4 You casts Rankle, Master of Pranks",
+      "T5 You Bojuka Bog exiles Birgi graveyard (4)",
+      "T5 You casts Sheoldred, the Apocalypse",
+      "T5 Kinnan wins via combo: Kinnan, Bonder Prodigy + Basalt Monolith",
+      "T5 You eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T5 Birgi eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T5 Niv-Mizzet eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 7,
+     "players": [
+      "Kinnan",
+      "You",
+      "Birgi",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T2 Kinnan counters Birgi's Birgi, God of Storytelling with Arcane Denial",
+      "T4 You casts Rankle, Master of Pranks",
+      "T7 Kinnan eliminated (ping by Niv-Mizzet)",
+      "T7 Niv-Mizzet wins via combo: Niv-Mizzet, Parun + Curiosity",
+      "T7 You eliminated (combo: Niv-Mizzet, Parun + Curiosity by Niv-Mizzet)",
+      "T7 Birgi eliminated (combo: Niv-Mizzet, Parun + Curiosity by Niv-Mizzet)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Birgi",
+      "Niv-Mizzet",
+      "Kinnan",
+      "You"
+     ],
+     "lines": [
+      "T2 Birgi counters Kinnan's Kinnan, Bonder Prodigy with Tibalt's Trickery",
+      "T4 You casts Rankle, Master of Pranks",
+      "T6 Niv-Mizzet counters Birgi's Aetherflux Reservoir with Fierce Guardianship",
+      "T6 Kinnan counters Niv-Mizzet's Curiosity with Swan Song",
+      "T6 You Bojuka Bog exiles Kinnan graveyard (4)",
+      "T7 Kinnan counters Birgi's Birgi, God of Storytelling with Counterspell",
+      "T7 Birgi eliminated (combat by Niv-Mizzet)",
+      "T7 Niv-Mizzet counters Kinnan's Kinnan, Bonder Prodigy with Mana Drain",
+      "T7 You casts Rankle, Master of Pranks",
+      "T8 Niv-Mizzet counters Kinnan's Kinnan, Bonder Prodigy with Counterspell",
+      "T8 Niv-Mizzet counters your Damnation with Force of Negation",
+      "T9 Niv-Mizzet wins via combo: Niv-Mizzet, Parun + Tandem Lookout",
+      "T9 Kinnan eliminated (combo: Niv-Mizzet, Parun + Tandem Lookout by Niv-Mizzet)",
+      "T9 You eliminated (combo: Niv-Mizzet, Parun + Tandem Lookout by Niv-Mizzet)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Stax & control",
+   "slug": "stax-control",
+   "games": 617,
+   "series": 300,
+   "series_win": 0.3,
+   "game_win": 2.9,
+   "avg_place": 2.84,
+   "avg_rounds": 15.6,
+   "place": {
+    "3": 194,
+    "4": 171,
+    "1": 20,
+    "2": 232
+   },
+   "draws": 16,
+   "first_out": 27.7,
+   "deaths": [
+    [
+     "Combat damage",
+     "Lifegain control",
+     139
+    ],
+    [
+     "Infinite combo",
+     "Lifegain control",
+     110
+    ],
+    [
+     "Lifegain drains",
+     "Lifegain control",
+     85
+    ],
+    [
+     "Alternate win",
+     "Lifegain control",
+     66
+    ],
+    [
+     "Infinite combo",
+     "Counterspell control",
+     61
+    ],
+    [
+     "Combat damage",
+     "Counterspell control",
+     47
+    ],
+    [
+     "Combat damage",
+     "Stax",
+     35
+    ]
+   ],
+   "losses": 599,
+   "kills": [
+    [
+     "Combat damage",
+     139
+    ],
+    [
+     "discard",
+     51
+    ],
+    [
+     "rankle",
+     31
+    ],
+    [
+     "Burn spells",
+     20
+    ],
+    [
+     "Death-trigger drains",
+     14
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 1.85,
+    "wipes": 0.95,
+    "removal": 0.96,
+    "dmg": 45.11
+   },
+   "countered": [
+    [
+     "Rankle, Master of Pranks",
+     774
+    ],
+    [
+     "Tergrid, God of Fright",
+     47
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     39
+    ],
+    [
+     "Torment of Hailfire",
+     36
+    ]
+   ],
+   "removed": [
+    [
+     "Rankle, Master of Pranks",
+     242
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     42
+    ],
+    [
+     "Bitterblossom",
+     38
+    ],
+    [
+     "Syr Konrad, the Grim",
+     33
+    ]
+   ],
+   "wiped": [
+    [
+     "Supreme Verdict",
+     171
+    ],
+    [
+     "Farewell",
+     110
+    ],
+    [
+     "Damn",
+     75
+    ],
+    [
+     "Toxic Deluge",
+     72
+    ]
+   ],
+   "impact": [
+    [
+     "Torment of Hailfire",
+     80,
+     9,
+     2
+    ],
+    [
+     "Syr Konrad, the Grim",
+     121,
+     7,
+     2
+    ],
+    [
+     "Skullclamp",
+     165,
+     6,
+     2
+    ],
+    [
+     "Black Market Connections",
+     191,
+     6,
+     2
+    ],
+    [
+     "Braids, Arisen Nightmare",
+     175,
+     6,
+     2
+    ],
+    [
+     "Crypt Ghast",
+     139,
+     6,
+     2
+    ],
+    [
+     "Sangromancer",
+     148,
+     6,
+     2
+    ],
+    [
+     "Waste Not",
+     183,
+     5,
+     2
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Grand Arbiter Augustin IV",
+     "arch": "Stax",
+     "key": "gaa",
+     "link": "https://edhrec.com/average-decks/grand-arbiter-augustin-iv",
+     "fetched": "2026-10-02",
+     "win_share": 4.7,
+     "killed_me": 8.6,
+     "i_killed": 21.6,
+     "my_vs_b3": 3.0,
+     "my_vs_b4": 2.9,
+     "how": [
+      [
+       "Combat damage",
+       35
+      ],
+      [
+       "Alternate win",
+       15
+      ],
+      [
+       "Upkeep triggers",
+       3
+      ]
+     ],
+     "threats": [
+      "Fellwar Stone",
+      "Thalia, Heretic Cathar",
+      "Enlightened Tutor",
+      "Approach of the Second Sun",
+      "Absolute Virtue"
+     ]
+    },
+    {
+     "cmd": "Baral, Chief of Compliance",
+     "arch": "Counterspell control",
+     "key": "baral",
+     "link": "https://edhrec.com/average-decks/baral-chief-of-compliance",
+     "fetched": "2026-10-02",
+     "win_share": 14.3,
+     "killed_me": 17.5,
+     "i_killed": 18.3,
+     "my_vs_b3": 2.8,
+     "my_vs_b4": 3.1,
+     "how": [
+      [
+       "Hullbreaker Horror + Sol Ring",
+       61
+      ],
+      [
+       "Combat damage",
+       47
+      ]
+     ],
+     "threats": [
+      "Mind Stone",
+      "Mystic Remora",
+      "Archmage of Runes",
+      "Murmuring Mystic",
+      "Frantic Search"
+     ]
+    },
+    {
+     "cmd": "Oloro, Ageless Ascetic",
+     "arch": "Lifegain control",
+     "key": "oloro",
+     "link": "https://edhrec.com/average-decks/oloro-ageless-ascetic",
+     "fetched": "2026-10-02",
+     "win_share": 75.5,
+     "killed_me": 69.4,
+     "i_killed": 3.4,
+     "my_vs_b3": 1.7,
+     "my_vs_b4": 3.9,
+     "how": [
+      [
+       "Combat damage",
+       139
+      ],
+      [
+       "Lifegain drains",
+       85
+      ],
+      [
+       "Alternate win",
+       66
+      ],
+      [
+       "Sanguine Bond + Exquisite Blood",
+       39
+      ]
+     ],
+     "threats": [
+      "Karlov of the Ghost Council",
+      "Exsanguinate",
+      "Talisman of Hierarchy",
+      "Black Market Connections",
+      "Serra Ascendant"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 3.7,
+    "1": 3.7,
+    "2": 1.4,
+    "3": 2.8
+   },
+   "attack_share": 22.5,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Oloro",
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV"
+     ],
+     "lines": [
+      "T5 Baral counters your Rankle, Master of Pranks with Pact of Negation",
+      "T5 Baral counters Grand Arbiter Augustin IV's Approach of the Second Sun with Fierce Guardianship",
+      "T6 Baral counters your Rankle, Master of Pranks with Force of Will",
+      "T6 Baral counters Grand Arbiter Augustin IV's Absolute Virtue with Disdainful Stroke",
+      "T7 You casts Rankle, Master of Pranks",
+      "T8 You casts Rankle, Master of Pranks",
+      "T9 Oloro wins via combo: Vito, Thorn of the Dusk Rose + Exquisite Blood",
+      "T9 Baral eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T9 You eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T9 Grand Arbiter Augustin IV eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 15,
+     "players": [
+      "You",
+      "Baral",
+      "Grand Arbiter Augustin IV",
+      "Oloro"
+     ],
+     "lines": [
+      "T3 You casts Rankle, Master of Pranks",
+      "T5 Baral counters your Rankle, Master of Pranks with Rewind",
+      "T5 Grand Arbiter Augustin IV counters Baral's Baral, Chief of Compliance with Mana Drain",
+      "T6 You Bojuka Bog exiles Oloro graveyard (1)",
+      "T6 You WIPE Massacre Wurm",
+      "T6 You eliminated (combat by Oloro)",
+      "T7 Baral counters Grand Arbiter Augustin IV's Rest in Peace with Negate",
+      "T7 Grand Arbiter Augustin IV counters Oloro's Phyrexian Arena with Dovin's Veto",
+      "T8 Baral counters Grand Arbiter Augustin IV's Propaganda with Dissipate",
+      "T8 Grand Arbiter Augustin IV eliminated (combat by Oloro)",
+      "T9 Baral counters Oloro's Bolas's Citadel with Disdainful Stroke",
+      "T10 Baral WIPE Cyclonic Rift",
+      "T10 Baral counters Oloro's Oloro, Ageless Ascetic with Force of Will",
+      "T10 Baral counters Oloro's Kambal, Consul of Allocation with Dispel",
+      "T11 Baral counters Oloro's Oloro, Ageless Ascetic with Ertai's Scorn",
+      "T12 Oloro Bojuka Bog exiles Baral graveyard (16)",
+      "T13 Baral counters Oloro's Oloro, Ageless Ascetic with Arcane Denial",
+      "T14 Baral counters Oloro's Oloro, Ageless Ascetic with Cryptic Command",
+      "T15 Baral wins via combo: Hullbreaker Horror + Sol Ring",
+      "T15 Oloro eliminated (combo: Hullbreaker Horror + Sol Ring by Baral)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 16,
+     "players": [
+      "Grand Arbiter Augustin IV",
+      "You",
+      "Baral",
+      "Oloro"
+     ],
+     "lines": [
+      "T3 Grand Arbiter Augustin IV counters Baral's Baral, Chief of Compliance with Counterspell",
+      "T4 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Strix Serenade",
+      "T4 Oloro counters your Rankle, Master of Pranks with Absorb",
+      "T4 Baral counters Oloro's Ghostly Prison with Muddle the Mixture",
+      "T5 You casts Tergrid, God of Fright",
+      "T6 Baral counters Grand Arbiter Augustin IV's Archon of Emeria with Arcane Denial",
+      "T7 Grand Arbiter Augustin IV counters your Rankle, Master of Pranks with Mana Leak",
+      "T8 You casts Rankle, Master of Pranks",
+      "T9 Grand Arbiter Augustin IV eliminated (combat by You)",
+      "T10 You casts Rankle, Master of Pranks",
+      "T11 You eliminated (combat by Baral)",
+      "T11 Oloro Bojuka Bog exiles Baral graveyard (11)",
+      "T12 Baral WIPE Cyclonic Rift",
+      "T12 Baral counters Oloro's Toxic Deluge with Cryptic Command",
+      "T16 Baral eliminated (lifegain by Oloro)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Go-wide",
+   "slug": "go-wide",
+   "games": 641,
+   "series": 300,
+   "series_win": 0.3,
+   "game_win": 6.7,
+   "avg_place": 3.17,
+   "avg_rounds": 10.2,
+   "place": {
+    "4": 301,
+    "3": 194,
+    "2": 102,
+    "1": 44
+   },
+   "draws": 5,
+   "first_out": 47.0,
+   "deaths": [
+    [
+     "Combat damage",
+     "Tokens",
+     364
+    ],
+    [
+     "Combat damage",
+     "Landfall",
+     108
+    ],
+    [
+     "Combat damage",
+     "Elf typal",
+     99
+    ],
+    [
+     "Death-trigger drains",
+     "Elf typal",
+     12
+    ],
+    [
+     "Burn spells",
+     "Tokens",
+     9
+    ],
+    [
+     "Lathril activation",
+     "Elf typal",
+     5
+    ],
+    [
+     "Commander damage",
+     "Tokens",
+     1
+    ]
+   ],
+   "losses": 598,
+   "kills": [
+    [
+     "Combat damage",
+     55
+    ],
+    [
+     "Death-trigger drains",
+     36
+    ],
+    [
+     "discard",
+     27
+    ],
+    [
+     "Burn spells",
+     26
+    ],
+    [
+     "rankle",
+     22
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.15,
+    "wipes": 0.25,
+    "removal": 0.46,
+    "dmg": 25.92
+   },
+   "countered": [
+    [
+     "Rankle, Master of Pranks",
+     59
+    ],
+    [
+     "Massacre Wurm",
+     11
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     6
+    ],
+    [
+     "Damnation",
+     5
+    ]
+   ],
+   "removed": [
+    [
+     "Rankle, Master of Pranks",
+     66
+    ],
+    [
+     "Bitterblossom",
+     34
+    ],
+    [
+     "Black Market Connections",
+     30
+    ],
+    [
+     "Skullclamp",
+     20
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     97
+    ],
+    [
+     "Kindred Dominance",
+     51
+    ],
+    [
+     "Martial Coup",
+     13
+    ]
+   ],
+   "impact": [
+    [
+     "Syr Konrad, the Grim",
+     41,
+     27,
+     5
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     99,
+     24,
+     4
+    ],
+    [
+     "Crypt Ghast",
+     50,
+     20,
+     6
+    ],
+    [
+     "Ophiomancer",
+     92,
+     15,
+     5
+    ],
+    [
+     "Gray Merchant of Asphodel",
+     38,
+     16,
+     6
+    ],
+    [
+     "Tergrid, God of Fright",
+     74,
+     14,
+     6
+    ],
+    [
+     "Damnation",
+     86,
+     14,
+     6
+    ],
+    [
+     "Orcish Bowmasters",
+     42,
+     14,
+     6
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Jetmir, Nexus of Revels",
+     "arch": "Tokens",
+     "key": "jetmir",
+     "link": "https://edhrec.com/average-decks/jetmir-nexus-of-revels",
+     "fetched": "2026-10-02",
+     "win_share": 58.0,
+     "killed_me": 58.3,
+     "i_killed": 7.5,
+     "my_vs_b3": 5.2,
+     "my_vs_b4": 8.3,
+     "how": [
+      [
+       "Combat damage",
+       364
+      ],
+      [
+       "Burn spells",
+       9
+      ],
+      [
+       "Commander damage",
+       1
+      ]
+     ],
+     "threats": [
+      "Song of Totentanz",
+      "Craterhoof Behemoth",
+      "Professional Face-Breaker",
+      "Finale of Devastation",
+      "Voice of Victory"
+     ]
+    },
+    {
+     "cmd": "Tatyova, Benthic Druid",
+     "arch": "Landfall",
+     "key": "tatyova",
+     "link": "https://edhrec.com/average-decks/tatyova-benthic-druid",
+     "fetched": "2026-10-02",
+     "win_share": 20.0,
+     "killed_me": 16.8,
+     "i_killed": 7.2,
+     "my_vs_b3": 6.4,
+     "my_vs_b4": 7.0,
+     "how": [
+      [
+       "Combat damage",
+       108
+      ]
+     ],
+     "threats": [
+      "Sol Ring",
+      "Arcane Signet",
+      "Scute Swarm",
+      "Tireless Provisioner",
+      "Kodama of the East Tree"
+     ]
+    },
+    {
+     "cmd": "Lathril, Blade of the Elves",
+     "arch": "Elf typal",
+     "key": "lathril",
+     "link": "https://edhrec.com/average-decks/lathril-blade-of-the-elves",
+     "fetched": "2026-10-02",
+     "win_share": 14.5,
+     "killed_me": 18.1,
+     "i_killed": 11.5,
+     "my_vs_b3": 6.6,
+     "my_vs_b4": 6.8,
+     "how": [
+      [
+       "Combat damage",
+       99
+      ],
+      [
+       "Death-trigger drains",
+       12
+      ],
+      [
+       "Lathril activation",
+       5
+      ]
+     ],
+     "threats": [
+      "Dwynen, Gilt-Leaf Daen",
+      "Ezuri, Renegade Leader",
+      "Immaculate Magistrate",
+      "Joraga Warcaller",
+      "Elvish Harbinger"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 7.0,
+    "1": 7.2,
+    "2": 7.1,
+    "3": 5.6
+   },
+   "attack_share": 29.4,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Tatyova",
+      "Jetmir",
+      "You",
+      "Lathril"
+     ],
+     "lines": [
+      "T5 You eliminated (combat by Jetmir)",
+      "T7 Lathril eliminated (combat by Jetmir)",
+      "T8 Tatyova WIPE Cyclonic Rift",
+      "T8 Tatyova counters Jetmir's Jetmir, Nexus of Revels with Mana Drain",
+      "T9 Tatyova OVERRUN Finale of Devastation (+10)",
+      "T9 Jetmir eliminated (combat by Tatyova)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 11,
+     "players": [
+      "Lathril",
+      "You",
+      "Tatyova",
+      "Jetmir"
+     ],
+     "lines": [
+      "T3 You casts Rankle, Master of Pranks",
+      "T5 You casts Toxic Deluge",
+      "T5 You WIPE Toxic Deluge",
+      "T7 You casts Rankle, Master of Pranks",
+      "T9 Tatyova counters Lathril's Craterhoof Behemoth with Force of Will",
+      "T9 You eliminated (combat by Lathril)",
+      "T10 Lathril eliminated (combat by Jetmir)",
+      "T11 Tatyova eliminated (combat by Jetmir)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "You",
+      "Tatyova",
+      "Jetmir",
+      "Lathril"
+     ],
+     "lines": [
+      "T3 You casts Toxic Deluge",
+      "T3 You WIPE Toxic Deluge",
+      "T6 You casts Rankle, Master of Pranks",
+      "T7 Tatyova OVERRUN Finale of Devastation (+10)",
+      "T7 Tatyova WIPE Cyclonic Rift",
+      "T7 You eliminated (combat by Tatyova)",
+      "T8 Jetmir eliminated (combat by Tatyova)",
+      "T9 Lathril eliminated (combat by Tatyova)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Graveyard & big threats",
+   "slug": "graveyard-big-threats",
+   "games": 622,
+   "series": 300,
+   "series_win": 1.0,
+   "game_win": 4.3,
+   "avg_place": 3.2,
+   "avg_rounds": 13.6,
+   "place": {
+    "4": 290,
+    "3": 191,
+    "2": 114,
+    "1": 27
+   },
+   "draws": 5,
+   "first_out": 46.6,
+   "deaths": [
+    [
+     "Combat damage",
+     "Voltron",
+     145
+    ],
+    [
+     "Combat damage",
+     "Reanimator",
+     128
+    ],
+    [
+     "Death-trigger drains",
+     "Aristocrats",
+     99
+    ],
+    [
+     "Combat damage",
+     "Aristocrats",
+     94
+    ],
+    [
+     "Commander damage",
+     "Voltron",
+     71
+    ],
+    [
+     "Death-trigger drains",
+     "Reanimator",
+     32
+    ],
+    [
+     "Infinite combo",
+     "Reanimator",
+     14
+    ]
+   ],
+   "losses": 595,
+   "kills": [
+    [
+     "Combat damage",
+     36
+    ],
+    [
+     "Death-trigger drains",
+     31
+    ],
+    [
+     "rankle",
+     22
+    ],
+    [
+     "discard",
+     18
+    ],
+    [
+     "Burn spells",
+     18
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.08,
+    "wipes": 1.19,
+    "removal": 0.87,
+    "dmg": 24.65
+   },
+   "countered": [
+    [
+     "Rankle, Master of Pranks",
+     40
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     2
+    ],
+    [
+     "Torment of Hailfire",
+     2
+    ],
+    [
+     "Damnation",
+     1
+    ]
+   ],
+   "removed": [
+    [
+     "Rankle, Master of Pranks",
+     104
+    ],
+    [
+     "Bitterblossom",
+     66
+    ],
+    [
+     "Black Market Connections",
+     45
+    ],
+    [
+     "Skullclamp",
+     35
+    ]
+   ],
+   "wiped": [
+    [
+     "Winds of Rath",
+     373
+    ],
+    [
+     "Toxic Deluge",
+     139
+    ],
+    [
+     "Living Death",
+     87
+    ],
+    [
+     "Damn",
+     67
+    ]
+   ],
+   "impact": [
+    [
+     "Torment of Hailfire",
+     31,
+     19,
+     4
+    ],
+    [
+     "Sheoldred, the Apocalypse",
+     121,
+     13,
+     2
+    ],
+    [
+     "Gray Merchant of Asphodel",
+     87,
+     13,
+     3
+    ],
+    [
+     "Skullclamp",
+     140,
+     11,
+     2
+    ],
+    [
+     "Syr Konrad, the Grim",
+     86,
+     12,
+     3
+    ],
+    [
+     "Crypt Ghast",
+     102,
+     12,
+     3
+    ],
+    [
+     "Waste Not",
+     133,
+     11,
+     3
+    ],
+    [
+     "Megrim",
+     125,
+     11,
+     3
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Meren of Clan Nel Toth",
+     "arch": "Reanimator",
+     "key": "meren",
+     "link": "https://edhrec.com/average-decks/meren-of-clan-nel-toth",
+     "fetched": "2026-10-02",
+     "win_share": 26.0,
+     "killed_me": 29.9,
+     "i_killed": 6.6,
+     "my_vs_b3": 3.8,
+     "my_vs_b4": 5.0,
+     "how": [
+      [
+       "Combat damage",
+       128
+      ],
+      [
+       "Death-trigger drains",
+       32
+      ],
+      [
+       "Burn spells",
+       12
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Zulaport Cutthroat",
+       9
+      ]
+     ],
+     "threats": [
+      "Zulaport Cutthroat",
+      "Deathrite Shaman",
+      "Village Rites",
+      "Ashnod's Altar",
+      "Cultivate"
+     ]
+    },
+    {
+     "cmd": "Teysa Karlov",
+     "arch": "Aristocrats",
+     "key": "teysa",
+     "link": "https://edhrec.com/average-decks/teysa-karlov",
+     "fetched": "2026-10-02",
+     "win_share": 30.1,
+     "killed_me": 31.0,
+     "i_killed": 6.8,
+     "my_vs_b3": 2.9,
+     "my_vs_b4": 5.8,
+     "how": [
+      [
+       "Death-trigger drains",
+       99
+      ],
+      [
+       "Combat damage",
+       94
+      ]
+     ],
+     "threats": [
+      "Dark Ritual",
+      "Diabolic Intent",
+      "Warren Soultrader",
+      "Elas il-Kor, Sadistic Pilgrim",
+      "Ministrant of Obligation"
+     ]
+    },
+    {
+     "cmd": "Light-Paws, Emperor's Voice",
+     "arch": "Voltron",
+     "key": "lightpaws",
+     "link": "https://edhrec.com/average-decks/light-paws-emperors-voice",
+     "fetched": "2026-10-02",
+     "win_share": 38.7,
+     "killed_me": 34.7,
+     "i_killed": 7.9,
+     "my_vs_b3": 3.9,
+     "my_vs_b4": 4.9,
+     "how": [
+      [
+       "Combat damage",
+       145
+      ],
+      [
+       "Commander damage",
+       71
+      ]
+     ],
+     "threats": [
+      "Shardmage's Rescue",
+      "Sigarda's Aid",
+      "Mantle of the Ancients",
+      "With Great Power . . .",
+      "Spirit Mantle"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 3.3,
+    "1": 3.3,
+    "2": 5.4,
+    "3": 5.6
+   },
+   "attack_share": 33.3,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You",
+      "Light-Paws"
+     ],
+     "lines": [
+      "T4 You casts Rankle, Master of Pranks",
+      "T4 Light-Paws WIPE Winds of Rath",
+      "T7 You casts Rankle, Master of Pranks",
+      "T9 You eliminated (combat by Meren of Clan Nel Toth)",
+      "T9 Meren of Clan Nel Toth eliminated (commander damage by Light-Paws)",
+      "T10 Teysa Karlov eliminated (commander damage by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 12,
+     "players": [
+      "You",
+      "Light-Paws",
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth"
+     ],
+     "lines": [
+      "T5 Meren of Clan Nel Toth WIPE Toxic Deluge",
+      "T6 You casts Rankle, Master of Pranks",
+      "T7 Teysa Karlov Bojuka Bog exiles Light-Paws graveyard (4)",
+      "T8 You casts Damnation",
+      "T8 You WIPE Damnation",
+      "T10 Teysa Karlov eliminated (commander damage by Light-Paws)",
+      "T11 You eliminated (combat by Light-Paws)",
+      "T12 Meren of Clan Nel Toth eliminated (combat by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 17,
+     "players": [
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "Light-Paws",
+      "You"
+     ],
+     "lines": [
+      "T4 Meren of Clan Nel Toth WIPE Toxic Deluge",
+      "T4 You Bojuka Bog exiles Teysa Karlov graveyard (3)",
+      "T5 You casts Rankle, Master of Pranks",
+      "T6 You casts Rankle, Master of Pranks",
+      "T8 Light-Paws WIPE Winds of Rath",
+      "T8 You casts Rankle, Master of Pranks",
+      "T10 You casts Rankle, Master of Pranks",
+      "T11 Meren of Clan Nel Toth WIPE Living Death",
+      "T11 You WIPE Massacre Wurm",
+      "T12 You casts Damnation",
+      "T12 You WIPE Damnation",
+      "T13 You casts Rankle, Master of Pranks",
+      "T14 Teysa Karlov eliminated (discard by You)",
+      "T15 You casts Rankle, Master of Pranks",
+      "T16 You eliminated (combat by Meren of Clan Nel Toth)",
+      "T17 Light-Paws eliminated (combat by Meren of Clan Nel Toth)"
+     ]
+    }
+   ]
+  }
+ ]
+}

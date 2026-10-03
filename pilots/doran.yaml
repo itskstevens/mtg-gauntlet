@@ -1,0 +1,19 @@
+commander: "Doran, the Siege Tower"
+eyebrow: "Abzan · Toughness matters · Bracket 3"
+summary: Every creature deals combat damage equal to its toughness. Big-butted treefolk and walls become the beaters while opponents' glass cannons hit for little.
+engine: [Assault Formation, "Trostani, Selesnya's Voice", "Fangorn, Tree Shepherd", "Treebeard, Gracious Host", Sapling Nursery,
+         "Colfenor, the Last Yew", Ulvenwald Observer, Heartwood Storyteller]
+keep_home: ["Trostani, Selesnya's Voice", "Colfenor, the Last Yew", Ulvenwald Observer, Heartwood Storyteller, Birds of Paradise, Great Forest Druid]
+keep_commander_home: true
+fodder: tokens
+instant_sac_tokens: []
+tutor_targets: [Assault Formation]
+priorities:
+  Assault Formation: 87
+  "Fangorn, Tree Shepherd": 80
+  "Treebeard, Gracious Host": 80
+  Sapling Nursery: 78
+  Ulvenwald Observer: 78
+value_bonus: {Assault Formation: 4}
+key_cards: ["Doran, the Siege Tower", Assault Formation, Last March of the Ents, Wave of Reckoning]
+hold_removal_vs_combo: true

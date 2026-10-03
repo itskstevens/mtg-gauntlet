@@ -89,6 +89,14 @@ Commit and push: the deck, pilot, new card files, refreshed opponents, and the r
 A short table (category, games won, series won), the three or four findings that matter most, any swap-test result,
 and one line on the simulator's limits (rule-based AI, no politics). The page card carries the link.
 
+## Known simulator limits
+
+- The AI plays passive engines (static or automatic triggers like Toxrill's slime counters) better than decks that need
+  sequencing (spellslinger chains, combat math, modal choices). Results for decision-heavy decks are likely understated.
+- Commanders with unusual rules need engine code (see `toxrill_end_step`, `rankle`, `prowess` and the Doran check in `power`).
+- `commander_first` (pilot option, default true) casts a castable commander before same-turn ramp. Some decks do better
+  with it off (Serpent Society).
+
 ## Reference: fair share and noise
 
 - 4-player pod: 25% of games, about 16% of best-of-3 series.

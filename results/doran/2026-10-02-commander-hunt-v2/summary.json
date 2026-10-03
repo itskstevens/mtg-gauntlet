@@ -1,0 +1,1503 @@
+{
+ "meta": {
+  "date": "2026-10-02",
+  "deck": "doran",
+  "series_per_cat": 300,
+  "series_total": 1200,
+  "games_total": 2494,
+  "list_snapshot": [
+   "Doran, the Siege Tower",
+   "Arcane Signet",
+   "Lightning Greaves",
+   "Meekstone",
+   "Slagwurm Armor",
+   "Sol Ring",
+   "Swiftfoot Boots",
+   "Bojuka Bog",
+   "Bountiful Promenade",
+   "Canopy Vista",
+   "Command Tower",
+   "Exotic Orchard",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Godless Shrine",
+   "Indatha Triome",
+   "Isolated Chapel",
+   "Marsh Flats",
+   "Murmuring Bosk",
+   "Overgrown Tomb",
+   "Path of Ancestry",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Sandsteppe Citadel",
+   "Sunpetal Grove",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Temple Garden",
+   "Undergrowth Stadium",
+   "Verdant Catacombs",
+   "Windswept Heath",
+   "Woodland Cemetery",
+   "Yavimaya, Cradle of Growth",
+   "Ancient Lumberknot",
+   "Bedrock Tortoise",
+   "Betor, Kin to All",
+   "Birds of Paradise",
+   "Black Poplar Shaman",
+   "Bosk Banneret",
+   "Colfenor, the Last Yew",
+   "Dauntless Dourbark",
+   "Doran, Besieged by Time",
+   "Faeburrow Elder",
+   "Fangorn, Tree Shepherd",
+   "Great Forest Druid",
+   "Heartwood Storyteller",
+   "Ikra Shidiqi, the Usurper",
+   "Indomitable Ancients",
+   "Leaf-Crowned Elder",
+   "Magnigoth Treefolk",
+   "Nemata, Primeval Warden",
+   "Orchard Warden",
+   "Quickbeam, Upstart Ent",
+   "Sapling of Colfenor",
+   "Seedguide Ash",
+   "The Walls of Ba Sing Se",
+   "Timber Protector",
+   "Tree of Perdition",
+   "Treebeard, Gracious Host",
+   "Treefolk Harbinger",
+   "Trostani, Selesnya's Voice",
+   "Ulvenwald Observer",
+   "Unstoppable Ash",
+   "Assault Formation",
+   "Behind the Scenes",
+   "Brave the Sands",
+   "Jaws of Defeat",
+   "Lignify",
+   "Primal Rage",
+   "Sapling Nursery",
+   "Spidersilk Armor",
+   "Stoneskin",
+   "Anguished Unmaking",
+   "Assassin's Trophy",
+   "Beast Within",
+   "Heroic Intervention",
+   "Path to Exile",
+   "Putrefy",
+   "Reach of Branches",
+   "Swords to Plowshares",
+   "Tower Defense",
+   "Huatli, the Sun's Heart",
+   "Cultivate",
+   "Farseek",
+   "Fell the Mighty",
+   "Kodama's Reach",
+   "Last March of the Ents",
+   "Nature's Lore",
+   "Rampant Growth",
+   "Three Visits",
+   "Wave of Reckoning"
+  ]
+ },
+ "groups": [
+  {
+   "name": "Combo & storm",
+   "slug": "combo-storm",
+   "games": 641,
+   "series": 300,
+   "series_win": 1.3,
+   "game_win": 7.5,
+   "avg_place": 2.59,
+   "avg_rounds": 8.7,
+   "place": {
+    "3": 210,
+    "4": 109,
+    "2": 272,
+    "1": 50
+   },
+   "draws": 5,
+   "first_out": 17.0,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Spellslinger",
+     220
+    ],
+    [
+     "Infinite combo",
+     "Turbo combo",
+     155
+    ],
+    [
+     "Burn spells",
+     "Storm",
+     119
+    ],
+    [
+     "Combat damage",
+     "Storm",
+     37
+    ],
+    [
+     "Combat damage",
+     "Spellslinger",
+     26
+    ],
+    [
+     "Burn spells",
+     "Spellslinger",
+     21
+    ],
+    [
+     "Combat damage",
+     "Turbo combo",
+     13
+    ]
+   ],
+   "losses": 593,
+   "kills": [
+    [
+     "Combat damage",
+     152
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.57,
+    "wipes": 0.16,
+    "removal": 0.9,
+    "dmg": 17.9
+   },
+   "countered": [
+    [
+     "Doran, the Siege Tower",
+     258
+    ],
+    [
+     "Fell the Mighty",
+     18
+    ],
+    [
+     "Wave of Reckoning",
+     15
+    ],
+    [
+     "Assault Formation",
+     14
+    ]
+   ],
+   "removed": [
+    [
+     "Doran, the Siege Tower",
+     239
+    ],
+    [
+     "Birds of Paradise",
+     64
+    ],
+    [
+     "Faeburrow Elder",
+     37
+    ],
+    [
+     "Token",
+     27
+    ]
+   ],
+   "wiped": [
+    [
+     "Blasphemous Act",
+     44
+    ],
+    [
+     "Cyclonic Rift",
+     33
+    ],
+    [
+     "Vandalblast",
+     27
+    ]
+   ],
+   "impact": [
+    [
+     "Assault Formation",
+     29,
+     34,
+     6
+    ],
+    [
+     "Wave of Reckoning",
+     29,
+     24,
+     7
+    ],
+    [
+     "Fangorn, Tree Shepherd",
+     54,
+     22,
+     6
+    ],
+    [
+     "Heartwood Storyteller",
+     104,
+     19,
+     5
+    ],
+    [
+     "Ulvenwald Observer",
+     63,
+     19,
+     6
+    ],
+    [
+     "Last March of the Ents",
+     20,
+     20,
+     7
+    ],
+    [
+     "Treebeard, Gracious Host",
+     93,
+     18,
+     6
+    ],
+    [
+     "Colfenor, the Last Yew",
+     39,
+     18,
+     7
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Kinnan, Bonder Prodigy",
+     "arch": "Turbo combo",
+     "key": "kinnan",
+     "link": "https://edhrec.com/average-decks/kinnan-bonder-prodigy",
+     "fetched": "2026-10-02",
+     "win_share": 26.5,
+     "killed_me": 26.2,
+     "i_killed": 10.3,
+     "my_vs_b3": 7.9,
+     "my_vs_b4": 7.0,
+     "how": [
+      [
+       "Kinnan, Bonder Prodigy + Basalt Monolith",
+       142
+      ],
+      [
+       "Combat damage",
+       13
+      ],
+      [
+       "Hullbreaker Horror + Sol Ring",
+       5
+      ],
+      [
+       "Bloom Tender + Pemmin's Aura",
+       4
+      ]
+     ],
+     "threats": [
+      "Paradise Druid",
+      "Basalt Monolith",
+      "Badgermole Cub",
+      "Mystic Remora",
+      "Fabricate"
+     ]
+    },
+    {
+     "cmd": "Birgi, God of Storytelling",
+     "arch": "Storm",
+     "key": "birgi",
+     "link": "https://edhrec.com/average-decks/birgi-god-of-storytelling",
+     "fetched": "2026-10-02",
+     "win_share": 24.3,
+     "killed_me": 24.3,
+     "i_killed": 5.5,
+     "my_vs_b3": 6.0,
+     "my_vs_b4": 8.8,
+     "how": [
+      [
+       "Burn spells",
+       119
+      ],
+      [
+       "Combat damage",
+       37
+      ]
+     ],
+     "threats": [
+      "Coruscation Mage",
+      "Firebrand Archer",
+      "Fiery Inscription",
+      "Valakut Awakening",
+      "Springleaf Drum"
+     ]
+    },
+    {
+     "cmd": "Niv-Mizzet, Parun",
+     "arch": "Spellslinger",
+     "key": "niv",
+     "link": "https://edhrec.com/average-decks/niv-mizzet-parun",
+     "fetched": "2026-10-02",
+     "win_share": 40.9,
+     "killed_me": 41.7,
+     "i_killed": 8.0,
+     "my_vs_b3": 8.4,
+     "my_vs_b4": 6.4,
+     "how": [
+      [
+       "Niv-Mizzet, Parun + Curiosity",
+       73
+      ],
+      [
+       "Niv-Mizzet, Parun + Tandem Lookout",
+       71
+      ],
+      [
+       "Niv-Mizzet, Parun + Ophidian Eye",
+       63
+      ],
+      [
+       "Combat damage",
+       26
+      ]
+     ],
+     "threats": [
+      "Ophidian Eye",
+      "Tandem Lookout",
+      "Curiosity",
+      "Propaganda",
+      "Niv-Mizzet, Visionary"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 10.5,
+    "1": 3.2,
+    "2": 8.3,
+    "3": 7.9
+   },
+   "attack_share": 10.9,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T2 Birgi counters your Doran, the Siege Tower with Red Elemental Blast",
+      "T4 Niv-Mizzet counters your Doran, the Siege Tower with Mana Drain",
+      "T6 You casts Doran, the Siege Tower",
+      "T6 Kinnan counters Birgi's Aetherflux Reservoir with Swan Song",
+      "T9 Niv-Mizzet counters your Assault Formation with Force of Negation",
+      "T9 Birgi eliminated (combat by You)",
+      "T9 Kinnan wins via combo: Hullbreaker Horror + Sol Ring",
+      "T9 You eliminated (combo: Hullbreaker Horror + Sol Ring by Kinnan)",
+      "T9 Niv-Mizzet eliminated (combo: Hullbreaker Horror + Sol Ring by Kinnan)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 6,
+     "players": [
+      "Kinnan",
+      "You",
+      "Birgi",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T2 Kinnan counters your Doran, the Siege Tower with Mana Drain",
+      "T3 Birgi counters Kinnan's Kinnan, Bonder Prodigy with Pyroblast",
+      "T3 Niv-Mizzet counters your Doran, the Siege Tower with Mana Drain",
+      "T5 Niv-Mizzet breaks Kinnan combo: Pongify on Kinnan, Bonder Prodigy",
+      "T5 You casts Doran, the Siege Tower",
+      "T6 Kinnan wins via combo: Kinnan, Bonder Prodigy + Basalt Monolith",
+      "T6 You eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T6 Birgi eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T6 Niv-Mizzet eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Niv-Mizzet",
+      "Birgi",
+      "Kinnan",
+      "You"
+     ],
+     "lines": [
+      "T3 Kinnan counters Birgi's Birgi, God of Storytelling with Mana Drain",
+      "T3 You casts Doran, the Siege Tower",
+      "T4 Niv-Mizzet counters Kinnan's Kinnan, Bonder Prodigy with Arcane Denial",
+      "T4 You Bojuka Bog exiles Niv-Mizzet graveyard (3)",
+      "T5 Kinnan counters Niv-Mizzet's Cyclonic Rift with An Offer You Can't Refuse",
+      "T8 Kinnan eliminated (combat by Birgi)",
+      "T8 Niv-Mizzet counters Birgi's Birgi, God of Storytelling with Mana Drain",
+      "T10 Niv-Mizzet wins via combo: Niv-Mizzet, Parun + Tandem Lookout",
+      "T10 Birgi eliminated (combo: Niv-Mizzet, Parun + Tandem Lookout by Niv-Mizzet)",
+      "T10 You eliminated (combo: Niv-Mizzet, Parun + Tandem Lookout by Niv-Mizzet)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Stax & control",
+   "slug": "stax-control",
+   "games": 610,
+   "series": 300,
+   "series_win": 0,
+   "game_win": 1.6,
+   "avg_place": 2.72,
+   "avg_rounds": 15.0,
+   "place": {
+    "3": 207,
+    "4": 120,
+    "2": 273,
+    "1": 10
+   },
+   "draws": 18,
+   "first_out": 19.7,
+   "deaths": [
+    [
+     "Combat damage",
+     "Lifegain control",
+     171
+    ],
+    [
+     "Infinite combo",
+     "Lifegain control",
+     106
+    ],
+    [
+     "Lifegain drains",
+     "Lifegain control",
+     78
+    ],
+    [
+     "Alternate win",
+     "Lifegain control",
+     72
+    ],
+    [
+     "Infinite combo",
+     "Counterspell control",
+     56
+    ],
+    [
+     "Combat damage",
+     "Stax",
+     45
+    ],
+    [
+     "Combat damage",
+     "Counterspell control",
+     45
+    ]
+   ],
+   "losses": 600,
+   "kills": [
+    [
+     "Combat damage",
+     207
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 1.84,
+    "wipes": 0.96,
+    "removal": 1.09,
+    "dmg": 28.28
+   },
+   "countered": [
+    [
+     "Doran, the Siege Tower",
+     760
+    ],
+    [
+     "Wave of Reckoning",
+     35
+    ],
+    [
+     "Ulvenwald Observer",
+     25
+    ],
+    [
+     "Behind the Scenes",
+     21
+    ]
+   ],
+   "removed": [
+    [
+     "Doran, the Siege Tower",
+     419
+    ],
+    [
+     "Tree of Perdition",
+     30
+    ],
+    [
+     "Indomitable Ancients",
+     22
+    ],
+    [
+     "Unstoppable Ash",
+     21
+    ]
+   ],
+   "wiped": [
+    [
+     "Supreme Verdict",
+     191
+    ],
+    [
+     "Farewell",
+     103
+    ],
+    [
+     "Damn",
+     86
+    ],
+    [
+     "Fumigate",
+     72
+    ]
+   ],
+   "impact": [
+    [
+     "Assault Formation",
+     39,
+     8,
+     1
+    ],
+    [
+     "Sapling Nursery",
+     66,
+     6,
+     1
+    ],
+    [
+     "Wave of Reckoning",
+     77,
+     4,
+     1
+    ],
+    [
+     "Colfenor, the Last Yew",
+     72,
+     4,
+     1
+    ],
+    [
+     "Fangorn, Tree Shepherd",
+     88,
+     3,
+     1
+    ],
+    [
+     "Doran, the Siege Tower",
+     606,
+     2,
+     0
+    ],
+    [
+     "Last March of the Ents",
+     62,
+     3,
+     1
+    ],
+    [
+     "Treebeard, Gracious Host",
+     116,
+     2,
+     2
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Grand Arbiter Augustin IV",
+     "arch": "Stax",
+     "key": "gaa",
+     "link": "https://edhrec.com/average-decks/grand-arbiter-augustin-iv",
+     "fetched": "2026-10-02",
+     "win_share": 4.8,
+     "killed_me": 9.3,
+     "i_killed": 16.6,
+     "my_vs_b3": 1.1,
+     "my_vs_b4": 2.1,
+     "how": [
+      [
+       "Combat damage",
+       45
+      ],
+      [
+       "Alternate win",
+       12
+      ]
+     ],
+     "threats": [
+      "Ponder",
+      "Azorius Signet",
+      "Absolute Virtue",
+      "Approach of the Second Sun",
+      "Thalia, Guardian of Thraben"
+     ]
+    },
+    {
+     "cmd": "Baral, Chief of Compliance",
+     "arch": "Counterspell control",
+     "key": "baral",
+     "link": "https://edhrec.com/average-decks/baral-chief-of-compliance",
+     "fetched": "2026-10-02",
+     "win_share": 12.5,
+     "killed_me": 16.7,
+     "i_killed": 15.4,
+     "my_vs_b3": 1.3,
+     "my_vs_b4": 1.9,
+     "how": [
+      [
+       "Hullbreaker Horror + Sol Ring",
+       56
+      ],
+      [
+       "Combat damage",
+       45
+      ],
+      [
+       "Alternate win",
+       1
+      ]
+     ],
+     "threats": [
+      "Thought Vessel",
+      "Sapphire Medallion",
+      "Sol Ring",
+      "Murmuring Mystic",
+      "Opt"
+     ]
+    },
+    {
+     "cmd": "Oloro, Ageless Ascetic",
+     "arch": "Lifegain control",
+     "key": "oloro",
+     "link": "https://edhrec.com/average-decks/oloro-ageless-ascetic",
+     "fetched": "2026-10-02",
+     "win_share": 78.2,
+     "killed_me": 71.6,
+     "i_killed": 2.0,
+     "my_vs_b3": 0.9,
+     "my_vs_b4": 2.5,
+     "how": [
+      [
+       "Combat damage",
+       171
+      ],
+      [
+       "Lifegain drains",
+       78
+      ],
+      [
+       "Alternate win",
+       72
+      ],
+      [
+       "Sanguine Bond + Bloodthirsty Conqueror",
+       23
+      ]
+     ],
+     "threats": [
+      "Voice of the Blessed",
+      "Esper Sentinel",
+      "Karlov of the Ghost Council",
+      "Sheoldred, the Apocalypse",
+      "Propaganda"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 2.1,
+    "1": 1.9,
+    "2": 1.4,
+    "3": 1.2
+   },
+   "attack_share": 22.8,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 8,
+     "players": [
+      "Oloro",
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV"
+     ],
+     "lines": [
+      "T4 You casts Doran, the Siege Tower",
+      "T5 Baral counters Grand Arbiter Augustin IV's Approach of the Second Sun with Fierce Guardianship",
+      "T6 Baral counters Grand Arbiter Augustin IV's Absolute Virtue with Pact of Negation",
+      "T8 Oloro wins via combo: Vito, Thorn of the Dusk Rose + Exquisite Blood",
+      "T8 Baral eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T8 You eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T8 Grand Arbiter Augustin IV eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 13,
+     "players": [
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV",
+      "Oloro"
+     ],
+     "lines": [
+      "T3 Grand Arbiter Augustin IV counters your Doran, the Siege Tower with Counterspell",
+      "T4 Oloro counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Mana Drain",
+      "T5 You casts Doran, the Siege Tower",
+      "T6 Grand Arbiter Augustin IV counters Baral's Narset, Parter of Veils with Swan Song",
+      "T7 Baral counters Grand Arbiter Augustin IV's Aura of Silence with Disallow",
+      "T9 Oloro WIPE Cyclonic Rift",
+      "T9 You eliminated (combat by Oloro)",
+      "T11 Grand Arbiter Augustin IV counters Oloro's Well of Lost Dreams with An Offer You Can't Refuse",
+      "T11 Grand Arbiter Augustin IV eliminated (combat by Oloro)",
+      "T12 Baral counters Oloro's Rhystic Study with Tale's End",
+      "T13 Baral eliminated (sheoldred by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 18,
+     "players": [
+      "Grand Arbiter Augustin IV",
+      "Baral",
+      "Oloro",
+      "You"
+     ],
+     "lines": [
+      "T4 Baral counters Oloro's Grand Abolisher with Arcane Denial",
+      "T4 You casts Doran, the Siege Tower",
+      "T5 Oloro WIPE Supreme Verdict",
+      "T5 Baral counters your Doran, the Siege Tower with Essence Scatter",
+      "T6 Baral counters Grand Arbiter Augustin IV's Narset, Parter of Veils with Ertai's Scorn",
+      "T7 You casts Doran, the Siege Tower",
+      "T9 You WIPE Fell the Mighty",
+      "T10 You Bojuka Bog exiles Oloro graveyard (6)",
+      "T10 You casts Last March of the Ents",
+      "T11 You casts Doran, the Siege Tower",
+      "T13 Grand Arbiter Augustin IV casts Jin-Gitaxias, Progress Tyrant",
+      "T13 Grand Arbiter Augustin IV Jin-Gitaxias counters Brainstorm",
+      "T13 Grand Arbiter Augustin IV Jin-Gitaxias counters Bolas's Citadel",
+      "T13 Grand Arbiter Augustin IV counters your Ulvenwald Observer with Mana Drain",
+      "T14 You eliminated (combat by Grand Arbiter Augustin IV)",
+      "T14 Grand Arbiter Augustin IV Jin-Gitaxias counters Thought Vessel",
+      "T14 Grand Arbiter Augustin IV Jin-Gitaxias counters Alhammarret's Archive",
+      "T15 Baral eliminated (lifegain by Oloro)",
+      "T15 Grand Arbiter Augustin IV Jin-Gitaxias counters Orzhov Signet",
+      "T16 Grand Arbiter Augustin IV WIPE Supreme Verdict",
+      "T18 Grand Arbiter Augustin IV wins via Approach of the Second Sun",
+      "T18 Oloro eliminated (Approach of the Second Sun by Grand Arbiter Augustin IV)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Go-wide",
+   "slug": "go-wide",
+   "games": 632,
+   "series": 300,
+   "series_win": 1.3,
+   "game_win": 5.9,
+   "avg_place": 2.64,
+   "avg_rounds": 9.5,
+   "place": {
+    "3": 208,
+    "2": 267,
+    "4": 118,
+    "1": 39
+   },
+   "draws": 5,
+   "first_out": 18.7,
+   "deaths": [
+    [
+     "Combat damage",
+     "Tokens",
+     315
+    ],
+    [
+     "Combat damage",
+     "Landfall",
+     141
+    ],
+    [
+     "Combat damage",
+     "Elf typal",
+     115
+    ],
+    [
+     "Death-trigger drains",
+     "Elf typal",
+     13
+    ],
+    [
+     "Lathril activation",
+     "Elf typal",
+     8
+    ],
+    [
+     "Burn spells",
+     "Tokens",
+     2
+    ],
+    [
+     "Burn spells",
+     "Elf typal",
+     1
+    ]
+   ],
+   "losses": 595,
+   "kills": [
+    [
+     "Combat damage",
+     73
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.18,
+    "wipes": 0.32,
+    "removal": 0.6,
+    "dmg": 11.71
+   },
+   "countered": [
+    [
+     "Doran, the Siege Tower",
+     75
+    ],
+    [
+     "Fell the Mighty",
+     14
+    ],
+    [
+     "Assault Formation",
+     4
+    ],
+    [
+     "Last March of the Ents",
+     4
+    ]
+   ],
+   "removed": [
+    [
+     "Doran, the Siege Tower",
+     225
+    ],
+    [
+     "Sol Ring",
+     22
+    ],
+    [
+     "Tree of Perdition",
+     18
+    ],
+    [
+     "Arcane Signet",
+     17
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     124
+    ],
+    [
+     "Kindred Dominance",
+     56
+    ],
+    [
+     "Martial Coup",
+     23
+    ]
+   ],
+   "impact": [
+    [
+     "Assault Formation",
+     21,
+     33,
+     5
+    ],
+    [
+     "Colfenor, the Last Yew",
+     32,
+     22,
+     5
+    ],
+    [
+     "Fangorn, Tree Shepherd",
+     42,
+     19,
+     5
+    ],
+    [
+     "Sapling Nursery",
+     24,
+     17,
+     5
+    ],
+    [
+     "Wave of Reckoning",
+     32,
+     16,
+     5
+    ],
+    [
+     "Ulvenwald Observer",
+     64,
+     12,
+     5
+    ],
+    [
+     "Doran, the Siege Tower",
+     614,
+     6,
+     0
+    ],
+    [
+     "Trostani, Selesnya's Voice",
+     83,
+     10,
+     5
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Jetmir, Nexus of Revels",
+     "arch": "Tokens",
+     "key": "jetmir",
+     "link": "https://edhrec.com/average-decks/jetmir-nexus-of-revels",
+     "fetched": "2026-10-02",
+     "win_share": 55.9,
+     "killed_me": 50.2,
+     "i_killed": 3.6,
+     "my_vs_b3": 6.7,
+     "my_vs_b4": 4.9,
+     "how": [
+      [
+       "Combat damage",
+       315
+      ],
+      [
+       "Burn spells",
+       2
+      ]
+     ],
+     "threats": [
+      "Beastmaster Ascension",
+      "Ocelot Pride",
+      "Skullclamp",
+      "Anointed Procession",
+      "Adeline, Resplendent Cathar"
+     ]
+    },
+    {
+     "cmd": "Tatyova, Benthic Druid",
+     "arch": "Landfall",
+     "key": "tatyova",
+     "link": "https://edhrec.com/average-decks/tatyova-benthic-druid",
+     "fetched": "2026-10-02",
+     "win_share": 21.0,
+     "killed_me": 22.3,
+     "i_killed": 2.8,
+     "my_vs_b3": 7.1,
+     "my_vs_b4": 4.6,
+     "how": [
+      [
+       "Combat damage",
+       141
+      ]
+     ],
+     "threats": [
+      "Nature's Lore"
+     ]
+    },
+    {
+     "cmd": "Lathril, Blade of the Elves",
+     "arch": "Elf typal",
+     "key": "lathril",
+     "link": "https://edhrec.com/average-decks/lathril-blade-of-the-elves",
+     "fetched": "2026-10-02",
+     "win_share": 16.5,
+     "killed_me": 21.7,
+     "i_killed": 5.1,
+     "my_vs_b3": 4.8,
+     "my_vs_b4": 6.9,
+     "how": [
+      [
+       "Combat damage",
+       115
+      ],
+      [
+       "Death-trigger drains",
+       13
+      ],
+      [
+       "Lathril activation",
+       8
+      ],
+      [
+       "Burn spells",
+       1
+      ]
+     ],
+     "threats": [
+      "Skullclamp",
+      "Wirewood Channeler",
+      "Finale of Devastation",
+      "Dwynen, Gilt-Leaf Daen",
+      "Priest of Titania"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 7.9,
+    "1": 4.7,
+    "2": 6.5,
+    "3": 4.4
+   },
+   "attack_share": 10.8,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Tatyova",
+      "Jetmir",
+      "You",
+      "Lathril"
+     ],
+     "lines": [
+      "T3 You casts Doran, the Siege Tower",
+      "T8 Tatyova WIPE Cyclonic Rift",
+      "T8 Lathril eliminated (combat by Tatyova)",
+      "T8 Tatyova counters Jetmir's Jetmir, Nexus of Revels with Counterspell",
+      "T8 You casts Doran, the Siege Tower",
+      "T9 Tatyova OVERRUN Finale of Devastation (+10)",
+      "T9 You eliminated (combat by Tatyova)",
+      "T10 Tatyova eliminated (decked)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 12,
+     "players": [
+      "Lathril",
+      "You",
+      "Tatyova",
+      "Jetmir"
+     ],
+     "lines": [
+      "T3 You casts Doran, the Siege Tower",
+      "T5 You casts Doran, the Siege Tower",
+      "T6 Tatyova WIPE Cyclonic Rift",
+      "T7 You casts Doran, the Siege Tower",
+      "T7 Tatyova counters Jetmir's Jetmir, Nexus of Revels with Force of Will",
+      "T10 Jetmir eliminated (combat by Tatyova)",
+      "T11 You eliminated (combat by Tatyova)",
+      "T12 Lathril Lathril drains 10",
+      "T12 Lathril eliminated (combat by Tatyova)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 11,
+     "players": [
+      "Tatyova",
+      "You",
+      "Jetmir",
+      "Lathril"
+     ],
+     "lines": [
+      "T2 You casts Doran, the Siege Tower",
+      "T4 You WIPE Fell the Mighty",
+      "T5 You casts Doran, the Siege Tower",
+      "T8 Lathril eliminated (combat by You)",
+      "T10 Jetmir eliminated (combat by Tatyova)",
+      "T10 You casts Doran, the Siege Tower",
+      "T11 Tatyova WIPE Cyclonic Rift",
+      "T11 You eliminated (combat by Tatyova)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Graveyard & big threats",
+   "slug": "graveyard-big-threats",
+   "games": 611,
+   "series": 300,
+   "series_win": 0.3,
+   "game_win": 2.0,
+   "avg_place": 2.97,
+   "avg_rounds": 12.1,
+   "place": {
+    "4": 184,
+    "2": 175,
+    "3": 239,
+    "1": 13
+   },
+   "draws": 10,
+   "first_out": 30.1,
+   "deaths": [
+    [
+     "Combat damage",
+     "Voltron",
+     187
+    ],
+    [
+     "Commander damage",
+     "Voltron",
+     172
+    ],
+    [
+     "Death-trigger drains",
+     "Aristocrats",
+     96
+    ],
+    [
+     "Combat damage",
+     "Reanimator",
+     53
+    ],
+    [
+     "Death-trigger drains",
+     "Reanimator",
+     41
+    ],
+    [
+     "Combat damage",
+     "Aristocrats",
+     39
+    ],
+    [
+     "Infinite combo",
+     "Reanimator",
+     8
+    ]
+   ],
+   "losses": 599,
+   "kills": [
+    [
+     "Combat damage",
+     72
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.09,
+    "wipes": 1.46,
+    "removal": 0.74,
+    "dmg": 11.3
+   },
+   "countered": [
+    [
+     "Doran, the Siege Tower",
+     44
+    ],
+    [
+     "Ulvenwald Observer",
+     4
+    ],
+    [
+     "Fangorn, Tree Shepherd",
+     1
+    ],
+    [
+     "Colfenor, the Last Yew",
+     1
+    ]
+   ],
+   "removed": [
+    [
+     "Doran, the Siege Tower",
+     256
+    ],
+    [
+     "Sol Ring",
+     30
+    ],
+    [
+     "Ulvenwald Observer",
+     23
+    ],
+    [
+     "Indomitable Ancients",
+     16
+    ]
+   ],
+   "wiped": [
+    [
+     "Winds of Rath",
+     423
+    ],
+    [
+     "Toxic Deluge",
+     161
+    ],
+    [
+     "Living Death",
+     141
+    ],
+    [
+     "Damn",
+     92
+    ]
+   ],
+   "impact": [
+    [
+     "Wave of Reckoning",
+     38,
+     11,
+     1
+    ],
+    [
+     "Last March of the Ents",
+     27,
+     11,
+     2
+    ],
+    [
+     "Heartwood Storyteller",
+     87,
+     8,
+     1
+    ],
+    [
+     "Trostani, Selesnya's Voice",
+     78,
+     6,
+     1
+    ],
+    [
+     "Sapling Nursery",
+     50,
+     6,
+     2
+    ],
+    [
+     "Fangorn, Tree Shepherd",
+     60,
+     5,
+     2
+    ],
+    [
+     "Treebeard, Gracious Host",
+     79,
+     5,
+     2
+    ],
+    [
+     "Doran, the Siege Tower",
+     604,
+     2,
+     0
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Meren of Clan Nel Toth",
+     "arch": "Reanimator",
+     "key": "meren",
+     "link": "https://edhrec.com/average-decks/meren-of-clan-nel-toth",
+     "fetched": "2026-10-02",
+     "win_share": 16.0,
+     "killed_me": 17.0,
+     "i_killed": 4.3,
+     "my_vs_b3": 1.8,
+     "my_vs_b4": 2.1,
+     "how": [
+      [
+       "Combat damage",
+       53
+      ],
+      [
+       "Death-trigger drains",
+       41
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Syr Konrad, the Grim",
+       5
+      ],
+      [
+       "Burn spells",
+       2
+      ]
+     ],
+     "threats": [
+      "Blood Artist",
+      "Eldritch Evolution",
+      "Elves of Deep Shadow",
+      "Ashnod's Altar",
+      "Skullclamp"
+     ]
+    },
+    {
+     "cmd": "Teysa Karlov",
+     "arch": "Aristocrats",
+     "key": "teysa",
+     "link": "https://edhrec.com/average-decks/teysa-karlov",
+     "fetched": "2026-10-02",
+     "win_share": 20.8,
+     "killed_me": 22.1,
+     "i_killed": 3.4,
+     "my_vs_b3": 3.0,
+     "my_vs_b4": 1.0,
+     "how": [
+      [
+       "Death-trigger drains",
+       96
+      ],
+      [
+       "Combat damage",
+       39
+      ]
+     ],
+     "threats": [
+      "Marionette Apprentice",
+      "Bastion of Remembrance",
+      "Yahenni, Undying Partisan",
+      "Blood Artist",
+      "Pitiless Plunderer"
+     ]
+    },
+    {
+     "cmd": "Light-Paws, Emperor's Voice",
+     "arch": "Voltron",
+     "key": "lightpaws",
+     "link": "https://edhrec.com/average-decks/light-paws-emperors-voice",
+     "fetched": "2026-10-02",
+     "win_share": 59.6,
+     "killed_me": 58.8,
+     "i_killed": 4.1,
+     "my_vs_b3": 2.4,
+     "my_vs_b4": 1.4,
+     "how": [
+      [
+       "Combat damage",
+       187
+      ],
+      [
+       "Commander damage",
+       172
+      ]
+     ],
+     "threats": [
+      "Shield of Duty and Reason",
+      "Esper Sentinel",
+      "All That Glitters",
+      "Timely Ward",
+      "Danitha Capashen, Paragon"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 0.7,
+    "1": 2.5,
+    "2": 0.7,
+    "3": 3.4
+   },
+   "attack_share": 28.8,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Light-Paws",
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You"
+     ],
+     "lines": [
+      "T3 Light-Paws counters Teysa Karlov's Teysa Karlov with Rebuff the Wicked",
+      "T3 You casts Doran, the Siege Tower",
+      "T5 Light-Paws WIPE Winds of Rath",
+      "T7 You eliminated (commander damage by Light-Paws)",
+      "T7 Meren of Clan Nel Toth WIPE Massacre Wurm",
+      "T9 Teysa Karlov eliminated (death by Meren of Clan Nel Toth)",
+      "T10 Meren of Clan Nel Toth eliminated (commander damage by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 11,
+     "players": [
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You",
+      "Light-Paws"
+     ],
+     "lines": [
+      "T3 You casts Doran, the Siege Tower",
+      "T4 Teysa Karlov Bojuka Bog exiles Meren of Clan Nel Toth graveyard (2)",
+      "T5 You WIPE Fell the Mighty",
+      "T6 You casts Doran, the Siege Tower",
+      "T7 Meren of Clan Nel Toth WIPE Living Death",
+      "T8 Light-Paws counters Teysa Karlov's Teysa Karlov with Rebuff the Wicked",
+      "T8 You casts Doran, the Siege Tower",
+      "T9 Light-Paws WIPE Winds of Rath",
+      "T9 You eliminated (combat by Light-Paws)",
+      "T10 Meren of Clan Nel Toth eliminated (commander damage by Light-Paws)",
+      "T11 Teysa Karlov eliminated (combat by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 25,
+     "players": [
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "Light-Paws",
+      "You"
+     ],
+     "lines": [
+      "T2 You casts Doran, the Siege Tower",
+      "T6 You casts Doran, the Siege Tower",
+      "T7 Meren of Clan Nel Toth Bojuka Bog exiles Teysa Karlov graveyard (5)",
+      "T7 Meren of Clan Nel Toth WIPE Toxic Deluge",
+      "T7 You casts Doran, the Siege Tower",
+      "T9 Light-Paws WIPE Winds of Rath",
+      "T9 You casts Doran, the Siege Tower",
+      "T13 Teysa Karlov eliminated (combat by You)",
+      "T15 Light-Paws eliminated (combat by You)",
+      "T16 You casts Doran, the Siege Tower",
+      "T20 Meren of Clan Nel Toth WIPE Massacre Wurm"
+     ]
+    }
+   ]
+  }
+ ]
+}

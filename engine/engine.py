@@ -27,6 +27,7 @@ class Perm:
             s.name, s.bp, s.bt, kw = token; s.kw = set(kw); s.token = True; s.creature = True
         s.tapped = False; s.sick = True; s.counters = 0; s.pump = 0; s.pumpt = 0; s.tmpkw = set()
         s.auras = 0; s.aura_p = 0; s.aura_t = 0; s.aura_kw = set(); s.neutral = False; s.infect_turn = False
+        s.slime = 0; s.rankled = False
     @property
     def c(s): return s.card
     def is_art(s): return s.card is not None and s.card.is_artifact
@@ -81,6 +82,7 @@ class Game:
         for i, p in enumerate(s.players): p.seat = i
         s.round = 0; s.active = None; s.winner = None; s.over = False; s.elim = []
         s.death_depth = 0; s._lp = False
+        s.doran = False; s.assault = set(); s.tox_owners = []
 
     def log(s, msg):
         if s.logging: s.events.append(f'T{s.round} {msg}')
@@ -97,9 +99,79 @@ class Game:
     def no_dies(s): return any(q.alive and q.has('Rest in Peace') for q in s.players)
     def no_triggers(s): return any(q.alive and any(p.name == 'Hushbringer' and not p.neutral for p in q.bf) for q in s.players)
 
+    # ---------------------------------------------------------------- commander-specific statics
+    def update_static(s):
+        alive = [q for q in s.players if q.alive]
+        s.doran = any(p.name == 'Doran, the Siege Tower' and not p.neutral for q in alive for p in q.bf)
+        s.assault = {q.idx for q in alive if any(p.name == 'Assault Formation' and not p.neutral for p in q.bf)}
+        s.tox_owners = [q for q in alive if any(p.name == 'Toxrill, the Corrosive' and not p.neutral for p in q.bf)]
+    def slime_on(s, p): return p.slime and any(q is not p.owner for q in s.tox_owners)
+
+    def sba(s):
+        """State-based actions: creatures with toughness 0 or less die."""
+        for q in s.players:
+            if not q.alive: continue
+            for p in [p for p in q.bf if p.creature and s.tough(p) <= 0]:
+                if p in q.bf: s.kill(p, 'sac', sac=True)
+
+    def toxrill_end_step(s):
+        if not s.tox_owners or s.no_triggers() and False: return
+        for T in s.tox_owners:
+            for V in T.opps():
+                for p in V.creatures(): p.slime += 1
+        s.sba()
+
+    def prowess(s, S, c):
+        """Prowess (+1/+1 per noncreature spell), Bria granting it and an unblockable creature, Balmor's team pump."""
+        bria = any(p.name == 'Bria, Riptide Rogue' and not p.neutral for p in S.bf)
+        balmor = (c.is_instant or c.is_sorcery) and sum(1 for p in S.bf if p.name == 'Balmor, Battlemage Captain' and not p.neutral)
+        for p in S.creatures():
+            if p.neutral: continue
+            if bria or 'prowess' in p.kw: p.pump += 1; p.pumpt += 1
+            if balmor: p.pump += balmor; p.tmpkw.add('trample')
+        if bria:
+            cand = [p for p in S.creatures() if 'unblockable' not in p.tmpkw and not p.neutral and 'defender' not in p.kw]
+            if cand: max(cand, key=lambda p: s.power(p)).tmpkw.add('unblockable')
+
+    def discard(s, V, src=None):
+        if not V.hand: return None
+        lands = [c for c in V.hand if c.is_land]
+        c = lands[0] if len(lands) >= 2 else min(V.hand, key=lambda x: (x.is_land, x.cmc))
+        V.hand.remove(c); V.gy.append(c)
+        for q in s.players:
+            if not q.alive or q is V: continue
+            for p in q.bf:
+                if p.neutral: continue
+                if p.name in ('Megrim', "Liliana's Caress"): s.lose_life(V, 2, q, 'discard')
+                if p.name == 'Waste Not':
+                    if c.is_creature: s.make_tokens(q, 1, 2, 2, set(), name='Zombie')
+                    elif c.is_land: q.reserve += 2
+                    else: q.draw(1)
+        return c
+
+    def rankle(s, A, rk):
+        others = A.opps()
+        # sacrifice mode: only when Rankle's controller has fodder of its own
+        fod = [p for p in A.creatures() if p is not rk and (p.token or (p.card and s.value(A, p) < 3.5 and p.name not in s.eng(A)))]
+        if fod and any(q.creatures() for q in others):
+            s.kill(min(fod, key=lambda p: (not p.token, s.value(A, p))), 'sac', sac=True)
+            for v in others: s.force_sac(v, src=A, why='rankle')
+        if A.life >= 10:
+            for q in [A] + others:
+                if q.alive: s.lose_life(q, 1, A if q is not A else None, 'rankle'); q.draw(1)
+        if len(A.hand) <= 1 or any(A.has(n) for n in ('Waste Not', 'Megrim', "Liliana's Caress")):
+            for q in [A] + others:
+                if q.alive: s.discard(q, A)
+        A.stats['rankle_triggers'] += 1
+        s.log(f'{A.label} Rankle trigger')
+
     # ---------------------------------------------------------------- stats of permanents
     def power(s, p):
-        o = p.owner; v = p.bp + p.counters + p.pump + p.aura_p
+        o = p.owner
+        if p.creature and (s.doran or o.idx in s.assault):
+            return 0 if p.neutral else max(0, s.tough(p))
+        v = p.bp + p.counters + p.pump + p.aura_p
+        if p.slime and s.slime_on(p): v -= p.slime
         if p.creature:
             v += sum(q.card.anthem for q in o.bf if q.card and q.card.anthem and q is not p and not q.neutral)
             if o.cmd_card.name == 'Jetmir, Nexus of Revels' and o.cmd_on_bf() and len(o.creatures()) >= 3: v += 1
@@ -110,6 +182,7 @@ class Game:
         return max(0, v)
     def tough(s, p):
         o = p.owner; v = p.bt + p.counters + p.pumpt + p.aura_t
+        if p.slime and s.slime_on(p): v -= p.slime
         if p.creature:
             v += sum(q.card.anthem for q in o.bf if q.card and q.card.anthem and q is not p and not q.neutral)
             m = s.stax_on(o, 'opp_minus')
@@ -190,6 +263,7 @@ class Game:
         for med, col in (('Ruby Medallion', 'R'), ('Sapphire Medallion', 'U'), ('Pearl Medallion', 'W')):
             if P.has(med) and col in c.colors: x -= 1
         if c.name == 'Punishing Punch' and sum(1 for g in P.gy if g.is_creature) >= 2: x -= 2
+        if c.name == 'Blasphemous Act': x -= sum(len(q.creatures()) for q in s.players if q.alive)
         return max(x, c.pips if c.cmc else 0, 0)
 
     def mana_avail(s, P):
@@ -275,6 +349,7 @@ class Game:
         was_dt = s.has_dt(p) or o.has('Archetype of Finality')
         was_cre = p.creature
         o.bf.remove(p)
+        if p.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
         if p.is_cmd:
             o.cmd_zone = True; o.cmd_tax += 2
         elif p.card:
@@ -301,6 +376,8 @@ class Game:
                             for v in q.opps():
                                 s.force_sac(v, nontoken=True, src=q, why='commander')
                         continue
+                    if c.name == 'Toxrill, the Corrosive' and o is not q and p.slime:
+                        s.make_tokens(q, 1, 1, 1, set(), name='Slug'); continue
                     if c.name == 'Massacre Wurm' and o is not q:
                         s.lose_life(o, 2, q, 'wurm'); continue
                     if c.name == 'Meren of Clan Nel Toth' and o is q and p is not perm: q.exp += 1
@@ -309,6 +386,7 @@ class Game:
                     sc = dt.get('scope')
                     if sc == 'self' and perm is not p: continue
                     if sc == 'own' and o is not q: continue
+                    if sc == 'opp' and o is q: continue
                     if sc in ('own', 'any') and perm is p and c.name not in ('Blood Artist',): continue
                     if dt.get('nontoken') and p.token: continue
                     for _ in range(teysa):
@@ -388,6 +466,7 @@ class Game:
     def spell_triggers(s, S, c):
         if c.is_creature: return
         S.spells_turn += 1
+        s.prowess(S, c)
         for q in s.players:
             if not q.alive: continue
             for p in q.bf:
@@ -530,6 +609,7 @@ class Game:
             if c.is_creature and s.stax_on(P, 'opp_enter_tapped'): p.tapped = True
             if 'haste' in c.kw: p.sick = False
             P.bf.append(p)
+            if c.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
             if c.name in ('Swiftfoot Boots', 'Lightning Greaves'):
                 for q in P.bf:
                     if q.is_cmd: q.aura_kw |= {'hexproof', 'haste'}; q.sick = False
@@ -859,7 +939,7 @@ class Game:
             if b in used or b.tapped or b.neutral: continue
             if 'flying' in k and not ({'flying', 'reach'} & s.kw(b)): continue
             if 'pro_bg' in k and b.card is not None and (b.card.colors & {'B', 'G'}) or ('pro_bg' in k and b.token and (D.cmd_card.colors & {'B', 'G'})): continue
-            if "can't be blocked" in (att.card.oracle if att.card else '') : continue
+            if "can't be blocked" in (att.card.oracle if att.card else '') or 'unblockable' in k: continue
             out.append(b)
         return out
 
@@ -1044,6 +1124,8 @@ class Game:
             s.lose_life(D, n, A, 'combat')
             if a.is_cmd: D.cmd_dmg[A.label] += n
             if 'lifelink' in s.kw(a): s.gain(A, n)
+        if a.name == 'Rankle, Master of Pranks' and not a.rankled:
+            a.rankled = True; s.rankle(A, a)
         if A.has('Fynn, the Fangbearer') and s.has_dt(a):
             D.poison += 2; A.stats['poison_dealt'] += 2
         if A.cmd_card.name == 'Lathril, Blade of the Elves' and a.is_cmd: s.make_tokens(A, n, 1, 1, set())
@@ -1053,6 +1135,8 @@ class Game:
     # ---------------------------------------------------------------- turn
     def take_turn(s, P):
         s.active = P
+        s.update_static()
+        for p in P.bf: p.rankled = False
         P.spells_turn = 0; P.noncre_turn = 0; P.stats['cre_cast_turn'] = 0; P.flashback = False
         P.reserve = 0
         for p in P.bf:
@@ -1126,6 +1210,11 @@ class Game:
             if q.is_me and q is not P: s.my_instant_sac(q)
 
     def end_step(s, P):
+        s.update_static(); s.toxrill_end_step()
+        if any(q is P for q in s.tox_owners) and not s.stax_on(P, 'no_creature_abilities'):
+            slugs = [p for p in P.creatures() if p.name == 'Slug']
+            while len(slugs) > 1 and s.avail(P) >= 2:
+                s.pay(P, 2); s.kill(slugs.pop(), 'sac', sac=True); P.draw(1)
         if P.cmd_card.name == 'Meren of Clan Nel Toth' and P.cmd_on_bf():
             cr = [c for c in P.gy if c.is_creature]
             if cr:
@@ -1326,7 +1415,7 @@ class Game:
                 if not f: break
                 s.pay(P, 1); s.kill(f[0], 'sac', sac=True); P.draw(2); P.stats['clamp_draws'] += 2
         if s.my_free_outlet(P):
-            while True:
+            for _ in range(P.pilot.get('max_sacs_per_phase', 30)):   # cap: token loops would otherwise never end
                 f = s.my_fodder(P, nontoken_ok=nt)
                 if not f: break
                 s.kill(f, 'sac', sac=True)
@@ -1395,7 +1484,11 @@ class Game:
         if c.wipe or c.drain_now in ('X', 'X2', 'STORM') or c.ritual or any(c.name in cb for cb in P.combo_names):
             return s.ai_score(P, c, turn, post)
         if n in pr: return pr[n]
-        if c.rock or c.ramp_lands: return 110 if n == 'Sol Ring' else (100 if turn <= 5 else 30)
+        if c.rock or c.ramp_lands:
+            if P.cmd_zone and P.pilot.get('commander_first', True) and s.cost(P, P.cmd_card, True) <= s.avail(P) \
+               and s.cost(P, c) + s.cost(P, P.cmd_card, True) > s.avail(P) and n != 'Sol Ring':
+                return 80   # don't let ramp delay a castable commander
+            return 110 if n == 'Sol Ring' else (100 if turn <= 5 else 30)
         if c.free_outlet and not c.is_land: return 90 if not s.my_free_outlet(P) and not P.has('Evolutionary Leap') else 35
         if c.is_creature: return 65 - c.cmc + (5 if any(k in c.kw for k in P.pilot.get('bonus_keywords', [])) else 0)
         if 'as an additional cost to cast this spell, sacrifice' in o:
@@ -1428,6 +1521,9 @@ class Game:
         P.tower_used = False if not post else getattr(P, 'tower_used', False)
         prot = [x for x in P.hand if x.protect]
         hold_hi = min((x.cmc for x in prot), default=0) if prot and len(P.creatures()) >= 3 and turn >= 4 else 0
+        ctr = [x for x in P.hand if x.counter]
+        if ctr and P.pilot.get('hold_counters', True):
+            hold_hi = max(hold_hi, min((s.cost(P, x) if x.counter['cost'] else 0) for x in ctr))
         for _ in range(14):
             if s.over or not P.alive: return
             opts = []

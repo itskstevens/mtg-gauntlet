@@ -1,5 +1,20 @@
-{"Birgi, God of Storytelling": "Harnfel, Horn of Bounty", "Growing Rites of Itlimoc": "Itlimoc, Cradle of the Sun",
- "Journey to Eternity": "Atzal, Cave of Eternity", "Pinnacle Monk": "Mystic Peak", "Sephiroth, Fabled SOLDIER": "Sephiroth, One-Winged Angel",
- "Sink into Stupor": "Soporific Springs", "Urabrask": "The Great Work", "Valakut Awakening": "Valakut Stoneforge",
- "Wandering Archaic": "Explore the Vastlands", "Barkchannel Pathway": "Tidechannel Pathway", "Brightclimb Pathway": "Grimclimb Pathway",
- "Darkbore Pathway": "Slitherbore Pathway", "Riverglide Pathway": "Lavaglide Pathway"}
+{
+ "Birgi, God of Storytelling": "Harnfel, Horn of Bounty",
+ "Growing Rites of Itlimoc": "Itlimoc, Cradle of the Sun",
+ "Journey to Eternity": "Atzal, Cave of Eternity",
+ "Pinnacle Monk": "Mystic Peak",
+ "Sephiroth, Fabled SOLDIER": "Sephiroth, One-Winged Angel",
+ "Sink into Stupor": "Soporific Springs",
+ "Urabrask": "The Great Work",
+ "Valakut Awakening": "Valakut Stoneforge",
+ "Wandering Archaic": "Explore the Vastlands",
+ "Barkchannel Pathway": "Tidechannel Pathway",
+ "Brightclimb Pathway": "Grimclimb Pathway",
+ "Darkbore Pathway": "Slitherbore Pathway",
+ "Riverglide Pathway": "Lavaglide Pathway",
+ "Aclazotz, Deepest Betrayal": "Temple of the Dead",
+ "Fell the Profane": "Fell Mire",
+ "Malakir Rebirth": "Malakir Mire",
+ "Tergrid, God of Fright": "Tergrid's Lantern",
+ "Frolicking Familiar": "Blow Off Steam"
+}

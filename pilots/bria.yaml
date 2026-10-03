@@ -1,0 +1,29 @@
+commander: "Bria, Riptide Rogue"
+eyebrow: "Izzet · Prowess spellslinger · Bracket 3"
+summary: Every noncreature spell gives the whole team +1/+1 (prowess) and makes one creature unblockable. Cast cantrips before combat and swing.
+engine: [Guttersnipe, Young Pyromancer, "Talrand, Sky Summoner", Third Path Iconoclast, Archmage Emeritus, Harmonic Prodigy,
+         "Veyran, Voice of Duality", Storm-Kiln Artist, "Artist's Talent", Sorcerer Class, "Stormchaser's Talent",
+         "Balmor, Battlemage Captain", "Alania, Divergent Storm", Harnesser of Storms, Coruscation Mage, Thousand-Year Storm]
+keep_home: [Guttersnipe, Archmage Emeritus, Harmonic Prodigy, "Veyran, Voice of Duality", Storm-Kiln Artist, "Talrand, Sky Summoner"]
+keep_commander_home: false
+fodder: tokens
+instant_sac_tokens: []
+tutor_targets: []
+priorities:
+  Third Path Iconoclast: 86
+  Young Pyromancer: 85
+  "Talrand, Sky Summoner": 84
+  Guttersnipe: 84
+  Archmage Emeritus: 83
+  "Balmor, Battlemage Captain": 83
+  "Veyran, Voice of Duality": 82
+  Harmonic Prodigy: 82
+  Storm-Kiln Artist: 81
+  Coruscation Mage: 80
+  "Artist's Talent": 78
+  Sorcerer Class: 78
+  "Stormchaser's Talent": 78
+value_bonus: {Guttersnipe: 3, "Talrand, Sky Summoner": 3, "Veyran, Voice of Duality": 4}
+key_cards: ["Bria, Riptide Rogue", Thousand-Year Storm, "Veyran, Voice of Duality", Cyclonic Rift, "Jeska's Will", "Mizzix's Mastery", Blasphemous Act]
+hold_removal_vs_combo: true
+hold_counters: true

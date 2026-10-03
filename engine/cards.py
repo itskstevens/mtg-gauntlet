@@ -373,6 +373,7 @@ def tag(c):
             e = effect(sent)
             if e:
                 scope = 'own' if re.search(r'(you control|your) (dies|creature)', sent) or 'creature you control' in sent else 'any'
+                if "you don't control" in sent or 'an opponent controls' in sent or 'opponents control' in sent: scope = 'opp'
                 if 'whenever ~ dies' in sent or 'when ~ dies' in sent: scope = 'self'
                 if 'nontoken' in sent: e['nontoken'] = True
                 d = c.death_trig or {}; d.update(e); d['scope'] = scope; c.death_trig = d
@@ -409,6 +410,10 @@ def tag(c):
         m = re.search(r'you gain (\d+) life', o)
         if m: c.life_now = int(m.group(1))
     if n == 'Gray Merchant of Asphodel': c.drain_now = 5
+    if n == 'The Meathook Massacre': c.death_trig = dict(drain_each=1, scope='own')   # second trigger (gain 1 on opponents' deaths) dropped
+    if n == 'Toxrill, the Corrosive': c.death_trig = None
+    if n == 'Balmor, Battlemage Captain': c.anthem = 0; c.overrun = None   # handled in engine (pump on instant/sorcery)
+    if n == 'Harnesser of Storms': c.draw_engine = .7   # handled in engine (slime counters, Slugs)
     if n == 'Exsanguinate': c.drain_now = 'X'
     if n == 'Debt to the Deathless': c.drain_now = 'X2'
     if n == 'Torment of Hailfire': c.drain_now = 'TORMENT'

@@ -1,0 +1,26 @@
+commander: "Rankle, Master of Pranks"
+eyebrow: "Mono-black · Symmetric punishers · Bracket 3"
+summary: A 4-mana flying, hasty Faerie that picks any of discard, drain-and-draw, or edict for every player each time it connects. Waste Not, Megrim and tokens make the symmetry lopsided.
+engine: [Bitterblossom, Ophiomancer, Waste Not, Megrim, "Liliana's Caress", Black Market Connections, Phyrexian Arena,
+         "Syr Konrad, the Grim", "Braids, Arisen Nightmare", Crypt Ghast, Sangromancer, Skullclamp,
+         "Sheoldred, the Apocalypse", "Tergrid, God of Fright", Orcish Bowmasters]
+keep_home: [Ophiomancer, "Syr Konrad, the Grim", "Braids, Arisen Nightmare", Crypt Ghast, Sangromancer, Orcish Bowmasters]
+keep_commander_home: false
+fodder: any
+fodder_max_cmc: 2
+instant_sac_tokens: [Snake]
+tutor_targets: []
+priorities:
+  Bitterblossom: 88
+  Waste Not: 86
+  Skullclamp: 85
+  "Sheoldred, the Apocalypse": 85
+  "Tergrid, God of Fright": 84
+  Black Market Connections: 84
+  Phyrexian Arena: 83
+  Megrim: 82
+  "Liliana's Caress": 81
+  Ophiomancer: 80
+value_bonus: {Bitterblossom: 3, Waste Not: 3, Megrim: 3, "Sheoldred, the Apocalypse": 5}
+key_cards: ["Rankle, Master of Pranks", "Sheoldred, the Apocalypse", "Tergrid, God of Fright", Torment of Hailfire, Gray Merchant of Asphodel, Damnation, Toxic Deluge]
+hold_removal_vs_combo: true

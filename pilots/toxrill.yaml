@@ -1,0 +1,26 @@
+commander: "Toxrill, the Corrosive"
+eyebrow: "Dimir · Slime counters · Bracket 3"
+summary: Every end step puts a slime counter (-1/-1) on each opposing creature; slimed deaths make Slugs that draw cards. Control the table, win with drains.
+engine: ["Ayara, First of Locthwain", Blood Artist, Zulaport Cutthroat, "Syr Konrad, the Grim", "Yawgmoth, Thran Physician",
+         Morbid Opportunist, Slaughter Specialist, Mirkwood Bats, "Drivnod, Carnage Dominus", "Gisa, Glorious Resurrector",
+         Rhystic Study, Phyrexian Arena, Black Market, The Meathook Massacre, Skullclamp]
+keep_home: ["Ayara, First of Locthwain", Blood Artist, Zulaport Cutthroat, "Syr Konrad, the Grim", "Yawgmoth, Thran Physician",
+            Morbid Opportunist, "Drivnod, Carnage Dominus", "Gisa, Glorious Resurrector"]
+keep_commander_home: true
+fodder: tokens
+instant_sac_tokens: []
+tutor_targets: [Rhystic Study, Toxic Deluge, Skullclamp, "Syr Konrad, the Grim"]
+priorities:
+  Rhystic Study: 88
+  Phyrexian Arena: 86
+  Skullclamp: 85
+  Black Market: 82
+  "Ayara, First of Locthwain": 80
+  "Syr Konrad, the Grim": 80
+  Blood Artist: 79
+  Zulaport Cutthroat: 79
+  "Yawgmoth, Thran Physician": 78
+  Propaganda: 76
+value_bonus: {Rhystic Study: 4, "Syr Konrad, the Grim": 4, "Yawgmoth, Thran Physician": 4}
+key_cards: ["Toxrill, the Corrosive", Rhystic Study, The Meathook Massacre, Toxic Deluge, "Massacre Girl, Known Killer", Massacre Wurm]
+hold_removal_vs_combo: true

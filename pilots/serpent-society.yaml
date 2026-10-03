@@ -48,4 +48,5 @@ key_cards: [Grave Pact, Dictate of Erebos, Hornet Queen, Triumph of the Hordes, 
             Ophiomancer, "Ashnod's Altar", Skullclamp]
 
 hold_removal_vs_combo: true    # keep instant removal up from turn 4 when a combo deck is in the pod
+commander_first: false         # ramp before the commander (tested: casting the commander first cost ~5 points vs go-wide)
 sac_nontoken: false            # (non-Serpent commanders) allow sacrificing nontoken fodder when payoffs are out
