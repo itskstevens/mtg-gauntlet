@@ -1,0 +1,85 @@
+1 Jhoira, Weatherlight Captain
+1 Aether Spellbomb
+1 Aetherflux Reservoir
+1 Arcane Signet
+1 Cloud Key
+1 Everflowing Chalice
+1 Fellwar Stone
+1 Helm of Awakening
+1 Ichor Wellspring
+1 Izzet Signet
+1 Lightning Greaves
+1 Lotus Petal
+1 Mind Stone
+1 Mishra's Bauble
+1 Mox Amber
+1 Mystic Forge
+1 Pyrite Spellbomb
+1 Semblance Anvil
+1 Sensei's Divining Top
+1 Sol Ring
+1 Spellbook
+1 Springleaf Drum
+1 Swiftfoot Boots
+1 Talisman of Creativity
+1 Thought Vessel
+1 Thran Dynamo
+1 Tormod's Crypt
+1 Urza's Bauble
+1 Uthros Research Craft
+1 Welding Jar
+1 Academy Ruins
+1 Buried Ruin
+1 Cascade Bluffs
+1 Command Tower
+1 Darksteel Citadel
+1 Great Furnace
+1 Inventors' Fair
+10 Island
+7 Mountain
+1 Reliquary Tower
+1 Seat of the Synod
+1 Shivan Reef
+1 Silverbluff Bridge
+1 Spire of Industry
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Training Center
+1 Artificer's Assistant
+1 Birgi, God of Storytelling
+1 Emry, Lurker of the Loch
+1 Enthusiastic Mechanaut
+1 Etherium Sculptor
+1 Foundry Inspector
+1 Jhoira's Familiar
+1 Memnite
+1 Myr Retriever
+1 Ornithopter
+1 Ornithopter of Paradise
+1 Padeem, Consul of Innovation
+1 Phyrexian Metamorph
+1 Psychosis Crawler
+1 Reckless Fireweaver
+1 Riddlesmith
+1 Sai, Master Thopterist
+1 Scrap Trawler
+1 Shimmer Myr
+1 The Reality Chip
+1 Thought Monitor
+1 Urza, Lord High Artificer
+1 Mirrodin Besieged
+1 Teferi's Ageless Insight
+1 An Offer You Can't Refuse
+1 Chaos Warp
+1 Counterspell
+1 Hurkyl's Recall
+1 Negate
+1 Paradoxical Outcome
+1 Rebuild
+1 Retract
+1 Saheeli, Sublime Artificer
+1 Blasphemous Act
+1 Fabricate
+1 Grapeshot
+1 Thoughtcast

@@ -1,0 +1,84 @@
+1 Kykar, Zephyr Awakener
+1 Arcane Signet
+1 Azorius Signet
+1 Fellwar Stone
+1 Panharmonicon
+1 Sapphire Medallion
+1 Sol Ring
+1 Talisman of Progress
+1 Thought Vessel
+1 Wizard's Staff
+1 Adarkar Wastes
+1 Azorius Chancery
+1 Command Tower
+1 Deserted Beach
+1 Exotic Orchard
+1 Flooded Strand
+1 Floodfarm Verge
+1 Glacial Fortress
+1 Hallowed Fountain
+1 Irrigated Farmland
+9 Island
+1 Mystic Sanctuary
+9 Plains
+1 Port Town
+1 Prairie Stream
+1 Reliquary Tower
+1 Sea of Clouds
+1 Skycloud Expanse
+1 Aether Channeler
+1 Archaeomancer
+1 Archive Arbiter
+1 Charming Prince
+1 Cloud of Faeries
+1 Cloudblazer
+1 Deadeye Navigator
+1 Displacer Kitten
+1 Dour Port-Mage
+1 Felidar Guardian
+1 Helpful Hunter
+1 Loran of the Third Path
+1 Mulldrifter
+1 Peregrine Drake
+1 Recruiter of the Guard
+1 Reflector Mage
+1 Skycoach Conductor
+1 Solemn Simulacrum
+1 Soulherder
+1 Spellseeker
+1 Spirited Companion
+1 Wall of Omens
+1 Witch Enchanter
+1 Mystic Remora
+1 Propaganda
+1 Rhystic Study
+1 Smothering Tithe
+1 Teleportation Circle
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Brainstorm
+1 Cloudshift
+1 Consider
+1 Counterspell
+1 Cyclonic Rift
+1 Dovin's Veto
+1 Enlightened Tutor
+1 Ephemerate
+1 Essence Flux
+1 Fierce Guardianship
+1 Ghostly Flicker
+1 Momentary Blink
+1 Mystical Tutor
+1 Opt
+1 Path to Exile
+1 Sink into Stupor
+1 Snap
+1 Swan Song
+1 Swords to Plowshares
+1 Teferi, Time Raveler
+1 Approach of the Second Sun
+1 Austere Command
+1 Farewell
+1 Ponder
+1 Preordain
+1 Supreme Verdict

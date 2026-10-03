@@ -1,0 +1,83 @@
+1 Grolnok, the Omnivore
+1 Arcane Signet
+1 Desecrated Tomb
+1 Hedge Shredder
+1 Lightning Greaves
+1 Mesmeric Orb
+1 Perpetual Timepiece
+1 Simic Signet
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Curiosity
+1 Alchemist's Refuge
+1 Barkchannel Pathway
+1 Breeding Pool
+1 Command Tower
+1 Dreamroot Cascade
+1 Exotic Orchard
+1 Flooded Grove
+10 Forest
+1 Hedge Maze
+1 Hinterland Harbor
+9 Island
+1 Lilypad Village
+1 Oakhollow Village
+1 Path of Ancestry
+1 Rejuvenating Springs
+1 Simic Growth Chamber
+1 Temple of Mystery
+1 Vineglimmer Snarl
+1 Yavimaya Coast
+1 Azusa, Lost but Seeking
+1 Clement, the Worrywort
+1 Clifftop Lookout
+1 Crocanura
+1 Deranged Assistant
+1 Doc Aurlock, Grizzled Genius
+1 Dour Port-Mage
+1 Dreamdew Entrancer
+1 Eternal Witness
+1 Frog Butler
+1 Froghemoth
+1 Haze Frog
+1 Hedron Crab
+1 Jade Avenger
+1 Laboratory Maniac
+1 Lilysplash Mentor
+1 Long River Lurker
+1 Millikin
+1 Murkfiend Liege
+1 Omnibian
+1 Plaxcaster Frogling
+1 Poison Dart Frog
+1 Pollywog Prodigy
+1 Pond Prophet
+1 Rampant Frogantua
+1 Spore Frog
+1 Sunshower Druid
+1 Thassa's Oracle
+1 Three Tree Scribe
+1 Twenty-Toed Toad
+1 Valley Mightcaller
+1 Willow Geist
+1 Amphibian Downpour
+1 Court of Cunning
+1 Crawling Infestation
+1 Crawling Sensation
+1 Exploration
+1 Fraying Sanity
+1 Frogify
+1 Kasmina's Transmutation
+1 Reflections of Littjara
+1 Wild Growth
+1 Counterspell
+1 Otherworldly Gaze
+1 Polliwallop
+1 Polymorphist's Jest
+1 Rapid Hybridization
+1 Turn to Frog
+1 Jace, Wielder of Mysteries
+1 Croaking Counterpart
+1 Cultivate
+1 Cut Your Losses
+1 Traumatize

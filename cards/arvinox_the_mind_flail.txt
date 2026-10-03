@@ -1,0 +1,6 @@
+Name:Arvinox, the Mind Flail
+ManaCost:4 B B B
+Types:Legendary Enchantment Creature Horror
+PT:9/9
+Oracle:Arvinox isn't a creature unless you control three or more permanents you don't own.\nAt the beginning of your end step, exile the bottom card of each opponent's library face down. For as long as those cards remain exiled, you may look at them, you may cast permanent spells from among them.
+# synthetic: built from Scryfall text; Forge has no script yet

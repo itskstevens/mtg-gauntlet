@@ -1,0 +1,84 @@
+1 Talion, the Kindly Lord
+1 Arcane Signet
+1 Dimir Signet
+1 Fellwar Stone
+1 Midnight Clock
+1 Mind Stone
+1 Misleading Signpost
+1 Sapphire Medallion
+1 Sol Ring
+1 Talisman of Dominance
+1 Thought Vessel
+1 Bojuka Bog
+1 Choked Estuary
+1 Clearwater Pathway
+1 Command Tower
+1 Darkwater Catacombs
+1 Drowned Catacomb
+1 Exotic Orchard
+1 Gloomlake Verge
+10 Island
+1 Morphic Pool
+1 Polluted Delta
+1 Reliquary Tower
+1 Secluded Glen
+1 Shipwreck Marsh
+1 Sunken Hollow
+8 Swamp
+1 Tainted Isle
+1 Underground River
+1 Watery Grave
+1 Alela, Cunning Conqueror
+1 Archmage of Echoes
+1 Brazen Borrower
+1 Faerie Bladecrafter
+1 Faerie Mastermind
+1 Glen Elendra Archmage
+1 Glen Elendra Liege
+1 High Fae Trickster
+1 Hullbreaker Horror
+1 Malleable Impostor
+1 Mocking Sprite
+1 Obyra, Dreaming Duelist
+1 Phyrexian Metamorph
+1 Rankle, Master of Pranks
+1 Sakashima of a Thousand Faces
+1 Sakashima the Impostor
+1 Scion of Oona
+1 Sheoldred, the Apocalypse
+1 Sower of Temptation
+1 Spark Double
+1 Spellstutter Sprite
+1 Tegwyll, Duke of Splendor
+1 Bitterblossom
+1 Bloodchief Ascension
+1 Kindred Discovery
+1 Mystic Remora
+1 Propaganda
+1 Reflections of Littjara
+1 Rhystic Study
+1 Aetherize
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Brainstorm
+1 Counterspell
+1 Cyclonic Rift
+1 Dark Ritual
+1 Deadly Rollick
+1 Fell the Profane
+1 Frantic Search
+1 Mana Drain
+1 Negate
+1 Reality Shift
+1 Sink into Stupor
+1 Snap
+1 Spell Stutter
+1 Swan Song
+1 Distant Melody
+1 Feed the Swarm
+1 Irenicus's Vile Duplication
+1 Kindred Dominance
+1 Quantum Misalignment
+1 Reanimate
+1 Toxic Deluge
+1 Windfall

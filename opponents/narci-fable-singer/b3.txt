@@ -1,0 +1,89 @@
+1 Narci, Fable Singer
+1 Arcane Signet
+1 Power Conduit
+1 Sol Ring
+1 Bountiful Promenade
+1 Canopy Vista
+1 Caves of Koilos
+1 Command Tower
+1 Exotic Orchard
+5 Forest
+1 Godless Shrine
+1 Hall of Heliod's Generosity
+1 Indatha Triome
+1 Isolated Chapel
+1 Karn's Bastion
+1 Marsh Flats
+1 Nesting Grounds
+1 Overgrown Tomb
+5 Plains
+1 Reliquary Tower
+1 Sandsteppe Citadel
+1 Sunpetal Grove
+4 Swamp
+1 Temple Garden
+1 Undergrowth Stadium
+1 Vault of Champions
+1 Verdant Catacombs
+1 Windswept Heath
+1 Woodland Cemetery
+1 Anikthea, Hand of Erebos
+1 Barbara Wright
+1 Composer of Spring
+1 Demon of Fate's Design
+1 Destiny Spinner
+1 Eidolon of Blossoms
+1 Herald of the Pantheon
+1 Jukai Naturalist
+1 Mesa Enchantress
+1 Ondu Spiritdancer
+1 Sanctum Weaver
+1 Satsuki, the Living Lore
+1 Satyr Enchanter
+1 Setessan Champion
+1 Starfield Mystic
+1 Summon: Bahamut
+1 Summon: Fenrir
+1 Summon: Knights of Round
+1 Summon: Primal Odin
+1 Summon: Yojimbo
+1 Sythis, Harvest's Hand
+1 Verduran Enchantress
+1 Weaver of Harmony
+1 Yenna, Redtooth Regent
+1 Battle at the Helvault
+1 Binding the Old Gods
+1 Elspeth Conquers Death
+1 Elspeth's Nightmare
+1 Enchantress's Presence
+1 Firja's Retribution
+1 Font of Fertility
+1 Historian's Boon
+1 Love Song of Night and Day
+1 Seal of Cleansing
+1 Seal of Primordium
+1 Sigil of the Empty Throne
+1 Song of Freyalise
+1 Sphere of Safety
+1 Starfield of Nyx
+1 Sterling Grove
+1 Tale of Tinúviel
+1 The Birth of Meletis
+1 The Creation of Avacyn
+1 The Cruelty of Gix
+1 The Eldest Reborn
+1 The First Iroan Games
+1 The Mending of Dominaria
+1 The Weatherseed Treaty
+1 The World Spell
+1 War of the Last Alliance
+1 Enlightened Tutor
+1 Heroic Intervention
+1 Path to Exile
+1 Swords to Plowshares
+1 Cultivate
+1 Eerie Ultimatum
+1 Farseek
+1 Nature's Lore
+1 Replenish
+1 Resurgent Belief

@@ -1,0 +1,79 @@
+1 Braids, Cabal Minion
+1 Arcane Signet
+1 Bolas's Citadel
+1 Chrome Mox
+1 Crucible of Worlds
+1 Ichor Wellspring
+1 Jet Medallion
+1 Lightning Greaves
+1 Lotus Petal
+1 Mana Vault
+1 Mind Stone
+1 Skullclamp
+1 Smokestack
+1 Sol Ring
+1 The One Ring
+1 The Soul Stone
+1 Ancient Tomb
+1 Bojuka Bog
+1 Cabal Coffers
+1 Castle Locthwain
+1 Drownyard Temple
+1 Eumidian Hatchery
+1 Gods' Eye, Gate to the Reikai
+1 Nykthos, Shrine to Nyx
+1 Phyrexian Tower
+1 Strip Mine
+22 Swamp
+1 Urborg, Tomb of Yawgmoth
+1 Wasteland
+1 Accursed Marauder
+1 Blood Artist
+1 Blood Pet
+1 Bloodghast
+1 Braids, Arisen Nightmare
+1 Crypt Ghast
+1 Dauthi Voidwalker
+1 Gray Merchant of Asphodel
+1 Greedy Freebooter
+1 Jadar, Ghoulcaller of Nephalia
+1 Lord Skitter, Sewer King
+1 Morbid Opportunist
+1 Nether Traitor
+1 Ophiomancer
+1 Opposition Agent
+1 Orcish Bowmasters
+1 Pitiless Plunderer
+1 Reassembling Skeleton
+1 Sheoldred, the Apocalypse
+1 Tergrid, God of Fright
+1 Zulaport Cutthroat
+1 Animate Dead
+1 Bitterblossom
+1 Black Market Connections
+1 Contamination
+1 Dreadhorde Invasion
+1 Grave Pact
+1 Necropotence
+1 Oppression
+1 Phyrexian Arena
+1 Cabal Ritual
+1 Culling the Weak
+1 Dark Ritual
+1 Deadly Rollick
+1 Fell the Profane
+1 Imp's Mischief
+1 Malakir Rebirth
+1 Snuff Out
+1 Vampiric Tutor
+1 Professor Onyx
+1 Damnation
+1 Demonic Tutor
+1 Diabolic Intent
+1 Feed the Swarm
+1 Imperial Seal
+1 Pox
+1 Reanimate
+1 Sign in Blood
+1 Smallpox
+1 Toxic Deluge

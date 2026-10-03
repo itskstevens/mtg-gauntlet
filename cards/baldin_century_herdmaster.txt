@@ -1,0 +1,6 @@
+Name:Baldin, Century Herdmaster
+ManaCost:4 W W
+Types:Legendary Creature Human Warrior
+PT:0/7
+Oracle:During your turn, each creature assigns combat damage equal to its toughness rather than its power.\nWhenever Baldin attacks, up to one hundred target creatures each get +0/+X until end of turn, where X is the number of cards in your hand.
+# synthetic: built from Scryfall text; Forge has no script yet

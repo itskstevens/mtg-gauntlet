@@ -1,0 +1,88 @@
+1 Zur the Enchanter
+1 Arcane Signet
+1 Azorius Signet
+1 Dimir Signet
+1 Fellwar Stone
+1 Orzhov Signet
+1 Sol Ring
+1 Talisman of Dominance
+1 Talisman of Hierarchy
+1 Talisman of Progress
+1 Adarkar Wastes
+1 Arcane Sanctum
+1 Caves of Koilos
+1 Command Tower
+1 Drowned Catacomb
+1 Exotic Orchard
+1 Flooded Strand
+1 Glacial Fortress
+1 Godless Shrine
+1 Hall of Heliod's Generosity
+1 Hallowed Fountain
+6 Island
+1 Isolated Chapel
+1 Marsh Flats
+5 Plains
+1 Polluted Delta
+1 Prairie Stream
+1 Raffine's Tower
+1 Reliquary Tower
+1 Sea of Clouds
+1 Sunken Hollow
+4 Swamp
+1 Underground River
+1 Watery Grave
+1 Aegis of the Gods
+1 Archon of Sun's Grace
+1 Auramancer
+1 Delney, Streetwise Lookout
+1 Eidolon of Rhetoric
+1 Entity Tracker
+1 Esper Sentinel
+1 Grand Abolisher
+1 Grim Guardian
+1 Hanna, Ship's Navigator
+1 Inquisitive Glimmer
+1 Mesa Enchantress
+1 Ondu Spiritdancer
+1 Starfield Mystic
+1 Sun Titan
+1 All That Glitters
+1 Aura of Silence
+1 Blind Obedience
+1 Copy Enchantment
+1 Curator's Ward
+1 Darksteel Mutation
+1 Diplomatic Immunity
+1 Estrid's Invocation
+1 Ethereal Armor
+1 Ghostly Prison
+1 Grasp of Fate
+1 Greater Auramancy
+1 Imprisoned in the Moon
+1 Mirrormade
+1 Mystic Remora
+1 Phyrexian Arena
+1 Phyrexian Unlife
+1 Propaganda
+1 Rest in Peace
+1 Rhystic Study
+1 Rule of Law
+1 Solemnity
+1 Steel of the Godhead
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Brainstorm
+1 Counterspell
+1 Dark Ritual
+1 Dovin's Veto
+1 Negate
+1 Path to Exile
+1 Swan Song
+1 Swords to Plowshares
+1 Void Rend
+1 Damn
+1 Resurgent Belief
+1 Supreme Verdict
+1 Toxic Deluge
+1 Winds of Rath

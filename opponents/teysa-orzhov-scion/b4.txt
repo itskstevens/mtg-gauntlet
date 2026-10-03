@@ -1,0 +1,87 @@
+1 Teysa, Orzhov Scion
+1 Altar of Dementia
+1 Arcane Signet
+1 Ashnod's Altar
+1 Blasting Station
+1 Bolas's Citadel
+1 Orzhov Signet
+1 Phyrexian Altar
+1 Skullclamp
+1 Sol Ring
+1 Talisman of Hierarchy
+1 Bleachbone Verge
+1 Bojuka Bog
+1 Brightclimb Pathway
+1 Caves of Koilos
+1 Command Tower
+1 Concealed Courtyard
+1 Fetid Heath
+1 Godless Shrine
+1 Isolated Chapel
+1 Marsh Flats
+1 Phyrexian Tower
+7 Plains
+1 Scrubland
+1 Shadowy Backstreet
+1 Shattered Sanctum
+1 Shineshadow Snarl
+1 Silent Clearing
+8 Swamp
+1 Tainted Field
+1 Urborg, Tomb of Yawgmoth
+1 Vault of Champions
+1 Blood Artist
+1 Bloodghast
+1 Braids, Arisen Nightmare
+1 Carrion Feeder
+1 Cruel Celebrant
+1 Elas il-Kor, Sadistic Pilgrim
+1 Elenda, the Dusk Rose
+1 Esper Sentinel
+1 Grand Abolisher
+1 Kambal, Profiteering Mayor
+1 Lotho, Corrupt Shirriff
+1 Marionette Apprentice
+1 Mirkwood Bats
+1 Mondrak, Glory Dominus
+1 Morbid Opportunist
+1 Nether Traitor
+1 Ophiomancer
+1 Orcish Bowmasters
+1 Painter's Servant
+1 Pitiless Plunderer
+1 Reassembling Skeleton
+1 Sephiroth, Fabled SOLDIER
+1 Teysa Karlov
+1 The Queen of Dale
+1 Umbral Collar Zealot
+1 Viscera Seer
+1 Warren Soultrader
+1 Yawgmoth, Thran Physician
+1 Zulaport Cutthroat
+1 Anointed Procession
+1 Bastion of Remembrance
+1 Bitterblossom
+1 Darkest Hour
+1 Grave Pact
+1 Necropotence
+1 Smothering Tithe
+1 The Meathook Massacre
+1 Anguished Unmaking
+1 Culling the Weak
+1 Dark Ritual
+1 Enlightened Tutor
+1 Path to Exile
+1 Silence
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Vampiric Tutor
+1 Village Rites
+1 Liliana, Dreadhorde General
+1 Damn
+1 Demonic Tutor
+1 Diabolic Intent
+1 Grim Tutor
+1 Reanimate
+1 Toxic Deluge
+1 Victimize

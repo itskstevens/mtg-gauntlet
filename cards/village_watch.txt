@@ -1,0 +1,7 @@
+Name:Village Watch
+ManaCost:4 R
+Types:Creature Human Werewolf
+PT:4/3
+K:Haste
+Oracle:Haste
+# synthetic: built from Scryfall text; Forge has no script yet

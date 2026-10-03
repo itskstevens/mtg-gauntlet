@@ -1,0 +1,5 @@
+Name:Wibbly-wobbly, Timey-wimey
+ManaCost:1 U
+Types:Sorcery
+Oracle:Time travel.\nDraw a card.
+# synthetic: built from Scryfall text; Forge has no script yet

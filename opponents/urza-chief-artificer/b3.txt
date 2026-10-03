@@ -1,0 +1,92 @@
+1 Urza, Chief Artificer
+1 Arcane Signet
+1 Azorius Signet
+1 Bident of Thassa
+1 Cranial Plating
+1 Dimir Signet
+1 Mystic Forge
+1 Orzhov Signet
+1 Simulacrum Synthesizer
+1 Skullclamp
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Dominance
+1 Talisman of Progress
+1 Thought Vessel
+1 Thousand Moons Smithy
+1 Unwinding Clock
+1 Academy Ruins
+1 Ancient Den
+1 Arcane Sanctum
+1 Bojuka Bog
+1 Command Tower
+1 Darksteel Citadel
+1 Exotic Orchard
+1 Flooded Strand
+1 Godless Shrine
+1 Goldmire Bridge
+1 Hallowed Fountain
+1 Inventors' Fair
+5 Island
+1 Mistvault Bridge
+1 Path of Ancestry
+3 Plains
+1 Polluted Delta
+1 Prairie Stream
+1 Raffine's Tower
+1 Razortide Bridge
+1 Seat of the Synod
+1 Spire of Industry
+1 Sunken Hollow
+3 Swamp
+1 Urza's Saga
+1 Uthros, Titanic Godcore
+1 Vault of Whispers
+1 Watery Grave
+1 Baleful Strix
+1 Bronze Guardian
+1 Chief of the Foundry
+1 Cyberdrive Awakener
+1 Cybermen Squadron
+1 Digsite Engineer
+1 Emry, Lurker of the Loch
+1 Esper Sentinel
+1 Etherium Sculptor
+1 Foundry Inspector
+1 Gold Myr
+1 Illustrious Wanderglyph
+1 Kappa Cannoneer
+1 Leaden Myr
+1 Liberator, Urza's Battlethopter
+1 Losheel, Clockwork Scholar
+1 Master of Etherium
+1 Myr Battlesphere
+1 Ornithopter of Paradise
+1 Padeem, Consul of Innovation
+1 Phyrexian Metamorph
+1 Sai, Master Thopterist
+1 Sharding Sphinx
+1 Silver Myr
+1 Solemn Simulacrum
+1 Steel Overseer
+1 Thought Monitor
+1 Urza, Lord High Artificer
+1 Urza, Prince of Kroog
+1 Mirrodin Besieged
+1 Smothering Tithe
+1 Tempered Steel
+1 Thopter Spy Network
+1 An Offer You Can't Refuse
+1 Counterspell
+1 Despark
+1 Dispatch
+1 Path to Exile
+1 Swords to Plowshares
+1 Unbreakable Formation
+1 Void Rend
+1 Tezzeret, Master of the Bridge
+1 March of Progress
+1 One with the Machine
+1 Organic Extinction
+1 Thoughtcast
+1 Vindicate

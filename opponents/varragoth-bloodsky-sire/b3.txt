@@ -1,0 +1,67 @@
+1 Varragoth, Bloodsky Sire
+1 Arcane Signet
+1 Bolas's Citadel
+1 Bontu's Monument
+1 Caged Sun
+1 Charcoal Diamond
+1 Expedition Map
+1 Jet Medallion
+1 Lightning Greaves
+1 Mind Stone
+1 Sol Ring
+1 Swiftfoot Boots
+1 Thought Vessel
+1 Whispersilk Cloak
+1 Bojuka Bog
+1 Cabal Coffers
+1 Cabal Stronghold
+1 Nykthos, Shrine to Nyx
+1 Reliquary Tower
+1 Rogue's Passage
+34 Swamp
+1 Urborg, Tomb of Yawgmoth
+1 Abyssal Harvester
+1 Archfiend of Depravity
+1 Bloodgift Demon
+1 Bloodletter of Aclazotz
+1 Burning-Rune Demon
+1 Crypt Ghast
+1 Desecration Demon
+1 Dream Devourer
+1 Gray Merchant of Asphodel
+1 Harvester of Souls
+1 Indulgent Tormentor
+1 K'rrik, Son of Yawgmoth
+1 Lord of the Void
+1 Magus of the Coffers
+1 Ob Nixilis, Unshackled
+1 Reaper from the Abyss
+1 Rune-Scarred Demon
+1 Solemn Simulacrum
+1 Sower of Discord
+1 Valgavoth, Terror Eater
+1 Vilis, Broker of Blood
+1 Animate Dead
+1 Black Market
+1 Liliana's Contract
+1 Phyrexian Arena
+1 Unholy Annex // Ritual Chamber
+1 Cabal Ritual
+1 Dark Ritual
+1 Defile
+1 Go for the Throat
+1 Imp's Mischief
+1 Infernal Grasp
+1 Vampiric Tutor
+1 Withering Torment
+1 Liliana of the Dark Realms
+1 Bubbling Muck
+1 Damnation
+1 Demonic Counsel
+1 Demonic Tutor
+1 Exsanguinate
+1 Feed the Swarm
+1 Night's Whisper
+1 Reanimate
+1 Sign in Blood
+1 Toxic Deluge

@@ -1,0 +1,88 @@
+1 Chief of the Wilds
+1 Arcane Signet
+1 Chronicle of Victory
+1 Herald's Horn
+1 Maskwood Nexus
+1 Patchwork Banner
+1 Sol Ring
+1 The Earth Crystal
+1 The One Ring
+1 Wolfrider's Saddle
+1 Ancient Tomb
+1 Bayou
+1 Bojuka Bog
+1 Boseiju, Who Endures
+1 Cavern of Souls
+1 Command Tower
+1 Deathcap Glade
+9 Forest
+1 Llanowar Wastes
+1 Overgrown Tomb
+1 Reliquary Tower
+5 Swamp
+1 Three Tree City
+1 Turbulent Fen
+1 Underground Mortuary
+1 Undergrowth Stadium
+1 Urborg, Tomb of Yawgmoth
+1 Verdant Catacombs
+1 Vernal Fen
+1 Wastewood Verge
+1 Woodland Cemetery
+1 Yavimaya, Cradle of Growth
+1 Invasion of Ikoria
+1 Anara, Wolvid Familiar
+1 Ascendant Packleader
+1 Beast Whisperer
+1 Bejeweled Warg
+1 Cemetery Prowler
+1 Chief Warg's Company
+1 Craterhoof Behemoth
+1 Edgar, Moonlit Sovereign
+1 Ferocious Pup
+1 Head of the Hunt
+1 Hollowhenge Overlord
+1 Master of the Wild Hunt
+1 Nightpack Ambusher
+1 Packsong Pup
+1 Primal Witchstalker
+1 Realmwalker
+1 Rhovanion Rampager
+1 Roaming Throne
+1 Sarulf, Realm Eater
+1 Silverfur Partisan
+1 Summon: Fenrir
+1 The Chief Warg
+1 Torgal, A Fine Hound
+1 Wilderland Scrounger
+1 Wolfbriar Elemental
+1 Wolfir Silverheart
+1 Young Wolf
+1 Beastmaster Ascension
+1 Doubling Season
+1 Garruk's Uprising
+1 Hardened Scales
+1 Howling Moon
+1 Howlpack Resurgence
+1 Tribute to the World Tree
+1 Unnatural Growth
+1 Wolfcaller's Howl
+1 Assassin's Trophy
+1 Beast Within
+1 Deadly Rollick
+1 Heroic Intervention
+1 Moonlight Hunt
+1 Return of the Wildspeaker
+1 Tear Asunder
+1 Vampiric Tutor
+1 Worldly Tutor
+1 Arlinn, Voice of the Pack
+1 Garruk, Cursed Huntsman
+1 Cultivate
+1 Demonic Tutor
+1 Howl of the Night Pack
+1 Kindred Dominance
+1 Kodama's Reach
+1 Nature's Lore
+1 Toxic Deluge
+1 Triumph of the Hordes

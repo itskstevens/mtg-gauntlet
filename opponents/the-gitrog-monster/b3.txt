@@ -1,0 +1,84 @@
+1 The Gitrog Monster
+1 Arcane Signet
+1 Conduit of Worlds
+1 Crucible of Worlds
+1 Sol Ring
+1 Zuran Orb
+1 Barren Moor
+1 Bojuka Bog
+1 Boseiju, Who Endures
+1 Command Tower
+1 Dakmor Salvage
+1 Evolving Wilds
+1 Fabled Passage
+1 Field of the Dead
+10 Forest
+1 Golgari Rot Farm
+1 Llanowar Wastes
+1 Lotus Field
+1 Nurturing Peatland
+1 Overgrown Tomb
+1 Shifting Woodland
+8 Swamp
+1 Terramorphic Expanse
+1 Tranquil Thicket
+1 Twilight Mire
+1 Underground Mortuary
+1 Undergrowth Stadium
+1 Urborg, Tomb of Yawgmoth
+1 Verdant Catacombs
+1 Woodland Cemetery
+1 Yavimaya, Cradle of Growth
+1 Aftermath Analyst
+1 Ancient Greenwarden
+1 Avenger of Zendikar
+1 Azusa, Lost but Seeking
+1 Birds of Paradise
+1 Deathrite Shaman
+1 Dryad of the Ilysian Grove
+1 Eternal Witness
+1 Golgari Grave-Troll
+1 Icetill Explorer
+1 Llanowar Elves
+1 Lotus Cobra
+1 Lumra, Bellow of the Woods
+1 Mole Man, Moloid Master
+1 Noose Constrictor
+1 Ob Nixilis, the Fallen
+1 Oracle of Mul Daya
+1 Rampaging Baloths
+1 Ramunap Excavator
+1 Scute Swarm
+1 Six
+1 Springbloom Druid
+1 Sylvan Safekeeper
+1 Tireless Provisioner
+1 Titania, Protector of Argoth
+1 World Shaper
+1 Exploration
+1 Oblivion Crown
+1 Retreat to Hagra
+1 Spelunking
+1 Walk-In Closet // Forgotten Cellar
+1 Abrupt Decay
+1 Assassin's Trophy
+1 Beast Within
+1 Constant Mists
+1 Crop Rotation
+1 Dark Ritual
+1 Entish Restoration
+1 Grisly Salvage
+1 Harrow
+1 Putrefy
+1 Nissa of Shadowed Boughs
+1 Culling Ritual
+1 Cultivate
+1 Kodama's Reach
+1 Life from the Loam
+1 Nature's Lore
+1 Rampant Growth
+1 Scapeshift
+1 Splendid Reclamation
+1 Sylvan Scrying
+1 Three Visits
+1 Toxic Deluge

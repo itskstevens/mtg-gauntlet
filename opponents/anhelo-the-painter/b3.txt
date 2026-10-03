@@ -1,0 +1,90 @@
+1 Anhelo, the Painter
+1 Arcane Signet
+1 Dimir Signet
+1 Fellwar Stone
+1 Izzet Signet
+1 Rakdos Signet
+1 Sol Ring
+1 Talisman of Creativity
+1 Twinning Staff
+1 Blood Crypt
+1 Bloodstained Mire
+1 Cascade Bluffs
+1 Command Tower
+1 Crumbling Necropolis
+1 Darkwater Catacombs
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Exotic Orchard
+5 Island
+1 Maestros Theater
+4 Mountain
+1 Polluted Delta
+1 Shadowblood Ridge
+1 Shipwreck Marsh
+1 Shivan Reef
+1 Smoldering Marsh
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Sunken Hollow
+4 Swamp
+1 Training Center
+1 Watery Grave
+1 Xander's Lounge
+1 Archmage Emeritus
+1 Baral and Kari Zev
+1 Bloodghast
+1 Cormela, Glamour Thief
+1 Deekah, Fractal Theorist
+1 Dogged Detective
+1 Dualcaster Mage
+1 Goblin Electromancer
+1 Jadar, Ghoulcaller of Nephalia
+1 Judith, Carnage Connoisseur
+1 Kess, Dissident Mage
+1 Lagomos, Hand of Hatred
+1 Lier, Disciple of the Drowned
+1 Poppet Stitcher
+1 Sinister Concierge
+1 Storm-Kiln Artist
+1 Talrand, Sky Summoner
+1 Thunderclap Drake
+1 Cryptic Pursuit
+1 Double Vision
+1 Ghoulish Procession
+1 Metallurgic Summonings
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Bedevil
+1 Big Score
+1 Brainstorm
+1 Chaos Warp
+1 Counterspell
+1 Dark Ritual
+1 Dig Through Time
+1 Fact or Fiction
+1 Frantic Search
+1 Maestros Charm
+1 Mystic Confluence
+1 Rakdos Charm
+1 Thrill of Possibility
+1 Tragic Slip
+1 Unexpected Windfall
+1 Ral, Storm Conduit
+1 Army of the Damned
+1 Blasphemous Act
+1 Brass's Bounty
+1 Crackle with Power
+1 Cruel Ultimatum
+1 Exsanguinate
+1 Feed the Swarm
+1 Jeska's Will
+1 Make an Example
+1 Mana Geyser
+1 Pirate's Pillage
+1 Ponder
+1 Preordain
+1 River's Rebuke
+1 Syphon Mind
+1 Torment of Hailfire

@@ -1,0 +1,93 @@
+1 Fire Lord Azula
+1 Arcane Signet
+1 Fellwar Stone
+1 Izzet Signet
+1 Lightning Greaves
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Creativity
+1 Talisman of Dominance
+1 Talisman of Indulgence
+1 Twinning Staff
+1 Blood Crypt
+1 Bloodstained Mire
+1 Command Tower
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Emergence Zone
+1 Exotic Orchard
+1 Fire Nation Palace
+3 Island
+1 Luxury Suite
+1 Morphic Pool
+4 Mountain
+1 Polluted Delta
+1 Reliquary Tower
+1 Scalding Tarn
+1 Shivan Reef
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Sulfurous Springs
+3 Swamp
+1 Training Center
+1 Underground River
+1 Watery Grave
+1 Xander's Lounge
+1 Archmage Emeritus
+1 Ashling, Flame Dancer
+1 Birgi, God of Storytelling
+1 Dualcaster Mage
+1 Electro, Assaulting Battery
+1 Faerie Mastermind
+1 Hexing Squelcher
+1 High Fae Trickster
+1 Nightscape Familiar
+1 Orcish Bowmasters
+1 Ozai, the Phoenix King
+1 Snapcaster Mage
+1 Storm-Kiln Artist
+1 Valley Floodcaller
+1 Veyran, Voice of Duality
+1 Vivi Ornitier
+1 Leyline of Anticipation
+1 Mystic Remora
+1 Rhystic Study
+1 Underworld Breach
+1 An Offer You Can't Refuse
+1 Big Score
+1 Borne Upon a Wind
+1 Brainstorm
+1 Counterspell
+1 Cyclonic Rift
+1 Dark Ritual
+1 Deadly Rollick
+1 Deflecting Swat
+1 Demand Answers
+1 Desperate Ritual
+1 Electrodominance
+1 Fierce Guardianship
+1 Flashback
+1 Frantic Search
+1 Invoke Calamity
+1 Lightning Bolt
+1 Mystical Tutor
+1 Narset's Reversal
+1 Pyretic Ritual
+1 Redirect Lightning
+1 Reiterate
+1 Seething Song
+1 Snap
+1 Swan Song
+1 The Last Agni Kai
+1 Thrill of Possibility
+1 Unexpected Windfall
+1 Vampiric Tutor
+1 Waterlogged Teachings
+1 Blasphemous Act
+1 Crackle with Power
+1 Demonic Tutor
+1 Gamble
+1 Jeska's Will
+1 Mana Geyser
+1 Sozin's Comet

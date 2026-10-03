@@ -16,7 +16,7 @@ def load_list(path):
         out += [n] * int(q)
     return out
 
-def load_cfg(): return yaml.safe_load(open(p('gauntlets.yaml')))
+def load_cfg(): return yaml.safe_load(open(p(os.environ.get('GAUNTLET_CFG', 'gauntlets.yaml'))))
 
 def load_pilot(slug):
     f = p('pilots', slug + '.yaml')
@@ -24,11 +24,25 @@ def load_pilot(slug):
 
 def opp_meta(key): return yaml.safe_load(open(p('opponents', key, 'meta.yaml')))
 
-def specs_for(cfg, category, my_deck, pilot, rng, brackets):
+def category_decks(cfg, category):
+    """Every deck a category can field, as [{key, archetype}]. Pooled categories use the deck key as its archetype
+    label so per-opponent results stay separate."""
+    c = cfg['categories'][category]
+    if isinstance(c, dict): return [dict(key=k, archetype=k) for k in c['pool']]
+    return c
+
+def pick_opps(cfg, category, rng):
+    """The opponents for one series: a fixed category returns its decks; a pooled one samples `pod` of them."""
+    c = cfg['categories'][category]
+    if isinstance(c, dict):
+        return [dict(key=k, archetype=k) for k in rng.sample(c['pool'], min(c.get('pod', 3), len(c['pool'])))]
+    return c
+
+def specs_for(cfg, category, my_deck, pilot, rng, brackets, opps=None):
     sp = [('You', my_deck, True, 'me', 0, pilot)]
-    for d, b in zip(cfg['categories'][category], brackets):
+    for d, b in zip(opps or cfg['categories'][category], brackets):
         m = opp_meta(d['key'])
-        sp.append((f"{m['commander'].split(',')[0]} ({d['archetype']}, B{b})", load_list(p('opponents', d['key'], f'b{b}.txt')),
+        sp.append((f"{m['commander'].split(',')[0].split(' // ')[0]} ({d['archetype']}, B{b})", load_list(p('opponents', d['key'], f'b{b}.txt')),
                    False, d['archetype'], b, None))
     return sp
 
@@ -40,11 +54,12 @@ def run_category(args):
     games, series_res, samples = [], [], []
     br_choices = cfg['defaults'].get('brackets', [3, 4])
     for sid in range(n_series):
-        br = [rng.choice(br_choices) for _ in cfg['categories'][category]]
+        opps = pick_opps(cfg, category, rng)
+        br = [rng.choice(br_choices) for _ in opps]
         w = l = 0; gno = 0
         while w < 2 and l < 2:
             gno += 1
-            sp = specs_for(cfg, category, my_deck, pilot, rng, br)
+            sp = specs_for(cfg, category, my_deck, pilot, rng, br, opps)
             log = sid < logged
             g = E.Game(sp, rng, log=log, max_rounds=max_rounds)
             winner = g.play()
@@ -70,7 +85,7 @@ def run_category(args):
             games.append(rec)
             if log and len(samples) < 3:
                 samples.append(dict(won=won, rounds=g.round, players=[x.label for x in g.players], events=g.events[:500]))
-        series_res.append(dict(series=sid, brackets=br, won=w >= 2, score=f'{w}-{l}'))
+        series_res.append(dict(series=sid, brackets=br, opps=[d['key'] for d in opps], won=w >= 2, score=f'{w}-{l}'))
     return category, dict(games=games, series=series_res, samples=samples)
 
 def run(deck_path, pilot, n_series=None, categories=None, jobs=2, seed_base=100, logged=3):
@@ -125,16 +140,17 @@ def analyze(res, cfg, pilot):
                     if k.startswith(prefix): c[k[len(prefix):]] += v
             return c.most_common(4)
         opps = []
-        for dk in cfg['categories'][cat]:
+        for dk in category_decks(cfg, cat):
             arch = dk['archetype']; m = opp_meta(dk['key'])
             rows = [(g, o) for g in G for o in g['opp'] if o['arch'] == arch]
+            if not rows: continue
             hk = collections.Counter((g['my_death'][0].replace('combo: ', '') if g['my_death'][0].startswith('combo') else cause(g['my_death'][0]))
                                      for g, o in rows if g['my_death'] and g['my_death'][1] == arch)
             lw = [o for g, o in rows if not g['won']]; ww = [o for g, o in rows if g['won']]
             cl = collections.Counter(c for o in lw for c in o['cast']); cw = collections.Counter(c for o in ww for c in o['cast'])
             lift = sorted(((cl[c] / max(1, len(lw)) - cw[c] / max(1, len(ww)), c) for c in cl if cl[c] >= 6), reverse=True)
             mv = lambda b: round(100 * st.mean([g['won'] for g, o in rows if o['bracket'] == b] or [0]), 1)
-            opps.append(dict(cmd=m['commander'], arch=arch, key=dk['key'], link=m['source']['b3'].rsplit('/', 1)[0],
+            opps.append(dict(cmd=m['commander'], arch=m.get('tag', arch) if arch == dk['key'] else arch, key=dk['key'], games=len(rows), link=m['source']['b3'].rsplit('/', 1)[0],
                              fetched=m.get('fetched'),
                              win_share=round(100 * st.mean(o['won'] for g, o in rows), 1),
                              killed_me=round(100 * sum(1 for g, o in rows if g['my_death'] and g['my_death'][1] == arch) / len(rows), 1),
@@ -150,6 +166,7 @@ def analyze(res, cfg, pilot):
         att = sum(h['attacks_at_me'] for h in health); tot = sum(h['attacks_total'] for h in health)
         seat = collections.defaultdict(list)
         for g in G: seat[g['seat']].append(g['won'])
+        opps.sort(key=lambda o: -o['killed_me'])
         groups.append(dict(name=cat, slug=re.sub(r'[^a-z]+', '-', cat.lower()).strip('-'), games=n, series=len(S),
             series_win=round(100 * st.mean(s['won'] for s in S), 1), game_win=round(100 * st.mean(g['won'] for g in G), 1),
             avg_place=round(st.mean(g['place'] for g in G), 2), avg_rounds=round(st.mean(g['rounds'] for g in G), 1),
@@ -173,7 +190,7 @@ def key_lines(ev, pilot):
         mine = e.startswith(e.split(' ')[0] + ' You ')
         if any(k in e for k in ('WIPE', 'OVERRUN', 'INFECT ALPHA', 'counters', 'breaks', 'eliminated', 'wins via', 'Golgari Charm', 'Bojuka', 'protects', 'Lathril drains', 'Jin-Gitaxias')) \
            or (mine and ' casts ' in e and any(k and k in e for k in keys)):
-            e = re.sub(r' \(([A-Za-z ]+), B\d\)', '', e).replace("You's", 'your')
+            e = re.sub(r' \(([^()]+), B\d\)', '', e).replace("You's", 'your')
             out.append(e)
     return out[:28]
 

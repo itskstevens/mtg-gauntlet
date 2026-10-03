@@ -1,0 +1,84 @@
+1 Gev, Scaled Scorch
+1 Altar of Dementia
+1 Arcane Signet
+1 Ashnod's Altar
+1 Blasting Station
+1 Bontu's Monument
+1 Fellwar Stone
+1 Phyrexian Altar
+1 Rakdos Signet
+1 Sol Ring
+1 Talisman of Indulgence
+1 Blazemire Verge
+1 Blood Crypt
+1 Bloodstained Mire
+1 Bojuka Bog
+1 Command Tower
+1 Dragonskull Summit
+1 Exotic Orchard
+1 Foreboding Ruins
+1 Haunted Ridge
+1 Jagged Barrens
+1 Luxury Suite
+1 Mount Doom
+10 Mountain
+1 Mudflat Village
+1 Smoldering Marsh
+1 Sulfurous Springs
+8 Swamp
+1 Tainted Peak
+1 Agate Instigator
+1 Agate-Blade Assassin
+1 Blood Artist
+1 Carrion Feeder
+1 Fireglass Mentor
+1 Flamecache Gecko
+1 Hearthborn Battler
+1 Hired Claw
+1 Hissing Iguanar
+1 Immolation Shaman
+1 Iridescent Vinelasher
+1 Laughing Jasper Flint
+1 Lesser Masticore
+1 Lingering Tormentor
+1 Magebane Lizard
+1 Mayhem Devil
+1 Molten Gatekeeper
+1 Murderous Redcap
+1 Party Thrasher
+1 Puppeteer Clique
+1 Putrid Goblin
+1 Spitfire Lagac
+1 Steampath Charger
+1 Stormfist Crusader
+1 Valley Flamecaller
+1 Viscera Seer
+1 Wingrattle Scarecrow
+1 Zulaport Cutthroat
+1 Bastion of Remembrance
+1 Black Market Connections
+1 Goblin Bombardment
+1 Impact Tremors
+1 Necropotence
+1 Phyrexian Arena
+1 Abrade
+1 Bedevil
+1 Chaos Warp
+1 Dark Ritual
+1 Deadly Dispute
+1 Deadly Rollick
+1 Deflecting Swat
+1 Lightning Bolt
+1 Rakdos Charm
+1 Terminate
+1 Vampiric Tutor
+1 Blasphemous Act
+1 Demonic Tutor
+1 Diabolic Intent
+1 Faithless Looting
+1 Feed the Swarm
+1 Gamble
+1 Jeska's Will
+1 Reanimate
+1 Sign in Blood
+1 Vandalblast

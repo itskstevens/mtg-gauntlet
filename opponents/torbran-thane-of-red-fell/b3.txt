@@ -1,0 +1,72 @@
+1 Torbran, Thane of Red Fell
+1 Arcane Signet
+1 Endless Atlas
+1 Fire Diamond
+1 Lightning Greaves
+1 Mind Stone
+1 Ruby Medallion
+1 Sol Ring
+1 Swiftfoot Boots
+1 Forgotten Cave
+29 Mountain
+1 Myriad Landscape
+1 Nykthos, Shrine to Nyx
+1 Valakut, the Molten Pinnacle
+1 War Room
+1 Chandra's Incinerator
+1 Coruscation Mage
+1 Electrostatic Field
+1 Fanatic of Mogis
+1 Firebrand Archer
+1 Goblin Chainwhirler
+1 Guttersnipe
+1 Harsh Mentor
+1 Immolation Shaman
+1 Kessig Flamebreather
+1 Longshot, Rebel Bowman
+1 Neheb, the Eternal
+1 Ojer Axonil, Deepest Might
+1 Rampaging Ferocidon
+1 Razorkin Needlehead
+1 Runaway Steam-Kin
+1 Solphim, Mayhem Dominus
+1 Spear Spewer
+1 Sunspine Lynx
+1 Tectonic Giant
+1 Thermo-Alchemist
+1 Zo-Zu the Punisher
+1 Burning Earth
+1 Fiery Emancipation
+1 Manabarbs
+1 Mechanized Warfare
+1 Pyrohemia
+1 Repercussion
+1 Roiling Vortex
+1 Spellshock
+1 Sulfuric Vortex
+1 Abrade
+1 Chaos Warp
+1 Deflecting Swat
+1 Delayed Blast Fireball
+1 Lightning Bolt
+1 Price of Progress
+1 Risk Factor
+1 Seething Song
+1 Spikefield Hazard
+1 Thrill of Possibility
+1 Valakut Awakening
+1 Chandra, Dressed to Kill
+1 Chandra, Torch of Defiance
+1 Blasphemous Act
+1 Boltwave
+1 End the Festivities
+1 Faithless Looting
+1 Fiery Confluence
+1 Flame Rift
+1 Grab the Prize
+1 Jeska's Will
+1 Light Up the Stage
+1 Mana Geyser
+1 Reckless Impulse
+1 Tectonic Hazard
+1 Vandalblast

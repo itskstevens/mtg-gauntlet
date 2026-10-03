@@ -1,0 +1,91 @@
+1 Inalla, Archmage Ritualist
+1 Arcane Signet
+1 Ashnod's Altar
+1 Dimir Signet
+1 Fellwar Stone
+1 Izzet Signet
+1 Panharmonicon
+1 Sol Ring
+1 Talisman of Creativity
+1 Talisman of Dominance
+1 Talisman of Indulgence
+1 Blood Crypt
+1 Bloodstained Mire
+1 Command Tower
+1 Crumbling Necropolis
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Exotic Orchard
+6 Island
+1 Luxury Suite
+1 Morphic Pool
+3 Mountain
+1 Path of Ancestry
+1 Polluted Delta
+1 Reliquary Tower
+1 Riptide Laboratory
+1 Scalding Tarn
+1 Shivan Reef
+1 Steam Vents
+1 Sulfur Falls
+1 Sunken Hollow
+3 Swamp
+1 Training Center
+1 Underground River
+1 Watery Grave
+1 Xander's Lounge
+1 Aether Channeler
+1 Apprentice Necromancer
+1 Archaeomancer
+1 Archmage of Echoes
+1 Azami, Lady of Scrolls
+1 Bloodline Necromancer
+1 Dour Port-Mage
+1 Dualcaster Mage
+1 Ertai Resurrected
+1 Harmonic Prodigy
+1 Kefka, Court Mage
+1 Kess, Dissident Mage
+1 Kuja, Genome Sorcerer
+1 Naban, Dean of Iteration
+1 Naru Meha, Master Wizard
+1 Puppeteer Clique
+1 Ruthless Technomancer
+1 Sea Gate Oracle
+1 Spellseeker
+1 Stonybrook Banneret
+1 Thassa's Oracle
+1 Timestream Navigator
+1 Vedalken Aethermage
+1 Venser, Shaper Savant
+1 Watcher for Tomorrow
+1 Molten Echoes
+1 Mystic Remora
+1 Reflections of Littjara
+1 Rhystic Study
+1 An Offer You Can't Refuse
+1 Brainstorm
+1 Burnt Offering
+1 Chaos Warp
+1 Counterspell
+1 Culling the Weak
+1 Cyclonic Rift
+1 Dark Ritual
+1 Essence Flux
+1 Flame of Anor
+1 Ghostly Flicker
+1 Mana Sculpt
+1 Mystical Tutor
+1 Swan Song
+1 Terminate
+1 Vampiric Tutor
+1 Wizard's Retort
+1 Blasphemous Act
+1 Demonic Tutor
+1 Kindred Dominance
+1 Persist
+1 Ponder
+1 Reanimate
+1 Step Through
+1 Unearth
+1 Vandalblast

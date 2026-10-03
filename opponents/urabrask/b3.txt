@@ -1,0 +1,73 @@
+1 Urabrask
+1 Aetherflux Reservoir
+1 Arcane Signet
+1 Mind Stone
+1 Ruby Medallion
+1 Sol Ring
+1 Tablet of Discovery
+1 Forgotten Cave
+1 Lindblum, Industrial Regency
+28 Mountain
+1 Valakut, the Molten Pinnacle
+1 War Room
+1 Ashling, Flame Dancer
+1 Birgi, God of Storytelling
+1 Coruscation Mage
+1 Dragon's Rage Channeler
+1 Electro, Assaulting Battery
+1 Electrostatic Field
+1 Firebrand Archer
+1 Guttersnipe
+1 Kessig Flamebreather
+1 Ojer Axonil, Deepest Might
+1 Runaway Steam-Kin
+1 Solphim, Mayhem Dominus
+1 Storm-Kiln Artist
+1 Torbran, Thane of Red Fell
+1 Vindictive Flamestoker
+1 Artist's Talent
+1 Fiery Inscription
+1 Underworld Breach
+1 Virtue of Courage
+1 Abrade
+1 Big Score
+1 Bolt Bend
+1 Chaos Warp
+1 Crimson Wisps
+1 Demand Answers
+1 Desperate Ritual
+1 Expedite
+1 Flashback
+1 Gut Shot
+1 Lightning Bolt
+1 Might of the Meek
+1 Needle Drop
+1 Pyretic Ritual
+1 Reverberate
+1 Seething Song
+1 Thrill of Possibility
+1 Unexpected Windfall
+1 Valakut Awakening
+1 Chandra, Torch of Defiance
+1 Ancestral Anger
+1 Blasphemous Act
+1 Cathartic Reunion
+1 Crash Through
+1 Faithless Looting
+1 Gamble
+1 Grab the Prize
+1 Grapeshot
+1 Jeska's Will
+1 Light Up the Stage
+1 Magmatic Insight
+1 Mana Geyser
+1 Overmaster
+1 Past in Flames
+1 Reckless Impulse
+1 Renegade Tactics
+1 Rile
+1 Strike It Rich
+1 Tormenting Voice
+1 Vandalblast
+1 Warlord's Fury
+1 Wrenn's Resolve

@@ -1,0 +1,77 @@
+1 Heliod, Sun-Crowned
+1 Aetherflux Reservoir
+1 Altar of the Pantheon
+1 Arcane Signet
+1 Cosmos Elixir
+1 Mind Stone
+1 Oketra's Monument
+1 Pearl Medallion
+1 Pristine Talisman
+1 Sol Ring
+1 The One Ring
+1 The Wind Crystal
+1 Well of Lost Dreams
+1 Ancient Tomb
+1 Buried Ruin
+1 Castle Ardenvale
+1 Eiganjo, Seat of the Empire
+1 Emeria, the Sky Ruin
+1 Hall of Heliod's Generosity
+1 Nykthos, Shrine to Nyx
+24 Plains
+1 Radiant Fountain
+1 War Room
+1 Ajani's Pridemate
+1 Archangel of Thune
+1 Archivist of Oghma
+1 Archon of Emeria
+1 Auriok Champion
+1 Aven Mindcensor
+1 Daxos, Blessed by the Sun
+1 Drannith Magistrate
+1 Esper Sentinel
+1 Exemplar of Light
+1 Felidar Sovereign
+1 Giver of Runes
+1 Grand Abolisher
+1 Haliya, Guided by Light
+1 Linden, the Steadfast Queen
+1 Mangara, the Diplomat
+1 Mother of Runes
+1 Ranger of Eos
+1 Ranger-Captain of Eos
+1 Recruiter of the Guard
+1 Serra Ascendant
+1 Soul Warden
+1 Soul's Attendant
+1 Speaker of the Heavens
+1 Sunscorch Regent
+1 Suture Priest
+1 Triskelion
+1 Voice of the Blessed
+1 Walking Ballista
+1 Weathered Wayfarer
+1 Ajani's Welcome
+1 Authority of the Consuls
+1 Blind Obedience
+1 Cleric Class
+1 Deafening Silence
+1 Ghostly Prison
+1 Land Tax
+1 Smothering Tithe
+1 Trouble in Pairs
+1 Enlightened Tutor
+1 Flare of Fortitude
+1 Flawless Maneuver
+1 Generous Gift
+1 Heliod's Intervention
+1 Path to Exile
+1 Reprieve
+1 Silence
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Ajani, Strength of the Pride
+1 Austere Command
+1 Farewell
+1 Fumigate
+1 Wrath of God

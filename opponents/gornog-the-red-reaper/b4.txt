@@ -1,0 +1,74 @@
+1 Gornog, the Red Reaper
+1 Arcane Signet
+1 Hazoret's Monument
+1 Herald's Horn
+1 Infantry Shield
+1 Lightning Greaves
+1 Obsidian Battle-Axe
+1 Patchwork Banner
+1 Ruby Medallion
+1 Sol Ring
+1 Swiftfoot Boots
+1 The Fire Crystal
+1 Vanquisher's Banner
+1 Arena of Glory
+1 Castle Embereth
+1 Ghitu Encampment
+27 Mountain
+1 Nykthos, Shrine to Nyx
+1 Path of Ancestry
+1 Rogue's Passage
+1 Three Tree City
+1 War Room
+1 Anep, Vizier of Hazoret
+1 Archetype of Aggression
+1 Bloodmark Mentor
+1 Boldwyr Intimidator
+1 Brighthearth Banneret
+1 Chaos Terminator Lord
+1 Combat Celebrant
+1 Frontier Warmonger
+1 Gimli of the Glittering Caves
+1 Goma Fada Vanguard
+1 Jaxis, the Troublemaker
+1 Kargan Intimidator
+1 Kazuul, Tyrant of the Cliffs
+1 Laelia, the Blade Reforged
+1 Lovisa Coldeyes
+1 Markov Blademaster
+1 Moraug, Fury of Akoum
+1 Neheb, Dreadhorde Champion
+1 Neheb, the Eternal
+1 Ogre Battledriver
+1 Paragon of Fierce Defiance
+1 Professional Face-Breaker
+1 Roaming Throne
+1 Rograkh, Son of Rohgahh
+1 Samut, Hazoret's Champion
+1 Sardian Avenger
+1 Stadium Headliner
+1 Star Athlete
+1 Taurean Mauler
+1 Warchief Giant
+1 Aggravated Assault
+1 Berserkers' Onslaught
+1 Blood Moon
+1 Collective Inferno
+1 Gratuitous Violence
+1 Shared Animosity
+1 Abrade
+1 Big Score
+1 Chaos Warp
+1 Deflecting Swat
+1 Demand Answers
+1 Great Train Heist
+1 Thrill of Possibility
+1 Untimely Malfunction
+1 Blasphemous Act
+1 Crash Through
+1 Faithless Looting
+1 Full Throttle
+1 Jeska's Will
+1 Overpowering Attack
+1 Relentless Assault
+1 Vandalblast

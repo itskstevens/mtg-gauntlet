@@ -1,0 +1,84 @@
+1 Niko, Light of Hope
+1 Arcane Signet
+1 Azorius Signet
+1 Conjurer's Closet
+1 Fellwar Stone
+1 Mind Stone
+1 Panharmonicon
+1 Sol Ring
+1 Talisman of Progress
+1 Thought Vessel
+1 Adarkar Wastes
+1 Command Tower
+1 Deserted Beach
+1 Flooded Strand
+1 Floodfarm Verge
+1 Glacial Fortress
+1 Hallowed Fountain
+1 Hengegate Pathway
+9 Island
+1 Meticulous Archive
+1 Mystic Gate
+1 Nimbus Maze
+1 Otawara, Soaring City
+9 Plains
+1 Port Town
+1 Prairie Stream
+1 Reliquary Tower
+1 Sea of Clouds
+1 Skycloud Expanse
+1 Aerial Extortionist
+1 Archon of Sun's Grace
+1 Battle Angels of Tyr
+1 Brago, King Eternal
+1 Charming Prince
+1 Curiosity Crafter
+1 Displacer Kitten
+1 Dour Port-Mage
+1 Dream Trawler
+1 Elesh Norn, Mother of Machines
+1 Enduring Curiosity
+1 Entity Tracker
+1 Esper Sentinel
+1 Exalted Sunborn
+1 Hero of Bladehold
+1 Mulldrifter
+1 Nesting Dovehawk
+1 Overlord of the Floodpits
+1 Peregrine Drake
+1 Restoration Angel
+1 Silent Hallcreeper
+1 Solemn Simulacrum
+1 Soulherder
+1 Starfield Vocalist
+1 Sun Titan
+1 Thassa, Deep-Dwelling
+1 Witch Enchanter
+1 Candlekeep Sage
+1 Mystic Remora
+1 Rhystic Study
+1 Skybind
+1 Smothering Tithe
+1 Sphere of Safety
+1 Teleportation Circle
+1 An Offer You Can't Refuse
+1 Cloudshift
+1 Counterspell
+1 Cyclonic Rift
+1 Dovin's Veto
+1 Eerie Interlude
+1 Enlightened Tutor
+1 Ephemerate
+1 Essence Flux
+1 Fierce Guardianship
+1 Ghostly Flicker
+1 Mana Drain
+1 Momentary Blink
+1 Parting Gust
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Niko Aris
+1 Farewell
+1 Supreme Verdict
+1 Time Wipe

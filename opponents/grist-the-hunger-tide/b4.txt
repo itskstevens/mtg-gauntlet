@@ -1,0 +1,90 @@
+1 Grist, the Hunger Tide
+1 Altar of Dementia
+1 Arcane Signet
+1 Cauldron of Essence
+1 Lotus Petal
+1 Skullclamp
+1 Sol Ring
+1 Talisman of Resilience
+1 Bayou
+1 Bojuka Bog
+1 Boseiju, Who Endures
+1 Command Tower
+1 Darkbore Pathway
+6 Forest
+1 Llanowar Wastes
+1 Nurturing Peatland
+1 Overgrown Tomb
+1 Phyrexian Tower
+1 Shifting Woodland
+6 Swamp
+1 Swarmyard
+1 Tainted Wood
+1 Twilight Mire
+1 Underground Mortuary
+1 Undergrowth Stadium
+1 Urborg, Tomb of Yawgmoth
+1 Verdant Catacombs
+1 Woodland Cemetery
+1 Yavimaya, Cradle of Growth
+1 Aatchik, Emerald Radian
+1 Amzu, Swarm's Hunger
+1 Birds of Paradise
+1 Blood Artist
+1 Carrion Feeder
+1 Caustic Caterpillar
+1 Deathrite Shaman
+1 Elves of Deep Shadow
+1 Elvish Mystic
+1 Elvish Spirit Guide
+1 Eternal Witness
+1 Fumulus, the Infestation
+1 Giant Adephage
+1 Grist, Voracious Larva
+1 Haywire Mite
+1 Hornet Nest
+1 Hornet Queen
+1 Huskburster Swarm
+1 Icetill Explorer
+1 Llanowar Elves
+1 Mazirek, Kraul Death Priest
+1 Mikaeus, the Unhallowed
+1 Molt Tender
+1 Protean Hulk
+1 Scute Swarm
+1 Spring-Leaf Avenger
+1 Springheart Nantuko
+1 Syr Konrad, the Grim
+1 Viscera Seer
+1 Warren Soultrader
+1 Witherbloom Apprentice
+1 Zask, Skittering Swarmlord
+1 Animate Dead
+1 Gardenize
+1 Insidious Roots
+1 Necromancy
+1 Ripples of Undeath
+1 Sylvan Library
+1 Abrupt Decay
+1 Assassin's Trophy
+1 Culling the Weak
+1 Dark Ritual
+1 Deadly Rollick
+1 Entomb
+1 Noxious Revival
+1 Vampiric Tutor
+1 Veil of Summer
+1 Worldly Tutor
+1 Buried Alive
+1 Chain of Smog
+1 Culling Ritual
+1 Demonic Tutor
+1 Diabolic Intent
+1 Dread Return
+1 Forever Young
+1 Life // Death
+1 Natural Order
+1 Persist
+1 Reanimate
+1 Toxic Deluge
+1 Victimize

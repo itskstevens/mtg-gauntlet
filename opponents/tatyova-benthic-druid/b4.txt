@@ -1,0 +1,85 @@
+1 Tatyova, Benthic Druid
+1 Arcane Signet
+1 Conduit of Worlds
+1 Crucible of Worlds
+1 Sol Ring
+1 Thought Vessel
+1 Boseiju, Who Endures
+1 Breeding Pool
+1 Command Tower
+1 Evolving Wilds
+1 Fabled Passage
+1 Field of the Dead
+1 Flooded Strand
+10 Forest
+1 Hedge Maze
+1 Hinterland Harbor
+7 Island
+1 Misty Rainforest
+1 Mystic Sanctuary
+1 Polluted Delta
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Scalding Tarn
+1 Simic Growth Chamber
+1 Terramorphic Expanse
+1 Verdant Catacombs
+1 Windswept Heath
+1 Wooded Foothills
+1 Yavimaya, Cradle of Growth
+1 Aesi, Tyrant of Gyre Strait
+1 Ancient Greenwarden
+1 Ashaya, Soul of the Wild
+1 Avenger of Zendikar
+1 Azusa, Lost but Seeking
+1 Birds of Paradise
+1 Dryad of the Ilysian Grove
+1 Eternal Witness
+1 Icetill Explorer
+1 Kodama of the East Tree
+1 Loot, Exuberant Explorer
+1 Lotus Cobra
+1 Nissa, Resurgent Animist
+1 Oracle of Mul Daya
+1 Rampaging Baloths
+1 Ramunap Excavator
+1 Sakura-Tribe Elder
+1 Sakura-Tribe Scout
+1 Scute Swarm
+1 Sylvan Safekeeper
+1 Tireless Provisioner
+1 Traveling Chocobo
+1 Wayward Swordtooth
+1 Burgeoning
+1 Exploration
+1 Mystic Remora
+1 Retreat to Coralhelm
+1 Rhystic Study
+1 Sylvan Library
+1 Trade Routes
+1 An Offer You Can't Refuse
+1 Beast Within
+1 Counterspell
+1 Crop Rotation
+1 Cyclonic Rift
+1 Fierce Guardianship
+1 Force of Will
+1 Growth Spiral
+1 Harrow
+1 Heroic Intervention
+1 Mana Drain
+1 Mystical Tutor
+1 Pongify
+1 Swan Song
+1 Worldly Tutor
+1 Oko, Thief of Crowns
+1 Cultivate
+1 Explore
+1 Farseek
+1 Finale of Devastation
+1 Kodama's Reach
+1 Nature's Lore
+1 Rampant Growth
+1 Scapeshift
+1 Three Visits
+1 Walk the Aeons

@@ -1,0 +1,76 @@
+1 Aeve, Progenitor Ooze
+1 Arcane Signet
+1 Emerald Medallion
+1 Expedition Map
+1 Lotus Petal
+1 Sol Ring
+1 The Earth Crystal
+1 The Great Henge
+1 The Ozolith
+1 Ancient Tomb
+1 Boseiju, Who Endures
+1 Castle Garenbrig
+1 Evendo, Waking Haven
+25 Forest
+1 Gaea's Cradle
+1 Nykthos, Shrine to Nyx
+1 Reliquary Tower
+1 Three Tree City
+1 Yavimaya, Cradle of Growth
+1 Acidic Slime
+1 Allosaurus Shepherd
+1 Arbor Elf
+1 Beast Whisperer
+1 Biogenic Ooze
+1 Biowaste Blob
+1 Birds of Paradise
+1 Circle of Dreams Druid
+1 Craterhoof Behemoth
+1 Disciple of Freyalise
+1 Elvish Mystic
+1 Eternal Witness
+1 Fyndhorn Elves
+1 Green Slime
+1 Karametra's Acolyte
+1 Llanowar Elves
+1 Ochre Jelly
+1 Oran-Rief Ooze
+1 Predator Ooze
+1 Quirion Ranger
+1 Scavenging Ooze
+1 Selvala, Heart of the Wilds
+1 Temur Sabertooth
+1 Concordant Crossroads
+1 Doubling Season
+1 Food Chain
+1 Garruk's Uprising
+1 Growing Rites of Itlimoc
+1 March of the World Ooze
+1 Sylvan Library
+1 Utopia Sprawl
+1 Wild Growth
+1 Archdruid's Charm
+1 Beast Within
+1 Crop Rotation
+1 Heroic Intervention
+1 Noxious Revival
+1 Return of the Wildspeaker
+1 Veil of Summer
+1 Vitalize
+1 Worldly Tutor
+1 Bala Ged Recovery
+1 Cultivate
+1 Explore
+1 Finale of Devastation
+1 Glimpse of Nature
+1 Green Sun's Zenith
+1 Harmonize
+1 Kodama's Reach
+1 Life's Legacy
+1 Natural Order
+1 Nature's Lore
+1 Nature's Rhythm
+1 Rampant Growth
+1 Rishkar's Expertise
+1 Shamanic Revelation
+1 Three Visits

@@ -1,0 +1,6 @@
+Name:Summon: G.F. Ifrit
+ManaCost:2 R
+Types:Enchantment Creature Saga Demon
+PT:3/2
+Oracle:I, II - You may discard a card. If you do, draw a card.\nIII, IV - Add {R}.
+# synthetic: built from Scryfall text; Forge has no script yet

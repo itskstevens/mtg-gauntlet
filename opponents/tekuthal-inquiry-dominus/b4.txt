@@ -1,0 +1,77 @@
+1 Tekuthal, Inquiry Dominus
+1 Arcane Signet
+1 Astral Cornucopia
+1 Contagion Clasp
+1 Contagion Engine
+1 Empowered Autogenerator
+1 Everflowing Chalice
+1 Glistening Sphere
+1 Ichormoon Gauntlet
+1 Insight Engine
+1 Magistrate's Scepter
+1 Midnight Clock
+1 Replicating Ring
+1 Sapphire Medallion
+1 Sol Ring
+1 Staff of Compleation
+1 Thought Vessel
+1 Academy Ruins
+1 Inkmoth Nexus
+24 Island
+1 Karn's Bastion
+1 Mage-Ring Network
+1 Mystic Sanctuary
+1 Nesting Grounds
+1 Nykthos, Shrine to Nyx
+1 Otawara, Soaring City
+1 Reliquary Tower
+1 Saprazzan Skerry
+1 Blighted Agent
+1 Chasm Skulker
+1 Deepglow Skate
+1 Dreamtide Whale
+1 Flux Channeler
+1 Guildpact Informant
+1 Jin-Gitaxias
+1 Lulu, Stern Guardian
+1 Malcolm, Alluring Scoundrel
+1 Myojin of Cryptic Dreams
+1 Plague Myr
+1 Spark Double
+1 Surge Conductor
+1 Thrummingbird
+1 Viral Drake
+1 As Foretold
+1 Inexorable Tide
+1 Mystic Remora
+1 Propaganda
+1 Rhystic Study
+1 An Offer You Can't Refuse
+1 Counterspell
+1 Cyclonic Rift
+1 Experimental Augury
+1 Fierce Guardianship
+1 Force of Will
+1 Fuel for the Cause
+1 Mana Drain
+1 Mystical Tutor
+1 Prologue to Phyresis
+1 Radstorm
+1 Reject Imperfection
+1 Ripples of Potential
+1 Serum Snare
+1 Steady Progress
+1 Jace, the Mind Sculptor
+1 Narset, Parter of Veils
+1 Tamiyo, the Moon Sage
+1 Teferi, Master of Time
+1 Teferi, Temporal Archmage
+1 Teferi, Temporal Pilgrim
+1 Tezzeret the Seeker
+1 Tezzeret, Artifice Master
+1 Contentious Plan
+1 Expansion Algorithm
+1 Fabricate
+1 Ponder
+1 Tezzeret's Gambit
+1 Vivisurgeon's Insight

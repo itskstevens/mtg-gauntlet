@@ -1,0 +1,88 @@
+1 Tannuk, Memorial Ensign
+1 Amulet of Vigor
+1 Arcane Signet
+1 Conduit of Worlds
+1 Crucible of Worlds
+1 Sol Ring
+1 Zuran Orb
+1 Arid Mesa
+1 Bloodstained Mire
+1 Boseiju, Who Endures
+1 Cinder Glade
+1 Command Tower
+1 Commercial District
+1 Evolving Wilds
+1 Fabled Passage
+1 Field of the Dead
+7 Forest
+1 Gruul Turf
+1 Misty Rainforest
+6 Mountain
+1 Prismatic Vista
+1 Rootbound Crag
+1 Scalding Tarn
+1 Shifting Woodland
+2 Snow-Covered Forest
+1 Snow-Covered Mountain
+1 Spire Garden
+1 Stomping Ground
+1 Strip Mine
+1 Verdant Catacombs
+1 Vesuva
+1 Windswept Heath
+1 Wooded Foothills
+1 Yavimaya, Cradle of Growth
+1 Aftermath Analyst
+1 Ancient Greenwarden
+1 Ashaya, Soul of the Wild
+1 Azusa, Lost but Seeking
+1 Birds of Paradise
+1 Dryad of the Ilysian Grove
+1 Horizon Explorer
+1 Icetill Explorer
+1 Loot, Exuberant Explorer
+1 Lotus Cobra
+1 Lumra, Bellow of the Woods
+1 Ojer Axonil, Deepest Might
+1 Oracle of Mul Daya
+1 Quirion Ranger
+1 Ramunap Excavator
+1 Rydia, Summoner of Mist
+1 Sabotender
+1 Scute Swarm
+1 Six
+1 Spitfire Lagac
+1 Springheart Nantuko
+1 Sylvan Safekeeper
+1 Tireless Provisioner
+1 Traveling Chocobo
+1 Tunneling Geopede
+1 Zell Dincht
+1 Burgeoning
+1 Exploration
+1 Keen Sense
+1 Snake Umbra
+1 Spelunking
+1 Sylvan Library
+1 Valakut Exploration
+1 Archdruid's Charm
+1 Beast Within
+1 Chaos Warp
+1 Crop Rotation
+1 Deflecting Swat
+1 Entish Restoration
+1 Harrow
+1 Heroic Intervention
+1 Roiling Regrowth
+1 Worldly Tutor
+1 Awaken the Woods
+1 Blasphemous Act
+1 Farseek
+1 Gamble
+1 Green Sun's Zenith
+1 Nature's Lore
+1 Nature's Rhythm
+1 Scapeshift
+1 Splendid Reclamation
+1 Three Visits
+1 Worldsoul's Rage

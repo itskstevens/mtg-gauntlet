@@ -1,0 +1,76 @@
+1 Thalia, Guardian of Thraben
+1 Arcane Signet
+1 Chrome Mox
+1 Mind Stone
+1 Oketra's Monument
+1 Pearl Medallion
+1 Sol Ring
+1 Sword of Fire and Ice
+1 The One Ring
+1 Thorn of Amethyst
+1 Winter Moon
+1 Winter Orb
+1 Ancient Tomb
+1 Castle Ardenvale
+1 Cavern of Souls
+1 Eiganjo, Seat of the Empire
+1 Emeria, the Sky Ruin
+1 Flagstones of Trokair
+1 Minas Tirith
+25 Plains
+1 Strip Mine
+1 War Room
+1 Adeline, Resplendent Cathar
+1 Angel of Jubilation
+1 Archivist of Oghma
+1 Archon of Emeria
+1 Aven Mindcensor
+1 Boromir, Warden of the Tower
+1 Containment Priest
+1 Dauntless Dismantler
+1 Drannith Magistrate
+1 Eidolon of Rhetoric
+1 Elesh Norn, Grand Cenobite
+1 Esper Sentinel
+1 Ethersworn Canonist
+1 Glowrider
+1 Grand Abolisher
+1 Hushbringer
+1 Knight of the White Orchid
+1 Leonin Arbiter
+1 Linvala, Keeper of Silence
+1 Loran of the Third Path
+1 Mangara, the Diplomat
+1 Mother of Runes
+1 Myrel, Shield of Argive
+1 Recruiter of the Guard
+1 Sanctum Prelate
+1 Selfless Spirit
+1 Spirit of the Labyrinth
+1 Sun Titan
+1 Thalia, Heretic Cathar
+1 Vryn Wingmare
+1 Windborn Muse
+1 Aura of Silence
+1 Authority of the Consuls
+1 Blind Obedience
+1 Deafening Silence
+1 Ghostly Prison
+1 Land Tax
+1 Rest in Peace
+1 Rule of Law
+1 Smothering Tithe
+1 Bilbo's Gambit
+1 Enlightened Tutor
+1 Mana Tithe
+1 Path to Exile
+1 Reprieve
+1 Silence
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Elspeth, Sun's Champion
+1 Armageddon
+1 Austere Command
+1 Farewell
+1 Ravages of War
+1 Wrath of God

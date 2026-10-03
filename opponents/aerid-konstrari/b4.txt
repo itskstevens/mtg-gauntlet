@@ -1,0 +1,86 @@
+1 Aerid Konstrari
+1 Arcane Signet
+1 Blade of Selves
+1 Fellwar Stone
+1 Gruul Signet
+1 Helm of the Host
+1 Idol of Oblivion
+1 Panharmonicon
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Impulse
+1 The Great Henge
+1 The One Ring
+1 The Reaver Cleaver
+1 Unwinding Clock
+1 Ancient Tomb
+1 Boseiju, Who Endures
+1 Cinder Glade
+1 Command Tower
+1 Commercial District
+1 Darksteel Citadel
+8 Forest
+1 Great Furnace
+1 Karplusan Forest
+8 Mountain
+1 Rockfall Vale
+1 Rootbound Crag
+1 Slagwoods Bridge
+1 Spire Garden
+1 Stomping Ground
+1 Taiga
+1 Thornspire Verge
+1 Tree of Tales
+1 Wooded Foothills
+1 Yavimaya, Cradle of Growth
+1 Agatha of the Vile Cauldron
+1 Birds of Paradise
+1 Craterclaw Colossus
+1 Delighted Halfling
+1 Depthshaker Titan
+1 Disciple of Freyalise
+1 Displaced Dinosaurs
+1 Elvish Mystic
+1 Goblin Anarchomancer
+1 Hellkite Tyrant
+1 Hexing Squelcher
+1 Ingenious Artillerist
+1 Jaxis, the Troublemaker
+1 Llanowar Elves
+1 Nyxbloom Ancient
+1 Old Gnawbone
+1 Orthion, Hero of Lavabrink
+1 Reckless Fireweaver
+1 Roxanne, Starfall Savant
+1 Sarinth Steelseeker
+1 Seedborn Muse
+1 Stridehangar Automaton
+1 Tireless Provisioner
+1 Weftstalker Ardent
+1 Doubling Season
+1 Garruk's Uprising
+1 Greater Good
+1 Parallel Lives
+1 Rhythm of the Wild
+1 Beast Within
+1 Big Score
+1 Chaos Warp
+1 Deflecting Swat
+1 Heroic Intervention
+1 Red Elemental Blast
+1 Redirect Lightning
+1 Return of the Wildspeaker
+1 Second Harvest
+1 Worldly Tutor
+1 Blasphemous Act
+1 Devastating Onslaught
+1 Electroduplicate
+1 Farseek
+1 For the Common Good
+1 Jeska's Will
+1 Molten Duplication
+1 Nature's Lore
+1 Rishkar's Expertise
+1 Three Visits
+1 Twinflame
+1 Vandalblast

@@ -1,0 +1,81 @@
+1 Ruby, Daring Tracker
+1 Sol Ring
+1 The Great Henge
+1 Cinder Glade
+1 Command Tower
+1 Commercial District
+1 Cragcrown Pathway
+11 Forest
+1 Game Trail
+1 Karplusan Forest
+1 Kessig Wolf Run
+1 Mossfire Valley
+1 Mosswort Bridge
+10 Mountain
+1 Rockfall Vale
+1 Rootbound Crag
+1 Spire Garden
+1 Stomping Ground
+1 Thornspire Verge
+1 Wooded Foothills
+1 Invasion of Zendikar
+1 Annoyed Altisaur
+1 Apex Devastator
+1 Aurora Phoenix
+1 Bane of Progress
+1 Beast Whisperer
+1 Bloodbraid Challenger
+1 Combustible Gearhulk
+1 Disciple of Freyalise
+1 Dragonhawk, Fate's Tempest
+1 Drakuseth, Maw of Flames
+1 Emergent Woodwurm
+1 Etali, Primal Conqueror
+1 Etali, Primal Storm
+1 Garruk's Packleader
+1 Goreclaw, Terror of Qal Sisma
+1 Gruul Ragebeast
+1 Kogla and Yidaro
+1 Kogla, the Titan Ape
+1 Moraug, Fury of Akoum
+1 Noise Marine
+1 Omnath, Locus of Rage
+1 Rampaging Baloths
+1 Raph & Mikey, Troublemakers
+1 Screamer-Killer
+1 Silverback Elder
+1 Soul of the Harvest
+1 Sweet-Gum Recluse
+1 Terastodon
+1 Terror of the Peaks
+1 Thunderfoot Baloth
+1 Trumpeting Carnosaur
+1 Tyrant's Familiar
+1 Vaultborn Tyrant
+1 Bigger on the Inside
+1 Encroaching Dragonstorm
+1 Garruk's Uprising
+1 Monstrous Vortex
+1 Rhythm of the Wild
+1 Sunbird's Invocation
+1 Up the Beanstalk
+1 Beast Within
+1 Natural Reclamation
+1 Return of the Wildspeaker
+1 Chandra, Flameshaper
+1 Call Forth the Tempest
+1 Circuitous Route
+1 Creative Technique
+1 Explosive Vegetation
+1 Hunting Wilds
+1 Map the Frontier
+1 Migration Path
+1 New Generation's Technique
+1 Path of the Animist
+1 Ranger's Path
+1 Reach the Horizon
+1 Rishkar's Expertise
+1 Skyshroud Claim
+1 Terramorph
+1 Vastwood Surge
+1 Volcanic Torrent

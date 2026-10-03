@@ -1,0 +1,87 @@
+1 Aloy, Savior of Meridian
+1 Arcane Signet
+1 Chimil, the Inner Sun
+1 Darksteel Forge
+1 Lightning Greaves
+1 Mystic Forge
+1 Simic Signet
+1 Simulacrum Synthesizer
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Curiosity
+1 Tarrian's Soulcleaver
+1 The Great Henge
+1 Thought Vessel
+1 Unwinding Clock
+1 Uthros Research Craft
+1 Academy Ruins
+1 Archway of Innovation
+1 Breeding Pool
+1 Buried Ruin
+1 Command Tower
+1 Darksteel Citadel
+1 Dreamroot Cascade
+1 Flooded Grove
+7 Forest
+1 Hedge Maze
+1 Hinterland Harbor
+1 Inventors' Fair
+8 Island
+1 Misty Rainforest
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Seat of the Synod
+1 Tanglepool Bridge
+1 Tree of Tales
+1 Uthros, Titanic Godcore
+1 Willowrush Verge
+1 Yavimaya Coast
+1 Blightsteel Colossus
+1 Cityscape Leveler
+1 Cyberdrive Awakener
+1 Cybermen Squadron
+1 Darksteel Colossus
+1 Darksteel Juggernaut
+1 Diamond Weapon
+1 Emissary Escort
+1 Emry, Lurker of the Loch
+1 Etherium Sculptor
+1 Foundry Inspector
+1 Iron Spider, Stark Upgrade
+1 Kappa Cannoneer
+1 Karn, Legacy Reforged
+1 Krang, Utrom Warlord
+1 Master Transmuter
+1 Master of Etherium
+1 Metalwork Colossus
+1 Meteor Golem
+1 Mycosynth Golem
+1 Ornithopter of Paradise
+1 Oviya, Automech Artisan
+1 Padeem, Consul of Innovation
+1 Phyrexian Metamorph
+1 Solemn Simulacrum
+1 Steel Overseer
+1 Thought Monitor
+1 Traxos, Scourge of Kroog
+1 Urza, Lord High Artificer
+1 Wurmcoil Engine
+1 Garruk's Uprising
+1 Monstrous Vortex
+1 Thopter Spy Network
+1 An Offer You Can't Refuse
+1 Beast Within
+1 Counterspell
+1 Cyclonic Rift
+1 Desynchronization
+1 Growth Spiral
+1 Heroic Intervention
+1 Pongify
+1 Rapid Hybridization
+1 Tezzeret, Cruel Captain
+1 Cultivate
+1 Fabricate
+1 Farseek
+1 Nature's Lore
+1 Thoughtcast
+1 Three Visits

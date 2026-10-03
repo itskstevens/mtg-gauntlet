@@ -1,0 +1,85 @@
+1 Shilgengar, Sire of Famine
+1 Arcane Signet
+1 Fellwar Stone
+1 Inspiring Statuary
+1 Lightning Greaves
+1 Mind Stone
+1 Orzhov Signet
+1 Sol Ring
+1 Talisman of Hierarchy
+1 Urza's Incubator
+1 Bojuka Bog
+1 Brightclimb Pathway
+1 Caves of Koilos
+1 Command Tower
+1 Fetid Heath
+1 Godless Shrine
+1 Isolated Chapel
+1 Marsh Flats
+1 Nesting Grounds
+1 Orzhov Basilica
+9 Plains
+1 Seraph Sanctuary
+1 Shadowy Backstreet
+1 Shattered Sanctum
+1 Shineshadow Snarl
+8 Swamp
+1 Tainted Field
+1 Temple of Silence
+1 Vault of Champions
+1 Vault of the Archangel
+1 Angel of Despair
+1 Angel of Indemnity
+1 Angel of Suffering
+1 Angel of the Ruins
+1 Archangel of Tithes
+1 Avacyn, Angel of Hope
+1 Avacyn, Angel of Horror
+1 Battle Angels of Tyr
+1 Bishop of Wings
+1 Bruna, the Fading Light
+1 Drana and Linvala
+1 Exalted Sunborn
+1 Exemplar of Light
+1 Firemane Commando
+1 Firja, Judge of Valor
+1 Giada, Font of Hope
+1 Gisela, the Broken Blade
+1 Herald of the Host
+1 Liesa, Forgotten Archangel
+1 Lyra Dawnbringer
+1 Marionette Apprentice
+1 Mirkwood Bats
+1 Renegade Reaper
+1 Resplendent Angel
+1 Righteous Valkyrie
+1 Rodolf Duskbringer
+1 Sanctuary Warden
+1 Sephara, Sky's Blade
+1 Serra Paragon
+1 Serra's Emissary
+1 Starnheim Aspirant
+1 Thief of Blood
+1 Youthful Valkyrie
+1 Black Market Connections
+1 Phyrexian Arena
+1 Rampage of the Valkyries
+1 Ripples of Undeath
+1 Smothering Tithe
+1 Solemnity
+1 Anguished Unmaking
+1 Dark Ritual
+1 Eerie Interlude
+1 Entomb
+1 Fell the Profane
+1 Ghostway
+1 Malakir Rebirth
+1 Path to Exile
+1 Swords to Plowshares
+1 Buried Alive
+1 Damn
+1 Lich-Knights' Conquest
+1 Pointed Discussion
+1 Reanimate
+1 Toxic Deluge
+1 Victimize

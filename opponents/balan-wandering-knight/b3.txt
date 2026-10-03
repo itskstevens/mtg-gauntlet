@@ -1,0 +1,75 @@
+1 Balan, Wandering Knight
+1 Arcane Signet
+1 Argentum Armor
+1 Basilisk Collar
+1 Blackblade Reforged
+1 Bloodforged Battle-Axe
+1 Buster Sword
+1 Colossus Hammer
+1 Commander's Plate
+1 Excalibur, Sword of Eden
+1 Hammer of Nazahn
+1 Kaldra Compleat
+1 Lightning Greaves
+1 Loxodon Warhammer
+1 Mask of Memory
+1 Masterwork of Ingenuity
+1 Mind Stone
+1 Mithril Coat
+1 Robe of Stars
+1 Shadowspear
+1 Sol Ring
+1 Swiftfoot Boots
+1 Sword of Feast and Famine
+1 Sword of Fire and Ice
+1 Sword of Forge and Frontier
+1 Sword of Hearth and Home
+1 Sword of Vengeance
+1 Sword of the Animist
+1 Thran Power Suit
+1 Trailblazer's Boots
+1 Whispersilk Cloak
+1 Ancient Den
+1 Buried Ruin
+1 Emeria, the Sky Ruin
+1 Inventors' Fair
+1 Monumental Henge
+1 Myriad Landscape
+26 Plains
+1 Rogue's Passage
+1 Urza's Saga
+1 War Room
+1 Armored Skyhunter
+1 Cloud, Midgar Mercenary
+1 Cloudsteel Kirin
+1 Codsworth, Handy Helper
+1 Danitha Capashen, Paragon
+1 Esper Sentinel
+1 Foundry Inspector
+1 Grand Abolisher
+1 Knight of the White Orchid
+1 Leonin Abunas
+1 Lion Sash
+1 Mother of Runes
+1 Puresteel Paladin
+1 Sram, Senior Edificer
+1 Stoneforge Mystic
+1 Stonehewer Giant
+1 Forge Anew
+1 Land Tax
+1 Mantle of the Ancients
+1 Sigarda's Aid
+1 Smothering Tithe
+1 Dispatch
+1 Enlightened Tutor
+1 Generous Gift
+1 Loran's Escape
+1 Path to Exile
+1 Rebuff the Wicked
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Divine Reckoning
+1 Open the Armory
+1 Single Combat
+1 Slash the Ranks
+1 Steelshaper's Gift

@@ -1,0 +1,88 @@
+1 Victor, Valgavoth's Seneschal
+1 Arcane Signet
+1 Fellwar Stone
+1 Geth's Grimoire
+1 Mind Stone
+1 Orzhov Signet
+1 Sol Ring
+1 Talisman of Hierarchy
+1 Bojuka Bog
+1 Brightclimb Pathway
+1 Caves of Koilos
+1 Command Tower
+1 Eclipsed Steppe
+1 Fetid Heath
+1 Godless Shrine
+1 Hall of Heliod's Generosity
+1 Isolated Chapel
+1 Marsh Flats
+1 Orzhov Basilica
+7 Plains
+1 Serra's Sanctum
+1 Shadowy Backstreet
+1 Shattered Sanctum
+1 Shineshadow Snarl
+7 Swamp
+1 Tainted Field
+1 Turbulent Moor
+1 Valgavoth's Lair
+1 Vault of Champions
+1 Alseid of Life's Bounty
+1 Archon of Sun's Grace
+1 Balemurk Leech
+1 Demon of Fate's Design
+1 Doomwake Giant
+1 Eiganjo Dynastorian
+1 Enduring Innocence
+1 Ghostly Dancers
+1 Grim Guardian
+1 Mesa Enchantress
+1 Ondu Spiritdancer
+1 Overlord of the Balemurk
+1 Psemilla, Meletian Poet
+1 Soaring Lightbringer
+1 Spellbook Vendor
+1 Spirited Companion
+1 Starfield Mystic
+1 Starnheim Courser
+1 Sun Titan
+1 Thoughtrender Lamia
+1 Underworld Coinsmith
+1 Valgavoth, Terror Eater
+1 Animate Dead
+1 Authority of the Consuls
+1 Black Market Connections
+1 Blind Obedience
+1 Darksteel Mutation
+1 Defiled Crypt // Cadaver Lab
+1 Flickering Ward
+1 Ghostly Prison
+1 Grand Entryway // Elegant Rotunda
+1 Grasp of Fate
+1 Greater Auramancy
+1 Hallowed Haunting
+1 Lord Skitter's Blessing
+1 Necromancy
+1 Nowhere to Run
+1 Phyrexian Arena
+1 Ripples of Undeath
+1 Seal of Cleansing
+1 Secret Arcade // Dusty Parlor
+1 Sigil of the Empty Throne
+1 Smothering Tithe
+1 Sphere of Safety
+1 Starfield of Nyx
+1 Unholy Annex // Ritual Chamber
+1 Waste Not
+1 Dark Ritual
+1 Enlightened Tutor
+1 Entomb
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Demonic Tutor
+1 Reanimate
+1 Redress Fate
+1 Replenish
+1 Return to the Light Realms
+1 Sevinne's Reclamation

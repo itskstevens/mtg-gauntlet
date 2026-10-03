@@ -1,0 +1,91 @@
+1 Frodo, Adventurous Hobbit
+1 Sam, Loyal Attendant
+1 Arcane Signet
+1 Bag End Banquet
+1 Bolas's Citadel
+1 Chromatic Lantern
+1 Idol of Oblivion
+1 Nuka-Cola Vending Machine
+1 Sol Ring
+1 The One Ring
+1 Brushland
+1 Canopy Vista
+1 Command Tower
+1 Exotic Orchard
+5 Forest
+1 Fortified Village
+1 Godless Shrine
+1 Indatha Triome
+1 Isolated Chapel
+1 Marsh Flats
+1 Necroblossom Snarl
+1 Overgrown Tomb
+1 Path of Ancestry
+4 Plains
+1 Rogue's Passage
+1 Sandsteppe Citadel
+1 Shineshadow Snarl
+1 Sunpetal Grove
+3 Swamp
+1 Temple Garden
+1 The Shire
+1 Undergrowth Stadium
+1 Vault of Champions
+1 Verdant Catacombs
+1 Windswept Heath
+1 Woodland Cemetery
+1 Academy Manufactor
+1 Banquet Guests
+1 Belladonna Took
+1 Bilbo, Fellow Conspirator
+1 Birds of Paradise
+1 Cauldron Familiar
+1 Chatterfang, Squirrel General
+1 Delighted Halfling
+1 Essence Warden
+1 Experimental Confectioner
+1 Farmer Cotton
+1 Feasting Hobbit
+1 Gilded Goose
+1 Gollum, Obsessed Stalker
+1 Jaheira, Friend of the Forest
+1 Lotho, Corrupt Shirriff
+1 Meriadoc Brandybuck
+1 Merry, Warden of Isengard
+1 Mirkwood Bats
+1 Nadier's Nightblade
+1 Peregrin Took
+1 Pippin, Warden of Isengard
+1 Prize Pig
+1 Rapacious Guest
+1 Rosie Cotton of South Lane
+1 Samwise Gamgee
+1 Savvy Hunter
+1 The Gaffer
+1 Tireless Provisioner
+1 Treebeard, Gracious Host
+1 Vito, Thorn of the Dusk Rose
+1 Call of the Ring
+1 Exquisite Blood
+1 Night of the Sweets' Revenge
+1 Ninja Pizza
+1 Of Herbs and Stewed Rabbit
+1 Sanguine Bond
+1 Smothering Tithe
+1 Anguished Unmaking
+1 Assassin's Trophy
+1 Enlightened Tutor
+1 Heroic Intervention
+1 Mortify
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Worldly Tutor
+1 Cultivate
+1 Demonic Tutor
+1 Dusk // Dawn
+1 Farseek
+1 Many Partings
+1 Revive the Shire
+1 The Battle of Bywater
+1 Toxic Deluge

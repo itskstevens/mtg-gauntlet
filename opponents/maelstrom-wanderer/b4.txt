@@ -1,0 +1,90 @@
+1 Maelstrom Wanderer
+1 Arcane Signet
+1 Crystal Shard
+1 Mana Vault
+1 Scroll Rack
+1 Sensei's Divining Top
+1 Sol Ring
+1 Thran Dynamo
+1 Ancient Tomb
+1 Boseiju, Who Endures
+1 Breeding Pool
+1 Command Tower
+1 Exotic Orchard
+5 Forest
+1 Hinterland Harbor
+4 Island
+1 Ketria Triome
+1 Misty Rainforest
+4 Mountain
+1 Otawara, Soaring City
+1 Rejuvenating Springs
+1 Rootbound Crag
+1 Scalding Tarn
+1 Spire Garden
+1 Steam Vents
+1 Stomping Ground
+1 Sulfur Falls
+1 Taiga
+1 Training Center
+1 Tropical Island
+1 Volcanic Island
+1 Windswept Heath
+1 Wooded Foothills
+1 Yavimaya Coast
+1 Yavimaya, Cradle of Growth
+1 Apex Devastator
+1 Averna, the Chaos Bloom
+1 Balefire Dragon
+1 Birds of Paradise
+1 Bloom Tender
+1 Consecrated Sphinx
+1 Delighted Halfling
+1 Etali, Primal Conqueror
+1 Etali, Primal Storm
+1 Eternal Witness
+1 Fanatic of Rhonas
+1 Goreclaw, Terror of Qal Sisma
+1 Gwenna, Eyes of Gaea
+1 Hullbreaker Horror
+1 Imoti, Celebrant of Bounty
+1 Kodama of the East Tree
+1 Koma, Cosmos Serpent
+1 Nezahal, Primal Tide
+1 Nyxbloom Ancient
+1 Old Gnawbone
+1 Pathbreaker Ibex
+1 Selvala, Heart of the Wilds
+1 Somberwald Sage
+1 Surrak Dragonclaw
+1 Temur Battlecrier
+1 Temur Sabertooth
+1 Terror of the Peaks
+1 Thryx, the Sudden Storm
+1 Trumpeting Carnosaur
+1 Zopandrel, Hunger Dominus
+1 Food Chain
+1 Garruk's Uprising
+1 Monstrous Vortex
+1 Rhystic Study
+1 Sylvan Library
+1 Up the Beanstalk
+1 Beast Within
+1 Brainstorm
+1 Cyclonic Rift
+1 Mystical Tutor
+1 Nexus of Fate
+1 Worldly Tutor
+1 Kiora, Behemoth Beckoner
+1 Call Forth the Tempest
+1 Cultivate
+1 Farseek
+1 Genesis Ultimatum
+1 Jeska's Will
+1 Kodama's Reach
+1 Nature's Lore
+1 Skyshroud Claim
+1 Temporal Manipulation
+1 Three Visits
+1 Time Warp
+1 Tooth and Nail

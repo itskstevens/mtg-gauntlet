@@ -1,0 +1,82 @@
+1 Gev, Scaled Scorch
+1 Arcane Signet
+1 Bontu's Monument
+1 Herald's Horn
+1 Lightning Greaves
+1 Patchwork Banner
+1 Rakdos Signet
+1 Sinister Monolith
+1 Sol Ring
+1 Talisman of Indulgence
+1 Blazemire Verge
+1 Blood Crypt
+1 Bloodstained Mire
+1 Bojuka Bog
+1 Command Tower
+1 Dragonskull Summit
+1 Foreboding Ruins
+1 Haunted Ridge
+1 Jagged Barrens
+1 Luxury Suite
+11 Mountain
+1 Mudflat Village
+1 Path of Ancestry
+1 Rockface Village
+1 Smoldering Marsh
+1 Sulfurous Springs
+9 Swamp
+1 Tainted Peak
+1 Agate Instigator
+1 Agate-Blade Assassin
+1 Chandra's Pyreling
+1 Cindering Cutthroat
+1 Dagger Caster
+1 Fireglass Mentor
+1 Flamecache Gecko
+1 Frilled Sparkshooter
+1 Hearthborn Battler
+1 Hired Claw
+1 Hissing Iguanar
+1 Immolation Shaman
+1 Iridescent Vinelasher
+1 Kediss, Emberclaw Familiar
+1 Kindlespark Duo
+1 Laughing Jasper Flint
+1 Lizard Blades
+1 Magebane Lizard
+1 Master of Barbs
+1 Murderous Redcap
+1 Ojer Axonil, Deepest Might
+1 Party Thrasher
+1 Ravine Raider
+1 Reptilian Recruiter
+1 Spitfire Lagac
+1 Steampath Charger
+1 Stormfist Crusader
+1 Thought-Stalker Warlock
+1 Valley Flamecaller
+1 Valley Rotcaller
+1 Descent into Avernus
+1 Goblin Bombardment
+1 Impact Tremors
+1 Phyrexian Arena
+1 Theater of Horrors
+1 Uncivil Unrest
+1 Abrade
+1 Bedevil
+1 Chaos Warp
+1 Dark Ritual
+1 Deadly Rollick
+1 Lightning Bolt
+1 Rakdos Charm
+1 Scales of Shale
+1 Terminate
+1 Blasphemous Act
+1 Boltwave
+1 End the Festivities
+1 Faithless Looting
+1 Feed the Swarm
+1 Jeska's Will
+1 Sign in Blood
+1 Tectonic Hazard
+1 Vandalblast

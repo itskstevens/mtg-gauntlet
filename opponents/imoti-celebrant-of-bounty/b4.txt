@@ -1,0 +1,83 @@
+1 Imoti, Celebrant of Bounty
+1 Arcane Signet
+1 Lightning Greaves
+1 Simic Signet
+1 Sol Ring
+1 Talisman of Curiosity
+1 The Great Henge
+1 Thran Dynamo
+1 Ancient Tomb
+1 Boseiju, Who Endures
+1 Breeding Pool
+1 Command Tower
+1 Dreamroot Cascade
+1 Flooded Grove
+10 Forest
+1 Hinterland Harbor
+9 Island
+1 Misty Rainforest
+1 Mosswort Bridge
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Simic Growth Chamber
+1 Temple of Mystery
+1 Temple of the False God
+1 Yavimaya Coast
+1 Yavimaya, Cradle of Growth
+1 Aesi, Tyrant of Gyre Strait
+1 Annoyed Altisaur
+1 Apex Devastator
+1 Beanstalk Giant
+1 Birds of Paradise
+1 Brinelin, the Moon Kraken
+1 Consecrated Sphinx
+1 Fierce Empath
+1 Ghalta the Unstoppable
+1 Ghalta, Primal Hunger
+1 Goreclaw, Terror of Qal Sisma
+1 Gwenna, Eyes of Gaea
+1 Hullbreaker Horror
+1 Kodama of the East Tree
+1 Kogla, the Titan Ape
+1 Koma, Cosmos Serpent
+1 Llanowar Elves
+1 Nezahal, Primal Tide
+1 Nulldrifter
+1 Nyxbloom Ancient
+1 Quandrix, the Proof
+1 Sakashima's Protege
+1 Selvala, Heart of the Wilds
+1 Surrak and Goreclaw
+1 Terastodon
+1 Thrasta, Tempest's Roar
+1 Thryx, the Sudden Storm
+1 Troyan, Gutsy Explorer
+1 Vorinclex, Voice of Hunger
+1 Garruk's Uprising
+1 Kozilek's Unsealing
+1 Monstrous Vortex
+1 Omniscience
+1 One with the Multiverse
+1 Up the Beanstalk
+1 Zendikar Resurgent
+1 Beast Within
+1 Cyclonic Rift
+1 Dig Through Time
+1 Harrow
+1 Nexus of Fate
+1 Sublime Epiphany
+1 Worldly Tutor
+1 Kiora, Behemoth Beckoner
+1 Aminatou's Augury
+1 Cultivate
+1 Farseek
+1 Kodama's Reach
+1 Nature's Lore
+1 Rampant Growth
+1 Rishkar's Expertise
+1 Sea Gate Restoration
+1 Skyshroud Claim
+1 Temporal Mastery
+1 Three Visits
+1 Time Stretch
+1 Treasure Cruise

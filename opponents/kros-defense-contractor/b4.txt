@@ -1,0 +1,92 @@
+1 Kros, Defense Contractor
+1 Arcane Signet
+1 Bounty Board
+1 Contagion Clasp
+1 Contagion Engine
+1 Fellwar Stone
+1 Sol Ring
+1 Staff of Compleation
+1 Swiftfoot Boots
+1 Boseiju, Who Endures
+1 Bountiful Promenade
+1 Breeding Pool
+1 Command Tower
+1 Deserted Beach
+1 Dreamroot Cascade
+1 Exotic Orchard
+1 Flooded Strand
+4 Forest
+1 Glacial Fortress
+1 Hallowed Fountain
+1 Hinterland Harbor
+3 Island
+1 Karn's Bastion
+1 Misty Rainforest
+1 Nesting Grounds
+1 Overgrown Farmland
+4 Plains
+1 Prairie Stream
+1 Rejuvenating Springs
+1 Sea of Clouds
+1 Seaside Citadel
+1 Spara's Headquarters
+1 Sunpetal Grove
+1 Temple Garden
+1 Windswept Heath
+1 Yavimaya Coast
+1 Birds of Paradise
+1 Dreamtide Whale
+1 Esper Sentinel
+1 Evolution Sage
+1 Ezuri, Stalker of Spheres
+1 Fathom Mage
+1 Filigree Vector
+1 Flux Channeler
+1 Forgotten Ancient
+1 Generous Patron
+1 Gluntch, the Bestower
+1 Grateful Apparition
+1 Hylda of the Icy Crown
+1 Incubation Druid
+1 Metastatic Evangel
+1 Nils, Discipline Enforcer
+1 Noble Hierarch
+1 Orzhov Advokist
+1 Patrolling Peacemaker
+1 Rishkar, Peema Renegade
+1 Sheltering Ancient
+1 Skyboon Evangelist
+1 Thrummingbird
+1 Tomik, Orzhov Lawmage
+1 Brokers Ascendancy
+1 Evolutionary Escalation
+1 Ghostly Prison
+1 Inexorable Tide
+1 Propaganda
+1 Rhystic Study
+1 Simic Ascendancy
+1 Smothering Tithe
+1 Verity Circle
+1 An Offer You Can't Refuse
+1 Counterspell
+1 Cyclonic Rift
+1 Dovin's Veto
+1 Enlightened Tutor
+1 Experimental Augury
+1 Fierce Guardianship
+1 Heroic Intervention
+1 Mana Drain
+1 Path to Exile
+1 Swan Song
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Ajani, Sleeper Agent
+1 Tamiyo, Field Researcher
+1 Collective Effort
+1 Farewell
+1 Farseek
+1 Nature's Lore
+1 Promise of Loyalty
+1 Requisition Raid
+1 Tezzeret's Gambit
+1 Three Visits

@@ -1,0 +1,93 @@
+1 Nethroi, Apex of Death
+1 Altar of Dementia
+1 Arcane Signet
+1 Ashnod's Altar
+1 Mesmeric Orb
+1 Phyrexian Altar
+1 Sol Ring
+1 Boseiju, Who Endures
+1 Bountiful Promenade
+1 Command Tower
+1 Exotic Orchard
+4 Forest
+1 Godless Shrine
+1 Indatha Triome
+1 Isolated Chapel
+1 Llanowar Wastes
+1 Lush Portico
+1 Marsh Flats
+1 Overgrown Tomb
+1 Phyrexian Tower
+3 Plains
+1 Sandsteppe Citadel
+1 Sunpetal Grove
+3 Swamp
+1 Takenuma, Abandoned Mire
+1 Temple Garden
+1 Underground Mortuary
+1 Undergrowth Stadium
+1 Urborg, Tomb of Yawgmoth
+1 Vault of Champions
+1 Verdant Catacombs
+1 Windswept Heath
+1 Woodland Cemetery
+1 Aftermath Analyst
+1 Avacyn's Pilgrim
+1 Birds of Paradise
+1 Blood Artist
+1 Boneyard Lurker
+1 Carrion Feeder
+1 Deathrite Shaman
+1 Elas il-Kor, Sadistic Pilgrim
+1 Elves of Deep Shadow
+1 Elvish Mystic
+1 Eternal Witness
+1 Faeburrow Elder
+1 Fauna Shaman
+1 Fiend Artisan
+1 Gemrazer
+1 Golgari Grave-Troll
+1 Hermit Druid
+1 Icetill Explorer
+1 Karmic Guide
+1 Llanowar Elves
+1 Luminous Broodmoth
+1 Migratory Greathorn
+1 Mikaeus, the Unhallowed
+1 Necropanther
+1 Protean Hulk
+1 Reveillark
+1 Saffi Eriksdotter
+1 Sakura-Tribe Elder
+1 Satyr Wayfinder
+1 Scourge of the Skyclaves
+1 Six
+1 Skull Prophet
+1 Stitcher's Supplier
+1 Underrealm Lich
+1 Viscera Seer
+1 Zulaport Cutthroat
+1 Animate Dead
+1 Greater Good
+1 Ripples of Undeath
+1 Smothering Tithe
+1 Sylvan Library
+1 Assassin's Trophy
+1 Dark Ritual
+1 Entomb
+1 Grisly Salvage
+1 Path to Exile
+1 Swords to Plowshares
+1 Vampiric Tutor
+1 Worldly Tutor
+1 Grist, the Hunger Tide
+1 Buried Alive
+1 Damn
+1 Demonic Tutor
+1 Diabolic Intent
+1 Eerie Ultimatum
+1 Life from the Loam
+1 Living Death
+1 Reanimate
+1 Toxic Deluge
+1 Victimize

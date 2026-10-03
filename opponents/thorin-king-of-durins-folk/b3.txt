@@ -1,0 +1,84 @@
+1 Thorin, King of Durin's Folk
+1 Arcane Signet
+1 Bearded Axe
+1 Bloodforged Battle-Axe
+1 Chronicle of Victory
+1 Diamond Pick-Axe
+1 Dwarven Mattock
+1 Herald's Horn
+1 Lightning Greaves
+1 Long-Lost Lances
+1 Mithril Coat
+1 Orcrist, Goblin-cleaver
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Conviction
+1 The Arkenstone
+1 The Reaver Cleaver
+1 Battlefield Forge
+1 Clifftop Retreat
+1 Command Tower
+1 Dragon-Cursed Halls
+1 Dwarven Mine
+1 Furycalm Snarl
+1 Iron Hills
+1 Minas Tirith
+1 Mines of Moria
+9 Mountain
+1 Path of Ancestry
+9 Plains
+1 Radiant Summit
+1 Rogue's Passage
+1 Rugged Prairie
+1 Sacred Foundry
+1 Spectator Seating
+1 Sundown Pass
+1 The Lonely Mountain
+1 Treasure Vault
+1 Academy Manufactor
+1 Balin, Loremaster
+1 Bifur, Melodic Rider
+1 Bofur, Reliable Guardian
+1 Bruenor Battlehammer
+1 Dori, Bearer of Friends
+1 Dwalin, Weaponmaster
+1 Dwarven Recruiter
+1 Dáin Ironfoot
+1 Dáin of the Ancient Halls
+1 Dáin's Company
+1 Dáin, Lord of the Iron Hills
+1 Fíli and Kíli, Joyous
+1 Fíli the Pathfinder
+1 Gimli of the Glittering Caves
+1 Giott, King of the Dwarves
+1 Glóin the Mighty
+1 Glóin, Dwarf Emissary
+1 Goldspan Dragon
+1 Iron Hills Blacksmith
+1 Kíli the Resourceful
+1 Magda, Brazen Outlaw
+1 Nori, Teller of Tales
+1 Ori, Plate Stacker
+1 Smaug the Magnificent
+1 Thorin Oakenshield
+1 Thorin, Company's Leader
+1 Thorin, Mountain-king
+1 Xorn
+1 Óin the Brave
+1 An Unexpected Party
+1 Gleaming Splendor
+1 Rain of Riches
+1 Smothering Tithe
+1 The Misty Mountains Cold
+1 There and Back Again
+1 Akroma's Will
+1 Big Score
+1 Bilbo's Gambit
+1 Boros Charm
+1 Dispatch
+1 Path to Exile
+1 Reprieve
+1 Swords to Plowshares
+1 Blasphemous Act
+1 Seize the Spoils
+1 Vandalblast

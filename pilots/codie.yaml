@@ -1,0 +1,72 @@
+# Pilot for Codie, Ravenous Codex (DeckTechsForDecks "CODIE 42 creature storm"). Drives how the simulator plays YOUR deck.
+# Prepare spells, Codie's copy and re-prepare, Kitten flickers, untappers and the infinite loops live in engine/engine.py.
+commander: Codie, Ravenous Codex
+eyebrow: "Five-color · Prepare creature storm · Bracket 3 (as tagged)"
+summary: Creatures with prepare spells cast them from exile and Codie copies each one; WUBRG re-prepares the board.
+  Wins with an infinite Seething Song loop (Displacer Kitten or Codie + an untapper) into Flaming Tyrannosaurus,
+  Impending Flux or a copied Exsanguinate.
+
+# Pieces the AI protects and never sacrifices.
+engine: [Displacer Kitten, Blazing Firesinger, Chakram Retriever, Jeskai Ascendancy, Chromatic Orrery, Annie Joins Up,
+         Flaming Tyrannosaurus, Stensian Sanguinist, Archmage Emeritus, "Vega, the Watcher", "Kellan, the Kid",
+         Cryptolith Rite, Elven Chorus, Enduring Vitality, Song of Creation, Emeritus of Woe, Emeritus of Ideation]
+# Utility creatures and loop pieces stay home; Codie never attacks.
+keep_home: [Displacer Kitten, Blazing Firesinger, Chakram Retriever, Archmage Emeritus, "Vega, the Watcher",
+            "Kellan, the Kid", Stensian Sanguinist, Storm-Kiln Artist, Bloom Tender, Faeburrow Elder, Birds of Paradise,
+            "Veyran, Voice of Duality", "Deekah, Fractal Theorist", Beast Whisperer, Harmonized Trio, Emeritus of Woe,
+            Emeritus of Conflict, Flaming Tyrannosaurus]
+keep_commander_home: true
+commander_first: true
+
+fodder: tokens
+fodder_max_cmc: 2
+instant_sac_tokens: []
+bonus_keywords: []
+
+# Demonic Tutor (Emeritus of Woe) fetches the missing loop piece first.
+tutor_targets: [Displacer Kitten, Blazing Firesinger, Flaming Tyrannosaurus, Chakram Retriever, Chromatic Orrery,
+                Jeskai Ascendancy, Impending Flux]
+
+priorities:
+  Displacer Kitten: 90
+  Blazing Firesinger: 89
+  Chakram Retriever: 87
+  Jeskai Ascendancy: 87
+  Flaming Tyrannosaurus: 86
+  Annie Joins Up: 85
+  Chromatic Orrery: 84
+  Cryptolith Rite: 84
+  Elven Chorus: 83
+  Enduring Vitality: 83
+  Archmage Emeritus: 82
+  "Vega, the Watcher": 82
+  Song of Creation: 81
+  "Kellan, the Kid": 80
+  Emeritus of Woe: 80
+  Emeritus of Ideation: 79
+  Goblin Glasswright: 76
+  Stensian Sanguinist: 75
+  Storm-Kiln Artist: 75
+  "Veyran, Voice of Duality": 74
+  Timeless Lotus: 78
+  Agatha's Soul Cauldron: 40
+
+value_bonus:
+  Displacer Kitten: 4
+  Blazing Firesinger: 4
+  Flaming Tyrannosaurus: 4
+  Chakram Retriever: 3
+  Jeskai Ascendancy: 3
+key_cards:
+- Codie, Ravenous Codex
+- Displacer Kitten
+- Blazing Firesinger
+- Flaming Tyrannosaurus
+- Chakram Retriever
+- Jeskai Ascendancy
+- Impending Flux
+- Stensian Sanguinist
+hold_removal_vs_combo: true
+hold_counters: true
+sac_nontoken: false
+x_reserve: 0

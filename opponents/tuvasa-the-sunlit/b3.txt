@@ -1,0 +1,88 @@
+1 Tuvasa the Sunlit
+1 Arcane Signet
+1 Sol Ring
+1 Bountiful Promenade
+1 Breeding Pool
+1 Canopy Vista
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+5 Forest
+1 Glacial Fortress
+1 Hall of Heliod's Generosity
+1 Hallowed Fountain
+1 Hinterland Harbor
+4 Island
+1 Misty Rainforest
+6 Plains
+1 Prairie Stream
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Sea of Clouds
+1 Seaside Citadel
+1 Spara's Headquarters
+1 Sunpetal Grove
+1 Temple Garden
+1 Windswept Heath
+1 Yavimaya Coast
+1 Archon of Sun's Grace
+1 Argothian Enchantress
+1 Calix, Guided by Fate
+1 Destiny Spinner
+1 Dryad of the Ilysian Grove
+1 Eidolon of Blossoms
+1 Entity Tracker
+1 Herald of the Pantheon
+1 Inquisitive Glimmer
+1 Jukai Naturalist
+1 Mesa Enchantress
+1 Noble Hierarch
+1 Nylea's Colossus
+1 Sanctum Weaver
+1 Satyr Enchanter
+1 Setessan Champion
+1 Starfield Mystic
+1 Sythis, Harvest's Hand
+1 Verduran Enchantress
+1 All That Glitters
+1 Amphibian Downpour
+1 Ancestral Mask
+1 Aqueous Form
+1 Bear Umbra
+1 Darksteel Mutation
+1 Enchanted Evening
+1 Enchantress's Presence
+1 Estrid's Invocation
+1 Ethereal Armor
+1 Fertile Ground
+1 Ghostly Prison
+1 Grasp of Fate
+1 Hallowed Haunting
+1 Imprisoned in the Moon
+1 Kenrith's Transformation
+1 Mirari's Wake
+1 Mystic Remora
+1 Overgrowth
+1 Privileged Position
+1 Propaganda
+1 Rancor
+1 Rhystic Study
+1 Shield of the Oversoul
+1 Sigil of the Empty Throne
+1 Song of the Dryads
+1 Sphere of Safety
+1 Steel of the Godhead
+1 Sterling Grove
+1 Strength of the Harvest
+1 Utopia Sprawl
+1 Wild Growth
+1 Counterspell
+1 Enlightened Tutor
+1 Heroic Intervention
+1 Path to Exile
+1 Swords to Plowshares
+1 Estrid, the Masked
+1 Cultivate
+1 Idyllic Tutor
+1 Replenish
+1 Winds of Rath

@@ -1,0 +1,79 @@
+1 Lord of the Nazgûl
+1 Arcane Signet
+1 Dimir Signet
+1 Fellwar Stone
+1 Isochron Scepter
+1 Lightning Greaves
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Dominance
+1 The One Ring
+1 Thought Vessel
+1 Ancient Tomb
+1 Bojuka Bog
+1 Choked Estuary
+1 Clearwater Pathway
+1 Command Tower
+1 Drowned Catacomb
+1 Gloomlake Verge
+8 Island
+1 Minas Morgul, Dark Fortress
+1 Morphic Pool
+1 Mystic Sanctuary
+1 Otawara, Soaring City
+1 Polluted Delta
+1 Reliquary Tower
+1 Shipwreck Marsh
+1 Sunken Hollow
+8 Swamp
+1 Underground River
+1 Urborg, Tomb of Yawgmoth
+1 Watery Grave
+1 Archmage Emeritus
+1 Gandalf, Friend of the Shire
+8 Nazgûl
+1 Orcish Bowmasters
+1 Ringwraiths
+1 Roaming Throne
+1 Spark Double
+1 Witch-king of Angmar
+1 Witch-king, Bringer of Ruin
+1 Black Market Connections
+1 Call of the Ring
+1 Kindred Discovery
+1 Rhystic Study
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Brainstorm
+1 Consider
+1 Counterspell
+1 Cyclonic Rift
+1 Dark Ritual
+1 Deadly Rollick
+1 Fierce Guardianship
+1 Force of Negation
+1 Force of Will
+1 Frantic Search
+1 Mana Drain
+1 Mystical Tutor
+1 Negate
+1 Opt
+1 Pongify
+1 Rapid Hybridization
+1 Sink into Stupor
+1 Snap
+1 Soothing of Sméagol
+1 Swan Song
+1 Vampiric Tutor
+1 Birthday Escape
+1 Demonic Tutor
+1 Feed the Swarm
+1 Gitaxian Probe
+1 Night's Whisper
+1 Ponder
+1 Preordain
+1 Raise the Palisade
+1 Reanimate
+1 Ringsight
+1 Serum Visions
+1 Toxic Deluge

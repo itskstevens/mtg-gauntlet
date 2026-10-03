@@ -1,0 +1,90 @@
+1 Kefka, Court Mage
+1 Arcane Signet
+1 Dimir Signet
+1 Fellwar Stone
+1 Geth's Grimoire
+1 Lightning Greaves
+1 Monument to Endurance
+1 Sol Ring
+1 Talisman of Creativity
+1 Talisman of Dominance
+1 Talisman of Indulgence
+1 Thought Vessel
+1 Blood Crypt
+1 Bloodstained Mire
+1 Command Tower
+1 Crumbling Necropolis
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Exotic Orchard
+4 Island
+1 Luxury Suite
+1 Morphic Pool
+4 Mountain
+1 Polluted Delta
+1 Reliquary Tower
+1 Scalding Tarn
+1 Shivan Reef
+1 Smoldering Marsh
+1 Steam Vents
+1 Sulfur Falls
+1 Sulfurous Springs
+1 Sunken Hollow
+5 Swamp
+1 Training Center
+1 Underground River
+1 Watery Grave
+1 Xander's Lounge
+1 Aclazotz, Deepest Betrayal
+1 Anger
+1 Archfiend of Ifnir
+1 Baleful Strix
+1 Black Waltz No. 3
+1 Bone Miser
+1 Dauthi Voidwalker
+1 Displacer Kitten
+1 Emet-Selch, Unsundered
+1 Gogo, Mysterious Mime
+1 Harmonic Prodigy
+1 Kefka, Dancing Mad
+1 Kroxa, Titan of Death's Hunger
+1 Kuja, Genome Sorcerer
+1 Nightscape Familiar
+1 Niv-Mizzet, Parun
+1 Psychosis Crawler
+1 Sheoldred, the Apocalypse
+1 Tergrid, God of Fright
+1 Tinybones, Bauble Burglar
+1 Vivi Ornitier
+1 Animate Dead
+1 Liliana's Caress
+1 Megrim
+1 Mystic Remora
+1 Painful Quandary
+1 Waste Not
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Chaos Warp
+1 Counterspell
+1 Dark Ritual
+1 Deadly Rollick
+1 Essence Flux
+1 Frantic Search
+1 Ghostly Flicker
+1 Laughing Mad
+1 Mana Drain
+1 Negate
+1 Saw in Half
+1 Sink into Stupor
+1 Swan Song
+1 Liliana of the Veil
+1 Blasphemous Act
+1 Dark Deal
+1 Faithless Looting
+1 Feed the Swarm
+1 Reanimate
+1 Rise of the Dark Realms
+1 Syphon Mind
+1 Toxic Deluge
+1 Vandalblast
+1 Windfall

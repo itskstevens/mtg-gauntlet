@@ -1,0 +1,88 @@
+1 Estrid, the Masked
+1 Sol Ring
+1 The Chain Veil
+1 Azorius Chancery
+1 Bountiful Promenade
+1 Breeding Pool
+1 Canopy Vista
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+6 Forest
+1 Glacial Fortress
+1 Hall of Heliod's Generosity
+1 Hallowed Fountain
+1 Hinterland Harbor
+4 Island
+1 Misty Rainforest
+5 Plains
+1 Prairie Stream
+1 Reliquary Tower
+1 Seaside Citadel
+1 Selesnya Sanctuary
+1 Simic Growth Chamber
+1 Spara's Headquarters
+1 Sunpetal Grove
+1 Temple Garden
+1 Windswept Heath
+1 Ajani's Chosen
+1 Archetype of Imagination
+1 Archon of Sun's Grace
+1 Bruna, Light of Alabaster
+1 Calix, Guided by Fate
+1 Destiny Spinner
+1 Eidolon of Blossoms
+1 Entity Tracker
+1 Herald of the Pantheon
+1 Jukai Naturalist
+1 Kestia, the Cultivator
+1 Mesa Enchantress
+1 Nylea's Colossus
+1 Sanctum Weaver
+1 Satyr Enchanter
+1 Setessan Champion
+1 Sythis, Harvest's Hand
+1 Tuvasa the Sunlit
+1 Verduran Enchantress
+1 Yenna, Redtooth Regent
+1 Abundant Growth
+1 All That Glitters
+1 Ancestral Mask
+1 Bear Umbra
+1 Buried in the Garden
+1 Darksteel Mutation
+1 Dawn's Reflection
+1 Enchantress's Presence
+1 Estrid's Invocation
+1 Ethereal Armor
+1 Fertile Ground
+1 Ghostly Prison
+1 Gift of Paradise
+1 Grasp of Fate
+1 Imprisoned in the Moon
+1 Market Festival
+1 Mirrormade
+1 Oath of Teferi
+1 Overgrowth
+1 Propaganda
+1 Rhystic Study
+1 Sage's Reverie
+1 Shimmerwilds Growth
+1 Sigil of the Empty Throne
+1 Sphere of Safety
+1 Sterling Grove
+1 Strength of the Harvest
+1 Utopia Sprawl
+1 Wild Growth
+1 Wolfwillow Haven
+1 Counterspell
+1 Enlightened Tutor
+1 Heroic Intervention
+1 Path to Exile
+1 Swords to Plowshares
+1 Calix, Destiny's Hand
+1 Idyllic Tutor
+1 Replenish
+1 Resurgent Belief
+1 Supreme Verdict
+1 Winds of Rath

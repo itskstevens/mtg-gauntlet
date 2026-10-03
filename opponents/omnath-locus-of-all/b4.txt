@@ -1,0 +1,96 @@
+1 Omnath, Locus of All
+1 Arcane Signet
+1 Chromatic Lantern
+1 Chromatic Orrery
+1 Doubling Cube
+1 Fellwar Stone
+1 Lightning Greaves
+1 Realmbreaker, the Invasion Tree
+1 Sensei's Divining Top
+1 Sol Ring
+1 Arid Mesa
+1 Bloodstained Mire
+1 Breeding Pool
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+2 Forest
+1 Godless Shrine
+1 Hallowed Fountain
+1 Indatha Triome
+2 Island
+1 Ketria Triome
+1 Marsh Flats
+1 Misty Rainforest
+2 Mountain
+1 Overgrown Tomb
+2 Plains
+1 Polluted Delta
+1 Reliquary Tower
+1 Scalding Tarn
+1 Spara's Headquarters
+1 Steam Vents
+1 Stomping Ground
+1 Swamp
+1 Temple Garden
+1 The World Tree
+1 Verdant Catacombs
+1 Watery Grave
+1 Windswept Heath
+1 Wooded Foothills
+1 Zagoth Triome
+1 Atraxa, Grand Unifier
+1 Birds of Paradise
+1 Bloom Tender
+1 Dryad of the Ilysian Grove
+1 Elesh Norn
+1 Elesh Norn, Grand Cenobite
+1 Elesh Norn, Mother of Machines
+1 Faeburrow Elder
+1 Ignoble Hierarch
+1 Jin-Gitaxias
+1 Jin-Gitaxias, Core Augur
+1 Jin-Gitaxias, Progress Tyrant
+1 Maelstrom Wanderer
+1 Muldrotha, the Gravetide
+1 Nyxbloom Ancient
+1 Omnath, Locus of Creation
+1 Omnath, Locus of Rage
+1 Seedborn Muse
+1 Sheoldred
+1 Sheoldred, Whispering One
+1 Sheoldred, the Apocalypse
+1 Urabrask the Hidden
+1 Vorinclex
+1 Vorinclex, Monstrous Raider
+1 Vorinclex, Voice of Hunger
+1 Annie Joins Up
+1 Leyline of the Guildpact
+1 Rhystic Study
+1 Smothering Tithe
+1 Sylvan Library
+1 Temur Ascendancy
+1 Wilderness Reclamation
+1 Cyclonic Rift
+1 Enlightened Tutor
+1 Fierce Guardianship
+1 Heroic Intervention
+1 Mana Drain
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Vampiric Tutor
+1 Void Rend
+1 Worldly Tutor
+1 Vraska, Betrayal's Sting
+1 Cultivate
+1 Debt to the Deathless
+1 Demonic Tutor
+1 Eerie Ultimatum
+1 Farseek
+1 Kodama's Reach
+1 Nature's Lore
+1 Ruinous Ultimatum
+1 Three Visits
+1 Torment of Hailfire
+1 Villainous Wealth

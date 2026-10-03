@@ -1,0 +1,91 @@
+1 Storm, Force of Nature
+1 Arcane Signet
+1 Chrome Mox
+1 Lightning Greaves
+1 Lotus Petal
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Creativity
+1 The One Ring
+1 Boseiju, Who Endures
+1 Breeding Pool
+1 Command Tower
+1 Dreamroot Cascade
+1 Exotic Orchard
+4 Forest
+1 Hinterland Harbor
+4 Island
+1 Ketria Triome
+1 Mistrise Village
+1 Misty Rainforest
+4 Mountain
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Scalding Tarn
+1 Shivan Reef
+1 Spire Garden
+1 Steam Vents
+1 Stomping Ground
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Training Center
+1 Wooded Foothills
+1 Yavimaya Coast
+1 Archmage Emeritus
+1 Archmage of Runes
+1 Ashling, Flame Dancer
+1 Birds of Paradise
+1 Birgi, God of Storytelling
+1 Delighted Halfling
+1 Electro, Assaulting Battery
+1 Goblin Electromancer
+1 Ral, Monsoon Mage
+1 Spellseeker
+1 Storm-Kiln Artist
+1 Stormcatch Mentor
+1 Vivi Ornitier
+1 Mystic Remora
+1 Rhystic Study
+1 Thousand-Year Storm
+1 Underworld Breach
+1 An Offer You Can't Refuse
+1 Big Score
+1 Brain Freeze
+1 Brainstorm
+1 Consider
+1 Counterspell
+1 Crop Rotation
+1 Cyclonic Rift
+1 Deflecting Swat
+1 Expedite
+1 Fierce Guardianship
+1 Flusterstorm
+1 Frantic Search
+1 Growth Spiral
+1 Lightning Bolt
+1 Manamorphose
+1 Mystical Tutor
+1 Noxious Revival
+1 Opt
+1 Psychotic Fury
+1 Seething Song
+1 Snap
+1 Ral, Crackling Wit
+1 Boltwave
+1 Enter the Enigma
+1 Explore
+1 Faithless Looting
+1 Farseek
+1 Gitaxian Probe
+1 Grapeshot
+1 Ice Storm
+1 Jeska's Will
+1 Mana Geyser
+1 Nature's Lore
+1 Overpowering Attack
+1 Ponder
+1 Preordain
+1 Regrowth
+1 Solve the Equation
+1 Strike It Rich
+1 Three Visits

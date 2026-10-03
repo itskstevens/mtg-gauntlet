@@ -1,0 +1,77 @@
+1 Shirei, Shizo's Caretaker
+1 Arcane Signet
+1 Ashnod's Altar
+1 Bolas's Citadel
+1 Desecrated Tomb
+1 Jet Medallion
+1 Lightning Greaves
+1 Mithril Coat
+1 Phyrexian Altar
+1 Skullclamp
+1 Sol Ring
+1 Swiftfoot Boots
+1 Ancient Tomb
+1 Bojuka Bog
+1 Cabal Coffers
+1 Cabal Stronghold
+1 High Market
+1 Nykthos, Shrine to Nyx
+1 Phyrexian Tower
+1 Reliquary Tower
+24 Swamp
+1 Urborg, Tomb of Yawgmoth
+1 Abyssal Gatekeeper
+1 Ayara, First of Locthwain
+1 Big Game Hunter
+1 Blood Artist
+1 Blood Pet
+1 Bone Shredder
+1 Burglar Rat
+1 Cadaver Imp
+1 Carrion Feeder
+1 Clattering Augur
+1 Dusk Legion Zealot
+1 Gray Merchant of Asphodel
+1 Greedy Freebooter
+1 Grim Haruspex
+1 Marionette Apprentice
+1 Mindless Automaton
+1 Morbid Opportunist
+1 Novice Occultist
+1 Orcish Bowmasters
+1 Pawn of Ulamog
+1 Pilgrim's Eye
+1 Pitiless Plunderer
+1 Priest of Forgotten Gods
+1 Serrated Scorpion
+1 Shambling Ghast
+1 Skullport Merchant
+1 Skyscanner
+1 Syr Konrad, the Grim
+1 Virus Beetle
+1 Viscera Seer
+1 Warren Soultrader
+1 Yawgmoth, Thran Physician
+1 Zulaport Cutthroat
+1 Attrition
+1 Bastion of Remembrance
+1 Black Market
+1 Contamination
+1 Dark Privilege
+1 Dictate of Erebos
+1 Grave Pact
+1 Culling the Weak
+1 Dark Ritual
+1 Deadly Dispute
+1 Imp's Mischief
+1 Tragic Slip
+1 Vampiric Tutor
+1 Village Rites
+1 Withering Torment
+1 Demonic Tutor
+1 Diabolic Intent
+1 Eaten Alive
+1 Feed the Swarm
+1 Reanimate
+1 Toxic Deluge
+1 Victimize

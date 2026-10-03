@@ -1,0 +1,91 @@
+1 Caesar, Legion's Emperor
+1 Arcane Signet
+1 Horn of Gondor
+1 Idol of Oblivion
+1 Lightning Greaves
+1 Skullclamp
+1 Sol Ring
+1 Talisman of Conviction
+1 Talisman of Hierarchy
+1 Talisman of Indulgence
+1 Battlefield Forge
+1 Blood Crypt
+1 Bloodstained Mire
+1 Caves of Koilos
+1 Clifftop Retreat
+1 Command Tower
+1 Desolate Mire
+1 Diamond City
+1 Dragonskull Summit
+1 Exotic Orchard
+1 Godless Shrine
+1 Isolated Chapel
+4 Mountain
+1 Nomad Outpost
+1 Path of Ancestry
+4 Plains
+1 Sacred Foundry
+1 Savai Triome
+1 Shadowblood Ridge
+1 Smoldering Marsh
+4 Swamp
+1 Tainted Field
+1 Tainted Peak
+1 Temple of Silence
+1 Temple of Triumph
+1 Windbrisk Heights
+1 Adeline, Resplendent Cathar
+1 Ainok Strike Leader
+1 Anim Pakal, Thousandth Moon
+1 Arabella, Abandoned Doll
+1 Belladonna Took
+1 Bone-Cairn Butcher
+1 Captain of the Watch
+1 Commissar Severina Raine
+1 Elas il-Kor, Sadistic Pilgrim
+1 Elder Arthur Maxson
+1 Exalted Sunborn
+1 General's Enforcer
+1 Isshin, Two Heavens as One
+1 Kambal, Profiteering Mayor
+1 Keeper of the Accord
+1 Loyal Apprentice
+1 MacCready, Lamplight Mayor
+1 Mirkwood Bats
+1 Mondrak, Glory Dominus
+1 Morbid Opportunist
+1 Myrel, Shield of Argive
+1 Ojer Taq, Deepest Foundation
+1 Pitiless Plunderer
+1 Purphoros, God of the Forge
+1 Securitron Squadron
+1 Teysa Karlov
+1 Voice of Victory
+1 Zulaport Cutthroat
+1 Zurgo Stormrender
+1 Anointed Procession
+1 Assemble the Legion
+1 Bastion of Remembrance
+1 Black Market
+1 Fervent Charge
+1 Impact Tremors
+1 Intangible Virtue
+1 Reconnaissance
+1 Warleader's Call
+1 Windcrag Siege
+1 Anguished Unmaking
+1 Call the Coppercoats
+1 Deadly Dispute
+1 Entrapment Maneuver
+1 Path to Exile
+1 Secure the Wastes
+1 Swords to Plowshares
+1 V.A.T.S.
+1 Wear // Tear
+1 Will of the Mardu
+1 Elspeth, Storm Slayer
+1 Blasphemous Act
+1 Diabolic Intent
+1 Hour of Reckoning
+1 Martial Coup
+1 Ruinous Ultimatum

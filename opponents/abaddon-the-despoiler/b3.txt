@@ -1,0 +1,88 @@
+1 Abaddon the Despoiler
+1 Arcane Signet
+1 Chromatic Lantern
+1 Commander's Sphere
+1 Fellwar Stone
+1 Lightning Greaves
+1 Sol Ring
+1 Sol Talisman
+1 Swiftfoot Boots
+1 Talisman of Creativity
+1 Talisman of Dominance
+1 Talisman of Indulgence
+1 Blood Crypt
+1 Bloodstained Mire
+1 Command Tower
+1 Crumbling Necropolis
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Exotic Orchard
+5 Island
+1 Luxury Suite
+1 Morphic Pool
+5 Mountain
+1 Path of Ancestry
+1 Polluted Delta
+1 Scalding Tarn
+1 Shivan Reef
+1 Steam Vents
+1 Sulfur Falls
+1 Sulfurous Springs
+1 Sunken Hollow
+5 Swamp
+1 Training Center
+1 Watery Grave
+1 Xander's Lounge
+1 Bloodletter of Aclazotz
+1 Bloodthirster
+1 Chaos Defiler
+1 Creeping Bloodsucker
+1 Duskmantle Seer
+1 Exalted Flamer of Tzeentch
+1 Heralds of Tzeentch
+1 Keen Duelist
+1 Keeper of Secrets
+1 Lord of Change
+1 Loyal Subordinate
+1 Nalfeshnee
+1 Neheb, the Eternal
+1 Nightscape Familiar
+1 Noise Marine
+1 Plague Drone
+1 Poxwalkers
+1 Prosper, Tome-Bound
+1 Rakdos, Lord of Riots
+1 Stormfist Crusader
+1 Thermo-Alchemist
+1 Twilight Prophet
+1 Wild-Magic Sorcerer
+1 Court of Ambition
+1 Descent into Avernus
+1 Passionate Archaeologist
+1 The Lost and the Damned
+1 The Ruinous Powers
+1 Warstorm Surge
+1 Bituminous Blast
+1 Blood for the Blood God!
+1 Brainstorm
+1 Chaos Warp
+1 Dark Ritual
+1 Deadly Rollick
+1 Delayed Blast Fireball
+1 Frantic Search
+1 Kill! Maim! Burn!
+1 Rakdos Charm
+1 Reverberate
+1 Geyadrone Dihada
+1 Ancestral Vision
+1 Blasphemous Act
+1 Boltwave
+1 Call Forth the Tempest
+1 Deny Reality
+1 Feed the Swarm
+1 Inevitable Betrayal
+1 Jeska's Will
+1 Mandate of Abaddon
+1 Ponder
+1 Profane Tutor
+1 Wheel of Fate

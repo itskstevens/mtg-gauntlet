@@ -1,0 +1,89 @@
+1 Marchesa, the Black Rose
+1 Arcane Signet
+1 Ashnod's Altar
+1 Fellwar Stone
+1 Lightning Greaves
+1 Phyrexian Altar
+1 Skullclamp
+1 Sol Ring
+1 Talisman of Creativity
+1 Talisman of Dominance
+1 Talisman of Indulgence
+1 Blood Crypt
+1 Bloodstained Mire
+1 Command Tower
+1 Crumbling Necropolis
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Exotic Orchard
+1 Forge of Heroes
+1 High Market
+4 Island
+1 Luxury Suite
+1 Morphic Pool
+4 Mountain
+1 Phyrexian Tower
+1 Polluted Delta
+1 Scalding Tarn
+1 Shivan Reef
+1 Steam Vents
+1 Sulfur Falls
+1 Sulfurous Springs
+1 Sunken Hollow
+6 Swamp
+1 Training Center
+1 Underground River
+1 Watery Grave
+1 Xander's Lounge
+1 Baleful Strix
+1 Braids, Arisen Nightmare
+1 Carrion Feeder
+1 Danny Pink
+1 Drana, Liberator of Malakir
+1 Flayer of the Hatebound
+1 Gev, Scaled Scorch
+1 Glen Elendra Archmage
+1 Gray Merchant of Asphodel
+1 Grim Haruspex
+1 Herald of Secret Streams
+1 Iron Apprentice
+1 Juri, Master of the Revue
+1 Mahadi, Emporium Master
+1 Marionette Apprentice
+1 Metallic Mimic
+1 Mikaeus, the Unhallowed
+1 Pitiless Plunderer
+1 Puppeteer Clique
+1 River Kelpie
+1 Sage of Fables
+1 Satoru, the Infiltrator
+1 Scorn-Blade Berserker
+1 Solemn Simulacrum
+1 Spark Double
+1 Thundering Raiju
+1 Viscera Seer
+1 Warren Soultrader
+1 Yahenni, Undying Partisan
+1 Yawgmoth, Thran Physician
+1 Zealous Conscripts
+1 Goblin Bombardment
+1 Rhystic Study
+1 Sneak Attack
+1 Thran Vigil
+1 Uncivil Unrest
+1 Unspeakable Symbol
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Chaos Warp
+1 Counterspell
+1 Cyclonic Rift
+1 Deadly Dispute
+1 Negate
+1 Village Rites
+1 Blasphemous Act
+1 Diabolic Intent
+1 Feed the Swarm
+1 Mark of Mutiny
+1 Toxic Deluge
+1 Vandalblast
+1 Victimize

@@ -1,0 +1,87 @@
+1 Ragost, Deft Gastronaut
+1 Arcane Signet
+1 Basilisk Collar
+1 Boros Signet
+1 Caduceus, Staff of Hermes
+1 Grinding Station
+1 Ichor Wellspring
+1 Krark-Clan Ironworks
+1 Lembas
+1 Lightning Greaves
+1 Liquimetal Torque
+1 Mycosynth Wellspring
+1 Mystic Forge
+1 Nuka-Cola Vending Machine
+1 Nutrient Block
+1 Prized Statue
+1 Scrapheap
+1 Shadowspear
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Conviction
+1 The One Ring
+1 Thousand-Year Elixir
+1 Transmutation Font
+1 Ancient Den
+1 Arid Mesa
+1 Battlefield Forge
+1 Buried Ruin
+1 Clifftop Retreat
+1 Command Tower
+1 Darksteel Citadel
+1 Elegant Parlor
+1 Great Furnace
+1 Inventors' Fair
+7 Mountain
+8 Plains
+1 Rugged Prairie
+1 Rustvale Bridge
+1 Sacred Foundry
+1 Spectator Seating
+1 Sunbillow Verge
+1 Sundown Pass
+1 Treasure Vault
+1 Urza's Saga
+1 Academy Manufactor
+1 Astrid Peth
+1 Crime Novelist
+1 Esper Sentinel
+1 Foundry Inspector
+1 Goblin Engineer
+1 Goblin Welder
+1 Haliya, Guided by Light
+1 Illustrious Wanderglyph
+1 Junk Diver
+1 Loyal Apprentice
+1 Myr Retriever
+1 Oswald Fiddlebender
+1 Ratchet, Field Medic
+1 Reckless Fireweaver
+1 Sami, Wildcat Captain
+1 Scrap Trawler
+1 Solemn Simulacrum
+1 Stridehangar Automaton
+1 Syr Ginger, the Meal Ender
+1 The Gaffer
+1 Treasure Nabber
+1 Weftstalker Ardent
+1 Authority of the Consuls
+1 Descent into Avernus
+1 Sheltered by Ghosts
+1 Smothering Tithe
+1 Spirit Loop
+1 Weapons Manufacturing
+1 Big Score
+1 Chaos Warp
+1 Deflecting Swat
+1 Dispatch
+1 Enlightened Tutor
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Tezzeret, Cruel Captain
+1 Blasphemous Act
+1 Gamble
+1 Jeska's Will
+1 Vandalblast
+1 Wake the Past

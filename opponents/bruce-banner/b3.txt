@@ -1,0 +1,88 @@
+1 Bruce Banner
+1 Arcane Signet
+1 Caltrops
+1 Darksteel Plate
+1 Fellwar Stone
+1 Lightning Greaves
+1 Mithril Coat
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Curiosity
+1 Breeding Pool
+1 Cinder Glade
+1 Command Tower
+1 Dreamroot Cascade
+1 Exotic Orchard
+6 Forest
+1 Frontier Bivouac
+1 Hinterland Harbor
+4 Island
+1 Ketria Triome
+1 Misty Rainforest
+5 Mountain
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Rockfall Vale
+1 Rootbound Crag
+1 Scalding Tarn
+1 Spire Garden
+1 Steam Vents
+1 Stomping Ground
+1 Sulfur Falls
+1 Training Center
+1 Wooded Foothills
+1 Yavimaya Coast
+1 Anara, Wolvid Familiar
+1 Anzrag, the Quake-Mole
+1 Birds of Paradise
+1 Bloom Tender
+1 Brash Taunter
+1 Delighted Halfling
+1 Doc Samson, Super Psychiatrist
+1 Elvish Mystic
+1 Fanatic of Rhonas
+1 Goblin Anarchomancer
+1 Hulk, Brutal Brawler
+1 Hulk, Strongest There Is
+1 Kediss, Emberclaw Familiar
+1 Llanowar Elves
+1 Neyith of the Dire Hunt
+1 Professor Hulk
+1 Red Hulk
+1 Selvala, Heart of the Wilds
+1 Trophy Mage
+1 Xenagos, God of Revels
+1 Bear Umbra
+1 Gimli's Reckless Might
+1 Hardened Scales
+1 Pyrohemia
+1 Rhystic Study
+1 Rhythm of the Wild
+1 Unnatural Growth
+1 World War Hulk
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Beast Within
+1 Chaos Warp
+1 Collective Resistance
+1 Counterspell
+1 Deflecting Swat
+1 Fierce Guardianship
+1 HULK SMASH!
+1 Heroic Intervention
+1 Moonmist
+1 Strength of Will
+1 Swan Song
+1 Tamiyo's Safekeeping
+1 The Last Agni Kai
+1 Tyvar's Stand
+1 Blasphemous Act
+1 Cultivate
+1 Epic Fight
+1 Farseek
+1 Kodama's Reach
+1 Nature's Lore
+1 Rampant Growth
+1 Rishkar's Expertise
+1 Roar of Challenge
+1 Three Visits

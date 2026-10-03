@@ -1,0 +1,75 @@
+1 Minn, Wily Illusionist
+1 Arcane Signet
+1 Ashnod's Altar
+1 Heraldic Banner
+1 Lightning Greaves
+1 Mind Stone
+1 Sapphire Medallion
+1 Skullclamp
+1 Sol Ring
+1 Swiftfoot Boots
+1 Thought Vessel
+1 Wizard's Staff
+1 Fountainport
+1 High Market
+26 Island
+1 Lonely Sandbar
+1 Mikokoro, Center of the Sea
+1 Mystic Sanctuary
+1 Otawara, Soaring City
+1 Reliquary Tower
+1 Riptide Laboratory
+1 War Room
+1 Archmage Emeritus
+1 Azami, Lady of Scrolls
+1 Consecrated Sphinx
+1 Curiosity Crafter
+1 Faerie Mastermind
+1 Harmonized Trio
+1 Illusory Ambusher
+1 Krovikan Mist
+1 Lord of the Unreal
+1 Meloku the Clouded Mirror
+1 Murmuring Mystic
+1 Nezahal, Primal Tide
+1 Oneirophage
+1 Phantasmal Image
+1 Phantom Steed
+1 Psychosis Crawler
+1 Spark Double
+1 Tetsuko Umezawa, Fugitive
+1 The Unagi of Kyoshi Island
+1 Titan of Littjara
+1 Toothy, Imaginary Friend
+1 Wonder
+1 Kindred Discovery
+1 Mystic Remora
+1 Ominous Seas
+1 Proft's Eidetic Memory
+1 Rhystic Study
+1 Teferi's Ageless Insight
+1 Wizard Class
+1 Abjure
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Archmage's Charm
+1 Brainstorm
+1 Counterspell
+1 Frantic Search
+1 Meeting of Minds
+1 Opt
+1 Perilous Research
+1 Pongify
+1 Quick Study
+1 Rapid Hybridization
+1 Read the Runes
+1 Reality Shift
+1 Sink into Stupor
+1 Thirst for Discovery
+1 You Find the Villains' Lair
+1 Mordenkainen
+1 Teferi, Master of Time
+1 Gitaxian Probe
+1 Ponder
+1 Preordain
+1 Spectral Deluge

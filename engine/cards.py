@@ -17,10 +17,11 @@ def num(s):
     return NUM.get(s, 1)
 
 class Card:
-    def __init__(self, name):
+    def __init__(self, name, text=None):
         self.name = name
-        path = os.path.join(FORGE_DIR, slug(name) + '.txt')
-        raw = open(path).read().split('\nALTERNATE')[0]
+        if text is None:
+            text = open(os.path.join(FORGE_DIR, slug(name) + '.txt')).read()
+        raw, _, alt = text.partition('\nALTERNATE')
         f = {}
         kws = []
         for line in raw.splitlines():
@@ -58,6 +59,7 @@ class Card:
         self.colors = set(c for c in 'WUBRG' if c in self.mana_cost)
         self.flash = 'flash' in self.kw or self.is_instant
         tag(self)
+        prep_tags(self, raw, alt)
 
     @staticmethod
     def _cmc(mc):
@@ -457,6 +459,12 @@ def tag(c):
     if n == 'Torment of Hailfire': c.drain_now = 'TORMENT'
     if n == 'Grapeshot': c.drain_now = 'STORM'
     if n == 'Approach of the Second Sun': c.life_now = 7
+    if n in ('Reanimate', 'Bind to Life', 'Restore Relic'): c.special = 'reanimate'; c.removal = None
+    if n == 'Regrowth': c.special = 'regrowth'
+    if n == 'Craft with Pride': c.treasure_now = 1
+    if n == 'Arc of Fortune': c.wheel = True; c.draw_now = 7
+    if n == 'Seething Song': c.ritual = 2
+    if n == 'Song of Creation': c.spell_trig = None   # draws two per spell; handled in engine
     # auras: enchanted creature bonuses
     if c.is_aura:
         m = re.search(r'enchanted creature gets \+(\d+)/\+(\d+)', o)
@@ -467,6 +475,30 @@ def tag(c):
         if 'protection from' in o and ('black' in o or 'green' in o): b['kw'].add('pro_bg')
         if 'for each aura' in o: b['p'] += 2; b['t'] += 2
         if b['p'] or b['kw']: c.aura_bonus = b
+
+# ---------------------------------------------------------------- prepare (Secrets of Strixhaven)
+def prep_target(raw, alt):
+    """Name of the prepare spell, or None. Forge stores it as `CopyFaceFrom:<card>` or as an inline face."""
+    if 'AlternateMode:Prepare' not in raw: return None
+    m = re.search(r'CopyFaceFrom:(.+)', alt)
+    if m: return m.group(1).strip()
+    m = re.search(r'Name:(.+)', alt)
+    return m.group(1).strip() if m else None
+
+def prep_tags(c, raw, alt):
+    """A creature with a prepare spell gets c.prep_card (the spell, tagged like any instant or sorcery) and the ways
+    it becomes prepared on its own. Codie, Ravenous Codex, flicker effects and the engine handle the rest."""
+    c.prep_card = None; c.prep_enter = False; c.prep_upkeep = None; c.prep_tap2 = False; c.prep_third = False
+    tgt = prep_target(raw, alt)
+    if not tgt: return
+    if re.search(r'CopyFaceFrom:', alt): c.prep_card = get(tgt)
+    else: c.prep_card = Card(tgt, text=alt.strip())
+    o = c.oracle
+    c.prep_enter = 'enters prepared' in o or bool(re.search(r'when (this creature|~) enters[^.]*?(and [^.]*)?this creature becomes prepared', o)) and 'then if' not in o
+    if 'at the beginning of your upkeep' in o and 'becomes prepared' in o:
+        c.prep_upkeep = 'always' if "isn't prepared, it becomes prepared" in o else 'gy3'
+    c.prep_tap2 = 'tap two untapped creatures you control: this creature becomes prepared' in o
+    c.prep_third = 'third spell each turn' in o
 
 def summarize(c):
     keys = ['mana_land', 'rock', 'ritual', 'ramp_lands', 'extra_lands', 'draw_now', 'draw_engine', 'tutor', 'counter',

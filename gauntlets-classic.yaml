@@ -1,0 +1,24 @@
+# Opponent categories. Each pod = your deck + the decks listed in one category.
+# Each deck key is a folder in opponents/ holding b3.txt (EDHREC Upgraded) and b4.txt (EDHREC Optimized).
+categories:
+  Combo & storm:
+    - {key: kinnan, archetype: Turbo combo}
+    - {key: birgi, archetype: Storm}
+    - {key: niv, archetype: Spellslinger}
+  Stax & control:
+    - {key: gaa, archetype: Stax}
+    - {key: baral, archetype: Counterspell control}
+    - {key: oloro, archetype: Lifegain control}
+  Go-wide:
+    - {key: jetmir, archetype: Tokens}
+    - {key: tatyova, archetype: Landfall}
+    - {key: lathril, archetype: Elf typal}
+  Graveyard & big threats:
+    - {key: meren, archetype: Reanimator}
+    - {key: teysa, archetype: Aristocrats}
+    - {key: lightpaws, archetype: Voltron}
+defaults:
+  series: 300          # best-of-3 series per category (50 is too noisy: about +/-4 points)
+  brackets: [3, 4]     # each series rolls each opponent's bracket at random
+  max_rounds: 25       # a game that reaches this is a draw
+  refresh_days: 60     # opponent lists older than this get refetched from EDHREC

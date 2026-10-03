@@ -1,0 +1,6 @@
+Name:Greymond, Avacyn's Stalwart
+ManaCost:2 W W
+Types:Legendary Creature Human Soldier
+PT:3/4
+Oracle:Humans you control have first strike and lifelink.\nAs long as you control four or more Humans, Humans you control get +2/+2.
+# synthetic: built from Scryfall text; Forge has no script yet

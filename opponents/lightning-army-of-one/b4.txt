@@ -1,0 +1,85 @@
+1 Lightning, Army of One
+1 Arcane Signet
+1 Boros Signet
+1 Brotherhood Regalia
+1 Buster Sword
+1 Colossus Hammer
+1 Commander's Plate
+1 Embercleave
+1 Genji Glove
+1 Hammer of Nazahn
+1 Helm of the Host
+1 Lightning Greaves
+1 Mithril Coat
+1 Sol Ring
+1 Swiftfoot Boots
+1 Sword of Feast and Famine
+1 Sword of Fire and Ice
+1 Sword of the Animist
+1 Talisman of Conviction
+1 The Reaver Cleaver
+1 The Spear of Leonidas
+1 Ancient Tomb
+1 Arena of Glory
+1 Arid Mesa
+1 Battlefield Forge
+1 Clifftop Retreat
+1 Command Tower
+1 Elegant Parlor
+1 Furycalm Snarl
+8 Mountain
+1 Needleverge Pathway
+9 Plains
+1 Rogue's Passage
+1 Rugged Prairie
+1 Sacred Foundry
+1 Slayers' Stronghold
+1 Spectator Seating
+1 Sunbillow Verge
+1 Sundown Pass
+1 Sunhome, Fortress of the Legion
+1 Akiri, Fearless Voyager
+1 Aurelia, the Warleader
+1 Bastion Protector
+1 Blade Historian
+1 Cloud, Midgar Mercenary
+1 Combat Celebrant
+1 Esper Sentinel
+1 Gisela, Blade of Goldnight
+1 Grand Abolisher
+1 Halvar, God of Battle
+1 Iroas, God of Victory
+1 Karlach, Fury of Avernus
+1 Kediss, Emberclaw Familiar
+1 Lizard Blades
+1 Mother of Runes
+1 Professional Face-Breaker
+1 Puresteel Paladin
+1 Reyav, Master Smith
+1 Sram, Senior Edificer
+1 Stoneforge Mystic
+1 Aggravated Assault
+1 Duelist's Heritage
+1 Fighter Class
+1 Forge Anew
+1 Sigarda's Aid
+1 Smothering Tithe
+1 Akroma's Will
+1 Boros Charm
+1 Chaos Warp
+1 Deflecting Palm
+1 Deflecting Swat
+1 Enlightened Tutor
+1 Flawless Maneuver
+1 Lightning Bolt
+1 Path to Exile
+1 Restoration Magic
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Blasphemous Act
+1 Farewell
+1 Full Throttle
+1 Jeska's Will
+1 Open the Armory
+1 Seize the Day
+1 Steelshaper's Gift

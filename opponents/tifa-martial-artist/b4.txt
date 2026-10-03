@@ -1,0 +1,91 @@
+1 Tifa, Martial Artist
+1 Arcane Signet
+1 Buster Sword
+1 Dolmen Gate
+1 Helm of the Host
+1 Herd Heirloom
+1 Lightning Greaves
+1 Sol Ring
+1 Swiftfoot Boots
+1 Sword of Feast and Famine
+1 Sword of the Animist
+1 The Great Henge
+1 Arid Mesa
+1 Battlefield Forge
+1 Boseiju, Who Endures
+1 Bountiful Promenade
+1 Brushland
+1 Canopy Vista
+1 Cinder Glade
+1 Clifftop Retreat
+1 Command Tower
+1 Exotic Orchard
+4 Forest
+1 Jetmir's Garden
+1 Jungle Shrine
+1 Kessig Wolf Run
+4 Mountain
+4 Plains
+1 Rogue's Passage
+1 Rootbound Crag
+1 Sacred Foundry
+1 Spectator Seating
+1 Spire Garden
+1 Stomping Ground
+1 Sunpetal Grove
+1 Temple Garden
+1 Windswept Heath
+1 Wooded Foothills
+1 Adriana, Captain of the Guard
+1 Anzrag, the Quake-Mole
+1 Aurelia, the Warleader
+1 Birds of Paradise
+1 Bloom Tender
+1 Bugenhagen, Wise Elder
+1 Combat Celebrant
+1 Delighted Halfling
+1 Esper Sentinel
+1 Fanatic of Rhonas
+1 Ghalta, Primal Hunger
+1 Goreclaw, Terror of Qal Sisma
+1 Halana and Alena, Partners
+1 Iroas, God of Victory
+1 Karlach, Fury of Avernus
+1 Kutzil, Malamet Exemplar
+1 Lightning, Army of One
+1 Moraug, Fury of Akoum
+1 Ohran Frostfang
+1 Professional Face-Breaker
+1 Selvala, Heart of the Wilds
+1 Sephiroth, Fallen Hero
+1 Skyhunter Strike Force
+1 Toski, Bearer of Secrets
+1 Vincent, Vengeful Atoner
+1 Wulfgar of Icewind Dale
+1 Xenagos, God of Revels
+1 Zopandrel, Hunger Dominus
+1 Aggravated Assault
+1 Annie Joins Up
+1 Garruk's Uprising
+1 Rhythm of the Wild
+1 Rising of the Day
+1 Smothering Tithe
+1 Unnatural Growth
+1 Windcrag Siege
+1 Akroma's Will
+1 Boros Charm
+1 Deflecting Swat
+1 Enlightened Tutor
+1 Flawless Maneuver
+1 Heroic Intervention
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Worldly Tutor
+1 Cultivate
+1 Farseek
+1 Full Throttle
+1 Jeska's Will
+1 Nature's Lore
+1 Rampant Growth
+1 Three Visits

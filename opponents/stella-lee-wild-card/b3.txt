@@ -1,0 +1,81 @@
+1 Stella Lee, Wild Card
+1 Arcane Signet
+1 Cursed Mirror
+1 Fellwar Stone
+1 Forger's Foundry
+1 Izzet Signet
+1 Sol Ring
+1 Talisman of Creativity
+1 Cascade Bluffs
+1 Command Tower
+1 Exotic Orchard
+1 Ferrous Lake
+1 Frostboil Snarl
+12 Island
+1 Izzet Boilerworks
+9 Mountain
+1 Reliquary Tower
+1 Shivan Reef
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Temple of Epiphany
+1 Training Center
+1 Archmage Emeritus
+1 Electrostatic Field
+1 Eris, Roar of the Storm
+1 Goblin Electromancer
+1 Guttersnipe
+1 Haughty Djinn
+1 Murmuring Mystic
+1 Niv-Mizzet, Parun
+1 Storm-Kiln Artist
+1 Stormcatch Mentor
+1 Talrand, Sky Summoner
+1 Third Path Iconoclast
+1 Thunderclap Drake
+1 Veyran, Voice of Duality
+1 Young Pyromancer
+1 Arcane Bombardment
+1 Propaganda
+1 Shark Typhoon
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Big Score
+1 Brainstorm
+1 Cerulean Wisps
+1 Chaos Warp
+1 Consider
+1 Counterspell
+1 Dig Through Time
+1 Dramatic Reversal
+1 Expedite
+1 Frantic Search
+1 Galvanic Iteration
+1 Lightning Bolt
+1 Mystical Tutor
+1 Opt
+1 Pongify
+1 Refocus
+1 Shore Up
+1 Snap
+1 Think Twice
+1 Twitch
+1 Ral, Storm Conduit
+1 Baral's Expertise
+1 Elemental Eruption
+1 Expressive Iteration
+1 Faithless Looting
+1 Finale of Promise
+1 Gitaxian Probe
+1 Jeska's Will
+1 Lock and Load
+1 Mizzix's Mastery
+1 Ponder
+1 Preordain
+1 Rousing Refrain
+1 Serum Visions
+1 Solve the Equation
+1 Twisted Fealty
+1 Vandalblast
+1 Windfall

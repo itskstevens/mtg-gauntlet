@@ -1,0 +1,5 @@
+Name:Cramped Vents // Access Maze
+ManaCost:3 B
+Types:Enchantment Room
+Oracle:When you unlock this door, this Room deals 6 damage to target creature an opponent controls.
+# synthetic: built from Scryfall text; Forge has no script yet

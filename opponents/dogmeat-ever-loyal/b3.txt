@@ -1,0 +1,90 @@
+1 Dogmeat, Ever Loyal
+1 Arcane Signet
+1 Basilisk Collar
+1 Behemoth Sledge
+1 Bloodforged Battle-Axe
+1 Champion's Helm
+1 Colossus Hammer
+1 Fireshrieker
+1 Hammer of Nazahn
+1 Junk Jet
+1 Lightning Greaves
+1 Masterwork of Ingenuity
+1 Nettlecyst
+1 Pip-Boy 3000
+1 Power Fist
+1 Pre-War Formalwear
+1 Shadowspear
+1 Silver Shroud Costume
+1 Sol Ring
+1 Swiftfoot Boots
+1 Sword of the Animist
+1 Buried Ruin
+1 Canopy Vista
+1 Cinder Glade
+1 Clifftop Retreat
+1 Command Tower
+1 Evolving Wilds
+1 Exotic Orchard
+4 Forest
+1 Jungle Shrine
+1 Mossfire Valley
+4 Mountain
+1 Path of Ancestry
+5 Plains
+1 Roadside Reliquary
+1 Rogue's Passage
+1 Rootbound Crag
+1 Scattered Groves
+1 Sheltered Thicket
+1 Stomping Ground
+1 Sungrass Prairie
+1 Sunpetal Grove
+1 Sunscorched Divide
+1 Temple Garden
+1 Temple of Abandon
+1 Temple of Plenty
+1 Temple of Triumph
+1 Akiri, Fearless Voyager
+1 Armory Paladin
+1 Brotherhood Outcast
+1 Cass, Hand of Vengeance
+1 Chishiro, the Shattered Blade
+1 Codsworth, Handy Helper
+1 Crimson Caravaneer
+1 Danitha Capashen, Paragon
+1 Danitha, New Benalia's Light
+1 Gunner Conscript
+1 Kellan, the Fae-Blooded
+1 Kutzil, Malamet Exemplar
+1 Mister Gutsy
+1 Puresteel Paladin
+1 Red XIII, Proud Warrior
+1 Reyav, Master Smith
+1 Sram, Senior Edificer
+1 Stoneforge Mystic
+1 All That Glitters
+1 Almost Perfect
+1 Fertile Ground
+1 Forge Anew
+1 Grim Reaper's Sprint
+1 Idolized
+1 Mantle of the Ancients
+1 Rancor
+1 Sigarda's Aid
+1 Sticky Fingers
+1 Strong Back
+1 Well Rested
+1 Wild Growth
+1 Break Down
+1 Chaos Warp
+1 Heroic Intervention
+1 Inventory Management
+1 Path to Exile
+1 Swords to Plowshares
+1 Valorous Stance
+1 Blasphemous Act
+1 Farseek
+1 Open the Armory
+1 Single Combat
+1 Steelshaper's Gift

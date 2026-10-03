@@ -1,0 +1,83 @@
+1 Ghyrson Starn, Kelermorph
+1 Arcane Signet
+1 Basilisk Collar
+1 Fellwar Stone
+1 Izzet Signet
+1 Lightning Greaves
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Creativity
+1 Cascade Bluffs
+1 Command Tower
+1 Eroded Canyon
+1 Exotic Orchard
+1 Frostboil Snarl
+8 Island
+1 Izzet Boilerworks
+11 Mountain
+1 Reliquary Tower
+1 Riverglide Pathway
+1 Scalding Tarn
+1 Shivan Gorge
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Temple of Epiphany
+1 Training Center
+1 Archmage Emeritus
+1 Chandra's Incinerator
+1 Coruscation Mage
+1 Electrostatic Field
+1 Erebor Flamesmith
+1 Exalted Flamer of Tzeentch
+1 Firebrand Archer
+1 Gelectrode
+1 Goblin Sharpshooter
+1 Kessig Flamebreather
+1 Niv-Mizzet, Parun
+1 Niv-Mizzet, the Firemind
+1 Razorkin Needlehead
+1 Scalding Viper
+1 Storm-Kiln Artist
+1 Tandem Lookout
+1 Thermo-Alchemist
+1 Third Path Iconoclast
+1 Unruly Catapult
+1 Urabrask
+1 Vivi Ornitier
+1 Circle of Flame
+1 Curiosity
+1 Impact Tremors
+1 Manabarbs
+1 Ophidian Eye
+1 Sigil of Sleep
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Brainstorm
+1 Cast into the Fire
+1 Chaos Warp
+1 Consider
+1 Counterspell
+1 Electrickery
+1 Electrolyze
+1 Frantic Search
+1 Gut Shot
+1 Lava Dart
+1 Needle Drop
+1 Negate
+1 Opt
+1 Spikefield Hazard
+1 Swan Song
+1 Ral, Storm Conduit
+1 Blazing Volley
+1 End the Festivities
+1 Expressive Iteration
+1 Grapeshot
+1 Jeska's Will
+1 Ponder
+1 Preordain
+1 Scouring Sands
+1 Smash to Dust
+1 Tectonic Hazard
+1 Vandalblast
+1 Windfall

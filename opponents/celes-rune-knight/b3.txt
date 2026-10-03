@@ -1,0 +1,91 @@
+1 Celes, Rune Knight
+1 Altar of Dementia
+1 Arcane Signet
+1 Ashnod's Altar
+1 Fellwar Stone
+1 Orzhov Signet
+1 Sol Ring
+1 Talisman of Conviction
+1 Talisman of Hierarchy
+1 Talisman of Indulgence
+1 Arid Mesa
+1 Battlefield Forge
+1 Blood Crypt
+1 Bloodstained Mire
+1 Caves of Koilos
+1 Clifftop Retreat
+1 Command Tower
+1 Dragonskull Summit
+1 Exotic Orchard
+1 Fetid Heath
+1 Godless Shrine
+1 Graven Cairns
+1 Isolated Chapel
+1 Luxury Suite
+1 Marsh Flats
+3 Mountain
+1 Nomad Outpost
+4 Plains
+1 Rugged Prairie
+1 Sacred Foundry
+1 Savai Triome
+1 Smoldering Marsh
+1 Spectator Seating
+1 Sulfurous Springs
+5 Swamp
+1 Vault of Champions
+1 Alesha, Who Laughs at Fate
+1 Anger
+1 Blood Artist
+1 Carrion Feeder
+1 Chainer, Nightmare Adept
+1 Elas il-Kor, Sadistic Pilgrim
+1 Esper Sentinel
+1 Gau, Feral Youth
+1 Grave Researcher
+1 Karmic Guide
+1 Lesser Masticore
+1 Locke, Treasure Hunter
+1 Lotho, Corrupt Shirriff
+1 Mayhem Devil
+1 Morbid Opportunist
+1 Murderous Redcap
+1 Obstinate Gargoyle
+1 Pitiless Plunderer
+1 Priest of Fell Rites
+1 Puppeteer Clique
+1 Putrid Goblin
+1 Stitcher's Supplier
+1 Sun Titan
+1 Terra, Herald of Hope
+1 Twilight Diviner
+1 Umbral Collar Zealot
+1 Viscera Seer
+1 Witch Enchanter
+1 Zulaport Cutthroat
+1 Animate Dead
+1 Goblin Bombardment
+1 Impact Tremors
+1 Necromancy
+1 Ripples of Undeath
+1 Anguished Unmaking
+1 Big Score
+1 Cloudshift
+1 Dark Ritual
+1 Entomb
+1 Ephemerate
+1 Malakir Rebirth
+1 Mortify
+1 Path to Exile
+1 Swords to Plowshares
+1 Buried Alive
+1 Faithless Looting
+1 Persist
+1 Reanimate
+1 Rise of the Dark Realms
+1 Ruinous Ultimatum
+1 Sevinne's Reclamation
+1 Stitch Together
+1 Toxic Deluge
+1 Unearth
+1 Victimize

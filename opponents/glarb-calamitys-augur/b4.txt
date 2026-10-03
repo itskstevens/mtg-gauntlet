@@ -1,0 +1,95 @@
+1 Glarb, Calamity's Augur
+1 Arcane Signet
+1 Bolas's Citadel
+1 Chrome Mox
+1 Conduit of Worlds
+1 Lotus Petal
+1 Sensei's Divining Top
+1 Sol Ring
+1 The One Ring
+1 Bloodstained Mire
+1 Boseiju, Who Endures
+1 Breeding Pool
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+3 Forest
+1 Hedge Maze
+3 Island
+1 Misty Rainforest
+1 Morphic Pool
+1 Otawara, Soaring City
+1 Overgrown Tomb
+1 Polluted Delta
+1 Rejuvenating Springs
+1 Scalding Tarn
+1 Shifting Woodland
+2 Swamp
+1 Tropical Island
+1 Undercity Sewers
+1 Underground Mortuary
+1 Undergrowth Stadium
+1 Urborg, Tomb of Yawgmoth
+1 Verdant Catacombs
+1 Watery Grave
+1 Windswept Heath
+1 Wooded Foothills
+1 Yavimaya, Cradle of Growth
+1 Zagoth Triome
+1 Aesi, Tyrant of Gyre Strait
+1 Azusa, Lost but Seeking
+1 Birds of Paradise
+1 Bloom Tender
+1 Deathrite Shaman
+1 Delighted Halfling
+1 Dryad of the Ilysian Grove
+1 Elves of Deep Shadow
+1 Eternal Witness
+1 High Fae Trickster
+1 Icetill Explorer
+1 Lotus Cobra
+1 Lumra, Bellow of the Woods
+1 Muldrotha, the Gravetide
+1 Notion Thief
+1 Opposition Agent
+1 Orcish Bowmasters
+1 Seedborn Muse
+1 Six
+1 Tatyova, Benthic Druid
+1 Thassa's Oracle
+1 The Gitrog Monster
+1 Valley Floodcaller
+1 Counterbalance
+1 Exploration
+1 Mystic Remora
+1 Necropotence
+1 Rhystic Study
+1 Sylvan Library
+1 Abrupt Decay
+1 An Offer You Can't Refuse
+1 Assassin's Trophy
+1 Brainstorm
+1 Counterspell
+1 Crop Rotation
+1 Cyclonic Rift
+1 Dark Ritual
+1 Deadly Rollick
+1 Fierce Guardianship
+1 Force of Vigor
+1 Force of Will
+1 Mystical Tutor
+1 Noxious Revival
+1 Swan Song
+1 Vampiric Tutor
+1 Worldly Tutor
+1 Jace, Wielder of Mysteries
+1 Culling Ritual
+1 Demonic Tutor
+1 Doomsday
+1 Farseek
+1 Finale of Devastation
+1 Imperial Seal
+1 Nature's Lore
+1 Reanimate
+1 Three Visits
+1 Toxic Deluge

@@ -1,0 +1,6 @@
+Name:Mishra, Claimed by Gix
+ManaCost:2 B R
+Types:Legendary Creature Phyrexian Human Artificer
+PT:3/5
+Oracle:Whenever you attack, each opponent loses X life and you gain X life, where X is the number of attacking creatures.
+# synthetic: built from Scryfall text; Forge has no script yet

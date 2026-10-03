@@ -1,0 +1,94 @@
+1 Hashaton, Scarab's Fist
+1 Arcane Signet
+1 Fellwar Stone
+1 Monument to Endurance
+1 Mox Amber
+1 Sol Ring
+1 Talisman of Dominance
+1 Talisman of Hierarchy
+1 Talisman of Progress
+1 The One Ring
+1 The Underworld Cookbook
+1 Adarkar Wastes
+1 Ancient Tomb
+1 Bloodstained Mire
+1 Caves of Koilos
+1 City of Brass
+1 Command Tower
+1 Drowned Catacomb
+1 Exotic Orchard
+1 Flooded Strand
+1 Glacial Fortress
+1 Godless Shrine
+1 Hallowed Fountain
+3 Island
+1 Isolated Chapel
+1 Mana Confluence
+1 Marsh Flats
+1 Morphic Pool
+1 Otawara, Soaring City
+3 Plains
+1 Polluted Delta
+1 Raffine's Tower
+1 Sea of Clouds
+3 Swamp
+1 Undercity Sewers
+1 Underground River
+1 Vault of Champions
+1 Watery Grave
+1 Angel of the Ruins
+1 Archfiend of Ifnir
+1 Archon of Cruelty
+1 Avacyn, Angel of Hope
+1 Consecrated Sphinx
+1 Elesh Norn, Grand Cenobite
+1 Esper Sentinel
+1 Ghostly Pilferer
+1 Grand Abolisher
+1 Hullbreaker Horror
+1 Jin-Gitaxias, Core Augur
+1 Kitsa, Otterball Elite
+1 Ledger Shredder
+1 Likeness Looter
+1 Lotho, Corrupt Shirriff
+1 Metamorphosis Fanatic
+1 Nezahal, Primal Tide
+1 Peregrine Drake
+1 Pollywog Prodigy
+1 Psychic Frog
+1 Putrid Imp
+1 Razaketh, the Foulblooded
+1 Rhet-Tomb Mystic
+1 Rona, Herald of Invasion
+1 Sheoldred, Whispering One
+1 Skirge Familiar
+1 The Scarab God
+1 Tireless Tribe
+1 Valgavoth, Terror Eater
+1 Vohar, Vodalian Desecrator
+1 Animate Dead
+1 Mystic Remora
+1 Renewed Solidarity
+1 Rhystic Study
+1 Smothering Tithe
+1 Tortured Existence
+1 An Offer You Can't Refuse
+1 Counterspell
+1 Cyclonic Rift
+1 Dark Ritual
+1 Deadly Rollick
+1 Enlightened Tutor
+1 Fierce Guardianship
+1 Force of Will
+1 Frantic Search
+1 Mana Drain
+1 Path to Exile
+1 Swan Song
+1 Swords to Plowshares
+1 Vampiric Tutor
+1 Damn
+1 Demonic Tutor
+1 Reanimate
+1 Toxic Deluge
+1 Victimize
+1 Windfall

@@ -1,0 +1,76 @@
+1 Light-Paws, Emperor's Voice
+1 Arcane Signet
+1 Chrome Mox
+1 Mox Amber
+1 Pearl Medallion
+1 Sol Ring
+1 Swiftfoot Boots
+1 Ancient Tomb
+1 Eiganjo, Seat of the Empire
+1 Hall of Heliod's Generosity
+1 Nykthos, Shrine to Nyx
+15 Plains
+1 Plaza of Heroes
+1 Rogue's Passage
+1 Serra's Sanctum
+11 Snow-Covered Plains
+1 Danitha Capashen, Paragon
+1 Drannith Magistrate
+1 Esper Sentinel
+1 Giver of Runes
+1 Grand Abolisher
+1 Kor Spiritdancer
+1 Mesa Enchantress
+1 Mother of Runes
+1 Pearl-Ear, Imperial Advisor
+1 Skrelv, Defector Mite
+1 Sram, Senior Edificer
+1 Starfield Mystic
+1 Transcendent Envoy
+1 All That Glitters
+1 Angelic Destiny
+1 Armored Ascension
+1 Battle Mastery
+1 Benevolent Blessing
+1 Cartouche of Solidarity
+1 Chains of Custody
+1 Darksteel Mutation
+1 Daybreak Coronet
+1 Ethereal Armor
+1 Feather of Flight
+1 Flickering Ward
+1 Gryff's Boon
+1 Hyena Umbra
+1 Idolized
+1 Land Tax
+1 Light of Promise
+1 Mantle of the Ancients
+1 Mask of Law and Grace
+1 Pariah
+1 Reprobation
+1 Sage's Reverie
+1 Sentinel's Eyes
+1 Shardmage's Rescue
+1 Sheltered by Ghosts
+1 Shield of Duty and Reason
+1 Sigarda's Aid
+1 Spirit Link
+1 Spirit Mantle
+1 Stoneskin
+1 Timely Ward
+1 Triclopean Sight
+1 Twinblade Blessing
+1 Unquestioned Authority
+1 With Great Power . . .
+1 Blacksmith's Skill
+1 Enlightened Tutor
+1 Galadriel's Dismissal
+1 Loran's Escape
+1 Path to Exile
+1 Rebuff the Wicked
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Open the Armory
+1 Replenish
+1 Retether
+1 Winds of Rath

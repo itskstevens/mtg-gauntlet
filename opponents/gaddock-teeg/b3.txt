@@ -1,0 +1,81 @@
+1 Gaddock Teeg
+1 Arcane Signet
+1 Damping Sphere
+1 Grafdigger's Cage
+1 Sol Ring
+1 Thorn of Amethyst
+1 Bountiful Promenade
+1 Branchloft Pathway
+1 Brushland
+1 Canopy Vista
+1 Command Tower
+9 Forest
+1 Fortified Village
+1 Gavony Township
+1 Horizon Canopy
+1 Overgrown Farmland
+12 Plains
+1 Sunpetal Grove
+1 Temple Garden
+1 Temple of Plenty
+1 Windswept Heath
+1 Wooded Bastion
+1 Archivist of Oghma
+1 Archon of Emeria
+1 Archon of Valor's Reach
+1 Avacyn's Pilgrim
+1 Aven Mindcensor
+1 Beast Whisperer
+1 Birds of Paradise
+1 Boromir, Warden of the Tower
+1 Collector Ouphe
+1 Containment Priest
+1 Drannith Magistrate
+1 Eidolon of Rhetoric
+1 Elesh Norn, Grand Cenobite
+1 Elvish Mystic
+1 Esper Sentinel
+1 Eternal Witness
+1 Giver of Runes
+1 Grand Abolisher
+1 Hushbringer
+1 Hushwing Gryff
+1 Kataki, War's Wage
+1 Kutzil, Malamet Exemplar
+1 Leonin Arbiter
+1 Linvala, Keeper of Silence
+1 Llanowar Elves
+1 Manglehorn
+1 Mother of Runes
+1 Scavenging Ooze
+1 Selfless Spirit
+1 Shalai, Voice of Plenty
+1 Sigarda, Host of Herons
+1 Spirit of the Labyrinth
+1 Sun Titan
+1 Thalia, Guardian of Thraben
+1 Thalia, Heretic Cathar
+1 Vryn Wingmare
+1 Welcoming Vampire
+1 Windborn Muse
+1 Yasharn, Implacable Earth
+1 Aura Shards
+1 Aura of Silence
+1 Authority of the Consuls
+1 Blind Obedience
+1 Deafening Silence
+1 Ghostly Prison
+1 Rest in Peace
+1 Stony Silence
+1 Beast Within
+1 Eladamri's Call
+1 Generous Gift
+1 Heroic Intervention
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Worldly Tutor
+1 Citywide Bust
+1 Cultivate
+1 Kodama's Reach
+1 Rampant Growth

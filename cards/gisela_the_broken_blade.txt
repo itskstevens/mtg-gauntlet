@@ -1,0 +1,9 @@
+Name:Gisela, the Broken Blade
+ManaCost:2 W W
+Types:Legendary Creature Angel Horror
+PT:4/3
+K:Flying
+K:First Strike
+K:Lifelink
+Oracle:Flying, first strike, lifelink
+# synthetic: built from Scryfall text; Forge has no script yet

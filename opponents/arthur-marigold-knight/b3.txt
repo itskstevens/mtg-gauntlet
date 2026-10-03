@@ -1,0 +1,89 @@
+1 Arthur, Marigold Knight
+1 Arcane Signet
+1 Azorius Signet
+1 Boros Signet
+1 Fellwar Stone
+1 Izzet Signet
+1 Scroll Rack
+1 Sol Ring
+1 Talisman of Conviction
+1 Talisman of Creativity
+1 Talisman of Progress
+1 Adarkar Wastes
+1 Arid Mesa
+1 Battlefield Forge
+1 Clifftop Retreat
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+1 Glacial Fortress
+1 Hallowed Fountain
+5 Island
+4 Mountain
+1 Mystic Monastery
+5 Plains
+1 Prairie Stream
+1 Raugrin Triome
+1 Rogue's Passage
+1 Rugged Prairie
+1 Sacred Foundry
+1 Scalding Tarn
+1 Sea of Clouds
+1 Shivan Reef
+1 Spectator Seating
+1 Steam Vents
+1 Sulfur Falls
+1 Training Center
+1 Aether Channeler
+1 Angel of the Ruins
+1 Anticausal Vestige
+1 Aragorn, King of Gondor
+1 Arni Metalbrow
+1 Aurelia, the Warleader
+1 Beza, the Bounding Spring
+1 Brago, King Eternal
+1 Cavalier of Gales
+1 Claim Jumper
+1 Cloudblazer
+1 Curious Colossus
+1 Dour Port-Mage
+1 Ilharg, the Raze-Boar
+1 Karmic Guide
+1 Knight of the White Orchid
+1 Loran of the Third Path
+1 Loyal Warhound
+1 Luminous Broodmoth
+1 Medomai the Ageless
+1 Moonshaker Cavalry
+1 Mulldrifter
+1 Peregrine Drake
+1 Port Razer
+1 Restoration Angel
+1 Riptide Gearhulk
+1 Skyclave Apparition
+1 Solemn Simulacrum
+1 Soulherder
+1 Spirited Companion
+1 Sun Titan
+1 Trumpeting Carnosaur
+1 Witch Enchanter
+1 Éowyn, Fearless Knight
+1 Frostcliff Siege
+1 Reconnaissance
+1 Smothering Tithe
+1 Sneak Attack
+1 Windcrag Siege
+1 Boros Charm
+1 Brainstorm
+1 Brainsurge
+1 Cloudshift
+1 Counterspell
+1 Eerie Interlude
+1 Ephemerate
+1 Essence Flux
+1 Parting Gust
+1 Path to Exile
+1 Swords to Plowshares
+1 Blasphemous Act
+1 Ponder
+1 Time Wipe

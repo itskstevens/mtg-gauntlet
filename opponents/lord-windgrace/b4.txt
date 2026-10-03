@@ -1,0 +1,95 @@
+1 Lord Windgrace
+1 Arcane Signet
+1 Conduit of Worlds
+1 Crucible of Worlds
+1 Sol Ring
+1 Zuran Orb
+1 Blood Crypt
+1 Bloodstained Mire
+1 Bojuka Bog
+1 Boseiju, Who Endures
+1 Cinder Glade
+1 Command Tower
+1 Commercial District
+1 Dakmor Salvage
+1 Dark Depths
+1 Fabled Passage
+1 Field of the Dead
+4 Forest
+1 Glacial Chasm
+1 Golgari Rot Farm
+1 Lotus Field
+1 Misty Rainforest
+2 Mountain
+1 Overgrown Tomb
+1 Snow-Covered Forest
+1 Snow-Covered Mountain
+1 Snow-Covered Swamp
+1 Stomping Ground
+1 Strip Mine
+2 Swamp
+1 Thespian's Stage
+1 Underground Mortuary
+1 Urborg, Tomb of Yawgmoth
+1 Valakut, the Molten Pinnacle
+1 Verdant Catacombs
+1 Vesuva
+1 Wasteland
+1 Windswept Heath
+1 Wooded Foothills
+1 Yavimaya, Cradle of Growth
+1 Ziatora's Proving Ground
+1 Aftermath Analyst
+1 Ancient Greenwarden
+1 Avenger of Zendikar
+1 Azusa, Lost but Seeking
+1 Birds of Paradise
+1 Dryad of the Ilysian Grove
+1 Elvish Reclaimer
+1 Eternal Witness
+1 Icetill Explorer
+1 Ignoble Hierarch
+1 Lotus Cobra
+1 Ob Nixilis, the Fallen
+1 Omnath, Locus of Rage
+1 Oracle of Mul Daya
+1 Rampaging Baloths
+1 Ramunap Excavator
+1 Scute Swarm
+1 Six
+1 Sylvan Safekeeper
+1 Tannuk, Memorial Ensign
+1 The Gitrog Monster
+1 Tireless Provisioner
+1 Tireless Tracker
+1 Titania, Protector of Argoth
+1 Exploration
+1 Retreat to Hagra
+1 Spelunking
+1 Squandered Resources
+1 Sylvan Library
+1 Valakut Exploration
+1 Abrupt Decay
+1 Assassin's Trophy
+1 Beast Within
+1 Constant Mists
+1 Crop Rotation
+1 Harrow
+1 Heroic Intervention
+1 Realms Uncharted
+1 Vampiric Tutor
+1 Wrenn and Six
+1 Blasphemous Act
+1 Cultivate
+1 Demonic Tutor
+1 Farseek
+1 Green Sun's Zenith
+1 Kodama's Reach
+1 Life from the Loam
+1 Nature's Lore
+1 Obliterate
+1 Scapeshift
+1 Splendid Reclamation
+1 Three Visits
+1 Torment of Hailfire
+1 Toxic Deluge

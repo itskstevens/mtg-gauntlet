@@ -1,0 +1,93 @@
+1 Loot, the Pathfinder
+1 Arcane Signet
+1 Conjurer's Closet
+1 Fellwar Stone
+1 Lotus Petal
+1 Mana Vault
+1 Sol Ring
+1 Talisman of Creativity
+1 Talisman of Curiosity
+1 The One Ring
+1 Ancient Tomb
+1 Boseiju, Who Endures
+1 Breeding Pool
+1 City of Brass
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+3 Forest
+1 Hedge Maze
+1 Hinterland Harbor
+4 Island
+1 Ketria Triome
+1 Minamo, School at Water's Edge
+1 Misty Rainforest
+3 Mountain
+1 Otawara, Soaring City
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Scalding Tarn
+1 Spire Garden
+1 Steam Vents
+1 Stomping Ground
+1 Sulfur Falls
+1 Training Center
+1 Wooded Foothills
+1 Yavimaya Coast
+1 Birds of Paradise
+1 Bloom Tender
+1 Deadeye Navigator
+1 Delighted Halfling
+1 Displacer Kitten
+1 Dour Port-Mage
+1 Dualcaster Mage
+1 Elvish Refueler
+1 Enduring Vitality
+1 Etali, Primal Conqueror
+1 Eternal Witness
+1 Hullbreaker Horror
+1 Imperial Recruiter
+1 Kinnan, Bonder Prodigy
+1 Kiora's Follower
+1 Lilysplash Mentor
+1 Llanowar Elves
+1 Marvin, Murderous Mimic
+1 Peregrine Drake
+1 Phyrexian Metamorph
+1 Ragavan, Nimble Pilferer
+1 Seedborn Muse
+1 Spellseeker
+1 Squee, the Immortal
+1 Thassa, Deep-Dwelling
+1 Food Chain
+1 Impact Tremors
+1 Mystic Remora
+1 Rhystic Study
+1 Underworld Breach
+1 Wild Growth
+1 An Offer You Can't Refuse
+1 Beast Within
+1 Blur
+1 Chord of Calling
+1 Counterspell
+1 Cyclonic Rift
+1 Deflecting Swat
+1 Displace
+1 Essence Flux
+1 Fierce Guardianship
+1 Flusterstorm
+1 Force of Will
+1 Ghostly Flicker
+1 Mystical Tutor
+1 Planar Incision
+1 Snap
+1 Swan Song
+1 Worldly Tutor
+1 Blasphemous Act
+1 Eldritch Evolution
+1 Farseek
+1 Finale of Devastation
+1 Gamble
+1 Jeska's Will
+1 Nature's Lore
+1 Neoform

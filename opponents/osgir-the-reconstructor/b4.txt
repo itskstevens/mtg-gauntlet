@@ -1,0 +1,90 @@
+1 Osgir, the Reconstructor
+1 Arcane Signet
+1 Archaeomancer's Map
+1 Basalt Monolith
+1 Battlemage's Bracers
+1 Boros Signet
+1 Coveted Jewel
+1 Cursed Mirror
+1 Ichor Wellspring
+1 Krark-Clan Ironworks
+1 Lightning Greaves
+1 Lotus Petal
+1 Mana Vault
+1 Mind Stone
+1 Mishra's Bauble
+1 Moonsilver Key
+1 Mycosynth Lattice
+1 Mystic Forge
+1 Rings of Brighthearth
+1 Sculpting Steel
+1 Sensei's Divining Top
+1 Sol Ring
+1 Staff of Domination
+1 Talisman of Conviction
+1 The One Ring
+1 Thousand-Year Elixir
+1 Thran Dynamo
+1 Ugin's Nexus
+1 Ancient Den
+1 Arid Mesa
+1 Battlefield Forge
+1 Boros Garrison
+1 Buried Ruin
+1 Clifftop Retreat
+1 Command Tower
+1 Darksteel Citadel
+1 Elegant Parlor
+1 Exotic Orchard
+1 Great Furnace
+1 Inventors' Fair
+6 Mountain
+1 Needleverge Pathway
+6 Plains
+1 Rogue's Passage
+1 Rugged Prairie
+1 Rustvale Bridge
+1 Sacred Foundry
+1 Spectator Seating
+1 Sundown Pass
+1 Treasure Vault
+1 Urza's Saga
+1 Alibou, Ancient Witness
+1 Angel of the Ruins
+1 Bronze Guardian
+1 Combustible Gearhulk
+1 Esper Sentinel
+1 Ethersworn Canonist
+1 Foundry Inspector
+1 Goblin Engineer
+1 Goblin Welder
+1 Hellkite Tyrant
+1 Kuldotha Forgemaster
+1 Meteor Golem
+1 Myr Battlesphere
+1 Myr Retriever
+1 Oswald Fiddlebender
+1 Scrap Trawler
+1 Solemn Simulacrum
+1 Triplicate Titan
+1 Walking Ballista
+1 Wurmcoil Engine
+1 Zirda, the Dawnwaker
+1 Anointed Procession
+1 Smothering Tithe
+1 Boros Charm
+1 Deflecting Swat
+1 Dispatch
+1 Enlightened Tutor
+1 Path to Exile
+1 Pull from Eternity
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Daretti, Scrap Savant
+1 Karn, the Great Creator
+1 Blasphemous Act
+1 Faithless Looting
+1 Gamble
+1 Jeska's Will
+1 Reckless Handling
+1 Vandalblast

@@ -1,0 +1,90 @@
+1 Derevi, Empyrial Tactician
+1 Arcane Signet
+1 Basalt Monolith
+1 Bident of Thassa
+1 Birthing Pod
+1 Sol Ring
+1 Swiftfoot Boots
+1 The One Ring
+1 Adarkar Wastes
+1 Azorius Chancery
+1 Bountiful Promenade
+1 Breeding Pool
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+4 Forest
+1 Glacial Fortress
+1 Hallowed Fountain
+1 Hinterland Harbor
+5 Island
+1 Misty Rainforest
+4 Plains
+1 Prairie Stream
+1 Rejuvenating Springs
+1 Reliquary Tower
+1 Sea of Clouds
+1 Seaside Citadel
+1 Selesnya Sanctuary
+1 Simic Growth Chamber
+1 Spara's Headquarters
+1 Sunpetal Grove
+1 Temple Garden
+1 Windswept Heath
+1 Yavimaya Coast
+1 Avacyn's Pilgrim
+1 Aven Interrupter
+1 Aven Mindcensor
+1 Birds of Paradise
+1 Bloom Tender
+1 Choco, Seeker of Paradise
+1 Deadeye Navigator
+1 Delighted Halfling
+1 Delney, Streetwise Lookout
+1 Edric, Spymaster of Trest
+1 Emiel the Blessed
+1 Empyrean Eagle
+1 Enduring Curiosity
+1 Esper Sentinel
+1 Eternal Witness
+1 Faeburrow Elder
+1 Faerie Mastermind
+1 Jackdaw Savior
+1 Judge's Familiar
+1 Kangee, Sky Warden
+1 Kastral, the Windcrested
+1 Ledger Shredder
+1 Llanowar Elves
+1 Mockingbird
+1 Noble Hierarch
+1 Seedborn Muse
+1 Toski, Bearer of Secrets
+1 Wan Shi Tong, Librarian
+1 Warden of Evos Isle
+1 Watcher of the Spheres
+1 Growing Rites of Itlimoc
+1 Murmuration
+1 Mystic Remora
+1 Reconnaissance Mission
+1 Rhystic Study
+1 Utopia Sprawl
+1 Verity Circle
+1 Wild Growth
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Beast Within
+1 Counterspell
+1 Cyclonic Rift
+1 Dovin's Veto
+1 Eladamri's Call
+1 Heroic Intervention
+1 Path to Exile
+1 Swan Song
+1 Swords to Plowshares
+1 Teferi, Time Raveler
+1 Cultivate
+1 Eldritch Evolution
+1 Farseek
+1 Finale of Devastation
+1 Nature's Lore
+1 Three Visits

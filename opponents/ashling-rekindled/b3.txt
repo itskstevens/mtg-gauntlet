@@ -1,0 +1,82 @@
+1 Ashling, Rekindled
+1 Firemind Vessel
+1 Gilded Lotus
+1 Hedron Archive
+1 Ichor Elixir
+1 Resonating Lute
+1 Ring of the Lucii
+1 Sisay's Ring
+1 Sol Ring
+1 Stonespeaker Crystal
+1 Thran Dynamo
+1 Ur-Golem's Eye
+1 Cascade Bluffs
+1 Command Tower
+1 Exotic Orchard
+1 Ferrous Lake
+1 Frostboil Snarl
+10 Island
+10 Mountain
+1 Reliquary Tower
+1 Riverglide Pathway
+1 Riverpyre Verge
+1 Scalding Tarn
+1 Shivan Reef
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Training Center
+1 Archmage Emeritus
+1 Archmage of Runes
+1 Combustible Gearhulk
+1 Etali, Primal Storm
+1 Impulsivity
+1 Marang River Regent
+1 Niv-Mizzet, Parun
+1 Ovika, Enigma Goliath
+1 Pinnacle Monk
+1 Prismari, the Inspiration
+1 Solemn Simulacrum
+1 Storm-Kiln Artist
+1 Tanufel Rimespeaker
+1 Tellah, Great Sage
+1 The Emperor of Palamecia
+1 Thryx, the Sudden Storm
+1 Trumpeting Carnosaur
+1 Twinflame Travelers
+1 Omniscience
+1 One with the Multiverse
+1 Shark Typhoon
+1 Sunbird's Invocation
+1 Triple Triad
+1 Uncover the Moon-Letters
+1 An Offer You Can't Refuse
+1 Ashling's Command
+1 Big Score
+1 Chaos Warp
+1 Counterspell
+1 Dig Through Time
+1 Fact or Fiction
+1 Magma Opus
+1 Mystic Confluence
+1 Sink into Stupor
+1 Unexpected Windfall
+1 Chandra, Torch of Defiance
+1 Aminatou's Augury
+1 Baral's Expertise
+1 Blasphemous Act
+1 Blatant Thievery
+1 Call Forth the Tempest
+1 Creative Technique
+1 Deep Analysis
+1 Hit the Mother Lode
+1 Ignite the Future
+1 Improvisation Capstone
+1 Lórien Revealed
+1 Mana Geyser
+1 Mizzix's Mastery
+1 Pirate's Pillage
+1 Rite of Replication
+1 Sea Gate Restoration
+1 Volcanic Vision
+1 Will of the Temur

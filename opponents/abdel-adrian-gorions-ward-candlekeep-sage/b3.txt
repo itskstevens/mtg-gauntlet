@@ -1,0 +1,81 @@
+1 Abdel Adrian, Gorion's Ward
+1 Candlekeep Sage
+1 Arcane Signet
+1 Azorius Signet
+1 Conjurer's Closet
+1 Cryogen Relic
+1 Fellwar Stone
+1 Mind Stone
+1 Panharmonicon
+1 Prized Statue
+1 Sol Ring
+1 Talisman of Progress
+1 Thought Vessel
+1 Adarkar Wastes
+1 Azorius Chancery
+1 Command Tower
+1 Deserted Beach
+1 Exotic Orchard
+1 Glacial Fortress
+1 Hallowed Fountain
+10 Island
+11 Plains
+1 Port Town
+1 Prairie Stream
+1 Reliquary Tower
+1 Sea of Clouds
+1 Skycloud Expanse
+1 Temple of Enlightenment
+1 Aether Channeler
+1 Archaeomancer
+1 Charming Prince
+1 Cloud of Faeries
+1 Dawnbringer Cleric
+1 Deadeye Navigator
+1 Displacer Kitten
+1 Felidar Guardian
+1 Fiend Hunter
+1 Flickerwisp
+1 Helpful Hunter
+1 Inspiring Overseer
+1 Kor Cartographer
+1 Loran of the Third Path
+1 Mulldrifter
+1 Oji, the Exquisite Blade
+1 Peregrine Drake
+1 Reflector Mage
+1 Restoration Angel
+1 Skyclave Apparition
+1 Solemn Simulacrum
+1 Soulherder
+1 Spirited Companion
+1 Starfield Vocalist
+1 Sun Titan
+1 Venser, Shaper Savant
+1 Wall of Omens
+1 Witch Enchanter
+1 Airbender Ascension
+1 Oblivion Ring
+1 Omen of the Sea
+1 Reality Acid
+1 Teleportation Circle
+1 Touch the Spirit Realm
+1 An Offer You Can't Refuse
+1 Blur
+1 Cloudshift
+1 Counterspell
+1 Dovin's Veto
+1 Ephemerate
+1 Essence Flux
+1 Flicker of Fate
+1 Ghostly Flicker
+1 Justiciar's Portal
+1 Momentary Blink
+1 Negate
+1 Path to Exile
+1 Planar Incision
+1 Swords to Plowshares
+1 The Eternal Wanderer
+1 Daydream
+1 Hour of Reckoning
+1 Splash Portal

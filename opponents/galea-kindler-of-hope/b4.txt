@@ -1,0 +1,91 @@
+1 Galea, Kindler of Hope
+1 Arcane Signet
+1 Argentum Armor
+1 Basilisk Collar
+1 Belt of Giant Strength
+1 Blackblade Reforged
+1 Colossus Hammer
+1 Hammer of Nazahn
+1 Holy Avenger
+1 Kaldra Compleat
+1 Masterwork of Ingenuity
+1 Mithril Coat
+1 Nettlecyst
+1 Robe of Stars
+1 Sensei's Divining Top
+1 Shadowspear
+1 Sol Ring
+1 Swiftfoot Boots
+1 Sword of Feast and Famine
+1 Sword of Fire and Ice
+1 Sword of the Animist
+1 Winged Boots
+1 Academy Ruins
+1 Bountiful Promenade
+1 Breeding Pool
+1 Canopy Vista
+1 Command Tower
+1 Evolving Wilds
+1 Exotic Orchard
+1 Flooded Strand
+4 Forest
+1 Glacial Fortress
+1 Hall of Heliod's Generosity
+1 Hallowed Fountain
+1 Hinterland Harbor
+4 Island
+1 Misty Rainforest
+4 Plains
+1 Prairie Stream
+1 Rejuvenating Springs
+1 Rogue's Passage
+1 Sea of Clouds
+1 Seaside Citadel
+1 Spara's Headquarters
+1 Sunpetal Grove
+1 Temple Garden
+1 Windswept Heath
+1 Ardenn, Intrepid Archaeologist
+1 Armored Skyhunter
+1 Birds of Paradise
+1 Danitha Capashen, Paragon
+1 Danitha, New Benalia's Light
+1 Esper Sentinel
+1 Halvar, God of Battle
+1 Lion Sash
+1 Noble Hierarch
+1 Puresteel Paladin
+1 Rafiq of the Many
+1 Sram, Senior Edificer
+1 Stoneforge Mystic
+1 Stonehewer Giant
+1 The Reality Chip
+1 All That Glitters
+1 Aqueous Form
+1 Bear Umbra
+1 Fertile Ground
+1 Imprisoned in the Moon
+1 Kenrith's Transformation
+1 Mantle of the Ancients
+1 Rancor
+1 Rhystic Study
+1 Sigarda's Aid
+1 Smothering Tithe
+1 Steel of the Godhead
+1 Sylvan Library
+1 Utopia Sprawl
+1 Wild Growth
+1 Brainstorm
+1 Counterspell
+1 Cyclonic Rift
+1 Enlightened Tutor
+1 Fierce Guardianship
+1 Heroic Intervention
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Cultivate
+1 Nature's Lore
+1 Open the Armory
+1 Steelshaper's Gift
+1 Winds of Rath

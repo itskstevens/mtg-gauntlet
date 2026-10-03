@@ -14,6 +14,9 @@ ATTACK_TOKENS = {'Adeline, Resplendent Cathar': 'opps', 'Rabble Rousing': 'attac
 NONTOKEN_EDICT_SPELLS = {"Sheoldred's Edict"}
 FLYER_EDICT_SPELLS = {'Pick Your Poison'}
 BITE = {'Devouring Tendrils', 'Wolf Strike', 'Punishing Punch'}
+CODIE = 'Codie, Ravenous Codex'
+CREATURE_MANA = {'Cryptolith Rite', 'Elven Chorus', 'Enduring Vitality'}   # creatures you control tap for any color
+LOOP_PAYOFFS = {'Flaming Tyrannosaurus', 'Impending Flux', 'Stensian Sanguinist', 'Emeritus of Conflict'}
 
 class Perm:
     _id = 0
@@ -27,7 +30,7 @@ class Perm:
             s.name, s.bp, s.bt, kw = token; s.kw = set(kw); s.token = True; s.creature = True
         s.tapped = False; s.sick = True; s.counters = 0; s.pump = 0; s.pumpt = 0; s.tmpkw = set()
         s.auras = 0; s.aura_p = 0; s.aura_t = 0; s.aura_kw = set(); s.neutral = False; s.infect_turn = False
-        s.slime = 0; s.rankled = False
+        s.slime = 0; s.rankled = False; s.prepared = False
     @property
     def c(s): return s.card
     def is_art(s): return s.card is not None and s.card.is_artifact
@@ -282,6 +285,8 @@ class Game:
             m += r
             if P.cmd_card.name == 'Kinnan, Bonder Prodigy' and P.cmd_on_bf(): m += 1
         if P.has("Gaea's Cradle"): m += len(P.creatures()) - 1
+        if not totem and any(p.name in CREATURE_MANA and not p.neutral for p in P.bf):
+            m += sum(1 for p in P.creatures() if not p.neutral and not (p.card and p.card.rock) and (not p.sick or 'haste' in s.kw(p)))
         if P.has('Smothering Tithe'): m += 1
         return max(0, m)
 
@@ -469,9 +474,11 @@ class Game:
         else:
             v = min(opps, key=lambda x: x.life); s.lose_life(v, n, P, 'ping')
 
-    def spell_triggers(s, S, c):
+    def spell_triggers(s, S, c, nonhand=False):
+        if nonhand and not s.no_triggers(): s.nonhand_triggers(S, c)
         if c.is_creature: return
         S.spells_turn += 1
+        s.prepare_triggers(S, c)
         s.prowess(S, c)
         for q in s.players:
             if not q.alive: continue
@@ -488,6 +495,135 @@ class Game:
                 if p.name == 'Aetherflux Reservoir' and q is S: s.gain(q, S.spells_turn)
         k = s.stax_on(S, 'spell_ping')
         if k: s.lose_life(S, k, None, 'kambal')
+
+    # ---------------------------------------------------------------- prepare (Secrets of Strixhaven) + Codie, Ravenous Codex
+    def prep_perms(s, P, prepared=None):
+        return [p for p in P.creatures() if p.card and getattr(p.card, 'prep_card', None) and not p.neutral
+                and (prepared is None or p.prepared == prepared)]
+
+    def prepare_triggers(s, S, c):
+        """Noncreature spell cast by S: third-spell preparers, Displacer Kitten flickers, untappers, Song of Creation."""
+        if s.no_triggers(): return
+        if S.spells_turn + S.stats['cre_cast_turn'] == 3:
+            for p in s.prep_perms(S, False):
+                if p.card.prep_third: p.prepared = True
+        for k in [p for p in S.bf if p.name == 'Displacer Kitten' and not p.neutral]:
+            cand = [p for p in s.prep_perms(S, False) if p.card.prep_enter]
+            if cand:
+                t = max(cand, key=lambda p: s.prep_value(S, p.card.prep_card))
+                t.prepared = True; t.sick = True; t.tapped = False; S.stats['kitten_blinks'] += 1
+        if s.active is S:
+            for p in S.bf:
+                if p.name == 'Chakram Retriever' and not p.neutral:
+                    cd = next((q for q in S.creatures() if q.name == CODIE and q.tapped), None) or \
+                         next((q for q in S.creatures() if q.tapped and q.card and q.card.rock), None)
+                    if cd: cd.tapped = False
+            if any(p.name == 'Jeskai Ascendancy' and not p.neutral for p in S.bf):
+                for q in S.creatures(): q.tapped = False; q.pump += 1; q.pumpt += 1
+                if any(p.name in CREATURE_MANA and not p.neutral for p in S.bf) and getattr(S, 'asc_mana', 0) < 40:
+                    n = min(8, len(S.creatures())); S.pool += n; S.asc_mana = getattr(S, 'asc_mana', 0) + n
+        if any(p.name == 'Song of Creation' and not p.neutral for p in S.bf): S.draw(2)
+
+    def nonhand_triggers(s, S, c):
+        """'Whenever you cast a spell from anywhere other than your hand' (prepare spells are cast from exile)."""
+        S.nonhand_turn = getattr(S, 'nonhand_turn', 0) + 1
+        for p in list(S.bf):
+            if p.neutral: continue
+            if p.name == 'Vega, the Watcher': S.draw(1)
+            elif p.name == 'Flaming Tyrannosaurus': s.ping(S, 3); p.counters += 1
+            elif p.name == 'Kellan, the Kid':
+                perm = [x for x in S.hand if not x.is_land and (x.is_creature or x.is_artifact or x.is_enchantment) and x.cmc <= c.cmc]
+                if perm:
+                    x = max(perm, key=lambda x: x.cmc); S.hand.remove(x); s.log(f'{S.label} Kellan puts in {x.name}'); s.resolve(S, x)
+        s.check_deaths(S, 'burn')
+
+    def prep_value(s, P, c):
+        if c.ritual or c.tutor or c.draw_now >= 2 or c.drain_now or getattr(c, 'special', None) in ('reanimate',): return 3
+        if c.removal or c.draw_now or getattr(c, 'treasure_now', 0) or c.ramp_lands: return 2
+        return 0
+
+    def codie_copies(s, P):
+        if s.no_triggers(): return 0
+        n = sum(1 for p in P.bf if p.name == CODIE and not p.neutral)
+        if not n: return 0
+        if any(p.name == 'Annie Joins Up' and not p.neutral for p in P.bf): n *= 2   # Codie is a legendary creature
+        if any(p.card and getattr(p.card, 'special', None) == 'twinning' and not p.neutral for p in P.bf): n += 1
+        return n
+
+    def codie_activate(s, P):
+        """{W}{U}{B}{R}{G}, {T}: each creature you control becomes prepared. Used when it re-arms enough value."""
+        if s.stax_on(P, 'no_creature_abilities') or getattr(P, 'codie_acts', 0) >= 4: return False
+        cd = next((p for p in P.creatures() if p.name == CODIE and not p.tapped and not p.neutral and (not p.sick or 'haste' in s.kw(p))), None)
+        if cd is None or s.avail(P) < 5: return False
+        un = s.prep_perms(P, False)
+        val = sum(s.prep_value(P, p.card.prep_card) for p in un)
+        ritual = any(p.card.prep_card.ritual for p in un)
+        if val < 5 and not (ritual and s.avail(P) >= 8): return False
+        s.pay(P, 5); cd.tapped = True; P.codie_acts = getattr(P, 'codie_acts', 0) + 1; P.stats['codie_acts'] += 1
+        for p in un: p.prepared = True
+        s.log(f'{P.label} activates Codie: {len(un)} creatures prepared')
+        return True
+
+    def prep_upkeep(s, P):
+        for p in s.prep_perms(P, False):
+            u = p.card.prep_upkeep
+            if u == 'always' or (u == 'gy3' and sum(1 for g in P.gy if g.is_creature or g.is_artifact) >= 3): p.prepared = True
+
+    def prep_tap2(s, P):
+        keep = set(P.pilot.get('keep_home', [])) | {CODIE}
+        for p in s.prep_perms(P, False):
+            if not p.card.prep_tap2 or p.tapped or p.sick: continue
+            others = [q for q in s.untapped(P) if q is not p and q.name not in keep and not (q.card and q.card.rock)]
+            if len(others) >= 2:
+                p.tapped = True
+                for q in others[:2]: q.tapped = True
+                p.prepared = True
+
+    def cast_prep(s, P, perm):
+        c = perm.card.prep_card
+        if not s.pay(P, s.cost(P, c)): return False
+        perm.prepared = False
+        P.noncre_turn += 1; P.cast_log.append((s.round, c.name)); P.stats['spells'] += 1; P.stats['prep_casts'] += 1
+        P.cur_x = 0
+        s.spell_triggers(P, c, nonhand=True)
+        if s.try_counter(P, c): return True
+        s.spell_effect(P, c)
+        for _ in range(s.codie_copies(P)):
+            if s.over or not P.alive: break
+            P.stats['codie_copies'] += 1; s.magecraft(P); s.spell_effect(P, c, copy=True)
+        return True
+
+    def prep_options(s, P, score):
+        out = []
+        for p in s.prep_perms(P, True):
+            c = p.card.prep_card
+            if not (c.is_instant or c.is_sorcery): continue
+            sc = score(c)
+            if sc > 0: out.append((sc, c, ('prep', p)))
+        return out
+
+    def loop_combo(s, P):
+        """Deterministic loops the tag-based combos can't express. Returns (label, piece names) or None."""
+        if s.no_triggers(): return None
+        on = {p.name for p in P.bf if not p.neutral}
+        if 'Blazing Firesinger' not in on or s.avail(P) < 3: return None
+        cre_mana = bool(on & CREATURE_MANA)
+        codie_ok = any(p.name == CODIE and (not p.sick or 'haste' in s.kw(p)) for p in P.creatures()) and not s.stax_on(P, 'no_creature_abilities')
+        kitten = 'Displacer Kitten' in on
+        codie_loop = codie_ok and ('Chakram Retriever' in on and 'Chromatic Orrery' in on
+                                   or 'Jeskai Ascendancy' in on and ('Chromatic Orrery' in on or cre_mana and len(P.creatures()) >= 6))
+        if not (kitten or codie_loop): return None
+        engine = ['Displacer Kitten', 'Blazing Firesinger'] if kitten else \
+                 [CODIE, 'Blazing Firesinger'] + [n for n in ('Chakram Retriever', 'Jeskai Ascendancy', 'Chromatic Orrery') if n in on][:2]
+        pay = None
+        if 'Flaming Tyrannosaurus' in on: pay = 'Flaming Tyrannosaurus'
+        elif any(c.name == 'Impending Flux' for c in P.hand): pay = 'Impending Flux'
+        elif codie_loop and on & {'Stensian Sanguinist', 'Emeritus of Conflict'}: pay = sorted(on & {'Stensian Sanguinist', 'Emeritus of Conflict'})[0]
+        elif kitten and any(p.name == 'Stensian Sanguinist' and p.prepared for p in P.bf): pay = 'Stensian Sanguinist'
+        elif on & {'Vega, the Watcher', 'Archmage Emeritus', 'Song of Creation'} and \
+             any(c.name in LOOP_PAYOFFS for c in P.lib + P.hand): pay = 'draw into payoff'
+        if pay is None: return None
+        return ('infinite mana loop (' + ' + '.join(engine) + ') into ' + pay, [n for n in engine + [pay] if n in on])
 
     # ---------------------------------------------------------------- elimination
     def eliminate(s, P, cause, killer):
@@ -658,6 +794,7 @@ class Game:
             if c.is_creature and s.stax_on(P, 'opp_enter_tapped'): p.tapped = True
             if 'haste' in c.kw: p.sick = False
             P.bf.append(p)
+            if c.is_creature and getattr(c, 'prep_card', None) and c.prep_enter: p.prepared = True
             if c.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
             if c.name in ('Swiftfoot Boots', 'Lightning Greaves'):
                 for q in P.bf:
@@ -743,7 +880,10 @@ class Game:
             if getattr(c, 'edict_self', False): s.force_sac(P)
         if c.drain_now:
             d = c.drain_now; opps = P.opps()
-            if d == 'X': x = max(0, s.avail(P)); s.pay(P, x); [s.lose_life(v, x, P, 'drain') for v in opps]; s.gain(P, x * len(opps))
+            if d == 'X':
+                if copy: x = getattr(P, 'last_x', 0)
+                else: x = max(0, s.avail(P)); s.pay(P, x); P.last_x = x
+                [s.lose_life(v, x, P, 'drain') for v in opps]; s.gain(P, x * len(opps))
             elif d == 'X2': x = max(0, s.avail(P) // 2); s.pay(P, x * 2); [s.lose_life(v, x * 2, P, 'drain') for v in opps]
             elif d == 'TORMENT': s.torment(P)
             elif d == 'STORM':
@@ -771,6 +911,19 @@ class Game:
                 for x in [x for x in P.gy if (x.is_instant or x.is_sorcery) and x.name != c.name][:10]:
                     s.spell_triggers(P, x); s.spell_effect(P, x)
         if c.name == 'Beacon of Immortality': s.gain(P, max(5, P.life))
+        if sp == 'reanimate':
+            if c.name == 'Bind to Life':
+                milled = [P.lib.pop() for _ in range(min(7, len(P.lib)))]; P.gy += milled
+                pool = [(P, x) for x in milled if x.is_creature]
+            elif c.name == 'Reanimate': pool = [(q, x) for q in s.players for x in q.gy if x.is_creature]
+            else: pool = [(P, x) for x in P.gy if x.is_creature or x.is_artifact]
+            if pool:
+                q, x = max(pool, key=lambda t: t[1].cmc); q.gy.remove(x)
+                if c.name == 'Reanimate': s.lose_life(P, x.cmc)
+                s.log(f'{P.label} {c.name} returns {x.name}'); s.resolve(P, x)
+        if sp == 'regrowth':
+            back = [x for x in P.gy if not x.is_land and x is not c]
+            if back: x = max(back, key=lambda x: x.cmc); P.gy.remove(x); P.hand.append(x)
 
     def torment(s, P):
         x = max(0, s.avail(P)); s.pay(P, x)
@@ -956,7 +1109,9 @@ class Game:
 
     # ---------------------------------------------------------------- combos & alt wins
     def check_combo(s, P):
-        for cb in P.combo_names:
+        lp = s.loop_combo(P)
+        cands = list(P.combo_names) + ([tuple(lp[1])] if lp else [])
+        for cb in cands:
             if all(P.has(n) for n in cb):
                 # opponents may respond with instant removal on a piece
                 pieces = [p for p in P.bf if p.name in cb and not p.neutral]
@@ -983,7 +1138,7 @@ class Game:
                                 broken = True; break
                     if broken: break
                 if not broken:
-                    s.win_all(P, 'combo: ' + ' + '.join(cb)); return True
+                    s.win_all(P, 'combo: ' + (lp[0] if lp and tuple(lp[1]) == cb else ' + '.join(cb))); return True
         return False
 
     def upkeep_altwins(s, P):
@@ -1206,6 +1361,7 @@ class Game:
         s.update_static()
         for p in P.bf: p.rankled = False
         P.spells_turn = 0; P.noncre_turn = 0; P.stats['cre_cast_turn'] = 0; P.flashback = False
+        P.nonhand_turn = 0; P.codie_acts = 0; P.asc_mana = 0
         P.reserve = 0
         for p in P.bf:
             if s.stax_on(P, 'winter_orb') and p.card and p.card.is_land: continue
@@ -1223,6 +1379,7 @@ class Game:
                 if c.upkeep.get('lose'): s.lose_life(P, c.upkeep['lose'])
                 s.apply_effect(P, {k: v for k, v in c.upkeep.items() if k not in ('lose', 'token')}, why='upkeep')
         if P.cmd_card.name == 'Oloro, Ageless Ascetic': s.gain(P, 2)
+        s.prep_upkeep(P)
         s.each_upkeep(P)
         s.check_deaths(None, 'life')
         if s.over or not P.alive: return
@@ -1298,6 +1455,7 @@ class Game:
                 s.gain(P, 10); s.log(f'{P.label} Lathril drains 10')
         # aristocrats: sacrifice tokens to payoffs (non-me players with a free outlet)
         if not P.is_me: s.ai_sac(P)
+        if any(p.name == 'Song of Creation' and not p.neutral for p in P.bf): P.gy += P.hand; P.hand = []
         while len(P.hand) > 8: P.gy.append(P.hand.pop(0))
 
     def ai_sac(s, P):
@@ -1331,13 +1489,17 @@ class Game:
                 for c in P.gy:
                     if (c.is_instant or c.is_sorcery) and (c.ritual or c.draw_now or c.drain_now) and not c.counter:
                         opts.append((60, c, 'gy'))
+            if P.cmd_card.name == CODIE: s.codie_activate(P)
+            s.prep_tap2(P)
+            opts += s.prep_options(P, lambda c: s.ai_score(P, c, turn, post))
             opts.sort(key=lambda x: -x[0])
             done = False
             for sc, c, src in opts:
                 cost = s.cost(P, c, src is True) + (3 if src == 'gy' and P.has('Underworld Breach') else 0)
                 budget = s.avail(P) - (reserve if sc < 100 and not c.ritual else 0)
                 if cost <= budget:
-                    s.cast(P, c, from_cmd=(src is True), from_gy=(src == 'gy'))
+                    if isinstance(src, tuple): s.cast_prep(P, src[1])
+                    else: s.cast(P, c, from_cmd=(src is True), from_gy=(src == 'gy'))
                     done = True
                     if s.check_combo(P): return
                     break
@@ -1387,7 +1549,7 @@ class Game:
             return 140 if any(v.life <= x * (2 if c.drain_now == 'X2' else 1) for v in opps) or x >= 10 else 0
         if c.drain_now == 'STORM': return 140 if P.spells_turn >= 8 or any(v.life <= P.spells_turn + 1 for v in opps) else 0
         if c.ritual:
-            follow = sum(1 for x in P.hand if (x.is_instant or x.is_sorcery) and x is not c)
+            follow = sum(1 for x in P.hand if (x.is_instant or x.is_sorcery) and x is not c) + len(s.prep_perms(P, True))
             return 70 if follow >= 2 or s.avail(P) + c.ritual >= 6 else 0
         if c.rock or c.ramp_lands or c.extra_lands: return 92 if turn <= 5 else 45
         if c.stax: return 88
@@ -1621,6 +1783,9 @@ class Game:
                 if c.is_land or not s.can_cast_now(P, c): continue
                 sc = s.my_score(P, c, turn, post)
                 if sc > 0: opts.append((sc, c, False))
+            s.codie_activate(P); s.prep_tap2(P)
+            if s.check_combo(P): return
+            opts += s.prep_options(P, lambda c: s.my_score(P, c, turn, post) if s.can_cast_now(P, c) else 0)
             opts.sort(key=lambda x: -x[0])
             done = False
             for sc, c, src in opts:
@@ -1638,6 +1803,7 @@ class Game:
                                 s.kill(p, 'sac', sac=True)
                             s.check_deaths(P, 'drain')
                         done = True; break
+                    if isinstance(src, tuple): s.cast_prep(P, src[1]); done = True; break
                     s.cast(P, c, from_cmd=(src is True)); done = True; break
             s.my_sac_phase(P)
             if not done: break

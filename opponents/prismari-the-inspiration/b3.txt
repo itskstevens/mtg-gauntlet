@@ -1,0 +1,83 @@
+1 Prismari, the Inspiration
+1 Arcane Signet
+1 Fellwar Stone
+1 Izzet Signet
+1 Lightning Greaves
+1 Resonating Lute
+1 Ruby Medallion
+1 Sol Ring
+1 Talisman of Creativity
+1 Thought Vessel
+1 Cascade Bluffs
+1 Command Tower
+1 Exotic Orchard
+1 Ferrous Lake
+1 Frostboil Snarl
+10 Island
+9 Mountain
+1 Mystic Sanctuary
+1 Reliquary Tower
+1 Scorched Geyser
+1 Shivan Reef
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Temple of Epiphany
+1 Training Center
+1 Turbulent Springs
+1 Abstract Paintmage
+1 Archmage Emeritus
+1 Archmage of Runes
+1 Birgi, God of Storytelling
+1 Blazing Firesinger
+1 Electro, Assaulting Battery
+1 Goblin Electromancer
+1 Guttersnipe
+1 Hexing Squelcher
+1 Niv-Mizzet, Parun
+1 Sanar, Unfinished Genius
+1 Storm-Kiln Artist
+1 Stormcatch Mentor
+1 Veyran, Voice of Duality
+1 Vivi Ornitier
+1 Rhystic Study
+1 Thousand-Year Storm
+1 Underworld Breach
+1 Abrade
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Big Score
+1 Brain Freeze
+1 Brainstorm
+1 Chaos Warp
+1 Consider
+1 Counterspell
+1 Desperate Ritual
+1 Flashback
+1 Frantic Search
+1 Lightning Bolt
+1 Opt
+1 Pongify
+1 Prismari Charm
+1 Prismari Command
+1 Pyretic Ritual
+1 Return the Favor
+1 Seething Song
+1 Snap
+1 Unexpected Windfall
+1 Blasphemous Act
+1 Boltwave
+1 Expressive Iteration
+1 Flow State
+1 Gitaxian Probe
+1 Grapeshot
+1 Jeska's Will
+1 Mana Geyser
+1 Mizzix's Mastery
+1 Ponder
+1 Preordain
+1 Rapturous Moment
+1 Seize the Spoils
+1 Sleight of Hand
+1 Stock Up
+1 Strike It Rich

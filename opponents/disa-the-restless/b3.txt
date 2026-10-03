@@ -1,0 +1,93 @@
+1 Disa the Restless
+1 Altar of the Goyf
+1 Arcane Signet
+1 Lightning Greaves
+1 Maskwood Nexus
+1 Sol Ring
+1 Talisman of Impulse
+1 Talisman of Indulgence
+1 Talisman of Resilience
+1 Blood Crypt
+1 Bloodstained Mire
+1 Canyon Slough
+1 Cinder Glade
+1 Command Tower
+1 Commercial District
+1 Dakmor Salvage
+1 Exotic Orchard
+4 Forest
+1 Kessig Wolf Run
+3 Mountain
+1 Overgrown Tomb
+1 Path of Ancestry
+1 Raucous Theater
+1 Riveteers Overlook
+1 Savage Lands
+1 Sheltered Thicket
+1 Smoldering Marsh
+1 Stomping Ground
+3 Swamp
+1 Tainted Peak
+1 Tainted Wood
+1 Twisted Landscape
+1 Underground Mortuary
+1 Undergrowth Stadium
+1 Verdant Catacombs
+1 Wooded Foothills
+1 Ziatora's Proving Ground
+1 Invasion of Ikoria
+1 Anger
+1 Archon of Cruelty
+1 Barrowgoyf
+1 Birds of Paradise
+1 Brawn
+1 Chainer, Nightmare Adept
+1 Changeling Outcast
+1 Coram, the Undertaker
+1 Eternal Witness
+1 Fauna Shaman
+1 Graveshifter
+1 Hermit Druid
+1 Ignoble Hierarch
+1 Lhurgoyf
+1 Mortivore
+1 Necrogoyf
+1 Nethergoyf
+1 Polygoyf
+1 Pyrogoyf
+1 Sakura-Tribe Elder
+1 Selvala, Heart of the Wilds
+1 Six
+1 Skull Prophet
+1 Stitcher's Supplier
+1 Syr Konrad, the Grim
+1 Tarmogoyf
+1 Taurean Mauler
+1 Terravore
+1 Conspiracy
+1 Garruk's Uprising
+1 Greater Good
+1 Ripples of Undeath
+1 Tarmogoyf Nest
+1 Tortured Existence
+1 Assassin's Trophy
+1 Beast Within
+1 Entomb
+1 Grapple with the Past
+1 Grisly Salvage
+1 Heroic Intervention
+1 Kolaghan's Command
+1 Terminate
+1 Grist, the Hunger Tide
+1 Liliana, Death's Majesty
+1 Buried Alive
+1 Chandra's Ignition
+1 Faithless Looting
+1 Farseek
+1 Life from the Loam
+1 Maelstrom Pulse
+1 Nature's Lore
+1 Rampant Growth
+1 Reanimate
+1 Three Visits
+1 Toxic Deluge

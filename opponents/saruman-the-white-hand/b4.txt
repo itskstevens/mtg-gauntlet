@@ -1,0 +1,90 @@
+1 Saruman, the White Hand
+1 Arcane Signet
+1 Fellwar Stone
+1 Izzet Signet
+1 Lightning Greaves
+1 Relic of Sauron
+1 Sol Ring
+1 Talisman of Creativity
+1 Talisman of Dominance
+1 Talisman of Indulgence
+1 The One Ring
+1 The Ozolith
+1 Wizard's Staff
+1 Barad-dûr
+1 Blood Crypt
+1 Bloodstained Mire
+1 Command Tower
+1 Crumbling Necropolis
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Exotic Orchard
+5 Island
+1 Luxury Suite
+1 Morphic Pool
+4 Mountain
+1 Polluted Delta
+1 Rogue's Passage
+1 Scalding Tarn
+1 Smoldering Marsh
+1 Steam Vents
+1 Sulfur Falls
+1 Sulfurous Springs
+4 Swamp
+1 The Black Gate
+1 Training Center
+1 Underground River
+1 Watery Grave
+1 Xander's Lounge
+1 Archmage Emeritus
+1 Bothersome Noisemaker
+1 Corsairs of Umbar
+1 Goblin Electromancer
+1 Gríma, Saruman's Footman
+1 Guttersnipe
+1 Harmonic Prodigy
+1 Mauhúr, Uruk-hai Captain
+1 Orcish Bowmasters
+1 Orcish Siegemaster
+1 Sauron, the Dark Lord
+1 Storm-Kiln Artist
+1 Veyran, Voice of Duality
+1 Warg Rider
+1 Dreadhorde Invasion
+1 Fiery Inscription
+1 March from the Black Gate
+1 Mystic Remora
+1 Rhystic Study
+1 Storm of Saruman
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Brainstorm
+1 Counterspell
+1 Cyclonic Rift
+1 Dark Ritual
+1 Deadly Rollick
+1 Deflecting Swat
+1 Fierce Guardianship
+1 Flame of Anor
+1 Fling
+1 Lazotep Plating
+1 Mana Drain
+1 Mystical Tutor
+1 Orcish Medicine
+1 Saruman's Trickery
+1 Vampiric Tutor
+1 Angrath, Captain of Chaos
+1 Assault on Osgiliath
+1 Blasphemous Act
+1 Chandra's Ignition
+1 Demonic Tutor
+1 Feed the Swarm
+1 Foray of Orcs
+1 Jeska's Will
+1 Ponder
+1 Reanimate
+1 Ringsight
+1 Summons of Saruman
+1 Toxic Deluge
+1 Treason of Isengard
+1 Widespread Brutality

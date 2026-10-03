@@ -1,0 +1,88 @@
+1 Maelstrom Wanderer
+1 Arcane Signet
+1 Crystal Shard
+1 Gilded Lotus
+1 Simic Signet
+1 Sol Ring
+1 Thran Dynamo
+1 Breeding Pool
+1 Cinder Glade
+1 Command Tower
+1 Dreamroot Cascade
+1 Exotic Orchard
+6 Forest
+1 Frontier Bivouac
+1 Hinterland Harbor
+4 Island
+1 Karplusan Forest
+1 Ketria Triome
+1 Misty Rainforest
+5 Mountain
+1 Rejuvenating Springs
+1 Rockfall Vale
+1 Rootbound Crag
+1 Scalding Tarn
+1 Shivan Reef
+1 Spire Garden
+1 Steam Vents
+1 Stomping Ground
+1 Sulfur Falls
+1 Training Center
+1 Wooded Foothills
+1 Yavimaya Coast
+1 Annoyed Altisaur
+1 Apex Devastator
+1 Aurora Phoenix
+1 Averna, the Chaos Bloom
+1 Balefire Dragon
+1 Birds of Paradise
+1 Bloodbraid Elf
+1 Etali, Primal Conqueror
+1 Etali, Primal Storm
+1 Eternal Witness
+1 Fanatic of Rhonas
+1 Goreclaw, Terror of Qal Sisma
+1 Gwenna, Eyes of Gaea
+1 Hullbreaker Horror
+1 Imoti, Celebrant of Bounty
+1 Kodama of the East Tree
+1 Kogla, the Titan Ape
+1 Koma, Cosmos Serpent
+1 Old Gnawbone
+1 Pathbreaker Ibex
+1 Quandrix, the Proof
+1 Sakashima's Protege
+1 Sakura-Tribe Elder
+1 Selvala, Heart of the Wilds
+1 Somberwald Sage
+1 Surrak Dragonclaw
+1 Temur Battlecrier
+1 Temur Sabertooth
+1 Terror of the Peaks
+1 Thryx, the Sudden Storm
+1 Trumpeting Carnosaur
+1 Garruk's Uprising
+1 Monstrous Vortex
+1 Sunbird's Invocation
+1 Temur Ascendancy
+1 Up the Beanstalk
+1 Warstorm Surge
+1 Beast Within
+1 Brainstorm
+1 Chaos Warp
+1 Natural Reclamation
+1 Nexus of Fate
+1 Release to the Wind
+1 Kiora, Behemoth Beckoner
+1 Blasphemous Act
+1 Call Forth the Tempest
+1 Cultivate
+1 Farseek
+1 Genesis Ultimatum
+1 Improvisation Capstone
+1 Kodama's Reach
+1 Nature's Lore
+1 Rampant Growth
+1 Rishkar's Expertise
+1 Skyshroud Claim
+1 Three Visits

@@ -1,0 +1,76 @@
+1 Preston, the Vanisher
+1 Altar of the Brood
+1 Arcane Signet
+1 Ashnod's Altar
+1 Blasting Station
+1 Conjurer's Closet
+1 Panharmonicon
+1 Pearl Medallion
+1 Skullclamp
+1 Sol Ring
+1 Sword of Hearth and Home
+1 Thought Vessel
+1 Ancient Tomb
+1 Eiganjo, Seat of the Empire
+1 Emeria, the Sky Ruin
+1 Minas Tirith
+1 Nykthos, Shrine to Nyx
+25 Plains
+1 Reliquary Tower
+1 Scavenger Grounds
+1 Urza's Saga
+1 War Room
+1 Abdel Adrian, Gorion's Ward
+1 Charming Prince
+1 Delney, Streetwise Lookout
+1 Distinguished Conjurer
+1 Eldrazi Displacer
+1 Elesh Norn, Mother of Machines
+1 Enduring Innocence
+1 Esper Sentinel
+1 Felidar Guardian
+1 Fiend Hunter
+1 Flickering Hound
+1 Flickerwisp
+1 Guardian of Ghirapur
+1 Inspiring Overseer
+1 Karmic Guide
+1 Knight of the White Orchid
+1 Loran of the Third Path
+1 Mondrak, Glory Dominus
+1 Moonshaker Cavalry
+1 Phelia, Exuberant Shepherd
+1 Priest of Ancient Lore
+1 Recruiter of the Guard
+1 Restoration Angel
+1 Rumor Gatherer
+1 Skyclave Apparition
+1 Solemn Simulacrum
+1 Solitude
+1 Spirited Companion
+1 Sun Titan
+1 Wall of Omens
+1 Welcoming Vampire
+1 Witch Enchanter
+1 Anointed Procession
+1 Caretaker's Talent
+1 Land Tax
+1 Smothering Tithe
+1 Teleportation Circle
+1 Touch the Spirit Realm
+1 Cloudshift
+1 Eerie Interlude
+1 Enlightened Tutor
+1 Ephemerate
+1 Flicker of Fate
+1 Generous Gift
+1 Ghostway
+1 Lae'zel's Acrobatics
+1 Path to Exile
+1 Semester's End
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Another Round
+1 Daydream
+1 Farewell
+1 Sevinne's Reclamation

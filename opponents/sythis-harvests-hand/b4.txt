@@ -1,0 +1,87 @@
+1 Sythis, Harvest's Hand
+1 Aetherflux Reservoir
+1 Arcane Signet
+1 Sol Ring
+1 Boseiju, Who Endures
+1 Bountiful Promenade
+1 Branchloft Pathway
+1 Brushland
+1 Canopy Vista
+1 Command Tower
+7 Forest
+1 Fortified Village
+1 Hall of Heliod's Generosity
+1 Horizon Canopy
+1 Hushwood Verge
+1 Overgrown Farmland
+8 Plains
+1 Reliquary Tower
+1 Serra's Sanctum
+1 Sunpetal Grove
+1 Temple Garden
+1 Windswept Heath
+1 Yavimaya, Cradle of Growth
+1 Alseid of Life's Bounty
+1 Archon of Sun's Grace
+1 Argothian Enchantress
+1 Birds of Paradise
+1 Calix, Guided by Fate
+1 Destiny Spinner
+1 Dryad of the Ilysian Grove
+1 Eidolon of Blossoms
+1 Esper Sentinel
+1 Grand Abolisher
+1 Heliod, Sun-Crowned
+1 Herald of the Pantheon
+1 Jukai Naturalist
+1 Mesa Enchantress
+1 Moon-Blessed Cleric
+1 Sanctum Weaver
+1 Satyr Enchanter
+1 Setessan Champion
+1 Starfield Mystic
+1 Verduran Enchantress
+1 Walking Ballista
+1 All That Glitters
+1 Aura Shards
+1 Aura of Silence
+1 Authority of the Consuls
+1 Blind Obedience
+1 Burgeoning
+1 Carpet of Flowers
+1 Darksteel Mutation
+1 Enchantress's Presence
+1 Ethereal Armor
+1 Exploration
+1 Fertile Ground
+1 Flickering Ward
+1 Ghostly Prison
+1 Grasp of Fate
+1 Greater Auramancy
+1 Hallowed Haunting
+1 Kenrith's Transformation
+1 Mirari's Wake
+1 Seal of Cleansing
+1 Seal of Primordium
+1 Sigil of the Empty Throne
+1 Smothering Tithe
+1 Solitary Confinement
+1 Sphere of Safety
+1 Sterling Grove
+1 Stony Silence
+1 Strength of the Harvest
+1 Sylvan Library
+1 Utopia Sprawl
+1 Whip Silk
+1 Wild Growth
+1 Eladamri's Call
+1 Enlightened Tutor
+1 Heroic Intervention
+1 Path to Exile
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Worldly Tutor
+1 Farewell
+1 Finale of Devastation
+1 Idyllic Tutor
+1 Replenish

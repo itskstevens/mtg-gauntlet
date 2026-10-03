@@ -35,6 +35,15 @@ def fetch_cards(names):
             except Exception: pass
         return n, 'missing'
     with cf.ThreadPoolExecutor(16) as ex: res = dict(ex.map(get, sorted(set(names))))
+    # prepare creatures copy their spell's face from another card: make sure that card is cached too
+    extra = set()
+    for n, st in res.items():
+        path = os.path.join(CD.FORGE_DIR, CD.slug(n) + '.txt')
+        if st != 'missing' and os.path.exists(path):
+            m = re.search(r'CopyFaceFrom:(.+)', open(path).read())
+            if m and not os.path.exists(os.path.join(CD.FORGE_DIR, CD.slug(m.group(1).strip()) + '.txt')): extra.add(m.group(1).strip())
+    if extra:
+        with cf.ThreadPoolExecutor(16) as ex: res.update(dict(ex.map(get, sorted(extra))))
     return res
 
 def all_deck_names():
@@ -100,8 +109,9 @@ def cmd_smoke(a):
     for i, cat in enumerate(cfg['categories']):
         rng = random.Random(1 + i); att = tot = first = wins = 0; stuck = collections.Counter(); n = a.games
         for gno in range(n):
-            br = [rng.choice(cfg['defaults']['brackets']) for _ in cfg['categories'][cat]]
-            g = E.Game(R.specs_for(cfg, cat, lst, pilot, rng, br), rng, log=True)
+            opps = R.pick_opps(cfg, cat, rng)
+            br = [rng.choice(cfg['defaults']['brackets']) for _ in opps]
+            g = E.Game(R.specs_for(cfg, cat, lst, pilot, rng, br, opps), rng, log=True)
             signal.alarm(5)
             try: g.play(); signal.alarm(0)
             except TimeoutError:

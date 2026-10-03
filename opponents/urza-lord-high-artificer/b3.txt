@@ -1,0 +1,78 @@
+1 Urza, Lord High Artificer
+1 Aether Spellbomb
+1 Arcane Signet
+1 Basalt Monolith
+1 Cloud Key
+1 Everflowing Chalice
+1 Howling Mine
+1 Isochron Scepter
+1 Lightning Greaves
+1 Lotus Petal
+1 Manifold Key
+1 Mind Stone
+1 Mishra's Bauble
+1 Mystic Forge
+1 Sapphire Medallion
+1 Sculpting Steel
+1 Sensei's Divining Top
+1 Simulacrum Synthesizer
+1 Sol Ring
+1 Swiftfoot Boots
+1 Thought Vessel
+1 Tormod's Crypt
+1 Unwinding Clock
+1 Uthros Research Craft
+1 Welding Jar
+1 Academy Ruins
+1 Archway of Innovation
+1 Buried Ruin
+1 Darksteel Citadel
+1 Inventors' Fair
+23 Island
+1 Mystic Sanctuary
+1 Reliquary Tower
+1 Seat of the Synod
+1 Urza's Saga
+1 Uthros, Titanic Godcore
+1 Cyberdrive Awakener
+1 Displacer Kitten
+1 Emry, Lurker of the Loch
+1 Etherium Sculptor
+1 Forensic Gadgeteer
+1 Foundry Inspector
+1 Hullbreaker Horror
+1 Kappa Cannoneer
+1 Liberator, Urza's Battlethopter
+1 Ornithopter
+1 Padeem, Consul of Innovation
+1 Phyrexian Metamorph
+1 Sai, Master Thopterist
+1 Shimmer Myr
+1 Solemn Simulacrum
+1 Spellskite
+1 The Reality Chip
+1 Thought Monitor
+1 Trinket Mage
+1 Vedalken Archmage
+1 Efficient Construction
+1 Mystic Remora
+1 Rhystic Study
+1 Thopter Spy Network
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Brainstorm
+1 Counterspell
+1 Cyclonic Rift
+1 Dramatic Reversal
+1 Mana Drain
+1 Negate
+1 Pongify
+1 Rapid Hybridization
+1 Scour for Scrap
+1 Swan Song
+1 Whir of Invention
+1 Tezzeret the Seeker
+1 Fabricate
+1 Ponder
+1 Reshape
+1 Thoughtcast

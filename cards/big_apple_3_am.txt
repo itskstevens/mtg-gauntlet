@@ -1,0 +1,5 @@
+Name:Big Apple, 3 a.m.
+ManaCost:no cost
+Types:Land
+Oracle:This land enters tapped.\n{T}: Add one mana of the chosen color.\n{5}, {T}: Create a 1/1 black Rat creature token for each opponent you have.
+# synthetic: built from Scryfall text; Forge has no script yet

@@ -1,24 +1,477 @@
-# Opponent categories. Each pod = your deck + the decks listed in one category.
-# Each deck key is a folder in opponents/ holding b3.txt (EDHREC Upgraded) and b4.txt (EDHREC Optimized).
-categories:
-  Combo & storm:
-    - {key: kinnan, archetype: Turbo combo}
-    - {key: birgi, archetype: Storm}
-    - {key: niv, archetype: Spellslinger}
-  Stax & control:
-    - {key: gaa, archetype: Stax}
-    - {key: baral, archetype: Counterspell control}
-    - {key: oloro, archetype: Lifegain control}
-  Go-wide:
-    - {key: jetmir, archetype: Tokens}
-    - {key: tatyova, archetype: Landfall}
-    - {key: lathril, archetype: Elf typal}
-  Graveyard & big threats:
-    - {key: meren, archetype: Reanimator}
-    - {key: teysa, archetype: Aristocrats}
-    - {key: lightpaws, archetype: Voltron}
+# Opponent categories. Each series draws `pod` random opponents from the category's pool (EDHREC top commanders
+# for that archetype, fetched 2026-10-03). Each pool key is a folder in opponents/ holding b3.txt (EDHREC Upgraded)
+# and b4.txt (EDHREC Optimized). A category may instead list fixed decks as [{key, archetype}] (see gauntlets-classic.yaml).
 defaults:
-  series: 300          # best-of-3 series per category (50 is too noisy: about +/-4 points)
-  brackets: [3, 4]     # each series rolls each opponent's bracket at random
-  max_rounds: 25       # a game that reaches this is a draw
-  refresh_days: 60     # opponent lists older than this get refetched from EDHREC
+  series: 50
+  brackets:
+  - 3
+  - 4
+  max_rounds: 25
+  refresh_days: 60
+categories:
+  Turbo combo:
+    pool:
+    - kinnan-bonder-prodigy
+    - kraum-ludevics-opus-tymna-the-weaver
+    - thrasios-triton-hero-tymna-the-weaver
+    - rograkh-son-of-rohgahh-silas-renn-seeker-adept
+    - kefka-court-mage
+    - sisay-weatherlight-captain
+    - etali-primal-conqueror
+    - kenrith-the-returned-king
+    - tivit-seller-of-secrets
+    - ob-nixilis-captive-kingpin
+    - tayam-luminous-enigma
+    - gwenom-remorseless
+    - reyhan-last-of-the-abzan-rograkh-son-of-rohgahh
+    - malcolm-keen-eyed-navigator-vial-smasher-the-fierce
+    - gyruda-doom-of-depths
+    - varragoth-bloodsky-sire
+    pod: 3
+  Storm & spellslinger:
+    pool:
+    - storm-force-of-nature
+    - vivi-ornitier
+    - fire-lord-azula
+    - stella-lee-wild-card
+    - veyran-voice-of-duality
+    - niv-mizzet-parun
+    - alania-divergent-storm
+    - feather-the-redeemed
+    - bria-riptide-rogue
+    - kykar-winds-fury
+    - narset-enlightened-exile
+    - iroh-grand-lotus
+    - riku-of-many-paths
+    - eluge-the-shoreless-sea
+    - lord-of-the-nazgul
+    - kalamax-the-stormsire
+    - anhelo-the-painter
+    - saruman-the-white-hand
+    - kess-dissident-mage
+    - zada-hedron-grinder
+    - prismari-the-inspiration
+    - ral-monsoon-mage
+    - krark-the-thumbless-sakashima-of-a-thousand-faces
+    - urabrask
+    - aeve-progenitor-ooze
+    pod: 3
+  Stax & hatebears:
+    pool:
+    - grand-arbiter-augustin-iv
+    - lavinia-azorius-renegade
+    - derevi-empyrial-tactician
+    - kudo-king-among-bears
+    - heliod-sun-crowned
+    - jorn-god-of-winter
+    - hokori-dust-drinker
+    - myrel-shield-of-argive
+    - gaddock-teeg
+    - duskana-the-rage-mother
+    - thalia-guardian-of-thraben
+    - yasharn-implacable-earth
+    - tana-the-bloodsower-tymna-the-weaver
+    - pramikon-sky-rampart
+    - zedruu-the-greathearted
+    - braids-cabal-minion
+    - maralen-of-the-mornsong
+    - mogis-god-of-slaughter
+    - oswald-fiddlebender
+    pod: 3
+  Control:
+    pool:
+    - yshtola-nights-blessed
+    - alela-cunning-conqueror
+    - maralen-fae-ascendant
+    - hylda-of-the-icy-crown
+    - gonti-canny-acquisitor
+    - don-andres-the-renegade
+    - queen-marchesa
+    - captain-nghathrod
+    - talion-the-kindly-lord
+    - laughing-jasper-flint
+    - baral-chief-of-compliance
+    - vren-the-relentless
+    - narset-enlightened-master
+    - gonti-night-minister
+    - tasha-the-witch-queen
+    - tinybones-bauble-burglar
+    - sen-triplets
+    - edea-possessed-sorceress
+    - nicol-bolas-the-ravager
+    - obeka-brute-chronologist
+    - rev-tithe-extractor
+    - breena-the-demagogue
+    - admiral-beckett-brass
+    - nathan-drake-treasure-hunter
+    - evelyn-the-covetous
+    pod: 3
+  Tokens / go-wide:
+    pool:
+    - baylen-the-haymaker
+    - chatterfang-squirrel-general
+    - caesar-legions-emperor
+    - marneus-calgar
+    - arabella-abandoned-doll
+    - zurgo-stormrender
+    - zinnia-valleys-voice
+    - hazel-of-the-rootbloom
+    - adrix-and-nev-twincasters
+    - trostani-selesnyas-voice
+    - jetmir-nexus-of-revels
+    - witherbloom-the-balancer
+    - the-unbeatable-squirrel-girl
+    - ghoulcaller-gisa
+    - chief-of-the-wilds
+    - thorin-king-of-durins-folk
+    - aerid-konstrari
+    - zurgo-thunders-decree
+    - temmet-naktamuns-will
+    - the-great-goblin
+    pod: 3
+  Typal:
+    pool:
+    - edgar-markov
+    - the-ur-dragon
+    - krenko-mob-boss
+    - lathril-blade-of-the-elves
+    - giada-font-of-hope
+    - pantlaza-sun-favored
+    - miirym-sentinel-wyrm
+    - wilhelt-the-rotcleaver
+    - hakbal-of-the-surging-soul
+    - gishath-suns-avatar
+    - rin-and-seri-inseparable
+    - voja-jaws-of-the-conclave
+    - the-first-sliver
+    - eowyn-shieldmaiden
+    - yuriko-the-tigers-shadow
+    - the-scarab-god
+    - varina-lich-queen
+    - kaalia-of-the-vast
+    - inalla-archmage-ritualist
+    - clavileno-first-of-the-blessed
+    - arahbo-roar-of-the-world
+    - high-perfect-morcant
+    - atla-palani-nest-tender
+    - ureni-of-the-unwritten
+    - shilgengar-sire-of-famine
+    pod: 3
+  Landfall & lands:
+    pool:
+    - the-necrobloom
+    - hearthhull-the-worldseed
+    - omnath-locus-of-creation
+    - toph-the-first-metalbender
+    - omo-queen-of-vesuva
+    - aesi-tyrant-of-gyre-strait
+    - lord-windgrace
+    - hazezon-shaper-of-sand
+    - the-wandering-minstrel
+    - flubs-the-fool
+    - yuma-proud-protector
+    - tifa-lockhart
+    - zimone-mystery-unraveler
+    - thalia-and-the-gitrog-monster
+    - choco-seeker-of-paradise
+    - the-gitrog-monster
+    - tatyova-benthic-druid
+    - nine-fingers-keene
+    - omnath-locus-of-rage
+    - tannuk-memorial-ensign
+    - glarb-calamitys-augur
+    - lumra-bellow-of-the-woods
+    - yarok-the-desecrated
+    - zimone-and-dina
+    - karametra-god-of-harvests
+    pod: 3
+  Reanimator & graveyard:
+    pool:
+    - teval-the-balanced-scale
+    - terra-herald-of-hope
+    - muldrotha-the-gravetide
+    - hashaton-scarabs-fist
+    - sefris-of-the-hidden-ways
+    - sauron-the-dark-lord
+    - celes-rune-knight
+    - raffine-scheming-seer
+    - henzie-toolbox-torre
+    - sidar-jabari-of-zhalfir
+    - mirko-obsessive-theorist
+    - disa-the-restless
+    - slimefoot-and-squee
+    - quintorius-history-chaser
+    - karador-ghost-chieftain
+    - nethroi-apex-of-death
+    - winter-cynical-opportunist
+    - sidisi-brood-tyrant
+    - the-mycotyrant
+    - coram-the-undertaker
+    - grist-the-hunger-tide
+    - norman-osborn
+    - jarad-golgari-lich-lord
+    - gisa-and-geralf
+    - grolnok-the-omnivore
+    pod: 3
+  Aristocrats:
+    pool:
+    - teysa-karlov
+    - sephiroth-fabled-soldier
+    - meren-of-clan-nel-toth
+    - ygra-eater-of-all
+    - korvold-fae-cursed-king
+    - yawgmoth-thran-physician
+    - shirei-shizos-caretaker
+    - ayara-first-of-locthwain
+    - elenda-the-dusk-rose
+    - braids-arisen-nightmare
+    - elas-il-kor-sadistic-pilgrim
+    - savra-queen-of-the-golgari
+    - prossh-skyraider-of-kher
+    - teysa-orzhov-scion
+    - athreos-god-of-passage
+    - tergrid-god-of-fright
+    - rakdos-the-muscle
+    - juri-master-of-the-revue
+    - carmen-cruel-skymarcher
+    - ziatora-the-incinerator
+    - camellia-the-seedmiser
+    - mazirek-kraul-death-priest
+    - ashnod-the-uncaring
+    - smeagol-helpful-guide
+    pod: 3
+  Voltron:
+    pool:
+    - captain-america-first-avenger
+    - eriette-of-the-charmed-apple
+    - cloud-ex-soldier
+    - light-paws-emperors-voice
+    - syr-gwyn-hero-of-ashvale
+    - ardenn-intrepid-archaeologist-rograkh-son-of-rohgahh
+    - nahiri-forged-in-fury
+    - arna-kennerud-skycaptain
+    - dogmeat-ever-loyal
+    - killian-decisive-mentor
+    - kotis-the-fangkeeper
+    - ellivere-of-the-wild-court
+    - uril-the-miststalker
+    - alexios-deimos-of-kosmos
+    - lightning-army-of-one
+    - mabel-heir-to-cragflame
+    - galea-kindler-of-hope
+    - bruenor-battlehammer
+    - eriette-the-beguiler
+    - balan-wandering-knight
+    - bruna-light-of-alabaster
+    - cloud-midgar-mercenary
+    - anti-venom-horrifying-healer
+    - chishiro-the-shattered-blade
+    - jin-sakai-ghost-of-tsushima
+    pod: 3
+  Artifacts:
+    pool:
+    - breya-etherium-shaper
+    - urza-chief-artificer
+    - shorikai-genesis-engine
+    - urza-lord-high-artificer
+    - urtet-remnant-of-memnarch
+    - iron-man-titan-of-innovation
+    - mr-house-president-and-ceo
+    - magda-brazen-outlaw
+    - mendicant-core-guidelight
+    - mishra-eminent-one
+    - prosper-tome-bound
+    - ragost-deft-gastronaut
+    - greasefang-okiba-boss
+    - edward-kenway
+    - evereth-viceroy-of-plunder
+    - kilo-apogee-mind
+    - vihaan-goldwaker
+    - inspirit-flagship-vessel
+    - golbez-crystal-collector
+    - imotekh-the-stormlord
+    - emry-lurker-of-the-loch
+    - karn-legacy-reforged
+    - osgir-the-reconstructor
+    - jhoira-weatherlight-captain
+    - aloy-savior-of-meridian
+    pod: 3
+  Enchantress:
+    pool:
+    - marina-vendrell
+    - go-shintai-of-lifes-origin
+    - anikthea-hand-of-erebos
+    - sythis-harvests-hand
+    - aminatou-veil-piercer
+    - bello-bard-of-the-brambles
+    - terra-magical-adept
+    - tom-bombadil
+    - tuvasa-the-sunlit
+    - the-master-of-keys
+    - zur-eternal-schemer
+    - zur-the-enchanter
+    - alela-artful-provocateur
+    - tatsunari-toad-rider
+    - narci-fable-singer
+    - myrkul-lord-of-bones
+    - estrid-the-masked
+    - yenna-redtooth-regent
+    - yuna-hope-of-spira
+    - victor-valgavoths-seneschal
+    pod: 3
+  +1/+1 counters:
+    pool:
+    - the-wise-mothman
+    - ms-bumbleflower
+    - tidus-yunas-guardian
+    - atraxa-praetors-voice
+    - shalai-and-hallar
+    - marchesa-the-black-rose
+    - animar-soul-of-elements
+    - helga-skittish-seer
+    - rocco-street-chef
+    - galadriel-light-of-valinor
+    - skullbriar-the-walking-grave
+    - yuna-grand-summoner
+    - ezuri-claw-of-progress
+    - leonardo-the-balance-michelangelo-the-heart
+    - zimone-infinite-analyst
+    - gargos-vicious-watcher
+    - polukranos-reborn
+    - xavier-sal-infested-captain
+    - brimaz-blight-of-oreskos
+    - progenitus
+    - atreus-impulsive-son-kratos-stoic-father
+    - auntie-ool-cursewretch
+    - ixhel-scion-of-atraxa
+    - tekuthal-inquiry-dominus
+    - kros-defense-contractor
+    pod: 3
+  Lifegain:
+    pool:
+    - frodo-adventurous-hobbit-sam-loyal-attendant
+    - oloro-ageless-ascetic
+    - liesa-shroud-of-dusk
+    - betor-ancestors-voice
+    - dina-soul-steeper
+    - hope-estheim
+    - astarion-the-decadent
+    - krrik-son-of-yawgmoth
+    - zoraline-cosmos-caller
+    - sorin-of-house-markov
+    - lathiel-the-bounteous-dawn
+    - bilbo-birthday-celebrant
+    - blech-loafing-pest
+    - amalia-benavides-aguirre
+    - karlov-of-the-ghost-council
+    - will-scion-of-peace
+    - vito-thorn-of-the-dusk-rose
+    - dina-essence-brewer
+    - elenda-saint-of-dusk
+    pod: 3
+  Blink / ETB:
+    pool:
+    - brago-king-eternal
+    - niko-light-of-hope
+    - atraxa-grand-unifier
+    - abdel-adrian-gorions-ward-candlekeep-sage
+    - aminatou-the-fateshifter
+    - elesh-norn-mother-of-machines
+    - ketramose-the-new-dawn
+    - phelia-exuberant-shepherd
+    - ashling-the-limitless
+    - roon-of-the-hidden-realm
+    - preston-the-vanisher
+    - plagon-lord-of-the-beach
+    - aang-at-the-crossroads
+    - ranar-the-ever-watchful
+    - kykar-zephyr-awakener
+    - yorion-sky-nomad
+    - syr-vondam-sunstar-exemplar
+    - loot-the-pathfinder
+    - shiko-paragon-of-the-way
+    - arthur-marigold-knight
+    - the-jolly-balloon-man
+    - satya-aetherflux-genius
+    - norin-the-wary
+    - rocco-cabaretti-caterer
+    - belakor-the-dark-master
+    pod: 3
+  Big mana / battlecruiser:
+    pool:
+    - zaxara-the-exemplary
+    - magus-lucea-kane
+    - zhulodok-void-gorger
+    - yidris-maelstrom-wielder
+    - averna-the-chaos-bloom
+    - maelstrom-wanderer
+    - jodah-the-unifier
+    - imoti-celebrant-of-bounty
+    - abaddon-the-despoiler
+    - rowan-scion-of-war
+    - omnath-locus-of-mana
+    - jodah-archmage-eternal
+    - hinata-dawn-crowned
+    - kona-rescue-beastie
+    - raggadragga-goreguts-boss
+    - azusa-lost-but-seeking
+    - quandrix-the-proof
+    - rosheen-roaring-prophet
+    - ulalek-fused-atrocity
+    - the-infamous-cruelclaw
+    - ashling-rekindled
+    - marvo-deep-operative
+    - omnath-locus-of-all
+    - jhoira-of-the-ghitu
+    - ruby-daring-tracker
+    pod: 3
+  Aggro / combat:
+    pool:
+    - isshin-two-heavens-as-one
+    - winota-joiner-of-forces
+    - tovolar-dire-overlord
+    - najeela-the-blade-blossom
+    - tifa-martial-artist
+    - xenagos-god-of-revels
+    - tannuk-steadfast-second
+    - fynn-the-fangbearer
+    - anzrag-the-quake-mole
+    - otharri-suns-glory
+    - aurelia-the-warleader
+    - bruce-banner
+    - gornog-the-red-reaper
+    - raph-mikey-troublemakers
+    - karlach-fury-of-avernus-sword-coast-sailor
+    - haldan-avid-arcanist-pako-arcane-retriever
+    - etali-primal-storm
+    - ozai-the-phoenix-king
+    - kratos-god-of-war
+    pod: 3
+  Burn & group slug:
+    pool:
+    - nekusar-the-mindrazer
+    - valgavoth-harrower-of-souls
+    - ghyrson-starn-kelermorph
+    - xyris-the-writhing-storm
+    - ojer-axonil-deepest-might
+    - kuja-genome-sorcerer
+    - judith-carnage-connoisseur
+    - imodane-the-pyrohammer
+    - sheoldred-the-apocalypse
+    - winter-misanthropic-guide
+    - niv-mizzet-visionary
+    - the-locust-god
+    - queza-augur-of-agonies
+    - solphim-mayhem-dominus
+    - taii-wakeen-perfect-shot
+    - heliod-the-radiant-dawn
+    - indoraptor-the-perfect-hybrid
+    - gev-scaled-scorch
+    - yurlok-of-scorch-thrash
+    - torbran-thane-of-red-fell
+    - eshki-temurs-roar
+    - neheb-the-eternal
+    - firesong-and-sunspeaker
+    - minn-wily-illusionist
+    - kwain-itinerant-meddler
+    pod: 3

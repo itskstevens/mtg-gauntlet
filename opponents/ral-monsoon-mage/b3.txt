@@ -1,0 +1,84 @@
+1 Ral, Monsoon Mage
+1 Arcane Signet
+1 Izzet Signet
+1 Lotus Petal
+1 Ruby Medallion
+1 Sol Ring
+1 Talisman of Creativity
+1 Cascade Bluffs
+1 Command Tower
+1 Exotic Orchard
+1 Fiery Islet
+1 Frostboil Snarl
+10 Island
+8 Mountain
+1 Reliquary Tower
+1 Scalding Tarn
+1 Shivan Reef
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Thundering Falls
+1 Training Center
+1 Archmage Emeritus
+1 Ashling, Flame Dancer
+1 Birgi, God of Storytelling
+1 Coruscation Mage
+1 Electro, Assaulting Battery
+1 Goblin Electromancer
+1 Guttersnipe
+1 Pinnacle Monk
+1 Runaway Steam-Kin
+1 Simian Spirit Guide
+1 Storm-Kiln Artist
+1 Stormcatch Mentor
+1 Tavern Scoundrel
+1 Mystic Remora
+1 Thousand-Year Storm
+1 Underworld Breach
+1 Abandon Attachments
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Big Score
+1 Brain Freeze
+1 Brainstorm
+1 Chaos Warp
+1 Consider
+1 Counterspell
+1 Demand Answers
+1 Desperate Ritual
+1 Flashback
+1 Flusterstorm
+1 Frantic Search
+1 Lightning Bolt
+1 Opt
+1 Pyretic Ritual
+1 Reiterate
+1 Return the Favor
+1 Seething Song
+1 Sink into Stupor
+1 Snap
+1 Thrill of Possibility
+1 Unexpected Windfall
+1 Ral, Crackling Wit
+1 Blasphemous Act
+1 Bonus Round
+1 Expressive Iteration
+1 Faithless Looting
+1 Flow State
+1 Gitaxian Probe
+1 Grapeshot
+1 Jeska's Will
+1 Mana Geyser
+1 Mind's Desire
+1 Mizzix's Mastery
+1 Past in Flames
+1 Ponder
+1 Preordain
+1 Reckless Impulse
+1 Rite of Flame
+1 Solve the Equation
+1 Strike It Rich
+1 Will of the Jeskai
+1 Windfall
+1 Wrenn's Resolve

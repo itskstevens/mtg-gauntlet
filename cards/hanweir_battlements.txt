@@ -1,0 +1,5 @@
+Name:Hanweir Battlements
+ManaCost:no cost
+Types:Land
+Oracle:{T}: Add {C}.\n{R}, {T}: Target creature gains haste until end of turn.
+# synthetic: built from Scryfall text; Forge has no script yet

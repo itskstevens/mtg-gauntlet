@@ -1,0 +1,78 @@
+1 Oswald Fiddlebender
+1 Arcane Signet
+1 Archaeomancer's Map
+1 Basalt Monolith
+1 Chromatic Star
+1 Clock of Omens
+1 Everflowing Chalice
+1 Ichor Wellspring
+1 Krark-Clan Ironworks
+1 Lightning Greaves
+1 Liquimetal Torque
+1 Lotus Petal
+1 Magewright's Stone
+1 Manifold Key
+1 Mind Stone
+1 Mishra's Bauble
+1 Mycosynth Wellspring
+1 Mystic Forge
+1 Patriar's Seal
+1 Pithing Needle
+1 Portable Hole
+1 Prized Statue
+1 Rings of Brighthearth
+1 Sculpting Steel
+1 Sensei's Divining Top
+1 Sol Ring
+1 Staff of Domination
+1 Swiftfoot Boots
+1 The Echoverse Fulcrum
+1 Thousand-Year Elixir
+1 Thran Dynamo
+1 Unwinding Clock
+1 Voltaic Key
+1 Welding Jar
+1 Ancient Den
+1 Buried Ruin
+1 Darksteel Citadel
+1 Inventors' Fair
+1 Mistveil Plains
+1 Monumental Henge
+23 Plains
+1 The Mycosynth Gardens
+1 Treasure Vault
+1 Urza's Saga
+1 War Room
+1 Angel of the Ruins
+1 Bronze Guardian
+1 Cataclysmic Gearhulk
+1 Cathodion
+1 Esper Sentinel
+1 Ethersworn Canonist
+1 Foundry Inspector
+1 Junk Diver
+1 Market Gnome
+1 Marvin, Murderous Mimic
+1 Myr Retriever
+1 Myr Welder
+1 Ornithopter
+1 Scrap Trawler
+1 Skrelv, Defector Mite
+1 Solemn Simulacrum
+1 Teshar, Ancestor's Apostle
+1 Walking Ballista
+1 Witch Enchanter
+1 Workshop Assistant
+1 Wurmcoil Engine
+1 Deafening Silence
+1 Smothering Tithe
+1 Blacksmith's Skill
+1 Dispatch
+1 Enlightened Tutor
+1 Generous Gift
+1 Path to Exile
+1 Reprieve
+1 Swords to Plowshares
+1 Tezzeret, Cruel Captain
+1 Brilliant Restoration
+1 Sevinne's Reclamation

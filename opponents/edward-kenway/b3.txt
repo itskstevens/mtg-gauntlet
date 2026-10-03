@@ -1,0 +1,89 @@
+1 Edward Kenway
+1 Adrestia
+1 Arcane Signet
+1 Imposter Mech
+1 Izzet Signet
+1 Jackdaw
+1 Lifecraft Engine
+1 Magmatic Galleon
+1 Nautiloid Ship
+1 RMS Titanic
+1 Skysovereign, Consul Flagship
+1 Smuggler's Copter
+1 Sol Ring
+1 Subterranean Schooner
+1 Talisman of Creativity
+1 Talisman of Dominance
+1 The Belligerent
+1 The Indomitable
+1 Time Sieve
+1 Weatherlight
+1 Blood Crypt
+1 Command Tower
+1 Crumbling Necropolis
+1 Dragonskull Summit
+1 Drowned Catacomb
+1 Exotic Orchard
+6 Island
+1 Luxury Suite
+4 Mountain
+1 Path of Ancestry
+1 Polluted Delta
+1 Rogue's Passage
+1 Secluded Courtyard
+1 Shivan Reef
+1 Smoldering Marsh
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Sunken Hollow
+4 Swamp
+1 Training Center
+1 Unclaimed Territory
+1 Watery Grave
+1 Xander's Lounge
+1 Admiral Beckett Brass
+1 Admiral Brass, Unsinkable
+1 Adéwalé, Breaker of Chains
+1 Basim Ibn Ishaq
+1 Breeches, Brazen Plunderer
+1 Breeches, Eager Pillager
+1 Captain Lannery Storm
+1 Captain Storm, Cosmium Raider
+1 Coercive Recruiter
+1 Corsair Captain
+1 Cosima, God of the Voyage
+1 Deadeye Quartermaster
+1 Don Andres, the Renegade
+1 Fearless Swashbuckler
+1 Forerunner of the Coalition
+1 Gemcutter Buccaneer
+1 Hostage Taker
+1 Kitesail Larcenist
+1 Malcolm, Alluring Scoundrel
+1 Malcolm, Keen-Eyed Navigator
+1 Mary Read and Anne Bonny
+1 Pitiless Plunderer
+1 Port Razer
+1 Ragavan, Nimble Pilferer
+1 Ramirez DePietro, Pillager
+1 Siren Stormtamer
+1 Zara, Renegade Recruiter
+1 Black Market Connections
+1 Coastal Piracy
+1 Cover of Darkness
+1 Double Down
+1 Revel in Riches
+1 An Offer You Can't Refuse
+1 Arcane Denial
+1 Chaos Warp
+1 Counterspell
+1 Cyclonic Rift
+1 Deadly Dispute
+1 Desynchronization
+1 Terminate
+1 Back in Town
+1 Blasphemous Act
+1 Blood Money
+1 Feed the Swarm
+1 March of the Drowned

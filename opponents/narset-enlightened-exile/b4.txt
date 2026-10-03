@@ -1,0 +1,92 @@
+1 Narset, Enlightened Exile
+1 Arcane Signet
+1 Fellwar Stone
+1 Izzet Signet
+1 Lightning Greaves
+1 Sol Ring
+1 Swiftfoot Boots
+1 Talisman of Conviction
+1 Talisman of Creativity
+1 Talisman of Progress
+1 Adarkar Wastes
+1 Arid Mesa
+1 Battlefield Forge
+1 Clifftop Retreat
+1 Command Tower
+1 Exotic Orchard
+1 Flooded Strand
+1 Glacial Fortress
+1 Hallowed Fountain
+4 Island
+4 Mountain
+1 Mystic Monastery
+1 Otawara, Soaring City
+3 Plains
+1 Raugrin Triome
+1 Reliquary Tower
+1 Sacred Foundry
+1 Scalding Tarn
+1 Sea of Clouds
+1 Shivan Reef
+1 Spectator Seating
+1 Steam Vents
+1 Stormcarved Coast
+1 Sulfur Falls
+1 Thundering Falls
+1 Training Center
+1 Archmage Emeritus
+1 Balmor, Battlemage Captain
+1 Bria, Riptide Rogue
+1 Dragon's Rage Channeler
+1 Elsha, Threefold Master
+1 Esper Sentinel
+1 Kykar, Wind's Fury
+1 Leonin Lightscribe
+1 Monastery Mentor
+1 Storm-Kiln Artist
+1 Stormcatch Mentor
+1 Talrand, Sky Summoner
+1 Third Path Iconoclast
+1 Veyran, Voice of Duality
+1 Vivi Ornitier
+1 Young Pyromancer
+1 Frostcliff Siege
+1 Jeskai Ascendancy
+1 Mystic Remora
+1 Rhystic Study
+1 Smothering Tithe
+1 Whirlwind of Thought
+1 Akroma's Will
+1 An Offer You Can't Refuse
+1 Boros Charm
+1 Brainstorm
+1 Consider
+1 Counterspell
+1 Cyclonic Rift
+1 Deflecting Swat
+1 Enlightened Tutor
+1 Expedite
+1 Fierce Guardianship
+1 Frantic Search
+1 Lightning Bolt
+1 Mana Drain
+1 Mystical Tutor
+1 Opt
+1 Path to Exile
+1 Snap
+1 Swan Song
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Ral, Crackling Wit
+1 Crash Through
+1 Enter the Enigma
+1 Expressive Iteration
+1 Faithless Looting
+1 Gamble
+1 Gitaxian Probe
+1 Jeska's Will
+1 Ponder
+1 Preordain
+1 See the Truth
+1 Slip Through Space
+1 Windfall

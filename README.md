@@ -35,13 +35,20 @@ python3 gauntlet.py report     serpent-society      # results/<deck>/<latest>/re
 
 - Opponents play their real decklists. Each card is tagged from its rules text, and the AI casts, attacks, blocks,
   counters, removes and combos based on those tags. Known infinite combos and alternate wins are listed in `engine/cards.py`.
-- Each series rolls each opponent's bracket (3 or 4) and keeps it for all three games. Seats are random each game.
+- `gauntlets.yaml` has 18 archetype categories, each a pool of up to 25 EDHREC top commanders for that archetype.
+  Each series draws 3 opponents from the pool (`pod`), rolls each one's bracket (3 or 4) and keeps both for all
+  three games. Seats are random each game. The original four fixed-deck categories live in `gauntlets-classic.yaml`
+  (run with `GAUNTLET_CFG=gauntlets-classic.yaml`).
+- Prepare (Secrets of Strixhaven) is modeled: creatures with a prepare spell cast it from exile when prepared, Codie,
+  Ravenous Codex copies prepare spells and re-prepares the board, and Displacer Kitten / Chakram Retriever / Jeskai
+  Ascendancy loops are detected in `loop_combo`. Cards Forge has no script for yet are synthetic files built from
+  Scryfall text (marked `# synthetic`).
   A game that reaches `max_rounds` is a draw and counts as a loss for the series.
 - Fair share in a 4-player pod is 25% of games and about 16% of best-of-3 series.
 
 ## Reading results
 
-- Noise: at 300 series per category, game win rates move about ±1.6 points between runs. Treat differences under
+- Noise: at 300 series per category, game win rates move about ±1.6 points between runs; at the default 50 about ±4. Treat differences under
   3 points as noise. 50 series is too few to compare lists.
 - "Win when cast" tables are correlation. Long games see more cards, so late cards look better than they are.
   Use `variants` (paired runs on identical shuffles) before cutting or adding anything.

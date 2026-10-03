@@ -1,0 +1,86 @@
+1 Dina, Soul Steeper
+1 Aetherflux Reservoir
+1 Arcane Signet
+1 Ashnod's Altar
+1 Bolas's Citadel
+1 Cauldron of Essence
+1 Pristine Talisman
+1 Sol Ring
+1 Talisman of Resilience
+1 Bojuka Bog
+1 Command Tower
+1 Darkbore Pathway
+1 Deathcap Glade
+1 Exotic Orchard
+8 Forest
+1 Golgari Rot Farm
+1 High Market
+1 Jungle Hollow
+1 Llanowar Wastes
+1 Necroblossom Snarl
+1 Overgrown Tomb
+8 Swamp
+1 Tainted Wood
+1 Twilight Mire
+1 Undergrowth Stadium
+1 Urborg, Tomb of Yawgmoth
+1 Verdant Catacombs
+1 Woodland Cemetery
+1 Ayara, First of Locthwain
+1 Beledros Witherbloom
+1 Birds of Paradise
+1 Blood Artist
+1 Bloodthirsty Conqueror
+1 Deathgreeter
+1 Deathrite Shaman
+1 Elves of Deep Shadow
+1 Elvish Mystic
+1 Enduring Tenacity
+1 Essence Warden
+1 Haywire Mite
+1 Llanowar Elves
+1 Marauding Blight-Priest
+1 Prosperous Innkeeper
+1 Protean Hulk
+1 Sakura-Tribe Elder
+1 Scavenging Ooze
+1 Sedgemoor Witch
+1 Starscape Cleric
+1 Valentin, Dean of the Vein
+1 Veinwitch Coven
+1 Viscera Seer
+1 Vito, Thorn of the Dusk Rose
+1 Witch of the Moors
+1 Witherbloom Apprentice
+1 Zulaport Cutthroat
+1 Bastion of Remembrance
+1 Blight Mound
+1 Exquisite Blood
+1 Moldervine Reclamation
+1 Necropotence
+1 Phyrexian Arena
+1 Sanguine Bond
+1 Sylvan Library
+1 Abrupt Decay
+1 Assassin's Trophy
+1 Beast Within
+1 Dark Ritual
+1 Dina's Guidance
+1 Mortality Spear
+1 Tamiyo's Safekeeping
+1 Vampiric Tutor
+1 Veil of Summer
+1 Village Rites
+1 Worldly Tutor
+1 Professor Dellian Fel
+1 Chain of Smog
+1 Culling Ritual
+1 Cultivate
+1 Demonic Tutor
+1 Diabolic Intent
+1 Exsanguinate
+1 Nature's Lore
+1 Pest Infestation
+1 Rampant Growth
+1 Reanimate
+1 Toxic Deluge

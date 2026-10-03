@@ -1,0 +1,90 @@
+1 Xavier Sal, Infested Captain
+1 Arcane Signet
+1 Astral Cornucopia
+1 Everflowing Chalice
+1 Ichormoon Gauntlet
+1 Lightning Greaves
+1 Sol Ring
+1 Swiftfoot Boots
+1 The Chain Veil
+1 Boseiju, Who Endures
+1 Breeding Pool
+1 Command Tower
+1 Dreamroot Cascade
+1 Drowned Catacomb
+1 Exotic Orchard
+5 Forest
+1 Hinterland Harbor
+4 Island
+1 Karn's Bastion
+1 Llanowar Wastes
+1 Misty Rainforest
+1 Morphic Pool
+1 Opulent Palace
+1 Overgrown Tomb
+1 Polluted Delta
+1 Rejuvenating Springs
+4 Swamp
+1 Undergrowth Stadium
+1 Verdant Catacombs
+1 Watery Grave
+1 Woodland Cemetery
+1 Yavimaya Coast
+1 Zagoth Triome
+1 Basking Broodscale
+1 Birds of Paradise
+1 Cankerbloom
+1 Carth the Lion
+1 Deepglow Skate
+1 Delighted Halfling
+1 Dreamtide Whale
+1 Evolution Sage
+1 Evolution Witness
+1 Ezuri, Stalker of Spheres
+1 Fathom Mage
+1 Flux Channeler
+1 Ichor Rats
+1 Kiora's Follower
+1 Master Biomancer
+1 Mirkwood Bats
+1 Mycoloth
+1 Scurry Oak
+1 Tekuthal, Inquiry Dominus
+1 Tendershoot Dryad
+1 Thrummingbird
+1 Utopia Mycon
+1 Vorinclex, Monstrous Raider
+1 Winding Constrictor
+1 Doubling Season
+1 Freed from the Real
+1 Gardenize
+1 Inexorable Tide
+1 Innkeeper's Talent
+1 Intruder Alarm
+1 Mystic Remora
+1 Rhystic Study
+1 Assassin's Trophy
+1 Beast Within
+1 Counterspell
+1 Cyclonic Rift
+1 Experimental Augury
+1 Fierce Guardianship
+1 Heroic Intervention
+1 Prologue to Phyresis
+1 Ripples of Potential
+1 Vampiric Tutor
+1 Vraska's Fall
+1 Garruk, Cursed Huntsman
+1 Kiora, Master of the Depths
+1 Liliana, Dreadhorde General
+1 Tyvar, Jubilant Brawler
+1 Vraska, Betrayal's Sting
+1 Vraska, Relic Seeker
+1 Demonic Tutor
+1 Farseek
+1 Infectious Inquiry
+1 Nature's Lore
+1 Tezzeret's Gambit
+1 Three Visits
+1 Toxic Deluge
+1 Unnatural Restoration

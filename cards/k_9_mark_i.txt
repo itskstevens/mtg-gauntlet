@@ -1,0 +1,6 @@
+Name:K-9, Mark I
+ManaCost:U
+Types:Legendary Artifact Creature Robot Dog
+PT:1/1
+Oracle:As long as K-9 is untapped, other legendary creatures you control have ward {1}.
+# synthetic: built from Scryfall text; Forge has no script yet

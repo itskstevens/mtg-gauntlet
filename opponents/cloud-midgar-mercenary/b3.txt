@@ -1,0 +1,74 @@
+1 Cloud, Midgar Mercenary
+1 Adaptive Omnitool
+1 Arcane Signet
+1 Argentum Armor
+1 Brotherhood Regalia
+1 Buster Sword
+1 Caduceus, Staff of Hermes
+1 Colossus Hammer
+1 Commander's Plate
+1 Excalibur, Sword of Eden
+1 Genji Glove
+1 Hammer of Nazahn
+1 Lightning Greaves
+1 Mask of Memory
+1 Masterwork of Ingenuity
+1 Mithril Coat
+1 Pip-Boy 3000
+1 Shadowspear
+1 Sol Ring
+1 Swiftfoot Boots
+1 Sword of Feast and Famine
+1 Sword of Fire and Ice
+1 Sword of Forge and Frontier
+1 Sword of Hearth and Home
+1 Sword of Light and Shadow
+1 Sword of the Animist
+1 The Aetherspark
+1 Umezawa's Jitte
+1 Buried Ruin
+1 Emeria, the Sky Ruin
+1 Inventors' Fair
+1 Ishgard, the Holy See
+1 Monumental Henge
+27 Plains
+1 Rogue's Passage
+1 Urza's Saga
+1 War Room
+1 Ardenn, Intrepid Archaeologist
+1 Armored Skyhunter
+1 Beatrix, Loyal General
+1 Brass Squire
+1 Cid, Freeflier Pilot
+1 Codsworth, Handy Helper
+1 Danitha Capashen, Paragon
+1 Esper Sentinel
+1 Grand Abolisher
+1 Halvar, God of Battle
+1 Kíli the Resourceful
+1 Mother of Runes
+1 Puresteel Paladin
+1 Sram, Senior Edificer
+1 Stoneforge Mystic
+1 Stonehewer Giant
+1 Witch Enchanter
+1 Zack Fair
+1 Forge Anew
+1 Land Tax
+1 Mantle of the Ancients
+1 Sigarda's Aid
+1 Smothering Tithe
+1 Dispatch
+1 Enlightened Tutor
+1 Flawless Maneuver
+1 Generous Gift
+1 Path to Exile
+1 Restoration Magic
+1 Stroke of Midnight
+1 Swords to Plowshares
+1 Teferi's Protection
+1 Farewell
+1 Open the Armory
+1 Sevinne's Reclamation
+1 Single Combat
+1 Steelshaper's Gift
