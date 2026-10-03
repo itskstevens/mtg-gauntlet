@@ -1,0 +1,26 @@
+{
+ "combo-storm": [
+  "You are close to even here. About two thirds of your losses are infinite combos: Niv-Mizzet with Curiosity, Ophidian Eye or Tandem Lookout, and Kinnan with Basalt Monolith.",
+  "Your instant-speed removal is the only answer you have to a combo. Keep 2 mana and a removal spell up from about turn 5, and kill Niv-Mizzet or Kinnan on sight.",
+  "Your commander gets countered in about 3 of every 10 games, by Mana Drain, Counterspell and Swan Song. Cast it when blue mana is tapped, or bait a counter with Grave Pact first.",
+  "Birgi's storm deck is the weakest at this table. You knock it out more than any other player does."
+ ],
+ "stax-control": [
+  "Oloro wins about 6 in 10 of these pods. It kills you with Exquisite Blood loops, lifelink fliers, and alternate wins from Test of Endurance and Felidar Sovereign.",
+  "Poison is your best kill route here (39% of your kills). Lifegain can't undo poison counters, so Fynn and Triumph of the Hordes matter most in this matchup.",
+  "Your commander is countered more than once per game on average, and you face over one board wipe per game (Supreme Verdict, Farewell, Damn).",
+  "Ghostly Prison and Propaganda tax your attacks. Exquisite Blood is an enchantment, so enchantment removal does double duty here."
+ ],
+ "go-wide": [
+  "This is your best matchup, with the highest game win rate (26%) and series win rate (16%). Your commander's edicts force them to sacrifice nontoken creatures, so tokens can't hide their real threats.",
+  "Jetmir is the problem. It accounts for about 6 of every 10 losses here, all in combat, usually a 10-creature swing your blockers can't absorb.",
+  "Grave Pact and Dictate of Erebos are weak here because opponents sacrifice tokens to them. Your commander's own trigger does the real work.",
+  "You are almost never knocked out first (5% of games). You lose late to a wide board, not early to pressure."
+ ],
+ "graveyard-big-threats": [
+  "This is your hardest category: about 1 game in 6 and 6% of series.",
+  "Teysa's death-trigger drains cause the most losses. Syr Konrad, Blood Artist and Cruel Celebrant trigger on any creature dying, including your sacrifices, and Teysa doubles them.",
+  "Light-Paws knocks you out in 35% of games, about half the time with commander damage. Auras that give protection from black and green, like Shield of Duty and Reason and Mask of Law and Grace, make your removal and your blockers useless. Only edicts like Sheoldred's Edict still answer it.",
+  "You face 1.8 board wipes per game here: Winds of Rath, Toxic Deluge and Living Death."
+ ]
+}

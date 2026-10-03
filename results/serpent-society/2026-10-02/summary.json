@@ -1,0 +1,1542 @@
+{
+ "meta": {
+  "date": "2026-10-02",
+  "deck": "serpent-society",
+  "series_per_cat": 300,
+  "series_total": 1200,
+  "games_total": 2764,
+  "list_snapshot": [
+   "The Serpent Society",
+   "Burrog Banemaker",
+   "Dragon Sniper",
+   "Fell Stinger",
+   "Noxious Newt",
+   "Ravening Warg",
+   "Serpent Specialist",
+   "Toxic Scorpion",
+   "Varragoth, Bloodsky Sire",
+   "Fynn, the Fangbearer",
+   "Nightshade Dryad",
+   "Hooded Blightfang",
+   "Moss Viper",
+   "Ambush Viper",
+   "Vraska, the Silencer",
+   "Hornet Queen",
+   "Poison-Tip Archer",
+   "Ophiomancer",
+   "Blood Artist",
+   "Zulaport Cutthroat",
+   "Viscera Seer",
+   "Carrion Feeder",
+   "Ohran Frostfang",
+   "Hornet Nest",
+   "Altar of Dementia",
+   "Ashnod's Altar",
+   "Evolutionary Leap",
+   "Cauldron of Essence",
+   "Village Rites",
+   "Deadly Dispute",
+   "Bastion of Remembrance",
+   "Grave Pact",
+   "Dictate of Erebos",
+   "Sol Ring",
+   "Arcane Signet",
+   "Talisman of Resilience",
+   "Golgari Signet",
+   "Staff of Compleation",
+   "Shimmerwilds Growth",
+   "Nature's Lore",
+   "Shared Roots",
+   "Cultivate",
+   "Skullclamp",
+   "Phyrexian Arena",
+   "Pull from the Grave",
+   "Phyrexian Reclamation",
+   "Worthy Cost",
+   "Broken Wings",
+   "Devouring Tendrils",
+   "Pick Your Poison",
+   "Punishing Punch",
+   "Sheoldred's Edict",
+   "Witherbloom Charm",
+   "Wolf Strike",
+   "Assassin's Trophy",
+   "Beast Within",
+   "Infernal Grasp",
+   "Go for the Throat",
+   "Withering Curse",
+   "Heroic Intervention",
+   "Triumph of the Hordes",
+   "Garruk's Uprising",
+   "Torment of Hailfire",
+   "Phyrexian Tower",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Forest",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp"
+  ]
+ },
+ "groups": [
+  {
+   "name": "Combo & storm",
+   "slug": "combo-storm",
+   "games": 697,
+   "series": 300,
+   "series_win": 14.0,
+   "game_win": 22.1,
+   "avg_place": 2.34,
+   "avg_rounds": 10.4,
+   "place": {
+    "4": 116,
+    "2": 266,
+    "1": 156,
+    "3": 159
+   },
+   "draws": 9,
+   "first_out": 16.6,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Spellslinger",
+     187
+    ],
+    [
+     "Infinite combo",
+     "Turbo combo",
+     181
+    ],
+    [
+     "Burn spells",
+     "Storm",
+     92
+    ],
+    [
+     "Combat damage",
+     "Spellslinger",
+     31
+    ],
+    [
+     "Burn spells",
+     "Spellslinger",
+     19
+    ],
+    [
+     "Combat damage",
+     "Storm",
+     16
+    ],
+    [
+     "Combat damage",
+     "Turbo combo",
+     10
+    ]
+   ],
+   "losses": 543,
+   "kills": [
+    [
+     "Death-trigger drains",
+     144
+    ],
+    [
+     "Poison",
+     138
+    ],
+    [
+     "Combat damage",
+     102
+    ],
+    [
+     "Torment of Hailfire",
+     13
+    ]
+   ],
+   "stats": {
+    "cmd": 4.03,
+    "edict": 4.66,
+    "pact": 2.03,
+    "poison": 3.73,
+    "countered": 1.01,
+    "wipes": 0.2,
+    "removal": 1.65,
+    "dmg": 23.24
+   },
+   "countered": [
+    [
+     "The Serpent Society",
+     211
+    ],
+    [
+     "Skullclamp",
+     137
+    ],
+    [
+     "Grave Pact",
+     86
+    ],
+    [
+     "Dictate of Erebos",
+     76
+    ]
+   ],
+   "removed": [
+    [
+     "Zulaport Cutthroat",
+     117
+    ],
+    [
+     "Blood Artist",
+     114
+    ],
+    [
+     "Viscera Seer",
+     105
+    ],
+    [
+     "Carrion Feeder",
+     102
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     59
+    ],
+    [
+     "Blasphemous Act",
+     55
+    ],
+    [
+     "Vandalblast",
+     28
+    ]
+   ],
+   "impact": [
+    [
+     "Triumph of the Hordes",
+     61,
+     80,
+     17
+    ],
+    [
+     "Torment of Hailfire",
+     78,
+     71,
+     16
+    ],
+    [
+     "Ophiomancer",
+     192,
+     51,
+     11
+    ],
+    [
+     "Hornet Queen",
+     120,
+     55,
+     15
+    ],
+    [
+     "Hooded Blightfang",
+     130,
+     52,
+     15
+    ],
+    [
+     "Phyrexian Arena",
+     135,
+     49,
+     16
+    ],
+    [
+     "Ohran Frostfang",
+     140,
+     46,
+     16
+    ],
+    [
+     "Fynn, the Fangbearer",
+     174,
+     44,
+     15
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Kinnan, Bonder Prodigy",
+     "arch": "Turbo combo",
+     "key": "kinnan",
+     "link": "https://edhrec.com/average-decks/kinnan-bonder-prodigy",
+     "fetched": "2026-10-02",
+     "win_share": 27.4,
+     "killed_me": 27.4,
+     "i_killed": 18.5,
+     "my_vs_b3": 22.0,
+     "my_vs_b4": 22.1,
+     "how": [
+      [
+       "Kinnan, Bonder Prodigy + Basalt Monolith",
+       157
+      ],
+      [
+       "Hullbreaker Horror + Sol Ring",
+       12
+      ],
+      [
+       "Combat damage",
+       10
+      ],
+      [
+       "Bloom Tender + Pemmin's Aura",
+       7
+      ]
+     ],
+     "threats": [
+      "Basalt Monolith"
+     ]
+    },
+    {
+     "cmd": "Birgi, God of Storytelling",
+     "arch": "Storm",
+     "key": "birgi",
+     "link": "https://edhrec.com/average-decks/birgi-god-of-storytelling",
+     "fetched": "2026-10-02",
+     "win_share": 15.4,
+     "killed_me": 15.5,
+     "i_killed": 20.9,
+     "my_vs_b3": 18.4,
+     "my_vs_b4": 26.0,
+     "how": [
+      [
+       "Burn spells",
+       92
+      ],
+      [
+       "Combat damage",
+       16
+      ]
+     ],
+     "threats": [
+      "Springleaf Drum",
+      "Fiery Inscription"
+     ]
+    },
+    {
+     "cmd": "Niv-Mizzet, Parun",
+     "arch": "Spellslinger",
+     "key": "niv",
+     "link": "https://edhrec.com/average-decks/niv-mizzet-parun",
+     "fetched": "2026-10-02",
+     "win_share": 33.9,
+     "killed_me": 34.1,
+     "i_killed": 17.5,
+     "my_vs_b3": 22.3,
+     "my_vs_b4": 21.9,
+     "how": [
+      [
+       "Niv-Mizzet, Parun + Curiosity",
+       69
+      ],
+      [
+       "Niv-Mizzet, Parun + Tandem Lookout",
+       60
+      ],
+      [
+       "Niv-Mizzet, Parun + Ophidian Eye",
+       49
+      ],
+      [
+       "Combat damage",
+       31
+      ]
+     ],
+     "threats": [
+      "Izzet Signet",
+      "Ophidian Eye"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 22.6,
+    "1": 25.0,
+    "2": 27.0,
+    "3": 14.9
+   },
+   "attack_share": null,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 8,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T3 Niv-Mizzet counters your The Serpent Society with Mana Drain",
+      "T5 You casts The Serpent Society",
+      "T6 Kinnan counters Birgi's Birgi, God of Storytelling with Counterspell",
+      "T6 Niv-Mizzet counters Birgi's Birgi, God of Storytelling with Counterspell",
+      "T6 Birgi counters Kinnan's Kinnan, Bonder Prodigy with Pyroblast",
+      "T7 Birgi counters Kinnan's Kinnan, Bonder Prodigy with Red Elemental Blast",
+      "T8 Niv-Mizzet wins via combo: Niv-Mizzet, Parun + Tandem Lookout",
+      "T8 You eliminated (combo: Niv-Mizzet, Parun + Tandem Lookout by Niv-Mizzet)",
+      "T8 Birgi eliminated (combo: Niv-Mizzet, Parun + Tandem Lookout by Niv-Mizzet)",
+      "T8 Kinnan eliminated (combo: Niv-Mizzet, Parun + Tandem Lookout by Niv-Mizzet)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 18,
+     "players": [
+      "You",
+      "Birgi",
+      "Niv-Mizzet",
+      "Kinnan"
+     ],
+     "lines": [
+      "T4 You casts The Serpent Society",
+      "T5 Niv-Mizzet counters Kinnan's Kinnan, Bonder Prodigy with Counterspell",
+      "T7 You protects with Heroic Intervention",
+      "T8 Birgi counters Niv-Mizzet's Niv-Mizzet, Parun with Red Elemental Blast",
+      "T9 Kinnan counters Birgi's Aetherflux Reservoir with An Offer You Can't Refuse",
+      "T11 Niv-Mizzet eliminated (combat by Kinnan)",
+      "T12 Kinnan counters your Skullclamp with Swan Song",
+      "T14 Birgi counters Kinnan's Kinnan, Bonder Prodigy with Pyroblast",
+      "T16 You casts Triumph of the Hordes",
+      "T16 You OVERRUN Triumph of the Hordes (+1)",
+      "T16 You INFECT ALPHA STRIKE",
+      "T16 Birgi eliminated (poison by You)",
+      "T18 Kinnan wins via combo: Kinnan, Bonder Prodigy + Basalt Monolith",
+      "T18 You eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)"
+     ]
+    },
+    {
+     "won": true,
+     "rounds": 12,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T3 You casts The Serpent Society",
+      "T3 Niv-Mizzet counters Kinnan's Basalt Monolith with An Offer You Can't Refuse",
+      "T4 You casts Dictate of Erebos",
+      "T6 Niv-Mizzet WIPE Cyclonic Rift",
+      "T7 You casts The Serpent Society",
+      "T9 Kinnan eliminated (death by You)",
+      "T10 You casts Ophiomancer",
+      "T10 Niv-Mizzet eliminated (combat by Birgi)",
+      "T12 Birgi counters your Ashnod's Altar with Pyroblast",
+      "T12 Birgi eliminated (decked)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Stax & control",
+   "slug": "stax-control",
+   "games": 678,
+   "series": 300,
+   "series_win": 7.0,
+   "game_win": 15.5,
+   "avg_place": 2.46,
+   "avg_rounds": 16.6,
+   "place": {
+    "3": 152,
+    "4": 134,
+    "2": 287,
+    "1": 105
+   },
+   "draws": 49,
+   "first_out": 19.8,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Lifegain control",
+     126
+    ],
+    [
+     "Alternate win",
+     "Lifegain control",
+     105
+    ],
+    [
+     "Combat damage",
+     "Lifegain control",
+     99
+    ],
+    [
+     "Infinite combo",
+     "Counterspell control",
+     66
+    ],
+    [
+     "Lifegain drains",
+     "Lifegain control",
+     57
+    ],
+    [
+     "Combat damage",
+     "Counterspell control",
+     24
+    ],
+    [
+     "Combat damage",
+     "Stax",
+     18
+    ]
+   ],
+   "losses": 573,
+   "kills": [
+    [
+     "Poison",
+     166
+    ],
+    [
+     "Death-trigger drains",
+     151
+    ],
+    [
+     "Combat damage",
+     86
+    ],
+    [
+     "Torment of Hailfire",
+     18
+    ]
+   ],
+   "stats": {
+    "cmd": 6.0,
+    "edict": 5.48,
+    "pact": 1.44,
+    "poison": 4.25,
+    "countered": 2.75,
+    "wipes": 1.16,
+    "removal": 0.92,
+    "dmg": 35.16
+   },
+   "countered": [
+    [
+     "The Serpent Society",
+     836
+    ],
+    [
+     "Skullclamp",
+     223
+    ],
+    [
+     "Grave Pact",
+     144
+    ],
+    [
+     "Dictate of Erebos",
+     123
+    ]
+   ],
+   "removed": [
+    [
+     "Ophiomancer",
+     85
+    ],
+    [
+     "Poison-Tip Archer",
+     73
+    ],
+    [
+     "Ohran Frostfang",
+     54
+    ],
+    [
+     "Grave Pact",
+     51
+    ]
+   ],
+   "wiped": [
+    [
+     "Supreme Verdict",
+     206
+    ],
+    [
+     "Farewell",
+     137
+    ],
+    [
+     "Damn",
+     121
+    ],
+    [
+     "Toxic Deluge",
+     114
+    ]
+   ],
+   "impact": [
+    [
+     "Triumph of the Hordes",
+     72,
+     79,
+     8
+    ],
+    [
+     "Fynn, the Fangbearer",
+     230,
+     30,
+     8
+    ],
+    [
+     "Hornet Queen",
+     182,
+     31,
+     10
+    ],
+    [
+     "Ophiomancer",
+     250,
+     28,
+     8
+    ],
+    [
+     "Ohran Frostfang",
+     178,
+     30,
+     10
+    ],
+    [
+     "Torment of Hailfire",
+     137,
+     31,
+     11
+    ],
+    [
+     "Phyrexian Arena",
+     189,
+     28,
+     11
+    ],
+    [
+     "Grave Pact",
+     276,
+     25,
+     9
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Grand Arbiter Augustin IV",
+     "arch": "Stax",
+     "key": "gaa",
+     "link": "https://edhrec.com/average-decks/grand-arbiter-augustin-iv",
+     "fetched": "2026-10-02",
+     "win_share": 3.5,
+     "killed_me": 5.3,
+     "i_killed": 24.0,
+     "my_vs_b3": 15.7,
+     "my_vs_b4": 15.2,
+     "how": [
+      [
+       "Combat damage",
+       18
+      ],
+      [
+       "Alternate win",
+       16
+      ],
+      [
+       "Upkeep triggers",
+       2
+      ]
+     ],
+     "threats": [
+      "Ghostly Prison",
+      "Lavinia, Azorius Renegade",
+      "Supreme Verdict",
+      "Mystic Remora",
+      "Arcane Signet"
+     ]
+    },
+    {
+     "cmd": "Baral, Chief of Compliance",
+     "arch": "Counterspell control",
+     "key": "baral",
+     "link": "https://edhrec.com/average-decks/baral-chief-of-compliance",
+     "fetched": "2026-10-02",
+     "win_share": 11.4,
+     "killed_me": 13.4,
+     "i_killed": 22.4,
+     "my_vs_b3": 17.0,
+     "my_vs_b4": 13.8,
+     "how": [
+      [
+       "Hullbreaker Horror + Sol Ring",
+       66
+      ],
+      [
+       "Combat damage",
+       24
+      ],
+      [
+       "Alternate win",
+       1
+      ]
+     ],
+     "threats": [
+      "Sol Ring",
+      "Hullbreaker Horror",
+      "Brainstorm",
+      "Reality Shift",
+      "Thassa's Oracle"
+     ]
+    },
+    {
+     "cmd": "Oloro, Ageless Ascetic",
+     "arch": "Lifegain control",
+     "key": "oloro",
+     "link": "https://edhrec.com/average-decks/oloro-ageless-ascetic",
+     "fetched": "2026-10-02",
+     "win_share": 62.4,
+     "killed_me": 60.0,
+     "i_killed": 15.6,
+     "my_vs_b3": 15.5,
+     "my_vs_b4": 15.5,
+     "how": [
+      [
+       "Alternate win",
+       105
+      ],
+      [
+       "Combat damage",
+       99
+      ],
+      [
+       "Lifegain drains",
+       57
+      ],
+      [
+       "Vito, Thorn of the Dusk Rose + Exquisite Blood",
+       33
+      ]
+     ],
+     "threats": [
+      "Exquisite Blood",
+      "Vito, Thorn of the Dusk Rose",
+      "Phyrexian Arena",
+      "Test of Endurance",
+      "Alhammarret's Archive"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 17.7,
+    "1": 13.3,
+    "2": 13.0,
+    "3": 17.6
+   },
+   "attack_share": null,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 14,
+     "players": [
+      "Oloro",
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV"
+     ],
+     "lines": [
+      "T4 You casts The Serpent Society",
+      "T4 Baral counters Grand Arbiter Augustin IV's Approach of the Second Sun with Fierce Guardianship",
+      "T6 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Pact of Negation",
+      "T7 Baral counters your Ashnod's Altar with Force of Will",
+      "T7 Baral counters Grand Arbiter Augustin IV's Absolute Virtue with Disdainful Stroke",
+      "T9 Baral counters Oloro's Propaganda with Swan Song",
+      "T9 Baral counters your Skullclamp with Force of Negation",
+      "T10 Baral counters your Grave Pact with Dissipate",
+      "T11 Baral casts Jin-Gitaxias, Progress Tyrant",
+      "T11 Baral Jin-Gitaxias counters Infernal Grasp",
+      "T12 Baral Jin-Gitaxias counters Farewell",
+      "T12 Baral Jin-Gitaxias counters Nature's Lore",
+      "T13 Baral Jin-Gitaxias counters Demonic Tutor",
+      "T13 Baral counters your Hornet Queen with Ertai's Scorn",
+      "T14 Baral wins via combo: Hullbreaker Horror + Sol Ring",
+      "T14 Oloro eliminated (combo: Hullbreaker Horror + Sol Ring by Baral)",
+      "T14 You eliminated (combo: Hullbreaker Horror + Sol Ring by Baral)",
+      "T14 Grand Arbiter Augustin IV eliminated (combo: Hullbreaker Horror + Sol Ring by Baral)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 16,
+     "players": [
+      "You",
+      "Oloro",
+      "Grand Arbiter Augustin IV",
+      "Baral"
+     ],
+     "lines": [
+      "T4 Grand Arbiter Augustin IV counters your The Serpent Society with Arcane Denial",
+      "T4 Baral counters Grand Arbiter Augustin IV's Rest in Peace with Unwind",
+      "T5 You casts The Serpent Society",
+      "T6 Grand Arbiter Augustin IV counters Baral's Baral, Chief of Compliance with Counterspell",
+      "T7 Baral counters Oloro's Oloro, Ageless Ascetic with Mana Leak",
+      "T9 Grand Arbiter Augustin IV counters Oloro's Test of Endurance with An Offer You Can't Refuse",
+      "T9 Baral counters Grand Arbiter Augustin IV's Windborn Muse with Ertai's Scorn",
+      "T10 Oloro Bojuka Bog exiles Grand Arbiter Augustin IV graveyard (7)",
+      "T11 Baral counters your Skullclamp with Counterspell",
+      "T11 Baral counters Oloro's Exsanguinate with Tale's End",
+      "T11 Oloro WIPE Toxic Deluge",
+      "T12 You casts The Serpent Society",
+      "T13 Baral casts Jin-Gitaxias, Progress Tyrant",
+      "T14 Baral counters Oloro's Bloodthirsty Conqueror with Force of Will",
+      "T14 Baral Jin-Gitaxias counters Damn",
+      "T14 You eliminated (combat by Oloro)",
+      "T14 Oloro counters Baral's Consecrated Sphinx with Counterspell",
+      "T15 Baral eliminated (combat by Oloro)",
+      "T16 Grand Arbiter Augustin IV eliminated (combat by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 18,
+     "players": [
+      "Grand Arbiter Augustin IV",
+      "Baral",
+      "Oloro",
+      "You"
+     ],
+     "lines": [
+      "T3 Baral counters Oloro's Grand Arbiter Augustin IV with Counterspell",
+      "T3 You casts The Serpent Society",
+      "T5 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Tale's End",
+      "T6 Grand Arbiter Augustin IV counters Oloro's Authority of the Consuls with An Offer You Can't Refuse",
+      "T10 Baral eliminated (combat by You)",
+      "T13 You casts Ophiomancer",
+      "T14 Grand Arbiter Augustin IV counters Oloro's Exquisite Blood with Dovin's Veto",
+      "T14 Grand Arbiter Augustin IV counters your Triumph of the Hordes with Negate",
+      "T14 You INFECT ALPHA STRIKE",
+      "T14 Grand Arbiter Augustin IV eliminated (poison by You)",
+      "T14 You casts Dictate of Erebos",
+      "T15 Oloro WIPE Farewell",
+      "T15 You casts The Serpent Society",
+      "T15 Oloro counters your Skullclamp with Dovin's Veto",
+      "T16 You casts Hornet Queen",
+      "T17 Oloro Bojuka Bog exiles You graveyard (24)",
+      "T18 You eliminated (combat by Oloro)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Go-wide",
+   "slug": "go-wide",
+   "games": 709,
+   "series": 300,
+   "series_win": 16.3,
+   "game_win": 25.5,
+   "avg_place": 2.12,
+   "avg_rounds": 11.2,
+   "place": {
+    "3": 193,
+    "2": 294,
+    "4": 38,
+    "1": 184
+   },
+   "draws": 9,
+   "first_out": 5.4,
+   "deaths": [
+    [
+     "Combat damage",
+     "Tokens",
+     308
+    ],
+    [
+     "Combat damage",
+     "Landfall",
+     126
+    ],
+    [
+     "Combat damage",
+     "Elf typal",
+     72
+    ],
+    [
+     "Death-trigger drains",
+     "Elf typal",
+     11
+    ],
+    [
+     "Burn spells",
+     "Tokens",
+     7
+    ]
+   ],
+   "losses": 528,
+   "kills": [
+    [
+     "Death-trigger drains",
+     267
+    ],
+    [
+     "Poison",
+     111
+    ],
+    [
+     "Combat damage",
+     47
+    ],
+    [
+     "Torment of Hailfire",
+     14
+    ]
+   ],
+   "stats": {
+    "cmd": 5.47,
+    "edict": 7.24,
+    "pact": 3.07,
+    "poison": 2.68,
+    "countered": 0.4,
+    "wipes": 0.38,
+    "removal": 0.81,
+    "dmg": 22.16
+   },
+   "countered": [
+    [
+     "The Serpent Society",
+     73
+    ],
+    [
+     "Skullclamp",
+     50
+    ],
+    [
+     "Grave Pact",
+     40
+    ],
+    [
+     "Ashnod's Altar",
+     35
+    ]
+   ],
+   "removed": [
+    [
+     "Skullclamp",
+     85
+    ],
+    [
+     "Grave Pact",
+     68
+    ],
+    [
+     "Ophiomancer",
+     67
+    ],
+    [
+     "Dictate of Erebos",
+     42
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     148
+    ],
+    [
+     "Kindred Dominance",
+     83
+    ],
+    [
+     "Martial Coup",
+     41
+    ]
+   ],
+   "impact": [
+    [
+     "Triumph of the Hordes",
+     65,
+     78,
+     20
+    ],
+    [
+     "Torment of Hailfire",
+     68,
+     76,
+     20
+    ],
+    [
+     "Hornet Queen",
+     126,
+     55,
+     19
+    ],
+    [
+     "Ophiomancer",
+     184,
+     51,
+     17
+    ],
+    [
+     "Poison-Tip Archer",
+     132,
+     47,
+     21
+    ],
+    [
+     "The Serpent Society",
+     696,
+     26,
+     0
+    ],
+    [
+     "Fynn, the Fangbearer",
+     150,
+     45,
+     20
+    ],
+    [
+     "Hooded Blightfang",
+     152,
+     45,
+     20
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Jetmir, Nexus of Revels",
+     "arch": "Tokens",
+     "key": "jetmir",
+     "link": "https://edhrec.com/average-decks/jetmir-nexus-of-revels",
+     "fetched": "2026-10-02",
+     "win_share": 43.7,
+     "killed_me": 44.4,
+     "i_killed": 24.3,
+     "my_vs_b3": 23.8,
+     "my_vs_b4": 27.2,
+     "how": [
+      [
+       "Combat damage",
+       308
+      ],
+      [
+       "Burn spells",
+       7
+      ]
+     ],
+     "threats": [
+      "Elspeth, Storm Slayer",
+      "Beastmaster Ascension",
+      "Grand Crescendo",
+      "Craterhoof Behemoth",
+      "Skullclamp"
+     ]
+    },
+    {
+     "cmd": "Tatyova, Benthic Druid",
+     "arch": "Landfall",
+     "key": "tatyova",
+     "link": "https://edhrec.com/average-decks/tatyova-benthic-druid",
+     "fetched": "2026-10-02",
+     "win_share": 18.6,
+     "killed_me": 17.8,
+     "i_killed": 16.4,
+     "my_vs_b3": 25.8,
+     "my_vs_b4": 25.3,
+     "how": [
+      [
+       "Combat damage",
+       126
+      ]
+     ],
+     "threats": [
+      "Finale of Devastation"
+     ]
+    },
+    {
+     "cmd": "Lathril, Blade of the Elves",
+     "arch": "Elf typal",
+     "key": "lathril",
+     "link": "https://edhrec.com/average-decks/lathril-blade-of-the-elves",
+     "fetched": "2026-10-02",
+     "win_share": 10.9,
+     "killed_me": 11.7,
+     "i_killed": 21.3,
+     "my_vs_b3": 28.4,
+     "my_vs_b4": 22.5,
+     "how": [
+      [
+       "Combat damage",
+       72
+      ],
+      [
+       "Death-trigger drains",
+       11
+      ]
+     ],
+     "threats": [
+      "Skullclamp",
+      "Craterhoof Behemoth",
+      "Lightning Greaves",
+      "Ezuri, Renegade Leader",
+      "Imperious Perfect"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 31.1,
+    "1": 28.4,
+    "2": 20.1,
+    "3": 22.0
+   },
+   "attack_share": null,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Tatyova",
+      "Jetmir",
+      "You",
+      "Lathril"
+     ],
+     "lines": [
+      "T3 You casts The Serpent Society",
+      "T6 Lathril eliminated (combat by Jetmir)",
+      "T8 Tatyova WIPE Cyclonic Rift",
+      "T8 Tatyova OVERRUN Finale of Devastation (+10)",
+      "T8 You eliminated (combat by Tatyova)",
+      "T10 Tatyova eliminated (decked)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "You",
+      "Tatyova",
+      "Lathril",
+      "Jetmir"
+     ],
+     "lines": [
+      "T3 You casts The Serpent Society",
+      "T6 You casts Skullclamp",
+      "T7 Tatyova counters Lathril's Ezuri, Renegade Leader with Counterspell",
+      "T7 Lathril eliminated (death by You)",
+      "T8 Tatyova WIPE Cyclonic Rift",
+      "T8 Jetmir eliminated (combat by Tatyova)",
+      "T9 You casts The Serpent Society",
+      "T10 You casts Grave Pact",
+      "T10 You eliminated (combat by Tatyova)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 16,
+     "players": [
+      "Tatyova",
+      "Lathril",
+      "Jetmir",
+      "You"
+     ],
+     "lines": [
+      "T3 Tatyova counters Lathril's Lathril, Blade of the Elves with Counterspell",
+      "T4 Tatyova counters Lathril's Lathril, Blade of the Elves with Arcane Denial",
+      "T6 Lathril OVERRUN Finale of Devastation (+10)",
+      "T6 You eliminated (combat by Lathril)",
+      "T8 Lathril WIPE Kindred Dominance",
+      "T8 Jetmir eliminated (combat by Lathril)",
+      "T10 Tatyova WIPE Cyclonic Rift",
+      "T15 Lathril Lathril drains 10",
+      "T16 Tatyova eliminated (decked)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Graveyard & big threats",
+   "slug": "graveyard-big-threats",
+   "games": 680,
+   "series": 300,
+   "series_win": 6.0,
+   "game_win": 15.7,
+   "avg_place": 2.68,
+   "avg_rounds": 14.2,
+   "place": {
+    "4": 196,
+    "3": 178,
+    "2": 197,
+    "1": 109
+   },
+   "draws": 13,
+   "first_out": 28.8,
+   "deaths": [
+    [
+     "Death-trigger drains",
+     "Aristocrats",
+     163
+    ],
+    [
+     "Commander damage",
+     "Voltron",
+     121
+    ],
+    [
+     "Combat damage",
+     "Voltron",
+     117
+    ],
+    [
+     "Combat damage",
+     "Reanimator",
+     57
+    ],
+    [
+     "Combat damage",
+     "Aristocrats",
+     46
+    ],
+    [
+     "Death-trigger drains",
+     "Reanimator",
+     42
+    ],
+    [
+     "Infinite combo",
+     "Reanimator",
+     20
+    ]
+   ],
+   "losses": 573,
+   "kills": [
+    [
+     "Death-trigger drains",
+     164
+    ],
+    [
+     "Poison",
+     80
+    ],
+    [
+     "Combat damage",
+     56
+    ],
+    [
+     "Torment of Hailfire",
+     21
+    ]
+   ],
+   "stats": {
+    "cmd": 5.53,
+    "edict": 7.17,
+    "pact": 3.86,
+    "poison": 2.14,
+    "countered": 0.09,
+    "wipes": 1.8,
+    "removal": 1.15,
+    "dmg": 24.86
+   },
+   "countered": [
+    [
+     "The Serpent Society",
+     45
+    ],
+    [
+     "Skullclamp",
+     8
+    ],
+    [
+     "Ophiomancer",
+     3
+    ],
+    [
+     "Dictate of Erebos",
+     2
+    ]
+   ],
+   "removed": [
+    [
+     "Skullclamp",
+     105
+    ],
+    [
+     "Grave Pact",
+     96
+    ],
+    [
+     "Dictate of Erebos",
+     85
+    ],
+    [
+     "Ophiomancer",
+     62
+    ]
+   ],
+   "wiped": [
+    [
+     "Winds of Rath",
+     540
+    ],
+    [
+     "Toxic Deluge",
+     248
+    ],
+    [
+     "Living Death",
+     173
+    ],
+    [
+     "Damn",
+     111
+    ]
+   ],
+   "impact": [
+    [
+     "Triumph of the Hordes",
+     48,
+     81,
+     11
+    ],
+    [
+     "Torment of Hailfire",
+     89,
+     39,
+     12
+    ],
+    [
+     "Hornet Queen",
+     136,
+     36,
+     11
+    ],
+    [
+     "Cauldron of Essence",
+     141,
+     35,
+     11
+    ],
+    [
+     "Poison-Tip Archer",
+     176,
+     32,
+     10
+    ],
+    [
+     "Skullclamp",
+     319,
+     27,
+     6
+    ],
+    [
+     "Ohran Frostfang",
+     162,
+     31,
+     11
+    ],
+    [
+     "Bastion of Remembrance",
+     160,
+     31,
+     11
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Meren of Clan Nel Toth",
+     "arch": "Reanimator",
+     "key": "meren",
+     "link": "https://edhrec.com/average-decks/meren-of-clan-nel-toth",
+     "fetched": "2026-10-02",
+     "win_share": 17.1,
+     "killed_me": 17.6,
+     "i_killed": 17.9,
+     "my_vs_b3": 13.9,
+     "my_vs_b4": 17.9,
+     "how": [
+      [
+       "Combat damage",
+       57
+      ],
+      [
+       "Death-trigger drains",
+       42
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Zulaport Cutthroat",
+       9
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Syr Konrad, the Grim",
+       8
+      ]
+     ],
+     "threats": [
+      "Fleshbag Marauder",
+      "Diabolic Intent",
+      "Cultivate",
+      "Haywire Mite",
+      "Victimize"
+     ]
+    },
+    {
+     "cmd": "Teysa Karlov",
+     "arch": "Aristocrats",
+     "key": "teysa",
+     "link": "https://edhrec.com/average-decks/teysa-karlov",
+     "fetched": "2026-10-02",
+     "win_share": 32.6,
+     "killed_me": 30.7,
+     "i_killed": 14.1,
+     "my_vs_b3": 16.2,
+     "my_vs_b4": 15.3,
+     "how": [
+      [
+       "Death-trigger drains",
+       163
+      ],
+      [
+       "Combat damage",
+       46
+      ]
+     ],
+     "threats": [
+      "Bastion of Remembrance",
+      "Teysa, Orzhov Scion",
+      "Talisman of Hierarchy",
+      "Elenda, the Dusk Rose",
+      "Reassembling Skeleton"
+     ]
+    },
+    {
+     "cmd": "Light-Paws, Emperor's Voice",
+     "arch": "Voltron",
+     "key": "lightpaws",
+     "link": "https://edhrec.com/average-decks/light-paws-emperors-voice",
+     "fetched": "2026-10-02",
+     "win_share": 32.6,
+     "killed_me": 35.0,
+     "i_killed": 15.1,
+     "my_vs_b3": 12.8,
+     "my_vs_b4": 18.8,
+     "how": [
+      [
+       "Commander damage",
+       121
+      ],
+      [
+       "Combat damage",
+       117
+      ]
+     ],
+     "threats": [
+      "Shield of Duty and Reason",
+      "Enlightened Tutor",
+      "Mask of Law and Grace",
+      "Sentinel's Eyes",
+      "Battle Mastery"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 14.6,
+    "1": 19.0,
+    "2": 11.7,
+    "3": 18.1
+   },
+   "attack_share": null,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You",
+      "Light-Paws"
+     ],
+     "lines": [
+      "T3 You casts The Serpent Society",
+      "T4 Light-Paws WIPE Winds of Rath",
+      "T5 You casts The Serpent Society",
+      "T6 You casts Ophiomancer",
+      "T7 You eliminated (commander damage by Light-Paws)",
+      "T8 Meren of Clan Nel Toth eliminated (combat by Light-Paws)",
+      "T9 Teysa Karlov eliminated (combat by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Meren of Clan Nel Toth",
+      "You",
+      "Light-Paws",
+      "Teysa Karlov"
+     ],
+     "lines": [
+      "T3 You casts The Serpent Society",
+      "T6 Meren of Clan Nel Toth eliminated (commander damage by Light-Paws)",
+      "T7 Light-Paws WIPE Winds of Rath",
+      "T7 You protects with Heroic Intervention",
+      "T8 You eliminated (combat by Light-Paws)",
+      "T9 Teysa Karlov eliminated (commander damage by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 21,
+     "players": [
+      "You",
+      "Light-Paws",
+      "Meren of Clan Nel Toth",
+      "Teysa Karlov"
+     ],
+     "lines": [
+      "T1 You casts Skullclamp",
+      "T3 You casts The Serpent Society",
+      "T4 You WIPE Withering Curse",
+      "T7 Light-Paws WIPE Winds of Rath",
+      "T8 You casts The Serpent Society",
+      "T8 Meren of Clan Nel Toth WIPE Massacre Wurm",
+      "T12 Teysa Karlov eliminated (combat by Meren of Clan Nel Toth)",
+      "T14 Light-Paws eliminated (combat by Meren of Clan Nel Toth)",
+      "T18 You casts Grave Pact",
+      "T19 You casts Ophiomancer",
+      "T21 You casts Ashnod's Altar",
+      "T21 You eliminated (death by Meren of Clan Nel Toth)"
+     ]
+    }
+   ]
+  }
+ ]
+}

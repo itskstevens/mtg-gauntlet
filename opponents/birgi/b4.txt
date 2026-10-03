@@ -1,0 +1,79 @@
+1 Birgi, God of Storytelling
+1 Aetherflux Reservoir
+1 Arcane Signet
+1 Chromatic Sphere
+1 Chromatic Star
+1 Chrome Mox
+1 Helm of Awakening
+1 Lotus Petal
+1 Mana Vault
+1 Mox Amber
+1 Ruby Medallion
+1 Sensei's Divining Top
+1 Sol Ring
+1 Ancient Tomb
+1 Arid Mesa
+1 Bloodstained Mire
+1 Dwarven Ruins
+22 Mountain
+1 Sandstone Needle
+1 Scalding Tarn
+1 Wooded Foothills
+1 Dragon's Rage Channeler
+1 Dualcaster Mage
+1 Electro, Assaulting Battery
+1 Flamekin Harbinger
+1 Grinning Ignus
+1 Guttersnipe
+1 Hexing Squelcher
+1 Imperial Recruiter
+1 Pinnacle Monk
+1 Ragavan, Nimble Pilferer
+1 Rograkh, Son of Rohgahh
+1 Runaway Steam-Kin
+1 Simian Spirit Guide
+1 Storm-Kiln Artist
+1 Treasonous Ogre
+1 Urabrask
+1 Artist's Talent
+1 Dragon Mantle
+1 Impact Tremors
+1 Underworld Breach
+1 Abrade
+1 Chaos Warp
+1 Crimson Wisps
+1 Deflecting Swat
+1 Demand Answers
+1 Desperate Ritual
+1 Expedite
+1 Flashback
+1 Lightning Bolt
+1 Pyretic Ritual
+1 Pyroblast
+1 Red Elemental Blast
+1 Seething Song
+1 Thrill of Possibility
+1 Tibalt's Trickery
+1 Valakut Awakening
+1 Ancestral Anger
+1 Bonus Round
+1 Burning Inquiry
+1 Cathartic Reunion
+1 Crash Through
+1 Faithless Looting
+1 Gamble
+1 Grapeshot
+1 Jeska's Will
+1 Magmatic Insight
+1 Mana Geyser
+1 Mizzix's Mastery
+1 Overmaster
+1 Past in Flames
+1 Renegade Tactics
+1 Rite of Flame
+1 Strike It Rich
+1 Tormenting Voice
+1 Warlord's Fury
+1 Wheel of Fortune
+1 Wheel of Misfortune
+1 Wrenn's Resolve

@@ -1,0 +1,189 @@
+<title>__TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a match-report sheet. Summary scoreboard, then one tab per opponent category, then the swap test and method notes. */
+:root{
+  --bg:#f2f4ef; --panel:#ffffff; --ink:#18211b; --muted:#5b665e; --line:#d9dfd6;
+  --venom:#2e6b3c; --venom-soft:#dcebdd; --toxin:#6a3e9e; --toxin-soft:#ebe2f6; --bad:#a3392b; --bad-soft:#f6e1dd;
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111613; --panel:#19201b; --ink:#e3e9e1; --muted:#9aa69c; --line:#2c362f;
+  --venom:#76c487; --venom-soft:#22392a; --toxin:#b896e8; --toxin-soft:#2e2540; --bad:#ec8a7a; --bad-soft:#3c2320; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111613; --panel:#19201b; --ink:#e3e9e1; --muted:#9aa69c; --line:#2c362f;
+  --venom:#76c487; --venom-soft:#22392a; --toxin:#b896e8; --toxin-soft:#2e2540; --bad:#ec8a7a; --bad-soft:#3c2320; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-body);margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:.01em;text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:44px}
+h2{font-size:28px}
+h3{font-size:19px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);font-weight:600}
+p{margin:0;max-width:68ch}
+.lede{color:var(--muted);font-size:16px}
+.eyebrow{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--venom)}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
+.board{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:minmax(150px,220px) 1fr minmax(64px,auto);gap:14px;align-items:center}
+.row .lab{font-weight:600}
+.row .lab small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.track{position:relative;height:22px;background:var(--bg);border-radius:4px}
+.bar{position:absolute;inset:0 auto 0 0;border-radius:0 4px 4px 0;background:var(--venom)}
+.bar.series{background:var(--toxin);top:13px;height:9px}
+.bar.game{top:0;height:11px}
+.base{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line)}
+.tab{font:600 17px var(--f-display);letter-spacing:.02em;padding:10px 14px;border:1px solid transparent;border-bottom:none;border-radius:8px 8px 0 0;background:none;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--panel);color:var(--ink);border-color:var(--line);margin-bottom:-1px}
+.tab:focus-visible,a:focus-visible{outline:2px solid var(--venom);outline-offset:2px}
+.tabbody{display:grid;gap:22px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.kpi{border-top:3px solid var(--line);padding-top:8px}
+.kpi b{display:block;font:600 30px var(--f-display)}
+.kpi span{font-size:13px;color:var(--muted)}
+.kpi.good{border-color:var(--venom)} .kpi.warn{border-color:var(--bad)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.two > *{min-width:0}
+.hb{display:grid;gap:7px}
+.hb .r{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:14px}
+.hb .t{grid-column:1/-1;height:8px;background:var(--bg);border-radius:3px;position:relative}
+.hb .f{position:absolute;inset:0 auto 0 0;border-radius:0 3px 3px 0}
+.f.loss{background:var(--bad)} .f.win{background:var(--venom)}
+.insights{display:grid;gap:10px;padding-left:0;margin:0;list-style:none}
+.insights li{padding-left:16px;border-left:3px solid var(--venom);max-width:72ch}
+.decks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.deck{border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:10px;align-content:start;background:var(--panel)}
+.deck header{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.deck h4{margin:0;font:600 20px var(--f-display)}
+.chip{font:500 11px var(--f-mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 7px;border-radius:99px;background:var(--toxin-soft);color:var(--toxin)}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;text-align:left}
+.mini div{font-size:12px;color:var(--muted)} .mini b{display:block;font:600 20px var(--f-display);color:var(--ink)}
+.deck ul{margin:0;padding-left:18px;font-size:13.5px}
+.deck a{color:var(--venom);font-size:13px}
+.small{font-size:13px;color:var(--muted)}
+.replay{display:grid;gap:12px}
+.replay details{border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.replay summary{cursor:pointer;padding:10px 14px;font-weight:600}
+.log{margin:0;padding:6px 14px 14px;list-style:none;font:13px/1.6 var(--f-mono);overflow-x:auto}
+.log li{white-space:nowrap}
+.log .me{color:var(--venom)} .log .out{color:var(--bad)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font:600 12px var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td.up{color:var(--venom);font-weight:600} td.down{color:var(--bad)}
+.pill{display:inline-block;font:500 11px var(--f-mono);padding:2px 6px;border-radius:4px}
+.pill.w{background:var(--venom-soft);color:var(--venom)} .pill.l{background:var(--bad-soft);color:var(--bad)}
+@media (max-width:560px){.row{grid-template-columns:1fr auto}.row .track{grid-column:1/-1;grid-row:2}h1{font-size:34px}}
+@media (prefers-reduced-motion:no-preference){.bar,.f{transition:width .5s ease}}
+</style>
+<div class="wrap">
+<header style="display:grid;gap:10px">
+  <div class="eyebrow">__EYEBROW__</div>
+  <h1>__H1__</h1>
+  <p class="lede" id="lede"></p>
+</header>
+
+<section class="panel" style="display:grid;gap:16px" aria-labelledby="sb">
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:baseline">
+    <h2 id="sb">Scoreboard by category</h2>
+    <div class="legend"><span><i class="sw" style="background:var(--venom)"></i>Game win rate</span><span><i class="sw" style="background:var(--toxin)"></i>Best-of-3 series win rate</span><span><i class="sw" style="border:2px dashed var(--muted);height:12px;width:0;border-radius:0"></i>Fair share (25% games, 16% series)</span></div>
+  </div>
+  <div class="board" id="board"></div>
+  <p class="small">In a 4-player pod an average deck wins 1 game in 4. Winning a best of 3 at that rate happens about 16% of the time, so the dashed lines mark "even with the table."</p>
+</section>
+
+<section style="display:grid;gap:0">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="panel" style="border-top-left-radius:0" id="tabpanel" role="tabpanel"></div>
+</section>
+
+<section class="panel" style="display:grid;gap:14px" aria-labelledby="swap" id="swapsec" hidden>
+  <h2 id="swap">Swap test</h2>
+  <p>Each line is the same series per category, with identical opponents and shuffles. Only your list changes. A difference under about 3 points is within the noise.</p>
+  <div class="tbl"><table id="vt"></table></div>
+  <p class="small" id="swapnote"></p>
+</section>
+
+<section class="panel" style="display:grid;gap:10px" aria-labelledby="meth">
+  <h2 id="meth">How this was run</h2>
+  <ul class="insights">
+    <li>Opponents are EDHREC average decklists, using both the Upgraded (bracket 3) and Optimized (bracket 4) versions. Each series rolls each opponent's bracket at random and keeps it for all three games.</li>
+    <li>Every card in every deck was tagged from its real rules text (Forge card scripts): mana, removal, wipes, counterspells, stax effects, tokens, anthems, drains, combos and alternate wins. Opponents play the cards they actually draw.</li>
+    <li>Seat order is random each game. A game that hits 25 rounds counts as a draw, which counts as a loss for the series.</li>
+    <li>Limits: decisions are rule-based, not expert play. Politics, deals and bluffs don't exist, and some cards are simplified. Treat the matchup shape as the finding, not the exact percentages.</li>
+  </ul>
+</section>
+</div>
+<script id="d" type="application/json">__DATA__</script>
+<script>
+const D=JSON.parse(document.getElementById('d').textContent);
+const pct=v=>`${(+v).toFixed(v>=10||v==0?0:1)}%`;
+document.getElementById('lede').textContent=`${D.total_series.toLocaleString()} best-of-3 series and ${D.total_games.toLocaleString()} games against bracket 3 and 4 decks from ${D.groups.length} opponent categories, run ${D.date}. Each pod is you plus three decks from one category.`;
+const board=document.getElementById('board');
+const MAX=40;
+D.groups.forEach(g=>{
+  const r=document.createElement('div');r.className='row';
+  r.innerHTML=`<div class="lab">${g.name}<small>${g.series} series · ${g.games} games</small></div>
+  <div class="track" role="img" aria-label="${g.name}: games ${g.game_win}%, series ${g.series_win}%">
+    <div class="bar game" style="width:${g.game_win/MAX*100}%"></div><div class="bar series" style="width:${g.series_win/MAX*100}%"></div>
+    <div class="base" style="left:${25/MAX*100}%;top:-4px;height:15px"></div><div class="base" style="left:${15.6/MAX*100}%;top:11px;height:15px"></div></div>
+  <div class="num" style="text-align:right"><b>${pct(g.game_win)}</b><br><span class="small">${pct(g.series_win)}</span></div>`;
+  board.appendChild(r);
+});
+const INS=D.insights||{};
+const tabs=document.getElementById('tabs'), panel=document.getElementById('tabpanel');
+function hbars(rows,cls,total){const m=Math.max(...rows.map(r=>r[r.length-1]));return `<div class="hb">${rows.map(r=>{const n=r[r.length-1];return `<div class="r"><span>${r.slice(0,-1).join(' · ')}</span><span class="num">${n}${total?` <span class="small">(${Math.round(n/total*100)}%)</span>`:''}</span><div class="t"><div class="f ${cls}" style="width:${n/m*100}%"></div></div></div>`}).join('')}</div>`}
+function render(g){
+  const s=g.stats;
+  const kills=g.kills.reduce((a,b)=>a+b[1],0);
+  panel.innerHTML=`<div class="tabbody">
+  <div class="kpis">
+   <div class="kpi ${g.game_win>=24?'good':'warn'}"><b class="num">${pct(g.game_win)}</b><span>games won</span></div>
+   <div class="kpi ${g.series_win>=15?'good':'warn'}"><b class="num">${pct(g.series_win)}</b><span>best-of-3 series won</span></div>
+   <div class="kpi"><b class="num">${g.avg_place}</b><span>average finish (1 = won)</span></div>
+   <div class="kpi"><b class="num">${g.avg_rounds}</b><span>rounds per game</span></div>
+   <div class="kpi"><b class="num">${s.edict}</b><span>creatures your commander forced them to sacrifice per game</span></div>
+   <div class="kpi"><b class="num">${s.countered}</b><span>of your spells countered per game</span></div>
+  </div>
+  ${(INS[g.slug]||[]).length?`<div><h3 style="margin-bottom:10px">What the games showed</h3><ul class="insights">${INS[g.slug].map(t=>`<li>${t}</li>`).join('')}</ul></div>`:''}
+  <div class="two">
+   <div><h3 style="margin-bottom:10px">How you lost</h3>${hbars(g.deaths,'loss',g.losses)}</div>
+   <div><h3 style="margin-bottom:10px">How you eliminated opponents</h3>${hbars(g.kills.map(k=>[k[0],k[1]]),'win',kills)}
+    <p class="small" style="margin-top:10px">Per game: ${s.cmd} commander triggers, ${s.pact} extra sacrifices from Grave Pact or Dictate, ${s.poison} poison counters dealt, ${s.wipes} wipes faced, ${s.removal} of your permanents removed.</p></div>
+  </div>
+  <div class="two">
+   <div><h3 style="margin-bottom:8px">Most countered</h3><p class="small">${g.countered.map(c=>`${c[0]} (${c[1]})`).join(', ')||'Rarely countered'}</p></div>
+   <div><h3 style="margin-bottom:8px">Most removed</h3><p class="small">${g.removed.map(c=>`${c[0]} (${c[1]})`).join(', ')}</p></div>
+   <div><h3 style="margin-bottom:8px">Wipes you faced most</h3><p class="small">${g.wiped.map(c=>`${c[0]} (${c[1]})`).join(', ')}</p></div>
+  </div>
+  <div><h3 style="margin-bottom:10px">Decks you played against</h3><div class="decks">${g.opps.map(o=>`<article class="deck"><header><h4>${o.cmd}</h4><span class="chip">${o.arch}</span></header>
+    <div class="mini"><div><b class="num">${pct(o.win_share)}</b>games won</div><div><b class="num">${pct(o.killed_me)}</b>knocked you out</div><div><b class="num">${pct(o.i_killed)}</b>knocked out by you</div></div>
+    <div class="small">Your win rate vs its bracket 3 list: <b class="num">${pct(o.my_vs_b3)}</b> · bracket 4 list: <b class="num">${pct(o.my_vs_b4)}</b></div>
+    <div><div class="small" style="font-weight:600;color:var(--ink)">How it beat you</div><ul>${o.how.map(h=>`<li>${h[0]} <span class="num small">×${h[1]}</span></li>`).join('')}</ul></div>
+    ${o.threats.length?`<div><div class="small" style="font-weight:600;color:var(--ink)">Cards that showed up more in your losses</div><p class="small">${o.threats.join(', ')}</p></div>`:''}
+    <a href="${o.link}" target="_blank" rel="noopener">Decklists on EDHREC ↗</a></article>`).join('')}</div></div>
+  <div><h3 style="margin-bottom:6px">Your cards that swung games</h3><p class="small" style="margin-bottom:10px">Game win rate when you cast the card vs when you didn't. This shows correlation, not cause: winning games last longer and see more cards.</p>
+   <div class="tbl"><table><thead><tr><th>Card</th><th>Cast in</th><th>Win when cast</th><th>Win otherwise</th></tr></thead><tbody>${g.impact.sort((a,b)=>(b[2]-b[3])-(a[2]-a[3])).map(r=>`<tr><td>${r[0]}</td><td class="num">${r[1]} games</td><td class="num up">${r[2]}%</td><td class="num">${r[3]}%</td></tr>`).join('')}</tbody></table></div></div>
+  <div class="replay"><h3>Match replays</h3><p class="small">Key moments from logged games in this category: casts, counters, wipes and knockouts.</p>
+   ${g.samples.map((sm,i)=>`<details ${i==0?'open':''}><summary>Game ${i+1} <span class="pill ${sm.won?'w':'l'}">${sm.won?'You won':'You lost'}</span> <span class="small">· ${sm.rounds} rounds · seats: ${sm.players.map(p=>p.replace(/ \(.*\)/,'').replace(/,.*/,'')).join(', ')}</span></summary>
+   <ol class="log">${sm.lines.map(l=>{const t=l.replace(/You's/g,'your').replace(/^T(\d+) /,'Turn $1 · ');return `<li class="${/eliminated/.test(l)?'out':/You/.test(l)?'me':''}">${t.replace(/</g,'&lt;')}</li>`}).join('')}</ol></details>`).join('')}
+  </div></div>`;
+}
+D.groups.forEach((g,i)=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.id='t-'+g.slug;b.textContent=g.name;
+ b.setAttribute('aria-selected',i==0);b.onclick=()=>{[...tabs.children].forEach(x=>x.setAttribute('aria-selected',x===b));render(g);try{localStorage.setItem('tab',g.slug)}catch(e){}};tabs.appendChild(b)});
+let start=D.groups[0];try{const h=location.hash.slice(1)||localStorage.getItem('tab');start=D.groups.find(g=>g.slug===h)||start}catch(e){}
+document.getElementById('t-'+start.slug).click();
+if(D.variants&&Object.keys(D.variants).length>1){
+const V=D.variants,names=D.variant_names,gs=D.groups.map(g=>g.name);document.getElementById('swapsec').hidden=false;document.getElementById('swapnote').textContent=D.swap_note||'';
+document.getElementById('vt').innerHTML=`<thead><tr><th>List</th>${gs.map(g=>`<th>${g}</th>`).join('')}<th>Average</th></tr></thead><tbody>${Object.keys(names).map(k=>{const avg=gs.reduce((a,g)=>a+V[k][g],0)/gs.length,b=gs.reduce((a,g)=>a+V.base[g],0)/gs.length;
+ return `<tr><td>${names[k]}</td>${gs.map(g=>{const d=V[k][g]-V.base[g];return `<td class="num ${k!='base'&&d>=2.5?'up':k!='base'&&d<=-2.5?'down':''}">${V[k][g].toFixed(1)}%${k!='base'?` <span class="small">(${d>0?'+':''}${d.toFixed(1)})</span>`:''}</td>`}).join('')}<td class="num">${avg.toFixed(1)}%${k!='base'?` <span class="small">(${avg-b>0?'+':''}${(avg-b).toFixed(1)})</span>`:''}</td></tr>`}).join('')}</tbody>`;}
+</script>

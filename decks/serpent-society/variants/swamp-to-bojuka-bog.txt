@@ -1,0 +1,67 @@
+1 The Serpent Society
+1 Burrog Banemaker
+1 Dragon Sniper
+1 Fell Stinger
+1 Noxious Newt
+1 Ravening Warg
+1 Serpent Specialist
+1 Toxic Scorpion
+1 Varragoth, Bloodsky Sire
+1 Fynn, the Fangbearer
+1 Nightshade Dryad
+1 Hooded Blightfang
+1 Moss Viper
+1 Ambush Viper
+1 Vraska, the Silencer
+1 Hornet Queen
+1 Poison-Tip Archer
+1 Ophiomancer
+1 Blood Artist
+1 Zulaport Cutthroat
+1 Viscera Seer
+1 Carrion Feeder
+1 Ohran Frostfang
+1 Hornet Nest
+1 Altar of Dementia
+1 Ashnod's Altar
+1 Evolutionary Leap
+1 Cauldron of Essence
+1 Village Rites
+1 Deadly Dispute
+1 Bastion of Remembrance
+1 Grave Pact
+1 Dictate of Erebos
+1 Sol Ring
+1 Arcane Signet
+1 Talisman of Resilience
+1 Golgari Signet
+1 Staff of Compleation
+1 Shimmerwilds Growth
+1 Nature's Lore
+1 Shared Roots
+1 Cultivate
+1 Skullclamp
+1 Phyrexian Arena
+1 Pull from the Grave
+1 Phyrexian Reclamation
+1 Worthy Cost
+1 Broken Wings
+1 Devouring Tendrils
+1 Pick Your Poison
+1 Punishing Punch
+1 Sheoldred's Edict
+1 Witherbloom Charm
+1 Wolf Strike
+1 Assassin's Trophy
+1 Beast Within
+1 Infernal Grasp
+1 Go for the Throat
+1 Withering Curse
+1 Heroic Intervention
+1 Triumph of the Hordes
+1 Garruk's Uprising
+1 Torment of Hailfire
+1 Phyrexian Tower
+18 Forest
+17 Swamp
+1 Bojuka Bog

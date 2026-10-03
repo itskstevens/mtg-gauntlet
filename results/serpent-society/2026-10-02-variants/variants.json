@@ -1,0 +1,43 @@
+{
+ "variants": {
+  "base": {
+   "Combo & storm": 22.1,
+   "Stax & control": 15.5,
+   "Go-wide": 25.5,
+   "Graveyard & big threats": 15.7
+  },
+  "gc": {
+   "Combo & storm": 23.1,
+   "Stax & control": 18.2,
+   "Go-wide": 23.2,
+   "Graveyard & big threats": 18.5
+  },
+  "fs": {
+   "Combo & storm": 23.2,
+   "Stax & control": 15.0,
+   "Go-wide": 22.4,
+   "Graveyard & big threats": 17.0
+  },
+  "lt": {
+   "Combo & storm": 24.6,
+   "Stax & control": 14.1,
+   "Go-wide": 24.4,
+   "Graveyard & big threats": 11.9
+  },
+  "bb": {
+   "Combo & storm": 21.2,
+   "Stax & control": 14.6,
+   "Go-wide": 23.2,
+   "Graveyard & big threats": 15.2
+  }
+ },
+ "names": {
+  "base": "Your current list",
+  "gc": "Withering Curse \u2192 Golgari Charm",
+  "fs": "Withering Curse \u2192 Feed the Swarm",
+  "lt": "Withering Curse \u2192 Liliana's Triumph",
+  "bb": "Swamp \u2192 Bojuka Bog"
+ },
+ "series": 300,
+ "note": "No single swap fixes a bad matchup. Golgari Charm helped in two categories but its overall gain is within the noise. Cutting Garruk's Uprising, Bastion of Remembrance and Withering Curse together cost 4 to 6 points in every category."
+}

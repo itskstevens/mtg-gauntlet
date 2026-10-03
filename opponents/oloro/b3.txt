@@ -1,0 +1,89 @@
+1 Oloro, Ageless Ascetic
+1 Aetherflux Reservoir
+1 Alhammarret's Archive
+1 Arcane Signet
+1 Bolas's Citadel
+1 Cosmos Elixir
+1 Orzhov Signet
+1 Sol Ring
+1 Talisman of Hierarchy
+1 Talisman of Progress
+1 The Wind Crystal
+1 Well of Lost Dreams
+1 Adarkar Wastes
+1 Arcane Sanctum
+1 Bojuka Bog
+1 Caves of Koilos
+1 Command Tower
+1 Drowned Catacomb
+1 Exotic Orchard
+1 Flooded Strand
+1 Glacial Fortress
+1 Godless Shrine
+1 Hallowed Fountain
+4 Island
+1 Isolated Chapel
+1 Marsh Flats
+1 Morphic Pool
+5 Plains
+1 Polluted Delta
+1 Prairie Stream
+1 Raffine's Tower
+1 Reliquary Tower
+1 Sea of Clouds
+5 Swamp
+1 Vault of Champions
+1 Watery Grave
+1 Ajani's Pridemate
+1 Bloodthirsty Conqueror
+1 Crested Sunmare
+1 Drogskol Reaver
+1 Elenda's Hierophant
+1 Enduring Tenacity
+1 Esper Sentinel
+1 Exemplar of Light
+1 Felidar Sovereign
+1 Heliod, Sun-Crowned
+1 Kambal, Consul of Allocation
+1 Karlov of the Ghost Council
+1 Marauding Blight-Priest
+1 Queza, Augur of Agonies
+1 Rhox Faithmender
+1 Serra Ascendant
+1 Sheoldred, the Apocalypse
+1 Soul Warden
+1 Soul's Attendant
+1 Vito, Thorn of the Dusk Rose
+1 Voice of the Blessed
+1 Will, Scion of Peace
+1 Witch of the Moors
+1 Authority of the Consuls
+1 Black Market Connections
+1 Blind Obedience
+1 Cleric Class
+1 Exquisite Blood
+1 Ghostly Prison
+1 Lunar Convocation
+1 Phyrexian Arena
+1 Propaganda
+1 Sanguine Bond
+1 Test of Endurance
+1 Absorb
+1 An Offer You Can't Refuse
+1 Anguished Unmaking
+1 Beacon of Immortality
+1 Counterspell
+1 Dovin's Veto
+1 Mana Drain
+1 Negate
+1 Path to Exile
+1 Swords to Plowshares
+1 Void Rend
+1 Ajani, Strength of the Pride
+1 Damn
+1 Debt to the Deathless
+1 Exsanguinate
+1 Farewell
+1 Fumigate
+1 Supreme Verdict
+1 Toxic Deluge

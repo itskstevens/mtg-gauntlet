@@ -1,0 +1,51 @@
+# Pilot for The Serpent Society (deathtouch aristocrats). Drives how the simulator plays YOUR deck.
+# Card-level rules live in engine/; this file is strategy. Every key is optional.
+commander: The Serpent Society
+eyebrow: "Golgari · Deathtouch aristocrats · Bracket 3"
+summary: Deathtouch creatures die -> each opponent sacrifices a nontoken creature. Win with poison (Fynn, Triumph) or drains.
+
+# Pieces the AI protects: never sacrificed, removal targets for opponents get a bump, chosen last for edicts.
+engine: [Ophiomancer, Poison-Tip Archer, Blood Artist, Zulaport Cutthroat, Viscera Seer, Carrion Feeder,
+         Ohran Frostfang, Hooded Blightfang, "Fynn, the Fangbearer", "Vraska, the Silencer", "Varragoth, Bloodsky Sire",
+         Nightshade Dryad, Noxious Newt, Hornet Queen, Hornet Nest]
+# Creatures that never attack (unless going for lethal). The commander stays home unless keep_commander_home is false.
+keep_home: [Ophiomancer, Blood Artist, Zulaport Cutthroat, Viscera Seer, Carrion Feeder, Poison-Tip Archer,
+            Hornet Nest, Nightshade Dryad, Noxious Newt, "Vraska, the Silencer"]
+keep_commander_home: true
+
+# Sacrifice rules: tokens always; nontoken creatures only if they pass `fodder` (any | deathtouch | tokens) and cmc cap.
+fodder: deathtouch
+fodder_max_cmc: 3
+instant_sac_tokens: [Snake]        # tokens to sacrifice at instant speed on other players' upkeeps
+recursion_keyword: deathtouch       # Cauldron of Essence only brings back creatures with this keyword
+bonus_keywords: [deathtouch]        # creatures with these keywords get cast slightly earlier
+
+# Tutors and Varragoth go find these, first missing one wins.
+tutor_targets: [Skullclamp, Grave Pact, Ophiomancer, Altar of Dementia, "Ashnod's Altar", Triumph of the Hordes]
+
+# Fixed cast priorities (higher = sooner). Situational cards (removal, wipes, X spells, overruns) are decided by the engine.
+priorities:
+  Skullclamp: 88
+  Ophiomancer: 87
+  Grave Pact: 85
+  Dictate of Erebos: 85
+  Poison-Tip Archer: 84
+  Blood Artist: 80
+  Zulaport Cutthroat: 80
+  Hornet Queen: 78
+  Ohran Frostfang: 77
+  Bastion of Remembrance: 74
+  Cauldron of Essence: 74
+  "Garruk's Uprising": 74
+  Phyrexian Arena: 74
+  "Fynn, the Fangbearer": 73
+
+# How much opponents want to remove these (added to the engine's own estimate).
+value_bonus: {Grave Pact: 6, Dictate of Erebos: 6, Ophiomancer: 5, "Ashnod's Altar": 3, Skullclamp: 4,
+              Poison-Tip Archer: 3, Hornet Queen: 4, Ohran Frostfang: 4, "Garruk's Uprising": 3}
+# Cards opponents are more willing to counter.
+key_cards: [Grave Pact, Dictate of Erebos, Hornet Queen, Triumph of the Hordes, Torment of Hailfire, The Serpent Society,
+            Ophiomancer, "Ashnod's Altar", Skullclamp]
+
+hold_removal_vs_combo: true    # keep instant removal up from turn 4 when a combo deck is in the pod
+sac_nontoken: false            # (non-Serpent commanders) allow sacrificing nontoken fodder when payoffs are out
