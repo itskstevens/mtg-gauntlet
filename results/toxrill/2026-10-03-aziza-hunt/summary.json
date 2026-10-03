@@ -1,0 +1,1540 @@
+{
+ "meta": {
+  "date": "2026-10-03",
+  "deck": "toxrill",
+  "series_per_cat": 300,
+  "series_total": 1200,
+  "games_total": 2755,
+  "list_snapshot": [
+   "Toxrill, the Corrosive",
+   "Arcane Signet",
+   "Contagion Clasp",
+   "Contagion Engine",
+   "Dimir Signet",
+   "Fellwar Stone",
+   "Lightning Greaves",
+   "Mind Stone",
+   "Skullclamp",
+   "Sol Ring",
+   "Swiftfoot Boots",
+   "Talisman of Dominance",
+   "Thought Vessel",
+   "Bojuka Bog",
+   "Choked Estuary",
+   "Command Tower",
+   "Dimir Aqueduct",
+   "Drowned Catacomb",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Karn's Bastion",
+   "Morphic Pool",
+   "Polluted Delta",
+   "Reliquary Tower",
+   "Shipwreck Marsh",
+   "Sunken Hollow",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Swamp",
+   "Tainted Isle",
+   "Temple of Deceit",
+   "Underground River",
+   "Urborg, Tomb of Yawgmoth",
+   "Watery Grave",
+   "Ayara, First of Locthwain",
+   "Blood Artist",
+   "Clackbridge Troll",
+   "Drivnod, Carnage Dominus",
+   "Flux Channeler",
+   "Gisa, Glorious Resurrector",
+   "Hunted Phantasm",
+   "Maha, Its Feathers Night",
+   "Massacre Girl, Known Killer",
+   "Massacre Wurm",
+   "Mirkwood Bats",
+   "Morbid Opportunist",
+   "Slaughter Specialist",
+   "Sludge Monster",
+   "Solemn Simulacrum",
+   "Spark Double",
+   "Syr Konrad, the Grim",
+   "Tekuthal, Inquiry Dominus",
+   "Thrummingbird",
+   "Yawgmoth, Thran Physician",
+   "Zulaport Cutthroat",
+   "Black Market",
+   "Inexorable Tide",
+   "Phyrexian Arena",
+   "Propaganda",
+   "Revel in Riches",
+   "Rhystic Study",
+   "The Meathook Massacre",
+   "An Offer You Can't Refuse",
+   "Arcane Denial",
+   "Counterspell",
+   "Dark Ritual",
+   "Experimental Augury",
+   "Flatline",
+   "Malakir Rebirth",
+   "Mana Drain",
+   "Negate",
+   "Polymorphist's Jest",
+   "Pongify",
+   "Sudden Spoiling",
+   "Swan Song",
+   "Whisper of the Dross",
+   "Vraska, Betrayal's Sting",
+   "Contentious Plan",
+   "Demonic Tutor",
+   "Drown in Ichor",
+   "Feed the Swarm",
+   "Mass Diminish",
+   "Reanimate",
+   "Tezzeret's Gambit",
+   "Toxic Deluge"
+  ]
+ },
+ "groups": [
+  {
+   "name": "Combo & storm",
+   "slug": "combo-storm",
+   "games": 686,
+   "series": 300,
+   "series_win": 8.7,
+   "game_win": 17.9,
+   "avg_place": 2.57,
+   "avg_rounds": 9.7,
+   "place": {
+    "1": 124,
+    "2": 193,
+    "4": 143,
+    "3": 226
+   },
+   "draws": 6,
+   "first_out": 20.8,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Spellslinger",
+     230
+    ],
+    [
+     "Infinite combo",
+     "Turbo combo",
+     116
+    ],
+    [
+     "Burn spells",
+     "Storm",
+     89
+    ],
+    [
+     "Combat damage",
+     "Storm",
+     51
+    ],
+    [
+     "Combat damage",
+     "Spellslinger",
+     32
+    ],
+    [
+     "Burn spells",
+     "Spellslinger",
+     31
+    ],
+    [
+     "Combat damage",
+     "Turbo combo",
+     11
+    ]
+   ],
+   "losses": 563,
+   "kills": [
+    [
+     "Combat damage",
+     307
+    ],
+    [
+     "Death-trigger drains",
+     117
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.68,
+    "wipes": 0.2,
+    "removal": 1.63,
+    "dmg": 33.01
+   },
+   "countered": [
+    [
+     "Rhystic Study",
+     149
+    ],
+    [
+     "Toxrill, the Corrosive",
+     140
+    ],
+    [
+     "Propaganda",
+     92
+    ],
+    [
+     "Skullclamp",
+     22
+    ]
+   ],
+   "removed": [
+    [
+     "Slug",
+     275
+    ],
+    [
+     "Toxrill, the Corrosive",
+     204
+    ],
+    [
+     "Zulaport Cutthroat",
+     96
+    ],
+    [
+     "Blood Artist",
+     70
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     51
+    ],
+    [
+     "Blasphemous Act",
+     50
+    ],
+    [
+     "Vandalblast",
+     34
+    ]
+   ],
+   "impact": [
+    [
+     "Drivnod, Carnage Dominus",
+     94,
+     48,
+     13
+    ],
+    [
+     "Syr Konrad, the Grim",
+     141,
+     40,
+     12
+    ],
+    [
+     "Gisa, Glorious Resurrector",
+     99,
+     41,
+     14
+    ],
+    [
+     "Toxrill, the Corrosive",
+     442,
+     27,
+     1
+    ],
+    [
+     "Massacre Girl, Known Killer",
+     111,
+     39,
+     14
+    ],
+    [
+     "Mirkwood Bats",
+     110,
+     39,
+     14
+    ],
+    [
+     "Zulaport Cutthroat",
+     169,
+     35,
+     12
+    ],
+    [
+     "Massacre Wurm",
+     36,
+     39,
+     17
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Kinnan, Bonder Prodigy",
+     "arch": "Turbo combo",
+     "key": "kinnan",
+     "link": "https://edhrec.com/average-decks/kinnan-bonder-prodigy",
+     "fetched": "2026-10-02",
+     "win_share": 20.0,
+     "killed_me": 18.5,
+     "i_killed": 26.2,
+     "my_vs_b3": 17.6,
+     "my_vs_b4": 18.3,
+     "how": [
+      [
+       "Kinnan, Bonder Prodigy + Basalt Monolith",
+       101
+      ],
+      [
+       "Combat damage",
+       11
+      ],
+      [
+       "Hullbreaker Horror + Sol Ring",
+       8
+      ],
+      [
+       "Bloom Tender + Freed from the Real",
+       4
+      ]
+     ],
+     "threats": [
+      "Simic Signet",
+      "Green Sun's Zenith",
+      "Bloom Tender",
+      "Paradise Druid"
+     ]
+    },
+    {
+     "cmd": "Birgi, God of Storytelling",
+     "arch": "Storm",
+     "key": "birgi",
+     "link": "https://edhrec.com/average-decks/birgi-god-of-storytelling",
+     "fetched": "2026-10-02",
+     "win_share": 17.8,
+     "killed_me": 20.4,
+     "i_killed": 17.5,
+     "my_vs_b3": 14.3,
+     "my_vs_b4": 21.6,
+     "how": [
+      [
+       "Burn spells",
+       89
+      ],
+      [
+       "Combat damage",
+       51
+      ]
+     ],
+     "threats": [
+      "Fiery Inscription",
+      "Might of the Meek",
+      "Coruscation Mage"
+     ]
+    },
+    {
+     "cmd": "Niv-Mizzet, Parun",
+     "arch": "Spellslinger",
+     "key": "niv",
+     "link": "https://edhrec.com/average-decks/niv-mizzet-parun",
+     "fetched": "2026-10-02",
+     "win_share": 43.4,
+     "killed_me": 42.7,
+     "i_killed": 18.1,
+     "my_vs_b3": 17.0,
+     "my_vs_b4": 18.8,
+     "how": [
+      [
+       "Niv-Mizzet, Parun + Tandem Lookout",
+       95
+      ],
+      [
+       "Niv-Mizzet, Parun + Curiosity",
+       63
+      ],
+      [
+       "Niv-Mizzet, Parun + Ophidian Eye",
+       59
+      ],
+      [
+       "Combat damage",
+       32
+      ]
+     ],
+     "threats": [
+      "Decanter of Endless Water",
+      "Ophidian Eye",
+      "Opt",
+      "Talisman of Creativity",
+      "Arcane Signet"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 21.4,
+    "1": 16.8,
+    "2": 18.5,
+    "3": 14.4
+   },
+   "attack_share": 19.4,
+   "samples": [
+    {
+     "won": true,
+     "rounds": 16,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T3 Niv-Mizzet counters Birgi's Birgi, God of Storytelling with Mana Drain",
+      "T4 You casts Toxic Deluge",
+      "T4 You WIPE Toxic Deluge",
+      "T7 Birgi counters Niv-Mizzet's Niv-Mizzet, Parun with Pyroblast",
+      "T8 Birgi counters your Toxrill, the Corrosive with Red Elemental Blast",
+      "T8 Niv-Mizzet counters Kinnan's Kinnan, Bonder Prodigy with Counterspell",
+      "T9 Kinnan counters Birgi's Birgi, God of Storytelling with Counterspell",
+      "T9 Kinnan eliminated (combat by Birgi)",
+      "T9 Birgi counters Niv-Mizzet's Cyclonic Rift with Tibalt's Trickery",
+      "T10 You casts Toxrill, the Corrosive",
+      "T10 Niv-Mizzet WIPE Vandalblast",
+      "T11 You Bojuka Bog exiles Birgi graveyard (59)",
+      "T11 You casts Massacre Girl, Known Killer",
+      "T11 Niv-Mizzet eliminated (combat by You)",
+      "T16 Birgi eliminated (decked)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 12,
+     "players": [
+      "You",
+      "Niv-Mizzet",
+      "Birgi",
+      "Kinnan"
+     ],
+     "lines": [
+      "T4 Niv-Mizzet counters Birgi's Aetherflux Reservoir with Arcane Denial",
+      "T6 Kinnan counters your Rhystic Study with An Offer You Can't Refuse",
+      "T6 You counters Kinnan's Rhystic Study with Negate",
+      "T7 You casts Toxrill, the Corrosive",
+      "T7 Niv-Mizzet counters Birgi's Grapeshot with An Offer You Can't Refuse",
+      "T7 Niv-Mizzet eliminated (storm by Birgi)",
+      "T10 Kinnan eliminated (death by You)",
+      "T11 You counters Birgi's Birgi, God of Storytelling with Counterspell",
+      "T12 You eliminated (decked)"
+     ]
+    },
+    {
+     "won": true,
+     "rounds": 15,
+     "players": [
+      "Kinnan",
+      "You",
+      "Birgi",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T2 Kinnan counters Birgi's Birgi, God of Storytelling with Counterspell",
+      "T6 You casts Toxrill, the Corrosive",
+      "T6 Niv-Mizzet counters Birgi's Aetherflux Reservoir with An Offer You Can't Refuse",
+      "T9 Kinnan eliminated (combat by You)",
+      "T11 You counters Birgi's Birgi, God of Storytelling with Arcane Denial",
+      "T12 Niv-Mizzet counters your Rhystic Study with Fierce Guardianship",
+      "T12 Niv-Mizzet eliminated (etb by Birgi)",
+      "T15 You casts Massacre Girl, Known Killer",
+      "T15 Birgi eliminated (death by You)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Stax & control",
+   "slug": "stax-control",
+   "games": 635,
+   "series": 300,
+   "series_win": 0.7,
+   "game_win": 6.0,
+   "avg_place": 2.67,
+   "avg_rounds": 16.5,
+   "place": {
+    "3": 154,
+    "1": 39,
+    "4": 155,
+    "2": 287
+   },
+   "draws": 42,
+   "first_out": 24.4,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Lifegain control",
+     112
+    ],
+    [
+     "Combat damage",
+     "Lifegain control",
+     98
+    ],
+    [
+     "Lifegain drains",
+     "Lifegain control",
+     87
+    ],
+    [
+     "Alternate win",
+     "Lifegain control",
+     79
+    ],
+    [
+     "Infinite combo",
+     "Counterspell control",
+     67
+    ],
+    [
+     "Combat damage",
+     "Stax",
+     32
+    ],
+    [
+     "Combat damage",
+     "Counterspell control",
+     22
+    ]
+   ],
+   "losses": 597,
+   "kills": [
+    [
+     "Combat damage",
+     298
+    ],
+    [
+     "Death-trigger drains",
+     88
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 1.77,
+    "wipes": 1.2,
+    "removal": 1.37,
+    "dmg": 44.73
+   },
+   "countered": [
+    [
+     "Toxrill, the Corrosive",
+     481
+    ],
+    [
+     "Rhystic Study",
+     218
+    ],
+    [
+     "Propaganda",
+     107
+    ],
+    [
+     "Massacre Girl, Known Killer",
+     64
+    ]
+   ],
+   "removed": [
+    [
+     "Toxrill, the Corrosive",
+     331
+    ],
+    [
+     "Yawgmoth, Thran Physician",
+     71
+    ],
+    [
+     "Syr Konrad, the Grim",
+     62
+    ],
+    [
+     "Drivnod, Carnage Dominus",
+     43
+    ]
+   ],
+   "wiped": [
+    [
+     "Supreme Verdict",
+     221
+    ],
+    [
+     "Farewell",
+     135
+    ],
+    [
+     "Damn",
+     111
+    ],
+    [
+     "Fumigate",
+     94
+    ]
+   ],
+   "impact": [
+    [
+     "Black Market",
+     208,
+     13,
+     3
+    ],
+    [
+     "Morbid Opportunist",
+     199,
+     13,
+     3
+    ],
+    [
+     "Syr Konrad, the Grim",
+     202,
+     12,
+     3
+    ],
+    [
+     "Yawgmoth, Thran Physician",
+     233,
+     12,
+     3
+    ],
+    [
+     "Massacre Girl, Known Killer",
+     189,
+     12,
+     3
+    ],
+    [
+     "Slaughter Specialist",
+     223,
+     12,
+     3
+    ],
+    [
+     "Phyrexian Arena",
+     201,
+     11,
+     3
+    ],
+    [
+     "Zulaport Cutthroat",
+     245,
+     11,
+     3
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Grand Arbiter Augustin IV",
+     "arch": "Stax",
+     "key": "gaa",
+     "link": "https://edhrec.com/average-decks/grand-arbiter-augustin-iv",
+     "fetched": "2026-10-02",
+     "win_share": 5.5,
+     "killed_me": 8.3,
+     "i_killed": 26.8,
+     "my_vs_b3": 6.5,
+     "my_vs_b4": 5.5,
+     "how": [
+      [
+       "Combat damage",
+       32
+      ],
+      [
+       "Alternate win",
+       18
+      ],
+      [
+       "Upkeep triggers",
+       3
+      ]
+     ],
+     "threats": [
+      "Land Tax",
+      "Windborn Muse",
+      "Farewell",
+      "Teferi, Time Raveler",
+      "Strict Proctor"
+     ]
+    },
+    {
+     "cmd": "Baral, Chief of Compliance",
+     "arch": "Counterspell control",
+     "key": "baral",
+     "link": "https://edhrec.com/average-decks/baral-chief-of-compliance",
+     "fetched": "2026-10-02",
+     "win_share": 12.8,
+     "killed_me": 14.0,
+     "i_killed": 29.0,
+     "my_vs_b3": 3.5,
+     "my_vs_b4": 8.0,
+     "how": [
+      [
+       "Hullbreaker Horror + Sol Ring",
+       67
+      ],
+      [
+       "Combat damage",
+       22
+      ]
+     ],
+     "threats": [
+      "Hullbreaker Horror",
+      "Propaganda",
+      "Opt",
+      "Teferi's Ageless Insight",
+      "Triskaidekaphile"
+     ]
+    },
+    {
+     "cmd": "Oloro, Ageless Ascetic",
+     "arch": "Lifegain control",
+     "key": "oloro",
+     "link": "https://edhrec.com/average-decks/oloro-ageless-ascetic",
+     "fetched": "2026-10-02",
+     "win_share": 69.1,
+     "killed_me": 63.9,
+     "i_killed": 5.0,
+     "my_vs_b3": 4.9,
+     "my_vs_b4": 6.8,
+     "how": [
+      [
+       "Combat damage",
+       98
+      ],
+      [
+       "Lifegain drains",
+       87
+      ],
+      [
+       "Alternate win",
+       79
+      ],
+      [
+       "Sanguine Bond + Exquisite Blood",
+       32
+      ]
+     ],
+     "threats": [
+      "Alhammarret's Archive",
+      "Demonic Tutor",
+      "Phyrexian Arena",
+      "Vito, Thorn of the Dusk Rose",
+      "Bolas's Citadel"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 5.0,
+    "1": 7.9,
+    "2": 5.5,
+    "3": 5.7
+   },
+   "attack_share": 9.7,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 12,
+     "players": [
+      "Oloro",
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV"
+     ],
+     "lines": [
+      "T4 You counters Oloro's Grand Abolisher with Arcane Denial",
+      "T5 Baral counters Grand Arbiter Augustin IV's Approach of the Second Sun with Fierce Guardianship",
+      "T6 Baral counters your Massacre Girl, Known Killer with Pact of Negation",
+      "T6 Baral counters Grand Arbiter Augustin IV's Absolute Virtue with Force of Will",
+      "T8 Baral counters Oloro's Exquisite Blood with Swan Song",
+      "T9 Baral counters Oloro's Propaganda with Force of Negation",
+      "T10 Baral counters Oloro's Oloro, Ageless Ascetic with Dissipate",
+      "T10 Baral casts Jin-Gitaxias, Progress Tyrant",
+      "T10 You casts Toxrill, the Corrosive",
+      "T10 Oloro eliminated (combat by You)",
+      "T11 Baral Jin-Gitaxias counters Tezzeret's Gambit",
+      "T11 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Counterspell",
+      "T12 Baral wins via combo: Hullbreaker Horror + Sol Ring",
+      "T12 You eliminated (combo: Hullbreaker Horror + Sol Ring by Baral)",
+      "T12 Grand Arbiter Augustin IV eliminated (combo: Hullbreaker Horror + Sol Ring by Baral)"
+     ]
+    },
+    {
+     "won": true,
+     "rounds": 25,
+     "players": [
+      "Oloro",
+      "Grand Arbiter Augustin IV",
+      "You",
+      "Baral"
+     ],
+     "lines": [
+      "T3 Oloro counters your Rhystic Study with Mana Drain",
+      "T4 Grand Arbiter Augustin IV counters Oloro's Authority of the Consuls with An Offer You Can't Refuse",
+      "T6 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Mana Sculpt",
+      "T7 Grand Arbiter Augustin IV counters Oloro's Ghostly Prison with Dovin's Veto",
+      "T8 Grand Arbiter Augustin IV counters Oloro's Blind Obedience with Render Silent",
+      "T8 You counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Counterspell",
+      "T8 Grand Arbiter Augustin IV counters your Toxrill, the Corrosive with Mana Drain",
+      "T9 Grand Arbiter Augustin IV WIPE Supreme Verdict",
+      "T9 You casts Toxrill, the Corrosive",
+      "T12 You counters Oloro's Damn with An Offer You Can't Refuse",
+      "T12 You casts Toxrill, the Corrosive",
+      "T13 Oloro counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Counterspell",
+      "T13 Baral counters your Propaganda with Swan Song",
+      "T14 Baral counters Oloro's Oloro, Ageless Ascetic with Ertai's Scorn",
+      "T15 You casts Toxrill, the Corrosive",
+      "T16 Baral counters Oloro's Oloro, Ageless Ascetic with Strix Serenade",
+      "T16 Baral counters Grand Arbiter Augustin IV's Ghostly Prison with Arcane Denial",
+      "T16 You casts Toxrill, the Corrosive",
+      "T17 You counters Baral's Archmage Emeritus with Arcane Denial",
+      "T19 Baral counters Oloro's Exsanguinate with Muddle the Mixture",
+      "T19 Oloro WIPE Supreme Verdict",
+      "T19 Baral counters Oloro's Exquisite Blood with Unwind",
+      "T19 Baral eliminated (combat by Oloro)",
+      "T19 You casts Toxrill, the Corrosive",
+      "T20 You casts Toxrill, the Corrosive",
+      "T21 You casts Massacre Girl, Known Killer",
+      "T22 Oloro eliminated (decked)",
+      "T25 Grand Arbiter Augustin IV eliminated (combat by You)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 19,
+     "players": [
+      "You",
+      "Grand Arbiter Augustin IV",
+      "Baral",
+      "Oloro"
+     ],
+     "lines": [
+      "T3 You counters Oloro's Kambal, Consul of Allocation with Counterspell",
+      "T4 Baral counters Grand Arbiter Augustin IV's Drannith Magistrate with Mana Sculpt",
+      "T4 Grand Arbiter Augustin IV counters Baral's Baral, Chief of Compliance with Mana Leak",
+      "T6 Baral WIPE Cyclonic Rift",
+      "T8 You Bojuka Bog exiles Grand Arbiter Augustin IV graveyard (4)",
+      "T8 You counters Grand Arbiter Augustin IV's Sphere of Safety with Swan Song",
+      "T11 You counters Oloro's Exquisite Blood with Negate",
+      "T12 Grand Arbiter Augustin IV counters Oloro's Propaganda with Swan Song",
+      "T12 Baral counters Oloro's Well of Lost Dreams with Swan Song",
+      "T13 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Pact of Negation",
+      "T13 Baral counters Oloro's Supreme Verdict with Dispel",
+      "T13 Baral counters Oloro's Grand Arbiter Augustin IV with Strix Serenade",
+      "T14 Baral counters Oloro's Blind Obedience with Force of Will",
+      "T14 Baral counters Oloro's Bolas's Citadel with Fierce Guardianship",
+      "T15 Baral counters your Massacre Wurm with Counterspell",
+      "T15 Baral counters Grand Arbiter Augustin IV's Jin-Gitaxias, Progress Tyrant with Ertai's Scorn",
+      "T15 Baral casts Jin-Gitaxias, Progress Tyrant",
+      "T15 Baral counters Oloro's Vito, Thorn of the Dusk Rose with Rewind",
+      "T16 You casts Toxrill, the Corrosive",
+      "T17 Baral Jin-Gitaxias counters Lightning Greaves",
+      "T17 Grand Arbiter Augustin IV eliminated (combat by You)",
+      "T17 Oloro counters Baral's Baral, Chief of Compliance with Mana Drain",
+      "T17 Baral counters Oloro's Exsanguinate with Force of Negation",
+      "T17 Baral counters Oloro's Oloro, Ageless Ascetic with Arcane Denial",
+      "T18 Oloro WIPE Damn",
+      "T18 You eliminated (lifegain by Oloro)",
+      "T19 Baral counters Oloro's Test of Endurance with Negate",
+      "T19 Baral eliminated (lifegain by Oloro)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Go-wide",
+   "slug": "go-wide",
+   "games": 725,
+   "series": 300,
+   "series_win": 26.3,
+   "game_win": 32.6,
+   "avg_place": 2.5,
+   "avg_rounds": 10.3,
+   "place": {
+    "4": 220,
+    "1": 236,
+    "2": 110,
+    "3": 159
+   },
+   "draws": 5,
+   "first_out": 30.3,
+   "deaths": [
+    [
+     "Combat damage",
+     "Tokens",
+     291
+    ],
+    [
+     "Combat damage",
+     "Elf typal",
+     97
+    ],
+    [
+     "Combat damage",
+     "Landfall",
+     70
+    ],
+    [
+     "Decked",
+     null,
+     12
+    ],
+    [
+     "Lathril activation",
+     "Elf typal",
+     7
+    ],
+    [
+     "Death-trigger drains",
+     "Elf typal",
+     6
+    ],
+    [
+     "Burn spells",
+     "Tokens",
+     4
+    ]
+   ],
+   "losses": 489,
+   "kills": [
+    [
+     "Combat damage",
+     347
+    ],
+    [
+     "Death-trigger drains",
+     330
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.28,
+    "wipes": 0.22,
+    "removal": 0.66,
+    "dmg": 49.27
+   },
+   "countered": [
+    [
+     "Rhystic Study",
+     87
+    ],
+    [
+     "Propaganda",
+     34
+    ],
+    [
+     "Toxrill, the Corrosive",
+     27
+    ],
+    [
+     "Phyrexian Arena",
+     15
+    ]
+   ],
+   "removed": [
+    [
+     "Toxrill, the Corrosive",
+     135
+    ],
+    [
+     "Rhystic Study",
+     56
+    ],
+    [
+     "Revel in Riches",
+     27
+    ],
+    [
+     "Skullclamp",
+     24
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     78
+    ],
+    [
+     "Kindred Dominance",
+     56
+    ],
+    [
+     "Martial Coup",
+     24
+    ]
+   ],
+   "impact": [
+    [
+     "Toxrill, the Corrosive",
+     347,
+     67,
+     1
+    ],
+    [
+     "Drivnod, Carnage Dominus",
+     105,
+     75,
+     25
+    ],
+    [
+     "Syr Konrad, the Grim",
+     142,
+     67,
+     24
+    ],
+    [
+     "Massacre Girl, Known Killer",
+     122,
+     67,
+     26
+    ],
+    [
+     "Propaganda",
+     148,
+     58,
+     26
+    ],
+    [
+     "Mirkwood Bats",
+     120,
+     59,
+     27
+    ],
+    [
+     "Gisa, Glorious Resurrector",
+     121,
+     59,
+     27
+    ],
+    [
+     "Blood Artist",
+     158,
+     57,
+     26
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Jetmir, Nexus of Revels",
+     "arch": "Tokens",
+     "key": "jetmir",
+     "link": "https://edhrec.com/average-decks/jetmir-nexus-of-revels",
+     "fetched": "2026-10-02",
+     "win_share": 38.1,
+     "killed_me": 40.8,
+     "i_killed": 33.4,
+     "my_vs_b3": 34.1,
+     "my_vs_b4": 30.7,
+     "how": [
+      [
+       "Combat damage",
+       291
+      ],
+      [
+       "Burn spells",
+       4
+      ],
+      [
+       "Commander damage",
+       1
+      ]
+     ],
+     "threats": [
+      "Beastmaster Ascension",
+      "Craterhoof Behemoth",
+      "Sol Ring",
+      "Finale of Devastation",
+      "Avacyn's Pilgrim"
+     ]
+    },
+    {
+     "cmd": "Tatyova, Benthic Druid",
+     "arch": "Landfall",
+     "key": "tatyova",
+     "link": "https://edhrec.com/average-decks/tatyova-benthic-druid",
+     "fetched": "2026-10-02",
+     "win_share": 14.6,
+     "killed_me": 9.7,
+     "i_killed": 26.9,
+     "my_vs_b3": 30.8,
+     "my_vs_b4": 34.4,
+     "how": [
+      [
+       "Combat damage",
+       70
+      ]
+     ],
+     "threats": [
+      "Finale of Devastation",
+      "Roiling Regrowth"
+     ]
+    },
+    {
+     "cmd": "Lathril, Blade of the Elves",
+     "arch": "Elf typal",
+     "key": "lathril",
+     "link": "https://edhrec.com/average-decks/lathril-blade-of-the-elves",
+     "fetched": "2026-10-02",
+     "win_share": 14.1,
+     "killed_me": 15.3,
+     "i_killed": 33.1,
+     "my_vs_b3": 33.9,
+     "my_vs_b4": 31.3,
+     "how": [
+      [
+       "Combat damage",
+       97
+      ],
+      [
+       "Lathril activation",
+       7
+      ],
+      [
+       "Death-trigger drains",
+       6
+      ],
+      [
+       "Burn spells",
+       1
+      ]
+     ],
+     "threats": [
+      "Ezuri, Renegade Leader",
+      "Craterhoof Behemoth",
+      "Finale of Devastation",
+      "Elvish Champion",
+      "Reclamation Sage"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 38.2,
+    "1": 33.9,
+    "2": 32.4,
+    "3": 25.6
+   },
+   "attack_share": 20.8,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Tatyova",
+      "Jetmir",
+      "You",
+      "Lathril"
+     ],
+     "lines": [
+      "T3 You counters Tatyova's Tatyova, Benthic Druid with Arcane Denial",
+      "T7 You eliminated (combat by Jetmir)",
+      "T8 Tatyova WIPE Cyclonic Rift",
+      "T9 Tatyova OVERRUN Finale of Devastation (+10)",
+      "T9 Lathril eliminated (combat by Tatyova)",
+      "T10 Jetmir eliminated (combat by Tatyova)"
+     ]
+    },
+    {
+     "won": true,
+     "rounds": 16,
+     "players": [
+      "You",
+      "Jetmir",
+      "Tatyova",
+      "Lathril"
+     ],
+     "lines": [
+      "T4 You counters Tatyova's Tatyova, Benthic Druid with Counterspell",
+      "T5 You casts Toxrill, the Corrosive",
+      "T7 You casts Rhystic Study",
+      "T7 Jetmir WIPE Martial Coup",
+      "T8 You casts Toxrill, the Corrosive",
+      "T9 Tatyova eliminated (combat by You)",
+      "T12 Jetmir eliminated (combat by You)",
+      "T16 You Bojuka Bog exiles Lathril graveyard (7)",
+      "T16 Lathril eliminated (death by You)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 11,
+     "players": [
+      "Jetmir",
+      "Lathril",
+      "Tatyova",
+      "You"
+     ],
+     "lines": [
+      "T4 Tatyova counters Jetmir's Jetmir, Nexus of Revels with Counterspell",
+      "T7 You eliminated (combat by Lathril)",
+      "T9 Lathril Lathril drains 10",
+      "T10 Lathril eliminated (combat by Jetmir)",
+      "T11 Tatyova eliminated (combat by Jetmir)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Graveyard & big threats",
+   "slug": "graveyard-big-threats",
+   "games": 709,
+   "series": 300,
+   "series_win": 13.7,
+   "game_win": 23.6,
+   "avg_place": 2.58,
+   "avg_rounds": 12.7,
+   "place": {
+    "2": 157,
+    "1": 172,
+    "4": 206,
+    "3": 174
+   },
+   "draws": 10,
+   "first_out": 29.1,
+   "deaths": [
+    [
+     "Combat damage",
+     "Voltron",
+     172
+    ],
+    [
+     "Commander damage",
+     "Voltron",
+     146
+    ],
+    [
+     "Death-trigger drains",
+     "Aristocrats",
+     95
+    ],
+    [
+     "Death-trigger drains",
+     "Reanimator",
+     46
+    ],
+    [
+     "Combat damage",
+     "Reanimator",
+     39
+    ],
+    [
+     "Combat damage",
+     "Aristocrats",
+     23
+    ],
+    [
+     "Infinite combo",
+     "Reanimator",
+     7
+    ]
+   ],
+   "losses": 542,
+   "kills": [
+    [
+     "Combat damage",
+     357
+    ],
+    [
+     "Death-trigger drains",
+     195
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.04,
+    "wipes": 1.31,
+    "removal": 1.09,
+    "dmg": 44.04
+   },
+   "countered": [
+    [
+     "Toxrill, the Corrosive",
+     15
+    ],
+    [
+     "Propaganda",
+     6
+    ],
+    [
+     "Rhystic Study",
+     4
+    ],
+    [
+     "Massacre Girl, Known Killer",
+     3
+    ]
+   ],
+   "removed": [
+    [
+     "Toxrill, the Corrosive",
+     208
+    ],
+    [
+     "Rhystic Study",
+     106
+    ],
+    [
+     "Syr Konrad, the Grim",
+     40
+    ],
+    [
+     "Propaganda",
+     38
+    ]
+   ],
+   "wiped": [
+    [
+     "Winds of Rath",
+     402
+    ],
+    [
+     "Toxic Deluge",
+     160
+    ],
+    [
+     "Living Death",
+     137
+    ],
+    [
+     "Damn",
+     82
+    ]
+   ],
+   "impact": [
+    [
+     "Syr Konrad, the Grim",
+     192,
+     54,
+     12
+    ],
+    [
+     "Zulaport Cutthroat",
+     174,
+     50,
+     15
+    ],
+    [
+     "Toxrill, the Corrosive",
+     476,
+     35,
+     0
+    ],
+    [
+     "Drivnod, Carnage Dominus",
+     134,
+     51,
+     17
+    ],
+    [
+     "Blood Artist",
+     191,
+     46,
+     15
+    ],
+    [
+     "Massacre Girl, Known Killer",
+     171,
+     47,
+     16
+    ],
+    [
+     "Skullclamp",
+     188,
+     45,
+     16
+    ],
+    [
+     "Morbid Opportunist",
+     179,
+     45,
+     16
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Meren of Clan Nel Toth",
+     "arch": "Reanimator",
+     "key": "meren",
+     "link": "https://edhrec.com/average-decks/meren-of-clan-nel-toth",
+     "fetched": "2026-10-02",
+     "win_share": 11.4,
+     "killed_me": 13.8,
+     "i_killed": 26.0,
+     "my_vs_b3": 23.5,
+     "my_vs_b4": 23.6,
+     "how": [
+      [
+       "Death-trigger drains",
+       46
+      ],
+      [
+       "Combat damage",
+       39
+      ],
+      [
+       "Burn spells",
+       6
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Zulaport Cutthroat",
+       3
+      ]
+     ],
+     "threats": [
+      "Entomb",
+      "Llanowar Elves"
+     ]
+    },
+    {
+     "cmd": "Teysa Karlov",
+     "arch": "Aristocrats",
+     "key": "teysa",
+     "link": "https://edhrec.com/average-decks/teysa-karlov",
+     "fetched": "2026-10-02",
+     "win_share": 16.2,
+     "killed_me": 16.6,
+     "i_killed": 24.8,
+     "my_vs_b3": 21.2,
+     "my_vs_b4": 25.7,
+     "how": [
+      [
+       "Death-trigger drains",
+       95
+      ],
+      [
+       "Combat damage",
+       23
+      ]
+     ],
+     "threats": [
+      "Carrion Feeder",
+      "Vampiric Tutor"
+     ]
+    },
+    {
+     "cmd": "Light-Paws, Emperor's Voice",
+     "arch": "Voltron",
+     "key": "lightpaws",
+     "link": "https://edhrec.com/average-decks/light-paws-emperors-voice",
+     "fetched": "2026-10-02",
+     "win_share": 47.4,
+     "killed_me": 44.9,
+     "i_killed": 27.1,
+     "my_vs_b3": 24.2,
+     "my_vs_b4": 23.0,
+     "how": [
+      [
+       "Combat damage",
+       172
+      ],
+      [
+       "Commander damage",
+       146
+      ]
+     ],
+     "threats": [
+      "Shield of Duty and Reason",
+      "Sigarda's Aid",
+      "Battle Mastery",
+      "Mantle of the Ancients",
+      "Mother of Runes"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 25.4,
+    "1": 26.6,
+    "2": 21.3,
+    "3": 20.7
+   },
+   "attack_share": 31.2,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You",
+      "Light-Paws"
+     ],
+     "lines": [
+      "T2 You counters Light-Paws's Light-Paws, Emperor's Voice with Arcane Denial",
+      "T4 You counters Teysa Karlov's Teysa Karlov with Mana Drain",
+      "T5 Light-Paws WIPE Winds of Rath",
+      "T6 You casts Rhystic Study",
+      "T7 Teysa Karlov eliminated (combat by Light-Paws)",
+      "T8 You casts Toxrill, the Corrosive",
+      "T9 Meren of Clan Nel Toth eliminated (commander damage by Light-Paws)",
+      "T10 You eliminated (combat by Light-Paws)"
+     ]
+    },
+    {
+     "won": true,
+     "rounds": 23,
+     "players": [
+      "Light-Paws",
+      "Meren of Clan Nel Toth",
+      "You",
+      "Teysa Karlov"
+     ],
+     "lines": [
+      "T3 Light-Paws counters Meren of Clan Nel Toth's Meren of Clan Nel Toth with Rebuff the Wicked",
+      "T4 Teysa Karlov WIPE Damn",
+      "T7 Light-Paws WIPE Winds of Rath",
+      "T10 Meren of Clan Nel Toth eliminated (commander damage by Light-Paws)",
+      "T12 You casts Toxrill, the Corrosive",
+      "T14 You casts Rhystic Study",
+      "T17 Teysa Karlov eliminated (combat by You)",
+      "T22 You casts Massacre Girl, Known Killer",
+      "T23 Light-Paws eliminated (combat by You)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Teysa Karlov",
+      "Light-Paws",
+      "Meren of Clan Nel Toth",
+      "You"
+     ],
+     "lines": [
+      "T3 You counters Meren of Clan Nel Toth's Meren of Clan Nel Toth with Counterspell",
+      "T6 Light-Paws WIPE Winds of Rath",
+      "T6 You eliminated (death by Teysa Karlov)",
+      "T7 Meren of Clan Nel Toth WIPE Culling Ritual",
+      "T7 Light-Paws eliminated (combat by Meren of Clan Nel Toth)",
+      "T10 Meren of Clan Nel Toth eliminated (death by Teysa Karlov)"
+     ]
+    }
+   ]
+  }
+ ]
+}

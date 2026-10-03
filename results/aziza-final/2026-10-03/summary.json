@@ -1,0 +1,1536 @@
+{
+ "meta": {
+  "date": "2026-10-03",
+  "deck": "aziza-final",
+  "series_per_cat": 300,
+  "series_total": 1200,
+  "games_total": 2788,
+  "list_snapshot": [
+   "Aziza, Mage Tower Captain",
+   "Arcane Signet",
+   "Boros Signet",
+   "Idol of Oblivion",
+   "Skullclamp",
+   "Sol Ring",
+   "Talisman of Conviction",
+   "Twinning Staff",
+   "Arid Mesa",
+   "Battlefield Forge",
+   "Clifftop Retreat",
+   "Command Tower",
+   "Exotic Orchard",
+   "Furycalm Snarl",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Plains",
+   "Radiant Summit",
+   "Rugged Prairie",
+   "Sacred Foundry",
+   "Sokenzan, Crucible of Defiance",
+   "Spectator Seating",
+   "Sunbillow Verge",
+   "Sundown Pass",
+   "Sunscorched Divide",
+   "Turbulent Steppe",
+   "Agate Instigator",
+   "Belladonna Took",
+   "Enduring Innocence",
+   "Molten Gatekeeper",
+   "Monastery Mentor",
+   "Pinnacle Monk",
+   "Prismari Pianist",
+   "Purphoros, God of the Forge",
+   "Storm-Kiln Artist",
+   "Weftstalker Ardent",
+   "Welcoming Vampire",
+   "Wildfire Awakener",
+   "Witty Roastmaster",
+   "Young Pyromancer",
+   "Caretaker's Talent",
+   "Impact Tremors",
+   "Prosperous Partnership",
+   "Warleader's Call",
+   "Battle Hymn",
+   "Big Score",
+   "Boros Charm",
+   "Call the Coppercoats",
+   "Clever Concealment",
+   "Demand Answers",
+   "Erode",
+   "Flashback",
+   "Frontline Rush",
+   "Grand Crescendo",
+   "Moogles' Valor",
+   "Path to Exile",
+   "Raise the Alarm",
+   "Return the Favor",
+   "Secure the Wastes",
+   "Seething Song",
+   "Swords to Plowshares",
+   "Thrill of Possibility",
+   "Unexpected Windfall",
+   "Will of the Mardu",
+   "Cathartic Reunion",
+   "Dragon Fodder",
+   "Empty the Warrens",
+   "Forth Eorlingas!",
+   "Glimpse the Impossible",
+   "Hop to It",
+   "Hordeling Outburst",
+   "Jeska's Will",
+   "Krenko's Command",
+   "Mana Geyser",
+   "Pirate's Pillage",
+   "Quarrel's End",
+   "Rally at the Hornburg",
+   "Seize the Spoils",
+   "Song of Totentanz",
+   "Sram's Expertise",
+   "Tempt with Bunnies",
+   "Tempt with Vengeance",
+   "Mob Justice"
+  ]
+ },
+ "groups": [
+  {
+   "name": "Combo & storm",
+   "slug": "combo-storm",
+   "games": 719,
+   "series": 300,
+   "series_win": 23.0,
+   "game_win": 31.0,
+   "avg_place": 2.25,
+   "avg_rounds": 7.5,
+   "place": {
+    "4": 119,
+    "1": 225,
+    "2": 206,
+    "3": 169
+   },
+   "draws": 3,
+   "first_out": 16.6,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Turbo combo",
+     162
+    ],
+    [
+     "Infinite combo",
+     "Spellslinger",
+     134
+    ],
+    [
+     "Spell-cast pings",
+     "Storm",
+     92
+    ],
+    [
+     "Combat damage",
+     "Storm",
+     39
+    ],
+    [
+     "Burn spells",
+     "Spellslinger",
+     23
+    ],
+    [
+     "Combat damage",
+     "Spellslinger",
+     15
+    ],
+    [
+     "Burn spells",
+     "Storm",
+     14
+    ]
+   ],
+   "losses": 496,
+   "kills": [
+    [
+     "Combat damage",
+     376
+    ],
+    [
+     "Creature-entry drains",
+     271
+    ],
+    [
+     "Burn spells",
+     29
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.8,
+    "wipes": 0.13,
+    "removal": 1.3,
+    "dmg": 82.93
+   },
+   "countered": [
+    [
+     "Aziza, Mage Tower Captain",
+     312
+    ],
+    [
+     "Impact Tremors",
+     70
+    ],
+    [
+     "Warleader's Call",
+     63
+    ],
+    [
+     "Mob Justice",
+     57
+    ]
+   ],
+   "removed": [
+    [
+     "Aziza, Mage Tower Captain",
+     455
+    ],
+    [
+     "Token",
+     209
+    ],
+    [
+     "Prismari Pianist",
+     54
+    ],
+    [
+     "Young Pyromancer",
+     39
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     48
+    ],
+    [
+     "Vandalblast",
+     26
+    ],
+    [
+     "Blasphemous Act",
+     17
+    ]
+   ],
+   "impact": [
+    [
+     "Pirate's Pillage",
+     66,
+     73,
+     27
+    ],
+    [
+     "Grand Crescendo",
+     42,
+     69,
+     29
+    ],
+    [
+     "Big Score",
+     81,
+     65,
+     27
+    ],
+    [
+     "Unexpected Windfall",
+     77,
+     65,
+     27
+    ],
+    [
+     "Seize the Spoils",
+     77,
+     62,
+     27
+    ],
+    [
+     "Storm-Kiln Artist",
+     112,
+     60,
+     26
+    ],
+    [
+     "Weftstalker Ardent",
+     128,
+     58,
+     25
+    ],
+    [
+     "Pinnacle Monk",
+     92,
+     60,
+     27
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Kinnan, Bonder Prodigy",
+     "arch": "Turbo combo",
+     "key": "kinnan",
+     "link": "https://edhrec.com/average-decks/kinnan-bonder-prodigy",
+     "fetched": "2026-10-02",
+     "win_share": 23.9,
+     "killed_me": 24.2,
+     "i_killed": 33.7,
+     "my_vs_b3": 31.2,
+     "my_vs_b4": 30.8,
+     "how": [
+      [
+       "Kinnan, Bonder Prodigy + Basalt Monolith",
+       145
+      ],
+      [
+       "Combat damage",
+       12
+      ],
+      [
+       "Bloom Tender + Freed from the Real",
+       7
+      ],
+      [
+       "Hullbreaker Horror + Sol Ring",
+       5
+      ]
+     ],
+     "threats": [
+      "Basalt Monolith",
+      "Trophy Mage",
+      "Fabricate",
+      "Arcane Signet"
+     ]
+    },
+    {
+     "cmd": "Birgi, God of Storytelling",
+     "arch": "Storm",
+     "key": "birgi",
+     "link": "https://edhrec.com/average-decks/birgi-god-of-storytelling",
+     "fetched": "2026-10-02",
+     "win_share": 20.4,
+     "killed_me": 20.7,
+     "i_killed": 30.0,
+     "my_vs_b3": 28.3,
+     "my_vs_b4": 33.9,
+     "how": [
+      [
+       "Spell-cast pings",
+       92
+      ],
+      [
+       "Combat damage",
+       39
+      ],
+      [
+       "Burn spells",
+       14
+      ],
+      [
+       "Commander damage",
+       2
+      ]
+     ],
+     "threats": [
+      "Past in Flames",
+      "Mizzix's Mastery",
+      "Coruscation Mage",
+      "Grapeshot",
+      "Fiery Inscription"
+     ]
+    },
+    {
+     "cmd": "Niv-Mizzet, Parun",
+     "arch": "Spellslinger",
+     "key": "niv",
+     "link": "https://edhrec.com/average-decks/niv-mizzet-parun",
+     "fetched": "2026-10-02",
+     "win_share": 24.2,
+     "killed_me": 24.1,
+     "i_killed": 30.3,
+     "my_vs_b3": 28.7,
+     "my_vs_b4": 32.9,
+     "how": [
+      [
+       "Niv-Mizzet, Parun + Curiosity",
+       52
+      ],
+      [
+       "Niv-Mizzet, Parun + Tandem Lookout",
+       41
+      ],
+      [
+       "Niv-Mizzet, Parun + Ophidian Eye",
+       36
+      ],
+      [
+       "Burn spells",
+       23
+      ]
+     ],
+     "threats": [
+      "Niv-Mizzet, Parun",
+      "Curiosity",
+      "Izzet Signet",
+      "Tandem Lookout",
+      "Ophidian Eye"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 35.9,
+    "1": 35.3,
+    "2": 28.3,
+    "3": 24.1
+   },
+   "attack_share": 18.8,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 8,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T2 Birgi counters your Aziza, Mage Tower Captain with Red Elemental Blast",
+      "T4 Niv-Mizzet counters your Aziza, Mage Tower Captain with Mana Drain",
+      "T5 You casts Aziza, Mage Tower Captain",
+      "T6 Kinnan counters Birgi's Aetherflux Reservoir with Swan Song",
+      "T8 Niv-Mizzet counters Birgi's Birgi, God of Storytelling with Arcane Denial",
+      "T8 Kinnan wins via combo: Kinnan, Bonder Prodigy + Basalt Monolith",
+      "T8 You eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T8 Birgi eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T8 Niv-Mizzet eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Kinnan",
+      "You",
+      "Birgi",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T2 Kinnan counters your Aziza, Mage Tower Captain with Mana Drain",
+      "T3 You casts Monastery Mentor",
+      "T4 You casts Aziza, Mage Tower Captain",
+      "T6 Niv-Mizzet breaks Kinnan combo: Pongify on Kinnan, Bonder Prodigy",
+      "T7 Niv-Mizzet WIPE Blasphemous Act",
+      "T8 Birgi breaks Kinnan combo: Lightning Bolt on Kinnan, Bonder Prodigy",
+      "T8 You casts Aziza, Mage Tower Captain",
+      "T9 Kinnan wins via combo: Kinnan, Bonder Prodigy + Basalt Monolith",
+      "T9 You eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T9 Birgi eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T9 Niv-Mizzet eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)"
+     ]
+    },
+    {
+     "won": true,
+     "rounds": 8,
+     "players": [
+      "Birgi",
+      "Niv-Mizzet",
+      "Kinnan",
+      "You"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T6 Niv-Mizzet eliminated (combat by Birgi)",
+      "T7 Kinnan eliminated (combat by Birgi)",
+      "T8 You casts Impact Tremors",
+      "T8 Birgi eliminated (combat by You)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Stax & control",
+   "slug": "stax-control",
+   "games": 701,
+   "series": 300,
+   "series_win": 12.7,
+   "game_win": 22.1,
+   "avg_place": 2.53,
+   "avg_rounds": 13.1,
+   "place": {
+    "3": 139,
+    "4": 193,
+    "2": 213,
+    "1": 156
+   },
+   "draws": 7,
+   "first_out": 27.5,
+   "deaths": [
+    [
+     "Combat damage",
+     "Lifegain control",
+     139
+    ],
+    [
+     "Infinite combo",
+     "Lifegain control",
+     91
+    ],
+    [
+     "Lifegain drains",
+     "Lifegain control",
+     89
+    ],
+    [
+     "Combat damage",
+     "Stax",
+     63
+    ],
+    [
+     "Alternate win",
+     "Lifegain control",
+     50
+    ],
+    [
+     "Infinite combo",
+     "Counterspell control",
+     49
+    ],
+    [
+     "Combat damage",
+     "Counterspell control",
+     35
+    ]
+   ],
+   "losses": 546,
+   "kills": [
+    [
+     "Combat damage",
+     396
+    ],
+    [
+     "Creature-entry drains",
+     246
+    ],
+    [
+     "Burn spells",
+     30
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 2.09,
+    "wipes": 0.91,
+    "removal": 1.08,
+    "dmg": 95.23
+   },
+   "countered": [
+    [
+     "Aziza, Mage Tower Captain",
+     818
+    ],
+    [
+     "Impact Tremors",
+     120
+    ],
+    [
+     "Warleader's Call",
+     106
+    ],
+    [
+     "Mob Justice",
+     66
+    ]
+   ],
+   "removed": [
+    [
+     "Aziza, Mage Tower Captain",
+     640
+    ],
+    [
+     "Purphoros, God of the Forge",
+     41
+    ],
+    [
+     "Witty Roastmaster",
+     7
+    ],
+    [
+     "Weftstalker Ardent",
+     7
+    ]
+   ],
+   "wiped": [
+    [
+     "Supreme Verdict",
+     194
+    ],
+    [
+     "Farewell",
+     113
+    ],
+    [
+     "Toxic Deluge",
+     98
+    ],
+    [
+     "Damn",
+     86
+    ]
+   ],
+   "impact": [
+    [
+     "Mob Justice",
+     128,
+     43,
+     17
+    ],
+    [
+     "Aziza, Mage Tower Captain",
+     701,
+     22,
+     0
+    ],
+    [
+     "Seize the Spoils",
+     124,
+     39,
+     19
+    ],
+    [
+     "Pirate's Pillage",
+     117,
+     39,
+     19
+    ],
+    [
+     "Big Score",
+     116,
+     38,
+     19
+    ],
+    [
+     "Purphoros, God of the Forge",
+     201,
+     36,
+     17
+    ],
+    [
+     "Unexpected Windfall",
+     129,
+     36,
+     19
+    ],
+    [
+     "Skullclamp",
+     217,
+     33,
+     17
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Grand Arbiter Augustin IV",
+     "arch": "Stax",
+     "key": "gaa",
+     "link": "https://edhrec.com/average-decks/grand-arbiter-augustin-iv",
+     "fetched": "2026-10-02",
+     "win_share": 3.4,
+     "killed_me": 9.8,
+     "i_killed": 36.5,
+     "my_vs_b3": 20.8,
+     "my_vs_b4": 23.5,
+     "how": [
+      [
+       "Combat damage",
+       63
+      ],
+      [
+       "Alternate win",
+       5
+      ],
+      [
+       "Upkeep triggers",
+       1
+      ]
+     ],
+     "threats": [
+      "Jin-Gitaxias, Progress Tyrant",
+      "Consecrated Sphinx",
+      "Drannith Magistrate",
+      "Windborn Muse",
+      "Windfall"
+     ]
+    },
+    {
+     "cmd": "Baral, Chief of Compliance",
+     "arch": "Counterspell control",
+     "key": "baral",
+     "link": "https://edhrec.com/average-decks/baral-chief-of-compliance",
+     "fetched": "2026-10-02",
+     "win_share": 9.8,
+     "killed_me": 12.1,
+     "i_killed": 36.8,
+     "my_vs_b3": 21.5,
+     "my_vs_b4": 22.7,
+     "how": [
+      [
+       "Hullbreaker Horror + Sol Ring",
+       49
+      ],
+      [
+       "Combat damage",
+       35
+      ],
+      [
+       "Alternate win",
+       1
+      ]
+     ],
+     "threats": [
+      "Hullbreaker Horror",
+      "Sol Ring",
+      "Rhystic Study",
+      "Brainstorm",
+      "Mystical Tutor"
+     ]
+    },
+    {
+     "cmd": "Oloro, Ageless Ascetic",
+     "arch": "Lifegain control",
+     "key": "oloro",
+     "link": "https://edhrec.com/average-decks/oloro-ageless-ascetic",
+     "fetched": "2026-10-02",
+     "win_share": 63.6,
+     "killed_me": 55.5,
+     "i_killed": 22.5,
+     "my_vs_b3": 22.8,
+     "my_vs_b4": 21.4,
+     "how": [
+      [
+       "Combat damage",
+       139
+      ],
+      [
+       "Lifegain drains",
+       89
+      ],
+      [
+       "Alternate win",
+       50
+      ],
+      [
+       "Sanguine Bond + Exquisite Blood",
+       27
+      ]
+     ],
+     "threats": [
+      "Exquisite Blood",
+      "Sol Ring",
+      "Propaganda",
+      "Sanguine Bond",
+      "Crested Sunmare"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 29.3,
+    "1": 24.5,
+    "2": 20.1,
+    "3": 12.7
+   },
+   "attack_share": 32.8,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 8,
+     "players": [
+      "Oloro",
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T3 You casts Aziza, Mage Tower Captain",
+      "T4 Baral counters Grand Arbiter Augustin IV's Approach of the Second Sun with Fierce Guardianship",
+      "T6 Baral counters Grand Arbiter Augustin IV's Absolute Virtue with Pact of Negation",
+      "T8 Oloro wins via combo: Vito, Thorn of the Dusk Rose + Exquisite Blood",
+      "T8 Baral eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T8 You eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T8 Grand Arbiter Augustin IV eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 11,
+     "players": [
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV",
+      "Oloro"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T4 Grand Arbiter Augustin IV counters Baral's Narset, Parter of Veils with Swan Song",
+      "T4 Oloro counters your Aziza, Mage Tower Captain with Mana Drain",
+      "T5 Grand Arbiter Augustin IV counters your Aziza, Mage Tower Captain with Counterspell",
+      "T6 Baral counters Grand Arbiter Augustin IV's Aura of Silence with Disallow",
+      "T9 You casts Aziza, Mage Tower Captain",
+      "T9 Oloro WIPE Cyclonic Rift",
+      "T9 Grand Arbiter Augustin IV eliminated (combat by Oloro)",
+      "T9 Baral counters Oloro's Aetherflux Reservoir with Counterspell",
+      "T10 Baral counters your Aziza, Mage Tower Captain with Rewind",
+      "T10 You eliminated (combat by Oloro)",
+      "T11 Baral counters Oloro's Well of Lost Dreams with Mana Sculpt",
+      "T11 Baral eliminated (combat by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 12,
+     "players": [
+      "Baral",
+      "Oloro",
+      "Grand Arbiter Augustin IV",
+      "You"
+     ],
+     "lines": [
+      "T2 Baral counters your Aziza, Mage Tower Captain with Dispel",
+      "T3 Grand Arbiter Augustin IV counters Baral's Baral, Chief of Compliance with Force of Will",
+      "T4 Baral counters Oloro's Oloro, Ageless Ascetic with Strix Serenade",
+      "T4 Grand Arbiter Augustin IV counters your Aziza, Mage Tower Captain with Render Silent",
+      "T6 Baral counters Oloro's Sanguine Bond with Muddle the Mixture",
+      "T8 Baral counters Oloro's Black Market Connections with Negate",
+      "T8 Baral counters Grand Arbiter Augustin IV's Consecrated Sphinx with Mana Leak",
+      "T8 You casts Warleader's Call",
+      "T9 Oloro Bojuka Bog exiles Grand Arbiter Augustin IV graveyard (4)",
+      "T10 You casts Aziza, Mage Tower Captain",
+      "T11 You eliminated (lifegain by Oloro)",
+      "T11 Baral counters Grand Arbiter Augustin IV's Sphere of Safety with Fierce Guardianship",
+      "T12 Oloro wins via combo: Exquisite Blood + Bloodthirsty Conqueror",
+      "T12 Baral eliminated (combo: Exquisite Blood + Bloodthirsty Conqueror by Oloro)",
+      "T12 Grand Arbiter Augustin IV eliminated (combo: Exquisite Blood + Bloodthirsty Conqueror by Oloro)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Go-wide",
+   "slug": "go-wide",
+   "games": 683,
+   "series": 300,
+   "series_win": 5.0,
+   "game_win": 15.2,
+   "avg_place": 3.15,
+   "avg_rounds": 8.3,
+   "place": {
+    "4": 380,
+    "2": 69,
+    "3": 130,
+    "1": 104
+   },
+   "draws": 3,
+   "first_out": 55.6,
+   "deaths": [
+    [
+     "Combat damage",
+     "Tokens",
+     341
+    ],
+    [
+     "Combat damage",
+     "Elf typal",
+     140
+    ],
+    [
+     "Combat damage",
+     "Landfall",
+     78
+    ],
+    [
+     "Lathril activation",
+     "Elf typal",
+     9
+    ],
+    [
+     "Death-trigger drains",
+     "Elf typal",
+     7
+    ],
+    [
+     "Creature-entry drains",
+     "Tokens",
+     2
+    ],
+    [
+     "Creature-entry drains",
+     "Elf typal",
+     1
+    ]
+   ],
+   "losses": 579,
+   "kills": [
+    [
+     "Combat damage",
+     142
+    ],
+    [
+     "Creature-entry drains",
+     142
+    ],
+    [
+     "Burn spells",
+     19
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.22,
+    "wipes": 0.17,
+    "removal": 0.46,
+    "dmg": 47.87
+   },
+   "countered": [
+    [
+     "Aziza, Mage Tower Captain",
+     77
+    ],
+    [
+     "Impact Tremors",
+     24
+    ],
+    [
+     "Warleader's Call",
+     20
+    ],
+    [
+     "Mob Justice",
+     20
+    ]
+   ],
+   "removed": [
+    [
+     "Aziza, Mage Tower Captain",
+     194
+    ],
+    [
+     "Skullclamp",
+     26
+    ],
+    [
+     "Warleader's Call",
+     16
+    ],
+    [
+     "Purphoros, God of the Forge",
+     11
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     69
+    ],
+    [
+     "Kindred Dominance",
+     35
+    ],
+    [
+     "Martial Coup",
+     11
+    ]
+   ],
+   "impact": [
+    [
+     "Pirate's Pillage",
+     33,
+     55,
+     13
+    ],
+    [
+     "Seize the Spoils",
+     53,
+     51,
+     12
+    ],
+    [
+     "Unexpected Windfall",
+     62,
+     44,
+     12
+    ],
+    [
+     "Mob Justice",
+     76,
+     39,
+     12
+    ],
+    [
+     "Purphoros, God of the Forge",
+     92,
+     38,
+     12
+    ],
+    [
+     "Storm-Kiln Artist",
+     92,
+     36,
+     12
+    ],
+    [
+     "Big Score",
+     40,
+     38,
+     14
+    ],
+    [
+     "Warleader's Call",
+     91,
+     35,
+     12
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Jetmir, Nexus of Revels",
+     "arch": "Tokens",
+     "key": "jetmir",
+     "link": "https://edhrec.com/average-decks/jetmir-nexus-of-revels",
+     "fetched": "2026-10-02",
+     "win_share": 45.8,
+     "killed_me": 50.4,
+     "i_killed": 15.7,
+     "my_vs_b3": 14.3,
+     "my_vs_b4": 16.1,
+     "how": [
+      [
+       "Combat damage",
+       341
+      ],
+      [
+       "Creature-entry drains",
+       2
+      ],
+      [
+       "Commander damage",
+       1
+      ]
+     ],
+     "threats": [
+      "Beastmaster Ascension",
+      "Aura Shards",
+      "Voice of Victory",
+      "Adeline, Resplendent Cathar",
+      "Craterhoof Behemoth"
+     ]
+    },
+    {
+     "cmd": "Tatyova, Benthic Druid",
+     "arch": "Landfall",
+     "key": "tatyova",
+     "link": "https://edhrec.com/average-decks/tatyova-benthic-druid",
+     "fetched": "2026-10-02",
+     "win_share": 20.1,
+     "killed_me": 11.4,
+     "i_killed": 12.6,
+     "my_vs_b3": 15.2,
+     "my_vs_b4": 15.3,
+     "how": [
+      [
+       "Combat damage",
+       78
+      ]
+     ],
+     "threats": [
+      "Avenger of Zendikar",
+      "Rampaging Baloths",
+      "Lotus Cobra",
+      "Cyclonic Rift",
+      "Burgeoning"
+     ]
+    },
+    {
+     "cmd": "Lathril, Blade of the Elves",
+     "arch": "Elf typal",
+     "key": "lathril",
+     "link": "https://edhrec.com/average-decks/lathril-blade-of-the-elves",
+     "fetched": "2026-10-02",
+     "win_share": 18.4,
+     "killed_me": 23.0,
+     "i_killed": 16.1,
+     "my_vs_b3": 17.7,
+     "my_vs_b4": 12.7,
+     "how": [
+      [
+       "Combat damage",
+       140
+      ],
+      [
+       "Lathril activation",
+       9
+      ],
+      [
+       "Death-trigger drains",
+       7
+      ],
+      [
+       "Creature-entry drains",
+       1
+      ]
+     ],
+     "threats": [
+      "Craterhoof Behemoth",
+      "Ezuri, Renegade Leader",
+      "Kindred Dominance",
+      "Reclamation Sage",
+      "Dwynen, Gilt-Leaf Daen"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 22.8,
+    "1": 14.9,
+    "2": 13.0,
+    "3": 10.4
+   },
+   "attack_share": 46.3,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Tatyova",
+      "Jetmir",
+      "You",
+      "Lathril"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T6 You eliminated (combat by Tatyova)",
+      "T8 Tatyova eliminated (combat by Jetmir)",
+      "T8 Lathril Lathril drains 10",
+      "T9 Lathril eliminated (combat by Jetmir)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 7,
+     "players": [
+      "Tatyova",
+      "Lathril",
+      "Jetmir",
+      "You"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T5 Lathril OVERRUN Craterhoof Behemoth (+7)",
+      "T5 You eliminated (combat by Lathril)",
+      "T6 Lathril Lathril drains 10",
+      "T6 Tatyova eliminated (lathril by Lathril)",
+      "T7 Jetmir eliminated (death by Lathril)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 8,
+     "players": [
+      "Jetmir",
+      "You",
+      "Lathril",
+      "Tatyova"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T7 Jetmir eliminated (combat by You)",
+      "T7 Lathril Lathril drains 10",
+      "T8 You casts Aziza, Mage Tower Captain",
+      "T8 Tatyova eliminated (combat by You)",
+      "T8 Lathril Lathril drains 10",
+      "T8 You eliminated (lathril by Lathril)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Graveyard & big threats",
+   "slug": "graveyard-big-threats",
+   "games": 685,
+   "series": 300,
+   "series_win": 6.0,
+   "game_win": 15.6,
+   "avg_place": 3.14,
+   "avg_rounds": 10.6,
+   "place": {
+    "3": 103,
+    "4": 393,
+    "1": 108,
+    "2": 81
+   },
+   "draws": 10,
+   "first_out": 57.4,
+   "deaths": [
+    [
+     "Combat damage",
+     "Voltron",
+     191
+    ],
+    [
+     "Commander damage",
+     "Voltron",
+     141
+    ],
+    [
+     "Death-trigger drains",
+     "Aristocrats",
+     84
+    ],
+    [
+     "Combat damage",
+     "Reanimator",
+     54
+    ],
+    [
+     "Combat damage",
+     "Aristocrats",
+     52
+    ],
+    [
+     "Death-trigger drains",
+     "Reanimator",
+     47
+    ],
+    [
+     "Infinite combo",
+     "Reanimator",
+     8
+    ]
+   ],
+   "losses": 578,
+   "kills": [
+    [
+     "Creature-entry drains",
+     180
+    ],
+    [
+     "Combat damage",
+     146
+    ],
+    [
+     "Burn spells",
+     25
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.13,
+    "wipes": 1.4,
+    "removal": 0.66,
+    "dmg": 59.21
+   },
+   "countered": [
+    [
+     "Aziza, Mage Tower Captain",
+     78
+    ],
+    [
+     "Grand Crescendo",
+     3
+    ],
+    [
+     "Impact Tremors",
+     2
+    ],
+    [
+     "Purphoros, God of the Forge",
+     2
+    ]
+   ],
+   "removed": [
+    [
+     "Aziza, Mage Tower Captain",
+     264
+    ],
+    [
+     "Idol of Oblivion",
+     30
+    ],
+    [
+     "Warleader's Call",
+     29
+    ],
+    [
+     "Skullclamp",
+     24
+    ]
+   ],
+   "wiped": [
+    [
+     "Winds of Rath",
+     468
+    ],
+    [
+     "Toxic Deluge",
+     164
+    ],
+    [
+     "Living Death",
+     92
+    ],
+    [
+     "Damn",
+     88
+    ]
+   ],
+   "impact": [
+    [
+     "Mob Justice",
+     61,
+     43,
+     13
+    ],
+    [
+     "Purphoros, God of the Forge",
+     113,
+     40,
+     11
+    ],
+    [
+     "Unexpected Windfall",
+     61,
+     41,
+     13
+    ],
+    [
+     "Pirate's Pillage",
+     54,
+     37,
+     14
+    ],
+    [
+     "Seize the Spoils",
+     85,
+     33,
+     13
+    ],
+    [
+     "Agate Instigator",
+     137,
+     31,
+     12
+    ],
+    [
+     "Pinnacle Monk",
+     88,
+     32,
+     13
+    ],
+    [
+     "Storm-Kiln Artist",
+     125,
+     30,
+     12
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Meren of Clan Nel Toth",
+     "arch": "Reanimator",
+     "key": "meren",
+     "link": "https://edhrec.com/average-decks/meren-of-clan-nel-toth",
+     "fetched": "2026-10-02",
+     "win_share": 10.7,
+     "killed_me": 16.1,
+     "i_killed": 17.5,
+     "my_vs_b3": 16.8,
+     "my_vs_b4": 14.5,
+     "how": [
+      [
+       "Combat damage",
+       54
+      ],
+      [
+       "Death-trigger drains",
+       47
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Syr Konrad, the Grim",
+       4
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Zulaport Cutthroat",
+       3
+      ]
+     ],
+     "threats": [
+      "Sheoldred, Whispering One",
+      "Sol Ring",
+      "Zulaport Cutthroat",
+      "Mikaeus, the Unhallowed",
+      "Massacre Wurm"
+     ]
+    },
+    {
+     "cmd": "Teysa Karlov",
+     "arch": "Aristocrats",
+     "key": "teysa",
+     "link": "https://edhrec.com/average-decks/teysa-karlov",
+     "fetched": "2026-10-02",
+     "win_share": 19.3,
+     "killed_me": 19.9,
+     "i_killed": 18.0,
+     "my_vs_b3": 14.7,
+     "my_vs_b4": 16.4,
+     "how": [
+      [
+       "Death-trigger drains",
+       84
+      ],
+      [
+       "Combat damage",
+       52
+      ]
+     ],
+     "threats": [
+      "Liliana, Dreadhorde General",
+      "Priest of Forgotten Gods",
+      "Blood Artist",
+      "Grim Haruspex",
+      "Sephiroth, Fabled SOLDIER"
+     ]
+    },
+    {
+     "cmd": "Light-Paws, Emperor's Voice",
+     "arch": "Voltron",
+     "key": "lightpaws",
+     "link": "https://edhrec.com/average-decks/light-paws-emperors-voice",
+     "fetched": "2026-10-02",
+     "win_share": 53.0,
+     "killed_me": 48.5,
+     "i_killed": 15.8,
+     "my_vs_b3": 14.6,
+     "my_vs_b4": 16.8,
+     "how": [
+      [
+       "Combat damage",
+       191
+      ],
+      [
+       "Commander damage",
+       141
+      ]
+     ],
+     "threats": [
+      "Winds of Rath",
+      "Kor Spiritdancer",
+      "Battle Mastery",
+      "Twinblade Blessing",
+      "Ethereal Armor"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 16.2,
+    "1": 17.5,
+    "2": 14.5,
+    "3": 14.0
+   },
+   "attack_share": 56.9,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Light-Paws",
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You"
+     ],
+     "lines": [
+      "T2 Light-Paws counters your Aziza, Mage Tower Captain with Rebuff the Wicked",
+      "T3 You casts Aziza, Mage Tower Captain",
+      "T4 You casts Purphoros, God of the Forge",
+      "T5 Light-Paws WIPE Winds of Rath",
+      "T6 You casts Aziza, Mage Tower Captain",
+      "T7 Teysa Karlov eliminated (combat by Light-Paws)",
+      "T9 You eliminated (death by Meren of Clan Nel Toth)",
+      "T9 Meren of Clan Nel Toth WIPE Massacre Wurm",
+      "T10 Meren of Clan Nel Toth eliminated (combat by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Light-Paws",
+      "You",
+      "Meren of Clan Nel Toth",
+      "Teysa Karlov"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T2 Meren of Clan Nel Toth Bojuka Bog exiles Light-Paws graveyard (1)",
+      "T6 Light-Paws WIPE Winds of Rath",
+      "T6 You casts Aziza, Mage Tower Captain",
+      "T9 Meren of Clan Nel Toth WIPE Massacre Wurm",
+      "T9 Light-Paws eliminated (death by Teysa Karlov)",
+      "T9 You eliminated (wurm by Meren of Clan Nel Toth)",
+      "T9 Meren of Clan Nel Toth eliminated (death by Teysa Karlov)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 11,
+     "players": [
+      "Light-Paws",
+      "Teysa Karlov",
+      "You",
+      "Meren of Clan Nel Toth"
+     ],
+     "lines": [
+      "T2 You casts Aziza, Mage Tower Captain",
+      "T5 Light-Paws WIPE Winds of Rath",
+      "T5 You casts Aziza, Mage Tower Captain",
+      "T7 Teysa Karlov WIPE Toxic Deluge",
+      "T7 You casts Aziza, Mage Tower Captain",
+      "T9 You eliminated (combat by Light-Paws)",
+      "T10 Meren of Clan Nel Toth eliminated (commander damage by Light-Paws)",
+      "T11 Teysa Karlov eliminated (commander damage by Light-Paws)"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -432,6 +432,12 @@ class Game:
     # ---------------------------------------------------------------- triggers
     def etb_triggers(s, P, perms):
         if s.no_triggers(): return
+        for perm in P.bf:
+            d = getattr(perm.card, 'draw_once', None) if perm.card else None
+            if not d or perm.neutral or getattr(perm, 'once_turn', -1) == (s.round, s.active.idx if s.active else 0): continue
+            ok = any((d == 'token' and x.token) or (d == 'small' and s.power(x) <= 2 and x is not perm)
+                     or (d == 'mv3' and (x.token or (x.card and x.card.cmc <= 3))) for x in perms if x.creature)
+            if ok: perm.once_turn = (s.round, s.active.idx if s.active else 0); P.draw(1)
         for q in s.players:
             if not q.alive: continue
             for perm in q.bf:
@@ -582,6 +588,9 @@ class Game:
     def cast(s, P, c, from_cmd=False, free=False, from_gy=False):
         cost = 0 if free else s.cost(P, c, from_cmd)
         if not free and not s.pay(P, cost): return False
+        P.cur_x = 0
+        if getattr(c, 'x_tokens', False):
+            P.cur_x = max(0, s.avail(P) - (P.pilot.get('x_reserve', 0) if P.is_me else 0)); s.pay(P, P.cur_x)
         if from_cmd: P.cmd_zone = False
         elif from_gy: P.gy.remove(c)
         else: P.hand.remove(c)
@@ -595,7 +604,47 @@ class Game:
             else: P.gy.append(c)
             return True
         s.resolve(P, c, from_cmd)
+        if (c.is_instant or c.is_sorcery) and P.alive and not s.over:
+            s.aziza_copy(P, c)
+            if c.name == 'Battle Screech' and not from_gy and c in P.gy and len(s.untapped(P)) >= 3:
+                s.tap_n(P, 3); s.log(f'{P.label} flashes back Battle Screech')
+                s.cast(P, c, free=True, from_gy=True)
+                if c in P.gy: P.gy.remove(c)
         return True
+
+    # ---------------------------------------------------------------- spell copying (Aziza, Twinning Staff, magecraft)
+    def untapped(s, P): return [p for p in P.creatures() if not p.tapped and not p.neutral]
+
+    def tap_n(s, P, n):
+        keep = set(P.pilot.get('keep_home', []))
+        pool = sorted(s.untapped(P), key=lambda p: (not p.sick, p.name not in keep, not p.token, s.power(p)))
+        for p in pool[:n]: p.tapped = True
+
+    def magecraft(s, P):
+        for p in P.bf:
+            st = p.card.spell_trig if p.card else None
+            if st and st.get('magecraft') and not p.neutral: s.apply_effect(P, st, why='spell')
+
+    def copy_worth(s, P, c):
+        if c.wipe or c.protect or c.counter or c.fog: return False
+        if c.overrun:
+            atk = [p for p in s.untapped(P) if s.can_attack(p) or c.overrun.get('haste')]
+            return len(atk) - 3 >= 4
+        if c.removal: return s.pick_removal_target(P, c, c.removal) is not None
+        return bool(c.tokens_now or c.ritual or c.special or c.mob or c.treasure_now or c.draw_now or c.drain_now or c.edict)
+
+    def aziza_copy(s, P, c):
+        az = [p for p in P.bf if p.name == 'Aziza, Mage Tower Captain' and not p.neutral]
+        if not az or s.no_triggers() or not s.copy_worth(P, c): return
+        for _ in az:
+            if len(s.untapped(P)) < 3 or not P.alive or s.over: break
+            s.tap_n(P, 3)
+            n = 1 + sum(1 for p in P.bf if p.card and getattr(p.card, 'special', None) == 'twinning' and not p.neutral)
+            for _ in range(n):
+                P.stats['copies'] += 1
+                s.magecraft(P)
+                s.spell_effect(P, c, copy=True)
+                if s.over: return
 
     def resolve(s, P, c, is_cmd=False):
         g = s
@@ -629,6 +678,8 @@ class Game:
 
     def etb(s, P, p, c):
         """ETB / static-on-entry effects of permanent p."""
+        if c.overrun and c.is_creature and not c.overrun.get('static') and not c.overrun.get('activated'):
+            s.apply_overrun(P, c)
         if c.tokens_now:
             n, pw, tg, kw = c.tokens_now
             nm = 'Plant' if c.name == 'Avenger of Zendikar' else 'Insect' if c.name == 'Hornet Queen' else 'Token'
@@ -656,20 +707,31 @@ class Game:
             P.lands += 1; s.landfall(P)
         if c.name in ('Cultivate', "Kodama's Reach"): P.extra_land_cards = getattr(P, 'extra_land_cards', 0) + 1
 
-    def spell_effect(s, P, c):
-        s.log(f'{P.label} casts {c.name}')
+    def spell_effect(s, P, c, copy=False):
+        s.log(f'{P.label} {"copies" if copy else "casts"} {c.name}')
         if c.ritual: P.pool += c.ritual + (c.cmc if c.ritual else 0) - 0
+        sp = getattr(c, 'special', None); opps = P.opps()
+        if sp == 'hymn': P.pool += len(P.creatures())
+        if sp == 'jeska': P.pool += min(7, max([len(q.hand) for q in opps] or [0]))
+        if sp == 'brass': P.treasure += P.lands
+        if sp == 'charm4' and opps: s.lose_life(min(opps, key=lambda q: q.life), 4, P, 'burn')
+        if getattr(c, 'mob', False) and opps: s.lose_life(min(opps, key=lambda q: q.life), len(P.creatures()), P, 'burn')
+        if getattr(c, 'treasure_now', 0): P.treasure += c.treasure_now
+        if sp == 'warrens': s.make_tokens(P, 2 if copy else 2 * max(1, P.spells_turn), 1, 1, set(), name='Goblin')
         if c.draw_now:
             if getattr(c, 'wheel', False):
                 for q in s.players:
                     if q.alive: q.gy += q.hand; q.hand = []; q.draw(7)
             else: P.draw(c.draw_now)
         if c.ramp_lands: s.fetch_lands(P, c)
-        if c.tokens_now:
+        if c.tokens_now and sp != 'warrens':
             n, pw, tg, kw = c.tokens_now
-            if c.name in ('March of the Multitudes', 'Secure the Wastes', 'Elvish Promenade', 'Elven Ambush', 'Call the Coppercoats'):
-                n = max(2, len(P.creatures()) if c.name != 'Secure the Wastes' else 4)
-            s.make_tokens(P, n, pw, tg, kw)
+            if c.name in ('March of the Multitudes', 'Elvish Promenade', 'Elven Ambush'):
+                n = max(2, len(P.creatures()))
+            if getattr(c, 'x_tokens', False): n = getattr(P, 'cur_x', 0)
+            if n == 'oppmax': n = max([len(q.creatures()) for q in opps] or [0])
+            if n == 'own': n = len(P.creatures())
+            if n: s.make_tokens(P, n, pw, tg, kw)
         if c.name in NONTOKEN_EDICT_SPELLS:
             for v in P.opps(): s.force_sac(v, nontoken=True, src=P, why='edict')
         elif c.name in FLYER_EDICT_SPELLS:
@@ -686,7 +748,7 @@ class Game:
             elif d == 'TORMENT': s.torment(P)
             elif d == 'STORM':
                 v = min(opps, key=lambda q: q.life) if opps else None
-                if v: s.lose_life(v, P.spells_turn, P, 'storm')
+                if v: s.lose_life(v, 1 if copy else P.spells_turn, P, 'storm')
             else:
                 for v in opps: s.lose_life(v, d, P, 'drain')
         if c.life_now and c.name != 'Approach of the Second Sun': s.gain(P, c.life_now)
@@ -866,7 +928,8 @@ class Game:
             p.pump += pump; p.pumpt += pump
             if o.get('trample'): p.tmpkw.add('trample')
             if o.get('infect'): p.infect_turn = True
-            if c.name == 'Craterhoof Behemoth': p.tmpkw.add('haste'); p.sick = False
+            if c.name == 'Craterhoof Behemoth' or o.get('haste'): p.tmpkw.add('haste'); p.sick = False
+            p.tmpkw |= set(o.get('kw', ()))
         P.stats['overrun'] += 1
         s.log(f'{P.label} OVERRUN {c.name} (+{pump})')
 
@@ -1067,6 +1130,11 @@ class Game:
                         s.gain(A, 1)
         if A.has('Ohran Frostfang'):
             for a in atk: a.tmpkw.add('deathtouch')
+        for a in atk:
+            if a.name == 'Arabella, Abandoned Doll':
+                x = sum(1 for p in A.creatures() if s.power(p) <= 2)
+                for v in A.opps(): s.lose_life(v, x, A, 'arabella')
+                s.gain(A, x)
         if A.has('Beastmaster Ascension'):
             A.quest += len(atk)
             if A.quest >= 7:
@@ -1298,7 +1366,7 @@ class Game:
             if len(cr) < 3: return 0
             pump = c.overrun['pump']
             pump = len(P.creatures()) + 1 if pump == 'count' else (max([s.power(p) for p in cr] or [0]) if pump == 'maxpow' else pump)
-            total = sum(s.power(p) + pump for p in cr)
+            total = sum(s.power(p) + pump for p in cr) * (2 if 'double strike' in c.overrun.get('kw', ()) else 1)
             if any(total * 0.6 >= v.life for v in opps): return 150
             return 0 if not c.is_creature else 30
         if c.wipe:
@@ -1405,7 +1473,16 @@ class Game:
                 if P.has(n): P.reserve += m; break
         s.check_deaths(P, 'drain')
 
+    def bombard_lethal(s, P):
+        if not any(p.name == 'Goblin Bombardment' and not p.neutral for p in P.bf): return
+        for v in sorted(P.opps(), key=lambda q: q.life):
+            fod = [p for p in P.creatures() if p.token or (p.card and p.name not in s.eng(P) and not p.is_cmd)]
+            if v.alive and v.life <= len(fod):
+                for p in fod[:v.life]: s.kill(p, 'sac', sac=True); s.lose_life(v, 1, P, 'bombardment')
+                s.check_deaths(P, 'bombardment')
+
     def my_sac_phase(s, P):
+        s.bombard_lethal(P)
         if not s.my_worthwhile(P): return
         nt = s.nontoken_sac_ok(P)
         ouphe = s.stax_on(P, 'no_artifact_abilities')
@@ -1470,6 +1547,18 @@ class Game:
             if hold and post and sum(1 for x in P.hand if x.removal) <= 1: return 0
             return 55 + v * 2
         if c.protect or c.counter or c.fog: return 0
+        sp = getattr(c, 'special', None)
+        copy = any(p.name == 'Aziza, Mage Tower Captain' for p in P.bf) and len(s.untapped(P)) >= 3
+        if getattr(c, 'mob', False) or sp == 'charm4':
+            dmg = (len(P.creatures()) if c.mob else 4) * (2 if copy else 1)
+            if any(v.life <= dmg for v in opps): return 130
+            return 55 if c.mob and dmg >= 10 and not post else 0
+        if sp == 'warrens': return 120 if P.spells_turn >= 4 else 0
+        if sp == 'hymn': return 72 if len(P.creatures()) >= 4 and any((x.is_instant or x.is_sorcery) and x is not c for x in P.hand) else 0
+        if sp == 'jeska': return 76
+        if sp == 'brass': return 62 if P.lands >= 6 else 0
+        if getattr(c, 'x_tokens', False): return 25 if s.avail(P) - s.cost(P, c) >= 3 else 0
+        if (c.is_instant or c.is_sorcery) and c.tokens_now and n not in pr: return 58
         if c.overrun:
             if c.overrun.get('infect'): return 150 if (not post and s.triumph_lethal(P)) else 0
             return s.ai_score(P, c, turn, post)

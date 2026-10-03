@@ -1,0 +1,71 @@
+{
+ "variants": {
+  "base": {
+   "Combo & storm": 30.9,
+   "Stax & control": 16.7,
+   "Go-wide": 16.4,
+   "Graveyard & big threats": 14.8
+  },
+  "return-the-favor-to-akroma-s-will": {
+   "Combo & storm": 25.8,
+   "Stax & control": 16.9,
+   "Go-wide": 17.6,
+   "Graveyard & big threats": 13.9
+  },
+  "to-arms-to-mob-justice": {
+   "Combo & storm": 31.0,
+   "Stax & control": 22.1,
+   "Go-wide": 15.2,
+   "Graveyard & big threats": 15.6
+  },
+  "flashback-to-anointed-procession": {
+   "Combo & storm": 24.9,
+   "Stax & control": 17.4,
+   "Go-wide": 16.4,
+   "Graveyard & big threats": 15.6
+  },
+  "demand-answers-to-moonshaker-cavalry": {
+   "Combo & storm": 30.9,
+   "Stax & control": 18.2,
+   "Go-wide": 15.2,
+   "Graveyard & big threats": 15.1
+  },
+  "talisman-of-conviction-to-smothering-tithe": {
+   "Combo & storm": 27.9,
+   "Stax & control": 17.3,
+   "Go-wide": 16.8,
+   "Graveyard & big threats": 13.0
+  },
+  "aziza-army": {
+   "Combo & storm": 22.3,
+   "Stax & control": 14.5,
+   "Go-wide": 7.1,
+   "Graveyard & big threats": 6.0
+  },
+  "aziza-storm": {
+   "Combo & storm": 22.7,
+   "Stax & control": 13.6,
+   "Go-wide": 6.6,
+   "Graveyard & big threats": 4.2
+  },
+  "aziza-tremors": {
+   "Combo & storm": 23.5,
+   "Stax & control": 14.6,
+   "Go-wide": 12.8,
+   "Graveyard & big threats": 8.9
+  }
+ },
+ "names": {
+  "base": "EDHREC average list",
+  "aziza-army": "Strategy: Big Army (overruns)",
+  "aziza-storm": "Strategy: Ritual Storm",
+  "aziza-tremors": "Strategy: Tremors Drain",
+  "return-the-favor-to-akroma-s-will": "Swap: Return the Favor \u2192 Akroma's Will",
+  "to-arms-to-mob-justice": "Swap: To Arms! \u2192 Mob Justice",
+  "flashback-to-anointed-procession": "Swap: Flashback \u2192 Anointed Procession",
+  "demand-answers-to-moonshaker-cavalry": "Swap: Demand Answers \u2192 Moonshaker Cavalry",
+  "talisman-of-conviction-to-smothering-tithe": "Swap: Talisman of Conviction \u2192 Smothering Tithe"
+ },
+ "series": 300,
+ "note": "Rows are game win rates on identical games. My three strategy rebuilds all lost to EDHREC's average list: they traded cheap token spells for slower doublers, rituals or overruns, and token decks that develop slowly get attacked first. Of five single-card upgrades, only Mob Justice clearly helped (+1.3 overall, +5.4 against stax and control). The final list is the EDHREC average with To Arms! swapped for Mob Justice."
+}

@@ -1,0 +1,101 @@
+commander: Aziza, Mage Tower Captain
+eyebrow: Boros · Ritual storm · Bracket 3
+summary: Chain rituals and cantrips; every spell pings with Guttersnipe and friends; Aziza copies rituals for mana and copies the finisher.
+engine:
+- Monastery Mentor
+- Young Pyromancer
+- Prismari Pianist
+- Storm-Kiln Artist
+- Welcoming Vampire
+- Enduring Innocence
+- Pinnacle Monk
+- Impact Tremors
+- Warleader's Call
+- Purphoros, God of the Forge
+- Witty Roastmaster
+- Molten Gatekeeper
+- Agate Instigator
+- Weftstalker Ardent
+- Anointed Procession
+- Mondrak, Glory Dominus
+- Skullclamp
+- Twinning Staff
+- Caretaker's Talent
+- Tocasia's Welcome
+- Idol of Oblivion
+- Guttersnipe
+- Firebrand Archer
+- Kessig Flamebreather
+- Electrostatic Field
+- Electro, Assaulting Battery
+- Fiery Inscription
+- Goblin Bombardment
+- Intangible Virtue
+- Belladonna Took
+- Prosperous Partnership
+- Mother of Runes
+keep_home:
+- Monastery Mentor
+- Young Pyromancer
+- Prismari Pianist
+- Storm-Kiln Artist
+- Welcoming Vampire
+- Enduring Innocence
+- Witty Roastmaster
+- Molten Gatekeeper
+- Weftstalker Ardent
+- Guttersnipe
+- Firebrand Archer
+- Kessig Flamebreather
+- Electro, Assaulting Battery
+- Mother of Runes
+- Belladonna Took
+- Agate Instigator
+keep_commander_home: true
+commander_first: true
+fodder: tokens
+fodder_max_cmc: 2
+instant_sac_tokens: []
+bonus_keywords: []
+tutor_targets: []
+priorities:
+  Monastery Mentor: 88
+  Young Pyromancer: 88
+  Prismari Pianist: 86
+  Storm-Kiln Artist: 85
+  Skullclamp: 84
+  Twinning Staff: 80
+  Welcoming Vampire: 82
+  Enduring Innocence: 82
+  Caretaker's Talent: 81
+  Tocasia's Welcome: 81
+  Idol of Oblivion: 78
+  Lightning Greaves: 60
+  Big Score: 52
+  Unexpected Windfall: 52
+  Seize the Spoils: 50
+  Pirate's Pillage: 50
+  Thrill of Possibility: 48
+  Reckless Impulse: 48
+  Guttersnipe: 87
+  Firebrand Archer: 85
+  Kessig Flamebreather: 85
+  Electrostatic Field: 84
+  Fiery Inscription: 86
+  Electro, Assaulting Battery: 84
+  Impact Tremors: 78
+  Warleader's Call: 78
+  Lightning Bolt: 40
+value_bonus:
+  Guttersnipe: 4
+  Fiery Inscription: 3
+key_cards:
+- Aziza, Mage Tower Captain
+- Guttersnipe
+- Fiery Inscription
+- Grapeshot
+- Empty the Warrens
+- Mob Justice
+hold_removal_vs_combo: true
+hold_counters: false
+x_reserve: 0

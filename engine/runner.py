@@ -101,7 +101,7 @@ def load_results(path):
     with op(path, 'rt') as f: return json.load(f)
 
 # ------------------------------------------------------------------ analyze
-CAUSE = {'death': 'Death-trigger drains', 'wurm': 'Death-trigger drains', 'spell': 'Burn spells', 'storm': 'Burn spells', 'etb': 'Burn spells',
+CAUSE = {'death': 'Death-trigger drains', 'wurm': 'Death-trigger drains', 'spell': 'Spell-cast pings', 'storm': 'Burn spells', 'etb': 'Creature-entry drains', 'burn': 'Burn spells', 'bombardment': 'Goblin Bombardment', 'arabella': 'Attack triggers',
          'ping': 'Burn spells', 'sheoldred': 'Burn spells', 'lifegain': 'Lifegain drains', 'commander damage': 'Commander damage',
          'Test of Endurance': 'Alternate win', 'Felidar Sovereign': 'Alternate win', 'Approach of the Second Sun': 'Alternate win',
          'empty-library win': 'Alternate win', 'combo': 'Infinite combo', 'combat': 'Combat damage', 'decked': 'Decked',

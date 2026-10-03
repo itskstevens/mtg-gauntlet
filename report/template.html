@@ -107,12 +107,16 @@ td.up{color:var(--venom);font-weight:600} td.down{color:var(--bad)}
 </section>
 
 <section class="panel" style="display:grid;gap:14px" aria-labelledby="swap" id="swapsec" hidden>
-  <h2 id="swap">Swap test</h2>
-  <p>Each line is the same series per category, with identical opponents and shuffles. Only your list changes. A difference under about 3 points is within the noise.</p>
+  <h2 id="swap">List comparison</h2>
+  <p>Game win rate by category. Every row played the same series, with identical opponents and shuffles; only the list changes. A difference under about 3 points is within the noise.</p>
   <div class="tbl"><table id="vt"></table></div>
   <p class="small" id="swapnote"></p>
 </section>
 
+<section class="panel" style="display:grid;gap:12px" aria-labelledby="dl" id="dlsec" hidden>
+  <h2 id="dl">Decklist</h2>
+  <div class="decks" id="dlist"></div>
+</section>
 <section class="panel" style="display:grid;gap:10px" aria-labelledby="meth">
   <h2 id="meth">How this was run</h2>
   <ul class="insights">
@@ -123,7 +127,8 @@ td.up{color:var(--venom);font-weight:600} td.down{color:var(--bad)}
   </ul>
 </section>
 </div>
-<script id="d" type="application/json">__DATA__</script>
+<script id="d" type="application/json">__DATA__
+</script>
 <script>
 const D=JSON.parse(document.getElementById('d').textContent);
 const pct=v=>`${(+v).toFixed(v>=10||v==0?0:1)}%`;
@@ -151,14 +156,14 @@ function render(g){
    <div class="kpi ${g.series_win>=15?'good':'warn'}"><b class="num">${pct(g.series_win)}</b><span>best-of-3 series won</span></div>
    <div class="kpi"><b class="num">${g.avg_place}</b><span>average finish (1 = won)</span></div>
    <div class="kpi"><b class="num">${g.avg_rounds}</b><span>rounds per game</span></div>
-   <div class="kpi"><b class="num">${s.edict}</b><span>creatures your commander forced them to sacrifice per game</span></div>
+   <div class="kpi"><b class="num">${Math.round(s.dmg)}</b><span>damage you dealt per game, across all opponents</span></div>
    <div class="kpi"><b class="num">${s.countered}</b><span>of your spells countered per game</span></div>
   </div>
   ${(INS[g.slug]||[]).length?`<div><h3 style="margin-bottom:10px">What the games showed</h3><ul class="insights">${INS[g.slug].map(t=>`<li>${t}</li>`).join('')}</ul></div>`:''}
   <div class="two">
    <div><h3 style="margin-bottom:10px">How you lost</h3>${hbars(g.deaths,'loss',g.losses)}</div>
    <div><h3 style="margin-bottom:10px">How you eliminated opponents</h3>${hbars(g.kills.map(k=>[k[0],k[1]]),'win',kills)}
-    <p class="small" style="margin-top:10px">Per game: ${s.cmd} commander triggers, ${s.pact} extra sacrifices from Grave Pact or Dictate, ${s.poison} poison counters dealt, ${s.wipes} wipes faced, ${s.removal} of your permanents removed.</p></div>
+    <p class="small" style="margin-top:10px">Per game: ${s.wipes} board wipes faced, ${s.removal} of your permanents removed${s.cmd?`, ${s.cmd} commander triggers`:''}${s.poison?`, ${s.poison} poison counters dealt`:''}.</p></div>
   </div>
   <div class="two">
    <div><h3 style="margin-bottom:8px">Most countered</h3><p class="small">${g.countered.map(c=>`${c[0]} (${c[1]})`).join(', ')||'Rarely countered'}</p></div>
@@ -186,4 +191,5 @@ if(D.variants&&Object.keys(D.variants).length>1){
 const V=D.variants,names=D.variant_names,gs=D.groups.map(g=>g.name);document.getElementById('swapsec').hidden=false;document.getElementById('swapnote').textContent=D.swap_note||'';
 document.getElementById('vt').innerHTML=`<thead><tr><th>List</th>${gs.map(g=>`<th>${g}</th>`).join('')}<th>Average</th></tr></thead><tbody>${Object.keys(names).map(k=>{const avg=gs.reduce((a,g)=>a+V[k][g],0)/gs.length,b=gs.reduce((a,g)=>a+V.base[g],0)/gs.length;
  return `<tr><td>${names[k]}</td>${gs.map(g=>{const d=V[k][g]-V.base[g];return `<td class="num ${k!='base'&&d>=2.5?'up':k!='base'&&d<=-2.5?'down':''}">${V[k][g].toFixed(1)}%${k!='base'?` <span class="small">(${d>0?'+':''}${d.toFixed(1)})</span>`:''}</td>`}).join('')}<td class="num">${avg.toFixed(1)}%${k!='base'?` <span class="small">(${avg-b>0?'+':''}${(avg-b).toFixed(1)})</span>`:''}</td></tr>`}).join('')}</tbody>`;}
+if(D.decklist){document.getElementById('dlsec').hidden=false;document.getElementById('dlist').innerHTML=D.decklist.map(([h,cards])=>`<div class="deck"><h4>${h} <span class="small num">(${cards.reduce((a,c)=>a+c[0],0)})</span></h4><ul>${cards.map(c=>`<li>${c[0]>1?c[0]+' ':''}${c[1].replace(/</g,'&lt;')}</li>`).join('')}</ul></div>`).join('')}
 </script>

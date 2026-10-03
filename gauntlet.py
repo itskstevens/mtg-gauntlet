@@ -168,6 +168,14 @@ def cmd_report(a):
     vfile = a.variants or next(iter(sorted(glob.glob(os.path.join(ROOT, 'results', a.deck, '*variants*', 'variants.json')))[-1:]), None)
     if vfile and os.path.exists(vfile):
         V = json.load(open(vfile)); data.update(variants=V['variants'], variant_names=V['names'], swap_note=V.get('note', ''))
+    lst = S['meta'].get('list_snapshot') or R.load_list(deck_path(a.deck))
+    groups = collections.OrderedDict((k, collections.Counter()) for k in ('Commander', 'Creatures', 'Instants', 'Sorceries', 'Artifacts', 'Enchantments', 'Planeswalkers', 'Lands'))
+    for i, n in enumerate(lst):
+        c = CD.get(n)
+        k = 'Commander' if i == 0 else 'Lands' if c.is_land else 'Creatures' if c.is_creature else 'Planeswalkers' if c.is_planeswalker \
+            else 'Instants' if c.is_instant else 'Sorceries' if c.is_sorcery else 'Artifacts' if c.is_artifact else 'Enchantments'
+        groups[k][n] += 1
+    data['decklist'] = [[k, sorted([[q, n] for n, q in v.items()], key=lambda x: x[1])] for k, v in groups.items() if v]
     cmd = pilot.get('commander', a.deck)
     t = open(os.path.join(ROOT, 'report', 'template.html')).read()
     t = t.replace('__TITLE__', f'{cmd.split(",")[0]} Gauntlet').replace('__H1__', f'The {cmd} gauntlet' if not cmd.startswith('The ') else f'{cmd} gauntlet')

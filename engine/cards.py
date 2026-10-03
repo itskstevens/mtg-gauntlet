@@ -149,7 +149,7 @@ COMBOS = [
     ('Sanguine Bond', 'Bloodthirsty Conqueror'),
 ]
 FOGS = {'Aetherize'}
-PROTECT = {'Heroic Intervention', "Teferi's Protection", 'Flawless Maneuver', 'Boros Charm'}
+PROTECT = {'Heroic Intervention', "Teferi's Protection", 'Flawless Maneuver', 'Clever Concealment'}
 
 # --------------------------------------------------------------------- tagging
 def first_add(o):
@@ -325,7 +325,9 @@ def tag(c):
         tk = parse_tok(sent)
         if not tk: continue
         if 'at the beginning of' in sent: c.tokens_rec = c.tokens_rec or ('upkeep',) + tk
-        elif 'whenever you cast' in sent: c.spell_trig = (c.spell_trig or {}); c.spell_trig['token'] = tk
+        elif 'whenever you cast' in sent:
+            c.spell_trig = (c.spell_trig or {}); c.spell_trig['token'] = tk; c.spell_trig['who'] = 'self'
+            c.spell_trig['noncreature'] = 'creature spell' not in sent
         elif re.search(r'whenever (a|one or more) lands?', sent) or 'landfall' in sent: c.landfall = (c.landfall or {}); c.landfall['token'] = tk
         elif re.search(r'whenever [^.]*attacks', sent) or 'whenever you attack' in sent: c.attack_trig = (c.attack_trig or {}); c.attack_trig['token'] = tk
         elif 'dies' in sent and 'whenever' in sent: c.death_trig = c.death_trig or {}; c.death_trig['token'] = tk
@@ -382,6 +384,11 @@ def tag(c):
             if e:
                 d = c.spell_trig or {}; d.update(e); d['who'] = 'opp' if 'an opponent casts' in sent else ('any' if 'a player casts' in sent else 'self')
                 d['noncreature'] = 'creature spell' not in sent; c.spell_trig = d
+        elif 'whenever you cast or copy an instant or sorcery' in sent:
+            e = effect(sent)
+            if 'create a treasure' in sent: e['mana'] = 1
+            if e:
+                d = c.spell_trig or {}; d.update(e); d['who'] = 'self'; d['noncreature'] = True; d['magecraft'] = True; c.spell_trig = d
         elif re.search(r'whenever (a|another|one or more) (nontoken )?(creatures?|[a-z]+) (you control )?enters?', sent):
             e = effect(sent)
             if e: d = c.etb_trig or {}; d.update(e); d['own'] = 'you control' in sent or 'your control' in sent; c.etb_trig = d
@@ -413,7 +420,38 @@ def tag(c):
     if n == 'The Meathook Massacre': c.death_trig = dict(drain_each=1, scope='own')   # second trigger (gain 1 on opponents' deaths) dropped
     if n == 'Toxrill, the Corrosive': c.death_trig = None
     if n == 'Balmor, Battlemage Captain': c.anthem = 0; c.overrun = None   # handled in engine (pump on instant/sorcery)
-    if n == 'Harnesser of Storms': c.draw_engine = .7   # handled in engine (slime counters, Slugs)
+    if n == 'Harnesser of Storms': c.draw_engine = .7
+    # --- go-wide / spell-copy archetype (Aziza) ---
+    c.x_tokens = 'X' in c.mana_cost.split() and bool(c.tokens_now) and (c.is_instant or c.is_sorcery)
+    c.treasure_now = 0; c.mob = False; c.draw_once = None; c.special = None
+    if n in ('Big Score', 'Unexpected Windfall', 'Pirate\'s Pillage'): c.treasure_now = 2
+    if n == 'Seize the Spoils': c.treasure_now = 1
+    if n == "Brass's Bounty": c.special = 'brass'
+    if n == 'Battle Hymn': c.ritual = 0; c.special = 'hymn'
+    if n == "Jeska's Will": c.ritual = 0; c.special = 'jeska'; c.draw_now = 2
+    if n in ('Mob Justice', 'Massive Raid'): c.mob = True; c.removal = None
+    if n == 'Boros Charm': c.special = 'charm4'
+    if n == 'Empty the Warrens': c.special = 'warrens'
+    if n in ('Will of the Mardu', 'Call the Coppercoats'): c.tokens_now = ('oppmax', 1, 1, set()); c.x_tokens = False
+    if n == "Moogles' Valor": c.tokens_now = ('own', 1, 2, {'lifelink'})
+    if n == 'Tempt with Bunnies': c.tokens_now = (2, 1, 1, set())
+    if n == 'Glimpse the Impossible': c.tokens_rec = None; c.draw_now = 2
+    if n == 'Reckless Impulse': c.draw_now = 2
+    if n in ('Valakut Awakening', 'Flashback', 'Pinnacle Monk'): c.draw_now = 1
+    if n == 'Purphoros, God of the Forge': c.overrun = None
+    if n == 'Weftstalker Ardent': c.etb_trig = dict(drain_each=1, own=True)
+    if n == 'Caretaker\'s Talent': c.etb_trig = None; c.draw_once = 'token'
+    if n in ('Welcoming Vampire', 'Enduring Innocence'): c.draw_once = 'small'
+    if n == "Tocasia's Welcome": c.draw_once = 'mv3'
+    if n == 'Belladonna Took': c.etb_trig = None; c.draw_once = 'token'
+    if n == 'Intangible Virtue': c.anthem = 1
+    if n == 'Heroic Reinforcements': c.overrun = dict(pump=1, trample=False, haste=True)
+    if n == 'Trumpet Blast': c.overrun = dict(pump=2, trample=False)
+    if n == "Akroma's Will": c.overrun = dict(pump=0, trample=False, kw={'flying', 'double strike', 'vigilance', 'lifelink', 'indestructible'})
+    if n == 'Moonshaker Cavalry': c.overrun = dict(pump='count', trample=False, kw={'flying'})
+    if n == 'Arabella, Abandoned Doll': c.special = 'arabella'
+    if n == 'Twinning Staff': c.special = 'twinning'
+    if n == 'Clever Concealment': c.protect = True   # handled in engine (slime counters, Slugs)
     if n == 'Exsanguinate': c.drain_now = 'X'
     if n == 'Debt to the Deathless': c.drain_now = 'X2'
     if n == 'Torment of Hailfire': c.drain_now = 'TORMENT'

@@ -1,0 +1,1525 @@
+{
+ "meta": {
+  "date": "2026-10-03",
+  "deck": "bria",
+  "series_per_cat": 300,
+  "series_total": 1200,
+  "games_total": 2477,
+  "list_snapshot": [
+   "Bria, Riptide Rogue",
+   "Arcane Signet",
+   "Izzet Signet",
+   "Resonating Lute",
+   "Sol Ring",
+   "Swiftfoot Boots",
+   "Talisman of Creativity",
+   "Thought Vessel",
+   "Cascade Bluffs",
+   "Command Tower",
+   "Exotic Orchard",
+   "Ferrous Lake",
+   "Frostboil Snarl",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Island",
+   "Izzet Boilerworks",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mountain",
+   "Mystic Sanctuary",
+   "Reliquary Tower",
+   "Shivan Reef",
+   "Steam Vents",
+   "Stormcarved Coast",
+   "Sulfur Falls",
+   "Temple of Epiphany",
+   "Training Center",
+   "Alania, Divergent Storm",
+   "Archmage Emeritus",
+   "Balmor, Battlemage Captain",
+   "Coruscation Mage",
+   "Frolicking Familiar",
+   "Goblin Electromancer",
+   "Guttersnipe",
+   "Harmonic Prodigy",
+   "Harnesser of Storms",
+   "Kitsa, Otterball Elite",
+   "Storm-Kiln Artist",
+   "Stormcatch Mentor",
+   "Stormsplitter",
+   "Talrand, Sky Summoner",
+   "Tempest Angler",
+   "Third Path Iconoclast",
+   "Thundertrap Trainer",
+   "Valley Floodcaller",
+   "Veyran, Voice of Duality",
+   "Young Pyromancer",
+   "Artist's Talent",
+   "Sorcerer Class",
+   "Stormchaser's Talent",
+   "Thousand-Year Storm",
+   "Abrade",
+   "An Offer You Can't Refuse",
+   "Arcane Denial",
+   "Brainstorm",
+   "Chaos Warp",
+   "Consider",
+   "Counterspell",
+   "Cyclonic Rift",
+   "Expedite",
+   "Flashback",
+   "Frantic Search",
+   "Lightning Bolt",
+   "Negate",
+   "Opt",
+   "Pongify",
+   "Rapid Hybridization",
+   "Seething Song",
+   "Shore Up",
+   "Snap",
+   "Ral, Crackling Wit",
+   "Blasphemous Act",
+   "Crash Through",
+   "Expressive Iteration",
+   "Faithless Looting",
+   "Gitaxian Probe",
+   "Jeska's Will",
+   "Mizzix's Mastery",
+   "Otterball Antics",
+   "Pearl of Wisdom",
+   "Ponder",
+   "Preordain",
+   "Serum Visions",
+   "Vandalblast"
+  ]
+ },
+ "groups": [
+  {
+   "name": "Combo & storm",
+   "slug": "combo-storm",
+   "games": 640,
+   "series": 300,
+   "series_win": 1.3,
+   "game_win": 7.0,
+   "avg_place": 2.69,
+   "avg_rounds": 8.7,
+   "place": {
+    "4": 125,
+    "3": 237,
+    "2": 230,
+    "1": 48
+   },
+   "draws": 9,
+   "first_out": 19.5,
+   "deaths": [
+    [
+     "Infinite combo",
+     "Spellslinger",
+     202
+    ],
+    [
+     "Infinite combo",
+     "Turbo combo",
+     106
+    ],
+    [
+     "Combat damage",
+     "Storm",
+     96
+    ],
+    [
+     "Burn spells",
+     "Storm",
+     95
+    ],
+    [
+     "Combat damage",
+     "Spellslinger",
+     49
+    ],
+    [
+     "Burn spells",
+     "Spellslinger",
+     24
+    ],
+    [
+     "Combat damage",
+     "Turbo combo",
+     20
+    ]
+   ],
+   "losses": 595,
+   "kills": [
+    [
+     "Combat damage",
+     249
+    ],
+    [
+     "Commander damage",
+     5
+    ],
+    [
+     "Burn spells",
+     2
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.69,
+    "wipes": 0.12,
+    "removal": 1.07,
+    "dmg": 30.79
+   },
+   "countered": [
+    [
+     "Bria, Riptide Rogue",
+     222
+    ],
+    [
+     "Cyclonic Rift",
+     67
+    ],
+    [
+     "Jeska's Will",
+     59
+    ],
+    [
+     "Veyran, Voice of Duality",
+     30
+    ]
+   ],
+   "removed": [
+    [
+     "Bria, Riptide Rogue",
+     252
+    ],
+    [
+     "Token",
+     116
+    ],
+    [
+     "Third Path Iconoclast",
+     51
+    ],
+    [
+     "Guttersnipe",
+     37
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     40
+    ],
+    [
+     "Blasphemous Act",
+     28
+    ],
+    [
+     "Vandalblast",
+     10
+    ]
+   ],
+   "impact": [
+    [
+     "Coruscation Mage",
+     108,
+     22,
+     4
+    ],
+    [
+     "Archmage Emeritus",
+     105,
+     21,
+     4
+    ],
+    [
+     "Thousand-Year Storm",
+     45,
+     22,
+     6
+    ],
+    [
+     "Mizzix's Mastery",
+     47,
+     21,
+     6
+    ],
+    [
+     "Alania, Divergent Storm",
+     54,
+     19,
+     6
+    ],
+    [
+     "Guttersnipe",
+     121,
+     17,
+     5
+    ],
+    [
+     "Harnesser of Storms",
+     97,
+     16,
+     5
+    ],
+    [
+     "Balmor, Battlemage Captain",
+     129,
+     14,
+     5
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Kinnan, Bonder Prodigy",
+     "arch": "Turbo combo",
+     "key": "kinnan",
+     "link": "https://edhrec.com/average-decks/kinnan-bonder-prodigy",
+     "fetched": "2026-10-02",
+     "win_share": 20.2,
+     "killed_me": 19.7,
+     "i_killed": 19.2,
+     "my_vs_b3": 6.4,
+     "my_vs_b4": 7.6,
+     "how": [
+      [
+       "Kinnan, Bonder Prodigy + Basalt Monolith",
+       95
+      ],
+      [
+       "Combat damage",
+       20
+      ],
+      [
+       "Bloom Tender + Freed from the Real",
+       4
+      ],
+      [
+       "Hullbreaker Horror + Sol Ring",
+       3
+      ]
+     ],
+     "threats": [
+      "Mox Amber",
+      "Basalt Monolith",
+      "Bloom Tender",
+      "Llanowar Elves",
+      "Simic Signet"
+     ]
+    },
+    {
+     "cmd": "Birgi, God of Storytelling",
+     "arch": "Storm",
+     "key": "birgi",
+     "link": "https://edhrec.com/average-decks/birgi-god-of-storytelling",
+     "fetched": "2026-10-02",
+     "win_share": 25.2,
+     "killed_me": 29.8,
+     "i_killed": 8.3,
+     "my_vs_b3": 4.5,
+     "my_vs_b4": 9.2,
+     "how": [
+      [
+       "Combat damage",
+       96
+      ],
+      [
+       "Burn spells",
+       95
+      ]
+     ],
+     "threats": [
+      "Springleaf Drum",
+      "Coruscation Mage",
+      "Conjurer's Bauble",
+      "Electrostatic Field",
+      "Might of the Meek"
+     ]
+    },
+    {
+     "cmd": "Niv-Mizzet, Parun",
+     "arch": "Spellslinger",
+     "key": "niv",
+     "link": "https://edhrec.com/average-decks/niv-mizzet-parun",
+     "fetched": "2026-10-02",
+     "win_share": 46.2,
+     "killed_me": 43.4,
+     "i_killed": 12.5,
+     "my_vs_b3": 6.4,
+     "my_vs_b4": 7.5,
+     "how": [
+      [
+       "Niv-Mizzet, Parun + Tandem Lookout",
+       80
+      ],
+      [
+       "Niv-Mizzet, Parun + Curiosity",
+       67
+      ],
+      [
+       "Combat damage",
+       49
+      ],
+      [
+       "Niv-Mizzet, Parun + Ophidian Eye",
+       48
+      ]
+     ],
+     "threats": [
+      "Tandem Lookout",
+      "Harmonic Prodigy",
+      "Storm-Kiln Artist",
+      "Fellwar Stone",
+      "Niv-Mizzet, Visionary"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 5.4,
+    "1": 8.9,
+    "2": 8.8,
+    "3": 5.3
+   },
+   "attack_share": 17.1,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T4 Birgi counters your Bria, Riptide Rogue with Red Elemental Blast",
+      "T4 Niv-Mizzet counters Kinnan's Kinnan, Bonder Prodigy with Mana Drain",
+      "T6 You casts Bria, Riptide Rogue",
+      "T7 You casts Blasphemous Act",
+      "T7 You WIPE Blasphemous Act",
+      "T8 Niv-Mizzet counters your Bria, Riptide Rogue with Arcane Denial",
+      "T8 Kinnan counters Birgi's Aetherflux Reservoir with Swan Song",
+      "T9 You casts Bria, Riptide Rogue",
+      "T9 Kinnan wins via combo: Kinnan, Bonder Prodigy + Basalt Monolith",
+      "T9 You eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T9 Birgi eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)",
+      "T9 Niv-Mizzet eliminated (combo: Kinnan, Bonder Prodigy + Basalt Monolith by Kinnan)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "You",
+      "Birgi",
+      "Niv-Mizzet",
+      "Kinnan"
+     ],
+     "lines": [
+      "T5 You casts Bria, Riptide Rogue",
+      "T6 Niv-Mizzet counters Kinnan's Kinnan, Bonder Prodigy with Counterspell",
+      "T7 Kinnan eliminated (combat by Birgi)",
+      "T7 You counters Niv-Mizzet's Mystic Remora with Negate",
+      "T8 You counters Birgi's Aetherflux Reservoir with Counterspell",
+      "T8 You eliminated (ping by Niv-Mizzet)",
+      "T8 Birgi counters Niv-Mizzet's Narset, Parter of Veils with Tibalt's Trickery",
+      "T9 Niv-Mizzet eliminated (decked)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 11,
+     "players": [
+      "You",
+      "Birgi",
+      "Kinnan",
+      "Niv-Mizzet"
+     ],
+     "lines": [
+      "T3 You casts Bria, Riptide Rogue",
+      "T3 Niv-Mizzet counters Kinnan's Mystic Remora with An Offer You Can't Refuse",
+      "T5 Kinnan counters your Blasphemous Act with Swan Song",
+      "T5 You casts Jeska's Will",
+      "T5 Birgi counters Kinnan's Kinnan, Bonder Prodigy with Pyroblast",
+      "T6 You casts Bria, Riptide Rogue",
+      "T6 Kinnan eliminated (combat by Birgi)",
+      "T9 Niv-Mizzet eliminated (combat by You)",
+      "T10 You casts Bria, Riptide Rogue",
+      "T11 You casts Cyclonic Rift",
+      "T11 You WIPE Cyclonic Rift",
+      "T11 You eliminated (spell by Birgi)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Stax & control",
+   "slug": "stax-control",
+   "games": 621,
+   "series": 300,
+   "series_win": 0,
+   "game_win": 3.4,
+   "avg_place": 2.83,
+   "avg_rounds": 14.5,
+   "place": {
+    "3": 226,
+    "2": 218,
+    "4": 156,
+    "1": 21
+   },
+   "draws": 10,
+   "first_out": 25.1,
+   "deaths": [
+    [
+     "Combat damage",
+     "Lifegain control",
+     173
+    ],
+    [
+     "Lifegain drains",
+     "Lifegain control",
+     108
+    ],
+    [
+     "Infinite combo",
+     "Lifegain control",
+     77
+    ],
+    [
+     "Combat damage",
+     "Stax",
+     66
+    ],
+    [
+     "Alternate win",
+     "Lifegain control",
+     51
+    ],
+    [
+     "Infinite combo",
+     "Counterspell control",
+     49
+    ],
+    [
+     "Combat damage",
+     "Counterspell control",
+     42
+    ]
+   ],
+   "losses": 600,
+   "kills": [
+    [
+     "Combat damage",
+     276
+    ],
+    [
+     "Commander damage",
+     19
+    ],
+    [
+     "Burn spells",
+     6
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 2.0,
+    "wipes": 0.79,
+    "removal": 0.97,
+    "dmg": 44.91
+   },
+   "countered": [
+    [
+     "Bria, Riptide Rogue",
+     726
+    ],
+    [
+     "Jeska's Will",
+     86
+    ],
+    [
+     "Cyclonic Rift",
+     71
+    ],
+    [
+     "Veyran, Voice of Duality",
+     58
+    ]
+   ],
+   "removed": [
+    [
+     "Bria, Riptide Rogue",
+     333
+    ],
+    [
+     "Guttersnipe",
+     53
+    ],
+    [
+     "Coruscation Mage",
+     44
+    ],
+    [
+     "Veyran, Voice of Duality",
+     20
+    ]
+   ],
+   "wiped": [
+    [
+     "Supreme Verdict",
+     130
+    ],
+    [
+     "Farewell",
+     95
+    ],
+    [
+     "Toxic Deluge",
+     76
+    ],
+    [
+     "Damn",
+     61
+    ]
+   ],
+   "impact": [
+    [
+     "Alania, Divergent Storm",
+     107,
+     12,
+     2
+    ],
+    [
+     "Stormchaser's Talent",
+     167,
+     9,
+     1
+    ],
+    [
+     "Talrand, Sky Summoner",
+     141,
+     9,
+     2
+    ],
+    [
+     "Cyclonic Rift",
+     127,
+     9,
+     2
+    ],
+    [
+     "Young Pyromancer",
+     170,
+     8,
+     2
+    ],
+    [
+     "Archmage Emeritus",
+     133,
+     8,
+     2
+    ],
+    [
+     "Balmor, Battlemage Captain",
+     135,
+     7,
+     2
+    ],
+    [
+     "Veyran, Voice of Duality",
+     147,
+     7,
+     2
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Grand Arbiter Augustin IV",
+     "arch": "Stax",
+     "key": "gaa",
+     "link": "https://edhrec.com/average-decks/grand-arbiter-augustin-iv",
+     "fetched": "2026-10-02",
+     "win_share": 4.5,
+     "killed_me": 11.4,
+     "i_killed": 22.2,
+     "my_vs_b3": 2.6,
+     "my_vs_b4": 4.2,
+     "how": [
+      [
+       "Combat damage",
+       66
+      ],
+      [
+       "Alternate win",
+       5
+      ]
+     ],
+     "threats": [
+      "Aven Mindcensor",
+      "Drannith Magistrate",
+      "Soulless Jailer",
+      "Sphere of Safety",
+      "Sol Ring"
+     ]
+    },
+    {
+     "cmd": "Baral, Chief of Compliance",
+     "arch": "Counterspell control",
+     "key": "baral",
+     "link": "https://edhrec.com/average-decks/baral-chief-of-compliance",
+     "fetched": "2026-10-02",
+     "win_share": 13.8,
+     "killed_me": 14.7,
+     "i_killed": 21.1,
+     "my_vs_b3": 2.8,
+     "my_vs_b4": 4.0,
+     "how": [
+      [
+       "Hullbreaker Horror + Sol Ring",
+       49
+      ],
+      [
+       "Combat damage",
+       42
+      ]
+     ],
+     "threats": [
+      "Solve the Equation",
+      "Sol Ring",
+      "Rhystic Study",
+      "Mind Stone",
+      "Telepathy"
+     ]
+    },
+    {
+     "cmd": "Oloro, Ageless Ascetic",
+     "arch": "Lifegain control",
+     "key": "oloro",
+     "link": "https://edhrec.com/average-decks/oloro-ageless-ascetic",
+     "fetched": "2026-10-02",
+     "win_share": 76.7,
+     "killed_me": 70.0,
+     "i_killed": 5.2,
+     "my_vs_b3": 4.2,
+     "my_vs_b4": 2.6,
+     "how": [
+      [
+       "Combat damage",
+       173
+      ],
+      [
+       "Lifegain drains",
+       108
+      ],
+      [
+       "Alternate win",
+       51
+      ],
+      [
+       "Vito, Thorn of the Dusk Rose + Exquisite Blood",
+       19
+      ]
+     ],
+     "threats": [
+      "Witch of the Moors",
+      "Sanguine Bond",
+      "Exquisite Blood",
+      "Rhox Faithmender",
+      "Bloodthirsty Conqueror"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 1.8,
+    "1": 5.0,
+    "2": 4.0,
+    "3": 3.2
+   },
+   "attack_share": 23.5,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 7,
+     "players": [
+      "Oloro",
+      "Baral",
+      "You",
+      "Grand Arbiter Augustin IV"
+     ],
+     "lines": [
+      "T5 Baral counters your Bria, Riptide Rogue with Pact of Negation",
+      "T5 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Disdainful Stroke",
+      "T6 Baral counters your Bria, Riptide Rogue with Force of Will",
+      "T7 Oloro wins via combo: Vito, Thorn of the Dusk Rose + Exquisite Blood",
+      "T7 Baral eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T7 You eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)",
+      "T7 Grand Arbiter Augustin IV eliminated (combo: Vito, Thorn of the Dusk Rose + Exquisite Blood by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 16,
+     "players": [
+      "You",
+      "Oloro",
+      "Grand Arbiter Augustin IV",
+      "Baral"
+     ],
+     "lines": [
+      "T3 Baral counters your Bria, Riptide Rogue with Mana Drain",
+      "T4 You counters Grand Arbiter Augustin IV's Dovin, Hand of Control with An Offer You Can't Refuse",
+      "T6 You casts Bria, Riptide Rogue",
+      "T6 Oloro WIPE Damn",
+      "T8 Grand Arbiter Augustin IV WIPE Time Wipe",
+      "T9 Baral counters your Bria, Riptide Rogue with Mystic Confluence",
+      "T11 You casts Bria, Riptide Rogue",
+      "T11 Baral counters Oloro's Exquisite Blood with Swan Song",
+      "T11 Baral counters Oloro's Rhystic Study with An Offer You Can't Refuse",
+      "T11 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Mana Leak",
+      "T12 Baral eliminated (combat by You)",
+      "T15 Grand Arbiter Augustin IV eliminated (lifegain by Oloro)",
+      "T16 You eliminated (combat by Oloro)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 17,
+     "players": [
+      "Baral",
+      "You",
+      "Oloro",
+      "Grand Arbiter Augustin IV"
+     ],
+     "lines": [
+      "T4 You casts Bria, Riptide Rogue",
+      "T4 Baral counters Oloro's Propaganda with Force of Negation",
+      "T5 Baral counters Grand Arbiter Augustin IV's Grand Arbiter Augustin IV with Cryptic Command",
+      "T6 Baral counters your Bria, Riptide Rogue with Rewind",
+      "T7 Baral eliminated (combat by Oloro)",
+      "T10 Oloro counters your Jeska's Will with Negate",
+      "T12 Grand Arbiter Augustin IV counters your Bria, Riptide Rogue with Render Silent",
+      "T13 You casts Cyclonic Rift",
+      "T13 You WIPE Cyclonic Rift",
+      "T14 You casts Mizzix's Mastery",
+      "T15 You eliminated (combat by Oloro)",
+      "T16 Grand Arbiter Augustin IV counters Oloro's Marauding Blight-Priest with Mana Drain",
+      "T17 Grand Arbiter Augustin IV eliminated (combat by Oloro)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Go-wide",
+   "slug": "go-wide",
+   "games": 606,
+   "series": 300,
+   "series_win": 0,
+   "game_win": 1.0,
+   "avg_place": 3.47,
+   "avg_rounds": 9.1,
+   "place": {
+    "3": 193,
+    "4": 351,
+    "2": 56,
+    "1": 6
+   },
+   "draws": 3,
+   "first_out": 57.9,
+   "deaths": [
+    [
+     "Combat damage",
+     "Tokens",
+     345
+    ],
+    [
+     "Combat damage",
+     "Elf typal",
+     130
+    ],
+    [
+     "Combat damage",
+     "Landfall",
+     109
+    ],
+    [
+     "Death-trigger drains",
+     "Elf typal",
+     10
+    ],
+    [
+     "Lathril activation",
+     "Elf typal",
+     5
+    ],
+    [
+     "Burn spells",
+     "Tokens",
+     1
+    ]
+   ],
+   "losses": 600,
+   "kills": [
+    [
+     "Combat damage",
+     60
+    ],
+    [
+     "Burn spells",
+     3
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.2,
+    "wipes": 0.16,
+    "removal": 0.32,
+    "dmg": 15.55
+   },
+   "countered": [
+    [
+     "Bria, Riptide Rogue",
+     46
+    ],
+    [
+     "Cyclonic Rift",
+     27
+    ],
+    [
+     "Jeska's Will",
+     20
+    ],
+    [
+     "Vandalblast",
+     10
+    ]
+   ],
+   "removed": [
+    [
+     "Bria, Riptide Rogue",
+     79
+    ],
+    [
+     "Izzet Signet",
+     14
+    ],
+    [
+     "Talisman of Creativity",
+     12
+    ],
+    [
+     "Arcane Signet",
+     11
+    ]
+   ],
+   "wiped": [
+    [
+     "Cyclonic Rift",
+     61
+    ],
+    [
+     "Kindred Dominance",
+     24
+    ],
+    [
+     "Martial Coup",
+     9
+    ]
+   ],
+   "impact": [
+    [
+     "Mizzix's Mastery",
+     29,
+     10,
+     1
+    ],
+    [
+     "Blasphemous Act",
+     84,
+     5,
+     0
+    ],
+    [
+     "Talrand, Sky Summoner",
+     69,
+     4,
+     1
+    ],
+    [
+     "Artist's Talent",
+     75,
+     4,
+     1
+    ],
+    [
+     "Guttersnipe",
+     86,
+     3,
+     1
+    ],
+    [
+     "Third Path Iconoclast",
+     85,
+     2,
+     1
+    ],
+    [
+     "Balmor, Battlemage Captain",
+     80,
+     2,
+     1
+    ],
+    [
+     "Harmonic Prodigy",
+     82,
+     2,
+     1
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Jetmir, Nexus of Revels",
+     "arch": "Tokens",
+     "key": "jetmir",
+     "link": "https://edhrec.com/average-decks/jetmir-nexus-of-revels",
+     "fetched": "2026-10-02",
+     "win_share": 51.0,
+     "killed_me": 57.1,
+     "i_killed": 2.8,
+     "my_vs_b3": 1.6,
+     "my_vs_b4": 0.3,
+     "how": [
+      [
+       "Combat damage",
+       345
+      ],
+      [
+       "Burn spells",
+       1
+      ]
+     ],
+     "threats": [
+      "Ainok Strike Leader",
+      "Ocelot Pride",
+      "Mondrak, Glory Dominus",
+      "Sol Ring",
+      "Enduring Vitality"
+     ]
+    },
+    {
+     "cmd": "Tatyova, Benthic Druid",
+     "arch": "Landfall",
+     "key": "tatyova",
+     "link": "https://edhrec.com/average-decks/tatyova-benthic-druid",
+     "fetched": "2026-10-02",
+     "win_share": 24.1,
+     "killed_me": 18.0,
+     "i_killed": 2.0,
+     "my_vs_b3": 1.4,
+     "my_vs_b4": 0.4,
+     "how": [
+      [
+       "Combat damage",
+       109
+      ]
+     ],
+     "threats": [
+      "Dryad of the Ilysian Grove",
+      "Tatyova, Benthic Druid",
+      "Birds of Paradise",
+      "Traveling Chocobo",
+      "Zendikar's Roil"
+     ]
+    },
+    {
+     "cmd": "Lathril, Blade of the Elves",
+     "arch": "Elf typal",
+     "key": "lathril",
+     "link": "https://edhrec.com/average-decks/lathril-blade-of-the-elves",
+     "fetched": "2026-10-02",
+     "win_share": 23.4,
+     "killed_me": 23.9,
+     "i_killed": 5.6,
+     "my_vs_b3": 0.7,
+     "my_vs_b4": 1.2,
+     "how": [
+      [
+       "Combat damage",
+       130
+      ],
+      [
+       "Death-trigger drains",
+       10
+      ],
+      [
+       "Lathril activation",
+       5
+      ]
+     ],
+     "threats": [
+      "Ezuri, Renegade Leader",
+      "Elves of Deep Shadow",
+      "Skullclamp",
+      "Elvish Mystic",
+      "Beast Whisperer"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 1.5,
+    "1": 0.6,
+    "2": 0.6,
+    "3": 1.4
+   },
+   "attack_share": 29.9,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Tatyova",
+      "Jetmir",
+      "You",
+      "Lathril"
+     ],
+     "lines": [
+      "T3 You counters Tatyova's Tatyova, Benthic Druid with Counterspell",
+      "T7 Tatyova eliminated (combat by Lathril)",
+      "T8 Lathril Lathril drains 10",
+      "T8 You eliminated (lathril by Lathril)",
+      "T9 Lathril Lathril drains 10",
+      "T10 Jetmir eliminated (death by Lathril)",
+      "T10 Lathril eliminated (combat by Jetmir)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 7,
+     "players": [
+      "Tatyova",
+      "Lathril",
+      "Jetmir",
+      "You"
+     ],
+     "lines": [
+      "T4 You casts Bria, Riptide Rogue",
+      "T5 Lathril OVERRUN Craterhoof Behemoth (+7)",
+      "T5 You eliminated (combat by Lathril)",
+      "T6 Lathril Lathril drains 10",
+      "T6 Jetmir OVERRUN Craterhoof Behemoth (+6)",
+      "T6 Tatyova eliminated (combat by Jetmir)",
+      "T7 Jetmir eliminated (death by Lathril)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 9,
+     "players": [
+      "Jetmir",
+      "You",
+      "Lathril",
+      "Tatyova"
+     ],
+     "lines": [
+      "T3 You counters Jetmir's Jetmir, Nexus of Revels with Counterspell",
+      "T4 You casts Bria, Riptide Rogue",
+      "T7 You eliminated (combat by Lathril)",
+      "T8 Lathril eliminated (combat by Jetmir)",
+      "T9 Tatyova eliminated (combat by Jetmir)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Graveyard & big threats",
+   "slug": "graveyard-big-threats",
+   "games": 610,
+   "series": 300,
+   "series_win": 0,
+   "game_win": 1.6,
+   "avg_place": 3.38,
+   "avg_rounds": 12.3,
+   "place": {
+    "3": 191,
+    "2": 79,
+    "4": 330,
+    "1": 10
+   },
+   "draws": 0,
+   "first_out": 54.1,
+   "deaths": [
+    [
+     "Combat damage",
+     "Voltron",
+     207
+    ],
+    [
+     "Commander damage",
+     "Voltron",
+     102
+    ],
+    [
+     "Combat damage",
+     "Reanimator",
+     94
+    ],
+    [
+     "Death-trigger drains",
+     "Aristocrats",
+     76
+    ],
+    [
+     "Combat damage",
+     "Aristocrats",
+     69
+    ],
+    [
+     "Death-trigger drains",
+     "Reanimator",
+     41
+    ],
+    [
+     "Infinite combo",
+     "Reanimator",
+     9
+    ]
+   ],
+   "losses": 600,
+   "kills": [
+    [
+     "Combat damage",
+     57
+    ],
+    [
+     "Commander damage",
+     4
+    ],
+    [
+     "Burn spells",
+     1
+    ]
+   ],
+   "stats": {
+    "cmd": 0.0,
+    "edict": 0.0,
+    "pact": 0.0,
+    "poison": 0.0,
+    "countered": 0.07,
+    "wipes": 1.41,
+    "removal": 0.66,
+    "dmg": 17.07
+   },
+   "countered": [
+    [
+     "Bria, Riptide Rogue",
+     28
+    ],
+    [
+     "Cyclonic Rift",
+     5
+    ],
+    [
+     "Jeska's Will",
+     2
+    ],
+    [
+     "Vandalblast",
+     2
+    ]
+   ],
+   "removed": [
+    [
+     "Bria, Riptide Rogue",
+     196
+    ],
+    [
+     "Sol Ring",
+     28
+    ],
+    [
+     "Izzet Signet",
+     26
+    ],
+    [
+     "Resonating Lute",
+     23
+    ]
+   ],
+   "wiped": [
+    [
+     "Winds of Rath",
+     415
+    ],
+    [
+     "Toxic Deluge",
+     150
+    ],
+    [
+     "Living Death",
+     97
+    ],
+    [
+     "Damn",
+     95
+    ]
+   ],
+   "impact": [
+    [
+     "Talrand, Sky Summoner",
+     102,
+     7,
+     1
+    ],
+    [
+     "Archmage Emeritus",
+     90,
+     6,
+     1
+    ],
+    [
+     "Mizzix's Mastery",
+     69,
+     6,
+     1
+    ],
+    [
+     "Young Pyromancer",
+     111,
+     5,
+     1
+    ],
+    [
+     "Balmor, Battlemage Captain",
+     108,
+     5,
+     1
+    ],
+    [
+     "Cyclonic Rift",
+     116,
+     5,
+     1
+    ],
+    [
+     "Alania, Divergent Storm",
+     81,
+     5,
+     1
+    ],
+    [
+     "Third Path Iconoclast",
+     106,
+     4,
+     1
+    ]
+   ],
+   "opps": [
+    {
+     "cmd": "Meren of Clan Nel Toth",
+     "arch": "Reanimator",
+     "key": "meren",
+     "link": "https://edhrec.com/average-decks/meren-of-clan-nel-toth",
+     "fetched": "2026-10-02",
+     "win_share": 16.9,
+     "killed_me": 23.9,
+     "i_killed": 2.6,
+     "my_vs_b3": 2.0,
+     "my_vs_b4": 1.3,
+     "how": [
+      [
+       "Combat damage",
+       94
+      ],
+      [
+       "Death-trigger drains",
+       41
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Blood Artist",
+       3
+      ],
+      [
+       "Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Zulaport Cutthroat",
+       3
+      ]
+     ],
+     "threats": [
+      "Blood Artist",
+      "Massacre Wurm",
+      "Elvish Mystic",
+      "Birds of Paradise",
+      "Gray Merchant of Asphodel"
+     ]
+    },
+    {
+     "cmd": "Teysa Karlov",
+     "arch": "Aristocrats",
+     "key": "teysa",
+     "link": "https://edhrec.com/average-decks/teysa-karlov",
+     "fetched": "2026-10-02",
+     "win_share": 20.3,
+     "killed_me": 23.8,
+     "i_killed": 3.3,
+     "my_vs_b3": 1.4,
+     "my_vs_b4": 1.9,
+     "how": [
+      [
+       "Death-trigger drains",
+       76
+      ],
+      [
+       "Combat damage",
+       69
+      ]
+     ],
+     "threats": [
+      "Bolas's Citadel",
+      "Liliana, Dreadhorde General",
+      "Teysa, Orzhov Scion",
+      "Village Rites",
+      "Bartolom\u00e9 del Presidio"
+     ]
+    },
+    {
+     "cmd": "Light-Paws, Emperor's Voice",
+     "arch": "Voltron",
+     "key": "lightpaws",
+     "link": "https://edhrec.com/average-decks/light-paws-emperors-voice",
+     "fetched": "2026-10-02",
+     "win_share": 61.1,
+     "killed_me": 50.7,
+     "i_killed": 4.3,
+     "my_vs_b3": 2.6,
+     "my_vs_b4": 0.7,
+     "how": [
+      [
+       "Combat damage",
+       207
+      ],
+      [
+       "Commander damage",
+       102
+      ]
+     ],
+     "threats": [
+      "Winds of Rath",
+      "Mask of Law and Grace",
+      "Sentinel's Eyes",
+      "Chrome Mox",
+      "Gryff's Boon"
+     ]
+    }
+   ],
+   "by_seat": {
+    "0": 1.3,
+    "1": 2.9,
+    "2": 0.6,
+    "3": 1.9
+   },
+   "attack_share": 30.4,
+   "samples": [
+    {
+     "won": false,
+     "rounds": 10,
+     "players": [
+      "Light-Paws",
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You"
+     ],
+     "lines": [
+      "T3 Light-Paws counters Teysa Karlov's Teysa Karlov with Rebuff the Wicked",
+      "T4 You casts Bria, Riptide Rogue",
+      "T5 Light-Paws WIPE Winds of Rath",
+      "T5 You casts Jeska's Will",
+      "T5 You casts Bria, Riptide Rogue",
+      "T8 Meren of Clan Nel Toth WIPE Massacre Wurm",
+      "T8 Teysa Karlov eliminated (death by Meren of Clan Nel Toth)",
+      "T8 You eliminated (combat by Meren of Clan Nel Toth)",
+      "T10 Meren of Clan Nel Toth wins via combo: Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Blood Artist",
+      "T10 Light-Paws eliminated (combo: Yawgmoth, Thran Physician + Mikaeus, the Unhallowed + Blood Artist by Meren of Clan Nel Toth)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 13,
+     "players": [
+      "Teysa Karlov",
+      "Meren of Clan Nel Toth",
+      "You",
+      "Light-Paws"
+     ],
+     "lines": [
+      "T3 You casts Veyran, Voice of Duality",
+      "T4 Teysa Karlov WIPE Damn",
+      "T4 You casts Bria, Riptide Rogue",
+      "T7 Meren of Clan Nel Toth WIPE Living Death",
+      "T7 You casts Bria, Riptide Rogue",
+      "T7 Light-Paws WIPE Winds of Rath",
+      "T8 Light-Paws counters Meren of Clan Nel Toth's Meren of Clan Nel Toth with Rebuff the Wicked",
+      "T9 You casts Jeska's Will",
+      "T9 You casts Bria, Riptide Rogue",
+      "T10 You counters Teysa Karlov's Teysa Karlov with Arcane Denial",
+      "T10 You casts Cyclonic Rift",
+      "T10 You WIPE Cyclonic Rift",
+      "T12 Teysa Karlov eliminated (combat by You)",
+      "T12 You eliminated (combat by Light-Paws)",
+      "T13 Meren of Clan Nel Toth eliminated (combat by Light-Paws)"
+     ]
+    },
+    {
+     "won": false,
+     "rounds": 16,
+     "players": [
+      "Meren of Clan Nel Toth",
+      "You",
+      "Light-Paws",
+      "Teysa Karlov"
+     ],
+     "lines": [
+      "T5 You casts Veyran, Voice of Duality",
+      "T6 You casts Cyclonic Rift",
+      "T6 You WIPE Cyclonic Rift",
+      "T7 Meren of Clan Nel Toth WIPE Culling Ritual",
+      "T7 You casts Bria, Riptide Rogue",
+      "T8 You counters Light-Paws's Winds of Rath with Negate",
+      "T8 Teysa Karlov WIPE Toxic Deluge",
+      "T9 You casts Bria, Riptide Rogue",
+      "T10 You casts Bria, Riptide Rogue",
+      "T11 Light-Paws eliminated (combat by Meren of Clan Nel Toth)",
+      "T12 You casts Blasphemous Act",
+      "T12 You WIPE Blasphemous Act",
+      "T13 Meren of Clan Nel Toth WIPE Massacre Wurm",
+      "T14 Teysa Karlov eliminated (wurm by Meren of Clan Nel Toth)",
+      "T14 You casts Thousand-Year Storm",
+      "T16 You eliminated (combat by Meren of Clan Nel Toth)"
+     ]
+    }
+   ]
+  }
+ ]
+}

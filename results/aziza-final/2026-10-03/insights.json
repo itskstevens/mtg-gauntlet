@@ -1,0 +1,26 @@
+{
+ "combo-storm": [
+  "This is Aziza's best category: 31% of games and 23% of series, well above fair share. Token drains and copied spells close games before most combos assemble.",
+  "Your losses here are mostly infinite combos: Kinnan with Basalt Monolith and Niv-Mizzet with Curiosity or Tandem Lookout. Hold Swords or Path for Kinnan and Niv-Mizzet.",
+  "Aziza is the most-removed card in this pod. Opponents kill her in most games, so recasting her at +2 each time is part of the plan.",
+  "Treasure draw spells (Pirate's Pillage, Big Score, Unexpected Windfall) show the biggest lift. Card flow is what keeps the token engine running."
+ ],
+ "stax-control": [
+  "Mob Justice is the reason this matchup works: games where you cast it were won 43% of the time versus 17% without. A copied Mob Justice gets past both lifegain and blockers.",
+  "Oloro is still the problem deck, winning about 64% of these pods through lifelinkers, Exquisite Blood loops and Test of Endurance.",
+  "Aziza gets countered more than once per game here. Bait counters with Impact Tremors or Warleader's Call before casting her.",
+  "You face about one board wipe per game (Supreme Verdict, Farewell, Toxic Deluge). Your token spells rebuild faster than most decks recover."
+ ],
+ "go-wide": [
+  "This is the weak spot: 15% of games, and you're knocked out first in 56% of them, almost always in combat.",
+  "Jetmir causes half your losses. A board of 1/1s can't block a pumped token army, and opponents send their attacks at whoever blocks worst.",
+  "Your drains still deal heavy damage here, but the races are lost. Anything that keeps your board alive helps more than more tokens.",
+  "Cyclonic Rift and Kindred Dominance wipe your board when they resolve. Hold Clever Concealment for them."
+ ],
+ "graveyard-big-threats": [
+  "Light-Paws wins 53% of these pods. Its auras give protection from your colors, so blockers and spot removal stop working. It kills you through combat and commander damage.",
+  "Teysa's death-trigger drains punish your tokens when they die in combat or wipes.",
+  "You face 1.4 board wipes per game, mostly Winds of Rath, Toxic Deluge and Living Death.",
+  "Mob Justice and Purphoros show the biggest lift. Direct damage is the cleanest way past a voltron commander you can't block."
+ ]
+}
