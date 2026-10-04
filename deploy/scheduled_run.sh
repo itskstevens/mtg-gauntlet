@@ -13,15 +13,20 @@ set -euo pipefail
 REPO="${MTG_REPO:-/home/kevin/mtg-gauntlet}"
 PY="$REPO/.venv/bin/python"
 
+# Sourced before anything reads it. systemd also passes this via EnvironmentFile=, which
+# is why the misordering was not obvious, but a hand-run would have silently ignored it.
+# shellcheck disable=SC1091
+[ -f /etc/default/mtg-gauntlet ] && . /etc/default/mtg-gauntlet
+: "${MTG_REPO:=$REPO}"
+
+cd "$REPO"
+
 DECK="${MTG_DECK:-codie}"
 SERIES="${MTG_SERIES:-300}"
 JOBS="${MTG_JOBS:-0}"
 TAG="${MTG_TAG:-nightly}"
 PUSH="${MTG_PUSH:-1}"
 RUN_ID="$(date -u +%Y%m%d-%H%M%S)-timer"
-
-cd "$REPO"
-[ -f /etc/default/mtg-gauntlet ] && . /etc/default/mtg-gauntlet
 
 # The timer must never overlap a manual job: the engine is one queue, so check for a
 # live worker and skip rather than fight over the cores.
