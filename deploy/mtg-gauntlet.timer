@@ -1,0 +1,14 @@
+[Unit]
+Description=Run the MTG gauntlet on a schedule
+
+[Timer]
+# 04:17 local. Deliberately off the hour: nothing else on the box is scheduled then.
+OnCalendar=*-*-* 04:17:00
+# If the machine was asleep/off at 04:17, run once it comes back rather than skipping.
+Persistent=true
+# Spread the load if several timers ever pile up.
+RandomizedDelaySec=600
+Unit=mtg-gauntlet.service
+
+[Install]
+WantedBy=timers.target

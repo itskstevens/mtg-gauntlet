@@ -126,8 +126,11 @@ def cmd_smoke(a):
         print(f'     cards most often stuck in hand at game end: {stuck.most_common(5)}')
     print('smoke test', 'passed' if ok else 'FAILED')
 
-def run_dir(deck, tag=None):
-    d = os.path.join(ROOT, 'results', deck, TODAY + (f'-{tag}' if tag else ''))
+def run_dir(deck, tag=None, run_id=None):
+    # run_id keeps concurrent jobs from overwriting each other: two jobs for the same
+    # deck on the same day used to share results/<deck>/<TODAY>.
+    name = TODAY + (f'-{tag}' if tag else '') + (f'-{run_id}' if run_id else '')
+    d = os.path.join(ROOT, 'results', deck, name)
     os.makedirs(d, exist_ok=True); return d
 
 def cmd_run(a):
@@ -135,7 +138,7 @@ def cmd_run(a):
     pilot = R.load_pilot(a.deck)
     print(f'Running {a.deck} ({a.series or "default"} series per category)')
     res = R.run(deck_path(a.deck), pilot, a.series, cats, jobs=a.jobs)
-    d = run_dir(a.deck, a.tag)
+    d = run_dir(a.deck, a.tag, getattr(a, 'run_id', None))
     R.save_results(res, os.path.join(d, 'results.json.gz'))
     cfg = R.load_cfg(); groups = R.analyze(res, cfg, pilot)
     meta = dict(date=TODAY, deck=a.deck, series_per_cat=a.series or cfg['defaults']['series'],
@@ -203,7 +206,7 @@ def main():
         if name == 'smoke': x.add_argument('--games', type=int, default=8)
         if name in ('run', 'variants'):
             x.add_argument('--series', type=int); x.add_argument('--jobs', type=int, default=2)
-        if name == 'run': x.add_argument('--categories'); x.add_argument('--tag')
+        if name == 'run': x.add_argument('--categories'); x.add_argument('--tag'); x.add_argument('--run-id')
         if name == 'variants': x.add_argument('--swap', action='append', required=True)
         if name == 'report': x.add_argument('--run'); x.add_argument('--insights'); x.add_argument('--variants')
     x = sp.add_parser('stale'); x.set_defaults(fn=cmd_stale)

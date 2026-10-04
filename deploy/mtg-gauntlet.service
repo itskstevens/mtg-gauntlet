@@ -1,0 +1,15 @@
+[Unit]
+Description=MTG gauntlet scheduled run
+Documentation=file:/home/kevin/mtg-gauntlet/mcp_server/README.md
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=kevin
+WorkingDirectory=/home/kevin/mtg-gauntlet
+EnvironmentFile=-/etc/default/mtg-gauntlet
+ExecStart=/home/kevin/mtg-gauntlet/deploy/scheduled_run.sh
+# a full 300-series run is long; don't let systemd kill it halfway
+TimeoutStartSec=infinity
+Nice=5
+IOSchedulingClass=idle

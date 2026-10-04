@@ -8,8 +8,12 @@ It exposes six narrow tools, never a general shell:
 | Tool | What it does |
 |---|---|
 | `list_decks()` | Decks under `decks/`, whether each has a pilot, and the machine's core count |
-| `run_gauntlet(deck, series=300, jobs=0, swaps=None, categories=None, tag="", push=True)` | Starts a run (or a swap test when `swaps` is given) in a detached background worker and returns a job id at once. `jobs=0` means all cores but two. |
+| `run_gauntlet(deck, series=300, jobs=0, swaps=None, categories=None, tag="", push=True)` | Starts a run (or a swap test when `swaps` is given) in a detached background worker and returns a job id at once. `jobs=0` means one per core, capped at the number of categories in the run (the engine pools over categories, so extra workers would idle). |
 | `job_status(job_id="")` | State (`queued`, `running`, `done`, `failed`, `cancelled`, `lost`), elapsed minutes, log tail. No id means the latest job. |
+| `analyze_run(deck, run="", top=8, min_games=20)` | Reads stored results and aggregates what every game already recorded: placement and seat splits, what actually kills the deck (cause, killer card, average death turn), game-length distribution in wins vs losses, per-category win rates, and which cards correlate with winning. No re-simulation. `run=""` is the newest run, `run="all"` covers all of them. |
+| `audit_deck(deck, check_oracle=True)` | Validates a deck before simulating it: list format and 100-card count, duplicate and malformed lines, whether the simulator can parse every card, whether each card is in Scryfall, and its legality. Reads the rules MCP's card DB when `ORACLE_DB` is reachable (default `/mnt/expansion/mtg-data/cards.sqlite`) and degrades gracefully without it. |
+| `card_context(name, rules=6)` | The bridge to the rules MCP: art, oracle text, legality and the Comprehensive Rules that govern a card, in one call. Hand it a card name that came out of a gauntlet result - the thing that killed you, the one your opponent cast - and skip the second MCP round trip. |
+| `compare_runs(deck, limit=8)` | Per-category win rate for a deck's stored runs, oldest to newest, with the biggest gains and regressions. Answers "did that change help?" - one win rate hides the categories a deck edit helped and the ones it hurt. Needs two or more stored runs. |
 | `list_jobs()` | Recent jobs |
 | `cancel_job(job_id)` | Stops a job. Nothing is committed. |
 | `sync()` | `git pull --rebase`, so decks and pilots pushed from elsewhere are available |
