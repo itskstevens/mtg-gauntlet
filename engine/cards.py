@@ -153,7 +153,7 @@ COMBOS = [
 FOGS = {'Aetherize'}
 # Reanimation and self-mill. Reanimate / Animate Dead / Necromancy take from any graveyard, Persist only nonlegendary.
 REANIMATE_SPELLS = {'Reanimate', 'Bind to Life', 'Restore Relic', 'Animate Dead', 'Necromancy', 'Persist',
-                    'Unburial Rites', 'Dread Return'}
+                    'Unburial Rites', 'Dread Return', 'Exhume'}
 REANIMATE_ANY_GY = {'Reanimate', 'Animate Dead', 'Necromancy'}
 SELF_MILL = {'Entomb': 'entomb', 'Buried Alive': 'buried', 'Omit Variables': 'mill3', 'Faithless Looting': 'loot'}
 PROTECT = {'Heroic Intervention', "Teferi's Protection", 'Flawless Maneuver', 'Clever Concealment'}
@@ -313,6 +313,8 @@ def tag(c):
     if n == 'Toxic Deluge': w = dict(scope={'creature'}, minus=5)
     if n == 'Withering Curse': w = dict(scope={'creature'}, minus=2)
     if n == 'Elesh Norn, Grand Cenobite': w = None
+    if n == 'Crippling Fear': w = dict(scope={'creature'}, minus=3, spare_subtype='Wizard')   # names Wizard: most prepare creatures
+    if n == 'Amalia Benavides Aguirre': w = None   # wipes only at exactly 20 power (the Wildgrowth Walker loop), not on cast
     if w:
         w.setdefault('cost', c.cmc); w.setdefault('asym', False); w.setdefault('minus', None)
         c.wipe = w

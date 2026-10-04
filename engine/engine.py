@@ -5,6 +5,7 @@ try:
 except ImportError:
     import cards as CD
 
+MILL_FLOOR = 25   # self-mill stops below this many cards in library
 ME = 'The Serpent Society'  # commander with a hand-coded trigger (deathtouch death -> nontoken edicts)
 SYM_STAX = {'Cursed Totem', 'Collector Ouphe', 'Winter Orb', 'Rest in Peace', 'Hushbringer', 'Archon of Emeria',
             'Thalia, Guardian of Thraben', 'Deafening Silence', 'Sphere of Resistance'}
@@ -549,10 +550,13 @@ class Game:
         three; Faithless Looting draws two and discards two, creatures first."""
         if sp in ('entomb', 'buried'):
             n = 1 if sp == 'entomb' else 3
-            for x in sorted([x for x in P.lib if x.is_creature], key=lambda x: -x.cmc)[:n]:
+            pref = P.pilot.get('entomb_targets', [])
+            rank = lambda x: (pref.index(x.name) if x.name in pref else len(pref), -x.cmc)
+            for x in sorted([x for x in P.lib if x.is_creature], key=rank)[:n]:
                 P.lib.remove(x); P.gy.append(x)
             random.shuffle(P.lib)
         elif sp == 'mill3':
+            if len(P.lib) < MILL_FLOOR: return   # a real pilot stops milling once the library runs low
             P.gy += [P.lib.pop() for _ in range(min(3, len(P.lib)))]
         elif sp == 'loot':
             P.draw(2)
@@ -567,17 +571,25 @@ class Game:
             if c.name == 'Bind to Life': return 58
             pool = s.reanimate_pool(P, c)
             best = max([x.cmc for _, x in pool] or [0])
+            if c.name == 'Exhume':
+                theirs = max([x.cmc for q in P.opps() for x in q.gy if x.is_creature] or [0])
+                if best < theirs + 2: return 0
             return 0 if best < 4 else 66 + min(best, 9)
         if sp in ('entomb', 'buried'):
             big = any(x.is_creature and x.cmc >= 5 for x in P.gy)
-            return 35 if big else 62
-        if sp in ('mill3', 'loot'): return 44
+            if big: return 35
+            # Pilot option: Entomb straight into a reanimation spell already in hand (the fast line).
+            if any(getattr(x, 'special', None) == 'reanimate' and x.name != 'Bind to Life' for x in P.hand if x is not c):
+                return P.pilot.get('entomb_combo_priority', 62)
+            return 62
+        if sp == 'mill3': return 44 if len(P.lib) >= MILL_FLOOR else 0
+        if sp == 'loot': return 44
         return None
 
     def prep_value(s, P, c):
         if getattr(c, 'special', None) == 'reanimate' and c.name != 'Bind to Life':
             return 3 if any(x.cmc >= 4 for _, x in s.reanimate_pool(P, c)) else 0
-        if getattr(c, 'special', None) in ('mill3',): return 1
+        if getattr(c, 'special', None) in ('mill3',): return 1 if len(P.lib) >= MILL_FLOOR else 0
         if c.ritual or c.tutor or c.draw_now >= 2 or c.drain_now or getattr(c, 'special', None) in ('reanimate',): return 3
         if c.removal or c.draw_now or getattr(c, 'treasure_now', 0) or c.ramp_lands: return 2
         return 0
@@ -963,6 +975,12 @@ class Game:
                 q, x = max(pool, key=lambda t: t[1].cmc); q.gy.remove(x)
                 if c.name == 'Reanimate': s.lose_life(P, x.cmc)
                 s.log(f'{P.label} {c.name} returns {x.name}'); s.resolve(P, x)
+            if c.name == 'Exhume':   # symmetric: each opponent returns their best creature too
+                for q in P.opps():
+                    theirs = [x for x in q.gy if x.is_creature]
+                    if theirs:
+                        x = max(theirs, key=lambda x: x.cmc); q.gy.remove(x)
+                        s.log(f'{q.label} Exhume returns {x.name}'); s.resolve(q, x)
         if sp in ('entomb', 'buried', 'mill3', 'loot'): s.self_mill(P, sp)
         if sp == 'regrowth':
             back = [x for x in P.gy if not x.is_land and x is not c]
@@ -1071,6 +1089,7 @@ class Game:
         if w.get('mvmax') is not None and p.token and p.owner is P: pass
         if w.get('spare_enchanted') and p.auras: return False
         if w.get('spare_type') and p.owner is P: return False
+        if w.get('spare_subtype') and p.card and w['spare_subtype'] in p.card.types: return False
         if w.get('minus') is not None and p.creature and s.tough(p) > w['minus']: return False
         return True
 

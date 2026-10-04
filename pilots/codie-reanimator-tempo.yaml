@@ -1,0 +1,64 @@
+# Pilot for Codie, Ravenous Codex, Prepared Reanimator: Tempo package test (2026-10-04).
+# Exhume over Unburial Rites, Elesh Norn first for tutors, Entomb fired early when a reanimation spell is in hand.
+commander: Codie, Ravenous Codex
+eyebrow: "Five-color · Prepare reanimator · Bracket 3"
+summary: Mills and entombs fatties, then Codie copies prepared Reanimate, Bind to Life and Restore Relic to put two
+  threats back at a time. Wins in combat with Archon of Cruelty, Atraxa, Elesh Norn and the Titans.
+
+engine: [Grave Researcher, Vastlands Scavenger, Lorehold Archivist, Skycoach Conductor, Emeritus of Woe,
+         Emeritus of Abundance, Survival of the Fittest, Archmage Emeritus, "Vega, the Watcher", Emeritus of Ideation,
+         Paradox Shaper]
+keep_home: [Grave Researcher, Vastlands Scavenger, Lorehold Archivist, Skycoach Conductor, Emeritus of Woe,
+            Archmage Emeritus, "Vega, the Watcher", Paradox Shaper, Theorix Metamage, Void Extrapolator,
+            Stitcher's Supplier, Bloom Tender, Faeburrow Elder, Birds of Paradise, Heartwood Crafter,
+            Studious First-Year, Harmonized Trio]
+keep_commander_home: true
+commander_first: true
+
+# Stitcher's Supplier is happy to die (its dies trigger is a bonus mill).
+fodder: any
+fodder_max_cmc: 2
+instant_sac_tokens: []
+bonus_keywords: []
+
+# Tutors find the reanimation preparers; Entomb/Buried Alive pick fatties on their own.
+tutor_targets: ["Elesh Norn, Grand Cenobite", Grave Researcher, Vastlands Scavenger, Archon of Cruelty,
+                "Atraxa, Grand Unifier", Lorehold Archivist, Animate Dead]
+
+priorities:
+  Grave Researcher: 88
+  Vastlands Scavenger: 87
+  Lorehold Archivist: 85
+  Survival of the Fittest: 85
+  Skycoach Conductor: 80
+  Emeritus of Woe: 80
+  Paradox Shaper: 79
+  Void Extrapolator: 78
+  Theorix Metamage: 77
+  Stitcher's Supplier: 77
+  Archmage Emeritus: 76
+  "Vega, the Watcher": 76
+  Emeritus of Ideation: 75
+
+value_bonus:
+  Grave Researcher: 3
+  Vastlands Scavenger: 3
+  Lorehold Archivist: 3
+  Archon of Cruelty: 4
+  "Elesh Norn, Grand Cenobite": 4
+  "Atraxa, Grand Unifier": 3
+key_cards:
+- Codie, Ravenous Codex
+- Grave Researcher
+- Vastlands Scavenger
+- Lorehold Archivist
+- Archon of Cruelty
+- Elesh Norn, Grand Cenobite
+- Atraxa, Grand Unifier
+- Living Death
+hold_removal_vs_combo: true
+hold_counters: true
+sac_nontoken: false
+x_reserve: 0
+entomb_combo_priority: 92
+entomb_targets: ["Elesh Norn, Grand Cenobite", "Atraxa, Grand Unifier", Archon of Cruelty]
