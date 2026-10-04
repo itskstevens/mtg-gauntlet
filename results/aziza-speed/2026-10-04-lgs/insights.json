@@ -1,0 +1,28 @@
+{
+  "all-tables-random-lgs-pods": [
+    "At random LGS tables Aziza wins 47.0% of games and 45.8% of series, almost double the 25% / 16% fair share. A typical win comes around round 9.",
+    "The engine is tokens plus drains: about 28 tokens a game, and Impact Tremors, Purphoros, Warleader's Call and the pingers turn them into about 79 damage spread across the table. Purphoros wins 69% of the games where it's cast.",
+    "Aziza herself is removed 2,839 times, about once in every game and a half. The deck keeps winning anyway, because the token spells carry it without the copies.",
+    "Your losses come early, a median of round 8: combat from go-wide decks, poison from Fynn, and Kinnan and Niv-Mizzet infinite combos."
+  ],
+  "lifegain": [
+    "Your weakest table-mate: 39.1% of games when a lifegain deck sits down, still well above fair share.",
+    "Lifegain offsets your 1-point drains. Liesa, Elenda and Zoraline are the decks that hold on long enough to win.",
+    "Mob Justice and a Boros Charm to the face are the cleanest finishers here; they don't care how much life they gained earlier."
+  ],
+  "typal": [
+    "46.6% of games. The Speed package lifted this from 39.1%: getting the drain engine down a turn earlier wins the race.",
+    "Éowyn, Lathril and High Perfect Morcant are the decks that knock you out, all in combat."
+  ],
+  "tokens-go-wide": [
+    "44.6% of games. Jetmir knocks you out in 57% of the games it plays, and Arabella and Zurgo also win in combat.",
+    "Moogles' Valor (lifelink blockers plus indestructible) and Grand Crescendo are your best defensive turns against a big swing."
+  ],
+  "aggro-combat": [
+    "47.7% of games, but you're knocked out first more often here than almost anywhere.",
+    "Fynn, the Fangbearer kills you with poison 26 times: two poison per hit adds up while you race. Spend Swords or Path on Fynn early."
+  ],
+  "artifacts": [
+    "Your best table-mate: 51.7% of games. Artifact decks rarely pressure you early, and you're knocked out first only 26.5% of the time."
+  ]
+}
