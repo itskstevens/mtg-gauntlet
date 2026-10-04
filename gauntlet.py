@@ -155,10 +155,13 @@ def cmd_variants(a):
     vdir = os.path.join(ROOT, 'decks', a.deck, 'variants'); os.makedirs(vdir, exist_ok=True)
     lists = {'base': deck_path(a.deck)}; names = {'base': 'Your current list'}
     for sw in a.swap:
-        out, inn = [x.strip() for x in sw.split('->')]
+        # one variant per swap string; "A->B; C->D" swaps several cards in the same variant
+        pairs = [[x.strip() for x in part.split('->')] for part in sw.split(';') if part.strip()]
         lst = list(base)
-        if out not in lst: sys.exit(f'{out!r} is not in the list')
-        lst.remove(out); lst.append(inn)
+        for out, inn in pairs:
+            if out not in lst: sys.exit(f'{out!r} is not in the list')
+            lst.remove(out); lst.append(inn)
+        out = ' + '.join(p[0] for p in pairs); inn = ' + '.join(p[1] for p in pairs)
         key = re.sub(r'[^a-z0-9]+', '-', f'{out}-to-{inn}'.lower()).strip('-')
         path = os.path.join(vdir, key + '.txt')
         with open(path, 'w') as f:

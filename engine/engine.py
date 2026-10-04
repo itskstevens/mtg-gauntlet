@@ -312,8 +312,10 @@ class Game:
     def avail(s, P): return P.pool + P.treasure
 
     # ---------------------------------------------------------------- life / damage
+    DMG_WHYS = ('etb', 'spell', 'ping', 'burn', 'storm', 'attack')   # noncombat damage paths Tomik can boost
     def lose_life(s, V, n, src=None, why=''):
         if not V.alive or n <= 0: return
+        if src is not None and src is not V and why in s.DMG_WHYS and src.has('Tomik, Izzet Sparkmage'): n += 1
         V.life -= n
         if src is not None and src is not V:
             src.stats['dmg_dealt'] += n; src.stats['dmg_' + why] += n; V.last_src = (src, why)

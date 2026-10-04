@@ -34,6 +34,8 @@ engine:
 - Belladonna Took
 - Prosperous Partnership
 - Mother of Runes
+- Tomik, Izzet Sparkmage
+- Ajani Unrelenting
 keep_home:
 - Monastery Mentor
 - Young Pyromancer
@@ -51,6 +53,7 @@ keep_home:
 - Mother of Runes
 - Belladonna Took
 - Agate Instigator
+- Tomik, Izzet Sparkmage
 keep_commander_home: true
 commander_first: true
 fodder: tokens
@@ -88,11 +91,14 @@ priorities:
   Belladonna Took: 76
   Anointed Procession: 87
   Smothering Tithe: 84
+  "Tomik, Izzet Sparkmage": 84
+  Ajani Unrelenting: 80
 value_bonus:
   Impact Tremors: 4
   Warleader's Call: 4
   Purphoros, God of the Forge: 4
   Monastery Mentor: 3
+  "Tomik, Izzet Sparkmage": 3
 key_cards:
 - Aziza, Mage Tower Captain
 - Impact Tremors

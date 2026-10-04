@@ -478,6 +478,11 @@ def tag(c):
     if n == 'Arc of Fortune': c.wheel = True; c.draw_now = 7
     if n == 'Seething Song': c.ritual = 2
     if n == 'Song of Creation': c.spell_trig = None   # draws two per spell; handled in engine
+    if n == 'Ajani Unrelenting':
+        # +1 each turn (team +1/+0 and haste) and every activation makes a 2/2 Cadet; the -3 spares your tokens,
+        # so don't let the AI treat it as a symmetric creature wipe.
+        c.wipe = None; c.tokens_rec = ('upkeep', 1, 2, 2, set())
+    if n == 'Tomik, Izzet Sparkmage': c.dmg_boost = 1   # noncombat damage to opponents +1, handled in engine
     # auras: enchanted creature bonuses
     if c.is_aura:
         m = re.search(r'enchanted creature gets \+(\d+)/\+(\d+)', o)
