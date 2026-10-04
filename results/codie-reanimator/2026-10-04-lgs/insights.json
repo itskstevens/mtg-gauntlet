@@ -1,0 +1,28 @@
+{
+  "all-tables-random-lgs-pods": [
+    "At random LGS tables you win 29.0% of games and 22.8% of series, against a fair share of 25% and about 16%. You are the single most common winner: 1,235 of 4,258 games, about four times any other category's count.",
+    "Bracket mix barely matters: 29–30% whether you face zero or three bracket-4 decks.",
+    "Elesh Norn (cast in 18% of games, 54% win when cast) and Atraxa (61%) are the cards that close games. Codie is removed 1,423 times, about once every three games.",
+    "Decking is still the most common single entry in your loss list (48 games). Bind to Life and Entomb still mill after the 25-card stop, so watch your library in long games."
+  ],
+  "lifegain": [
+    "Your worst table-mate: 21.1% of games when a lifegain deck sits down.",
+    "Lifegain decks win 311 tables, the most of any category. Oloro, Astarion and Dina knock you out most; Karlov and Liesa also win with infinite combos.",
+    "Archon of Cruelty (55% win when cast) is your best card here: it drains through their life gain."
+  ],
+  "typal": [
+    "Below fair share: 25.6% of games, and you are knocked out first in 35% of these tables, the highest anywhere.",
+    "Shilgengar, Clavileño and Kaalia win in combat before your fatties land.",
+    "Atraxa wins 67% of the games where it resolves at these tables."
+  ],
+  "tokens-go-wide": [
+    "25.2% of games, at fair share but below your average.",
+    "Caesar, Jetmir, Zurgo and Arabella win with wide combat swings.",
+    "Elesh Norn and Massacre Wurm are the answers; Aetherize buys a turn."
+  ],
+  "artifacts": [
+    "Your best table-mate: 32.1% of games won when an artifact deck sits down.",
+    "Your losses here are mostly decking (15) and Osgir in combat; artifact decks rarely kill you outright.",
+    "Codie survives longest here: removed 250 times in 673 games."
+  ]
+}
