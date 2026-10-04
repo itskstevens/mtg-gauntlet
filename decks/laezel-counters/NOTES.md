@@ -13,3 +13,16 @@ Before a gauntlet run the engine needs:
   Luminarch Aspirant, Mikaeus, Steel Overseer, Constable, Ainok Bond-Kin, Inspiring Paladin, Abzan Falconer,
   Exemplar of Light, Laelia, Stonecoil, Grateful Apparition, Mentor of the Meek, Welcoming Vampire, protection spells
 - a pilot file (none yet)
+
+## Flex to bracket 3 (decks/laezel-counters-b3)
+Same 96 cards; swap 4 slots. Bracket 3 keeps 3 Game Changers: Smothering Tithe, Teferi's Protection, The One Ring.
+
+| Bracket 4 (in)          | Bracket 3 (swap to)  | Why |
+|-------------------------|----------------------|-----|
+| Enlightened Tutor (GC)  | Idyllic Tutor        | still finds Cathars' Crusade / Felidar Retreat / Anointed Procession |
+| Jeska's Will (GC)       | Inspiring Overseer   | card draw on a 2-power body (Welcoming Vampire, Mentor) |
+| Ancient Tomb (GC)       | Plains               | |
+| Heliod, Sun-Crowned     | Ajani's Pridemate    | removes the Heliod + Walking Ballista two-card infinite |
+
+Game Changers in the bracket 4 list (6): Smothering Tithe, Enlightened Tutor, Teferi's Protection, Jeska's Will,
+Ancient Tomb, The One Ring. (Esper Sentinel, Trouble in Pairs and Urza's Saga came off the list in Oct 2025.)
