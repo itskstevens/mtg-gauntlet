@@ -1,4 +1,5 @@
-# Pilot for Codie, Ravenous Codex, Prepared Reanimator build (brew 2026-10-03).
+# Pilot for Codie, Ravenous Codex, Prepared Reanimator: Defensive + Tempo packages adopted 2026-10-04 (was the 2026-10-03 brew list).
+# Swiftfoot Boots + Lightning Greaves protect Codie; Aetherize and Crippling Fear answer go-wide boards.
 commander: Codie, Ravenous Codex
 eyebrow: "Five-color · Prepare reanimator · Bracket 3"
 summary: Mills and entombs fatties, then Codie copies prepared Reanimate, Bind to Life and Restore Relic to put two
@@ -10,7 +11,7 @@ engine: [Grave Researcher, Vastlands Scavenger, Lorehold Archivist, Skycoach Con
 keep_home: [Grave Researcher, Vastlands Scavenger, Lorehold Archivist, Skycoach Conductor, Emeritus of Woe,
             Archmage Emeritus, "Vega, the Watcher", Paradox Shaper, Theorix Metamage, Void Extrapolator,
             Stitcher's Supplier, Bloom Tender, Faeburrow Elder, Birds of Paradise, Heartwood Crafter,
-            Studious First-Year, Harmonized Trio]
+            Studious First-Year]
 keep_commander_home: true
 commander_first: true
 
@@ -21,10 +22,12 @@ instant_sac_tokens: []
 bonus_keywords: []
 
 # Tutors find the reanimation preparers; Entomb/Buried Alive pick fatties on their own.
-tutor_targets: [Grave Researcher, Vastlands Scavenger, Archon of Cruelty, "Atraxa, Grand Unifier",
-                "Elesh Norn, Grand Cenobite", Lorehold Archivist, Animate Dead]
+tutor_targets: ["Elesh Norn, Grand Cenobite", Grave Researcher, Vastlands Scavenger, Archon of Cruelty,
+                "Atraxa, Grand Unifier", Lorehold Archivist, Animate Dead]
 
 priorities:
+  Swiftfoot Boots: 84
+  Lightning Greaves: 84
   Grave Researcher: 88
   Vastlands Scavenger: 87
   Lorehold Archivist: 85
@@ -59,3 +62,5 @@ hold_removal_vs_combo: true
 hold_counters: true
 sac_nontoken: false
 x_reserve: 0
+entomb_combo_priority: 92
+entomb_targets: ["Elesh Norn, Grand Cenobite", "Atraxa, Grand Unifier", Archon of Cruelty]

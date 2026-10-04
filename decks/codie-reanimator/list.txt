@@ -17,7 +17,7 @@
 1 Necromancy
 1 Reanimate
 1 Persist
-1 Unburial Rites
+1 Exhume
 1 Living Death
 1 Archon of Cruelty
 1 Atraxa, Grand Unifier
@@ -31,16 +31,16 @@
 1 Emeritus of Ideation
 1 Archmage Emeritus
 1 Vega, the Watcher
-1 Harmonized Trio
-1 Fact or Fiction
+1 Aetherize
+1 Lightning Greaves
 1 Toxic Deluge
-1 Austere Command
+1 Crippling Fear
 1 Cyclonic Rift
 1 Counterspell
 1 Arcane Denial
 1 Swan Song
 1 Heroic Intervention
-1 Boros Charm
+1 Swiftfoot Boots
 1 Demonic Tutor
 1 Survival of the Fittest
 1 Sol Ring
