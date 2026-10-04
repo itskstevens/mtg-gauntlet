@@ -27,7 +27,7 @@
 1 Massacre Wurm
 1 Sheoldred, the Apocalypse
 1 Terror of the Peaks
-1 Etali, Primal Conqueror
+1 Gray Merchant of Asphodel
 1 Emeritus of Ideation
 1 Archmage Emeritus
 1 Vega, the Watcher

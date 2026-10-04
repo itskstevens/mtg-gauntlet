@@ -1,0 +1,100 @@
+1 Codie, Ravenous Codex
+1 Grave Researcher
+1 Vastlands Scavenger
+1 Lorehold Archivist
+1 Emeritus of Abundance
+1 Skycoach Conductor
+1 Emeritus of Woe
+1 Paradox Shaper
+1 Theorix Metamage
+1 Void Extrapolator
+1 Variable Chaser
+1 Entomb
+1 Buried Alive
+1 Stitcher's Supplier
+1 Faithless Looting
+1 Animate Dead
+1 Necromancy
+1 Reanimate
+1 Persist
+1 Unburial Rites
+1 Living Death
+1 Archon of Cruelty
+1 Atraxa, Grand Unifier
+1 Elesh Norn, Grand Cenobite
+1 Grave Titan
+1 Inferno Titan
+1 Massacre Wurm
+1 Sheoldred, the Apocalypse
+1 Terror of the Peaks
+1 Emeritus of Ideation
+1 Archmage Emeritus
+1 Vega, the Watcher
+1 Harmonized Trio
+1 Fact or Fiction
+1 Toxic Deluge
+1 Austere Command
+1 Cyclonic Rift
+1 Counterspell
+1 Arcane Denial
+1 Swan Song
+1 Heroic Intervention
+1 Boros Charm
+1 Demonic Tutor
+1 Survival of the Fittest
+1 Sol Ring
+1 Arcane Signet
+1 Fellwar Stone
+1 Birds of Paradise
+1 Bloom Tender
+1 Faeburrow Elder
+1 Studious First-Year
+1 Goblin Glasswright
+1 Heartwood Crafter
+1 Farseek
+1 Nature's Lore
+1 Swords to Plowshares
+1 Path to Exile
+1 Emeritus of Truce
+1 Emeritus of Conflict
+1 Beast Within
+1 Chaos Warp
+1 Assassin's Trophy
+1 Command Tower
+1 City of Brass
+1 Mana Confluence
+1 Exotic Orchard
+1 Reflecting Pool
+1 Blood Crypt
+1 Breeding Pool
+1 Godless Shrine
+1 Hallowed Fountain
+1 Overgrown Tomb
+1 Sacred Foundry
+1 Steam Vents
+1 Stomping Ground
+1 Temple Garden
+1 Watery Grave
+1 Arid Mesa
+1 Bloodstained Mire
+1 Flooded Strand
+1 Marsh Flats
+1 Misty Rainforest
+1 Polluted Delta
+1 Scalding Tarn
+1 Verdant Catacombs
+1 Windswept Heath
+1 Wooded Foothills
+1 Indatha Triome
+1 Ketria Triome
+1 Zagoth Triome
+1 Jetmir's Garden
+1 Spara's Headquarters
+1 Ziatora's Proving Ground
+1 Raffine's Tower
+1 Xander's Lounge
+1 Boseiju, Who Endures
+1 Bountiful Promenade
+1 Undergrowth Stadium
+1 Chord of Calling
+1 Gray Merchant of Asphodel

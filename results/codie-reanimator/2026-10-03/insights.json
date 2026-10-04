@@ -1,0 +1,92 @@
+{
+  "turbo-combo": [
+    "Good: 33.2% of games and 28.0% of series, well above the 25% / 16% fair share.",
+    "Kinnan is still the combo kill to fear (40 knockouts with infinite mana). Varragoth and Kefka win in combat.",
+    "Codie is removed 262 times and countered 0.67 times per game here; the deck keeps winning without it because the prepare creatures cast their reanimation spells uncopied."
+  ],
+  "storm-spellslinger": [
+    "Above fair share: 27.7% of games and 19.3% of series.",
+    "Niv-Mizzet, Parun wins 73% of its pods and knocks you out in 62%. Save Swan Song and Counterspell for Curiosity effects.",
+    "Codie is countered a full 1.0 time per game here, the most of any category."
+  ],
+  "stax-hatebears": [
+    "Fair share: 25.3% of games and 17.3% of series.",
+    "You lose to creature damage: Myrel, Yasharn and Heliod. Mogis wins half its pods.",
+    "Supreme Verdict and Farewell hit about once every other game here. Keep a reanimation spell in hand after a wipe."
+  ],
+  "control": [
+    "B's biggest gain over the baseline: 30.1% of games and 23.0% of series (baseline 24.1% / 15.7%).",
+    "Control decks wipe you about once a game (Toxic Deluge 202, Blasphemous Act 125). Recursive threats come back where the combo pieces would not.",
+    "Alela and Maralen kill in combat; Codie is countered 1.06 times per game."
+  ],
+  "tokens-go-wide": [
+    "Weak: 18.7% of games and 8.7% of series, though still above the baseline (14.1% / 6.0%).",
+    "Jetmir wins 67% of its pods and knocks you out in 59%. Elesh Norn is your best card here (40% win when cast).",
+    "You face only 0.51 wipes per game here; the losses are races, not wipes."
+  ],
+  "typal": [
+    "Weak: 16.6% of games and 7.0% of series, knocked out first in 43% of games.",
+    "Lathril, Giada and Wilhelt all win in combat before the second reanimation lands.",
+    "Atraxa (50% win when cast) is the one threat that turns these games around."
+  ],
+  "landfall-lands": [
+    "Weak: 19.2% of games and 11.3% of series.",
+    "Karametra wins 55% of its pods and knocks you out in 62%; Tatyova and Yarok also kill in combat.",
+    "Archon of Cruelty wins 58% of the games where it lands."
+  ],
+  "reanimator-graveyard": [
+    "Middling: 24.6% of games and 15.0% of series, a few points above the baseline.",
+    "Living Death from opponents wipes your board 151 times. Their reanimation is now modeled too, which makes this category harder for every Codie build.",
+    "Atraxa (63%) and Elesh Norn (56%) are the cards that win here."
+  ],
+  "aristocrats": [
+    "Weak: 15.9% of games and 7.3% of series. The baseline did about the same.",
+    "Sephiroth and Teysa kill with death-trigger drains; Toxic Deluge hits you 197 times.",
+    "Edicts and sacrifice outlets blunt big single threats. This is the matchup where two-at-a-time copies matter most."
+  ],
+  "voltron": [
+    "Good: 28.9% of games and 21.7% of series.",
+    "Light-Paws wins 90% of its pods. Treat that as a likely simulator outlier and check a sample game before reading much into it.",
+    "Atraxa (74%), Elesh Norn (67%) and Archon (67%) all win most games where they land."
+  ],
+  "artifacts": [
+    "Your best category: 44.1% of games and 40.7% of series.",
+    "Aloy and Urza kill in combat, but you win most races with lifelink and recursive fatties.",
+    "Codie is removed 342 times here and you still win; the prepare creatures carry the deck."
+  ],
+  "enchantress": [
+    "Fair share: 24.5% of games and 17.7% of series, a little below the baseline.",
+    "Alela wins 73% of its pods. You are decked 34 times: the self-mill plus Omit Variables copies can run you out of cards in long games.",
+    "Winds of Rath (105) is the wipe to play around."
+  ],
+  "counters": [
+    "Good: 32.5% of games and 24.7% of series.",
+    "Atraxa (75%) and Elesh Norn (72%) win most games where they land; Elesh shrinks counter decks' boards.",
+    "Helga and Atreus kill in combat."
+  ],
+  "lifegain": [
+    "Your worst matchup: 5.8% of games and 0 series won (baseline 9.7% / 3.7%).",
+    "Amalia Benavides Aguirre wipes the board 347 times in 647 games, more than any card anywhere else. That looks like a simulator outlier worth checking before trusting this category.",
+    "Vito and Sorin finish with infinite drain combos; Oloro wins 73% of its pods."
+  ],
+  "blink-etb": [
+    "Below fair share: 20.5% of games and 10.0% of series.",
+    "Codie is removed 625 times here, the most anywhere. Blink decks keep reusing removal ETBs.",
+    "Farewell (170) exiles your graveyard as well as your board; keep a threat in hand."
+  ],
+  "big-mana-battlecruiser": [
+    "Above fair share: 27.0% of games and 19.0% of series (baseline 23.2% / 12.7%).",
+    "Raggadragga, Ruby and Kona kill in combat. They wipe only 0.25 times per game, so your threats stick.",
+    "Atraxa wins 58% of the games where it lands."
+  ],
+  "aggro-combat": [
+    "Near fair share: 23.4% of games and 14.7% of series.",
+    "Otharri wins 52% of its pods with extra combats.",
+    "Elesh Norn wins 71% of the games where it lands: -2/-2 breaks aggro boards."
+  ],
+  "burn-group-slug": [
+    "Fair share: 25.2% of games and 16.7% of series.",
+    "Sheoldred, the Apocalypse (the opposing commander) wins 89% of its pods. Like Light-Paws, likely a simulator outlier.",
+    "Blasphemous Act (170) is the wipe you see most."
+  ]
+}
