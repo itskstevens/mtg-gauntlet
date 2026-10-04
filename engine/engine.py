@@ -38,15 +38,26 @@ class Perm:
     def is_ench(s): return s.card is not None and s.card.is_enchantment
     def __repr__(s): return f'{s.name}'
 
+class _NoCommander:
+    """Stands in for the commander in 60-card formats so commander checks (cmd_card.name == X) are simply false."""
+    name = ''; colors = frozenset(); cmc = 0; is_creature = False; power = toughness = 0; kw = frozenset()
+    def __getattr__(self, k): return None
+NO_COMMANDER = _NoCommander()
+
 class Player:
     def __init__(s, g, idx, label, deck, is_me, group, bracket, pilot=None):
         s.g = g; s.idx = idx; s.label = label; s.is_me = is_me; s.group = group; s.bracket = bracket
         s.pilot = pilot or {}
-        cmd_name = deck[0]; s.cmd_card = CD.get(cmd_name)
-        s.lib = [CD.get(n) for n in deck[1:]]; g.rng.shuffle(s.lib)
+        if g.fmt == 'constructed':   # 60-card formats (Pauper): no commander, every card goes in the library
+            cmd_name = ''; s.cmd_card = NO_COMMANDER
+            s.lib = [CD.get(n) for n in deck]
+        else:
+            cmd_name = deck[0]; s.cmd_card = CD.get(cmd_name)
+            s.lib = [CD.get(n) for n in deck[1:]]
+        g.rng.shuffle(s.lib)
         s.hand = []; s.gy = []; s.bf = []; s.lands = 0; s.lands_named = 0
-        s.life = 40; s.poison = 0; s.cmd_dmg = collections.Counter(); s.alive = True
-        s.cmd_zone = True; s.cmd_tax = 0; s.pool = 0; s.reserve = 0; s.treasure = 0
+        s.life = g.start_life; s.poison = 0; s.cmd_dmg = collections.Counter(); s.alive = True
+        s.cmd_zone = g.fmt != 'constructed'; s.cmd_tax = 0; s.pool = 0; s.reserve = 0; s.treasure = 0
         s.spells_turn = 0; s.noncre_turn = 0; s.land_drops = 1; s.exp = 0; s.quest = 0
         s.approach = 0; s.flashback = False; s.lathril_used = False; s.died = None
         s.combo_names = [cb for cb in CD.COMBOS if all(any(c.name == p for c in s.lib) or p == cmd_name for p in cb)]
@@ -79,11 +90,14 @@ class Player:
             if sp: w = max(sp, key=lambda c: c.cmc); s.hand.remove(w); s.lib.insert(0, w)
 
 class Game:
-    def __init__(s, specs, rng, log=False, max_rounds=25):
+    def __init__(s, specs, rng, log=False, max_rounds=25, fmt='commander', on_play=None):
         s.rng = rng; s.logging = log; s.events = []; s.max_rounds = max_rounds
+        s.fmt = fmt; s.start_life = 20 if fmt == 'constructed' else 40
         s.players = [Player(s, i, *sp) for i, sp in enumerate(specs)]
-        rng.shuffle(s.players)
+        if on_play is None: rng.shuffle(s.players)
+        else: s.players.sort(key=lambda q: q.idx != on_play)   # best-of-3: the loser of the last game chooses to play first
         for i, p in enumerate(s.players): p.seat = i
+        s.skip_first_draw = fmt == 'constructed'
         s.round = 0; s.active = None; s.winner = None; s.over = False; s.elim = []
         s.death_depth = 0; s._lp = False
         s.doran = False; s.assault = set(); s.tox_owners = []
@@ -251,7 +265,7 @@ class Game:
         t = sum(s.power(p) for p in q.creatures()) * 0.5
         t += sum(s.value(viewer, p) for p in q.bf if not p.creature) * 0.3
         t += 8 * sum(1 for cb in q.combo_names if sum(1 for n in cb if q.has(n)) >= len(cb) - 1)
-        t += max(0, (40 - q.life)) * -0.1
+        t += max(0, (s.start_life - q.life)) * -0.1
         if q.is_me and q.cmd_on_bf(): t += 3
         return t
 
@@ -1513,8 +1527,8 @@ class Game:
         s.each_upkeep(P)
         s.check_deaths(None, 'life')
         if s.over or not P.alive: return
-        # draw
-        P.draw(1)
+        # draw (the player on the play skips their first draw in 1v1 formats)
+        if not (s.skip_first_draw and s.round == 1 and P.seat == 0): P.draw(1)
         eng = sum(p.card.draw_engine for p in P.bf if p.card and not p.neutral)
         if P.cmd_card.name in ('Birgi, God of Storytelling',) and P.cmd_on_bf(): eng += 1
         lim = s.stax_on(P, 'draw_limit')

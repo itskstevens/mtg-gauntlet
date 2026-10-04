@@ -66,3 +66,28 @@ python3 gauntlet.py report     serpent-society      # results/<deck>/<latest>/re
   tables in `engine/cards.py` (`COMBOS`, `STAX`, `DRAW_ENGINES`, `MANA_ENGINES`, `TUTORS`, `ALT_WINS`).
 - Engine changes: rerun `smoke`, then `run` and compare against the last saved summary for a deck. A shift of more
   than about 3 points in a category means behavior changed, and that change should be intended.
+
+## Pauper gauntlet (1v1)
+
+```bash
+python3 tools/pauper_gauntlet.py meta                       # opponent decks, shares, fetch dates
+python3 tools/pauper_gauntlet.py smoke izzet                # one logged match vs each meta deck
+python3 tools/pauper_gauntlet.py run --matches 200 --house  # all decks in pauper/lists, ~5 min on 2 cores
+```
+
+- Kevin's decks: `pauper/decks.json` (full report data) and `pauper/lists/<key>.txt` (main + `SIDEBOARD:`).
+- Opponents: `opponents-pauper/<key>/list.txt` + `meta.yaml`, listed in `gauntlets-pauper.yaml` with metagame share and a
+  `trust` rating (how well the engine models the deck). Refresh from MTGTop8 event pages (`/event?e=…`) and
+  `/mtgo?d=<deck id>` exports.
+- The engine runs in `fmt='constructed'`: 20 life, no commander, the player on the play skips the first draw, no sideboarding.
+- Results: `results-pauper/<date>[-tag]/results.json` and `summary.md`; report template `report/pauper-template.html`.
+
+## Collection
+
+```bash
+python3 tools/collection.py import EXPORT.csv     # ManaBox .csv or .txt export -> collection/manabox.txt, cards.tsv, history.md
+python3 tools/collection.py diff                  # what changed since the previous version
+python3 tools/collection.py fits                  # buy-list hits, deck cards now owned, colour-legal homes for new cards
+python3 tools/pauper_legal.py                     # refresh collection/pauper_legal.txt (Forge rarity data)
+```
+Each import is one commit, so `git log -- collection/cards.tsv` is the version history.

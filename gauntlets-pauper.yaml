@@ -1,0 +1,18 @@
+# Pauper metagame opponents for the 1v1 gauntlet (engine/pauper.py).
+# Shares are MTGTop8 Pauper metagame %, fetched 2026-10-04; lists are recent top finishes (main decks only).
+max_rounds: 20
+matches: 50
+# trust = how well the engine models that deck. Low-trust decks play far weaker than in real life.
+opponents:
+- {key: affinity, name: "Grixis Affinity", share: 15, trust: low, note: "affinity cost reduction and bridge lands not modelled"}
+- {key: madness-burn, name: "Madness Burn", share: 11, trust: medium, note: "AI aims burn at creatures, rarely at your face"}
+- {key: dimir-control, name: "Dimir Control", share: 8, trust: medium, note: "counters and removal modelled; card-draw engines simplified"}
+- {key: tron, name: "Urzatron", share: 7, trust: low, note: "Urza lands making 7 mana not modelled"}
+- {key: elves, name: "Elves", share: 6, trust: medium, note: "mana elves modelled; Lead the Stampede/Winding Way card advantage only roughly"}
+- {key: ephemerate, name: "Jeskai Ephemerate", share: 6, trust: low, note: "flicker loops not modelled"}
+- {key: mono-blue-delver, name: "Mono-Blue Delver", share: 5, trust: low, note: "Delver flip and Tolarian Terror cost reduction not modelled"}
+- {key: bogles, name: "Bogles (Aura Hexproof)", share: 4, trust: medium, note: "auras and hexproof modelled"}
+- {key: weenie-white, name: "White Weenie", share: 4, trust: high, note: "creature combat, the engine's strongest area"}
+- {key: red-deck-wins, name: "Red Deck Wins (Rally)", share: 4, trust: high, note: "creature combat and pump, well modelled"}
+- {key: jund-wildfire, name: "Jund Wildfire", share: 3, trust: low, note: "land-destruction and artifact synergies not modelled"}
+- {key: golgari-gardens, name: "Golgari Gardens", share: 3, trust: medium, note: "removal modelled; Khalni Garden/sacrifice value simplified"}

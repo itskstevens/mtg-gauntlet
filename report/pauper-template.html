@@ -1,0 +1,123 @@
+<title>Pauper Gauntlet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a results sheet — headline ranking, then a deck × opponent heat grid with trust markers, then the house round-robin. */
+:root{
+  --bg:#f3f4f2; --panel:#ffffff; --fg:#1b1e22; --muted:#5d646c; --line:#d9ddd8;
+  --W:#b08a2e; --U:#2f5fb8; --B:#4a3a55; --R:#c8452f; --G:#3f7a3a;
+  --good:#2f7a4a; --bad:#b53a2a; --hi:#2f7a4a; --mid:#9a6b1f; --lo:#8a8f95;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15181b; --panel:#1d2125; --fg:#e8eae7; --muted:#9aa2a9; --line:#30363b;
+  --W:#e2c56f; --U:#7ea2ea; --B:#b9a3c9; --R:#ef8a74; --G:#86c07d;
+  --good:#7fcf98; --bad:#ef8a74; --hi:#7fcf98; --mid:#e0b161; --lo:#7d858c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15181b; --panel:#1d2125; --fg:#e8eae7; --muted:#9aa2a9; --line:#30363b;
+  --W:#e2c56f; --U:#7ea2ea; --B:#b9a3c9; --R:#ef8a74; --G:#86c07d;
+  --good:#7fcf98; --bad:#ef8a74; --hi:#7fcf98; --mid:#e0b161; --lo:#7d858c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:14px;line-height:1.5}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;display:grid;gap:22px}
+h1,h2{font-family:var(--display);margin:0;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(26px,4.5vw,36px);font-weight:800}
+h2{font-size:20px;font-weight:700}
+p{margin:0;max-width:72ch}
+.muted{color:var(--muted)}
+.rank{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.rk{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 10px;align-items:center}
+.rk .n{font:500 13px var(--mono);color:var(--muted)}
+.rk b{font-family:var(--display);font-size:16px;font-weight:700;display:flex;align-items:center;gap:6px;min-width:0}
+.rk .big{font:500 22px var(--mono);font-variant-numeric:tabular-nums}
+.rk small{grid-column:2/4;color:var(--muted);font-size:12px}
+.pip{width:10px;height:10px;border-radius:50%;display:inline-block}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:600 13px var(--body);padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+.tab[aria-selected="true"]{border-color:var(--fg);box-shadow:inset 0 -3px 0 var(--fg)}
+.tab:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;font-variant-numeric:tabular-nums;width:100%}
+th,td{padding:6px 8px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11.5px;font-weight:600;color:var(--muted);vertical-align:bottom}
+th.opp{writing-mode:vertical-rl;transform:rotate(180deg);text-align:left;height:150px;padding:8px 4px}
+td.deck,th.deck{text-align:left;font-weight:600;position:sticky;left:0;background:var(--panel);z-index:1}
+td.cell{font:500 12.5px var(--mono);min-width:44px}
+.trust{display:inline-block;width:8px;height:8px;border-radius:2px;margin-bottom:4px}
+.t-high{background:var(--hi)} .t-medium{background:var(--mid)} .t-low{background:var(--lo)}
+th.lowcol,td.lowcol{opacity:.55}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.notes{display:grid;gap:8px;font-size:13.5px}
+.notes ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.hov{cursor:help;text-decoration:underline dotted;text-decoration-color:var(--muted);text-underline-offset:3px}
+#peek{position:fixed;z-index:50;width:220px;max-width:60vw;aspect-ratio:488/680;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.4);pointer-events:none;background:var(--line)}
+a{color:inherit}
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:8px">
+    <h1>Pauper Gauntlet</h1>
+    <p class="muted" id="sub"></p>
+  </header>
+
+  <section style="display:grid;gap:10px">
+    <h2>Ranking</h2>
+    <p class="muted">Sorted by the trusted score: match wins against the meta decks the engine plays well, weighted by how often they show up. The full meta-weighted figure is in grey; it flatters every deck because the engine-heavy meta decks play badly here.</p>
+    <div class="rank" id="rank"></div>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" aria-selected="true" data-v="meta">Vs the meta</button>
+    <button class="tab" role="tab" aria-selected="false" data-v="house">Your decks vs each other</button>
+  </nav>
+
+  <section id="v-meta" style="display:grid;gap:10px">
+    <div class="legend"><span><i class="trust t-high"></i>engine plays it well</span><span><i class="trust t-medium"></i>roughly modelled</span><span><i class="trust t-low"></i>key engine missing, plays far weaker than real life (faded)</span><span>Cells: best-of-3 match win %. Hover a cell for game win, on the play / on the draw and length.</span></div>
+    <div class="scroll"><table id="meta"></table></div>
+  </section>
+
+  <section id="v-house" style="display:grid;gap:10px" hidden>
+    <p class="muted">Each row is that deck's match win rate against the column deck, from kitchen-table matches between your own decks.</p>
+    <div class="scroll"><table id="house"></table></div>
+  </section>
+
+  <section class="notes">
+    <h2>How to read this</h2>
+    <ul>
+      <li>Every matchup is a best-of-3 with no sideboarding; the loser of a game plays first in the next.</li>
+      <li>The AI is rule-based. It's good at creature combat, removal and counters, and weak at engines it doesn't model (Affinity cost reduction, Tron lands, flicker loops, Delver flipping). Treat low-trust columns as not meaningful.</li>
+      <li>Burn decks mostly aim burn at your creatures, so the burn matchups are kinder to you than they would be in real life.</li>
+      <li>With this many matches a win rate moves about ±3 points between runs. Differences smaller than that are noise.</li>
+    </ul>
+    <p class="muted" id="sources"></p>
+  </section>
+</div>
+
+<script>
+const D=__DATA__;
+const IMG="https://mtg-cards.lab.kstevens.ca/images/";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct=v=>Math.round(v*100)+"%";
+function heat(v){const a=Math.min(1,Math.abs(v-.5)*2);return v>=.5?`color-mix(in srgb, var(--good) ${Math.round(a*55)}%, transparent)`:`color-mix(in srgb, var(--bad) ${Math.round(a*55)}%, transparent)`}
+document.getElementById("sub").textContent=`${D.matches} best-of-3 matches per pairing · ${D.rows.length} decks · ${D.opps.length} meta decks from MTGTop8 · run ${D.date}`;
+const pips=c=>c.map(x=>`<i class="pip" style="background:var(--${x})"></i>`).join("");
+document.getElementById("rank").innerHTML=D.rows.map((r,i)=>`<div class="rk"><span class="n">${i+1}</span><b><span style="display:flex;gap:3px">${pips(r.colors)}</span><span class="hov" data-img="${r.sigimg||""}">${esc(r.name)}</span></b><span class="big">${pct(r.trusted)}</span><small>${pct(r.weighted)} meta-weighted · hover the name for its key card</small></div>`).join("");
+const opps=D.opps;
+let h=`<thead><tr><th class="deck">Deck</th>${opps.map(o=>`<th class="opp ${o.trust==="low"?"lowcol":""}" title="${esc(o.note)}"><i class="trust t-${o.trust}"></i> ${esc(o.name)} <span style="font-weight:400">${o.share}%</span></th>`).join("")}</tr></thead><tbody>`;
+for(const r of D.rows){h+=`<tr><td class="deck"><span class="hov" data-img="${r.sigimg||""}">${esc(r.name)}</span></td>`;
+  for(const o of opps){const c=r.cells[o.key];h+=`<td class="cell ${o.trust==="low"?"lowcol":""}" style="background:${heat(c.m)}" title="Games ${pct(c.g)} · on the play ${pct(c.p)} · on the draw ${pct(c.d)} · ${c.t} turns avg">${pct(c.m)}</td>`}
+  h+="</tr>"}
+document.getElementById("meta").innerHTML=h+"</tbody>";
+const keys=D.rows.map(r=>r.key).filter(k=>D.house[k]);
+if(keys.length){let t=`<thead><tr><th class="deck">Row vs column</th>${keys.map(k=>`<th class="opp">${esc(D.rows.find(r=>r.key===k).name)}</th>`).join("")}</tr></thead><tbody>`;
+  for(const a of keys){t+=`<tr><td class="deck">${esc(D.rows.find(r=>r.key===a).name)}</td>`+keys.map(b=>a===b?`<td class="cell">–</td>`:`<td class="cell" style="background:${heat(D.house[a][b])}">${pct(D.house[a][b])}</td>`).join("")+"</tr>"}
+  document.getElementById("house").innerHTML=t+"</tbody>"}
+document.getElementById("sources").innerHTML="Opponent lists: "+opps.map(o=>`<a href="${o.source}" target="_blank" rel="noopener">${esc(o.name)}</a>`).join(" · ");
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===b));document.getElementById("v-meta").hidden=b.dataset.v!=="meta";document.getElementById("v-house").hidden=b.dataset.v!=="house"});
+const peek=document.createElement("img");peek.id="peek";peek.alt="";peek.hidden=true;document.body.append(peek);
+function place(x,y){const w=peek.offsetWidth||220,hh=w*680/488;let l=x+18,t=y-hh/2;if(l+w>innerWidth-8)l=x-w-18;t=Math.max(8,Math.min(t,innerHeight-hh-8));peek.style.left=l+"px";peek.style.top=t+"px"}
+document.addEventListener("pointerover",e=>{const el=e.target.closest(".hov");if(el&&el.dataset.img&&e.pointerType==="mouse"){peek.src=IMG+el.dataset.img;peek.hidden=false;place(e.clientX,e.clientY)}});
+document.addEventListener("pointermove",e=>{if(!peek.hidden&&e.pointerType==="mouse")place(e.clientX,e.clientY)});
+document.addEventListener("pointerout",e=>{if(e.target.closest(".hov"))peek.hidden=true});
+</script>
