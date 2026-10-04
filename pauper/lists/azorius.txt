@@ -1,0 +1,52 @@
+2 City Pigeon
+1 Strix Lookout
+1 Mysterio's Phantasm
+1 Skyward Spider
+1 Wanderlight Spirit
+1 Glamermite
+2 Shore Lurker
+1 Vanguard Seraph
+1 Dragonback Lancer
+1 Heron of Hope
+1 East Wind Avatar
+1 Giant-Sized Flying Ant
+2 Merrow Skyswimmer
+1 Quicksilver Fisher
+1 Ascendant Dustspeaker
+1 Starling, Aerial Ally
+1 Impulse
+1 Anticipate
+1 Telling Time
+1 Sleight of Hand
+1 Curate
+1 Geistwave
+1 Unexplained Disappearance
+1 Banishing Betrayal
+1 Ojutai's Breath
+1 Depower
+1 Procrastinate
+1 Wild Unraveling
+2 Panther Pounce
+2 Thwip!
+1 Beaming Defiance
+1 Chase Inspiration
+3 Murdock's Crusade
+1 Resculpt
+1 Ravenform
+2 University Campus
+1 Tranquil Cove
+8 Plains
+7 Island
+
+SIDEBOARD:
+2 Shattered Acolyte
+2 Temporal Cleansing
+2 Unexpected Assistance
+2 Wanderwine Distracter
+1 Raft Security Officer
+1 Ageless Guardian
+1 Rootborn Defenses
+1 Witness Protection
+1 Spider-Man No More
+1 Ringing Strike Mastery
+1 I Am Iron Man

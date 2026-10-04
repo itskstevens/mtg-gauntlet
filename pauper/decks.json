@@ -1,0 +1,2351 @@
+{
+ "izzet": {
+  "name": "Izzet Opus Spells",
+  "colors": [
+   "U",
+   "R"
+  ],
+  "tagline": "Spells-matter tempo. Cheap burn and cantrips pump a board of opus creatures, then 5-mana spells cash in for double strike, stuns and card advantage.",
+  "plan": [
+   [
+    "How it wins",
+    "Land an opus threat on turns 2–4, then chain a spell or two each turn. Tackle Artist grows permanently; Firedancer and Virtuoso swing big on the turn you cast."
+   ],
+   [
+    "The 5-mana trick",
+    "Heated Argument and kicked Burst Lightning count as five mana spent, so they give Firedancer double strike, Virtuoso +2/+2, Tackle Artist two counters and Mascot a free card."
+   ],
+   [
+    "Mulligan to",
+    "Two lands, one creature and one cheap spell. Ancestral Anger replaces itself, so hands heavy on it are fine."
+   ]
+  ],
+  "groups": [
+   [
+    "Creatures",
+    [
+     [
+      4,
+      "Tackle Artist",
+      "2e/2e80d632-cf84-4562-8c93-5850cceb5bec_tackle_artist.jpg",
+      5
+     ],
+     [
+      2,
+      "Expressive Firedancer",
+      "f1/f1812d69-c016-4bc3-b899-ed47f5e893e5_expressive_firedancer.jpg",
+      2
+     ],
+     [
+      3,
+      "Elemental Mascot",
+      "88/882f30e4-4ce1-4581-8d2d-d763aa13befe_elemental_mascot.jpg",
+      3
+     ],
+     [
+      2,
+      "Deluge Virtuoso",
+      "41/416c70ab-f136-43e0-b5d5-9af8d4211c01_deluge_virtuoso.jpg",
+      2
+     ],
+     [
+      3,
+      "Stadium Tidalmage",
+      "1c/1c45e872-3af8-47a4-9dc7-a99c293338f8_stadium_tidalmage.jpg",
+      3
+     ],
+     [
+      2,
+      "Textbook Tabulator",
+      "eb/ebb40a50-cfbc-4ec1-9c54-26a1bc2e7a6e_textbook_tabulator.jpg",
+      4
+     ],
+     [
+      1,
+      "Flaring Cinder",
+      "f7/f70d65bf-5f1c-4aee-9bd1-f5ee6974b058_flaring_cinder.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Burn & removal",
+    [
+     [
+      4,
+      "Ancestral Anger",
+      "e0/e0828e8d-f01f-4088-9123-6d923ddb3242_ancestral_anger.jpg",
+      4
+     ],
+     [
+      2,
+      "Burst Lightning",
+      "ac/ac2086fe-98ee-4280-9c7c-c5c2d6548a8b_burst_lightning.jpg",
+      2
+     ],
+     [
+      2,
+      "Shock",
+      "a9/a9d288b8-cdc1-4e55-a0c9-d6edfc95e65d_shock.jpg",
+      2
+     ],
+     [
+      2,
+      "Lightning Strike",
+      "f3/f34b9bc4-7bfe-47fd-ba23-4eeeb46026eb_lightning_strike.jpg",
+      2
+     ],
+     [
+      3,
+      "Abrade",
+      "f9/f9db72dc-9a5b-48a4-a86e-7464d9a2166a_abrade.jpg",
+      3
+     ],
+     [
+      1,
+      "Unsubtle Mockery",
+      "9d/9d059345-1a2f-4ecb-b419-3873ebadf318_unsubtle_mockery.jpg",
+      3
+     ],
+     [
+      2,
+      "Heated Argument",
+      "32/329f6434-8f1b-4a10-8feb-2a9dc5f2712b_heated_argument.jpg",
+      4
+     ]
+    ]
+   ],
+   [
+    "Card flow & counters",
+    [
+     [
+      2,
+      "Quick Study",
+      "7b/7bff8d4a-1c7d-48b8-b3e3-737dd6f01823_quick_study.jpg",
+      4
+     ],
+     [
+      2,
+      "Think Twice",
+      "fa/fa85c5a2-8e83-4624-a35a-a0bbf17ecbb4_think_twice.jpg",
+      2
+     ],
+     [
+      1,
+      "Preordain",
+      "ac/ac641490-ca14-48d7-8cc4-b69ce984befa_preordain.jpg",
+      1
+     ],
+     [
+      1,
+      "Opt",
+      "71/713332c1-5bd8-400f-bfff-c1ca0697a043_opt.jpg",
+      1
+     ],
+     [
+      1,
+      "Consider",
+      "4c/4c9bcba6-87b5-4fb3-97ee-6fe5b739337d_consider.jpg",
+      1
+     ],
+     [
+      2,
+      "Wild Unraveling",
+      "dd/dd1a4219-437b-494f-ae0e-1d3181ffcd63_wild_unraveling.jpg",
+      3
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      3,
+      "Spectacle Summit",
+      "33/33a4e73d-d93a-4b6f-88ff-cd53f20d178c_spectacle_summit.jpg",
+      3
+     ],
+     [
+      1,
+      "Stark Industries",
+      "52/52401cb4-1bce-4191-9220-0d93ea4108b8_stark_industries.jpg",
+      1
+     ],
+     [
+      1,
+      "Izzet Guildgate",
+      "bf/bf75a3d1-f184-4b48-a913-21caee1db084_izzet_guildgate.jpg",
+      1
+     ],
+     [
+      7,
+      "Island",
+      null,
+      43
+     ],
+     [
+      6,
+      "Mountain",
+      null,
+      52
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    1,
+    "Counterspell",
+    "vs. combo and big spells"
+   ],
+   [
+    1,
+    "Negate",
+    ""
+   ],
+   [
+    2,
+    "Essence Scatter",
+    "vs. creature decks"
+   ],
+   [
+    1,
+    "Spell Pierce",
+    ""
+   ],
+   [
+    1,
+    "Syncopate",
+    ""
+   ],
+   [
+    2,
+    "Unsubtle Mockery",
+    "vs. 4-toughness threats"
+   ],
+   [
+    2,
+    "Heated Argument",
+    ""
+   ],
+   [
+    1,
+    "Tectonic Hazard",
+    "vs. tokens and Elves"
+   ],
+   [
+    1,
+    "Vapor Snag",
+    "vs. auras and tempo"
+   ],
+   [
+    1,
+    "Unsummon",
+    ""
+   ],
+   [
+    2,
+    "Quick Study",
+    "for grindy matchups"
+   ]
+  ],
+  "upgrades": [
+   [
+    2,
+    "Expressive Firedancer",
+    "fills to 4; cut 2 Textbook Tabulator"
+   ],
+   [
+    1,
+    "Elemental Mascot",
+    "fills to 4; cut Flaring Cinder"
+   ],
+   [
+    2,
+    "Deluge Virtuoso",
+    "fills to 4; cut Opt and Consider"
+   ],
+   [
+    4,
+    "Lightning Bolt",
+    "cut 2 Shock and 2 Lightning Strike"
+   ],
+   [
+    4,
+    "Ponder",
+    "cut 2 Think Twice, 1 Preordain, 1 Unsubtle Mockery"
+   ]
+  ]
+ },
+ "golgari": {
+  "name": "Golgari Infusion",
+  "colors": [
+   "G",
+   "B"
+  ],
+  "tagline": "Lifegain midrange. Cheap life triggers every turn switch on infusion bonuses, grow Pest Mascot and Blood Researcher, and power card selection.",
+  "plan": [
+   [
+    "How it wins",
+    "Gain life early and often. Bogwater Lumaret pays out on every creature you play, Shopkeeper's Bane on every attack, and Oracle's Restoration for one green."
+   ],
+   [
+    "Sequencing",
+    "Trigger lifegain before you cast infusion cards. Play a creature next to Lumaret, or attack with Bane, then cast Follow the Lumarets for two cards or Efflorescence for a trampling, indestructible threat."
+   ],
+   [
+    "Mulligan to",
+    "Two lands plus Lumaret or Bane. Feed the Swarm and Last Gasp handle the early aggro starts."
+   ]
+  ],
+  "groups": [
+   [
+    "Creatures",
+    [
+     [
+      4,
+      "Bogwater Lumaret",
+      "01/0109432d-5a2a-456f-ad39-b75cb4c73420_bogwater_lumaret.jpg",
+      5
+     ],
+     [
+      4,
+      "Shopkeeper's Bane",
+      "e7/e7572317-6bec-4fb0-81ac-76aec04f14ad_shopkeeper_s_bane.jpg",
+      5
+     ],
+     [
+      2,
+      "Pest Mascot",
+      "b8/b8ecddf7-ba89-40dd-9f63-5bad27dd850d_pest_mascot.jpg",
+      2
+     ],
+     [
+      1,
+      "Blood Researcher",
+      "a4/a465ba74-615a-4261-b4a0-fcb0819f10b3_blood_researcher.jpg",
+      1
+     ],
+     [
+      2,
+      "Mindful Biomancer",
+      "03/03af9d24-2df6-4318-82f2-8abdd22206f1_mindful_biomancer.jpg",
+      2
+     ],
+     [
+      1,
+      "Scarblade Scout",
+      "f6/f6758e8f-5462-48a7-96d3-60d07b1563fc_scarblade_scout.jpg",
+      1
+     ],
+     [
+      1,
+      "Kin-Tree Nurturer",
+      "ad/ad28a1f9-8893-4693-9464-c32ed760f6b1_kin_tree_nurturer.jpg",
+      1
+     ],
+     [
+      1,
+      "Ulna Alley Shopkeep",
+      "9d/9da7f9ec-872a-471d-8d60-5f4213f0204f_ulna_alley_shopkeep.jpg",
+      1
+     ],
+     [
+      1,
+      "Courier Bat",
+      "d8/d8ff239c-cd71-4cd2-9e96-792a116989ca_courier_bat.jpg",
+      1
+     ],
+     [
+      1,
+      "Primordial Pachyderm",
+      "5e/5ebdc1a5-e678-444b-abb8-8753558a39de_primordial_pachyderm.jpg",
+      1
+     ],
+     [
+      2,
+      "Tenured Concocter",
+      "0e/0ecd4493-dfb4-4d56-a90e-08b74b474f39_tenured_concocter.jpg",
+      2
+     ]
+    ]
+   ],
+   [
+    "Lifegain & card flow",
+    [
+     [
+      4,
+      "Oracle's Restoration",
+      "00/00e75a6b-699e-4824-86e5-66d45245cd9b_oracle_s_restoration.jpg",
+      6
+     ],
+     [
+      3,
+      "Follow the Lumarets",
+      "5b/5bb38d08-582e-43aa-9507-7c20759978ec_follow_the_lumarets.jpg",
+      3
+     ],
+     [
+      3,
+      "Send in the Pest",
+      "95/955bfcb8-6477-4ed0-b6e7-8940874ae5e4_send_in_the_pest.jpg",
+      3
+     ],
+     [
+      2,
+      "Efflorescence",
+      "18/181da74b-53fb-4e46-afc0-e7c990fda128_efflorescence.jpg",
+      2
+     ],
+     [
+      2,
+      "Pull from the Grave",
+      "c5/c5373026-8b43-42a7-aa69-a1b0f1619795_pull_from_the_grave.jpg",
+      4
+     ],
+     [
+      1,
+      "Rapid Rescue",
+      "de/de1ad369-5aa3-4c54-8fb1-30b7f1d4d542_rapid_rescue.jpg",
+      2
+     ]
+    ]
+   ],
+   [
+    "Removal",
+    [
+     [
+      3,
+      "Feed the Swarm",
+      "58/5825997b-10d7-4a36-972c-a80ddd90b8ed_feed_the_swarm.jpg",
+      3
+     ],
+     [
+      3,
+      "Last Gasp",
+      "a8/a82c3860-4dd6-4ffd-aa8f-ab8df687db6c_last_gasp.jpg",
+      3
+     ],
+     [
+      1,
+      "Scorpion's Sting",
+      "7f/7f5e5aa8-3f15-45c9-bfc8-1f4b98d2be38_scorpion_s_sting.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      2,
+      "Titan's Grave",
+      "59/595f0eb5-f521-4174-9c48-b89e85ea907c_titan_s_grave.jpg",
+      2
+     ],
+     [
+      1,
+      "Subterranean Cavern",
+      "d4/d49a7525-eca5-48e1-b94b-d618a706fd02_subterranean_cavern.jpg",
+      1
+     ],
+     [
+      2,
+      "Evolving Wilds",
+      "a7/a75445d3-1303-4bb5-89ad-26ea93fecd48_evolving_wilds.jpg",
+      7
+     ],
+     [
+      7,
+      "Forest",
+      null,
+      39
+     ],
+     [
+      6,
+      "Swamp",
+      null,
+      38
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    3,
+    "Glorious Decay",
+    "vs. fliers, artifacts, graveyards"
+   ],
+   [
+    2,
+    "Hoarding Recluse",
+    "vs. aggro and graveyard decks"
+   ],
+   [
+    1,
+    "Pick Your Poison",
+    ""
+   ],
+   [
+    1,
+    "Bake into a Pie",
+    "vs. big threats"
+   ],
+   [
+    1,
+    "Grisly Ritual",
+    ""
+   ],
+   [
+    1,
+    "Mage Hunters' Onslaught",
+    ""
+   ],
+   [
+    1,
+    "Duress",
+    "vs. control and combo"
+   ],
+   [
+    1,
+    "Crushing Canopy",
+    ""
+   ],
+   [
+    1,
+    "Broken Wings",
+    ""
+   ],
+   [
+    1,
+    "Snakeskin Veil",
+    "vs. removal-heavy decks"
+   ],
+   [
+    1,
+    "Scout the City",
+    ""
+   ],
+   [
+    1,
+    "Bojuka Bog",
+    "vs. graveyard decks"
+   ]
+  ],
+  "upgrades": [
+   [
+    2,
+    "Pest Mascot",
+    "fills to 4; cut 2 Tenured Concocter"
+   ],
+   [
+    3,
+    "Blood Researcher",
+    "fills to 4; cut Courier Bat, Ulna Alley Shopkeep, Primordial Pachyderm"
+   ],
+   [
+    1,
+    "Feed the Swarm",
+    "fills to 4; cut Scorpion's Sting"
+   ],
+   [
+    1,
+    "Last Gasp",
+    "fills to 4; cut Rapid Rescue"
+   ],
+   [
+    2,
+    "Kin-Tree Nurturer",
+    "cut 2 Mindful Biomancer"
+   ]
+  ]
+ },
+ "orzhov": {
+  "name": "Orzhov Repartee",
+  "colors": [
+   "W",
+   "B"
+  ],
+  "tagline": "Removal-heavy midrange. Every spell that targets a creature drains with Melancholic Poet and pumps Rehearsed Debater, while Inkmage and Historian grind card quality.",
+  "plan": [
+   [
+    "How it wins",
+    "Trade removal for their threats and drain 1–2 a turn off Melancholic Poet. Owlin Historian and Glyphmage's Inkling close in the air."
+   ],
+   [
+    "Repartee targets",
+    "Rapier Wit, Keep Out, Take Up the Shield, Auntie's Sentence and every removal spell target a creature. Render Speechless and Cost of Brilliance count when you also pick a creature for the counters."
+   ],
+   [
+    "Mulligan to",
+    "Two lands, one removal spell and a two-drop. Rapier Wit on your own turn stuns a blocker for an extra turn and draws."
+   ]
+  ],
+  "groups": [
+   [
+    "Creatures",
+    [
+     [
+      4,
+      "Imperious Inkmage",
+      "fc/fcd31653-4964-46a6-820c-f17e8cbaa1fa_imperious_inkmage.jpg",
+      4
+     ],
+     [
+      4,
+      "Melancholic Poet",
+      "37/37731c49-1238-4e0e-8993-204e36c1f4ee_melancholic_poet.jpg",
+      4
+     ],
+     [
+      3,
+      "Owlin Historian",
+      "e1/e1ebb60e-fbf3-4f8f-a76f-d637ec59ffb0_owlin_historian.jpg",
+      3
+     ],
+     [
+      3,
+      "Eager Glyphmage",
+      "07/070aa6c7-4741-47de-b68a-629aa4201ac0_eager_glyphmage.jpg",
+      3
+     ],
+     [
+      1,
+      "Inkling Mascot",
+      "0f/0f0959ff-4464-4738-9d79-5b06f368f144_inkling_mascot.jpg",
+      1
+     ],
+     [
+      1,
+      "Rehearsed Debater",
+      "e3/e30ccf07-0969-4e81-ba43-c50a2ff9c040_rehearsed_debater.jpg",
+      1
+     ],
+     [
+      2,
+      "Moonglove Extractor",
+      "98/980affa7-6308-4acd-af64-f804e574a89b_moonglove_extractor.jpg",
+      4
+     ],
+     [
+      2,
+      "Brave Brawler",
+      "a1/a1a791be-71e6-4c1f-8717-08ca62d40de2_brave_brawler.jpg",
+      2
+     ]
+    ]
+   ],
+   [
+    "Targeted tricks & card flow",
+    [
+     [
+      4,
+      "Rapier Wit",
+      "cf/cf43518b-bfec-443d-a6c0-f2d848dc5fa8_rapier_wit.jpg",
+      4
+     ],
+     [
+      4,
+      "Render Speechless",
+      "6f/6fdddab4-fcc9-4622-9c17-c69f9d4bca08_render_speechless.jpg",
+      4
+     ],
+     [
+      2,
+      "Cost of Brilliance",
+      "b4/b45afde2-eaaf-4174-8082-d344efa54c44_cost_of_brilliance.jpg",
+      4
+     ],
+     [
+      2,
+      "Take Up the Shield",
+      "e8/e8d0eafe-540a-4b2e-a989-e98ff3c31105_take_up_the_shield.jpg",
+      3
+     ]
+    ]
+   ],
+   [
+    "Removal",
+    [
+     [
+      3,
+      "Keep Out",
+      "61/61cb927a-4cf8-49d6-ab4b-9e882bc08774_keep_out.jpg",
+      3
+     ],
+     [
+      2,
+      "Auntie's Sentence",
+      "40/406e6db7-6e31-44b9-a793-57ee10688f71_auntie_s_sentence.jpg",
+      2
+     ],
+     [
+      2,
+      "Bogslither's Embrace",
+      "21/21695c70-f746-4d77-b6d3-e2713a5c929e_bogslither_s_embrace.jpg",
+      2
+     ],
+     [
+      2,
+      "Wander Off",
+      "b1/b14d3226-adc2-4bdd-9e69-fefdc946ac04_wander_off.jpg",
+      2
+     ],
+     [
+      1,
+      "Hour of Defeat",
+      "27/2774fcb7-8988-4a18-b5ec-7534dd8b2e05_hour_of_defeat.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      2,
+      "Forum of Amity",
+      "34/349ea6c7-6b3e-417f-b082-b712e2b1635b_forum_of_amity.jpg",
+      2
+     ],
+     [
+      1,
+      "Fisk Tower",
+      "55/5554db95-9676-4c24-b82a-8173513d7927_fisk_tower.jpg",
+      1
+     ],
+     [
+      1,
+      "Foot Headquarters",
+      "06/063dd25b-d4b4-4e09-acae-8c52dcb40803_foot_headquarters.jpg",
+      1
+     ],
+     [
+      7,
+      "Plains",
+      null,
+      47
+     ],
+     [
+      7,
+      "Swamp",
+      null,
+      38
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    3,
+    "Liminal Hold",
+    "vs. auras, artifacts, big threats"
+   ],
+   [
+    2,
+    "Spiral into Solitude",
+    ""
+   ],
+   [
+    2,
+    "Worthy Cost",
+    ""
+   ],
+   [
+    2,
+    "Piercing Light",
+    "vs. aggro"
+   ],
+   [
+    1,
+    "Web Up",
+    ""
+   ],
+   [
+    1,
+    "Venom's Hunger",
+    ""
+   ],
+   [
+    1,
+    "Aggressive Negotiations",
+    "vs. control"
+   ],
+   [
+    1,
+    "Union of the Third Path",
+    "vs. burn"
+   ],
+   [
+    2,
+    "Pull from the Grave",
+    "for grindy matchups"
+   ]
+  ],
+  "upgrades": [
+   [
+    3,
+    "Inkling Mascot",
+    "fills to 4; cut 2 Moonglove Extractor, 1 Hour of Defeat"
+   ],
+   [
+    3,
+    "Rehearsed Debater",
+    "fills to 4; cut 2 Brave Brawler, 1 Take Up the Shield"
+   ],
+   [
+    4,
+    "Kor Skyfisher",
+    "cut 2 Wander Off, 2 Bogslither's Embrace"
+   ]
+  ]
+ },
+ "boros": {
+  "name": "Boros Counters",
+  "colors": [
+   "R",
+   "W"
+  ],
+  "tagline": "Go-wide aggro. Cheap creatures pick up +1/+1 counters, Ainok Bond-Kin and Inspiring Paladin give them first strike, and graveyard exiles feed Spirit Mascot.",
+  "plan": [
+   [
+    "How it wins",
+    "Curve out with two-drops, put counters on them with Dig Site Inventory and Selfless Police Captain, then swing with first strike on your turn."
+   ],
+   [
+    "Graveyard loop",
+    "Dig Site Inventory's flashback, Goldmeadow Nomad and Stone Docent all exile from your graveyard. Each one grows Spirit Mascot and makes Wilt in the Heat cost 2."
+   ],
+   [
+    "Mulligan to",
+    "Two lands and two one- or two-drops. Hands with only tricks and no creatures go back."
+   ]
+  ],
+  "groups": [
+   [
+    "Creatures",
+    [
+     [
+      1,
+      "Star Pupil",
+      "37/37fd3a9d-74fe-4180-805a-b865e7228a77_star_pupil.jpg",
+      1
+     ],
+     [
+      3,
+      "Goldmeadow Nomad",
+      "79/79dfe2eb-82b9-4dae-95c8-58fdf9006bc7_goldmeadow_nomad.jpg",
+      3
+     ],
+     [
+      1,
+      "Duelist of Deep Faith",
+      "30/30d69e88-2bf6-43b8-8678-2cf37f6a5cf5_duelist_of_deep_faith.jpg",
+      1
+     ],
+     [
+      1,
+      "Ainok Bond-Kin",
+      "8a/8a4028cd-6004-4fb0-a044-0bee662a78e1_ainok_bond_kin.jpg",
+      1
+     ],
+     [
+      2,
+      "Selfless Police Captain",
+      "ec/ece77a64-8d99-430e-8407-bdb321828d63_selfless_police_captain.jpg",
+      2
+     ],
+     [
+      2,
+      "Feisty Spikeling",
+      "fc/fcf796fa-43ae-43d1-a124-776338bc3542_feisty_spikeling.jpg",
+      2
+     ],
+     [
+      2,
+      "Spirit Mascot",
+      "34/34c572b2-dccf-43d9-a9c4-846653ad22da_spirit_mascot.jpg",
+      2
+     ],
+     [
+      2,
+      "Stone Docent",
+      "db/dbb1690a-f6f5-459c-9d7f-cb6541fb6688_stone_docent.jpg",
+      2
+     ],
+     [
+      1,
+      "Parish-Blade Trainee",
+      "e1/e1733392-1402-458b-bbc7-673d733c731c_parish_blade_trainee.jpg",
+      1
+     ],
+     [
+      1,
+      "Inspiring Paladin",
+      "95/95efbb81-2418-42ed-ae34-5759efff8253_inspiring_paladin.jpg",
+      1
+     ],
+     [
+      3,
+      "Hero in Training",
+      "87/87f1a840-021c-4699-a2c4-f2926daf98eb_hero_in_training.jpg",
+      3
+     ],
+     [
+      1,
+      "Kree Commandos",
+      "09/09eb988a-e2eb-42e1-a786-01be63d2263f_kree_commandos.jpg",
+      1
+     ],
+     [
+      1,
+      "Gryff Rider",
+      "e1/e1ca5c24-bbd8-4eed-bb2b-17163f90e72b_gryff_rider.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Counters & tricks",
+    [
+     [
+      4,
+      "Dig Site Inventory",
+      "96/96742ebc-10a6-49e6-812a-631e5a60847d_dig_site_inventory.jpg",
+      5
+     ],
+     [
+      4,
+      "Interjection",
+      "47/47bbadcf-11c6-4a4d-9575-1eb8284a174c_interjection.jpg",
+      4
+     ],
+     [
+      3,
+      "Riverguard's Reflexes",
+      "0b/0bdebad7-a05e-439a-b5a9-241a2d09f943_riverguard_s_reflexes.jpg",
+      3
+     ],
+     [
+      1,
+      "Lightfoot Technique",
+      "60/601b7481-19fc-4779-950e-883a9a22aec3_lightfoot_technique.jpg",
+      1
+     ],
+     [
+      1,
+      "Raise the Alarm",
+      "5b/5b2364d7-a811-4595-a1b4-224c70555ffa_raise_the_alarm.jpg",
+      1
+     ],
+     [
+      2,
+      "Pursue the Past",
+      "43/4384996f-aeaa-41ac-aa0e-12d72c887731_pursue_the_past.jpg",
+      2
+     ]
+    ]
+   ],
+   [
+    "Removal",
+    [
+     [
+      2,
+      "Wilt in the Heat",
+      "3b/3bed0b60-5944-44bb-9ddd-c82f323e6d20_wilt_in_the_heat.jpg",
+      2
+     ],
+     [
+      2,
+      "Molten Exhale",
+      "82/82aa1402-4b1c-4343-aba5-dd3271cc1ac5_molten_exhale.jpg",
+      2
+     ],
+     [
+      2,
+      "Cinder Strike",
+      "54/54421e69-d79e-4c2e-8ce6-96994d168835_cinder_strike.jpg",
+      2
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      1,
+      "Asgardian Citadel",
+      "e3/e3614df6-ce84-4180-ade1-a1751e8e3c9a_asgardian_citadel.jpg",
+      1
+     ],
+     [
+      1,
+      "Fields of Strife",
+      "a3/a32e08fa-bea4-4ba9-a126-9bf0a91f67e2_fields_of_strife.jpg",
+      1
+     ],
+     [
+      1,
+      "Boros Guildgate",
+      "73/73c423b7-cab8-4e69-8070-9edbf96a6c2c_boros_guildgate.jpg",
+      1
+     ],
+     [
+      1,
+      "Shattered Landscape",
+      "7f/7fbad3f2-66f6-4e3a-b9e0-1ddbcd94d42a_shattered_landscape.jpg",
+      1
+     ],
+     [
+      8,
+      "Plains",
+      null,
+      47
+     ],
+     [
+      6,
+      "Mountain",
+      null,
+      52
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    2,
+    "Osseous Exhale",
+    "vs. big blockers"
+   ],
+   [
+    2,
+    "Sanctify",
+    "vs. auras and artifacts"
+   ],
+   [
+    2,
+    "Sigarda's Imprisonment",
+    ""
+   ],
+   [
+    2,
+    "Lacerate Flesh",
+    ""
+   ],
+   [
+    1,
+    "Repulsor Blast",
+    ""
+   ],
+   [
+    1,
+    "Electro's Bolt",
+    ""
+   ],
+   [
+    1,
+    "Generous Gift",
+    ""
+   ],
+   [
+    1,
+    "Make Your Move",
+    ""
+   ],
+   [
+    1,
+    "Deadly Riposte",
+    ""
+   ],
+   [
+    1,
+    "Ajani's Response",
+    ""
+   ],
+   [
+    1,
+    "Rambunctious Mutt",
+    ""
+   ]
+  ],
+  "upgrades": [
+   [
+    3,
+    "Ainok Bond-Kin",
+    "fills to 4; cut Star Pupil, Duelist of Deep Faith, Gryff Rider"
+   ],
+   [
+    3,
+    "Inspiring Paladin",
+    "fills to 4; cut Kree Commandos, Lightfoot Technique, Raise the Alarm"
+   ],
+   [
+    4,
+    "Lightning Bolt",
+    "cut 2 Cinder Strike, 2 Molten Exhale (separate from the Izzet copies)"
+   ]
+  ]
+ },
+ "simic": {
+  "name": "Simic Fractal Ramp",
+  "colors": [
+   "G",
+   "U"
+  ],
+  "tagline": "Ramp and tempo. Mana creatures and land-drop spells jump you to Fractal Mascot and big X spells, while bounce and freeze effects keep their board tapped down.",
+  "plan": [
+   [
+    "How it wins",
+    "Ramp on turn 2 with Noxious Newt or Undercover Skrull, hold the ground with deathtouch and reach, then land 6/6 tramplers and X-sized Fractals."
+   ],
+   [
+    "Tempo package",
+    "Banishing Betrayal, Frozen in Ice, Run Behind and Procrastinate buy the turns you need. Fractal Mascot's stun counter clears the way for its first swing."
+   ],
+   [
+    "Mulligan to",
+    "Three lands, or two lands plus a mana creature. Savage Land Dinosaur cycles for a land in thin hands."
+   ]
+  ],
+  "groups": [
+   [
+    "Ramp creatures",
+    [
+     [
+      4,
+      "Noxious Newt",
+      "12/1232c461-643c-40a3-901e-09b665f817da_noxious_newt.jpg",
+      4
+     ],
+     [
+      2,
+      "Undercover Skrull",
+      "33/33b1379f-b329-42cd-92ed-4811d44ed8dd_undercover_skrull.jpg",
+      2
+     ],
+     [
+      1,
+      "Wall of Roots",
+      "3a/3a21a6ae-b2f2-4f0c-acfd-5f3e8d63fd2f_wall_of_roots.jpg",
+      1
+     ],
+     [
+      1,
+      "Overgrown Battlement",
+      "58/585f62dc-4461-42f1-a3a4-b19a1e550d2d_overgrown_battlement.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Threats",
+    [
+     [
+      1,
+      "Needlethorn Drake",
+      "6e/6edacc06-9523-4ccf-a4c2-2ac4af386b8a_needlethorn_drake.jpg",
+      1
+     ],
+     [
+      3,
+      "Chitinous Graspling",
+      "93/930035c6-cde7-40ac-98ef-0840812037db_chitinous_graspling.jpg",
+      3
+     ],
+     [
+      1,
+      "Pterafractyl",
+      "cc/cca03b76-dd3c-4228-b97a-f7fa20819b2e_pterafractyl.jpg",
+      1
+     ],
+     [
+      3,
+      "Fractal Mascot",
+      "cc/cca3f3e8-15a7-4ad8-893a-d3570178a800_fractal_mascot.jpg",
+      3
+     ],
+     [
+      2,
+      "Savage Land Dinosaur",
+      "6e/6e21ebdf-b97c-494e-a1d5-19db1b7d3016_savage_land_dinosaur.jpg",
+      2
+     ],
+     [
+      1,
+      "Wild Hypothesis",
+      "2e/2e56507d-af77-47c8-a29a-410cf14cfe20_wild_hypothesis.jpg",
+      1
+     ],
+     [
+      1,
+      "Fractal Summoning",
+      "ce/ce690421-db1d-4177-a2db-338f29aab623_fractal_summoning.jpg",
+      1
+     ],
+     [
+      1,
+      "Leyline Invocation",
+      "9f/9f2e713f-c7d5-4c91-9934-9e36888244fd_leyline_invocation.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Card flow & ramp spells",
+    [
+     [
+      4,
+      "Embrace the Paradox",
+      "b9/b9110be0-3f0c-449b-8baf-689e92fdb8f0_embrace_the_paradox.jpg",
+      4
+     ],
+     [
+      1,
+      "Eureka Moment",
+      "0e/0e2c11b2-d95f-4402-9a4a-afd3f7ffb8be_eureka_moment.jpg",
+      1
+     ],
+     [
+      1,
+      "Rampant Growth",
+      "85/8539f295-5d58-4436-a73a-b9277c4c7795_rampant_growth.jpg",
+      1
+     ],
+     [
+      1,
+      "Cultivate",
+      "8b/8b755881-a72d-4e21-a369-d2924eb4585a_cultivate.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Tempo & interaction",
+    [
+     [
+      4,
+      "Banishing Betrayal",
+      "6b/6b633e58-ea1b-4ed0-addb-6dfd93645ae4_banishing_betrayal.jpg",
+      5
+     ],
+     [
+      3,
+      "Frozen in Ice",
+      "82/82fa14d8-5019-4e1b-a86c-923d9292b87a_frozen_in_ice.jpg",
+      3
+     ],
+     [
+      3,
+      "Run Behind",
+      "75/7578a192-82e5-43ff-8dee-225f313c484a_run_behind.jpg",
+      3
+     ],
+     [
+      2,
+      "Procrastinate",
+      "6f/6f8fa68e-e961-4ae1-b27d-22d87e90f26b_procrastinate.jpg",
+      3
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      4,
+      "Paradox Gardens",
+      "63/638ff242-63d5-457d-a7a6-40ad51052e2e_paradox_gardens.jpg",
+      4
+     ],
+     [
+      2,
+      "Thornwood Falls",
+      "ec/ec96cde2-f1e6-495c-94e2-3e8ae79e556c_thornwood_falls.jpg",
+      2
+     ],
+     [
+      1,
+      "Lonely Sandbar",
+      "76/765863c8-1be0-4bb1-9e9c-db7701cffde3_lonely_sandbar.jpg",
+      1
+     ],
+     [
+      1,
+      "Remote Isle",
+      "24/24aebda0-315f-4d2f-8bd9-00bbaf5bd76a_remote_isle.jpg",
+      1
+     ],
+     [
+      6,
+      "Forest",
+      null,
+      39
+     ],
+     [
+      6,
+      "Island",
+      null,
+      43
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    2,
+    "We Say Thee Nay!",
+    "vs. spells"
+   ],
+   [
+    1,
+    "Amazing Acrobatics",
+    ""
+   ],
+   [
+    1,
+    "Unwind",
+    ""
+   ],
+   [
+    1,
+    "You Find the Villains' Lair",
+    ""
+   ],
+   [
+    2,
+    "Blossombind",
+    "vs. big creatures"
+   ],
+   [
+    2,
+    "Sarkhan's Resolve",
+    "vs. fliers"
+   ],
+   [
+    1,
+    "Fog of War",
+    "vs. go-wide aggro"
+   ],
+   [
+    1,
+    "Ambush Wolf",
+    "vs. graveyard decks"
+   ],
+   [
+    2,
+    "Chase Inspiration",
+    "vs. removal"
+   ],
+   [
+    1,
+    "Repulse",
+    ""
+   ],
+   [
+    1,
+    "Depart the Realm",
+    ""
+   ]
+  ],
+  "upgrades": [
+   [
+    4,
+    "Mulldrifter",
+    "cut 3 Run Behind, 1 Eureka Moment"
+   ],
+   [
+    1,
+    "Fractal Mascot",
+    "fills to 4; cut Pterafractyl"
+   ],
+   [
+    2,
+    "Arboreal Grazer",
+    "cut Wall of Roots, Overgrown Battlement"
+   ]
+  ]
+ },
+ "gruul": {
+  "name": "Gruul Stompy",
+  "colors": [
+   "G",
+   "R"
+  ],
+  "tagline": "Classic Pauper aggro. Cheap green creatures, a pile of one-mana pump and fight spells, and a red splash for haste and reach.",
+  "plan": [
+   [
+    "How it wins",
+    "Play two creatures by turn 3 and attack every turn. Pump spells win combat and push the last points through; Assert Perfection and Go Nuts! double as removal."
+   ],
+   [
+    "Using the pump",
+    "Hold Giant Growth for blocks or removal in response. Surly Farrier gives a +1/+1 every turn, and Gangly Stompling can be cast with green or red mana."
+   ],
+   [
+    "Mulligan to",
+    "Two lands and two creatures that cost 1 or 2. Keep hands light on 4-drops."
+   ]
+  ],
+  "groups": [
+   [
+    "Creatures",
+    [
+     [
+      2,
+      "Serpent Specialist",
+      "55/556f127f-6131-4171-b1ed-11420c21d345_serpent_specialist.jpg",
+      2
+     ],
+     [
+      2,
+      "Surly Farrier",
+      "ef/ef67c170-68aa-4ada-8cee-261a4dbb1b5d_surly_farrier.jpg",
+      2
+     ],
+     [
+      2,
+      "Dawnhart Disciple",
+      "e8/e86279ba-cb22-4754-90f4-38354657b8fa_dawnhart_disciple.jpg",
+      2
+     ],
+     [
+      1,
+      "Knight of Wundagore",
+      "39/39145960-a212-46b4-addb-4b187f6bf6fd_knight_of_wundagore.jpg",
+      1
+     ],
+     [
+      1,
+      "Wary Thespian",
+      "44/448cc829-1596-4aec-b180-c0c1e0566f6b_wary_thespian.jpg",
+      1
+     ],
+     [
+      1,
+      "Lys Alana Informant",
+      "b5/b5058b5c-0359-42ec-ba9e-ae1371bb9c22_lys_alana_informant.jpg",
+      1
+     ],
+     [
+      1,
+      "Flame-Chain Mauler",
+      "d6/d6eef6a7-0cf4-4ee8-90e0-727a283c3be9_flame_chain_mauler.jpg",
+      1
+     ],
+     [
+      2,
+      "Crossroads Watcher",
+      "ab/ab5f8b8c-e3f7-4265-bbc6-814bbfd4693a_crossroads_watcher.jpg",
+      2
+     ],
+     [
+      2,
+      "Argothian Opportunist",
+      "cc/cc9d3868-9814-4506-80b3-660bc462ff98_argothian_opportunist.jpg",
+      2
+     ],
+     [
+      2,
+      "Powerful Broker",
+      "2b/2b3d76e7-faaa-4e6f-9e21-a88dd719247e_powerful_broker.jpg",
+      2
+     ],
+     [
+      3,
+      "Gangly Stompling",
+      "60/60206d4e-4301-4d7a-a68e-46a2ad9fc407_gangly_stompling.jpg",
+      3
+     ],
+     [
+      1,
+      "Daybreak Combatants",
+      "fb/fbb3f959-ded7-4570-bacf-0e1394dbef80_daybreak_combatants.jpg",
+      1
+     ],
+     [
+      1,
+      "Cackling Prowler",
+      "89/898da62e-d29a-4ddc-be69-2ddec54614f5_cackling_prowler.jpg",
+      1
+     ],
+     [
+      1,
+      "Professional Wrestler",
+      "3d/3dd92eea-02ca-4e55-8f69-8c8059dd7ee6_professional_wrestler.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Pump & fight",
+    [
+     [
+      4,
+      "Giant Growth",
+      "57/5748ebf1-24e3-499d-ab7c-c2cebd462a24_giant_growth.jpg",
+      4
+     ],
+     [
+      3,
+      "Assert Perfection",
+      "ec/ecf574a5-6410-466d-a726-732134f904b2_assert_perfection.jpg",
+      3
+     ],
+     [
+      2,
+      "Go Nuts!",
+      "0e/0efe1357-bfbb-42c0-9cc9-6a919d686c66_go_nuts.jpg",
+      2
+     ],
+     [
+      2,
+      "Oracle's Restoration",
+      "00/00e75a6b-699e-4824-86e5-66d45245cd9b_oracle_s_restoration.jpg",
+      6
+     ],
+     [
+      1,
+      "Big Play",
+      "60/607425ac-9e90-4c9e-88bf-72f8a76cce97_big_play.jpg",
+      1
+     ],
+     [
+      1,
+      "Epic Confrontation",
+      "31/31123cb5-2dd5-4f2b-a2fd-8f87095972c6_epic_confrontation.jpg",
+      1
+     ],
+     [
+      1,
+      "Burrog Barrage",
+      "c4/c47caa45-e7fc-414a-8a5d-59b58f1751f3_burrog_barrage.jpg",
+      1
+     ],
+     [
+      1,
+      "Wild Ride",
+      "61/61978202-538b-4f92-acfc-e95f4a6ce466_wild_ride.jpg",
+      1
+     ],
+     [
+      1,
+      "Blazing Crescendo",
+      "63/6344c96a-efa5-4125-8219-d333228391cf_blazing_crescendo.jpg",
+      1
+     ],
+     [
+      1,
+      "Super Strength",
+      "e1/e1b577ad-1488-43b5-83d9-e40bd60c74be_super_strength.jpg",
+      2
+     ],
+     [
+      1,
+      "Gilt-Leaf's Embrace",
+      "5e/5eb8bb1d-7567-4c24-913b-463b5fe463c4_gilt_leaf_s_embrace.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Burn",
+    [
+     [
+      1,
+      "Tome Blast",
+      "f0/f0163420-2f91-493c-bad4-2cd33e9856bf_tome_blast.jpg",
+      1
+     ],
+     [
+      1,
+      "Heated Debate",
+      "06/06c3e85c-17d8-44e1-a0f8-07ef3f1624cb_heated_debate.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      2,
+      "Rugged Highlands",
+      "6c/6c922206-6e68-4dcd-9559-88da1074f2c4_rugged_highlands.jpg",
+      2
+     ],
+     [
+      1,
+      "Gruul Guildgate",
+      "d3/d38476e9-2e47-4c0c-8129-483c0bd09ec0_gruul_guildgate.jpg",
+      1
+     ],
+     [
+      10,
+      "Forest",
+      null,
+      39
+     ],
+     [
+      5,
+      "Mountain",
+      null,
+      52
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    2,
+    "Sagu Pummeler",
+    "vs. fliers"
+   ],
+   [
+    2,
+    "Pet Avengers",
+    ""
+   ],
+   [
+    1,
+    "Apprentice Sharpshooter",
+    "vs. fliers"
+   ],
+   [
+    1,
+    "Hungry Graffalon",
+    ""
+   ],
+   [
+    1,
+    "Ainok Survivalist",
+    "vs. artifacts and auras"
+   ],
+   [
+    1,
+    "Rock Soldiers",
+    ""
+   ],
+   [
+    1,
+    "HULK SMASH!",
+    ""
+   ],
+   [
+    1,
+    "Narset's Rebuke",
+    "vs. big threats"
+   ],
+   [
+    1,
+    "Toxic Scorpion",
+    ""
+   ],
+   [
+    1,
+    "Bramble Wurm",
+    "vs. burn"
+   ],
+   [
+    1,
+    "Rearing Embermare",
+    ""
+   ],
+   [
+    1,
+    "Brambleback Brute",
+    ""
+   ],
+   [
+    1,
+    "Spore Crawler",
+    "vs. removal"
+   ]
+  ],
+  "upgrades": [
+   [
+    4,
+    "Rancor",
+    "cut Super Strength, Gilt-Leaf's Embrace, Big Play, Burrog Barrage"
+   ],
+   [
+    4,
+    "Burning-Tree Emissary",
+    "cut Wary Thespian, Lys Alana Informant, Knight of Wundagore, Flame-Chain Mauler"
+   ],
+   [
+    3,
+    "Savage Swipe",
+    "cut 3 Assert Perfection"
+   ]
+  ]
+ },
+ "rakdos": {
+  "name": "Rakdos Villains",
+  "colors": [
+   "B",
+   "R"
+  ],
+  "tagline": "Villain tribal from Marvel Super Heroes. A wide board of Villains that loot, ping and recur, with cheap card draw that rewards having one out.",
+  "plan": [
+   [
+    "How it wins",
+    "Flood the board with Villains and grind. HYDRA Assault Robot pings for every Villain or artifact that enters, and the deathtouch Villains hold the ground."
+   ],
+   [
+    "Villain payoffs",
+    "Visions of Villainy costs 2 with a Villain out. Hire a Crew adds another Villain at instant speed, and Agents of HYDRA leaves one behind when it dies."
+   ],
+   [
+    "Mulligan to",
+    "Two lands, a two-drop Villain and one removal spell. Red Room Recruit and Mechanical Mobster smooth out awkward draws."
+   ]
+  ],
+  "groups": [
+   [
+    "Villains",
+    [
+     [
+      1,
+      "Agents of HYDRA",
+      "31/31816924-1430-4581-86e8-325e2ca16217_agents_of_hydra.jpg",
+      1
+     ],
+     [
+      2,
+      "Red Room Recruit",
+      "4e/4e60c38c-cbf5-4ff7-8fff-634f7e3086cc_red_room_recruit.jpg",
+      2
+     ],
+     [
+      1,
+      "Merciless Enforcers",
+      "b3/b32a7b97-0883-4c9f-a23d-ad269efd8cc3_merciless_enforcers.jpg",
+      1
+     ],
+     [
+      1,
+      "HYDRA Assault Robot",
+      "a2/a2558476-5506-4a09-93fc-b8ab33c98985_hydra_assault_robot.jpg",
+      1
+     ],
+     [
+      2,
+      "Machinesmith Automaton",
+      "94/945e8443-9647-4eab-b091-ee8e7bc347f5_machinesmith_automaton.jpg",
+      2
+     ],
+     [
+      2,
+      "Ninja of the Hand",
+      "c3/c38f7447-e646-438d-81bd-fe2a71c8a79c_ninja_of_the_hand.jpg",
+      2
+     ],
+     [
+      1,
+      "HYDRA Troopers",
+      "6d/6de67fad-0d01-443d-9ae0-4126ae903069_hydra_troopers.jpg",
+      1
+     ],
+     [
+      1,
+      "Kingpin's Enforcers",
+      "34/342df67f-44d8-4b0a-b1d7-4241966d0598_kingpin_s_enforcers.jpg",
+      1
+     ],
+     [
+      1,
+      "Venomized Cat",
+      "eb/eb54d807-624b-471e-8c44-07322003903e_venomized_cat.jpg",
+      1
+     ],
+     [
+      1,
+      "Swarm, Being of Bees",
+      "10/10c8cf3b-2530-49e7-b38e-95cdaae8a6e7_swarm_being_of_bees.jpg",
+      1
+     ],
+     [
+      1,
+      "Volcanic Villain",
+      "a2/a257426d-70c9-4d58-bd8b-97ec38f6e133_volcanic_villain.jpg",
+      1
+     ],
+     [
+      3,
+      "Ultron Drone",
+      "51/51c1f21d-1512-4885-bfdc-58790cf77d51_ultron_drone.jpg",
+      3
+     ],
+     [
+      2,
+      "Mechanical Mobster",
+      "b0/b0672aa3-3207-4ff8-af8f-bdabacbb4d04_mechanical_mobster.jpg",
+      2
+     ],
+     [
+      2,
+      "Crimson Operative",
+      "d8/d8863742-6c1c-415a-ad27-7def6d119c6a_crimson_operative.jpg",
+      2
+     ],
+     [
+      2,
+      "Unliving Legionnaire",
+      "0e/0edaf433-4ded-4841-bc86-136780c0767f_unliving_legionnaire.jpg",
+      2
+     ],
+     [
+      1,
+      "Venom, Evil Unleashed",
+      "67/6731d861-cc52-4a2e-8c33-154681fd50e4_venom_evil_unleashed.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Card draw & support",
+    [
+     [
+      2,
+      "Visions of Villainy",
+      "3b/3b46800b-711b-4cbb-b296-26115b4f6839_visions_of_villainy.jpg",
+      2
+     ],
+     [
+      2,
+      "Cost of Brilliance",
+      "b4/b45afde2-eaaf-4174-8082-d344efa54c44_cost_of_brilliance.jpg",
+      4
+     ],
+     [
+      1,
+      "Pointed Discussion",
+      "af/aff9a568-2848-4614-a28b-b1ea84f7f0b7_pointed_discussion.jpg",
+      1
+     ],
+     [
+      1,
+      "Infectious Inquiry",
+      "66/66051196-53ea-4461-b241-205df9395b3b_infectious_inquiry.jpg",
+      1
+     ],
+     [
+      2,
+      "HYDRA Infiltration",
+      "27/27692079-a517-4d38-b452-7409980b5912_hydra_infiltration.jpg",
+      2
+     ],
+     [
+      1,
+      "Hire a Crew",
+      "6e/6eb7a870-b626-4326-9e4c-45193f8ce138_hire_a_crew.jpg",
+      1
+     ],
+     [
+      2,
+      "Stolen Stark Tech",
+      "51/51023277-5434-4913-b9dc-df2a3fde1652_stolen_stark_tech.jpg",
+      2
+     ],
+     [
+      1,
+      "Undying Malice",
+      "8b/8b061702-1bc3-45aa-a758-446b25034801_undying_malice.jpg",
+      1
+     ],
+     [
+      1,
+      "Macabre Waltz",
+      "cf/cf75dbd8-b65a-48d9-b96b-4afb43f336d1_macabre_waltz.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Removal",
+    [
+     [
+      1,
+      "Bleed Dry",
+      "6c/6c3faf4f-83c1-4098-98b8-bae15d59b0de_bleed_dry.jpg",
+      1
+     ],
+     [
+      1,
+      "Nameless Inversion",
+      "d6/d6911456-42cb-4b23-a560-dc98784530f5_nameless_inversion.jpg",
+      1
+     ],
+     [
+      1,
+      "Lash of Malice",
+      "fc/fc3d2a9c-08a5-4aea-9fb8-42466b9152a2_lash_of_malice.jpg",
+      1
+     ],
+     [
+      1,
+      "Pumpkin Bombardment",
+      "37/37827e84-9f5f-49ed-b939-0cf80dac82e7_pumpkin_bombardment.jpg",
+      1
+     ],
+     [
+      1,
+      "Mouser Attack!",
+      "ba/bae5dc68-1fd1-428d-bee7-c238e07b21ea_mouser_attack.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      2,
+      "Hell's Kitchen",
+      "13/1337d89e-a883-4568-a14f-9ca3305cc3df_hell_s_kitchen.jpg",
+      2
+     ],
+     [
+      1,
+      "Bloodfell Caves",
+      "64/64e29bfc-9313-4e8c-808c-bc27f6b018a6_bloodfell_caves.jpg",
+      1
+     ],
+     [
+      8,
+      "Swamp",
+      null,
+      38
+     ],
+     [
+      7,
+      "Mountain",
+      null,
+      52
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    2,
+    "Dream Seizer",
+    "vs. control"
+   ],
+   [
+    2,
+    "Roxxon Brutes",
+    ""
+   ],
+   [
+    2,
+    "Blighted Blackthorn",
+    "vs. aggro"
+   ],
+   [
+    1,
+    "Fanatical Firebrand",
+    "vs. 1-toughness decks"
+   ],
+   [
+    1,
+    "Alesha's Legacy",
+    ""
+   ],
+   [
+    3,
+    "Masterful Flourish",
+    "vs. removal"
+   ],
+   [
+    1,
+    "Insectoid Exterminator",
+    ""
+   ],
+   [
+    1,
+    "Primordial Gnawer",
+    ""
+   ],
+   [
+    1,
+    "Foot Mystic",
+    "vs. aggro"
+   ],
+   [
+    1,
+    "Broodrage Mycoid",
+    ""
+   ]
+  ],
+  "upgrades": [
+   [
+    4,
+    "Snuff Out",
+    "cut Lash of Malice, Pumpkin Bombardment, Mouser Attack!, Macabre Waltz"
+   ],
+   [
+    4,
+    "Lightning Bolt",
+    "cut Infectious Inquiry, Undying Malice, 2 Stolen Stark Tech (on top of the Izzet and Boros copies)"
+   ]
+  ]
+ },
+ "azorius": {
+  "name": "Azorius Skies",
+  "colors": [
+   "W",
+   "U"
+  ],
+  "tagline": "Flyers and tempo. A curve of evasive creatures backed by cheap cantrips, bounce and tap effects to clear the way.",
+  "plan": [
+   [
+    "How it wins",
+    "Land a flyer or two and race in the air. Bounce or tap their best blocker on the turn you swing."
+   ],
+   [
+    "Flash and tempo",
+    "Glamermite and Giant-Sized Flying Ant can tap an attacker or untap your blocker at instant speed. Murdock's Crusade exiles big ground creatures if you tap 4 power with teamwork."
+   ],
+   [
+    "Mulligan to",
+    "Two lands, a cantrip and a flyer. The deck is mostly 1-ofs, so cantrips help find the right piece."
+   ]
+  ],
+  "groups": [
+   [
+    "Flyers",
+    [
+     [
+      2,
+      "City Pigeon",
+      "ac/ac8cae63-270c-4f73-b29b-50f8f2395fd9_city_pigeon.jpg",
+      2
+     ],
+     [
+      1,
+      "Strix Lookout",
+      "5a/5a6d01c8-47b6-43e5-a6e9-c48088286007_strix_lookout.jpg",
+      1
+     ],
+     [
+      1,
+      "Mysterio's Phantasm",
+      "99/99419378-8a23-44f3-aebe-e62d6e20e877_mysterio_s_phantasm.jpg",
+      1
+     ],
+     [
+      1,
+      "Skyward Spider",
+      "d6/d6ba76fa-441c-4a74-bfea-8ae2a2c9e391_skyward_spider.jpg",
+      1
+     ],
+     [
+      1,
+      "Wanderlight Spirit",
+      "7b/7b4c2dcf-86f4-409d-90c3-8fe83966cac0_wanderlight_spirit.jpg",
+      1
+     ],
+     [
+      1,
+      "Glamermite",
+      "a7/a7b0d897-38c0-4f90-81e8-3c5b8d31a607_glamermite.jpg",
+      1
+     ],
+     [
+      2,
+      "Shore Lurker",
+      "42/4288ba56-ddd0-4bd9-ba61-daf03e9f2d7f_shore_lurker.jpg",
+      2
+     ],
+     [
+      1,
+      "Vanguard Seraph",
+      "32/3250466f-82a4-45e1-9722-ff247ddf8c15_vanguard_seraph.jpg",
+      1
+     ],
+     [
+      1,
+      "Dragonback Lancer",
+      "78/7875c063-19c3-4e6e-81d8-1a378a4e16e5_dragonback_lancer.jpg",
+      1
+     ],
+     [
+      1,
+      "Heron of Hope",
+      "f2/f297648b-0dda-4c58-a3eb-fdabdfb42177_heron_of_hope.jpg",
+      1
+     ],
+     [
+      1,
+      "East Wind Avatar",
+      "e2/e2ef355a-2472-47e0-9b2e-987994291921_east_wind_avatar.jpg",
+      1
+     ],
+     [
+      1,
+      "Giant-Sized Flying Ant",
+      "23/233e3b4b-faaf-451d-8a2e-e9f5a6ced671_giant_sized_flying_ant.jpg",
+      1
+     ],
+     [
+      2,
+      "Merrow Skyswimmer",
+      "d7/d709f396-021f-49eb-adb5-374aa790eaae_merrow_skyswimmer.jpg",
+      2
+     ],
+     [
+      1,
+      "Quicksilver Fisher",
+      "b3/b3e3d037-992b-4718-913d-7ab509d2047e_quicksilver_fisher.jpg",
+      1
+     ],
+     [
+      1,
+      "Ascendant Dustspeaker",
+      "29/295f8b8d-102a-47af-93c2-f8182c5f11ca_ascendant_dustspeaker.jpg",
+      1
+     ],
+     [
+      1,
+      "Starling, Aerial Ally",
+      "13/13fd7ca6-c278-409f-a9c4-57f16051ffce_starling_aerial_ally.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Cantrips",
+    [
+     [
+      1,
+      "Impulse",
+      "f6/f6bd2902-7f8b-419e-bbc7-bcab0c1b7e01_impulse.jpg",
+      1
+     ],
+     [
+      1,
+      "Anticipate",
+      "a9/a97da5a9-17fc-4367-81e1-17ff81601a63_anticipate.jpg",
+      1
+     ],
+     [
+      1,
+      "Telling Time",
+      "19/192f3c8a-1120-4f7f-ae0f-fe9bde59cd08_telling_time.jpg",
+      1
+     ],
+     [
+      1,
+      "Sleight of Hand",
+      "05/05a039ad-1689-4d13-b393-6c1219583b5d_sleight_of_hand.jpg",
+      1
+     ],
+     [
+      1,
+      "Curate",
+      "75/75e8907d-f726-4a63-ba8b-c0fd4936734e_curate.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Tempo & tricks",
+    [
+     [
+      1,
+      "Geistwave",
+      "14/14d5ed90-0aa7-48f0-9017-83912b9e89d1_geistwave.jpg",
+      1
+     ],
+     [
+      1,
+      "Unexplained Disappearance",
+      "18/18d16129-da25-4120-a343-64ce962abba2_unexplained_disappearance.jpg",
+      1
+     ],
+     [
+      1,
+      "Banishing Betrayal",
+      "6b/6b633e58-ea1b-4ed0-addb-6dfd93645ae4_banishing_betrayal.jpg",
+      5
+     ],
+     [
+      1,
+      "Ojutai's Breath",
+      "2c/2c09d296-5d15-449a-9b98-cf5056a17b91_ojutai_s_breath.jpg",
+      1
+     ],
+     [
+      1,
+      "Depower",
+      "33/33f89437-885b-4850-88b7-239f5dfcc8b1_depower.jpg",
+      1
+     ],
+     [
+      1,
+      "Procrastinate",
+      "6f/6f8fa68e-e961-4ae1-b27d-22d87e90f26b_procrastinate.jpg",
+      3
+     ],
+     [
+      1,
+      "Wild Unraveling",
+      "dd/dd1a4219-437b-494f-ae0e-1d3181ffcd63_wild_unraveling.jpg",
+      3
+     ],
+     [
+      2,
+      "Panther Pounce",
+      "ea/ead0820e-fc6b-4ab2-9110-048d6d53985d_panther_pounce.jpg",
+      2
+     ],
+     [
+      2,
+      "Thwip!",
+      "f7/f7d11254-b48a-4016-a035-c0d6642fdfae_thwip.jpg",
+      2
+     ],
+     [
+      1,
+      "Beaming Defiance",
+      "f8/f88eeb04-4b8e-4c76-a8c6-90887b94d518_beaming_defiance.jpg",
+      1
+     ],
+     [
+      1,
+      "Chase Inspiration",
+      "9c/9c055ef0-1164-4a9f-80de-23405423aed5_chase_inspiration.jpg",
+      3
+     ]
+    ]
+   ],
+   [
+    "Removal",
+    [
+     [
+      3,
+      "Murdock's Crusade",
+      "36/36330947-5ef9-4bff-b541-bfbddd9715a3_murdock_s_crusade.jpg",
+      3
+     ],
+     [
+      1,
+      "Resculpt",
+      "81/814e321d-16fd-4f7b-a8d8-2b089be76f2c_resculpt.jpg",
+      1
+     ],
+     [
+      1,
+      "Ravenform",
+      "d3/d3d61a6a-7870-44df-92e5-513dac2c2c3e_ravenform.jpg",
+      1
+     ]
+    ]
+   ],
+   [
+    "Lands",
+    [
+     [
+      2,
+      "University Campus",
+      "98/98e547de-b963-4ee4-9a08-67bae010734b_university_campus.jpg",
+      2
+     ],
+     [
+      1,
+      "Tranquil Cove",
+      "5d/5d641bf6-0f93-4189-8dc1-ec7ea446dade_tranquil_cove.jpg",
+      1
+     ],
+     [
+      8,
+      "Plains",
+      null,
+      47
+     ],
+     [
+      7,
+      "Island",
+      null,
+      43
+     ]
+    ]
+   ]
+  ],
+  "side": [
+   [
+    2,
+    "Shattered Acolyte",
+    "vs. artifacts and auras"
+   ],
+   [
+    2,
+    "Temporal Cleansing",
+    ""
+   ],
+   [
+    2,
+    "Unexpected Assistance",
+    "vs. control"
+   ],
+   [
+    2,
+    "Wanderwine Distracter",
+    "vs. aggro"
+   ],
+   [
+    1,
+    "Raft Security Officer",
+    ""
+   ],
+   [
+    1,
+    "Ageless Guardian",
+    "vs. aggro"
+   ],
+   [
+    1,
+    "Rootborn Defenses",
+    "vs. sweepers"
+   ],
+   [
+    1,
+    "Witness Protection",
+    ""
+   ],
+   [
+    1,
+    "Spider-Man No More",
+    ""
+   ],
+   [
+    1,
+    "Ringing Strike Mastery",
+    ""
+   ],
+   [
+    1,
+    "I Am Iron Man",
+    ""
+   ]
+  ],
+  "upgrades": [
+   [
+    4,
+    "Squadron Hawk",
+    "cut 2 City Pigeon, Wanderlight Spirit, Mysterio's Phantasm"
+   ],
+   [
+    4,
+    "Journey to Nowhere",
+    "cut Ojutai's Breath, Depower, Resculpt, Ravenform"
+   ],
+   [
+    4,
+    "Kor Skyfisher",
+    "cut 2 Panther Pounce, 2 Thwip! (on top of the Orzhov copies)"
+   ]
+  ]
+ }
+}

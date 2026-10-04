@@ -1,0 +1,41 @@
+1 Star Pupil
+3 Goldmeadow Nomad
+1 Duelist of Deep Faith
+1 Ainok Bond-Kin
+2 Selfless Police Captain
+2 Feisty Spikeling
+2 Spirit Mascot
+2 Stone Docent
+1 Parish-Blade Trainee
+1 Inspiring Paladin
+3 Hero in Training
+1 Kree Commandos
+1 Gryff Rider
+4 Dig Site Inventory
+4 Interjection
+3 Riverguard's Reflexes
+1 Lightfoot Technique
+1 Raise the Alarm
+2 Pursue the Past
+2 Wilt in the Heat
+2 Molten Exhale
+2 Cinder Strike
+1 Asgardian Citadel
+1 Fields of Strife
+1 Boros Guildgate
+1 Shattered Landscape
+8 Plains
+6 Mountain
+
+SIDEBOARD:
+2 Osseous Exhale
+2 Sanctify
+2 Sigarda's Imprisonment
+2 Lacerate Flesh
+1 Repulsor Blast
+1 Electro's Bolt
+1 Generous Gift
+1 Make Your Move
+1 Deadly Riposte
+1 Ajani's Response
+1 Rambunctious Mutt

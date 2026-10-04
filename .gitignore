@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 mcp_server/jobs/
 .venv/
+.cache/

@@ -1,0 +1,39 @@
+4 Bogwater Lumaret
+4 Shopkeeper's Bane
+2 Pest Mascot
+1 Blood Researcher
+2 Mindful Biomancer
+1 Scarblade Scout
+1 Kin-Tree Nurturer
+1 Ulna Alley Shopkeep
+1 Courier Bat
+1 Primordial Pachyderm
+2 Tenured Concocter
+4 Oracle's Restoration
+3 Follow the Lumarets
+3 Send in the Pest
+2 Efflorescence
+2 Pull from the Grave
+1 Rapid Rescue
+3 Feed the Swarm
+3 Last Gasp
+1 Scorpion's Sting
+2 Titan's Grave
+1 Subterranean Cavern
+2 Evolving Wilds
+7 Forest
+6 Swamp
+
+SIDEBOARD:
+3 Glorious Decay
+2 Hoarding Recluse
+1 Pick Your Poison
+1 Bake into a Pie
+1 Grisly Ritual
+1 Mage Hunters' Onslaught
+1 Duress
+1 Crushing Canopy
+1 Broken Wings
+1 Snakeskin Veil
+1 Scout the City
+1 Bojuka Bog

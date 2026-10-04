@@ -1,0 +1,38 @@
+4 Tackle Artist
+2 Expressive Firedancer
+3 Elemental Mascot
+2 Deluge Virtuoso
+3 Stadium Tidalmage
+2 Textbook Tabulator
+1 Flaring Cinder
+4 Ancestral Anger
+2 Burst Lightning
+2 Shock
+2 Lightning Strike
+3 Abrade
+1 Unsubtle Mockery
+2 Heated Argument
+2 Quick Study
+2 Think Twice
+1 Preordain
+1 Opt
+1 Consider
+2 Wild Unraveling
+3 Spectacle Summit
+1 Stark Industries
+1 Izzet Guildgate
+7 Island
+6 Mountain
+
+SIDEBOARD:
+1 Counterspell
+1 Negate
+2 Essence Scatter
+1 Spell Pierce
+1 Syncopate
+2 Unsubtle Mockery
+2 Heated Argument
+1 Tectonic Hazard
+1 Vapor Snag
+1 Unsummon
+2 Quick Study
