@@ -1,0 +1,65 @@
+# Pilot for Codie, Ravenous Codex, Combo-Control build (brew 2026-10-03). Same Seething Song loop as `codie`,
+# with the slow prepare value creatures traded for wipes, spot removal, counters and tutors.
+commander: Codie, Ravenous Codex
+eyebrow: "Five-color · Prepare combo-control · Bracket 3"
+summary: Interacts early with cheap removal, counters and wipes, then assembles Displacer Kitten or Codie + an untapper
+  with Blazing Firesinger for infinite red into Flaming Tyrannosaurus, Impending Flux or a copied Exsanguinate.
+
+engine: [Displacer Kitten, Blazing Firesinger, Chakram Retriever, Jeskai Ascendancy, Chromatic Orrery,
+         Flaming Tyrannosaurus, Stensian Sanguinist, Archmage Emeritus, "Vega, the Watcher", "Kellan, the Kid",
+         Cryptolith Rite, Song of Creation, Emeritus of Woe, Emeritus of Ideation, "Sanar, Unfinished Genius"]
+keep_home: [Displacer Kitten, Blazing Firesinger, Chakram Retriever, Archmage Emeritus, "Vega, the Watcher",
+            "Kellan, the Kid", Stensian Sanguinist, Storm-Kiln Artist, Bloom Tender, Faeburrow Elder, Birds of Paradise,
+            Emeritus of Woe, Emeritus of Conflict, Flaming Tyrannosaurus, "Sanar, Unfinished Genius", Harmonized Trio,
+            Heartwood Crafter, Studious First-Year]
+keep_commander_home: true
+commander_first: true
+
+fodder: tokens
+fodder_max_cmc: 2
+instant_sac_tokens: []
+bonus_keywords: []
+
+# Loop pieces first; Enlightened Tutor and Chord find the rest.
+tutor_targets: [Displacer Kitten, Blazing Firesinger, Flaming Tyrannosaurus, Chakram Retriever, Chromatic Orrery,
+                Jeskai Ascendancy, Impending Flux]
+
+priorities:
+  Displacer Kitten: 90
+  Blazing Firesinger: 89
+  Chakram Retriever: 87
+  Jeskai Ascendancy: 87
+  Flaming Tyrannosaurus: 86
+  Chromatic Orrery: 84
+  Cryptolith Rite: 84
+  Archmage Emeritus: 82
+  "Vega, the Watcher": 82
+  Song of Creation: 81
+  "Kellan, the Kid": 80
+  Emeritus of Woe: 80
+  "Sanar, Unfinished Genius": 79
+  Emeritus of Ideation: 79
+  Storm-Kiln Artist: 75
+  Stensian Sanguinist: 75
+  Swiftfoot Boots: 60
+
+value_bonus:
+  Displacer Kitten: 4
+  Blazing Firesinger: 4
+  Flaming Tyrannosaurus: 4
+  Chakram Retriever: 3
+  Jeskai Ascendancy: 3
+key_cards:
+- Codie, Ravenous Codex
+- Displacer Kitten
+- Blazing Firesinger
+- Flaming Tyrannosaurus
+- Chakram Retriever
+- Jeskai Ascendancy
+- Impending Flux
+- Stensian Sanguinist
+hold_removal_vs_combo: true
+hold_counters: true
+sac_nontoken: false
+x_reserve: 0
+desperation_wipes: true

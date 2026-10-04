@@ -151,6 +151,11 @@ COMBOS = [
     ('Sanguine Bond', 'Bloodthirsty Conqueror'),
 ]
 FOGS = {'Aetherize'}
+# Reanimation and self-mill. Reanimate / Animate Dead / Necromancy take from any graveyard, Persist only nonlegendary.
+REANIMATE_SPELLS = {'Reanimate', 'Bind to Life', 'Restore Relic', 'Animate Dead', 'Necromancy', 'Persist',
+                    'Unburial Rites', 'Dread Return'}
+REANIMATE_ANY_GY = {'Reanimate', 'Animate Dead', 'Necromancy'}
+SELF_MILL = {'Entomb': 'entomb', 'Buried Alive': 'buried', 'Omit Variables': 'mill3', 'Faithless Looting': 'loot'}
 PROTECT = {'Heroic Intervention', "Teferi's Protection", 'Flawless Maneuver', 'Clever Concealment'}
 
 # --------------------------------------------------------------------- tagging
@@ -459,7 +464,8 @@ def tag(c):
     if n == 'Torment of Hailfire': c.drain_now = 'TORMENT'
     if n == 'Grapeshot': c.drain_now = 'STORM'
     if n == 'Approach of the Second Sun': c.life_now = 7
-    if n in ('Reanimate', 'Bind to Life', 'Restore Relic'): c.special = 'reanimate'; c.removal = None
+    if n in REANIMATE_SPELLS: c.special = 'reanimate'; c.removal = None
+    if n in SELF_MILL: c.special = SELF_MILL[n]
     if n == 'Regrowth': c.special = 'regrowth'
     if n == 'Craft with Pride': c.treasure_now = 1
     if n == 'Arc of Fortune': c.wheel = True; c.draw_now = 7

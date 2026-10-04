@@ -537,7 +537,47 @@ class Game:
                     x = max(perm, key=lambda x: x.cmc); S.hand.remove(x); s.log(f'{S.label} Kellan puts in {x.name}'); s.resolve(S, x)
         s.check_deaths(S, 'burn')
 
+    def reanimate_pool(s, P, c):
+        """(owner, card) pairs a reanimation spell could return. Bind to Life is handled at resolution (it mills first)."""
+        if c.name in CD.REANIMATE_ANY_GY: return [(q, x) for q in s.players for x in q.gy if x.is_creature]
+        if c.name == 'Restore Relic': return [(P, x) for x in P.gy if x.is_creature or x.is_artifact]
+        if c.name == 'Persist': return [(P, x) for x in P.gy if x.is_creature and 'Legendary' not in x.types]
+        return [(P, x) for x in P.gy if x.is_creature]
+
+    def self_mill(s, P, sp):
+        """Entomb / Buried Alive bin the biggest creatures in the library; Omit Variables and Stitcher's Supplier mill
+        three; Faithless Looting draws two and discards two, creatures first."""
+        if sp in ('entomb', 'buried'):
+            n = 1 if sp == 'entomb' else 3
+            for x in sorted([x for x in P.lib if x.is_creature], key=lambda x: -x.cmc)[:n]:
+                P.lib.remove(x); P.gy.append(x)
+            random.shuffle(P.lib)
+        elif sp == 'mill3':
+            P.gy += [P.lib.pop() for _ in range(min(3, len(P.lib)))]
+        elif sp == 'loot':
+            P.draw(2)
+            for _ in range(min(2, len(P.hand))):
+                x = max(P.hand, key=lambda x: (x.is_creature and x.cmc >= 5, x.is_land and P.lands >= 5, -s.cost(P, x)))
+                P.hand.remove(x); P.gy.append(x)
+
+    def gy_score(s, P, c):
+        """Cast score for reanimation and self-mill spells, or None if c is neither."""
+        sp = getattr(c, 'special', None)
+        if sp == 'reanimate':
+            if c.name == 'Bind to Life': return 58
+            pool = s.reanimate_pool(P, c)
+            best = max([x.cmc for _, x in pool] or [0])
+            return 0 if best < 4 else 66 + min(best, 9)
+        if sp in ('entomb', 'buried'):
+            big = any(x.is_creature and x.cmc >= 5 for x in P.gy)
+            return 35 if big else 62
+        if sp in ('mill3', 'loot'): return 44
+        return None
+
     def prep_value(s, P, c):
+        if getattr(c, 'special', None) == 'reanimate' and c.name != 'Bind to Life':
+            return 3 if any(x.cmc >= 4 for _, x in s.reanimate_pool(P, c)) else 0
+        if getattr(c, 'special', None) in ('mill3',): return 1
         if c.ritual or c.tutor or c.draw_now >= 2 or c.drain_now or getattr(c, 'special', None) in ('reanimate',): return 3
         if c.removal or c.draw_now or getattr(c, 'treasure_now', 0) or c.ramp_lands: return 2
         return 0
@@ -784,6 +824,8 @@ class Game:
 
     def resolve(s, P, c, is_cmd=False):
         g = s
+        if c.is_enchantment and getattr(c, 'special', None) == 'reanimate':
+            s.spell_effect(P, c); P.gy.append(c); return   # Animate Dead / Necromancy: modeled as the reanimation itself
         if c.is_creature or c.is_artifact or c.is_enchantment or c.is_planeswalker or c.is_land:
             if c.is_aura:
                 tgt = s.aura_target(P, c)
@@ -805,6 +847,7 @@ class Game:
                 s.etb_triggers(P, [p])
             elif not c.is_creature:
                 s.etb(P, p, c)
+            if c.name == "Stitcher's Supplier": s.self_mill(P, 'mill3')
             if c.is_creature and P.has("Garruk's Uprising") and s.power(p) >= 4: P.draw(1)
             if c.is_creature and P.has('Beast Whisperer') or c.is_creature and P.has('Guardian Project'): P.draw(1)
             return
@@ -915,12 +958,12 @@ class Game:
             if c.name == 'Bind to Life':
                 milled = [P.lib.pop() for _ in range(min(7, len(P.lib)))]; P.gy += milled
                 pool = [(P, x) for x in milled if x.is_creature]
-            elif c.name == 'Reanimate': pool = [(q, x) for q in s.players for x in q.gy if x.is_creature]
-            else: pool = [(P, x) for x in P.gy if x.is_creature or x.is_artifact]
+            else: pool = s.reanimate_pool(P, c)
             if pool:
                 q, x = max(pool, key=lambda t: t[1].cmc); q.gy.remove(x)
                 if c.name == 'Reanimate': s.lose_life(P, x.cmc)
                 s.log(f'{P.label} {c.name} returns {x.name}'); s.resolve(P, x)
+        if sp in ('entomb', 'buried', 'mill3', 'loot'): s.self_mill(P, sp)
         if sp == 'regrowth':
             back = [x for x in P.gy if not x.is_land and x is not c]
             if back: x = max(back, key=lambda x: x.cmc); P.gy.remove(x); P.hand.append(x)
@@ -1520,6 +1563,8 @@ class Game:
                 pass
 
     def ai_score(s, P, c, turn, post):
+        g_ = s.gy_score(P, c)
+        if g_ is not None: return g_
         opps = P.opps()
         if c.overrun:
             # only if it makes an attack lethal (precombat)
@@ -1683,6 +1728,8 @@ class Game:
         s.check_deaths(P, 'drain')
 
     def my_score(s, P, c, turn, post):
+        g_ = s.gy_score(P, c)
+        if g_ is not None: return g_
         opps = P.opps(); n = c.name; pr = P.pilot.get('priorities', {}); o = c.oracle
         stax_bad = [p for q in opps for p in q.bf if p.card and p.card.stax and set(p.card.stax) & {'no_triggers', 'no_dies', 'no_creature_abilities', 'no_artifact_abilities', 'no_cmd_cast', 'opp_minus'} and not p.neutral]
         if getattr(c, 'charm_wipe', False):
