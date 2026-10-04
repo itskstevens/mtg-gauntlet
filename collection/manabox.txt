@@ -23,7 +23,9 @@
 1 Ainok Strike Leader (TDC) 11
 1 Ainok Survivalist (A25) 157 *F*
 1 Ainok Tracker (KTK) 96 *F*
+1 Ajani Resolute (FRA) 195
 1 Ajani Steadfast (CMM) 813
+1 Ajani Unrelenting (FRA) 242
 1 Ajani's Response (SOS) 6
 1 Akoum Hellhound (ZNR) 299 *F*
 1 Alesha's Legacy (TDM) 72
@@ -43,6 +45,7 @@
 1 Arasta of the Endless Web (TDC) 244
 1 Arbor Adherent (TDC) 42
 1 Arboreal Grazer (TDC) 245
+1 Arcane Amphisbaena (FRA) 97
 1 Arcane Epiphany (FDN) 29
 1 Arcane Omens (SOS) 73
 1 Archway Commons (STX) 263
@@ -53,6 +56,7 @@
 1 Armorcraft Judge (CMM) 273 *F*
 1 Armored Scrapgorger (ONE) 158
 1 Arms Race (BRO) 126
+1 Arni, Renowned Champion (FRA) 243
 1 Arnim Zola, Bio-Fanatic (MSH) 86 *F*
 1 Arnyn, Deathbloom Botanist (SOS) 74
 1 Arnyn, Deathbloom Botanist (SOS) 74 *F*
@@ -71,6 +75,7 @@
 1 Avengers Tower (MSH) 334
 1 Avengers: Under Siege (MSH) 205
 1 Avengers: Under Siege (MSH) 306
+1 Awaken the Inferno (FRA) 74
 1 Awaken the Woods (SOA) 49
 1 Axebane Guardian (TDC) 248
 1 Bagel and Schmear (SPM) 161 *F*
@@ -155,6 +160,7 @@
 1 Ceremonial Knife (VOW) 254
 1 Chameleon, Master of Disguise (SPM) 27
 1 Champion of the Path (ECL) 130
+1 Charge the Sanctum (FRA) 125
 1 Chase Inspiration (SOS) 41 *F*
 1 Cheerful Osteomancer // Raise Dead (SOS) 76
 1 Chemister's Insight (CLU) 81
@@ -175,6 +181,7 @@
 1 Command Tower (ECC) 60
 1 Commander's Insignia (TDC) 111
 1 Compassionate Healer (TLA) 13
+1 Compel Brutality (FRA) 101
 1 Conciliator's Duelist (SOS) 182 *F*
 1 Consider (TLE) 157 *F*
 1 Contagious Vorrac (ONE) 164
@@ -193,6 +200,7 @@
 1 Cruel Witness (VOW) 55
 1 Crushing Canopy (VOW) 194
 1 Crustacean Commando (TMT) 33
+1 Cryotheory Adept (FRA) 27
 1 Cultivate (PW23) 6 *F*
 1 Curate (BRO) 44 *F*
 1 Daily Bugle Reporters (SPM) 6
@@ -218,6 +226,7 @@
 1 Depower (MSH) 50
 1 Depth Charge Colossus (BRO) 78
 1 Despark (TDC) 284
+1 Desperate Futurescribe (FRA) 129
 1 Devouring Tendrils (STX) 126
 1 Dimir Guildgate (CLU) 234
 1 Dina's Guidance (SOS) 184
@@ -277,6 +286,8 @@
 1 Evolving Wilds (TDM) 255
 1 Expel the Interlopers (TDC) 115
 1 Expressive Iteration (TDC) 288
+1 Extended Absence (FRA) 54
+1 Extrapolate the Impossible (FRA) 55
 1 Eyetwitch (STX) 70
 1 Ezekiel Sims, Spider-Totem (SPM) 100
 1 Faeburrow Elder (TDC) 289
@@ -301,6 +312,7 @@
 1 Flash Thompson, Spider-Fan (SPM) 7
 1 Flexible Waterbender (TLA) 50
 1 Flock Impostor (ECL) 16
+1 Flourishing Grapple (FRA) 372
 1 Flow of Knowledge (BRO) 49 *F*
 1 Flying Octobot (SPM) 31
 1 Fog of War (BRO) 180
@@ -313,6 +325,7 @@
 1 Forest (DDO) 65
 1 Forest (DDR) 33
 1 Forest (ECL) 283
+1 Forest (FRA) 395
 1 Forest (HOU) 199
 1 Forest (KLD) 264
 1 Forest (LTR) 271
@@ -322,6 +335,7 @@
 1 Forest (SPM) 198
 1 Forest (VOW) 277
 1 Forest (WAR) 263
+1 Formidable Commons (FRA) 178
 1 Fortified Village (TDC) 366
 1 Forum of Amity (SOS) 256
 1 Forum of Amity (SOS) 256 *F*
@@ -334,6 +348,7 @@
 1 Garrison Excavator (SOS) 116
 1 Geistwave (MID) 56 *F*
 1 Generous Gift (CMM) 26 *F*
+1 Germinate Recruits (FRA) 9
 1 Ghost, Spectral Saboteur (MSH) 214
 1 Giant-Sized Flying Ant (MSH) 56
 1 Gilt-Leaf's Embrace (ECL) 177
@@ -351,11 +366,13 @@
 1 Goldmeadow Nomad (ECL) 18 *F*
 1 Goldnight Commander (TDC) 117
 1 Graduation Day (SOS) 16
+1 Graft Surgeon (FRA) 10
 1 Grand Crescendo (TDC) 118
 1 Grave Researcher // Reanimate (SOS) 85
 1 Graveshifter (ECL) 104
 1 Great Hall of the Biblioplex (SOS) 257 *F*
 1 Grenzo, Havoc Raiser (TDC) 216
+1 Grim Repriser (FRA) 136
 1 Grisly Ritual (VOW) 116
 1 Group Project (SOS) 17
 1 Grow Extra Arms (SPM) 101 *F*
@@ -375,12 +392,15 @@
 1 Harmonize (M3C) 231 *F*
 1 Harsh Annotation (SOS) 18
 1 Heartfire Immolator (FDN) 201
+1 Heartstring Puller (FRA) 86
+1 Heartwood Crafter // Soul Tether (FRA) 105
 1 Heated Debate (STX) 106
 1 Hei Bai, Spirit of Balance (TLA) 225
 1 Helping Hand (SOA) 5
 1 Helping Hand (SOA) 5 *F*
 1 Hero of Bladehold (TDC) 119
 1 Heron of Hope (VOW) 18
+1 Hexhaven Battalion (FRA) 12
 1 Hexing Squelcher (ECL) 145
 1 Hinder (2XM) 54 *F*
 1 Hire a Crew (MSH) 134
@@ -467,6 +487,7 @@
 1 Kasmina, Enigmatic Mentor (WAR) 56 *F*
 1 Katilda, Dawnhart Martyr // Katilda's Rising Dawn (VOW) 317
 1 Kaya, Geist Hunter (TDC) 294
+1 Keeper of the Quiet Hour (FRA) 171
 1 Kemba, Kha Enduring (ONE) 19
 1 Kid Loki (MSH) 63
 1 Killian's Confidence (SOS) 197 *F*
@@ -507,6 +528,7 @@
 1 Lingering Souls (TDC) 123
 1 Liquimetal Coating (CM2) 197
 1 Living End (SOA) 30
+1 Living Library (FRA) 172
 1 Lluwen, Exchange Student // Pest Friend (SOS) 199
 1 Lluwen, Imperfect Naturalist (ECL) 232
 1 Locust Spray (SOA) 31
@@ -537,8 +559,10 @@
 1 Mechanical Mobster (SPM) 168
 1 Mechanical Mobster (SPM) 168 *F*
 1 Memorial to Genius (DOM) 243 *F*
+1 Memory Trap (FRA) 15
 1 Merciless Enforcers (SPM) 58
 1 Merfolk Cave-Diver (LCI) 65
+1 Meticulous Commons (FRA) 184
 1 Micromancer (FDN) 158
 1 Mind Roots (SOS) 203
 1 Mind Stone (DMR) 232 *F*
@@ -547,6 +571,7 @@
 1 Mindful Biomancer (SOS) 154
 1 Mindful Biomancer (SOS) 154 *F*
 1 Mindleech Ghoul (VOW) 122
+1 Mindseeker Oculus (FRA) 33
 1 Mirrorform (ECL) 59
 1 Mischievous Sneakling (ECL) 235
 1 Mister Hyde, Monster Within (MSH) 176
@@ -618,6 +643,7 @@
 1 Orzhov Signet (TDC) 323
 1 Overgrown Arch (STX) 139
 1 Overgrown Battlement (TDC) 264
+1 Overgrown Farmland (FRA) 185 *F*
 1 Overgrown Farmland (TDC) 381
 1 Overrun (FDN) 230
 1 Overrun (FDN) 230 *F*
@@ -631,11 +657,14 @@
 1 Path of Ancestry (CMR) 353 *F*
 1 Patriot, Shield Wielder (MSH) 30
 1 Pensive Professor (SOS) 63
+1 Perfected Theory (FRA) 34
 1 Persistent Specimen (VOW) 125
 1 Personify (ECL) 28 *F*
 1 Pestbrood Sloth (SOS) 157
 1 Petrified Hamlet (SOS) 259
 1 Phyrexian Mite (TONE) 11
+1 Pia, Aether Ascetic (FRA) 264
+1 Pia, Determined Rebuilder (FRA) 250
 1 Pick Your Poison (SOA) 55
 1 Pigment Wrangler // Striking Palette (SOS) 126 *F*
 1 Plague Nurse (ONE) 179
@@ -675,6 +704,7 @@
 1 Powerstone Engineer (BRO) 20 *F*
 1 Practiced Scrollsmith (SOS) 210
 1 Prava of the Steel Legion (CMR) 38 *F*
+1 Predictive Preparations (FRA) 16
 1 Prehistoric Pet (TMT) 22
 1 Preordain (TDC) 161
 1 Pretending Poxbearers (TLA) 237
@@ -692,6 +722,7 @@
 1 Prosperous Innkeeper (SLP) 40
 1 Protective Response (ECL) 29
 1 Protector of the Wastes (TDC) 14
+1 Protege's Awakening (FRA) 37
 1 Prowling Felidar (ZNR) 294 *F*
 1 Pterafractyl (SOS) 215
 1 Pull from the Grave (SOS) 95 *F*
@@ -721,6 +752,7 @@
 1 Rambunctious Mutt (M21) 30
 1 Rampant Growth (M3C) 240 *F*
 1 Rampart Architect (TDC) 47
+1 Rank Rat (FRA) 61
 1 Raphael, the Nightwatcher (TMT) 103
 1 Rapturous Moment (SOS) 219
 1 Rapturous Moment (SOS) 219 *F*
@@ -770,11 +802,13 @@
 1 Rootha, Mastering the Moment (SOC) 8
 1 Rubble Rouser (SOS) 128
 1 Ruinous Waterbending (TLA) 118
+1 Ruric Thar, Magecrusher (FRA) 265 *F*
 1 Rushed Rebirth (STX) 228
 1 Rust Goliath (BRO) 204
 1 Rustvine Cultivator (ONE) 295
 1 S.H.I.E.L.D. Deployment Drone (MSH) 73
 1 S.H.I.E.L.D. Spy Kit (MSH) 36
+1 Saheeli, Jewel of Avishkar (FRA) 275
 1 Salt Road Packbeast (TDM) 23
 1 Sanar, Unfinished Genius // Wild Idea (SOS) 223
 1 Sanctify (VOW) 33
@@ -789,6 +823,7 @@
 1 Scout the City (SPM) 113
 1 Scrapwork Mutt (BRO) 164 *F*
 1 Scute Swarm (ZNR) 203
+1 Seasoned Cryomancer (FRA) 324
 1 Second Harvest (INR) 213 *F*
 1 Secret Identity (SPM) 43
 1 Seedborn Muse (TDC) 268
@@ -844,11 +879,14 @@
 1 Sol Ring (M3C) 305
 1 Sol Ring (SOC) 427 *F*
 1 Solemn Simulacrum (TDC) 325
+1 Solve for Disappointment (FRA) 67
+1 Something Worth Saving (FRA) 114
 1 Soulbright Seeker (ECL) 157
 1 Spectacular Skywhale (SOS) 229 *F*
 1 Spell Pierce (SOA) 88
 1 Spellbook Seeker // Careful Study (SOS) 68
 1 Spellbook Seeker // Careful Study (SOS) 68 *F*
+1 Sphinx's Approach (FRA) 41
 1 Spider-Gwen, Free Spirit (SPM) 90 *F*
 1 Spider-Man India (SPM) 151
 1 Spider-Man No More (SPM) 45
@@ -873,6 +911,9 @@
 1 Staunch Crewmate (LCI) 79
 1 Steelclad Spirit (VOW) 80
 1 Stegron the Dinosaur Man (SPM) 95
+1 Stingerquill Charm (FRA) 150
+1 Stingerquill Voxmancer // Vicious Verse (FRA) 151
+1 Stingerquill Voxmancer // Vicious Verse (FRA) 151 *F*
 1 Stirring Honormancer (SOS) 234
 1 Stitched Assistant (VOW) 81
 1 Stormcarved Coast (SOS) 304
@@ -932,6 +973,7 @@
 1 Talisman of Creativity (SOC) 429 *F*
 1 Talisman of Hierarchy (TDC) 331
 1 Talrand, Sky Summoner (UMA) 76 *F*
+1 Tam's Resistance (FRA) 153
 1 Tam, Observant Sequencer // Deep Sight (SOS) 237
 1 Tanufel Rimespeaker (ECL) 77
 1 Tawnos's Tinkering (BRO) 191
@@ -953,6 +995,7 @@
 1 Tenured Concocter (SOS) 163 *F*
 1 Terramorphic Expanse (CMR) 357 *F*
 1 Terramorphic Expanse (TDC) 408
+1 Tether Technician (FRA) 94
 1 Textbook Tabulator (SOS) 70 *F*
 1 Thalisse, Reverent Medium (TDC) 306
 1 The Clone Saga (SPM) 28
@@ -982,6 +1025,8 @@
 1 Together as One (SOS) 4
 1 Tolarian Winds (BTD) 16
 1 Tome Blast (SOS) 135
+1 Tomik, Izzet Sparkmage (FRA) 253
+1 Tomik, Orzhov Lawmage (FRA) 206
 1 Tower Defense (TDC) 275
 1 Tower Worker (BRO) 255
 1 Towering Titan (TDC) 276
@@ -994,6 +1039,7 @@
 1 Triumph of the Hordes (SOA) 59
 1 Twilight Drover (TDC) 136
 1 Twilight Mire (EOC) 189
+1 Twisted Fates (FRA) 158
 1 Ulna Alley Shopkeep (SOS) 103
 1 Unbreakable Formation (RVR) 32 *F*
 1 Unburied Earthcarver (TDM) 95
@@ -1014,6 +1060,7 @@
 1 Valorous Stance (INR) 48
 1 Vanguard Seraph (FDN) 28
 1 Vapor Snag (MM2) 66 *F*
+1 Variable Chaser // Arc of Fortune (FRA) 47
 1 Vat Emergence (ONE) 112 *F*
 1 Vault of the Archangel (TDC) 410
 1 Veil of Summer (SOA) 60
@@ -1023,8 +1070,11 @@
 1 Venus, Torn Between Worlds (TMT) 136
 1 Vibrant Cityscape (SPM) 188
 1 Vibrant Outburst (SOS) 240
+1 Vinelasher Adept (FRA) 119
 1 Viscera Seer (TDC) 199
 1 Viv Vision, Teen Synthezoid (MSH) 256
+1 Void Extrapolator // Omit Variables (FRA) 70
+1 Void Extrapolator // Omit Variables (FRA) 70 *F*
 1 Volcanic Villain (MSH) 159
 1 Voldaren Epicure (VOW) 308
 1 Voracious Tome-Skimmer (ECL) 250
@@ -1040,11 +1090,14 @@
 1 War Machine, Legacy of Iron (MSH) 238
 1 Wary Farmer (ECL) 251
 1 Wary Thespian (FDN) 235
+1 Way of the Mentor (FRA) 208
+1 Way of the Warlord (FRA) 255
 1 Wayfarer's Bauble (TDC) 335
 1 Weathered Sentinels (TDC) 336
 1 Web Up (MSH) 41
 1 Wedding Security (VOW) 138
 1 Welcoming Vampire (TDC) 140
+1 Whiplash Wordsmith // Vicious Verse (FRA) 164
 1 Whiplash, Vengeful Engineer (MSH) 121
 1 Whirlwind Denial (STA) 23
 1 Whispering Wizard (VOW) 88
@@ -1074,6 +1127,8 @@
 1 Xanthic Statue (WTH) 163
 1 Yahenni, Undying Partisan (TDC) 202
 1 You Find the Villains' Lair (AFR) 84
+1 Yuriko, Blade of the Mighty (FRA) 210
+1 Yuriko, Hope from the Shadows (FRA) 226
 1 Zealous Lorecaster (SOS) 137 *F*
 1 Zetalpa, Primal Dawn (TDC) 142
 1 Zurgo Stormrender (TDC) 10
@@ -1161,6 +1216,7 @@
 2 Molten Exhale (TDM) 113
 2 Monstrous Rage (SOA) 45
 2 Mountain (ECL) 277
+2 Mountain (FRA) 288
 2 Mountain (SOS) 270
 2 Mountain (SOS) 270 *F*
 2 Mountain (TDM) 284

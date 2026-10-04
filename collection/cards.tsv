@@ -23,7 +23,9 @@ Ainok Guide	1
 Ainok Strike Leader	1
 Ainok Survivalist	1
 Ainok Tracker	1
+Ajani Resolute	1
 Ajani Steadfast	1
+Ajani Unrelenting	1
 Ajani's Response	1
 Akoum Hellhound	1
 Alesha's Legacy	1
@@ -42,6 +44,7 @@ Aquitect's Defenses	1
 Arasta of the Endless Web	1
 Arbor Adherent	1
 Arboreal Grazer	1
+Arcane Amphisbaena	1
 Arcane Epiphany	1
 Arcane Omens	1
 Arcane Signet	4
@@ -55,6 +58,7 @@ Arm with Aether	1
 Armorcraft Judge	1
 Armored Scrapgorger	1
 Arms Race	1
+Arni, Renowned Champion	1
 Arnim Zola, Bio-Fanatic	1
 Arnyn, Deathbloom Botanist	2
 Aron, Benalia's Ruin	1
@@ -72,6 +76,7 @@ Avatar's Wrath	1
 Avengers Assemble!	1
 Avengers Tower	2
 Avengers: Under Siege	2
+Awaken the Inferno	1
 Awaken the Woods	1
 Axebane Guardian	1
 Aziza, Mage Tower Captain	2
@@ -168,6 +173,7 @@ Cenote Scout	1
 Ceremonial Knife	1
 Chameleon, Master of Disguise	1
 Champion of the Path	1
+Charge the Sanctum	1
 Chase Inspiration	3
 Cheerful Osteomancer	1
 Chemister's Insight	1
@@ -192,6 +198,7 @@ Comforting Counsel	1
 Command Tower	3
 Commander's Insignia	1
 Compassionate Healer	1
+Compel Brutality	1
 Conciliator's Duelist	1
 Consider	1
 Contagious Vorrac	1
@@ -209,6 +216,7 @@ Crossroads Watcher	2
 Cruel Witness	1
 Crushing Canopy	1
 Crustacean Commando	1
+Cryotheory Adept	1
 Cultivate	1
 Curate	1
 Daily Bugle Reporters	1
@@ -235,6 +243,7 @@ Dependable Quinjet	2
 Depower	1
 Depth Charge Colossus	1
 Despark	1
+Desperate Futurescribe	1
 Devouring Tendrils	1
 Diary of Dreams	2
 Dig Site Inventory	5
@@ -303,6 +312,8 @@ Exotic Orchard	3
 Expel the Interlopers	1
 Expressive Firedancer	2
 Expressive Iteration	1
+Extended Absence	1
+Extrapolate the Impossible	1
 Eyetwitch	1
 Ezekiel Sims, Spider-Totem	1
 Faeburrow Elder	1
@@ -328,6 +339,7 @@ Flaring Cinder	1
 Flash Thompson, Spider-Fan	1
 Flexible Waterbender	1
 Flock Impostor	1
+Flourishing Grapple	1
 Flow of Knowledge	1
 Flow State	2
 Flying Octobot	1
@@ -337,7 +349,8 @@ Follow the Lumarets	3
 Foolish Fate	3
 Foot Headquarters	1
 Foot Mystic	1
-Forest	39
+Forest	40
+Formidable Commons	1
 Fortified Village	1
 Forum of Amity	2
 Fractal Anomaly	2
@@ -351,6 +364,7 @@ Gangly Stompling	3
 Garrison Excavator	1
 Geistwave	1
 Generous Gift	1
+Germinate Recruits	1
 Ghost, Spectral Saboteur	1
 Giant Growth	4
 Giant-Sized Flying Ant	1
@@ -373,11 +387,13 @@ Goldlust Triad	1
 Goldmeadow Nomad	3
 Goldnight Commander	1
 Graduation Day	1
+Graft Surgeon	1
 Grand Crescendo	1
 Grave Researcher	1
 Graveshifter	1
 Great Hall of the Biblioplex	1
 Grenzo, Havoc Raiser	1
+Grim Repriser	1
 Grisly Ritual	1
 Group Project	1
 Grow Extra Arms	1
@@ -396,6 +412,8 @@ Harmonize	1
 Harsh Annotation	1
 Hawkeye's Bow	2
 Heartfire Immolator	1
+Heartstring Puller	1
+Heartwood Crafter	1
 Heated Argument	4
 Heated Debate	1
 Hei Bai, Spirit of Balance	1
@@ -405,6 +423,7 @@ Hero in Training	3
 Hero of Bladehold	1
 Heron of Hope	1
 Hex Magic	2
+Hexhaven Battalion	1
 Hexing Squelcher	1
 Hinder	1
 Hire a Crew	1
@@ -484,6 +503,7 @@ Kasmina, Enigmatic Mentor	1
 Katilda, Dawnhart Martyr	1
 Kaya, Geist Hunter	1
 Keep Out	3
+Keeper of the Quiet Hour	1
 Kemba, Kha Enduring	1
 Kid Loki	1
 Killian's Confidence	1
@@ -530,6 +550,7 @@ Liminal Hold	3
 Lingering Souls	1
 Liquimetal Coating	1
 Living End	1
+Living Library	1
 Lluwen, Exchange Student	1
 Lluwen, Imperfect Naturalist	1
 Locust Spray	1
@@ -561,9 +582,11 @@ Masterful Flourish	3
 Mechanical Mobster	2
 Melancholic Poet	4
 Memorial to Genius	1
+Memory Trap	1
 Merciless Enforcers	1
 Merfolk Cave-Diver	1
 Merrow Skyswimmer	2
+Meticulous Commons	1
 Mica, Reader of Ruins	2
 Micromancer	1
 Midnight Tilling	2
@@ -573,6 +596,7 @@ Mind Stone	1
 Mindblade Render	1
 Mindful Biomancer	2
 Mindleech Ghoul	1
+Mindseeker Oculus	1
 Mirrorform	1
 Mischievous Sneakling	1
 Mister Hyde, Monster Within	1
@@ -594,7 +618,7 @@ Morbid Opportunist	1
 Morbius the Living Vampire	1
 Morlun, Devourer of Spiders	1
 Mornsong Aria	1
-Mountain	52
+Mountain	54
 Mouser Attack!	1
 Mowu, Loyal Companion	1
 Mudbutton Cursetosser	1
@@ -636,7 +660,7 @@ Oscorp Research Team	2
 Osseous Exhale	2
 Overgrown Arch	1
 Overgrown Battlement	1
-Overgrown Farmland	1
+Overgrown Farmland	2
 Overrun	2
 Overwhelming Stampede	1
 Ovika, Enigma Goliath	1
@@ -651,6 +675,7 @@ Parish-Blade Trainee	1
 Path of Ancestry	3
 Patriot, Shield Wielder	1
 Pensive Professor	1
+Perfected Theory	1
 Persistent Specimen	1
 Personify	1
 Pest Mascot	2
@@ -658,6 +683,8 @@ Pestbrood Sloth	1
 Pet Avengers	2
 Petrified Hamlet	1
 Phyrexian Mite	1
+Pia, Aether Ascetic	1
+Pia, Determined Rebuilder	1
 Pick Your Poison	1
 Piercing Light	2
 Pigment Wrangler	3
@@ -675,6 +702,7 @@ Powerstone Engineer	2
 Pox Plague	2
 Practiced Scrollsmith	1
 Prava of the Steel Legion	1
+Predictive Preparations	1
 Prehistoric Pet	1
 Preordain	1
 Pretending Poxbearers	1
@@ -694,6 +722,7 @@ Promising Vein	1
 Prosperous Innkeeper	1
 Protective Response	1
 Protector of the Wastes	1
+Protege's Awakening	1
 Prowling Felidar	1
 Pterafractyl	1
 Pull from the Grave	4
@@ -727,6 +756,7 @@ Rambunctious Mutt	1
 Rampant Growth	1
 Rampart Architect	1
 Rancorous Archaic	3
+Rank Rat	1
 Raphael, the Nightwatcher	1
 Rapid Rescue	2
 Rapier Wit	4
@@ -784,12 +814,14 @@ Rugged Highlands	2
 Ruinous Waterbending	1
 Run Behind	3
 Rural Recruit	2
+Ruric Thar, Magecrusher	1
 Rushed Rebirth	1
 Rust Goliath	1
 Rustvine Cultivator	1
 S.H.I.E.L.D. Deployment Drone	1
 S.H.I.E.L.D. Spy Kit	1
 Sagu Pummeler	2
+Saheeli, Jewel of Avishkar	1
 Salt Road Packbeast	1
 Sanar, Unfinished Genius	1
 Sanctify	2
@@ -805,6 +837,7 @@ Scorpion, Seething Striker	1
 Scout the City	1
 Scrapwork Mutt	1
 Scute Swarm	1
+Seasoned Cryomancer	1
 Second Harvest	1
 Secret Identity	1
 Seedborn Muse	1
@@ -862,12 +895,15 @@ Soaring Stoneglider	1
 Social Snub	3
 Sol Ring	4
 Solemn Simulacrum	1
+Solve for Disappointment	1
+Something Worth Saving	1
 Soulbright Seeker	1
 Spectacle Summit	3
 Spectacular Skywhale	3
 Spell Pierce	1
 Spell Snare	2
 Spellbook Seeker	2
+Sphinx's Approach	1
 Spider-Gwen, Free Spirit	1
 Spider-Man India	1
 Spider-Man No More	1
@@ -895,6 +931,8 @@ Startled Relic Sloth	1
 Staunch Crewmate	1
 Steelclad Spirit	1
 Stegron the Dinosaur Man	1
+Stingerquill Charm	1
+Stingerquill Voxmancer	2
 Stirring Honormancer	1
 Stirring Hopesinger	2
 Stitched Assistant	1
@@ -950,6 +988,7 @@ Talisman of Conviction	1
 Talisman of Creativity	1
 Talisman of Hierarchy	3
 Talrand, Sky Summoner	1
+Tam's Resistance	1
 Tam, Observant Sequencer	1
 Tanufel Rimespeaker	1
 Tawnos's Tinkering	1
@@ -971,6 +1010,7 @@ Tendershoot Dryad	1
 Tenured Concocter	2
 Terramorphic Expanse	2
 Tester of the Tangential	2
+Tether Technician	1
 Textbook Tabulator	4
 Thalisse, Reverent Medium	1
 The Clone Saga	1
@@ -1000,6 +1040,8 @@ Tocasia's Welcome	1
 Together as One	1
 Tolarian Winds	1
 Tome Blast	1
+Tomik, Izzet Sparkmage	1
+Tomik, Orzhov Lawmage	1
 Topiary Lecturer	2
 Tower Defense	1
 Tower Worker	1
@@ -1014,6 +1056,7 @@ Trickster's Stratagem	1
 Triumph of the Hordes	1
 Twilight Drover	1
 Twilight Mire	1
+Twisted Fates	1
 Ulna Alley Shopkeep	1
 Ultron Drone	3
 Unbreakable Formation	1
@@ -1037,6 +1080,7 @@ Ureni's Rebuff	1
 Valorous Stance	1
 Vanguard Seraph	1
 Vapor Snag	1
+Variable Chaser	1
 Vat Emergence	1
 Vault of the Archangel	1
 Veil of Summer	1
@@ -1047,11 +1091,13 @@ Venus, Torn Between Worlds	1
 Vibranium Energy Daggers	2
 Vibrant Cityscape	1
 Vibrant Outburst	4
+Vinelasher Adept	1
 Viscera Seer	1
 Vision of Love	2
 Visionary's Dance	3
 Visions of Villainy	2
 Viv Vision, Teen Synthezoid	1
+Void Extrapolator	2
 Volcanic Villain	1
 Voldaren Epicure	1
 Voracious Tome-Skimmer	1
@@ -1073,12 +1119,15 @@ War Machine, Legacy of Iron	1
 Wary Farmer	1
 Wary Thespian	1
 Watcher of the Wayside	2
+Way of the Mentor	1
+Way of the Warlord	1
 Wayfarer's Bauble	1
 We Say Thee Nay!	2
 Weathered Sentinels	1
 Web Up	1
 Wedding Security	1
 Welcoming Vampire	1
+Whiplash Wordsmith	1
 Whiplash, Vengeful Engineer	1
 Whirlwind Denial	1
 Whispering Wizard	1
@@ -1110,6 +1159,8 @@ Wraith, Vicious Vigilante	1
 Xanthic Statue	1
 Yahenni, Undying Partisan	1
 You Find the Villains' Lair	1
+Yuriko, Blade of the Mighty	1
+Yuriko, Hope from the Shadows	1
 Zealous Lorecaster	4
 Zetalpa, Primal Dawn	1
 Zimone's Experiment	2

@@ -25,6 +25,7 @@ Appeal to Eirdu
 Apprentice Sharpshooter
 Aquitect's Defenses
 Arboreal Grazer
+Arcane Amphisbaena
 Arcane Signet
 Archway Commons
 Argothian Opportunist
@@ -34,6 +35,7 @@ Asgardian Citadel
 Assert Perfection
 Atlantis Attacks
 Auntie's Sentence
+Awaken the Inferno
 Axebane Guardian
 Bagel and Schmear
 Bake into a Pie
@@ -76,6 +78,7 @@ Cackling Prowler
 Call Damage Control
 Campus Guide
 Ceremonial Knife
+Charge the Sanctum
 Chase Inspiration
 Cheerful Osteomancer
 Chitinous Graspling
@@ -84,6 +87,7 @@ Citanul Stalwart
 City Pigeon
 Command Tower
 Compassionate Healer
+Compel Brutality
 Consider
 Contagious Vorrac
 Cost of Brilliance
@@ -95,6 +99,7 @@ Crossroads Watcher
 Cruel Witness
 Crushing Canopy
 Crustacean Commando
+Cryotheory Adept
 Cultivate
 Curate
 Daily Bugle Reporters
@@ -135,6 +140,7 @@ Essence Scatter
 Eureka Moment
 Evolving Wilds
 Expressive Firedancer
+Extended Absence
 Fanatical Firebrand
 Feed the Swarm
 Feisty Spikeling
@@ -151,6 +157,7 @@ Foggy Swamp Hunters
 Follow the Lumarets
 Foot Headquarters
 Foot Mystic
+Formidable Commons
 Forum of Amity
 Fractal Mascot
 Fractal Summoning
@@ -170,6 +177,7 @@ Goblin Glasswright
 Goblin Tomb Raider
 Goldhound
 Goldmeadow Nomad
+Graft Surgeon
 Grisly Ritual
 Grow Extra Arms
 Gruul Guildgate
@@ -181,11 +189,13 @@ HYDRA Assault Robot
 HYDRA Infiltration
 HYDRA Troopers
 Hawkeye's Bow
+Heartstring Puller
 Heated Argument
 Heated Debate
 Hell's Kitchen
 Hero in Training
 Heron of Hope
+Hexhaven Battalion
 Hire a Crew
 Hoarding Recluse
 Honorbound Page
@@ -214,6 +224,7 @@ Jaddi Offshoot
 Jeskai Devotee
 K'un-Lun Warrior
 Keep Out
+Keeper of the Quiet Hour
 Kin-Tree Nurturer
 Kindly Ancestor
 Kingpin's Enforcers
@@ -232,6 +243,7 @@ Leyline Invocation
 Lightfoot Technique
 Lightning Strike
 Liminal Hold
+Living Library
 Lonely Sandbar
 Lys Alana Informant
 Macabre Waltz
@@ -242,12 +254,15 @@ Make Your Move
 Masterful Flourish
 Mechanical Mobster
 Melancholic Poet
+Memory Trap
 Merciless Enforcers
 Merrow Skyswimmer
+Meticulous Commons
 Midnight Tilling
 Mind Stone
 Mindful Biomancer
 Mindleech Ghoul
+Mindseeker Oculus
 Mischievous Sneakling
 Mistmeadow Council
 Mob Lookout
@@ -295,6 +310,7 @@ Portent
 Potioner's Trove
 Powerful Broker
 Powerstone Engineer
+Predictive Preparations
 Preordain
 Pretending Poxbearers
 Prideful Feastling
@@ -304,6 +320,7 @@ Procrastinate
 Professional Wrestler
 Project Deathlok Soldier
 Promising Vein
+Protege's Awakening
 Prowling Felidar
 Pterafractyl
 Pull from the Grave
@@ -319,6 +336,7 @@ Raise the Alarm
 Rambunctious Mutt
 Rampant Growth
 Rancorous Archaic
+Rank Rat
 Rapid Rescue
 Rapier Wit
 Ravenform
@@ -377,9 +395,12 @@ Skyward Spider
 Sleight of Hand
 Snakeskin Veil
 Sol Ring
+Solve for Disappointment
+Something Worth Saving
 Spectacle Summit
 Spell Pierce
 Spellbook Seeker
+Sphinx's Approach
 Spider-Gwen, Free Spirit
 Spider-Man No More
 Spider-Man, Web-Slinger
@@ -415,6 +436,7 @@ Swarm, Being of Bees
 Syncopate
 Tackle Artist
 Take Up the Shield
+Tam's Resistance
 Tawnos's Tinkering
 Tectonic Hazard
 Telling Time
@@ -422,6 +444,7 @@ Temporal Cleansing
 Tend the Sprigs
 Tenured Concocter
 Terramorphic Expanse
+Tether Technician
 Textbook Tabulator
 Think Twice
 Third Path Savant
@@ -459,10 +482,12 @@ Venom, Evil Unleashed
 Venomized Cat
 Vibranium Energy Daggers
 Vibrant Cityscape
+Vinelasher Adept
 Viscera Seer
 Vision of Love
 Visionary's Dance
 Visions of Villainy
+Void Extrapolator
 Volcanic Villain
 Voldaren Epicure
 Wakandan Royal Guard
@@ -477,6 +502,7 @@ Watcher of the Wayside
 Wayfarer's Bauble
 We Say Thee Nay!
 Web Up
+Whiplash Wordsmith
 Wild Hypothesis
 Wild Ride
 Wild Unraveling
