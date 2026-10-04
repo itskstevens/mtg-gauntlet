@@ -155,7 +155,12 @@ FOGS = {'Aetherize'}
 REANIMATE_SPELLS = {'Reanimate', 'Bind to Life', 'Restore Relic', 'Animate Dead', 'Necromancy', 'Persist',
                     'Unburial Rites', 'Dread Return', 'Exhume'}
 REANIMATE_ANY_GY = {'Reanimate', 'Animate Dead', 'Necromancy'}
-SELF_MILL = {'Entomb': 'entomb', 'Buried Alive': 'buried', 'Omit Variables': 'mill3', 'Faithless Looting': 'loot'}
+SELF_MILL = {'Entomb': 'entomb', 'Buried Alive': 'buried', 'Omit Variables': 'mill3', 'Faithless Looting': 'loot',
+             'Glimpse the Unthinkable': 'mill10', 'Traumatize': 'millhalf', 'Grisly Salvage': 'mill4'}
+# Creatures that mill their controller on entry / on landfall (only for Kevin's decks; see Engine.self_mill).
+ETB_SELF_MILL = {"Stitcher's Supplier": 3, 'Satyr Wayfinder': 4, 'Sultai Soothsayer': 4}
+LANDFALL_SELF_MILL = {'Hedron Crab': 3}
+LIBRARY_WINS = {'Laboratory Maniac', 'Jace, Wielder of Mysteries', "Thassa's Oracle", 'Doctor Doom, Unrivaled'}
 PROTECT = {'Heroic Intervention', "Teferi's Protection", 'Flawless Maneuver', 'Clever Concealment'}
 
 # --------------------------------------------------------------------- tagging

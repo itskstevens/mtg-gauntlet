@@ -555,20 +555,76 @@ class Game:
             for x in sorted([x for x in P.lib if x.is_creature], key=rank)[:n]:
                 P.lib.remove(x); P.gy.append(x)
             random.shuffle(P.lib)
-        elif sp == 'mill3':
-            if len(P.lib) < MILL_FLOOR: return   # a real pilot stops milling once the library runs low
-            P.gy += [P.lib.pop() for _ in range(min(3, len(P.lib)))]
+        elif sp in ('mill3', 'mill4', 'mill10', 'millhalf'):
+            n = {'mill3': 3, 'mill4': 4, 'mill10': 10}.get(sp) or (len(P.lib) + 1) // 2
+            s.mill_self(P, n)
         elif sp == 'loot':
             P.draw(2)
             for _ in range(min(2, len(P.hand))):
                 x = max(P.hand, key=lambda x: (x.is_creature and x.cmc >= 5, x.is_land and P.lands >= 5, -s.cost(P, x)))
                 P.hand.remove(x); P.gy.append(x)
 
+    def reanimate_pick(s, P, pool):
+        """Biggest creature by default. Library-win decks take Thassa's Oracle when it would win on entry, then the
+        pilot's reanimate_first cards (e.g. Doctor Doom) if none is on the battlefield yet."""
+        mine = [(q, x) for q, x in pool if q is P]
+        dev = sum(p.card.mana_cost.count('U') for p in P.bf if p.card) + 2
+        for q, x in mine:
+            if x.name == "Thassa's Oracle" and len(P.lib) <= dev: return q, x
+        for n in P.pilot.get('reanimate_first', []):
+            if not P.has(n):
+                for q, x in mine:
+                    if x.name == n: return q, x
+        return max(pool, key=lambda t: t[1].cmc)
+
+    def library_win_ready(s, P):
+        """'now': an empty library wins this turn (Doctor Doom untapped and able to tap, or Lab Maniac/Jace and a draw
+        coming before the next draw step is not guaranteed, so only Doom counts as now). 'next': a library-win card is
+        on the battlefield, so an empty library wins at the next draw. None otherwise."""
+        if s.stax_on(P, 'no_creature_abilities'): doom_ok = False
+        else: doom_ok = any(p.name == 'Doctor Doom, Unrivaled' and not p.tapped and (not p.sick or 'haste' in s.kw(p)) for p in P.bf)
+        if doom_ok: return 'now'
+        if any(p.name in ('Laboratory Maniac', 'Jace, Wielder of Mysteries') for p in P.bf): return 'next'
+        if any(p.name == 'Doctor Doom, Unrivaled' for p in P.bf): return 'soon'
+        return None
+
+    def mill_cap(s, P):
+        """How many cards P may mill from its own library right now. Decks with a library win mill freely once the
+        win is set up; everyone else stops at the pilot's floor (default MILL_FLOOR) like a real player would."""
+        ready = s.library_win_ready(P)
+        if ready in ('now', 'next'): return len(P.lib)
+        if ready == 'soon': return max(0, len(P.lib) - 2)          # Doom just landed: keep the next draw step safe
+        return max(0, len(P.lib) - P.pilot.get('mill_floor', MILL_FLOOR))
+
+    def mill_self(s, P, n):
+        n = min(n, s.mill_cap(P))
+        if n <= 0: return
+        P.gy += [P.lib.pop() for _ in range(n)]
+        P.stats['self_milled'] += n
+        s.library_win_check(P)
+
+    def library_win_check(s, P):
+        """Doctor Doom, Unrivaled: {T}: draw a card and lose 1 life, then win if your library is empty."""
+        if s.over or not P.alive or len(P.lib) > 1 or s.library_win_ready(P) != 'now': return
+        d = next(p for p in P.bf if p.name == 'Doctor Doom, Unrivaled' and not p.tapped)
+        d.tapped = True
+        if P.lib: P.hand.append(P.lib.pop())
+        s.lose_life(P, 1)
+        if not P.lib and P.alive: s.win_all(P, 'Doctor Doom, Unrivaled')
+
+    def draw_unsafe(s, P, c):
+        """Kevin's pilots don't cast big draws (wheels, Ancestral Recall) that a Codie copy could deck them with,
+        unless an empty library wins."""
+        if not P.pilot or not c.draw_now or s.library_win_ready(P) in ('now', 'next'): return False
+        n = 7 if getattr(c, 'wheel', False) else c.draw_now
+        return len(P.lib) < 2 * n + 8
+
     def gy_score(s, P, c):
         """Cast score for reanimation and self-mill spells, or None if c is neither."""
+        if s.draw_unsafe(P, c): return 0
         sp = getattr(c, 'special', None)
         if sp == 'reanimate':
-            if c.name == 'Bind to Life': return 58
+            if c.name == 'Bind to Life': return 58 if (s.mill_cap(P) >= 7 or s.library_win_ready(P)) else 0
             pool = s.reanimate_pool(P, c)
             best = max([x.cmc for _, x in pool] or [0])
             if c.name == 'Exhume':
@@ -582,14 +638,18 @@ class Game:
             if any(getattr(x, 'special', None) == 'reanimate' and x.name != 'Bind to Life' for x in P.hand if x is not c):
                 return P.pilot.get('entomb_combo_priority', 62)
             return 62
-        if sp == 'mill3': return 44 if len(P.lib) >= MILL_FLOOR else 0
+        if sp in ('mill3', 'mill4', 'mill10', 'millhalf'):
+            if s.mill_cap(P) <= 0: return 0
+            return 88 if s.library_win_ready(P) in ('now', 'next') else (44 if sp == 'mill3' else 52)
         if sp == 'loot': return 44
         return None
 
     def prep_value(s, P, c):
+        if s.draw_unsafe(P, c): return 0
         if getattr(c, 'special', None) == 'reanimate' and c.name != 'Bind to Life':
             return 3 if any(x.cmc >= 4 for _, x in s.reanimate_pool(P, c)) else 0
-        if getattr(c, 'special', None) in ('mill3',): return 1 if len(P.lib) >= MILL_FLOOR else 0
+        if getattr(c, 'special', None) in ('mill3',): return (3 if s.library_win_ready(P) in ('now', 'next') else 1) if s.mill_cap(P) > 0 else 0
+        if c.name == 'Bind to Life' and s.mill_cap(P) < 7 and s.library_win_ready(P) is None: return 0
         if c.ritual or c.tutor or c.draw_now >= 2 or c.drain_now or getattr(c, 'special', None) in ('reanimate',): return 3
         if c.removal or c.draw_now or getattr(c, 'treasure_now', 0) or c.ramp_lands: return 2
         return 0
@@ -859,7 +919,11 @@ class Game:
                 s.etb_triggers(P, [p])
             elif not c.is_creature:
                 s.etb(P, p, c)
-            if c.name == "Stitcher's Supplier": s.self_mill(P, 'mill3')
+            if c.name in CD.ETB_SELF_MILL: s.mill_self(P, CD.ETB_SELF_MILL[c.name])
+            if c.name == "Thassa's Oracle":   # win if devotion to blue >= cards in library
+                dev = sum(q.card.mana_cost.count('U') for q in P.bf if q.card)
+                if len(P.lib) <= dev: s.win_all(P, "Thassa's Oracle"); return
+            s.library_win_check(P)
             if c.is_creature and P.has("Garruk's Uprising") and s.power(p) >= 4: P.draw(1)
             if c.is_creature and P.has('Beast Whisperer') or c.is_creature and P.has('Guardian Project'): P.draw(1)
             return
@@ -968,11 +1032,12 @@ class Game:
         if c.name == 'Beacon of Immortality': s.gain(P, max(5, P.life))
         if sp == 'reanimate':
             if c.name == 'Bind to Life':
-                milled = [P.lib.pop() for _ in range(min(7, len(P.lib)))]; P.gy += milled
+                milled = [P.lib.pop() for _ in range(min(7, len(P.lib), max(0, s.mill_cap(P))))]; P.gy += milled
+                P.stats['self_milled'] += len(milled)
                 pool = [(P, x) for x in milled if x.is_creature]
             else: pool = s.reanimate_pool(P, c)
             if pool:
-                q, x = max(pool, key=lambda t: t[1].cmc); q.gy.remove(x)
+                q, x = s.reanimate_pick(P, pool); q.gy.remove(x)
                 if c.name == 'Reanimate': s.lose_life(P, x.cmc)
                 s.log(f'{P.label} {c.name} returns {x.name}'); s.resolve(P, x)
             if c.name == 'Exhume':   # symmetric: each opponent returns their best creature too
@@ -1149,6 +1214,9 @@ class Game:
         s.log(f'{P.label} OVERRUN {c.name} (+{pump})')
 
     def landfall(s, P):
+        if P.pilot:
+            for p in list(P.bf):
+                if p.name in CD.LANDFALL_SELF_MILL and not p.neutral: s.mill_self(P, CD.LANDFALL_SELF_MILL[p.name])
         for p in list(P.bf):
             if p.neutral: continue
             c = p.card
@@ -1849,7 +1917,7 @@ class Game:
                 if c.is_land or not s.can_cast_now(P, c): continue
                 sc = s.my_score(P, c, turn, post)
                 if sc > 0: opts.append((sc, c, False))
-            s.codie_activate(P); s.prep_tap2(P)
+            s.codie_activate(P); s.prep_tap2(P); s.library_win_check(P)
             if s.check_combo(P): return
             opts += s.prep_options(P, lambda c: s.my_score(P, c, turn, post) if s.can_cast_now(P, c) else 0)
             opts.sort(key=lambda x: -x[0])

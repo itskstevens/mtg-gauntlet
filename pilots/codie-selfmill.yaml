@@ -1,0 +1,67 @@
+# Pilot for Codie, Ravenous Codex, Self-Mill build (2026-10-04): mills its own library and wins with
+# Doctor Doom, Unrivaled, Laboratory Maniac, Jace, Wielder of Mysteries or a reanimated Thassa's Oracle.
+commander: Codie, Ravenous Codex
+eyebrow: "Five-color · Prepare self-mill · Bracket 3"
+summary: Mills its own library with copied Bind to Life, Omit Variables, Hedron Crab and Traumatize, then wins with
+  Doctor Doom (tap with an empty library), Laboratory Maniac, Jace or a reanimated Thassa's Oracle.
+
+engine: ["Doctor Doom, Unrivaled", Laboratory Maniac, "Jace, Wielder of Mysteries", Hedron Crab, Grave Researcher, Vastlands Scavenger, Lorehold Archivist, Skycoach Conductor, Emeritus of Woe,
+         Emeritus of Abundance, Survival of the Fittest, Archmage Emeritus, "Vega, the Watcher", Emeritus of Ideation,
+         Paradox Shaper]
+keep_home: ["Doctor Doom, Unrivaled", Laboratory Maniac, "Thassa's Oracle", Hedron Crab, Satyr Wayfinder, Sultai Soothsayer, Grave Researcher, Vastlands Scavenger, Lorehold Archivist, Skycoach Conductor, Emeritus of Woe,
+            Archmage Emeritus, "Vega, the Watcher", Paradox Shaper, Theorix Metamage, Void Extrapolator,
+            Stitcher's Supplier, Bloom Tender, Faeburrow Elder, Birds of Paradise, Heartwood Crafter,
+            Studious First-Year]
+keep_commander_home: true
+commander_first: true
+
+# Stitcher's Supplier is happy to die (its dies trigger is a bonus mill).
+fodder: any
+fodder_max_cmc: 2
+instant_sac_tokens: []
+bonus_keywords: []
+
+# Tutors find the reanimation preparers; Entomb/Buried Alive pick fatties on their own.
+tutor_targets: ["Doctor Doom, Unrivaled", Laboratory Maniac, Vastlands Scavenger, Hedron Crab, Grave Researcher,
+                "Elesh Norn, Grand Cenobite"]
+
+priorities:
+  "Doctor Doom, Unrivaled": 89
+  Laboratory Maniac: 86
+  "Jace, Wielder of Mysteries": 80
+  Hedron Crab: 83
+  Swiftfoot Boots: 84
+  Lightning Greaves: 84
+  Grave Researcher: 88
+  Vastlands Scavenger: 87
+  Lorehold Archivist: 85
+  Survival of the Fittest: 85
+  Skycoach Conductor: 80
+  Emeritus of Woe: 80
+  Paradox Shaper: 79
+  Void Extrapolator: 78
+  Theorix Metamage: 77
+  Stitcher's Supplier: 77
+  Archmage Emeritus: 76
+  "Vega, the Watcher": 76
+  Emeritus of Ideation: 75
+
+value_bonus:
+  "Doctor Doom, Unrivaled": 4
+  Laboratory Maniac: 4
+  Vastlands Scavenger: 3
+  Grave Researcher: 3
+key_cards:
+- Codie, Ravenous Codex
+- Doctor Doom, Unrivaled
+- Laboratory Maniac
+- Vastlands Scavenger
+- Hedron Crab
+- "Jace, Wielder of Mysteries"
+hold_removal_vs_combo: true
+hold_counters: true
+sac_nontoken: false
+x_reserve: 0
+entomb_combo_priority: 92
+entomb_targets: ["Doctor Doom, Unrivaled", "Elesh Norn, Grand Cenobite"]
+reanimate_first: ["Doctor Doom, Unrivaled", Laboratory Maniac]

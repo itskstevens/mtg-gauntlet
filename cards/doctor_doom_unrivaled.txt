@@ -1,0 +1,7 @@
+# synthetic (Scryfall text, Marvel Super Heroes Commander #654; ability modeled in engine.library_win_check)
+Name:Doctor Doom, Unrivaled
+ManaCost:2 B B
+Types:Legendary Creature Human Sorcerer Villain
+PT:4/4
+K:Lifelink
+Oracle:Lifelink\n{T}: You draw a card and lose 1 life. Then if your library has no cards in it, you win the game.
