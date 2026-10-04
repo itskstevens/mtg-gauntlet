@@ -5,7 +5,7 @@
 #   MTG_DECK       deck to run                  (default: codie)
 #   MTG_SERIES     series per category          (default: 300)
 #   MTG_JOBS       worker processes, 0 = one/core (default: 0)
-#   MTG_TAG        results folder suffix        (default: nightly)
+#   MTG_TAG        results folder suffix        (default: adhoc)
 #   MTG_PUSH       1 to commit+push results    (default: 1)
 #   MTG_CATEGORIES comma-separated subset      (default: all)
 set -euo pipefail
@@ -24,7 +24,7 @@ cd "$REPO"
 DECK="${MTG_DECK:-codie}"
 SERIES="${MTG_SERIES:-300}"
 JOBS="${MTG_JOBS:-0}"
-TAG="${MTG_TAG:-nightly}"
+TAG="${MTG_TAG:-adhoc}"
 PUSH="${MTG_PUSH:-1}"
 RUN_ID="$(date -u +%Y%m%d-%H%M%S)-timer"
 

@@ -1,5 +1,5 @@
 [Unit]
-Description=MTG gauntlet scheduled run
+Description=MTG gauntlet run (trigger on demand; nothing is scheduled)
 Documentation=file:/home/kevin/mtg-gauntlet/mcp_server/README.md
 After=network-online.target
 
