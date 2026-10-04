@@ -1,7 +1,5 @@
 1 Aziza, Mage Tower Captain
-1 Arcane Signet
 1 Boros Signet
-1 Idol of Oblivion
 1 Skullclamp
 1 Sol Ring
 1 Talisman of Conviction
@@ -13,7 +11,7 @@
 1 Exotic Orchard
 1 Furycalm Snarl
 10 Mountain
-10 Plains
+9 Plains
 1 Radiant Summit
 1 Rugged Prairie
 1 Sacred Foundry
@@ -80,3 +78,6 @@
 1 Tempt with Bunnies
 1 Tempt with Vengeance
 1 Mob Justice
+1 Ancient Tomb
+1 Chrome Mox
+1 Guttersnipe

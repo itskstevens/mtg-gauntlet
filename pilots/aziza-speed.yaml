@@ -1,0 +1,110 @@
+# aziza-speed: aziza-final with Plains -> Ancient Tomb, Arcane Signet -> Chrome Mox, Idol of Oblivion -> Guttersnipe (2026-10-04 package test)
+commander: Aziza, Mage Tower Captain
+eyebrow: Boros · Token drain + copied burn · Bracket 3
+summary: Make tokens with spells, copy the best ones by tapping three creatures, drain the table with Impact Tremors effects, and finish with a copied Mob Justice.
+engine:
+- Monastery Mentor
+- Young Pyromancer
+- Prismari Pianist
+- Storm-Kiln Artist
+- Welcoming Vampire
+- Enduring Innocence
+- Pinnacle Monk
+- Impact Tremors
+- Warleader's Call
+- Purphoros, God of the Forge
+- Witty Roastmaster
+- Molten Gatekeeper
+- Agate Instigator
+- Weftstalker Ardent
+- Anointed Procession
+- Mondrak, Glory Dominus
+- Skullclamp
+- Twinning Staff
+- Caretaker's Talent
+- Tocasia's Welcome
+- Idol of Oblivion
+- Guttersnipe
+- Firebrand Archer
+- Kessig Flamebreather
+- Electrostatic Field
+- Electro, Assaulting Battery
+- Fiery Inscription
+- Goblin Bombardment
+- Intangible Virtue
+- Belladonna Took
+- Prosperous Partnership
+- Mother of Runes
+keep_home:
+- Monastery Mentor
+- Young Pyromancer
+- Prismari Pianist
+- Storm-Kiln Artist
+- Welcoming Vampire
+- Enduring Innocence
+- Witty Roastmaster
+- Molten Gatekeeper
+- Weftstalker Ardent
+- Guttersnipe
+- Firebrand Archer
+- Kessig Flamebreather
+- Electro, Assaulting Battery
+- Mother of Runes
+- Belladonna Took
+- Agate Instigator
+keep_commander_home: true
+commander_first: true
+fodder: tokens
+fodder_max_cmc: 2
+instant_sac_tokens: []
+bonus_keywords: []
+tutor_targets: []
+priorities:
+  Monastery Mentor: 88
+  Young Pyromancer: 88
+  Prismari Pianist: 86
+  Storm-Kiln Artist: 85
+  Skullclamp: 84
+  Twinning Staff: 80
+  Welcoming Vampire: 82
+  Enduring Innocence: 82
+  Caretaker's Talent: 81
+  Tocasia's Welcome: 81
+  Idol of Oblivion: 78
+  Lightning Greaves: 60
+  Big Score: 52
+  Unexpected Windfall: 52
+  Seize the Spoils: 50
+  Pirate's Pillage: 50
+  Thrill of Possibility: 48
+  Reckless Impulse: 48
+  Impact Tremors: 86
+  Warleader's Call: 86
+  Purphoros, God of the Forge: 85
+  Witty Roastmaster: 84
+  Molten Gatekeeper: 84
+  Weftstalker Ardent: 83
+  Agate Instigator: 80
+  Prosperous Partnership: 72
+  Belladonna Took: 76
+  Anointed Procession: 87
+  Smothering Tithe: 84
+value_bonus:
+  Impact Tremors: 4
+  Warleader's Call: 4
+  Purphoros, God of the Forge: 4
+  Monastery Mentor: 3
+key_cards:
+- Aziza, Mage Tower Captain
+- Impact Tremors
+- Warleader's Call
+- Purphoros, God of the Forge
+- Monastery Mentor
+- Grand Crescendo
+- Akroma's Will
+- Moonshaker Cavalry
+- Anointed Procession
+- Mob Justice
+hold_removal_vs_combo: true
+hold_counters: false
+x_reserve: 0
