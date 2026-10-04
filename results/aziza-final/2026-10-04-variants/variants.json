@@ -1,0 +1,73 @@
+{
+ "variants": {
+  "base": {
+   "All tables (random LGS pods)": 47.0,
+   "Turbo combo": 46.3,
+   "Storm & spellslinger": 49.0,
+   "Stax & hatebears": 44.2,
+   "Control": 47.8,
+   "Tokens / go-wide": 42.5,
+   "Typal": 41.8,
+   "Landfall & lands": 47.3,
+   "Reanimator & graveyard": 50.4,
+   "Aristocrats": 46.1,
+   "Voltron": 46.5,
+   "Artifacts": 52.0,
+   "Enchantress": 49.1,
+   "+1/+1 counters": 49.9,
+   "Lifegain": 44.4,
+   "Blink / ETB": 47.2,
+   "Big mana / battlecruiser": 50.9,
+   "Aggro / combat": 46.3,
+   "Burn & group slug": 44.0
+  },
+  "seize-the-spoils-to-tomik-izzet-sparkmage": {
+   "All tables (random LGS pods)": 45.2,
+   "Turbo combo": 48.0,
+   "Storm & spellslinger": 48.1,
+   "Stax & hatebears": 46.4,
+   "Control": 45.5,
+   "Tokens / go-wide": 41.2,
+   "Typal": 37.9,
+   "Landfall & lands": 45.3,
+   "Reanimator & graveyard": 45.4,
+   "Aristocrats": 43.9,
+   "Voltron": 43.4,
+   "Artifacts": 50.1,
+   "Enchantress": 48.3,
+   "+1/+1 counters": 50.4,
+   "Lifegain": 37.7,
+   "Blink / ETB": 45.3,
+   "Big mana / battlecruiser": 46.3,
+   "Aggro / combat": 46.2,
+   "Burn & group slug": 44.1
+  },
+  "glimpse-the-impossible-to-ajani-unrelenting": {
+   "All tables (random LGS pods)": 45.8,
+   "Turbo combo": 44.7,
+   "Storm & spellslinger": 48.2,
+   "Stax & hatebears": 42.5,
+   "Control": 46.8,
+   "Tokens / go-wide": 43.5,
+   "Typal": 45.9,
+   "Landfall & lands": 43.0,
+   "Reanimator & graveyard": 48.6,
+   "Aristocrats": 44.0,
+   "Voltron": 46.8,
+   "Artifacts": 51.4,
+   "Enchantress": 47.6,
+   "+1/+1 counters": 47.3,
+   "Lifegain": 40.2,
+   "Blink / ETB": 44.8,
+   "Big mana / battlecruiser": 47.1,
+   "Aggro / combat": 46.0,
+   "Burn & group slug": 45.0
+  }
+ },
+ "names": {
+  "base": "Your current list",
+  "seize-the-spoils-to-tomik-izzet-sparkmage": "Seize the Spoils \u2192 Tomik, Izzet Sparkmage",
+  "glimpse-the-impossible-to-ajani-unrelenting": "Glimpse the Impossible \u2192 Ajani Unrelenting"
+ },
+ "series": 100
+}
