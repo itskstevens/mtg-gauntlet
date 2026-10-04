@@ -2,6 +2,10 @@
 # for that archetype, fetched 2026-10-03). Each pool key is a folder in opponents/ holding b3.txt (EDHREC Upgraded)
 # and b4.txt (EDHREC Optimized). A category may instead list fixed decks as [{key, archetype}] (see gauntlets-classic.yaml).
 defaults:
+  # lgs: every table is 3 different categories, one random deck each (like sitting down at an LGS).
+  #      --series N plays N x (number of categories) tables; each category is at about N x 3 of them.
+  # category: the original mode, 3 decks from a single category per table. Used automatically with --categories.
+  mode: lgs
   series: 50
   brackets:
   - 3

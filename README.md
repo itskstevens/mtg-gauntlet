@@ -36,8 +36,13 @@ python3 gauntlet.py report     serpent-society      # results/<deck>/<latest>/re
 - Opponents play their real decklists. Each card is tagged from its rules text, and the AI casts, attacks, blocks,
   counters, removes and combos based on those tags. Known infinite combos and alternate wins are listed in `engine/cards.py`.
 - `gauntlets.yaml` has 18 archetype categories, each a pool of up to 25 EDHREC top commanders for that archetype.
-  Each series draws 3 opponents from the pool (`pod`), rolls each one's bracket (3 or 4) and keeps both for all
-  three games. Seats are random each game. The original four fixed-deck categories live in `gauntlets-classic.yaml`
+- **LGS mode (default, `mode: lgs`)**: every series is a random table, like sitting down at a local game store. It
+  picks 3 *different* categories at random and one random deck from each, rolls each deck's bracket (3 or 4) and
+  keeps the table for all three games. `--series N` plays N x 18 tables, so each category sits down at about N x 3 of
+  them. The report's first tab covers every table; each category tab covers the tables where a deck from that
+  category sat down (a table counts toward all three of its categories, so category rows overlap).
+- **Category mode (`--mode category`, or any run with `--categories`)**: the original setup, 3 decks drawn from a single
+  category's pool per series. Useful for stress-testing one matchup. Seats are random each game. The original four fixed-deck categories live in `gauntlets-classic.yaml`
   (run with `GAUNTLET_CFG=gauntlets-classic.yaml`).
 - Prepare (Secrets of Strixhaven) is modeled: creatures with a prepare spell cast it from exile when prepared, Codie,
   Ravenous Codex copies prepare spells and re-prepares the board, and Displacer Kitten / Chakram Retriever / Jeskai

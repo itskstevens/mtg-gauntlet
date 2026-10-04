@@ -290,7 +290,9 @@ def run_gauntlet(deck: str, series: int = 300, jobs: int = 0, swaps: list[str] |
     the same deck on the same day no longer overwrite each other.
 
     deck: folder name under decks/ (e.g. "codie").
-    series: best-of-3 series per category (use 300 to compare runs).
+    series: in LGS mode (the default in gauntlets.yaml) the run plays series x 18 random tables, each one
+            three decks from three different categories; each category sits at about series x 3 of them.
+            In category mode (or with `categories`) it is best-of-3 series per category.
     jobs: parallel worker processes; 0 means one per core. The engine pools over
           categories, so it is capped at the number of tasks the run actually has -
           asking for more workers than categories just idles them.
@@ -381,6 +383,16 @@ def analyze_run(deck: str, run: str = '', top: int = 8, min_games: int = 20) -> 
             gs = v.get('games') or []
             ss = v.get('series') or []
             games += gs; series += [(cat, s) for s in ss]
+            if cat == 'LGS pods':   # random mixed tables: credit each category present at the table
+                for g in gs:
+                    for oc in {o.get('cat') for o in g.get('opp') or [] if o.get('cat')}:
+                        c = per_cat.setdefault(oc, {'games': 0, 'wins': 0, 'series': 0, 'series_wins': 0})
+                        c['games'] += 1; c['wins'] += 1 if g.get('won') else 0
+                for s in ss:
+                    for oc in set(s.get('cats') or []):
+                        c = per_cat.setdefault(oc, {'games': 0, 'wins': 0, 'series': 0, 'series_wins': 0})
+                        c['series'] += 1; c['series_wins'] += 1 if s.get('won') else 0
+                continue
             c = per_cat.setdefault(cat, {'games': 0, 'wins': 0, 'series': 0, 'series_wins': 0})
             c['games'] += len(gs); c['wins'] += sum(1 for g in gs if g.get('won'))
             c['series'] += len(ss); c['series_wins'] += sum(1 for s in ss if s.get('won'))

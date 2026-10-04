@@ -136,12 +136,14 @@ def run_dir(deck, tag=None, run_id=None):
 def cmd_run(a):
     cats = [c.strip() for c in a.categories.split(',')] if a.categories else None
     pilot = R.load_pilot(a.deck)
-    print(f'Running {a.deck} ({a.series or "default"} series per category)')
-    res = R.run(deck_path(a.deck), pilot, a.series, cats, jobs=a.jobs)
+    mode = 'category' if cats else (a.mode or R.load_cfg()['defaults'].get('mode', 'category'))
+    unit = 'x 18 random LGS tables' if mode == 'lgs' else 'series per category'
+    print(f'Running {a.deck} ({a.series or "default"} {unit})')
+    res = R.run(deck_path(a.deck), pilot, a.series, cats, jobs=a.jobs, mode=mode)
     d = run_dir(a.deck, a.tag, getattr(a, 'run_id', None))
     R.save_results(res, os.path.join(d, 'results.json.gz'))
     cfg = R.load_cfg(); groups = R.analyze(res, cfg, pilot)
-    meta = dict(date=TODAY, deck=a.deck, series_per_cat=a.series or cfg['defaults']['series'],
+    meta = dict(date=TODAY, deck=a.deck, mode=mode, series_per_cat=a.series or cfg['defaults']['series'],
                 series_total=sum(len(r['series']) for r in res.values()), games_total=sum(len(r['games']) for r in res.values()),
                 list_snapshot=R.load_list(deck_path(a.deck)))
     json.dump(dict(meta=meta, groups=groups), open(os.path.join(d, 'summary.json'), 'w'), indent=1)
@@ -166,8 +168,9 @@ def cmd_variants(a):
     out = {}
     for k, path in lists.items():
         print(f'== {names[k]}')
-        res = R.run(path, pilot, a.series, None, jobs=a.jobs)
-        out[k] = {c: round(100 * sum(g['won'] for g in r['games']) / len(r['games']), 1) for c, r in res.items()}
+        res = R.run(path, pilot, a.series, None, jobs=a.jobs, mode=a.mode)
+        views, _ = R.lgs_views(res, R.load_cfg())
+        out[k] = {c: round(100 * sum(g['won'] for g in r['games']) / len(r['games']), 1) for c, r in views.items() if r['games']}
     d = run_dir(a.deck, 'variants')
     json.dump(dict(variants=out, names=names, series=a.series), open(os.path.join(d, 'variants.json'), 'w'), indent=1)
     print(json.dumps(out, indent=1)); print('saved to', os.path.relpath(d, ROOT))
@@ -175,7 +178,7 @@ def cmd_variants(a):
 def cmd_report(a):
     rdir = a.run or sorted(d for d in glob.glob(os.path.join(ROOT, 'results', a.deck, '*')) if os.path.exists(os.path.join(d, 'summary.json')))[-1]
     S = json.load(open(os.path.join(rdir, 'summary.json'))); pilot = R.load_pilot(a.deck)
-    data = dict(groups=S['groups'], total_games=S['meta']['games_total'], total_series=S['meta']['series_total'], date=S['meta']['date'])
+    data = dict(groups=S['groups'], total_games=S['meta']['games_total'], total_series=S['meta']['series_total'], date=S['meta']['date'], mode=S['meta'].get('mode', 'category'))
     ins = a.insights or os.path.join(rdir, 'insights.json')
     if os.path.exists(ins): data['insights'] = json.load(open(ins))
     vfile = a.variants or next(iter(sorted(glob.glob(os.path.join(ROOT, 'results', a.deck, '*variants*', 'variants.json')))[-1:]), None)
@@ -206,6 +209,7 @@ def main():
         if name == 'smoke': x.add_argument('--games', type=int, default=8)
         if name in ('run', 'variants'):
             x.add_argument('--series', type=int); x.add_argument('--jobs', type=int, default=2)
+            x.add_argument('--mode', choices=['lgs', 'category'], help='lgs: random mixed tables (default in gauntlets.yaml); category: 3 decks from one category')
         if name == 'run': x.add_argument('--categories'); x.add_argument('--tag'); x.add_argument('--run-id')
         if name == 'variants': x.add_argument('--swap', action='append', required=True)
         if name == 'report': x.add_argument('--run'); x.add_argument('--insights'); x.add_argument('--variants')

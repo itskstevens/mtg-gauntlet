@@ -132,7 +132,7 @@ td.up{color:var(--venom);font-weight:600} td.down{color:var(--bad)}
 <script>
 const D=JSON.parse(document.getElementById('d').textContent);
 const pct=v=>`${(+v).toFixed(v>=10||v==0?0:1)}%`;
-document.getElementById('lede').textContent=`${D.total_series.toLocaleString()} best-of-3 series and ${D.total_games.toLocaleString()} games against bracket 3 and 4 decks from ${D.groups.length} opponent categories, run ${D.date}. Each pod is you plus three decks from one category.`;
+document.getElementById('lede').textContent=D.mode==='lgs'?`${D.total_series.toLocaleString()} best-of-3 series and ${D.total_games.toLocaleString()} games at random LGS tables, run ${D.date}. Each table is you plus three decks from three different categories, each rolled at bracket 3 or 4. The first tab is every table; each category tab covers the tables where a deck from that category sat down.`:`${D.total_series.toLocaleString()} best-of-3 series and ${D.total_games.toLocaleString()} games against bracket 3 and 4 decks from ${D.groups.length} opponent categories, run ${D.date}. Each pod is you plus three decks from one category.`;
 const board=document.getElementById('board');
 const MAX=40;
 D.groups.forEach(g=>{

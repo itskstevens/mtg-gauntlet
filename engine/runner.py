@@ -38,29 +38,41 @@ def pick_opps(cfg, category, rng):
         return [dict(key=k, archetype=k) for k in rng.sample(c['pool'], min(c.get('pod', 3), len(c['pool'])))]
     return c
 
+LGS = 'LGS pods'   # results key for random mixed-category tables
+
+def pooled_categories(cfg):
+    return [c for c, v in cfg['categories'].items() if isinstance(v, dict)]
+
+def pick_lgs(cfg, rng, pod=3):
+    """A random LGS table: `pod` different categories, one random deck from each."""
+    cats = rng.sample(pooled_categories(cfg), pod)
+    return [dict(key=rng.choice(cfg['categories'][c]['pool']), archetype=None, cat=c) for c in cats]
+
 def specs_for(cfg, category, my_deck, pilot, rng, brackets, opps=None):
     sp = [('You', my_deck, True, 'me', 0, pilot)]
     for d, b in zip(opps or cfg['categories'][category], brackets):
-        m = opp_meta(d['key'])
+        m = opp_meta(d['key']); d = dict(d, archetype=d.get('archetype') or d['key'])
         sp.append((f"{m['commander'].split(',')[0].split(' // ')[0]} ({d['archetype']}, B{b})", load_list(p('opponents', d['key'], f'b{b}.txt')),
                    False, d['archetype'], b, None))
     return sp
 
 # ------------------------------------------------------------------ play
 def run_category(args):
-    category, deck_path, pilot, n_series, seed, max_rounds, logged = args
+    category, deck_path, pilot, n_series, seed, max_rounds, logged, *rest = args
+    sid0 = rest[0] if rest else 0
     cfg = load_cfg(); my_deck = load_list(deck_path)
     rng = random.Random(seed)
     games, series_res, samples = [], [], []
     br_choices = cfg['defaults'].get('brackets', [3, 4])
     for sid in range(n_series):
-        opps = pick_opps(cfg, category, rng)
+        opps = pick_lgs(cfg, rng) if category == LGS else pick_opps(cfg, category, rng)
+        cat_of = {d['key']: d.get('cat', category) for d in opps}
         br = [rng.choice(br_choices) for _ in opps]
         w = l = 0; gno = 0
         while w < 2 and l < 2:
             gno += 1
             sp = specs_for(cfg, category, my_deck, pilot, rng, br, opps)
-            log = sid < logged
+            log = sid < logged and sid0 == 0
             g = E.Game(sp, rng, log=log, max_rounds=max_rounds)
             winner = g.play()
             me = next(x for x in g.players if x.is_me)
@@ -68,14 +80,14 @@ def run_category(args):
             w += won; l += (not won)
             order = [P for P, *_ in g.elim]
             place = 1 if won else (4 - order.index(me) if me in order else 2)
-            rec = dict(series=sid, game=gno, brackets=br, won=won, draw=winner is None, rounds=g.round, place=place, seat=me.seat,
+            rec = dict(series=sid0 + sid, game=gno, brackets=br, won=won, draw=winner is None, rounds=g.round, place=place, seat=me.seat,
                        winner=(winner.group if winner else 'draw'),
                        my_death=(me.died[1], next((x.group for x in g.players if x.label == me.died[2]), None), me.died[0]) if me.died else None,
                        my_stats={k: v for k, v in me.stats.items() if not k.startswith('jin_')},
                        my_cast=sorted(set(n for r, n in me.cast_log)), opp=[])
             for P in g.players:
                 if P.is_me: continue
-                rec['opp'].append(dict(arch=P.group, bracket=P.bracket, won=winner is P, died=P.died,
+                rec['opp'].append(dict(arch=P.group, cat=cat_of.get(P.group, category), bracket=P.bracket, won=winner is P, died=P.died,
                                        killed_by_me=bool(P.died and P.died[2] == me.label),
                                        cast=sorted(set(n for r, n in P.cast_log)), combo_win=P.stats['combo_win']))
             rec['my_kills'] = [P.died[1] for P in g.players if not P.is_me and P.died and P.died[2] == me.label]
@@ -85,12 +97,16 @@ def run_category(args):
             games.append(rec)
             if log and len(samples) < 3:
                 samples.append(dict(won=won, rounds=g.round, players=[x.label for x in g.players], events=g.events[:500]))
-        series_res.append(dict(series=sid, brackets=br, opps=[d['key'] for d in opps], won=w >= 2, score=f'{w}-{l}'))
+        series_res.append(dict(series=sid0 + sid, brackets=br, opps=[d['key'] for d in opps], cats=[cat_of[d['key']] for d in opps],
+                               won=w >= 2, score=f'{w}-{l}'))
     return category, dict(games=games, series=series_res, samples=samples)
 
-def run(deck_path, pilot, n_series=None, categories=None, jobs=2, seed_base=100, logged=3):
+def run(deck_path, pilot, n_series=None, categories=None, jobs=2, seed_base=100, logged=3, mode=None):
     cfg = load_cfg()
     n_series = n_series or cfg['defaults']['series']
+    mode = mode or cfg['defaults'].get('mode', 'category')
+    if mode == 'lgs' and not categories:
+        return run_lgs(cfg, deck_path, pilot, n_series, jobs, seed_base, logged)
     cats = categories or list(cfg['categories'])
     mr = cfg['defaults'].get('max_rounds', 25)
     tasks = [(c, deck_path, pilot, n_series, seed_base + i, mr, logged) for i, c in enumerate(cfg['categories']) if c in cats]
@@ -104,6 +120,38 @@ def run(deck_path, pilot, n_series=None, categories=None, jobs=2, seed_base=100,
         for t in tasks:
             c, r = run_category(t); out[c] = r; print(f'  {c}: {quick(r)}', flush=True)
     return {c: out[c] for c in cats if c in out}
+
+def run_lgs(cfg, deck_path, pilot, n_series, jobs, seed_base, logged):
+    """LGS mode: n_series x (number of categories) random tables, split into one chunk per category so the
+    worker pool (and the homelab's worker cap) stays the same as category mode."""
+    n_chunks = len(pooled_categories(cfg)); total = n_series * n_chunks
+    mr = cfg['defaults'].get('max_rounds', 25)
+    sizes = [total // n_chunks + (1 if i < total % n_chunks else 0) for i in range(n_chunks)]
+    starts = [sum(sizes[:i]) for i in range(n_chunks)]
+    tasks = [(LGS, deck_path, pilot, sizes[i], seed_base + 1000 + i, mr, logged, starts[i]) for i in range(n_chunks)]
+    parts = []
+    if jobs > 1:
+        import multiprocessing as mp
+        with mp.Pool(jobs) as pool: parts = [r for _, r in pool.imap(run_category, tasks)]
+    else: parts = [run_category(t)[1] for t in tasks]
+    merged = dict(games=[g for r in parts for g in r['games']], series=[s for r in parts for s in r['series']],
+                  samples=[s for r in parts for s in r['samples']][:3])
+    print(f'  {LGS}: {quick(merged)}', flush=True)
+    return {LGS: merged}
+
+def lgs_views(res, cfg):
+    """Turn one LGS result into report groups: every table first, then one view per category holding the
+    tables where a deck from that category sat down. Returns (views, cfg) with an 'All tables' pseudo-category."""
+    if LGS not in res: return res, cfg
+    d = res[LGS]; cfg = dict(cfg, categories=dict(cfg['categories']))
+    allkey = 'All tables (random LGS pods)'
+    cfg['categories'][allkey] = dict(pool=[k for c in pooled_categories(cfg) for k in cfg['categories'][c]['pool']])
+    views = {allkey: d}
+    for c in pooled_categories(cfg):
+        if c == allkey: continue
+        views[c] = dict(games=[g for g in d['games'] if any(o.get('cat') == c for o in g['opp'])],
+                        series=[s for s in d['series'] if c in s.get('cats', [])], samples=[])
+    return views, cfg
 
 def quick(r):
     G, S = r['games'], r['series']
@@ -125,10 +173,12 @@ CAUSE = {'death': 'Death-trigger drains', 'wurm': 'Death-trigger drains', 'spell
 def cause(c): return CAUSE.get(c.split(':')[0], c.split(':')[0])
 
 def analyze(res, cfg, pilot):
+    res, cfg = lgs_views(res, cfg)
     groups = []
     watch = list(dict.fromkeys(list(pilot.get('priorities', {})) + pilot.get('key_cards', []) + pilot.get('engine', [])))
     for cat, d in res.items():
         G, S = d['games'], d['series']; n = len(G)
+        if not n: continue
         lost = [g for g in G if not g['won']]
         deaths = collections.Counter((cause(g['my_death'][0]), g['my_death'][1]) for g in G if g['my_death'])
         kills = collections.Counter(cause(k) for g in G for k in g['my_kills'])
@@ -195,7 +245,9 @@ def key_lines(ev, pilot):
     return out[:28]
 
 def summary_md(deck_name, groups, meta):
-    L = [f'# {deck_name} gauntlet ({meta["date"]})', '', f'{meta["series_total"]} best-of-3 series, {meta["games_total"]} games, {meta["series_per_cat"]} series per category.', '',
+    how = ('random LGS tables (3 different categories per table); each category row covers the tables where a deck from it sat down'
+           if meta.get('mode') == 'lgs' else f'{meta["series_per_cat"]} series per category')
+    L = [f'# {deck_name} gauntlet ({meta["date"]})', '', f'{meta["series_total"]} best-of-3 series, {meta["games_total"]} games, {how}.', '',
          '| Category | Games won | Series won | Avg place | Rounds | First out |', '|---|---|---|---|---|---|']
     for g in groups:
         L.append(f"| {g['name']} | {g['game_win']}% | {g['series_win']}% | {g['avg_place']} | {g['avg_rounds']} | {g['first_out']}% |")
