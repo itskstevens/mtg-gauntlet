@@ -365,7 +365,7 @@ class Game:
     def on_creature_dies(s, p, was_dt):
         if s.no_dies() or s.no_triggers(): return
         o = p.owner
-        if s.death_depth > 250: return
+        if s.death_depth > 60: return   # each level costs ~4 Python frames (kill/dies/effect/sac); 250 overflowed the stack
         s.death_depth += 1
         try:
             for q in s.players:

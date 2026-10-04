@@ -1,0 +1,110 @@
+{
+  "turbo-combo": [
+    "This is one of your best matchups: 33% of games and 27% of series won, well above the 25% and 16% fair share.",
+    "Kinnan is the main threat. It knocks you out in 44% of its pods, mostly with Kinnan + Basalt Monolith infinite mana.",
+    "Codie gets answered here more than almost anywhere: removed 0.46 times and countered 0.30 times per game. Hold Clever Concealment or Heroic Intervention when you cast it into open blue mana.",
+    "Your kills split evenly between combat (249) and the Kitten + Firesinger loop (248). You often win by being the deck that is still standing."
+  ],
+  "storm-spellslinger": [
+    "Close to fair share: 24.6% of games and 17.7% of series.",
+    "Niv-Mizzet, Parun is the problem. It wins 69% of its pods and knocks you out in 70%, through Curiosity and Tandem Lookout loops and pings.",
+    "Codie is countered 0.38 times per game here. Your own counters (Swan Song, Negate, Arcane Denial) are best saved for Curiosity effects, not traded early.",
+    "Blasphemous Act is the wipe you see most (153 times), and it clears your board of prepare creatures."
+  ],
+  "stax-hatebears": [
+    "Better than predicted: 25.4% of games and 17.0% of series, about fair share. The stax pieces in these lists rarely end up deciding your games.",
+    "You lose to creature damage, not to the stax pieces. Mogis and Heliod kill with commander damage, Myrel in combat.",
+    "Jeskai Ascendancy wins 68% of the games where you cast it, the best rate in this category.",
+    "Expect board wipes (Farewell, Supreme Verdict, Toxic Deluge) about once every three games."
+  ],
+  "control": [
+    "Fair share: 25.9% of games and 18.0% of series, in the longest games of the gauntlet (15.3 rounds).",
+    "Codie is countered 0.42 times and removed 0.59 times per game, the most of any category. Expect to recast it.",
+    "Toxic Deluge (203) and Blasphemous Act (97) are the wipes that hit you. Holding back a second prepare creature pays off here.",
+    "Breena and Y'shtola do the most damage. Both win in combat, not with combo."
+  ],
+  "tokens-go-wide": [
+    "A weak matchup: 14.6% of games and 7.7% of series, with you knocked out first in 43% of games.",
+    "Jetmir is the problem. It wins 82% of its pods in a median of 9 rounds, with Craterhoof and Anointed Procession swings before Codie has copied a single spell.",
+    "You have no sweeper that comes online before turn 5. Austere Command and Cyclonic Rift arrive too late against a turn-6 alpha strike.",
+    "When you survive to set up, the combo still wins 115 games here. The problem is surviving to set up."
+  ],
+  "typal": [
+    "Your worst series rate: 13.3% of games and only 3.3% of series. You're knocked out first in 52% of games.",
+    "Elves (Lathril), Angels (Giada) and Zombies (Scarab God) each knock you out in 43–47% of their pods, all in combat.",
+    "These games end before the engine fires: Blazing Firesinger wins just 36% of the games where it lands, against 55–65% elsewhere.",
+    "Codie is removed 0.37 times per game here, so even a resolved commander rarely gets two turns."
+  ],
+  "landfall-lands": [
+    "Weak: 17.0% of games and 8.0% of series. You're knocked out first in 52% of games.",
+    "Omnath, Locus of Creation wins 68% of its pods. Tatyova and Karametra each knock you out in nearly half of theirs.",
+    "These decks ramp as fast as you and turn lands into large attackers. Your blockers are mostly 1/x prepare creatures that don't hold the ground.",
+    "Jeskai Ascendancy is still your best card here (56% win when cast)."
+  ],
+  "reanimator-graveyard": [
+    "Good: 29.0% of games and 21.7% of series.",
+    "You face 0.61 wipes per game, including Toxic Deluge (190) and Living Death (129).",
+    "The combo does most of the work: 275 infinite-combo kills, your highest of any category except Artifacts.",
+    "Teval and Sidar Jabari are the threats to watch. Both win in combat."
+  ],
+  "aristocrats": [
+    "Weak: 16.8% of games and 8.3% of series.",
+    "Teysa, Orzhov Scion (71%) and Teysa Karlov (59%) win most of their pods, through Zulaport and Cruel Celebrant drains plus Bitterblossom tokens.",
+    "Toxic Deluge hits you 214 times, the most of any wipe in the gauntlet. Your board of 1/x prepare creatures dies to every sweeper.",
+    "Drain damage goes around blockers. Only a fast combo turn beats these decks."
+  ],
+  "voltron": [
+    "About fair: 25.1% of games and 19.3% of series, but you're knocked out first in 45% of games.",
+    "Light-Paws wins 66 of its 72 pods. Winds of Rath clears everything but its own enchanted creature. This is probably overstated: the rule-based AI rarely gets through protection auras.",
+    "Uril and Bruna knock you out in about half their pods. Swords to Plowshares and the prepared Swords from Emeritus of Truce are your best answers.",
+    "You rarely face Codie removal here (0.28 per game), so the engine gets time to work."
+  ],
+  "artifacts": [
+    "Your best matchup: 41.3% of games and 37.3% of series won, and you're knocked out first only 23% of the time.",
+    "These decks remove Codie often (0.61 times per game) but don't pressure your life total early.",
+    "You get 368 infinite-combo kills here, your most anywhere. Jeskai Ascendancy wins 70% of the games where it lands.",
+    "No single opponent dominates. Breya, Osgir and Aloy each knock you out in about 30% of their pods."
+  ],
+  "enchantress": [
+    "Good: 30.8% of games and 21.0% of series.",
+    "Alela, Artful Provocateur is the problem. It wins 69% of its pods and knocks you out in 60%, all through flying faerie tokens.",
+    "Winds of Rath (118) and Supreme Verdict (70) are the wipes. Keep a prepare creature in hand.",
+    "Your drain finishes (114) matter here more than anywhere. Exsanguinate copied by Codie ends long games."
+  ],
+  "counters": [
+    "Fair share: 26.7% of games and 18.0% of series.",
+    "Atraxa, Praetors' Voice wins 66% of its pods by growing evasive attackers.",
+    "You face few wipes here (0.25 per game), so your board usually survives to combo.",
+    "253 infinite-combo kills. When you lose, it's to combat with counters stacked on fliers and tramplers."
+  ],
+  "lifegain": [
+    "Your worst game rate: 11.4% of games and 4.7% of series.",
+    "Amalia Benavides Aguirre's wipe loop destroys your board 299 times, plus Toxic Deluge (191) and Damn (114). That's 1.09 wipes per game, by far the most anywhere.",
+    "Codie is removed 0.66 times per game, and the Kitten loop wins only 25% of the games where it lands.",
+    "Oloro (69%) and Liesa (59%) win most of their pods. Instant-speed removal on Amalia is your best play."
+  ],
+  "blink-etb": [
+    "Below fair: 20.4% of games and 13.0% of series, in long games (16.5 rounds).",
+    "Codie is removed 0.97 times per game here, the most of any category. Be'lakor and Atraxa, Grand Unifier remove it repeatedly with blinked ETB effects.",
+    "Farewell (168) and Supreme Verdict (89) also wipe your board.",
+    "Win the game before the blink engines find their value loop. Your combo kills still lead here (173)."
+  ],
+  "big-mana-battlecruiser": [
+    "About fair on games (24.9%) but below on series (13.0%).",
+    "Ruby, Raggadragga and Azusa each knock you out in about 40% of their pods, all in combat with large creatures.",
+    "These decks rarely wipe (0.17 per game), so your board survives. You're racing.",
+    "Kills split close to even between the combo (202) and combat (187)."
+  ],
+  "aggro-combat": [
+    "Slightly below fair: 23.1% of games and 15.3% of series. You're knocked out first in 49% of games.",
+    "Fynn, the Fangbearer wins 71% of its pods with poison. Your life total doesn't protect you from it.",
+    "Flaming Tyrannosaurus wins 67% of the games where you cast it, your best card here after Jeskai Ascendancy (75%).",
+    "Raph & Mikey and Ozai also knock you out in more than 40% of their pods."
+  ],
+  "burn-group-slug": [
+    "Below fair: 21.5% of games and 14.0% of series.",
+    "Sheoldred, the Apocalypse wins 75% of its pods. Your prepared draw spells (Ancestral Recall, Brainstorm) make it drain you more.",
+    "Kuja and Niv-Mizzet, Visionary also punish your spell-heavy turns.",
+    "Kill Sheoldred on sight. It is the single card that turns your card advantage against you."
+  ]
+}
