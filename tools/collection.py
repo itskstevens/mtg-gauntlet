@@ -158,9 +158,11 @@ def cmd_fits(a):
     add, rem, before, after = changes(frm, 'WORK')
     decks = deck_lists()
     rar = read_tsv(open(os.path.join(COL, 'rarity.tsv')).read())[0] if os.path.exists(os.path.join(COL, 'rarity.tsv')) else {}
-    pauper_ok = set()
-    pl = os.path.join(COL, 'pauper_legal.txt')
-    if os.path.exists(pl): pauper_ok = {norm(l) for l in open(pl) if l.strip()}
+    try:
+        sys.path.insert(0, os.path.join(ROOT, 'tools')); import pauper_legal
+        pauper_ok = pauper_legal.pauper_pool()
+    except Exception as e:
+        print('  (Pauper check unavailable:', e, ')'); pauper_ok = set()
     report = {'from': frm, 'added': [], 'now_complete': [], 'buy_list_hits': []}
     # 1. deck cards that were missing before and are owned now
     for key, d in decks.items():
@@ -194,7 +196,12 @@ def cmd_fits(a):
     for x in report['buy_list_hits']: print(f"  BUY LIST HIT  {x['card']} for {x['deck']} (wanted {x['want']}, own {x['owned']}): {x['plan']}")
     for x in report['now_complete']: print(f"  NOW OWNED     {x['deck']}: {', '.join(x['cards'])}  ({len(x['still_missing'])} still missing)")
     for x in report['added']:
-        print(f"  {x['qty']}x {x['card']} [{x['colors'] or 'C'}] {x['types']} -> {', '.join(x['colour_fits']) or 'no current deck by colour'}")
+        groups = collections.OrderedDict()
+        for k in x['colour_fits']:
+            g = decks[k]['commander'] if k.startswith('cmd:') else decks[k]['name']
+            groups.setdefault(g, []).append(k)
+        shown = [f"{g} ({len(v)} lists)" if len(v) > 1 else g for g, v in groups.items()]
+        print(f"  {x['qty']}x {x['card']} [{x['colors'] or 'C'}] {x['types']}{' · Pauper' if x['pauper_listed'] else ''} -> {', '.join(shown) or 'no current deck by colour'}")
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
