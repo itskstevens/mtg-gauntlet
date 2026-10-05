@@ -1,11 +1,13 @@
-# Lae'zel counters army (bracket 4, no budget) — built 2026-10-04, not yet simulated
+# Lae'zel counters army (bracket 4, no budget) — built 2026-10-04
 
 Commanders: Lae'zel, Vlaakith's Champion + Guild Artisan (Background).
 Plan: go wide with creatures and tokens; Lae'zel adds +1 to every counter placement, so Cathars' Crusade,
 Felidar Retreat, Luminarch Aspirant, Ajani Steadfast and Basri Ket snowball. Win by a wide pumped alpha strike, or
 Heliod, Sun-Crowned + Walking Ballista (infinite damage).
 
-Before a gauntlet run the engine needs:
+Gauntlet 2026-10-04 (1,800 LGS tables): 40.3% games, 36.2% series. Report: results/laezel-counters/report-2026-10-04.html
+
+Engine support added 2026-10-04 (engine/counters.py) for what this list needed:
 - Background as a second commander (Guild Artisan) — not supported yet
 - Lae'zel's +1 counter replacement — not modelled
 - planeswalker loyalty abilities — not modelled (Ajanis, Basri, Elspeths, Gideon, Wandering Emperor)
