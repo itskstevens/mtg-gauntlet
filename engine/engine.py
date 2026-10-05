@@ -2,8 +2,10 @@
 import random, collections, math, re
 try:
     from . import cards as CD
+    from . import counters as CT
 except ImportError:
     import cards as CD
+    import counters as CT
 
 MILL_FLOOR = 25   # self-mill stops below this many cards in library
 ME = 'The Serpent Society'  # commander with a hand-coded trigger (deathtouch death -> nontoken edicts)
@@ -55,6 +57,9 @@ class Player:
             cmd_name = deck[0]; s.cmd_card = CD.get(cmd_name)
             s.lib = [CD.get(n) for n in deck[1:]]
         g.rng.shuffle(s.lib)
+        bg = s.pilot.get('background')   # a Background is a second commander: available from the start
+        bg_card = next((c for c in s.lib if c.name == bg), None) if bg else None
+        if bg_card: s.lib.remove(bg_card)
         s.hand = []; s.gy = []; s.bf = []; s.lands = 0; s.lands_named = 0
         s.life = g.start_life; s.poison = 0; s.cmd_dmg = collections.Counter(); s.alive = True
         s.cmd_zone = g.fmt != 'constructed'; s.cmd_tax = 0; s.pool = 0; s.reserve = 0; s.treasure = 0
@@ -63,6 +68,7 @@ class Player:
         s.combo_names = [cb for cb in CD.COMBOS if all(any(c.name == p for c in s.lib) or p == cmd_name for p in cb)]
         s.stats = collections.Counter(); s.cast_log = []
         s.mulligan()
+        if bg_card: s.hand.append(bg_card)
     # ------------- basics
     def creatures(s): return [p for p in s.bf if p.creature]
     def perms(s): return s.bf
@@ -194,6 +200,7 @@ class Game:
             v += sum(q.card.anthem for q in o.bf if q.card and q.card.anthem and q is not p and not q.neutral)
             if o.cmd_card.name == 'Jetmir, Nexus of Revels' and o.cmd_on_bf() and len(o.creatures()) >= 3: v += 1
             if p.name == 'Serra Ascendant' and o.life >= 30: v += 5
+            v += CT.pump(o, p)
             m = s.stax_on(o, 'opp_minus')
             if m: v -= m
         if p.neutral: v = 0
@@ -202,6 +209,7 @@ class Game:
         o = p.owner; v = p.bt + p.counters + p.pumpt + p.aura_t
         if p.slime and s.slime_on(p): v -= p.slime
         if p.creature:
+            v += CT.pump(o, p)
             v += sum(q.card.anthem for q in o.bf if q.card and q.card.anthem and q is not p and not q.neutral)
             m = s.stax_on(o, 'opp_minus')
             if m: v -= m
@@ -217,6 +225,7 @@ class Game:
             if n >= 6: k.add('trample')
             if n >= 9: k.add('double strike')
         if o.has("Garruk's Uprising"): k.add('trample')
+        k = CT.kw(s, p, k)
         if p.neutral: k = set()
         return k
     def has_dt(s, p): return 'deathtouch' in s.kw(p)
@@ -343,8 +352,9 @@ class Game:
             s.pay(P, 1); P.draw(1)
             for q in P.opps(): s.lose_life(q, 1, P, 'lifegain')
         for p in P.bf:
-            if p.name in ("Ajani's Pridemate", 'Heliod, Sun-Crowned', 'Karlov of the Ghost Council', 'Exemplar of Light'):
+            if p.name in ("Ajani's Pridemate", 'Heliod, Sun-Crowned', 'Karlov of the Ghost Council', 'Exemplar of Light') and not CT.on(P):
                 p.counters += 1
+        CT.on_gain(s, P)
 
     # ---------------------------------------------------------------- tokens
     def make_tokens(s, P, n, pw, tg, kw, name='Token', tapped=False):
@@ -371,6 +381,7 @@ class Game:
         was_dt = s.has_dt(p) or o.has('Archetype of Finality')
         was_cre = p.creature
         o.bf.remove(p)
+        CT.on_leave(s, p)
         if p.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
         if p.is_cmd:
             o.cmd_zone = True; o.cmd_tax += 2
@@ -454,6 +465,7 @@ class Game:
     # ---------------------------------------------------------------- triggers
     def etb_triggers(s, P, perms):
         if s.no_triggers(): return
+        CT.on_creatures_enter(s, P, perms)
         for perm in P.bf:
             d = getattr(perm.card, 'draw_once', None) if perm.card else None
             if not d or perm.neutral or getattr(perm, 'once_turn', -1) == (s.round, s.active.idx if s.active else 0): continue
@@ -924,17 +936,19 @@ class Game:
             if c.is_creature and s.stax_on(P, 'opp_enter_tapped'): p.tapped = True
             if 'haste' in c.kw: p.sick = False
             P.bf.append(p)
+            CT.on_enter(s, P, p, c)
             if c.is_creature and getattr(c, 'prep_card', None) and c.prep_enter: p.prepared = True
             if c.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
             if c.name in ('Swiftfoot Boots', 'Lightning Greaves'):
                 for q in P.bf:
                     if q.is_cmd: q.aura_kw |= {'hexproof', 'haste'}; q.sick = False
             s.log(f'{P.label} casts {c.name}')
+            ec = p.card or c   # the counters engine may swap in a re-tagged copy (planeswalkers, Ballista)
             if c.is_creature and not s.no_triggers():
-                s.etb(P, p, c)
+                s.etb(P, p, ec)
                 s.etb_triggers(P, [p])
             elif not c.is_creature:
-                s.etb(P, p, c)
+                s.etb(P, p, ec)
             if c.name in CD.ETB_SELF_MILL: s.mill_self(P, CD.ETB_SELF_MILL[c.name])
             if c.name == "Thassa's Oracle":   # win if devotion to blue >= cards in library
                 dev = sum(q.card.mana_cost.count('U') for q in P.bf if q.card)
@@ -1203,7 +1217,11 @@ class Game:
         if c.name == 'Martial Coup': s.make_tokens(P, 5, 1, 1, set())
 
     def protect_response(s, Q, single=False, exile=False):
-        for name, cost in (('Heroic Intervention', 2), ("Teferi's Protection", 3)):
+        opts = [('Heroic Intervention', 2), ("Teferi's Protection", 3)]
+        if CT.on(Q):   # counters decks also hold indestructible tricks against wipes
+            opts += [('Flawless Maneuver', 0 if Q.cmd_on_bf() else 3), ('Boros Charm', 2), ('Unbreakable Formation', 3)]
+        for name, cost in opts:
+            if exile and name not in ("Teferi's Protection",): continue
             if exile and name == 'Heroic Intervention': continue
             for x in Q.hand:
                 if x.name == name and Q.reserve >= cost and (not single or s.rng.random() < .3):
@@ -1252,6 +1270,7 @@ class Game:
             if c.name == 'Lotus Cobra': P.pool += 1
         if P.cmd_card.name == 'Tatyova, Benthic Druid' and P.cmd_on_bf():
             s.gain(P, 1); P.draw(1)
+        CT.on_landfall(s, P)
 
     # ---------------------------------------------------------------- combos & alt wins
     def check_combo(s, P):
@@ -1441,6 +1460,7 @@ class Game:
             if A.quest >= 7:
                 for a in atk: a.pump += 5; a.pumpt += 5
         atk = atk + [e for e in extra if e.creature]
+        CT.on_attack(s, A, D, atk)
         A.stats['attacks'] += 1
         s.log(f'{A.label} attacks {D.label} with {len(atk)} ({sum(s.power(a) for a in atk)} power)')
         if D.is_me: D.stats['attacked'] += 1
@@ -1467,6 +1487,7 @@ class Game:
                 b_dies = (adt and ap >= 1) or ap >= s.tough(b)
                 a_dies = (bdt and bp >= 1) or bp >= s.tough(a)
                 if ds and b_dies: a_dies = False
+                if CT.on(A) and 'first strike' in s.kw(a) and b_dies and 'first strike' not in s.kw(b): a_dies = False
                 if b.name == 'Hornet Nest': s.make_tokens(D, ap, 1, 1, {'flying', 'deathtouch'}, name='Insect')
                 if 'trample' in s.kw(a):
                     over = ap * (2 if ds else 1) - (1 if adt else s.tough(b))
@@ -1490,7 +1511,10 @@ class Game:
         if a.infect_turn:
             D.poison += n; A.stats['poison_dealt'] += n
         else:
+            n = CT.divert_to_walker(s, A, D, n)
+            if n <= 0: return
             s.lose_life(D, n, A, 'combat')
+            CT.on_hit(s, A, D, a)
             if a.is_cmd: D.cmd_dmg[A.label] += n
             if 'lifelink' in s.kw(a): s.gain(A, n)
         if a.name == 'Rankle, Master of Pranks' and not a.rankled:
@@ -1552,10 +1576,14 @@ class Game:
                 if v.gy: s.log(f'{P.label} Bojuka Bog exiles {v.label} graveyard ({len(v.gy)})'); v.gy = []
             if l.name in ("Gaea's Cradle", 'Field of the Dead', 'Rest in Peace'): P.bf.append(Perm(P, l))
             s.landfall(P)
+        CT.combo(s, P)
+        if s.over or not P.alive: return
         if P.is_me: s.my_main(P)
         else: s.ai_main(P)
         if s.over or not P.alive: return
         if s.check_combo(P): return
+        CT.precombat(s, P)
+        if s.over or not P.alive: return
         s.combat(P)
         if s.over or not P.alive: return
         if P.is_me: s.my_main(P, post=True)
@@ -1859,6 +1887,9 @@ class Game:
             if hold and post and sum(1 for x in P.hand if x.removal) <= 1: return 0
             return 55 + v * 2
         if c.protect or c.counter or c.fog: return 0
+        if CT.on(P) and (c.is_planeswalker or c.name in CT.X_COUNTERS) and n in pr:   # loyalty / X-counter cards: pilot priority
+            if c.name == 'Walking Ballista' and P.has('Heliod, Sun-Crowned') and s.avail(P) >= 2: return 95   # X>=1 completes the combo
+            return pr[n] if (c.name not in CT.X_COUNTERS or s.avail(P) - s.cost(P, c) >= CT.X_COUNTERS[c.name]) else 0
         sp = getattr(c, 'special', None)
         copy = any(p.name == 'Aziza, Mage Tower Captain' for p in P.bf) and len(s.untapped(P)) >= 3
         if getattr(c, 'mob', False) or sp == 'charm4':

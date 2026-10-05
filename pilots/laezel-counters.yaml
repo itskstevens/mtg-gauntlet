@@ -1,0 +1,97 @@
+commander: Lae'zel, Vlaakith's Champion
+background: Guild Artisan
+counters_engine: true
+eyebrow: Boros · +1/+1 counters army + planeswalkers · Bracket 4
+summary: Go wide with creatures and tokens while Lae'zel adds one to every counter, snowball with Cathars' Crusade, Felidar Retreat and the Ajanis, then swing with a pumped board (Heliod + Walking Ballista as the backup kill).
+commander_first: true
+engine:
+- Cathars' Crusade
+- Felidar Retreat
+- Anointed Procession
+- Mondrak, Glory Dominus
+- Luminarch Aspirant
+- Mikaeus, the Lunarch
+- Heliod, Sun-Crowned
+- Walking Ballista
+- The Ozolith
+- Skullclamp
+- Smothering Tithe
+- Ajani Steadfast
+- Ajani Resolute
+- Ajani Unrelenting
+- Basri Ket
+- Elspeth Resplendent
+- "Elspeth, Sun's Champion"
+- The Wandering Emperor
+- "Gideon, Ally of Zendikar"
+- Guild Artisan
+- Exemplar of Light
+- Constable of the Realm
+keep_home:
+- Mikaeus, the Lunarch
+- Steel Overseer
+- Welcoming Vampire
+- Mentor of the Meek
+- Esper Sentinel
+- Loran of the Third Path
+- Walking Ballista
+- Ainok Bond-Kin
+- Abzan Falconer
+- Inspiring Paladin
+keep_commander_home: false
+fodder: tokens
+fodder_max_cmc: 2
+instant_sac_tokens: []
+bonus_keywords: []
+tutor_targets:
+- Cathars' Crusade
+- "Heliod, Sun-Crowned"
+- Anointed Procession
+- Skullclamp
+- The Ozolith
+priorities:
+  Guild Artisan: 88
+  Walking Ballista: 72
+  Stonecoil Serpent: 70
+  Cathars' Crusade: 90
+  Anointed Procession: 84
+  "Mondrak, Glory Dominus": 84
+  Felidar Retreat: 85
+  Luminarch Aspirant: 88
+  Smothering Tithe: 86
+  Skullclamp: 82
+  The Ozolith: 70
+  "Heliod, Sun-Crowned": 83
+  Ajani Steadfast: 84
+  Ajani Resolute: 80
+  Ajani Unrelenting: 82
+  Basri Ket: 85
+  Elspeth Resplendent: 84
+  "Elspeth, Sun's Champion": 83
+  The Wandering Emperor: 84
+  "Gideon, Ally of Zendikar": 86
+  "Mikaeus, the Lunarch": 80
+  Exemplar of Light: 78
+  The One Ring: 80
+  Esper Sentinel: 75
+value_bonus:
+  Cathars' Crusade: 5
+  Anointed Procession: 3
+  "Heliod, Sun-Crowned": 4
+  Ajani Steadfast: 4
+  Basri Ket: 4
+  Elspeth Resplendent: 4
+  "Elspeth, Sun's Champion": 5
+  "Gideon, Ally of Zendikar": 4
+  The Wandering Emperor: 4
+  Ajani Unrelenting: 4
+  Ajani Resolute: 3
+key_cards:
+- Lae'zel, Vlaakith's Champion
+- Cathars' Crusade
+- "Heliod, Sun-Crowned"
+- Walking Ballista
+- "Elspeth, Sun's Champion"
+- "Gideon, Ally of Zendikar"
+hold_removal_vs_combo: true
+sac_nontoken: false
