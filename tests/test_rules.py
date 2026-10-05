@@ -194,3 +194,34 @@ def test_combo_aura_held_until_host_is_out():
     g, A, D = game(); A.combo_names = [SANAR_XORN]
     tok(A, 'Big', 6, 6); A.pool = 5
     assert g.ai_score(A, CD.get('Freed from the Real'), 5, False) == 0
+
+# ---------------------------------------------------------------- Sanar's spells and generic tags (roadmap 0.4)
+def test_spellseeker_tutor_respects_type_and_mana_value():   # CR 701.23
+    g, A, D = game(); A.combo_names = []
+    A.lib = [CD.get('Nexus of Fate'), CD.get('Xorn'), CD.get('Dramatic Reversal')]
+    g.resolve(A, CD.get('Spellseeker'))
+    assert [c.name for c in A.hand] == ['Dramatic Reversal']
+
+def test_cost_reducer_applies_to_instants():   # CR 601.2f
+    g, A, D = game(); perm(A, 'Goblin Electromancer')
+    assert g.cost(A, CD.get('Frantic Search')) == 2 and g.cost(A, CD.get('Xorn')) == 3
+
+def test_look_at_top_counts_as_draw():
+    assert CD.get('Stock Up').draw_now == 2 and CD.get('Sleight of Hand').draw_now == 1
+    assert CD.get('Strike It Rich').treasure_now == 1
+
+def test_nexus_of_fate_extra_turn_and_shuffles_back():   # CR 500.7, 614.1a
+    g, A, D = game(); A.lib = [CD.get('Plains')] * 10; A.pool = 7
+    g.resolve(A, CD.get('Nexus of Fate'))
+    assert A.extra_turns == 1 and any(c.name == 'Nexus of Fate' for c in A.lib) and not any(c.name == 'Nexus of Fate' for c in A.gy)
+
+def test_brain_freeze_mills_three_per_storm_copy():   # CR 702.40a
+    g, A, D = game(); D.lib = [CD.get('Plains')] * 20; A.spells_turn = 4
+    g.special_effect(A, CD.get('Brain Freeze'), 'brainfreeze')
+    assert len(D.lib) == 8
+
+def test_crackle_with_power_kills_with_enough_mana():
+    g, A, D = game(); A.pool = 12; D.life = 15
+    assert g.special_score(A, CD.get('Crackle with Power'), 'crackle', False) == 140
+    A.pool = 2; g.cost(A, CD.get('Crackle with Power'))
+    assert g.special_score(A, CD.get('Crackle with Power'), 'crackle', False) == 0

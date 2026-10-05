@@ -321,6 +321,14 @@ class Game:
         for med, col in (('Ruby Medallion', 'R'), ('Sapphire Medallion', 'U'), ('Pearl Medallion', 'W')):
             if P.has(med) and col in c.colors: x -= 1
         if c.name == 'Punishing Punch' and sum(1 for g in P.gy if g.is_creature) >= 2: x -= 2
+        for p in P.bf:   # cost reducers such as Goblin Electromancer (CR 601.2f); generic mana only
+            cl = getattr(p.card, 'cost_less', None) if p.card and not p.neutral else None
+            if not cl: continue
+            kind, k = cl
+            if kind == 'any' or (kind == 'instant and sorcery' and (c.is_instant or c.is_sorcery)) \
+               or (kind == 'noncreature' and not c.is_creature) or (kind == 'artifact' and c.is_artifact) \
+               or (kind == 'creature' and c.is_creature) or (kind == 'enchantment' and c.is_enchantment):
+                x -= k
         if c.name == 'Blasphemous Act': x -= sum(len(q.creatures()) for q in s.players if q.alive)
         return max(x, c.pips if c.cmc else 0, 0)
 
@@ -1044,7 +1052,9 @@ class Game:
             return
         # instants / sorceries
         s.spell_effect(P, c)
-        if c.name not in ('Approach of the Second Sun',):
+        if "shuffle it into its owner's library instead" in c.oracle:   # Nexus of Fate (CR 614.1a replacement)
+            P.lib.insert(s.rng.randrange(len(P.lib) + 1), c)
+        elif c.name not in ('Approach of the Second Sun',):
             P.gy.append(c)
 
     def etb(s, P, p, c):
@@ -1068,7 +1078,7 @@ class Game:
             s.use_removal(P, c, c.removal)
         if c.wipe and c.is_creature:
             s.do_wipe(P, c, c.wipe)
-        if c.tutor and c.is_creature: s.tutor(P)
+        if c.tutor and c.is_creature: s.tutor(P, c)
         if c.name == 'Light-Paws, Emperor\'s Voice': pass
 
     def fetch_lands(s, P, c):
@@ -1088,6 +1098,7 @@ class Game:
         if sp == 'charm4' and opps: s.lose_life(min(opps, key=lambda q: q.life), 4, P, 'burn')
         if getattr(c, 'mob', False) and opps: s.lose_life(min(opps, key=lambda q: q.life), len(P.creatures()), P, 'burn')
         if getattr(c, 'treasure_now', 0): P.treasure += c.treasure_now
+        if sp in ('frantic', 'hexmagic', 'brainfreeze', 'crackle', 'extra_turn'): s.special_effect(P, c, sp, copy)
         if sp == 'warrens': s.make_tokens(P, 2 if copy else 2 * max(1, P.spells_turn), 1, 1, set(), name='Goblin')
         if c.draw_now:
             if getattr(c, 'wheel', False):
@@ -1126,7 +1137,7 @@ class Game:
             else:
                 for v in opps: s.lose_life(v, d, P, 'drain')
         if c.life_now and c.name != 'Approach of the Second Sun': s.gain(P, c.life_now)
-        if c.tutor: s.tutor(P)
+        if c.tutor: s.tutor(P, c)
         if c.overrun: s.apply_overrun(P, c)
         if c.name == 'Approach of the Second Sun':
             if P.approach:
@@ -1166,6 +1177,45 @@ class Game:
             back = [x for x in P.gy if not x.is_land and x is not c]
             if back: x = max(back, key=lambda x: x.cmc); P.gy.remove(x); P.hand.append(x)
 
+    def special_effect(s, P, c, sp, copy=False):
+        opps = P.opps()
+        if sp == 'frantic':   # draw two, discard two, untap up to three lands
+            P.draw(2)
+            for _ in range(2):
+                if not P.hand: break
+                lands = [x for x in P.hand if x.is_land]
+                x = lands[0] if lands and P.lands + len(lands) >= 5 else max(P.hand, key=lambda x: (not x.is_land, x.cmc))
+                P.hand.remove(x); P.gy.append(x)
+            P.pool += min(3, P.lands)
+        elif sp == 'hexmagic':   # the exiled cards stay playable until the end of next turn: modelled as kept in hand
+            P.draw(len(P.hand))
+        elif sp == 'brainfreeze':   # storm (CR 702.40a): the original plus one copy per earlier spell, 3 cards each
+            n = 3 if copy else 3 * max(1, P.spells_turn)
+            if opps:
+                v = min(opps, key=lambda q: len(q.lib))
+                for _ in range(min(n, len(v.lib))): v.gy.append(v.lib.pop())
+                s.log(f'{P.label} Brain Freeze mills {v.label} for {n}')
+        elif sp == 'crackle':   # X is paid on top of {R}{R}: 5X damage to each of up to X targets, lowest life first
+            x = getattr(P, 'last_crackle', 0) if copy else max(0, s.avail(P) // 3)
+            if not copy: s.pay(P, 3 * x); P.last_crackle = x
+            for v in sorted(opps, key=lambda q: q.life)[:x]: s.lose_life(v, 5 * x, P, 'burn')
+            s.check_deaths(P, 'burn')
+        elif sp == 'extra_turn' and not copy:
+            P.extra_turns = getattr(P, 'extra_turns', 0) + 1
+
+    def special_score(s, P, c, sp, post):
+        opps = P.opps()
+        if sp == 'crackle':
+            x = max(0, (s.avail(P) - s.cost(P, c)) // 3)
+            return 140 if x and any(v.life <= 5 * x for v in sorted(opps, key=lambda q: q.life)[:x]) else 0
+        if sp == 'brainfreeze':
+            n = 3 * (P.spells_turn + 1)
+            return 135 if any(len(v.lib) <= n for v in opps) else 0
+        if sp == 'extra_turn': return 75
+        if sp == 'frantic': return 60 if P.lands >= 3 else 0
+        if sp == 'hexmagic': return 55 if len(P.hand) >= 4 else 0
+        return 0
+
     def torment(s, P):
         x = max(0, s.avail(P)); s.pay(P, x)
         for v in P.opps():
@@ -1177,19 +1227,28 @@ class Game:
             if life: s.lose_life(v, life, P, 'torment')
             v.hand = v.hand[:max(0, len(v.hand) - x)]
 
-    def tutor(s, P):
+    def tutor(s, P, src=None):
+        """Search the library for one card (CR 701.23), honouring a restricted tutor's card type and mana value."""
+        f = getattr(src, 'tutor_filter', None)
+        def ok(x):
+            if f is None: return True
+            kinds, mv = f
+            if mv is not None and x.cmc > mv: return False
+            return not kinds or any(getattr(x, 'is_' + k, False) for k in kinds)
+        inlib = {c.name for c in P.lib if ok(c)}
         want = None
         for cb in P.combo_names:
             miss = [n for n in cb if not P.has(n) and not any(h.name == n for h in P.hand) and n != P.cmd_card.name]
-            if len(miss) == 1: want = miss[0]; break
-        if P.is_me:
+            if len(miss) == 1 and miss[0] in inlib: want = miss[0]; break
+        if P.is_me:   # the pilot's tutor_targets order wins, as before
             for n in P.pilot.get('tutor_targets', []):
-                if not P.has(n) and not any(h.name == n for h in P.hand): want = n; break
+                if not P.has(n) and not any(h.name == n for h in P.hand) and n in inlib: want = n; break
         if want is None:
-            pool = [c for c in P.lib if c.overrun or c.alt_win or c.wipe or c.draw_engine >= 1 or c.cmc >= 6]
+            pool = [c for c in P.lib if ok(c) and (c.overrun or c.alt_win or c.wipe or c.draw_engine >= 1 or c.cmc >= 6)]
+            if not pool and f is not None: pool = [c for c in P.lib if ok(c) and not c.is_land]
             if pool: want = max(pool, key=lambda c: (c.overrun is not None) * 5 + c.draw_engine * 2 + c.cmc).name
         for c in P.lib:
-            if c.name == want: P.lib.remove(c); P.hand.append(c); return
+            if c.name == want: P.lib.remove(c); P.hand.append(c); s.rng.shuffle(P.lib); return
 
     def combo_host(s, P, c):
         """For an Aura that is a combo piece, the creature it must enchant: by convention the first piece of the combo
@@ -1981,6 +2040,8 @@ class Game:
         g_ = s.gy_score(P, c)
         if g_ is not None: return g_
         opps = P.opps()
+        sp_ = getattr(c, 'special', None)
+        if sp_ in ('frantic', 'hexmagic', 'brainfreeze', 'crackle', 'extra_turn'): return s.special_score(P, c, sp_, post)
         if c.overrun:
             # only if it makes an attack lethal (precombat)
             if post: return 0
@@ -2188,6 +2249,7 @@ class Game:
             dmg = (len(P.creatures()) if c.mob else 4) * (2 if copy else 1)
             if any(v.life <= dmg for v in opps): return 130
             return 55 if c.mob and dmg >= 10 and not post else 0
+        if sp in ('frantic', 'hexmagic', 'brainfreeze', 'crackle', 'extra_turn'): return s.special_score(P, c, sp, post)
         if sp == 'warrens': return 120 if P.spells_turn >= 4 else 0
         if sp == 'hymn': return 72 if len(P.creatures()) >= 4 and any((x.is_instant or x.is_sorcery) and x is not c for x in P.hand) else 0
         if sp == 'jeska': return 76
@@ -2331,6 +2393,8 @@ class Game:
                 if s.over: break
                 if not P.alive: continue
                 s.take_turn(P)
+                while getattr(P, 'extra_turns', 0) and P.alive and not s.over:   # CR 500.7
+                    P.extra_turns -= 1; s.log(f'{P.label} takes an extra turn'); s.take_turn(P)
                 s.check_deaths(None, 'life')
                 # end-of-turn instant removal from others on the biggest threat (uses leftover reserve)
                 for Q in s.players:

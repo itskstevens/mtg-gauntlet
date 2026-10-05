@@ -546,6 +546,33 @@ def tag(c):
         # so don't let the AI treat it as a symmetric creature wipe.
         c.wipe = None; c.tokens_rec = ('upkeep', 1, 2, 2, set())
     if n == 'Tomik, Izzet Sparkmage': c.dmg_boost = 1   # noncombat damage to opponents +1, handled in engine
+    # --- roadmap 0.4: generic patterns ---
+    spellish = c.is_instant or c.is_sorcery or bool(re.search(r'when ~ enters', o))
+    # "look at the top N cards ... put one/two of them into your hand" (Sleight of Hand, Stock Up, Impulse)
+    m = re.search(r'look at the top (?:\w+) cards? of your library\.? [^.]*?put (one|two|three|a card|that card) of (?:them|those cards)? ?into your hand', o) \
+        or re.search(r'look at the top (?:\w+) cards? of your library\.? [^.]*?put (one|two|three) of them into your hand', o)
+    if m and spellish and not c.draw_now: c.draw_now = num(m.group(1).replace('a card', 'one').replace('that card', 'one'))
+    # instants/sorceries that make Treasure (Strike It Rich)
+    m = re.search(r'create (a|one|two|three|x) treasure tokens?', o)
+    if m and (c.is_instant or c.is_sorcery) and not c.treasure_now: c.treasure_now = num(m.group(1))
+    # restricted tutors: "search your library for an instant or sorcery card with mana value 2 or less" (CR 701.23)
+    m = re.search(r'search your library for (?:a|an) ((?:[a-z]+ or )?[a-z]+) card(?: with mana value (\d+) or less)?', o)
+    c.tutor_filter = None
+    if m and 'land' not in m.group(1) and 'basic' not in m.group(1) and spellish:
+        c.tutor = True
+        kinds = set(m.group(1).split(' or ')) & {'instant', 'sorcery', 'creature', 'artifact', 'enchantment', 'planeswalker'}
+        c.tutor_filter = (frozenset(kinds), int(m.group(2)) if m.group(2) else None)
+    # cost reducers: "instant and sorcery spells you cast cost {1} less to cast" (CR 601.2f)
+    # only unconditional reducers whose clause starts with the card type (typal/colour/"for each" ones stay untagged)
+    m = re.search(r'(?:^|\n)(?:(instant and sorcery|noncreature|artifact|creature|enchantment) )?spells you cast cost \{(\d)\} less to cast\.?(?:$|\n)', o)
+    c.cost_less = (m.group(1) or 'any', int(m.group(2))) if m and not (c.is_instant or c.is_sorcery) else None
+    # extra turns (CR 500.7)
+    if re.search(r'take an extra turn after this one', o) and (c.is_instant or c.is_sorcery): c.special = 'extra_turn'
+    if n == 'Frantic Search': c.special = 'frantic'; c.draw_now = 0          # draw 2, discard 2, untap 3 lands
+    if n == 'Hex Magic': c.special = 'hexmagic'                              # exile hand, draw that many, may play the exiled cards
+    if n == 'Brain Freeze': c.special = 'brainfreeze'                        # storm: target player mills 3 per copy
+    if n == 'Crackle with Power': c.special = 'crackle'                      # 5X damage to each of up to X targets
+    if n == 'Abstract Paintmage': c.rock = 2                                 # {U}{R} each first main phase (spells only)
     # auras: enchanted creature bonuses
     if c.is_aura:
         m = re.search(r'enchanted creature gets \+(\d+)/\+(\d+)', o)
