@@ -1,0 +1,72 @@
+# Pilot for Sanar, Unfinished Genius (Izzet storm / combo-control). List from Kevin's Moxfield export, 2026-10-05.
+commander: Sanar, Unfinished Genius
+eyebrow: "Izzet · Treasure storm / combo-control · Bracket 4"
+summary: Digs with cantrips and Wild Idea, holds up cheap counters, then assembles an infinite-Treasure loop (Xorn +
+  Freed from the Real or Pemmin's Aura on Sanar, or Ioreth + Marvin) into Weftstalker Ardent or Reckless Fireweaver,
+  Isochron Scepter + Dramatic Reversal, or a Displacer Kitten + Blazing Firesinger loop.
+
+engine: ["Sanar, Unfinished Genius", Xorn, "Ioreth of the Healing House", "Marvin, Murderous Mimic",
+         Freed from the Real, Pemmin's Aura, Isochron Scepter, Weftstalker Ardent, Reckless Fireweaver,
+         Displacer Kitten, Blazing Firesinger, Storm-Kiln Artist, Archmage Emeritus, Underworld Breach,
+         Galazeth Prismari]
+keep_home: ["Sanar, Unfinished Genius", Xorn, "Ioreth of the Healing House", "Marvin, Murderous Mimic",
+            Weftstalker Ardent, Reckless Fireweaver, Displacer Kitten, Blazing Firesinger, Storm-Kiln Artist,
+            Archmage Emeritus, Galazeth Prismari, Goblin Electromancer, Molten-Core Maestro, Pensive Professor,
+            Abstract Paintmage, Goblin Glasswright, Hexing Squelcher, Spellseeker]
+keep_commander_home: true
+commander_first: true
+
+fodder: tokens
+fodder_max_cmc: 1
+instant_sac_tokens: []
+bonus_keywords: []
+
+# Combo pieces first. Spellseeker / Merchant Scroll / Solve the Equation / Wild Idea find spells only, so the
+# engine falls through to the first legal target.
+tutor_targets: [Dramatic Reversal, Isochron Scepter, Xorn, Freed from the Real, Pemmin's Aura, Weftstalker Ardent,
+                Reckless Fireweaver, "Ioreth of the Healing House", "Marvin, Murderous Mimic", Displacer Kitten,
+                Blazing Firesinger, Underworld Breach, Crackle with Power, Grapeshot]
+
+priorities:
+  Isochron Scepter: 90
+  Xorn: 89
+  Freed from the Real: 88
+  "Pemmin's Aura": 88
+  Weftstalker Ardent: 87
+  Reckless Fireweaver: 87
+  "Ioreth of the Healing House": 86
+  "Marvin, Murderous Mimic": 86
+  Displacer Kitten: 85
+  Blazing Firesinger: 84
+  Storm-Kiln Artist: 82
+  Archmage Emeritus: 82
+  Galazeth Prismari: 80
+  Mystic Remora: 78
+  Underworld Breach: 75
+  Swiftfoot Boots: 60
+
+value_bonus:
+  "Sanar, Unfinished Genius": 4
+  Xorn: 4
+  Isochron Scepter: 4
+  Weftstalker Ardent: 4
+  Reckless Fireweaver: 4
+  Storm-Kiln Artist: 3
+  Archmage Emeritus: 3
+key_cards:
+- Sanar, Unfinished Genius
+- Isochron Scepter
+- Dramatic Reversal
+- Xorn
+- Freed from the Real
+- Pemmin's Aura
+- Weftstalker Ardent
+- Reckless Fireweaver
+- Ioreth of the Healing House
+- Marvin, Murderous Mimic
+- Displacer Kitten
+- Storm-Kiln Artist
+hold_removal_vs_combo: true
+hold_counters: false
+sac_nontoken: false
+x_reserve: 0

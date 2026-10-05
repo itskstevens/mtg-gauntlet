@@ -149,6 +149,7 @@ ALT_WINS = {'Felidar Sovereign': 'felidar', 'Test of Endurance': 'test', 'Approa
             'Aetherflux Reservoir': 'aetherflux'}
 TOKEN_DOUBLERS = {'Anointed Procession', 'Parallel Lives', 'Doubling Season', 'Mondrak, Glory Dominus',
                   'Elspeth, Storm Slayer'}
+SANAR = 'Sanar, Unfinished Genius'
 # Combos: all pieces on battlefield (or castable from hand this turn) => that player wins.
 COMBOS = [
     ('Kinnan, Bonder Prodigy', 'Basalt Monolith'),
@@ -162,6 +163,12 @@ COMBOS = [
     ('Yawgmoth, Thran Physician', 'Mikaeus, the Unhallowed', 'Blood Artist'),
     ('Yawgmoth, Thran Physician', 'Mikaeus, the Unhallowed', 'Syr Konrad, the Grim'),
     ('Isochron Scepter', 'Dramatic Reversal'),
+    # Sanar infinite Treasures (each Treasure entering pings each opponent via the outlet). Freed/Pemmin's on Sanar
+    # with Xorn nets +1 Treasure per {U} untap; Ioreth + Marvin (who copies Ioreth's and Sanar's abilities) untap each
+    # other and Sanar for free. Sanar's "cast an instant or sorcery this turn" gate is not modelled.
+    *[(SANAR, *eng, out) for eng in (('Freed from the Real', 'Xorn'), ("Pemmin's Aura", 'Xorn'),
+                                     ('Ioreth of the Healing House', 'Marvin, Murderous Mimic'))
+      for out in ('Weftstalker Ardent', 'Reckless Fireweaver')],
     ('Exquisite Blood', 'Marauding Blight-Priest'), ('Exquisite Blood', 'Bloodthirsty Conqueror'),
     ('Sanguine Bond', 'Bloodthirsty Conqueror'),
 ]
