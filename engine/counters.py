@@ -253,7 +253,8 @@ def on_attack(g, A, D, atk):
             if t: add(g, t[0], 1)
 
 def divert_to_walker(g, A, D, n):
-    """Attackers send some damage at the defender's planeswalkers. Returns damage still going to the player."""
+    """Superseded: attacks on planeswalkers are now planned in Game.plan_walker_attacks."""
+    return n
     if not on(D): return n
     ws = walkers(D)
     if not ws or g.rng.random() > 0.5 or D.life <= n * 2: return n

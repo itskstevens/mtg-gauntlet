@@ -29,6 +29,9 @@ class Card:
             k, v = line.split(':', 1)
             if k == 'K': kws.append(v.strip())
             elif k not in f: f[k] = v.strip()
+        self.ward = None
+        try: self.loyalty_base = int(f.get('Loyalty', '0'))
+        except ValueError: self.loyalty_base = 0
         self.mana_cost = f.get('ManaCost', 'no cost')
         self.cmc, self.pips = self._cmc(self.mana_cost)
         self.types = f.get('Types', '').split()
@@ -40,6 +43,10 @@ class Card:
             base = k.split(':')[0].strip()
             self.kw.add(base.lower())
             if base.lower() == 'ward' and 'poison' in k.lower(): self.kw.add('ward_poison')
+            if base.lower() == 'ward':
+                v = k.split(':', 1)[1].strip() if ':' in k else ''
+                m = re.match(r'PayLife<(\d+)>', v)
+                self.ward = ('life', int(m.group(1))) if m else (('mana', int(v)) if v.isdigit() else ('other', 0))
             if base.lower() == 'protection': self.kw.add('protection:' + k.lower())
         short = name.split(',')[0].split(' // ')[0]
         o = f.get('Oracle', '').replace('\\n', '\n')
@@ -57,6 +64,14 @@ class Card:
         self.is_legendary = 'legendary' in t
         self.subtypes = t
         self.colors = set(c for c in 'WUBRG' if c in self.mana_cost)
+        # coloured requirements: exact pips per colour, plus hybrid pips (either colour). Phyrexian pips can be paid with life.
+        self.pips_by = {}; self.hybrid = []
+        if self.mana_cost and self.mana_cost != 'no cost':
+            for tok in self.mana_cost.split():
+                cols = [x for x in tok if x in 'WUBRG']
+                if 'P' in tok or not cols: continue
+                if len(cols) == 1 and not any(ch.isdigit() for ch in tok): self.pips_by[cols[0]] = self.pips_by.get(cols[0], 0) + 1
+                elif len(cols) >= 2: self.hybrid.append(frozenset(cols))
         self.flash = 'flash' in self.kw or self.is_instant
         tag(self)
         prep_tags(self, raw, alt)
@@ -175,6 +190,42 @@ def first_add(o):
         if w in s: return v
     return 1
 
+BASIC_COLOR = {'plains': 'W', 'island': 'U', 'swamp': 'B', 'mountain': 'R', 'forest': 'G'}
+def produces(c, o):
+    """Colours a land, rock or mana creature can make: a set of WUBRG, '*' for any colour in the deck's identity, or
+    empty for colourless only. Used by the coloured-mana check (CR 106.1, 202.1)."""
+    if not (c.is_land or re.search(r'\badd \{', o) or 'add one mana' in o or 'mana of any' in o): return frozenset()
+    if re.search(r'mana of any (one )?colou?r|any color in your commander|any type that a land|that a land an opponent', o): return frozenset('*')
+    out = set(x.upper() for x in re.findall(r'\{([wubrg])\}', o.split('search')[0] if 'search your library' in o else o))
+    for t in c.subtypes:
+        if t in BASIC_COLOR: out.add(BASIC_COLOR[t])
+    m = re.search(r'search your library for an? ([a-z, ]+?) card', o)
+    if c.is_land and m:   # fetch lands make whatever they can find
+        what = m.group(1)
+        if 'basic land' in what or what.strip() == 'land': return frozenset('*')
+        out |= {BASIC_COLOR[w] for w in BASIC_COLOR if w in what}
+    return frozenset(out)
+
+def enters_tapped(o):
+    """How a land enters (CR 614.1c): None (untapped), 'always', or a condition key evaluated when it is played."""
+    if 'onto the battlefield tapped' in o and 'search your library' in o: return 'fetch_tapped'
+    if not re.search(r'enters (the battlefield )?tapped', o): return None
+    if re.search(r'you may pay (\d) life', o): return 'shock'
+    if 'you may reveal' in o: return 'reveal'
+    m = re.search(r'enters (?:the battlefield )?tapped unless ([^.]*)\.', o)
+    if not m: return 'always'
+    u = m.group(1)
+    if 'two or more opponents' in u: return 'opponents2'
+    if 'two or fewer other lands' in u: return 'fast'
+    if 'two or more other lands' in u or 'two or more basic lands' in u: return 'slow'
+    if 'three or more other' in u: return 'three_type'
+    if 'legendary creature' in u: return 'legend'
+    if 'eight or more lands' in u: return 'opp8'
+    if "first, second, or third turn" in u: return 'early'
+    if 'basic land' in u: return 'basic'
+    if re.search(r'control an? (plains|island|swamp|mountain|forest)', u): return 'check'
+    return 'other'
+
 def tag(c):
     o = c.oracle; n = c.name
     c.mana_land = 0; c.rock = 0; c.dork = False; c.ritual = 0; c.ramp_lands = 0; c.extra_lands = 0
@@ -188,6 +239,11 @@ def tag(c):
     c.free_outlet = bool(re.search(r'sacrifice (a|another) (creature|artifact or creature)[^:]*:', o)) and not c.is_land
     c.evasive = 'flying' in c.kw or 'unblockable' in o or "can't be blocked" in o
     # --- mana
+    c.produces = produces(c, o)
+    c.etapped = enters_tapped(o) if c.is_land else None
+    c.fetch_life = 1 if c.is_land and re.search(r'pay 1 life, sacrifice ~: search', o) else 0
+    c.uncounterable = bool(re.search(r"(this spell|~) can't be countered", o))
+    c.no_counter_static = bool(re.search(r"(spells|creature spells) you control can't be countered", o))
     if c.is_land:
         c.mana_land = 2 if re.search(r'add \{c\}\{c\}', o) else 1
     elif n in MANA_ENGINES:

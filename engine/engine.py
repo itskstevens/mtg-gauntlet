@@ -33,12 +33,25 @@ class Perm:
             s.name, s.bp, s.bt, kw = token; s.kw = set(kw); s.token = True; s.creature = True
         s.tapped = False; s.sick = True; s.counters = 0; s.pump = 0; s.pumpt = 0; s.tmpkw = set()
         s.auras = 0; s.aura_p = 0; s.aura_t = 0; s.aura_kw = set(); s.neutral = False; s.infect_turn = False
-        s.slime = 0; s.rankled = False; s.prepared = False
+        s.slime = 0; s.rankled = False; s.prepared = False; s.cmd_slot = 1
     @property
     def c(s): return s.card
     def is_art(s): return s.card is not None and s.card.is_artifact
     def is_ench(s): return s.card is not None and s.card.is_enchantment
     def __repr__(s): return f'{s.name}'
+
+def second_commander(c1, c2):
+    """True if c2 (the second card of a decklist) is c1's partner or Background (CR 702.124)."""
+    if not c2 or not c1 or not getattr(c2, 'is_legendary', False) or not getattr(c1, 'is_legendary', False): return False
+    o1, o2 = (c1.oracle or '').lower(), (c2.oracle or '').lower()
+    t1 = str(getattr(c1, 'types', '')).lower(); t2 = str(getattr(c2, 'types', '')).lower()
+    if 'choose a background' in o1 and 'background' in t2: return True
+    if f'partner with {c2.name.lower()}' in o1: return True
+    kw = lambda o, k: re.search(r'(^|\n)' + re.escape(k) + r'( \(|\n|$)', o) is not None
+    for k in ('partner', 'friends forever', 'partner—survivors', 'partner—father & son', 'partner—character select'):
+        if kw(o1, k) and kw(o2, k): return True
+    if ("doctor's companion" in o1 and 'doctor' in t2) or ("doctor's companion" in o2 and 'doctor' in t1): return True
+    return False
 
 class _NoCommander:
     """Stands in for the commander in 60-card formats so commander checks (cmd_card.name == X) are simply false."""
@@ -57,10 +70,16 @@ class Player:
             cmd_name = deck[0]; s.cmd_card = CD.get(cmd_name)
             s.lib = [CD.get(n) for n in deck[1:]]
         g.rng.shuffle(s.lib)
-        bg = s.pilot.get('background')   # a Background is a second commander: available from the start
-        bg_card = next((c for c in s.lib if c.name == bg), None) if bg else None
-        if bg_card: s.lib.remove(bg_card)
-        s.hand = []; s.gy = []; s.bf = []; s.lands = 0; s.lands_named = 0
+        # a second commander (partner, "choose a Background", friends forever...) starts in the command zone (CR 903.6, 702.124)
+        s.cmd2 = None; s.cmd2_zone = False; s.cmd2_tax = 0
+        if g.fmt != 'constructed':
+            bg = s.pilot.get('background')
+            c2 = next((c for c in s.lib if c.name == bg), None) if bg else None
+            if c2 is None and len(deck) > 1 and second_commander(s.cmd_card, CD.get(deck[1])): c2 = next((c for c in s.lib if c.name == deck[1]), None)
+            if c2: s.lib.remove(c2); s.cmd2 = c2; s.cmd2_zone = True
+        s.hand = []; s.gy = []; s.bf = []; s.lands = 0; s.lands_named = 0; s.land_cols = []
+        # colour identity for "any colour" sources: every colour in the deck (all inside the commander's identity)
+        s.identity = frozenset(x for c in s.lib + ([s.cmd_card] if g.fmt != 'constructed' else []) for x in (c.colors or ())) or frozenset('WUBRG')
         s.life = g.start_life; s.poison = 0; s.cmd_dmg = collections.Counter(); s.alive = True
         s.cmd_zone = g.fmt != 'constructed'; s.cmd_tax = 0; s.pool = 0; s.reserve = 0; s.treasure = 0
         s.spells_turn = 0; s.noncre_turn = 0; s.land_drops = 1; s.exp = 0; s.quest = 0
@@ -68,7 +87,6 @@ class Player:
         s.combo_names = [cb for cb in CD.COMBOS if all(any(c.name == p for c in s.lib) or p == cmd_name for p in cb)]
         s.stats = collections.Counter(); s.cast_log = []
         s.mulligan()
-        if bg_card: s.hand.append(bg_card)
     # ------------- basics
     def creatures(s): return [p for p in s.bf if p.creature]
     def perms(s): return s.bf
@@ -76,6 +94,10 @@ class Player:
     def has(s, name): return any(p.name == name for p in s.bf)
     def count(s, name): return sum(1 for p in s.bf if p.name == name)
     def cmd_on_bf(s): return any(p.is_cmd for p in s.bf)
+    def cmd_home(s, p):
+        """Commander p goes to the command zone (CR 903.9). Tax is added when it is cast, not here."""
+        if getattr(p, 'cmd_slot', 1) == 2: s.cmd2_zone = True
+        else: s.cmd_zone = True
     def draw(s, n=1):
         g = s.g
         for _ in range(int(n)):
@@ -98,7 +120,7 @@ class Player:
 class Game:
     def __init__(s, specs, rng, log=False, max_rounds=25, fmt='commander', on_play=None):
         s.rng = rng; s.logging = log; s.events = []; s.max_rounds = max_rounds
-        s.fmt = fmt; s.start_life = 20 if fmt == 'constructed' else 40
+        s.fmt = fmt; s.start_life = 20 if fmt == 'constructed' else 40; s.fmt_free_colors = False
         s.players = [Player(s, i, *sp) for i, sp in enumerate(specs)]
         if on_play is None: rng.shuffle(s.players)
         else: s.players.sort(key=lambda q: q.idx != on_play)   # best-of-3: the loser of the last game chooses to play first
@@ -280,7 +302,7 @@ class Game:
 
     # ---------------------------------------------------------------- costs & mana
     def cost(s, P, c, is_cmd=False):
-        x = c.cmc + (P.cmd_tax if is_cmd else 0)
+        x = c.cmc + ((P.cmd2_tax if is_cmd == 2 else P.cmd_tax) if is_cmd else 0)
         x += s.stax_on(P, 'tax_all')
         if not c.is_creature: x += s.stax_on(P, 'tax_noncreature')
         if c.is_artifact or c.is_enchantment: x += s.stax_on(P, 'tax_artench')
@@ -313,6 +335,48 @@ class Game:
             m += sum(1 for p in P.creatures() if not p.neutral and not (p.card and p.card.rock) and (not p.sick or 'haste' in s.kw(p)))
         if P.has('Smothering Tithe'): m += 1
         return max(0, m)
+
+    def land_untapped(s, P, l, before):
+        """Does land l enter untapped? Conditions follow the card text; reveal/check lands are approximated."""
+        e = getattr(l, 'etapped', None)
+        if e is None: return True
+        if e in ('always', 'fetch_tapped'): return False
+        if e == 'shock':   # pay 2 life to have it untapped when the mana matters
+            if P.life > 10 and any(not c.is_land and s.cost(P, c) == before + 1 for c in P.hand): s.lose_life(P, 2); return True
+            return False
+        if e == 'opponents2': return len(P.opps()) >= 2
+        if e == 'fast': return before <= 2
+        if e == 'slow': return before >= 2
+        if e == 'three_type': return before >= 4
+        if e == 'legend': return any(p.creature and p.card is not None and p.card.is_legendary for p in P.bf)
+        if e == 'opp8': return any(q.lands >= 8 for q in P.opps())
+        if e == 'early': return s.round <= 3
+        if e == 'basic': return before >= 1
+        if e in ('check', 'reveal'):   # needs a land / card of a basic type: likely once a couple of lands are down
+            return before >= 2 or (before == 1 and s.rng.random() < .5) or (e == 'reveal' and s.rng.random() < .5)
+        return before >= 2
+
+    def colors_ok(s, P, c):
+        """Can P's mana sources produce c's coloured pips (CR 106.1, 202.1)? Checks the coloured symbols against every
+        land, rock, mana creature and Treasure P controls, ignoring which ones were already tapped this turn."""
+        need = [frozenset(k) for k, v in getattr(c, 'pips_by', {}).items() for _ in range(v)] + list(getattr(c, 'hybrid', []))
+        if not need or s.fmt_free_colors: return True
+        ident = P.identity
+        srcs = [x for x in P.land_cols[:P.lands]] + [frozenset('*')] * max(0, P.lands - len(P.land_cols))
+        for p in P.bf:
+            if p.card and p.card.rock and not p.neutral and not (p.creature and p.sick and 'haste' not in s.kw(p)):
+                srcs += [p.card.produces or frozenset()] * max(1, min(p.card.rock, 2))
+        srcs += [frozenset('*')] * (P.treasure + (P.pool > s.mana_avail(P)))   # Treasure and ritual mana: any colour
+        srcs = [ident if '*' in x else (x & ident if x & ident else x) for x in srcs]
+        # bipartite matching of pips to sources (small, so simple augmenting paths)
+        owner = [-1] * len(srcs)
+        def aug(i, seen):
+            for j, x in enumerate(srcs):
+                if j in seen or not (need[i] & x): continue
+                seen.add(j)
+                if owner[j] < 0 or aug(owner[j], seen): owner[j] = i; return True
+            return False
+        return all(aug(i, set()) for i in range(len(need)))
 
     def pay(s, P, x):
         if P.pool >= x: P.pool -= x; return True
@@ -384,7 +448,7 @@ class Game:
         CT.on_leave(s, p)
         if p.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
         if p.is_cmd:
-            o.cmd_zone = True; o.cmd_tax += 2
+            o.cmd_home(p)
         elif p.card:
             if s.no_dies(): pass
             else: o.gy.append(p.card)
@@ -799,6 +863,7 @@ class Game:
     # ---------------------------------------------------------------- casting
     def can_cast_now(s, P, c, is_cmd=False):
         if is_cmd and s.stax_on(P, 'no_cmd_cast'): return False
+        if not s.colors_ok(P, c): return False
         if s.stax_on(P, 'one_spell') and P.spells_turn + P.stats['cre_cast_turn'] >= 1: return False
         if not c.is_creature and s.stax_on(P, 'one_noncreature') and P.noncre_turn >= 1: return False
         if s.stax_on(P, 'no_even') and c.cmc % 2 == 0 and c.cmc > 0: return False
@@ -809,6 +874,8 @@ class Game:
         if s.stax_on(S, 'abolisher') is None: pass
         abol = any(p.name == 'Grand Abolisher' for p in S.bf)
         if abol: return False
+        if getattr(c, 'uncounterable', False): return False   # "This spell can't be countered" (CR 101.2)
+        if any(p.card is not None and p.card.no_counter_static and not p.neutral for p in S.bf): return False
         thr = s.spell_threat(S, c, is_cmd)
         for Q in S.opps():
             if any(p.name == 'Teferi, Time Raveler' for x in s.players if x is not Q and x.alive for p in x.bf): continue
@@ -867,7 +934,8 @@ class Game:
         P.cur_x = 0
         if getattr(c, 'x_tokens', False):
             P.cur_x = max(0, s.avail(P) - (P.pilot.get('x_reserve', 0) if P.is_me else 0)); s.pay(P, P.cur_x)
-        if from_cmd: P.cmd_zone = False
+        if from_cmd == 2: P.cmd2_zone = False; P.cmd2_tax += 2
+        elif from_cmd: P.cmd_zone = False; P.cmd_tax += 2
         elif from_gy: P.gy.remove(c)
         else: P.hand.remove(c)
         if c.is_creature: P.stats['cre_cast_turn'] += 1
@@ -876,7 +944,8 @@ class Game:
         P.stats['spells'] += 1
         s.spell_triggers(P, c)
         if s.try_counter(P, c, from_cmd):
-            if from_cmd: P.cmd_zone = True; P.cmd_tax += 2
+            if from_cmd == 2: P.cmd2_zone = True
+            elif from_cmd: P.cmd_zone = True
             else: P.gy.append(c)
             return True
         s.resolve(P, c, from_cmd)
@@ -932,10 +1001,14 @@ class Game:
                 if tgt is None: P.gy.append(c); return
                 s.attach(P, c, tgt); P.bf.append(Perm(P, c)); P.bf[-1].creature = False
                 return
-            p = Perm(P, c, is_cmd=is_cmd)
+            p = Perm(P, c, is_cmd=bool(is_cmd)); p.cmd_slot = 2 if is_cmd == 2 else 1
             if c.is_creature and s.stax_on(P, 'opp_enter_tapped'): p.tapped = True
             if 'haste' in c.kw: p.sick = False
             P.bf.append(p)
+            if c.is_planeswalker:   # enters with its printed loyalty (CR 306.5b); the counters engine may adjust it
+                p.walker = True; p.loyalty = int(getattr(c, 'loyalty_base', 0) or 3); p.acted = -1
+            if c.is_legendary:   # legend rule (CR 704.5j): keep the new one
+                for q in [q for q in P.bf if q is not p and q.name == p.name and q.card is not None]: s.kill(q, 'sba', sac=True)
             CT.on_enter(s, P, p, c)
             if c.is_creature and getattr(c, 'prep_card', None) and c.prep_enter: p.prepared = True
             if c.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
@@ -990,7 +1063,7 @@ class Game:
         n = c.ramp_lands
         if c.name in ('Cultivate', "Kodama's Reach"): n = 1
         for _ in range(n):
-            P.lands += 1; s.landfall(P)
+            P.lands += 1; P.land_cols.append(frozenset('*')); s.landfall(P)
         if c.name in ('Cultivate', "Kodama's Reach"): P.extra_land_cards = getattr(P, 'extra_land_cards', 0) + 1
 
     def spell_effect(s, P, c, copy=False):
@@ -1129,6 +1202,7 @@ class Game:
         if c.name in BITE and not P.creatures(): return False
         t = target or s.pick_removal_target(P, c, rem)
         if t is None: return False
+        if not s.pay_ward(P, t, c): return True   # countered by ward: the spell is spent
         P.stats['removal_used'] += 1
         if t.owner.is_me: t.owner.stats['removed_' + t.name] += 1; t.owner.stats['removal_taken'] += 1
         if P.is_me: P.stats['my_removal_on_' + t.name] += 1
@@ -1137,18 +1211,34 @@ class Game:
         if t.owner.is_me and s.protect_response(t.owner, single=True): return True
         if how == 'bounce':
             o = t.owner; o.bf.remove(t)
-            if t.is_cmd: o.cmd_zone = True
+            if t.is_cmd: o.cmd_home(t)
             elif t.card: o.hand.append(t.card)
         elif how == 'neutralize':
             t.neutral = True
         elif how == 'exile':
             o = t.owner; o.bf.remove(t)
-            if t.is_cmd: o.cmd_zone = True; o.cmd_tax += 2
+            if t.is_cmd: o.cmd_home(t)
         else:
             s.kill(t, 'destroy')
         if c.name in ('Pongify', 'Rapid Hybridization'): s.make_tokens(t.owner, 1, 3, 3, set())
         if c.name == 'Feed the Swarm' and t.card: s.lose_life(P, t.card.cmc)
         return True
+
+    def pay_ward(s, P, t, src=None):
+        """Ward (CR 702.21a): targeting an opponent's ward permanent is countered unless the cost is paid."""
+        w = getattr(t.card, 'ward', None) if t.card is not None else None
+        if not w or t.owner is P: return True
+        kind, n = w
+        if kind == 'mana' and s.avail(P) >= n: s.pay(P, n); return True
+        if kind == 'life' and P.life > n + 5: s.lose_life(P, n); return True
+        if kind == 'other' and P.hand: P.gy.append(P.hand.pop(0)); return True
+        s.log(f'{P.label} {src.name if src else "ability"} countered by ward on {t.name}'); P.stats['ward_countered'] += 1
+        return False
+
+    def ward_ok(s, P, p):
+        w = getattr(p.card, 'ward', None) if p.card is not None else None
+        if not w or p.owner is P: return True
+        return (w[0] == 'mana' and s.avail(P) >= w[1]) or (w[0] == 'life' and P.life > w[1] + 5) or (w[0] == 'other' and len(P.hand) > 0)
 
     def pick_removal_target(s, P, c, rem, only_from=None):
         best = None; bv = 2.0
@@ -1163,6 +1253,7 @@ class Game:
                 if k == 'creature_ench' and not (p.creature or p.is_ench()): continue
                 if p.card and p.card.is_land: continue
                 if not s.targetable(p, P, c): continue
+                if not s.ward_ok(P, p): continue
                 if rem.get('how') in ('damage', 'minus') and s.tough(p) > rem.get('amt', 99) and not (c.name in BITE): continue
                 if c.name in BITE and not any(s.has_dt(x) or s.power(x) >= s.tough(p) for x in P.creatures()): continue
                 mv = rem.get('mv')
@@ -1205,13 +1296,13 @@ class Game:
                 o = p.owner
                 if p in o.bf:
                     o.bf.remove(p)
-                    if p.is_cmd: o.cmd_zone = True
+                    if p.is_cmd: o.cmd_home(p)
                     elif p.card: o.hand.append(p.card)
             elif 'exile all' in c.oracle:
                 o = p.owner
                 if p in o.bf:
                     o.bf.remove(p)
-                    if p.is_cmd: o.cmd_zone = True; o.cmd_tax += 2
+                    if p.is_cmd: o.cmd_home(p)
             else:
                 s.kill(p, 'destroy' if not w.get('minus') else 'sac', sac=bool(w.get('minus')))
         if c.name == 'Martial Coup': s.make_tokens(P, 5, 1, 1, set())
@@ -1298,7 +1389,7 @@ class Game:
                                 if tg[0].name in [p.name for p in P.bf]:
                                     if x.removal.get('how') == 'bounce':
                                         P.bf.remove(tg[0]); (P.hand.append(tg[0].card) if tg[0].card and not tg[0].is_cmd else None)
-                                        if tg[0].is_cmd: P.cmd_zone = True
+                                        if tg[0].is_cmd: P.cmd_home(tg[0])
                                     else: s.kill(tg[0], 'destroy')
                                 broken = True; break
                     if broken: break
@@ -1327,10 +1418,16 @@ class Game:
         return out
 
     def assign_blocks(s, D, attackers, A, simulate=False):
+        """Defender's blocks: {attacker: [blockers]}. Each blocker blocks one attacker, an attacker may get several
+        (CR 509.1a). Menace needs two or more blockers (702.111b). Gang blocks are used on big attackers no single
+        blocker can stop."""
         incoming = sum(s.power(a) * (2 if 'double strike' in s.kw(a) else 1) for a in attackers)
         infect = sum(s.power(a) for a in attackers if a.infect_turn)
         must_chump = incoming >= D.life * 0.7 or D.poison + infect >= 10
         used = set(); blocks = {}
+        def kills_it(bs, a):   # do these blockers together kill attacker a (before it kills them, ignoring order)?
+            if 'indestructible' in s.kw(a): return False
+            return any(s.has_dt(b) and s.power(b) >= 1 for b in bs) or sum(s.power(b) for b in bs) >= s.tough(a) - 0
         for a in sorted(attackers, key=lambda a: -s.power(a)):
             cands = s.blockers_for(D, a, used)
             if not cands: continue
@@ -1340,6 +1437,8 @@ class Game:
                 bp, bt = s.power(b), s.tough(b); bdt = s.has_dt(b)
                 kills = (bdt and bp >= 1) or bp >= at
                 dies = (adt and ap >= 1) or ap >= bt
+                if 'first strike' in s.kw(a) and 'first strike' not in s.kw(b) and 'double strike' not in s.kw(b) and dies: kills = False
+                if ('first strike' in s.kw(b) or 'double strike' in s.kw(b)) and not ({'first strike', 'double strike'} & s.kw(a)) and kills: dies = False
                 if 'indestructible' in s.kw(b): dies = False
                 if 'indestructible' in s.kw(a): kills = False
                 sc = 0
@@ -1351,8 +1450,19 @@ class Game:
                 if b.name == 'Hornet Nest': sc = 8
                 if b.is_cmd and dies: sc -= 6
                 if sc > bscore: best, bscore = b, sc
+            menace = 'menace' in s.kw(a)
+            if menace:   # needs two blockers: pair the best with the least valuable other candidate
+                rest = sorted([b for b in cands if b is not best], key=lambda b: (s.value(D, b), s.power(b)))
+                if best is not None and rest and (bscore > 0 and (kills_it([best, rest[0]], a) or must_chump)):
+                    blocks[a] = [best, rest[0]]; used |= {best, rest[0]}
+                continue
             if best is not None and bscore > 0:
-                blocks[a] = best; used.add(best)
+                blocks[a] = [best]; used.add(best); continue
+            # gang block a big attacker that no single blocker handles, if it can only kill one of them
+            if (ap >= 4 or must_chump) and len(cands) >= 2 and not adt:
+                pair = sorted(cands, key=lambda b: -s.power(b))[:2]
+                if kills_it(pair, a) and ap < sum(s.tough(b) for b in pair) and all(not (D.is_me and b.name in s.eng(D)) for b in pair):
+                    blocks[a] = pair; used |= set(pair)
         return blocks
 
     def evaluate_attack(s, A, D, attackers):
@@ -1361,10 +1471,14 @@ class Game:
         for a in attackers:
             ap = s.power(a) * (2 if 'double strike' in s.kw(a) else 1)
             if a in blocks:
-                b = blocks[a]; bp = s.power(b); bdt = s.has_dt(b)
-                if (bdt and bp >= 1) or bp >= s.tough(a): losses += s.value(A, a)
-                if s.has_dt(a) or ap >= s.tough(b): kills += s.value(A, b)
-                if 'trample' in s.kw(a): dmg += max(0, ap - (1 if s.has_dt(a) else s.tough(b)))
+                bs = blocks[a]
+                if any(s.has_dt(b) and s.power(b) >= 1 for b in bs) or sum(s.power(b) for b in bs) >= s.tough(a): losses += s.value(A, a)
+                left = ap
+                for b in sorted(bs, key=lambda b: s.tough(b)):
+                    need = 1 if s.has_dt(a) else s.tough(b)
+                    if left >= need: kills += s.value(A, b); left -= need
+                    else: left = 0
+                if 'trample' in s.kw(a): dmg += max(0, left)
             else:
                 if a.infect_turn: poison += ap
                 else: dmg += ap
@@ -1402,7 +1516,8 @@ class Game:
             for _ in range(2):
                 dmg, poison, losses, kills, blocks = s.evaluate_attack(A, D, atk)
                 # drop attackers that die for nothing (unless deathtouch: trading is the point for me)
-                bad = [a for a, b in blocks.items() if not (s.has_dt(a) or s.power(a) >= s.tough(b)) and ((s.has_dt(b) and s.power(b) >= 1) or s.power(b) >= s.tough(a))]
+                bad = [a for a, bs in blocks.items() if not (s.has_dt(a) or any(s.power(a) >= s.tough(b) for b in bs))
+                       and (any(s.has_dt(b) and s.power(b) >= 1 for b in bs) or sum(s.power(b) for b in bs) >= s.tough(a))]
                 if not bad: break
                 atk = [a for a in atk if a not in bad]
             if not atk: continue
@@ -1410,7 +1525,7 @@ class Game:
             lethal = dmg >= D.life or D.poison + poison >= 10
             score = (dmg / max(5, D.life)) * 10 + poison * 1.2 + kills * 0.5 - losses * 0.6 + (50 if lethal else 0)
             if A.cmd_card.name == ME and A.cmd_on_bf():
-                dt_deaths = sum(1 for a, b in blocks.items() if s.has_dt(a) and ((s.has_dt(b) and s.power(b) >= 1) or s.power(b) >= s.tough(a)))
+                dt_deaths = sum(1 for a, bs in blocks.items() if s.has_dt(a) and (any(s.has_dt(b) and s.power(b) >= 1 for b in bs) or sum(s.power(b) for b in bs) >= s.tough(a)))
                 score += dt_deaths * 1.5 * len(A.opps()) + losses * 0.5
             score += 0.15 * s.threat(A, D)
             if A.is_me and D.cmd_on_bf() and False: pass
@@ -1423,7 +1538,29 @@ class Game:
             if pressure >= A.life * 0.5 and len(atk) >= 3:
                 atk = sorted(atk, key=lambda p: -s.power(p))[:max(1, len(atk) - 2)]
         if tax: s.pay(A, tax * len(atk))
+        A.walker_plan = s.plan_walker_attacks(A, D, atk)
+        for _, _, grp in A.walker_plan:
+            atk = [a for a in atk if a not in grp]
         return D, atk
+
+    def plan_walker_attacks(s, A, D, atk):
+        """Send part of the attack at opponents' planeswalkers (CR 508.1b) when the main attack isn't lethal.
+        Returns [(controller, walker, attackers)]."""
+        ws = [w for Q in A.opps() for w in Q.bf if getattr(w, 'walker', False) and w.loyalty > 0 and not w.neutral]
+        if not ws or not atk: return []
+        dmg, poison, *_ = s.evaluate_attack(A, D, atk)
+        if dmg >= D.life or D.poison + poison >= 10: return []
+        plan = []; pool = sorted(atk, key=lambda a: (not ({'flying', 'menace', 'trample'} & s.kw(a)), -s.power(a)))
+        for w in sorted(ws, key=lambda w: -(s.value(A, w) + w.loyalty)):
+            Q = w.owner
+            blockers = len([b for b in Q.creatures() if not b.tapped and not b.neutral])
+            grp = []; tot = 0
+            for a in list(pool):
+                if tot >= w.loyalty + (2 if blockers and not ({'flying'} & s.kw(a)) else 0): break
+                grp.append(a); tot += s.power(a)
+            if tot >= w.loyalty and len(grp) <= max(1, len(pool) // 2):
+                plan.append((Q, w, grp)); pool = [a for a in pool if a not in grp]
+        return plan
 
     def combat(s, A):
         D, atk = s.plan_attack(A)
@@ -1473,38 +1610,82 @@ class Game:
                 for a in atk:
                     if a in A.bf:
                         A.bf.remove(a)
-                        if a.is_cmd: A.cmd_zone = True
+                        if a.is_cmd: A.cmd_home(a)
                         elif a.card: A.hand.append(a.card)
                 return
-        blocks = s.assign_blocks(D, atk, A)
-        dead = []
-        for a in atk:
-            if a not in A.bf: continue
-            ap = s.power(a); ds = 'double strike' in s.kw(a)
-            if a in blocks:
-                b = blocks[a]
-                bp = s.power(b); adt = s.has_dt(a); bdt = s.has_dt(b)
-                b_dies = (adt and ap >= 1) or ap >= s.tough(b)
-                a_dies = (bdt and bp >= 1) or bp >= s.tough(a)
-                if ds and b_dies: a_dies = False
-                if CT.on(A) and 'first strike' in s.kw(a) and b_dies and 'first strike' not in s.kw(b): a_dies = False
-                if b.name == 'Hornet Nest': s.make_tokens(D, ap, 1, 1, {'flying', 'deathtouch'}, name='Insect')
-                if 'trample' in s.kw(a):
-                    over = ap * (2 if ds else 1) - (1 if adt else s.tough(b))
-                    if over > 0: s.combat_hit(A, D, a, over)
-                if b_dies: dead.append((b, 'deathtouch' if adt else 'damage'))
-                if a_dies: dead.append((a, 'deathtouch' if bdt else 'damage'))
-                if 'lifelink' in s.kw(a): s.gain(A, ap)
-                if 'lifelink' in s.kw(b): s.gain(D, bp)
-            else:
-                s.combat_hit(A, D, a, ap * (2 if ds else 1))
-        for p, why in dead:
-            if p in p.owner.bf:
-                if p.owner.is_me and p.owner is D: D.stats['my_blockers_died'] += 1
-                s.kill(p, why)
-                if p.owner is not A: A.stats['combat_kills'] += 1
-                else: D.stats['combat_kills'] += 1
+        groups = [(D, None, atk)] + [(Q, w, [a for a in grp if a in A.bf]) for Q, w, grp in getattr(A, 'walker_plan', [])]
+        for Dg, tgt, grp in groups:
+            if not grp or not Dg.alive or s.over: continue
+            if tgt is not None: s.log(f'{A.label} attacks {Dg.label}\'s {tgt.name} (loyalty {tgt.loyalty}) with {len(grp)}')
+            s.resolve_combat(A, Dg, tgt, grp, s.assign_blocks(Dg, grp, A))
         s.check_deaths(A, 'combat')
+
+    def resolve_combat(s, A, D, tgt, atk, blocks):
+        """Combat damage (CR 510): a first-strike step when any attacker or blocker has first or double strike
+        (510.4, 702.7b), then the regular step for the rest plus double strikers. Attackers assign lethal damage to
+        their blockers in order, the rest tramples over (702.19); a blocked attacker whose blockers are gone deals no
+        damage unless it has trample (510.1c). tgt is a planeswalker being attacked, else the player."""
+        dmg = collections.Counter(); dth = set(); gone = set()
+        blocked_by = {b: a for a, bs in blocks.items() for b in bs}
+        fighters = list(atk) + list(blocked_by)
+        fs = lambda x: bool({'first strike', 'double strike'} & s.kw(x))
+        steps = [1, 2] if any(fs(x) for x in fighters) else [0]
+        first = set()
+        def alive(x): return x in x.owner.bf and x not in gone
+        def deals(x, st):
+            if st == 0: return True
+            if st == 1: return fs(x)
+            return 'double strike' in s.kw(x) or x not in first
+        def hit(a, n):
+            if n <= 0: return
+            if tgt is None: s.combat_hit(A, D, a, n)
+            elif tgt in D.bf:
+                tgt.loyalty -= n; A.stats['walker_dmg'] += n
+                if 'lifelink' in s.kw(a): s.gain(A, n)
+                if tgt.loyalty <= 0: s.log(f'{A.label} kills {D.label}\'s {tgt.name}'); s.kill(tgt, 'damage')
+            else: s.combat_hit(A, D, a, n)   # walker already gone: damage goes nowhere in the rules; treat as player hit
+        for st in steps:
+            if s.over: return
+            for a in atk:
+                if not alive(a) or not deals(a, st): continue
+                if st == 1: first.add(a)
+                ap = s.power(a)
+                if ap <= 0: continue
+                if a in blocks:
+                    bs = [b for b in blocks[a] if alive(b)]
+                    if not bs:
+                        if 'trample' in s.kw(a): hit(a, ap)
+                        continue
+                    left = ap; adt = s.has_dt(a)
+                    for i, b in enumerate(bs):
+                        lethal = 1 if adt else max(0, s.tough(b) - dmg[b])
+                        give = left if (i == len(bs) - 1 and 'trample' not in s.kw(a)) else min(left, lethal)
+                        if give > 0:
+                            dmg[b] += give; left -= give
+                            if adt: dth.add(b)
+                            if b.name == 'Hornet Nest': s.make_tokens(D, give, 1, 1, {'flying', 'deathtouch'}, name='Insect')
+                    if 'lifelink' in s.kw(a): s.gain(A, ap - left if 'trample' in s.kw(a) else ap)
+                    if left > 0 and 'trample' in s.kw(a): hit(a, left)
+                else:
+                    hit(a, ap)
+            for b, a in blocked_by.items():
+                if not alive(b) or not deals(b, st): continue
+                if st == 1: first.add(b)
+                bp = s.power(b)
+                if bp <= 0 or not alive(a): continue
+                dmg[a] += bp
+                if s.has_dt(b): dth.add(a)
+                if 'lifelink' in s.kw(b): s.gain(D, bp)
+            # state-based actions after each damage step (704.5g, 704.5h)
+            for x in fighters:
+                if not alive(x): continue
+                if (dmg[x] >= s.tough(x) or (x in dth and dmg[x] > 0)) and 'indestructible' not in s.kw(x):
+                    gone.add(x)
+                    if x.owner.is_me and x.owner is D: D.stats['my_blockers_died'] += 1
+                    s.kill(x, 'deathtouch' if x in dth else 'damage')
+                    if x.owner is not A: A.stats['combat_kills'] += 1
+                    else: D.stats['combat_kills'] += 1
+            s.check_deaths(A, 'combat')
 
     def combat_hit(s, A, D, a, n):
         if n <= 0 or not D.alive: return
@@ -1515,7 +1696,7 @@ class Game:
             if n <= 0: return
             s.lose_life(D, n, A, 'combat')
             CT.on_hit(s, A, D, a)
-            if a.is_cmd: D.cmd_dmg[A.label] += n
+            if a.is_cmd: D.cmd_dmg[(A.label, a.name)] += n
             if 'lifelink' in s.kw(a): s.gain(A, n)
         if a.name == 'Rankle, Master of Pranks' and not a.rankled:
             a.rankled = True; s.rankle(A, a)
@@ -1567,9 +1748,12 @@ class Game:
         for _ in range(drops):
             l = next((c for c in P.hand if c.is_land), None)
             if l is None and getattr(P, 'extra_land_cards', 0) > 0:
-                P.extra_land_cards -= 1; P.lands += 1; P.pool += 1; s.landfall(P); continue
+                P.extra_land_cards -= 1; P.lands += 1; P.land_cols.append(frozenset('*')); P.pool += 1; s.landfall(P); continue
             if l is None: break
-            P.hand.remove(l); P.lands += 1; P.pool += l.mana_land
+            P.hand.remove(l); before = P.lands; P.lands += 1
+            P.land_cols.append(l.produces or frozenset())
+            if s.land_untapped(P, l, before): P.pool += l.mana_land   # lands that enter tapped make no mana this turn (CR 614.1c)
+            if l.fetch_life: s.lose_life(P, l.fetch_life)
             if l.name in ('Phyrexian Tower',): P.bf.append(Perm(P, l))
             if l.name == 'Bojuka Bog' and P.opps():
                 v = max(P.opps(), key=lambda q: sum(1 for x in q.gy if x.is_creature)); P.pool -= 1
@@ -1583,6 +1767,7 @@ class Game:
         if s.over or not P.alive: return
         if s.check_combo(P): return
         CT.precombat(s, P)
+        s.walker_tick(P)
         if s.over or not P.alive: return
         s.combat(P)
         if s.over or not P.alive: return
@@ -1594,6 +1779,12 @@ class Game:
         for q in s.players:
             for p in q.bf: p.pump = 0; p.pumpt = 0; p.tmpkw = set(); p.infect_turn = False
         s.check_deaths(None, 'life')
+
+    def walker_tick(s, P):
+        """Planeswalkers without a detailed model use a plus ability each turn (+1 loyalty)."""
+        for w in P.bf:
+            if getattr(w, 'walker', False) and getattr(w, 'acted', -1) != s.round and not w.neutral:
+                w.acted = s.round; w.loyalty += 1
 
     def each_upkeep(s, P):
         """'At the beginning of each upkeep' triggers for all players (incl. my Ophiomancer + instant sac)."""
@@ -1630,7 +1821,7 @@ class Game:
         # aristocrats: sacrifice tokens to payoffs (non-me players with a free outlet)
         if not P.is_me: s.ai_sac(P)
         if any(p.name == 'Song of Creation' and not p.neutral for p in P.bf): P.gy += P.hand; P.hand = []
-        while len(P.hand) > 8: P.gy.append(P.hand.pop(0))
+        while len(P.hand) > 7: P.gy.append(P.hand.pop(0))   # maximum hand size seven (CR 402.2, 514.1)
 
     def ai_sac(s, P):
         outlets = [p for p in P.bf if p.card and p.card.free_outlet and not p.neutral]
@@ -1654,6 +1845,8 @@ class Game:
             opts = []
             if P.cmd_zone and s.can_cast_now(P, P.cmd_card, True):
                 opts.append((95 if not post else 80, P.cmd_card, True))
+            if P.cmd2_zone and s.can_cast_now(P, P.cmd2, 2):
+                opts.append((94 if not post else 79, P.cmd2, 2))
             for c in P.hand:
                 if c.is_land or c.counter or c.fog or c.protect: continue
                 if not s.can_cast_now(P, c): continue
@@ -1669,11 +1862,11 @@ class Game:
             opts.sort(key=lambda x: -x[0])
             done = False
             for sc, c, src in opts:
-                cost = s.cost(P, c, src is True) + (3 if src == 'gy' and P.has('Underworld Breach') else 0)
+                cost = s.cost(P, c, src if src in (True, 2) else False) + (3 if src == 'gy' and P.has('Underworld Breach') else 0)
                 budget = s.avail(P) - (reserve if sc < 100 and not c.ritual else 0)
                 if cost <= budget:
                     if isinstance(src, tuple): s.cast_prep(P, src[1])
-                    else: s.cast(P, c, from_cmd=(src is True), from_gy=(src == 'gy'))
+                    else: s.cast(P, c, from_cmd=(src if src in (True, 2) else False), from_gy=(src == 'gy'))
                     done = True
                     if s.check_combo(P): return
                     break
@@ -1960,6 +2153,8 @@ class Game:
             if s.over or not P.alive: return
             opts = []
             if P.cmd_zone and s.can_cast_now(P, P.cmd_card, True) and turn >= 2: opts.append((96, P.cmd_card, True))
+            if P.cmd2_zone and s.can_cast_now(P, P.cmd2, 2) and turn >= 2:
+                sc2 = (P.pilot.get('priorities') or {}).get(P.cmd2.name, 90); opts.append((sc2, P.cmd2, 2))
             for c in P.hand:
                 if c.is_land or not s.can_cast_now(P, c): continue
                 sc = s.my_score(P, c, turn, post)
@@ -1970,7 +2165,7 @@ class Game:
             opts.sort(key=lambda x: -x[0])
             done = False
             for sc, c, src in opts:
-                cost = s.cost(P, c, src is True)
+                cost = s.cost(P, c, src if src in (True, 2) else False)
                 res = hold_hi if sc < 100 else 0
                 if c.removal and c.removal.get('instant'): pass
                 if cost <= s.avail(P) - res:
@@ -1985,7 +2180,7 @@ class Game:
                             s.check_deaths(P, 'drain')
                         done = True; break
                     if isinstance(src, tuple): s.cast_prep(P, src[1]); done = True; break
-                    s.cast(P, c, from_cmd=(src is True)); done = True; break
+                    s.cast(P, c, from_cmd=(src if src in (True, 2) else False)); done = True; break
             s.my_sac_phase(P)
             if not done: break
         # Varragoth boast tutor at end of main 2
@@ -2015,19 +2210,9 @@ class Game:
             if s.over: return
 
     def forced_attack(s, A, D, atk):
-        for p in atk: p.tapped = True
-        blocks = s.assign_blocks(D, atk, A)
-        dead = []
-        for a in atk:
-            ap = s.power(a)
-            if a in blocks:
-                b = blocks[a]
-                if 'trample' in s.kw(a): s.combat_hit(A, D, a, ap - 1)
-                dead.append(b)
-                if s.has_dt(b) or s.power(b) >= s.tough(a): dead.append(a)
-            else: s.combat_hit(A, D, a, ap)
-        for p in dead:
-            if p in p.owner.bf: s.kill(p, 'damage')
+        for p in atk:
+            if 'vigilance' not in s.kw(p): p.tapped = True
+        s.resolve_combat(A, D, None, atk, s.assign_blocks(D, atk, A))
         s.check_deaths(A, 'poison')
 
     # ---------------------------------------------------------------- game loop

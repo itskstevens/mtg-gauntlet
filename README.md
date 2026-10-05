@@ -51,6 +51,27 @@ python3 gauntlet.py report     serpent-society      # results/<deck>/<latest>/re
   A game that reaches `max_rounds` is a draw and counts as a loss for the series.
 - Fair share in a 4-player pod is 25% of games and about 16% of best-of-3 series.
 
+## Rules model (audited 2026-10-04)
+
+Checked against the Comprehensive Rules; `tests/test_rules.py` covers each item (`python3 -m pytest tests -q`).
+
+- Commander: 40 life (903.7), 21 combat damage **per commander** (903.10a, 702.124d), command zone returns (903.9a),
+  tax added **per cast** from the command zone (903.8), free first mulligan (103.5c), no draw skip in multiplayer.
+- Partner / "choose a Background" / friends forever pairs: the second card of a list starts in the command zone with its
+  own tax (903.6, 702.124). Detected automatically; a pilot can still name it with `background:`.
+- Lands that enter tapped make no mana the turn they're played (614.1c): shocks pay 2 life when the mana matters,
+  fast/slow/check/reveal/battlebond lands follow their conditions (check and reveal lands approximated). Fetches cost 1 life.
+- Coloured mana (106.1, 202.1): a spell is castable only if the player's lands, rocks, dorks and Treasures can produce its
+  coloured pips (hybrid = either colour). Sources already tapped this turn are not tracked.
+- Maximum hand size 7 (402.2, 514.1). Legend rule (704.5j). Ward on removal targets (702.21a). "Can't be countered".
+- Combat: first-strike and regular damage steps (510.4, 702.7b), double strike, menace (702.111b), several blockers on one
+  attacker (509.1a), ordered lethal damage assignment with trample and deathtouch (702.19), blocked attackers without
+  trample deal no damage once their blockers are gone (510.1c), lifelink, indestructible.
+- Planeswalkers enter with printed loyalty (306.5b) and can be attacked (508.1b); damage removes loyalty and 0 loyalty
+  kills them (704.5i). Walkers without a detailed model gain +1 loyalty a turn.
+- Known simplifications: one combat per turn, attackers go at one player plus any planeswalkers, no stack/priority
+  beyond counterspells, protection spells and fogs, no politics.
+
 ## Reading results
 
 - Noise: at 300 series per category, game win rates move about ±1.6 points between runs; at the default 50 about ±4. Treat differences under
