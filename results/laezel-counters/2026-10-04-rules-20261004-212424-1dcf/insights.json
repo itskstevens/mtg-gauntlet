@@ -1,0 +1,8 @@
+{
+ "all-tables-random-lgs-pods": [
+  "35.5% of games and 29.1% of series won across 1,800 random tables (fair share 25% / 16%), on the rules-audited engine (tapped lands, colours, first strike, menace, gang blocks, attacks on planeswalkers).",
+  "The bracket 4 edge is gone under the corrected rules: bracket 3 scores 36.7%, inside the ±1.3 noise. The Game Changers and the Heliod combo (54 kills) don't buy a measurable edge here.",
+  "You go out first 44.6% of the time. Opponents now attack your planeswalkers and gang-block your attackers, and Lae'zel is removed 2,980 times and countered 704 times in 4,386 games.",
+  "Worst rows: Lifegain (30.6%), Typal (30.9%) and Tokens / go-wide (31.7%). Best: Enchantress (41.4%), Artifacts (40.2%) and Reanimator (39.3%)."
+ ]
+}

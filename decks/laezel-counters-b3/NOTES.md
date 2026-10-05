@@ -8,5 +8,5 @@ Same list as `decks/laezel-counters` (bracket 4) with four swaps; the swap table
 - Ancient Tomb -> Plains
 - Heliod, Sun-Crowned -> Ajani's Pridemate (no Heliod + Walking Ballista infinite)
 
-Gauntlet 2026-10-04 (1,800 LGS tables): 38.3% games, 33.3% series (bracket 4: 40.3% / 36.2%).
+Gauntlet 2026-10-04 on the rules-audited engine (1,800 LGS tables): 36.7% games, 31.4% series (bracket 4: 35.5% / 29.1%).
 Report: results/laezel-counters/report-2026-10-04.html

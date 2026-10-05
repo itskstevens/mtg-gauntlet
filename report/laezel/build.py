@@ -6,7 +6,7 @@ from engine import cards as CD
 from PIL import Image
 IMGDIR = sys.argv[1]; OUT = sys.argv[2]
 IMAP = json.load(open(os.path.join(ROOT, 'decks/laezel-counters/card_images.json')))
-def rd(d): return os.path.join(ROOT, sorted(glob.glob(os.path.join(ROOT, 'results', d, '*lgs*')))[-1])
+def rd(d): return os.path.join(ROOT, sorted(glob.glob(os.path.join(ROOT, 'results', d, '*rules*')) or glob.glob(os.path.join(ROOT, 'results', d, '*lgs*')))[-1])
 S4 = json.load(open(rd('laezel-counters') + '/summary.json')); S3 = json.load(open(rd('laezel-counters-b3') + '/summary.json'))
 I4 = json.load(open(rd('laezel-counters') + '/insights.json')); I3 = json.load(open(rd('laezel-counters-b3') + '/insights.json'))
 def lst(d): return [l.strip().split(' ', 1) for l in open(os.path.join(ROOT, 'decks', d, 'list.txt')) if l.strip()]
@@ -161,9 +161,9 @@ for n in sorted(set(imp4) | set(imp3), key=lambda n: -(imp4.get(n, imp3.get(n))[
     impact_rows += f'<tr><td>{cn(n)}</td>{f(r4)}{f(r3)}</tr>'
 ins4 = ''.join(f'<li>{esc(x)}</li>' for x in I4['all-tables-random-lgs-pods'])
 ins3 = ''.join(f'<li>{esc(x)}</li>' for x in I3['all-tables-random-lgs-pods'])
-preds = [('Board wipes and control would be the problem', 'Missed', 'Control was an average row (41.7% B4). Teferi’s Protection, Flawless Maneuver and Unbreakable Formation blunt wipes, and Felidar Retreat rebuilds.'),
-         ('Weak to faster go-wide and aggro boards', 'Held', 'Tokens / go-wide (32.1%), Typal (34.9%) and Aggro (37.8%) are the bottom rows. You’re out first about 41% of the time in those pods.'),
-         ('Bracket 4 edge comes from the Game Changers and the combo', 'Held', 'B4 is 2.0 points ahead overall (noise ±1.3). 54 of its kills came from Heliod + Ballista.')]
+preds = [('Board wipes and control would be the problem', 'Missed', f'Control is close to the deck average ({g4["Control"]["game_win"]}% vs {a4["game_win"]}% at bracket 4). Teferi\u2019s Protection, Flawless Maneuver and Felidar Retreat cover wipes.'),
+         ('Weak to faster go-wide and aggro boards', 'Held', f'Tokens / go-wide ({g4["Tokens / go-wide"]["game_win"]}%), Typal ({g4["Typal"]["game_win"]}%) and Lifegain ({g4["Lifegain"]["game_win"]}%) are the bottom rows; you go out first {g4["Tokens / go-wide"]["first_out"]}% of the time against go-wide decks.'),
+         ('Bracket 4 edge from the Game Changers and the combo', 'Missed', f'On the rules-audited engine bracket 4 ({a4["game_win"]}%) and bracket 3 ({a3["game_win"]}%) are level within noise. Heliod + Ballista still closed 54 kills.')]
 pred_html = ''.join(f'<tr><td class="l">{esc(a)}</td><td><span class="pill {"w" if b == "Held" else "l"}">{b}</span></td><td class="l">{esc(c)}</td></tr>' for a, b, c in preds)
 
 SHORT = {'have': 'ready to use', 'shared': 'owned but in another deck', 'check': 'check your other decks', 'buy': 'to buy'}

@@ -5,7 +5,7 @@ Plan: go wide with creatures and tokens; Lae'zel adds +1 to every counter placem
 Felidar Retreat, Luminarch Aspirant, Ajani Steadfast and Basri Ket snowball. Win by a wide pumped alpha strike, or
 Heliod, Sun-Crowned + Walking Ballista (infinite damage).
 
-Gauntlet 2026-10-04 (1,800 LGS tables): 40.3% games, 36.2% series. Report: results/laezel-counters/report-2026-10-04.html
+Gauntlet 2026-10-04 on the rules-audited engine (1,800 LGS tables): 35.5% games, 29.1% series (first run before the audit: 40.3%). Report: results/laezel-counters/report-2026-10-04.html
 
 Engine support added 2026-10-04 (engine/counters.py) for what this list needed:
 - Background as a second commander (Guild Artisan) — not supported yet
