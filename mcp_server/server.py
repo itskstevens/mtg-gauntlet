@@ -18,7 +18,7 @@ can read the results from GitHub. Only one job runs at a time: a run already use
 Transport: stdio by default (works over `ssh homelab python mcp_server/server.py`).
 `--http PORT` serves streamable HTTP instead, for use behind a tunnel; put authentication in front of it.
 """
-import gzip, json, os, re, signal, subprocess, sys, time, uuid
+import base64, gzip, json, os, re, shutil, signal, subprocess, sys, time, uuid
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,6 +26,17 @@ JOBS = os.path.join(ROOT, 'mcp_server', 'jobs')
 PY = sys.executable
 MAX_SERIES = 1000
 NAME_RE = re.compile(r"^[A-Za-z0-9 ,.'’\-:/!&()]+$")   # card names; no shell is ever involved, this just rejects junk
+
+# print_proxies publishes finished sheets so a Claude chat can open them. The
+# PDF + page-1 preview are copied into PROXY_SERVE_DIR, which Caddy serves over
+# HTTPS at PROXY_PUBLIC_BASE (the /proxies/ route on mtg-cards.lab.kstevens.ca,
+# a sibling of the /images/ card-art route). Served names embed the first 12 hex
+# of the PDF's SHA-256, so they are unguessable and directory listing is off.
+PROXY_SERVE_DIR = os.environ.get('PROXY_SERVE_DIR', '/mnt/expansion/mtg-data/proxies')
+PROXY_PUBLIC_BASE = os.environ.get('PROXY_PUBLIC_BASE', 'https://mtg-cards.lab.kstevens.ca/proxies').rstrip('/')
+PROXY_PRUNE_DAYS = 30                   # drop served files older than this on each run
+PROXY_EMBED_MAX_BYTES = 5 * 1024 * 1024  # embed the PDF in the result only when it is this small
+PROXY_PREVIEW_WIDTH = 1200              # downscale the inline preview to this many px wide
 
 
 # ---------------------------------------------------------------- helpers
@@ -272,6 +283,7 @@ def worker(jid):
 
 # ---------------------------------------------------------------- MCP tools
 from mcp.server.fastmcp import FastMCP
+from mcp.types import BlobResourceContents, CallToolResult, EmbeddedResource, ImageContent, TextContent
 mcp = FastMCP('mtg-gauntlet')
 
 @mcp.tool()
@@ -781,8 +793,8 @@ def cancel_job(job_id: str) -> dict:
 def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: int = 0,
                   exclude_basics: bool = False, only_missing: bool = False,
                   dfc: str = 'front', preview: bool = False, calibration: bool = False,
-                  no_network: bool = False) -> dict:
-    """Build a print-ready proxy sheet on this machine and return its path.
+                  no_network: bool = False) -> CallToolResult:
+    """Build a print-ready proxy sheet on this machine and hand it back to the chat.
 
     Give either a deck folder under decks/ (printed in decklist order, commander
     first) or a folder of card images. The layout is the mtgprint one that is
@@ -792,10 +804,87 @@ def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: i
     exclude_basics drops the basic lands, only_missing skips what
     collection/cards.tsv already covers, dfc='both' prints the back of a
     double-faced card, calibration adds a leading page with the cut-size box and
-    two 100 mm rulers to print and measure once on a new printer.
+    two 100 mm rulers to print and measure once on a new printer. A page-1
+    preview is always rendered, so the `preview` argument is accepted but ignored.
 
-    The PDF is written here, not on the machine you are calling from, so the
-    result includes an scp line to pull it over.
+    The result is made to open from the chat on a laptop or phone:
+      - the page-1 preview is returned inline as a PNG (downscaled to ~1200 px);
+      - `url` is an HTTPS link to open or download the PDF, and `preview_url`
+        links the preview PNG. Both are served by Caddy from PROXY_SERVE_DIR
+        under an unguessable name (deck + the first 12 hex of the SHA-256), with
+        directory listing off;
+      - `path` and `fetch` (an scp line) still point at the copy on the homelab;
+      - a small PDF (under 5 MB) is also attached as an embedded resource; most
+        decks are larger, so the link is the main route.
+    Served files older than 30 days are pruned on each run. Same input, same bytes.
+    """
+    result = _build_proxy_sheet(deck, images_dir, out, copies, exclude_basics,
+                                only_missing, dfc, calibration, no_network)
+    if 'error' in result:
+        return CallToolResult(isError=True, structuredContent=result,
+                              content=[TextContent(type='text', text=result['error'])])
+
+    served_png = result.pop('_served_png')
+    summary = (f"{result['cards']} cards on {result['card_pages']} page(s)"
+               + (' + calibration page' if result['pages'] > result['card_pages'] else '')
+               + f", {result['size_mb']} MB\n"
+               f"open / download: {result['url']}\n"
+               f"preview image:   {result['preview_url']}\n"
+               f"on the homelab:  {result['path']}\n"
+               f"pull with scp:   {result['fetch']}\n"
+               f"sha256: {result['sha256']}\n"
+               f"{result['print']}")
+    content = [TextContent(type='text', text=summary)]
+    with open(served_png, 'rb') as f:
+        content.append(ImageContent(type='image', mimeType='image/png',
+                                    data=base64.b64encode(f.read()).decode()))
+    if result['embed']:
+        with open(result['path'], 'rb') as f:
+            content.append(EmbeddedResource(type='resource', resource=BlobResourceContents(
+                uri=result['url'], mimeType='application/pdf',
+                blob=base64.b64encode(f.read()).decode())))
+    return CallToolResult(content=content, structuredContent=result)
+
+
+def _proxy_slug(name):
+    """A filesystem- and URL-safe stem for a deck or image-folder name."""
+    return re.sub(r'[^A-Za-z0-9._-]+', '-', name).strip('-') or 'proxies'
+
+
+def _downscale_png(png_bytes, width):
+    """A PNG no wider than `width` px (returned unchanged if it is already smaller)."""
+    import io
+    from PIL import Image
+    im = Image.open(io.BytesIO(png_bytes))
+    if im.width > width:
+        im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
+    buf = io.BytesIO()
+    im.save(buf, 'PNG', optimize=True)
+    return buf.getvalue()
+
+
+def _prune_served(folder, max_age_days):
+    """Delete served files older than max_age_days. Returns how many were removed."""
+    cutoff = time.time() - max_age_days * 86400
+    removed = 0
+    for name in os.listdir(folder):
+        p = os.path.join(folder, name)
+        try:
+            if os.path.isfile(p) and os.path.getmtime(p) < cutoff:
+                os.remove(p)
+                removed += 1
+        except OSError:
+            pass
+    return removed
+
+
+def _build_proxy_sheet(deck='', images_dir='', out='', copies=0, exclude_basics=False,
+                       only_missing=False, dfc='front', calibration=False, no_network=False):
+    """Build the sheet, publish it to the served directory, and return its fields.
+
+    Returns a JSON-safe dict of structured fields (plus a private `_served_png`
+    path for the content layer), or `{'error': ...}`. Kept free of MCP content
+    types so it is easy to unit-test.
     """
     if bool(deck) == bool(images_dir):
         return {'error': 'give exactly one of deck or images_dir'}
@@ -814,7 +903,7 @@ def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: i
     if exclude_basics: argv += ['--exclude-basics']
     if only_missing: argv += ['--only-missing']
     if dfc == 'both': argv += ['--dfc', 'both']
-    if preview: argv += ['--preview']
+    argv += ['--preview']                       # always render page 1, whatever the caller asked
     if calibration: argv += ['--calibration']
     if no_network: argv += ['--no-network']
 
@@ -828,10 +917,33 @@ def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: i
         if ROOT in sys.path: sys.path.remove(ROOT)
     if not isinstance(summary, dict):
         return {'error': str(summary)}
+
     path = os.path.abspath(summary['path'])
+    name = deck or os.path.basename(os.path.normpath(images_dir))
+    stem = f"{_proxy_slug(name)}-{summary['sha256'][:12]}"
+    preview_png = _downscale_png(open(summary['preview'], 'rb').read(), PROXY_PREVIEW_WIDTH)
+
+    os.makedirs(PROXY_SERVE_DIR, exist_ok=True)
+    pruned = _prune_served(PROXY_SERVE_DIR, PROXY_PRUNE_DAYS)
+    served_pdf = os.path.join(PROXY_SERVE_DIR, f'{stem}.pdf')
+    served_png = os.path.join(PROXY_SERVE_DIR, f'{stem}-p1.png')
+    shutil.copyfile(path, served_pdf)
+    with open(served_png, 'wb') as f:
+        f.write(preview_png)
+
+    size = os.path.getsize(path)
     summary['path'] = path
+    summary['preview'] = os.path.abspath(summary['preview'])
     summary['fetch'] = f'scp homelab:{path} .'
     summary['print'] = 'landscape, 100% / actual size, cut on the grey guides (63.2 x 88.2 mm cards)'
+    summary['url'] = f'{PROXY_PUBLIC_BASE}/{stem}.pdf'
+    summary['preview_url'] = f'{PROXY_PUBLIC_BASE}/{stem}-p1.png'
+    summary['served_name'] = stem
+    summary['size_bytes'] = size
+    summary['size_mb'] = round(size / 1048576, 2)
+    summary['embed'] = size < PROXY_EMBED_MAX_BYTES
+    summary['pruned'] = pruned
+    summary['_served_png'] = served_png
     return summary
 
 

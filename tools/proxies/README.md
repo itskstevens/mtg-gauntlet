@@ -53,6 +53,15 @@ correctly here. If you would rather have true proportions, print the cards a
 little smaller and ignore the guides — but then the sheets do not stack against
 the reference ones.
 
+## From a Claude chat
+
+The `print_proxies` MCP tool (`mcp_server/server.py`) builds the same sheet on the
+homelab and hands it back so you can open it from the chat: the page-1 preview comes
+back inline as a PNG, and `url` / `preview_url` are HTTPS links that Caddy serves from
+`/mnt/expansion/mtg-data/proxies` under an unguessable `<deck>-<sha12>` name. The
+homelab path and an `scp` line are still returned, and a small PDF (under 5 MB) is also
+attached as an embedded resource. See `mcp_server/README.md`.
+
 ## Options
 
 | Flag | What it does |

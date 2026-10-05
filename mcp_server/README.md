@@ -16,11 +16,23 @@ It exposes a handful of narrow tools, never a general shell:
 | `compare_runs(deck, limit=8)` | Per-category win rate for a deck's stored runs, oldest to newest, with the biggest gains and regressions. Answers "did that change help?" - one win rate hides the categories a deck edit helped and the ones it hurt. Needs two or more stored runs. |
 | `list_jobs()` | Recent jobs |
 | `cancel_job(job_id)` | Stops a job. Nothing is committed. |
-| `print_proxies(deck="", images_dir="", out="", copies=0, exclude_basics=False, only_missing=False, dfc="front", preview=False, calibration=False, no_network=False)` | Builds a print-ready proxy sheet here on the homelab, in the layout that is known to print at the right size (landscape, 8 cards a page, cut on the guides for 63.2 × 88.2 mm). Give either a deck folder under `decks/` or a folder of card images. Returns the SHA-256, the page and card counts, the absolute path and an `scp` line, because the PDF is written on the homelab rather than on the machine calling it. `exclude_basics` drops the basic lands, `only_missing` skips what `collection/cards.tsv` already covers, `dfc="both"` prints the back of a double-faced card, `calibration` adds a leading page with the cut-size box and two 100 mm rulers to measure once on a new printer, and `preview` writes a PNG of page 1. Same input, same SHA-256, every time. See `tools/proxies/README.md`. |
+| `print_proxies(deck="", images_dir="", out="", copies=0, exclude_basics=False, only_missing=False, dfc="front", preview=False, calibration=False, no_network=False)` | Builds a print-ready proxy sheet here on the homelab, in the layout that is known to print at the right size (landscape, 8 cards a page, cut on the guides for 63.2 × 88.2 mm), and hands it back so you can open it from the chat on a laptop or phone. Give either a deck folder under `decks/` or a folder of card images. The **page-1 preview comes back inline as a PNG** (downscaled to ~1200 px), `url` is an **HTTPS link to open or download the PDF** and `preview_url` links the preview — both served by Caddy from an unguessable name (deck + the first 12 hex of the SHA-256), directory listing off. The homelab `path` and an `scp` line are still returned, and a small PDF (under 5 MB) is also attached as an embedded resource (most decks are larger, so the link is the main route). Also returns the SHA-256 and the page/card counts. `exclude_basics` drops the basic lands, `only_missing` skips what `collection/cards.tsv` already covers, `dfc="both"` prints the back of a double-faced card, `calibration` adds a leading page with the cut-size box and two 100 mm rulers to measure once on a new printer. A preview is always rendered, so `preview` is accepted but ignored. Served files older than 30 days are pruned on each run. Same input, same SHA-256, every time. See `tools/proxies/README.md`. |
 | `sync()` | `git pull --rebase`, so decks and pilots pushed from elsewhere are available |
 
 Only one job runs at a time. Workers are detached, so a job keeps running if the SSH connection or chat drops.
 Job state and logs live in `mcp_server/jobs/` (git-ignored).
+
+### Serving proxy sheets over HTTPS
+
+`print_proxies` copies each finished PDF and its page-1 preview into `PROXY_SERVE_DIR`
+(default `/mnt/expansion/mtg-data/proxies`), which Caddy serves at `PROXY_PUBLIC_BASE`
+(default `https://mtg-cards.lab.kstevens.ca/proxies`) — the `/proxies/` route in
+`~/caddy/Caddyfile`, a sibling of the `/images/` card-art route, backed by a read-only
+`/srv/mtg-proxies` bind mount. Served files are named `<deck>-<sha12>.pdf` /
+`-p1.png`, so the names are unguessable; `file_server` lists no directories. The route
+is tailnet-only (firewall-restricted like the other vhosts), so no Authelia gate. To
+point elsewhere, set `PROXY_SERVE_DIR` and `PROXY_PUBLIC_BASE` in the server's
+environment. The served directory is **not** in the repo and must not be committed.
 
 ## Setup on the homelab (Ubuntu)
 

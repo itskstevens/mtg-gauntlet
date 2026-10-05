@@ -20,7 +20,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 CARD_HOST = 'https://mtg-cards.lab.kstevens.ca/images/'
 SCRYFALL = 'https://api.scryfall.com'
 RULES_DB = os.environ.get('ORACLE_DB', '/mnt/expansion/mtg-data/cards.sqlite')
-RULES_IMAGES = os.path.dirname(RULES_DB)
+# The DB sits next to the image store it points into, so image_path is relative
+# to that store: /mnt/expansion/mtg-data/cards.sqlite -> /mnt/expansion/mtg-data/images/<path>
+RULES_IMAGES = os.environ.get(
+    'ORACLE_IMAGES', os.path.join(os.path.dirname(RULES_DB), 'images'))
 IMAGE_CACHE = 'cache/proxy-images'
 SUFFIXES = ('.jpg', '.jpeg', '.png', '.webp')
 RATE_LIMIT = 0.1                      # 10 requests a second
@@ -248,9 +251,10 @@ def resolve(name, deck=None, allow_network=True, db=None):
     card = scryfall(name)
     if not card:
         raise SourceError(f'Scryfall has no card called {name!r}')
-    url = (card.get('image_uris', {}).get('png')
-           or card.get('image_uris', {}).get('large')
-           or card.get('image_uris', {}).get('normal'))
+    # Double-faced cards (transform, modal_dfc) carry no top-level image_uris;
+    # the front face's image lives on card_faces[0] instead.
+    uris = card.get('image_uris') or (card.get('card_faces') or [{}])[0].get('image_uris', {})
+    url = uris.get('png') or uris.get('large') or uris.get('normal')
     if not url:
         raise SourceError(f'Scryfall has no image for {name!r}')
     return {'data': fetch(url, ext='.png'), 'origin': 'scryfall', 'url': url}
