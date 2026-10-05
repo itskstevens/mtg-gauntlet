@@ -214,7 +214,7 @@ Tick items as they land (same commit as the change), and add the commit hash. Ke
 
 ### Phase 0 — quick fixes (inside today's engine)
 
-- [ ] **0.1 Spell combo pieces.** `engine/engine.py: check_combo`, `spell_threat`, `my_score`/`ai_score` treat a combo as live when its permanent pieces are on the battlefield and its instant/sorcery pieces are in hand and castable. Unblocks `('Isochron Scepter', 'Dramatic Reversal')` in `engine/cards.py: COMBOS`. Add a test in `tests/test_rules.py`.
+- [x] **0.1 Spell combo pieces.** `engine/engine.py: check_combo`, `spell_threat`, `my_score`/`ai_score` treat a combo as live when its permanent pieces are on the battlefield and its instant/sorcery pieces are in hand and castable. Unblocks `('Isochron Scepter', 'Dramatic Reversal')` in `engine/cards.py: COMBOS`. Add a test in `tests/test_rules.py`. — **Done** (e62de54): check_combo casts spell pieces from hand when affordable (counterable like any spell); pure combo spells aren't cast as filler; Crackle with Power added as a Sanar outlet. 4 new tests. Smoke: Sanar 2.8% -> 13.2%, Aziza/Codie unchanged within noise.
 - [ ] **0.2 Imprint.** Store the imprinted card on the Isochron Scepter `Perm` (CR 406.6, 607); the Scepter + Reversal line requires the imprint, not just the card in hand.
 - [ ] **0.3 Aura combo targets.** `aura_target`/`attach`: an aura that is a combo piece goes on the creature that completes the combo (Freed from the Real / Pemmin's Aura on Sanar). Check why these were never cast in Sanar traces.
 - [ ] **0.4 Tag Sanar's blank spells.** Brain Freeze (storm mill), Frantic Search (net mana), Hex Magic, Crackle with Power (X burn, infinite-mana outlet), Nexus of Fate (extra turn).
