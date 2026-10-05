@@ -8,6 +8,7 @@ Exposes a few narrow tools, never a general shell:
   job_status(job_id?)               state, elapsed time and log tail of a job (latest if no id)
   list_jobs()                       recent jobs
   cancel_job(job_id)                stop a running job
+  print_proxies(deck | images_dir)  build a print-ready proxy sheet on this machine
   sync()                            git pull --rebase, so new decks and pilots pushed from elsewhere are here
 
 Runs take minutes, so run_gauntlet returns at once and the work happens in a detached worker process.
@@ -775,6 +776,71 @@ def cancel_job(job_id: str) -> dict:
             except Exception: pass
     job['finished'] = now(); save(job)
     return {'job_id': job_id, 'state': 'cancelled'}
+
+@mcp.tool()
+def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: int = 0,
+                  exclude_basics: bool = False, only_missing: bool = False,
+                  dfc: str = 'front', preview: bool = False, calibration: bool = False,
+                  no_network: bool = False) -> dict:
+    """Build a print-ready proxy sheet on this machine and return its path.
+
+    Give either a deck folder under decks/ (printed in decklist order, commander
+    first) or a folder of card images. The layout is the mtgprint one that is
+    known to print at the right size here: landscape, 8 cards a page, cut on the
+    guides for 63.2 x 88.2 mm.
+
+    exclude_basics drops the basic lands, only_missing skips what
+    collection/cards.tsv already covers, dfc='both' prints the back of a
+    double-faced card, calibration adds a leading page with the cut-size box and
+    two 100 mm rulers to print and measure once on a new printer.
+
+    The PDF is written here, not on the machine you are calling from, so the
+    result includes an scp line to pull it over.
+    """
+    if bool(deck) == bool(images_dir):
+        return {'error': 'give exactly one of deck or images_dir'}
+    if dfc not in ('front', 'both'):
+        return {'error': "dfc must be 'front' or 'both'"}
+    if copies < 0:
+        return {'error': 'copies cannot be negative'}
+    if deck and not os.path.isdir(os.path.join(ROOT, 'decks', deck)):
+        return {'error': f'no deck folder decks/{deck}'}
+    if images_dir and not os.path.isdir(images_dir):
+        return {'error': f'no such directory: {images_dir}'}
+
+    argv = ['--deck', deck] if deck else ['--images', images_dir]
+    if out: argv += ['--out', out]
+    if copies: argv += ['--copies', str(copies)]
+    if exclude_basics: argv += ['--exclude-basics']
+    if only_missing: argv += ['--only-missing']
+    if dfc == 'both': argv += ['--dfc', 'both']
+    if preview: argv += ['--preview']
+    if calibration: argv += ['--calibration']
+    if no_network: argv += ['--no-network']
+
+    sys.path.insert(0, ROOT)
+    from tools.proxies import cli, images as proxy_images, sources as proxy_sources
+    try:
+        summary = proxy_cli_main(cli, argv)
+    except (proxy_images.ImageError, proxy_sources.SourceError, ValueError) as e:
+        return {'error': str(e)}
+    finally:
+        if ROOT in sys.path: sys.path.remove(ROOT)
+    if not isinstance(summary, dict):
+        return {'error': str(summary)}
+    path = os.path.abspath(summary['path'])
+    summary['path'] = path
+    summary['fetch'] = f'scp homelab:{path} .'
+    summary['print'] = 'landscape, 100% / actual size, cut on the grey guides (63.2 x 88.2 mm cards)'
+    return summary
+
+
+def proxy_cli_main(cli, argv):
+    """Run the proxy CLI, turning its SystemExit into a plain error string."""
+    try:
+        return cli.main(argv + ['--quiet'])
+    except SystemExit as e:
+        raise ValueError(str(e) or 'the proxy CLI rejected those arguments')
 
 @mcp.tool()
 def sync() -> dict:

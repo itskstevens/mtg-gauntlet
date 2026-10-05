@@ -1,1 +1,8 @@
 mcp>=1.10,<2
+
+# print_proxies builds the sheets through tools/proxies, which needs these.
+# Pinned because the prepared-image cache and the PDF hash depend on the versions.
+reportlab==5.0.1
+Pillow==12.3.0
+pymupdf==1.28.2
+requests==2.34.2

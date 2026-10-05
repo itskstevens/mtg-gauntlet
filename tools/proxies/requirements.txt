@@ -1,0 +1,5 @@
+# Pinned: the prepared-image cache and the PDF hash both depend on these versions.
+reportlab==5.0.1
+Pillow==12.3.0
+pymupdf==1.28.2
+requests==2.34.2

@@ -3,3 +3,5 @@ __pycache__/
 mcp_server/jobs/
 .venv/
 .cache/
+/cache/
+/proxies/

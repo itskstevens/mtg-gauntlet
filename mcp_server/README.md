@@ -3,7 +3,7 @@
 Lets a Claude chat start gauntlet runs on the homelab (Ryzen 7 5700, 16 threads) instead of the 2-core cloud
 workspace. Results are committed and pushed to GitHub when a job finishes, so any session reads them from the repo.
 
-It exposes six narrow tools, never a general shell:
+It exposes a handful of narrow tools, never a general shell:
 
 | Tool | What it does |
 |---|---|
@@ -16,6 +16,7 @@ It exposes six narrow tools, never a general shell:
 | `compare_runs(deck, limit=8)` | Per-category win rate for a deck's stored runs, oldest to newest, with the biggest gains and regressions. Answers "did that change help?" - one win rate hides the categories a deck edit helped and the ones it hurt. Needs two or more stored runs. |
 | `list_jobs()` | Recent jobs |
 | `cancel_job(job_id)` | Stops a job. Nothing is committed. |
+| `print_proxies(deck="", images_dir="", out="", copies=0, exclude_basics=False, only_missing=False, dfc="front", preview=False, calibration=False, no_network=False)` | Builds a print-ready proxy sheet here on the homelab, in the layout that is known to print at the right size (landscape, 8 cards a page, cut on the guides for 63.2 × 88.2 mm). Give either a deck folder under `decks/` or a folder of card images. Returns the SHA-256, the page and card counts, the absolute path and an `scp` line, because the PDF is written on the homelab rather than on the machine calling it. `exclude_basics` drops the basic lands, `only_missing` skips what `collection/cards.tsv` already covers, `dfc="both"` prints the back of a double-faced card, `calibration` adds a leading page with the cut-size box and two 100 mm rulers to measure once on a new printer, and `preview` writes a PNG of page 1. Same input, same SHA-256, every time. See `tools/proxies/README.md`. |
 | `sync()` | `git pull --rebase`, so decks and pilots pushed from elsewhere are available |
 
 Only one job runs at a time. Workers are detached, so a job keeps running if the SSH connection or chat drops.
@@ -33,7 +34,7 @@ Job state and logs live in `mcp_server/jobs/` (git-ignored).
    ```
 3. Set a commit identity for the repo if the machine has none:
    `git config user.name "Kevin Stevens"` and `git config user.email "itskstevens@gmail.com"`.
-4. Test it. This should list six tools and exit cleanly:
+4. Test it. This should list the tools and exit cleanly:
    ```bash
    .venv/bin/python - <<'EOF'
    import asyncio

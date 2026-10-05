@@ -19,10 +19,10 @@ All values in millimetres unless noted. 1 mm = 72 / 25.4 pt. Origin is the **top
 |---|---|
 | Page | **279.0 × 216.0 mm** (790.87 × 612.28 pt), landscape, single-sided. Keep this exact size; it is US Letter for the printer's purposes. |
 | Grid | 4 columns × 2 rows = 8 cards per page, filled row by row (top row left to right, then bottom row) |
-| Card slot (image incl. bleed) | **66.0 × 91.0 mm** (187.09 × 257.95 pt). Slots touch: no gutter. |
+| Card slot (the image fills this) | **66.0 × 91.0 mm** (187.09 × 257.95 pt). Slots touch: no gutter. |
 | First slot top-left | x = **9.0**, y = **18.5** |
 | Slot origins | x = 9.0, 75.0, 141.0, 207.0 · y = 18.5, 109.5 |
-| Bleed | **1.4 mm** on every side of every slot |
+| Trim inset | **1.4 mm** on every side of every slot: the cut box is the slot inset by this |
 | Cut size (trim) | 63.2 × 88.2 mm, i.e. slot inset by 1.4 mm |
 | Cut-line coordinates | x = 10.4, 73.6, 76.4, 139.6, 142.4, 205.6, 208.4, 271.6 · y = 19.9, 108.1, 110.9, 199.1 |
 | Image placement | Each image is stretched to exactly fill its 66 × 91 slot. |
@@ -45,9 +45,19 @@ Two kinds of marks, drawn in this order on each page:
 
 ### Images in the reference
 
-- Each image is 512 × 704 px JPEG (DCTDecode, DeviceRGB, 8-bit), placed at about 197 dpi. These are 488 × 680 Scryfall "normal" scans with **12 px of bleed** added on each side.
-- The bleed is filled with the card's **border colour**, about RGB (21, 18, 13) on black-bordered cards. The pixels are not mirrored or smeared.
-- The rounded corners stay light in the bleed. The corner triangles cover them.
+Re-measured on 2026-10-05 against three distinct real exports (eight files, 309 cards), which corrected an earlier reading of this plan:
+
+- Every image in every export is **512 × 704 px** JPEG (DCTDecode, DeviceRGB, 8-bit), stretched over the whole
+  66 × 91 mm slot, about 197 dpi.
+- That is **not** a scan with bleed added. The sources are 488 × 680 Scryfall "normal" scans (verified byte-identical
+  between the homelab store and the card host), and mtgprint simply pulls them to a fixed 512 × 704 canvas.
+- Proof there is no bleed: the scan's own frame runs right to the image edge (top edge midpoint RGB ≈ (34, 33, 29))
+  and the rounded corners are still light at the very corner of the image (255, 255, 255 on a black-bordered card).
+  A border-coloured pad would be dark there, and a white pad would make the edge midpoints white. Neither.
+- The consequence: the image is printed **4.4 % wider and 3.2 % taller** than the 63.2 × 88.2 mm you cut on, and the
+  trim takes 1.4 mm off each edge. The corner triangles square off the rounded corners that trimming exposes.
+- Consequence worth knowing: because a 512 × 704 canvas is not the 0.7176 aspect of a 488 × 680 scan, the printed
+  art ends up about 1.3 % wider than a real card. This is inherited from the reference and reproduced deliberately.
 
 ---
 
@@ -60,7 +70,7 @@ tools/proxies/
   __init__.py
   profiles.py      # the spec above as a frozen dataclass: PROFILE "mtgprint-letter"
   layout.py        # pure functions: slot rects, cut lines, crosshair/extension segments, triangles (no I/O)
-  images.py        # load, validate, add bleed, normalise to JPEG bytes (deterministic)
+  images.py        # load, validate, normalise to JPEG bytes (deterministic)
   sources.py       # resolve a decklist to image files (local folder, card_images.json map, homelab host, Scryfall)
   render.py        # write the PDF from layout + prepared images
   cli.py           # argument parsing; `python3 -m tools.proxies ...`
@@ -88,8 +98,8 @@ reference. ReportLab should be enough.
 ```
 python3 -m tools.proxies --images DIR [--order manifest.txt]          # a folder of card images
 python3 -m tools.proxies --deck laezel-counters [--only-missing]      # a deck in this repo
-  common: --out proxies/<name>.pdf  --profile mtgprint-letter  --bleed-mode border|replicate|none
-          --exclude-basics  --copies N  --preview  --calibration
+  common: --out proxies/<name>.pdf  --profile mtgprint-letter
+          --exclude-basics  --copies N  --preview  --calibration  --dfc front|both  --no-network
 ```
 
 - **Folder mode.** Accept JPEG, PNG and WebP. Order by the manifest if one is given, otherwise by filename (natural
@@ -111,42 +121,24 @@ python3 -m tools.proxies --deck laezel-counters [--only-missing]      # a deck i
 
 ### Image preparation (`images.py`)
 
-1. Open the image with Pillow and convert it to RGB. Flatten any alpha onto the border colour (step 3), not onto white.
-2. **Decide whether the image already has bleed** from its aspect ratio:
-   - About 63:88 (0.716 ± 0.01) is card-sized and needs bleed.
-   - About 66:91 (0.725 ± 0.006) already has bleed, so pass it through.
-   - Anything else is an error that names the file.
-3. **Border colour** is the per-channel median of a 6 px band along the four edges, excluding a corner zone of 8% of
-   the width and height. That gives black for black-bordered cards and the right colour for white- or
-   silver-bordered ones.
-4. **Add bleed** (`--bleed-mode border`, the default, matches the reference). Pad each side by
-   `round(width × 1.4 / 63.2)` px horizontally and `round(height × 1.4 / 88.2)` px vertically with the border colour.
-   That is 11 px on a 488-wide scan; mtgprint used 12, and either is fine because the slot size is fixed.
-   - `replicate` is an optional mode that copies the edge pixels outward.
-   - `none` only resizes the image to the slot ratio.
-5. **Resolution.** Never upscale. Keep the native size, and warn if the effective resolution is below 180 dpi.
-   Scryfall `png` gives about 290 dpi, which is better than the reference.
-6. **Encode** JPEG with Pillow `quality=95, subsampling=0, optimize=False, progressive=False`, with no EXIF and no ICC
-   profile. A JPEG that already has bleed and is RGB passes through byte-for-byte.
-7. Write the result to `cache/proxy-prepared/<sha256 of source bytes + mode + profile>.jpg`.
+Deliberately small, because the measurement above showed the reference adds nothing to the pixels:
 
-### Extras
-
-- `--preview`: also write `<out>-p1.png`, page 1 rendered at 150 dpi with PyMuPDF, for a quick look before printing.
-- `--calibration`: add one leading page with the same cut guides, plus three things:
-  - one empty slot outlined at the exact 63.2 × 88.2 cut size
-  - a 100 mm ruler along the top and a 100 mm ruler down the side
-  - the text "Print at 100% / Actual size. Measure: box must be 63.2 × 88.2 mm"
-  Kevin prints this once per printer or driver change.
-- Print a summary when done: pages, cards, cards per source, any low-resolution warnings, and the PDF's SHA-256.
-
----
+1. Open with Pillow and convert to RGB. Flatten any alpha onto the image's own border colour, never onto white.
+2. **Reject anything that is not a card-shaped scan.** Aspect must be within 0.03 of 63:88 (0.7159); anything else
+   is an error that names the file. There is no bleed check, because nothing is ever padded.
+3. **Keep the native pixels.** Never upscale and never pad: the scan keeps its own size and the slot does the
+   stretching, which is what the reference does.
+4. **Report the resolution** against the slot, about 488 px over 66 mm = 188 dpi, and warn below 180 dpi.
+5. **Encode** JPEG with Pillow `quality=95, subsampling=0, optimize=False, progressive=False`, no EXIF, no ICC
+   profile, so the bytes and the cache hash are stable.
+6. Write the result to `cache/proxy-prepared/<sha256 of source bytes + profile>.jpg`, with a `.json` sidecar for
+   the metadata so a cache hit returns everything a fresh run does.
 
 ## 3. Determinism rules
 
 - No timestamps, random IDs or UUIDs in the PDF. Use `invariant=1` and empty metadata.
 - Read input in a stable order (manifest, natural sort or decklist order). Never iterate over unsorted sets or dicts.
-- Name cache entries by content hash. Prepared images depend only on the source bytes, bleed mode and profile.
+- Name cache entries by content hash. Prepared images depend only on the source bytes and the profile.
 - Pin library versions in `tools/proxies/requirements.txt` (reportlab, Pillow, pymupdf, requests). Different Pillow
   JPEG encoders could change bytes, so note in the README that the hash depends on these pinned versions.
 
@@ -170,14 +162,19 @@ python3 -m tools.proxies --deck laezel-counters [--only-missing]      # a deck i
    Assert the same geometry as test 1 on page 1, and a 1-card partial page 2 with 88 lines and 4 triangles. Also
    assert that the images keep `/DCTDecode`, and that the draw order is each image followed by its 4 triangles, with
    all grey lines last.
-3. **Bleed test** (`test_images.py`).
-   - A 488 × 680 card with a black border and white rounded corners comes out with pad pixels equal to the border
-     median. Corner pixels can stay light.
-   - A 66:91 input passes through unchanged.
+3. **Image test** (`test_images.py`).
+   - A 488 × 680 card with a dark frame and light rounded corners comes out at exactly 488 × 680: no pixels added,
+     which is what the reference does.
+   - The stretched 512 × 704 canvas mtgprint uses is card-shaped and keeps the scan's own light corner.
    - A wrong aspect ratio raises an error that names the file.
+   - Alpha flattens onto the border colour, not onto white; the border colour ignores the rounded corners.
+   - The JPEG carries no EXIF and no ICC profile, and encodes to the same bytes every time.
 4. **Determinism test.** Render the same input twice in fresh processes and require identical SHA-256. Change one
    input byte and require a different hash.
-5. **CLI smoke test.** Run `--deck laezel-counters --only-missing --exclude-basics` against a stubbed source that
+5. **Reference check.** `verify_references.py <dir>` reads real mtgprint exports with PyMuPDF and compares every
+   page against `layout.py`: page size, image boxes, all 88 guides, every corner triangle. All eight exports on this
+   homelab pass at a 0.02 pt tolerance (they agree to 0.009 pt, the reference rounds its MediaBox to 2 decimals).
+6. **CLI smoke test.** Run `--deck laezel-counters --only-missing --exclude-basics` against a stubbed source that
    returns synthetic images. Check the page count is `ceil(cards / 8)`.
 
 ---
@@ -186,7 +183,7 @@ python3 -m tools.proxies --deck laezel-counters [--only-missing]      # a deck i
 
 1. Write `profiles.py` and `layout.py`, then make `test_layout.py` pass. This is where exactness matters most.
 2. Write `render.py` with synthetic images, then make `test_render.py` and the determinism test pass.
-3. Write `images.py` (bleed, border detection, encoding) and its tests.
+3. Write `images.py` (validation, border detection, encoding) and its tests.
 4. Write `sources.py` (folder, manifest, decklist, the `card_images.json` map, the homelab host, the Scryfall
    fallback, the cache) and `--only-missing`.
 5. Write `cli.py`, `--preview`, `--calibration`, and a `README.md` in `tools/proxies/` with usage and printing
