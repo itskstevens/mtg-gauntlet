@@ -9,7 +9,7 @@ Print landscape at 100% / actual size. See tools/proxies/README.md.
 """
 import argparse, os, sys
 
-from . import images, layout, render, sources
+from . import images, layout, render, sources, upscale
 from .profiles import PROFILES, PROFILE
 
 
@@ -33,6 +33,10 @@ def parse_args(argv=None):
     out.add_argument('--preview', action='store_true', help=f'also write <out>-p1.png at 150 dpi')
     out.add_argument('--calibration', action='store_true',
                      help='add a leading page with a cut-size box and two 100 mm rulers')
+    out.add_argument('--upscale', action='store_true',
+                     help='Real-ESRGAN 4x the card art before printing (sharper, slow, non-deterministic)')
+    out.add_argument('--upscale-model', default=upscale.DEFAULT_MODEL,
+                     help=f'Real-ESRGAN model name (default {upscale.DEFAULT_MODEL})')
     ap.add_argument('--no-network', action='store_true',
                     help='fail rather than fall back to Scryfall')
     ap.add_argument('--quiet', action='store_true')
@@ -79,6 +83,8 @@ def main(argv=None):
     if not entries:
         raise SystemExit('nothing to print: every card was filtered out')
 
+    upscaled = apply_upscale(entries, args.upscale_model) if args.upscale else None
+
     cards, origins, low_res, names = [], {}, [], set()
     for entry in entries:
         info = images.prepare(entry['data'], p, where=entry['name'])
@@ -97,9 +103,24 @@ def main(argv=None):
     summary['sources'] = origins
     summary['distinct_images'] = len(names)
     summary['low_resolution'] = [{'card': n, 'dpi': d} for n, d in low_res]
+    if upscaled:
+        summary['upscaled'] = upscaled
     if not args.quiet:
         _report(summary, p)
     return summary
+
+
+def apply_upscale(entries, model):
+    """Replace each entry's source bytes with a Real-ESRGAN upscaled version.
+
+    Dedupes by source bytes, so only distinct images are sent to the GPU, then
+    maps the results back onto every physical card. Returns a small summary.
+    """
+    distinct = {images.sha(e['data']): e['data'] for e in entries}
+    mapping = upscale.upscale_map(distinct.values(), model=model)
+    for e in entries:
+        e['data'] = mapping[images.sha(e['data'])]
+    return {'model': model, 'scale': upscale.SCALE, 'images': len(distinct)}
 
 
 def _report(s, p):
@@ -109,6 +130,9 @@ def _report(s, p):
         print(f'  {s["sources"][origin]:>4} cards from {origin}')
     for row in s['low_resolution']:
         print(f"  warning: {row['card']} is only {row['dpi']} dpi in the slot")
+    if s.get('upscaled'):
+        u = s['upscaled']
+        print(f"  upscaled {u['images']} images {u['scale']}x with Real-ESRGAN ({u['model']})")
     if s.get('preview'):
         print(f'  preview: {s["preview"]}')
     print(f"  sha256: {s['sha256']}")

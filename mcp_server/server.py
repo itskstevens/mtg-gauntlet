@@ -793,7 +793,7 @@ def cancel_job(job_id: str) -> dict:
 def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: int = 0,
                   exclude_basics: bool = False, only_missing: bool = False,
                   dfc: str = 'front', preview: bool = False, calibration: bool = False,
-                  no_network: bool = False) -> CallToolResult:
+                  no_network: bool = False, upscale: bool = False) -> CallToolResult:
     """Build a print-ready proxy sheet on this machine and hand it back to the chat.
 
     Give either a deck folder under decks/ (printed in decklist order, commander
@@ -807,6 +807,16 @@ def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: i
     two 100 mm rulers to print and measure once on a new printer. A page-1
     preview is always rendered, so the `preview` argument is accepted but ignored.
 
+    Typical flow: call once to review the inline preview, then, if you want a
+    sharper print, call again with upscale=True. upscale runs a Real-ESRGAN 4x
+    super-resolution pass on the card art on the GPU (the RX 580 via Vulkan)
+    before laying out the sheet. It is sharper but slow — about 9 s per distinct
+    card, so ~10-15 min the first time for a 100-card deck — and the result is
+    not byte-deterministic (unlike the default path). Upscaled images are cached,
+    so a second run or a card shared with another deck is instant; if the call
+    times out while warming the cache, just call it again. An upscaled sheet gets
+    its own url (its hash differs) and the result reports `upscaled`.
+
     The result is made to open from the chat on a laptop or phone:
       - the page-1 preview is returned inline as a PNG (downscaled to ~1200 px);
       - `url` is an HTTPS link to open or download the PDF, and `preview_url`
@@ -816,19 +826,22 @@ def print_proxies(deck: str = '', images_dir: str = '', out: str = '', copies: i
       - `path` and `fetch` (an scp line) still point at the copy on the homelab;
       - a small PDF (under 5 MB) is also attached as an embedded resource; most
         decks are larger, so the link is the main route.
-    Served files older than 30 days are pruned on each run. Same input, same bytes.
+    Served files older than 30 days are pruned on each run.
     """
     result = _build_proxy_sheet(deck, images_dir, out, copies, exclude_basics,
-                                only_missing, dfc, calibration, no_network)
+                                only_missing, dfc, calibration, no_network, upscale)
     if 'error' in result:
         return CallToolResult(isError=True, structuredContent=result,
                               content=[TextContent(type='text', text=result['error'])])
 
     served_png = result.pop('_served_png')
+    upscaled = result.get('upscaled')
     summary = (f"{result['cards']} cards on {result['card_pages']} page(s)"
                + (' + calibration page' if result['pages'] > result['card_pages'] else '')
-               + f", {result['size_mb']} MB\n"
-               f"open / download: {result['url']}\n"
+               + f", {result['size_mb']} MB"
+               + (f"\nupscaled {upscaled['images']} images {upscaled['scale']}x with Real-ESRGAN "
+                  f"({upscaled['model']})" if upscaled else '')
+               + f"\nopen / download: {result['url']}\n"
                f"preview image:   {result['preview_url']}\n"
                f"on the homelab:  {result['path']}\n"
                f"pull with scp:   {result['fetch']}\n"
@@ -879,7 +892,8 @@ def _prune_served(folder, max_age_days):
 
 
 def _build_proxy_sheet(deck='', images_dir='', out='', copies=0, exclude_basics=False,
-                       only_missing=False, dfc='front', calibration=False, no_network=False):
+                       only_missing=False, dfc='front', calibration=False, no_network=False,
+                       upscale=False):
     """Build the sheet, publish it to the served directory, and return its fields.
 
     Returns a JSON-safe dict of structured fields (plus a private `_served_png`
@@ -905,13 +919,14 @@ def _build_proxy_sheet(deck='', images_dir='', out='', copies=0, exclude_basics=
     if dfc == 'both': argv += ['--dfc', 'both']
     argv += ['--preview']                       # always render page 1, whatever the caller asked
     if calibration: argv += ['--calibration']
+    if upscale: argv += ['--upscale']
     if no_network: argv += ['--no-network']
 
     sys.path.insert(0, ROOT)
-    from tools.proxies import cli, images as proxy_images, sources as proxy_sources
+    from tools.proxies import cli, images as proxy_images, sources as proxy_sources, upscale as proxy_upscale
     try:
         summary = proxy_cli_main(cli, argv)
-    except (proxy_images.ImageError, proxy_sources.SourceError, ValueError) as e:
+    except (proxy_images.ImageError, proxy_sources.SourceError, proxy_upscale.UpscaleError, ValueError) as e:
         return {'error': str(e)}
     finally:
         if ROOT in sys.path: sys.path.remove(ROOT)

@@ -53,6 +53,32 @@ correctly here. If you would rather have true proportions, print the cards a
 little smaller and ignore the guides — but then the sheets do not stack against
 the reference ones.
 
+## Upscaling (`--upscale`)
+
+The Scryfall scans are 488 × 680 (~188 dpi once stretched over the slot), which
+prints fine but is softer than a real card. `--upscale` runs each distinct card
+through **Real-ESRGAN 4×** (`realesrgan-x4plus`) first, to 1952 × 2720 (~750 dpi),
+for a noticeably sharper print. Three things to know:
+
+- **It is not deterministic.** It shells out to `realesrgan-ncnn-vulkan`, which
+  runs on the GPU (the RX 580 here, via Vulkan/RADV — no ROCm needed), so the
+  output depends on the binary, model and driver. The layout geometry is
+  unchanged; only the image bytes differ, so an upscaled sheet does not carry
+  the byte-identical guarantee the rest of this tool does. The reference tests
+  still pass because they check geometry, not image bytes.
+- **It is slow.** About 9 s per distinct card on this GPU, so ~10–15 min the
+  first time for a 100-card deck. Results are cached under `cache/proxy-upscaled`
+  by `(source hash, model, scale)`, so re-runs and cards shared between decks are
+  instant, and only the distinct images are ever sent to the GPU.
+- **The PDF gets big** — roughly 2 MB per distinct card (a 100-card deck is
+  ~150 MB), because each slot now holds a 16×-pixel image. Fine to print locally
+  and to download over the link; just not something to email.
+
+The binary and its models are not in the repo. Install the upstream
+`realesrgan-ncnn-vulkan` release into `/mnt/expansion/mtg-data/realesrgan/`
+(binary + `models/`), or point `REALESRGAN_BIN` / `REALESRGAN_MODELS` elsewhere.
+Without it, `--upscale` fails with a clear message and the plain path is unaffected.
+
 ## From a Claude chat
 
 The `print_proxies` MCP tool (`mcp_server/server.py`) builds the same sheet on the
@@ -60,7 +86,9 @@ homelab and hands it back so you can open it from the chat: the page-1 preview c
 back inline as a PNG, and `url` / `preview_url` are HTTPS links that Caddy serves from
 `/mnt/expansion/mtg-data/proxies` under an unguessable `<deck>-<sha12>` name. The
 homelab path and an `scp` line are still returned, and a small PDF (under 5 MB) is also
-attached as an embedded resource. See `mcp_server/README.md`.
+attached as an embedded resource. Review that preview, then call again with
+`upscale=true` for a sharper print (the `--upscale` pass above). See
+`mcp_server/README.md`.
 
 ## Options
 
@@ -76,6 +104,8 @@ attached as an embedded resource. See `mcp_server/README.md`.
 | `--dfc both` | Also print the back of a double-faced card |
 | `--preview` | Writes `<out>-p1.png` at 150 dpi to look at before printing |
 | `--calibration` | Adds a leading page with the cut-size box and two 100 mm rulers |
+| `--upscale` | Real-ESRGAN 4× the card art before laying it out — sharper, but slow and non-deterministic (see below) |
+| `--upscale-model NAME` | Real-ESRGAN model to use (default `realesrgan-x4plus`) |
 | `--no-network` | Fail rather than fall back to Scryfall |
 | `--quiet` | Summary only, no per-source counts |
 
