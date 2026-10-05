@@ -1364,14 +1364,45 @@ class Game:
         CT.on_landfall(s, P)
 
     # ---------------------------------------------------------------- combos & alt wins
+    def combo_spells(s, P, cb):
+        """Split combo `cb` into what P still has to cast. Returns the instant/sorcery pieces to cast from hand
+        (CR 601: a spell piece counts only if it is in hand, castable now and affordable together with the other
+        spell pieces), or None if a piece is missing. Permanent pieces must already be on the battlefield."""
+        spells, budget = [], s.avail(P)
+        for n in cb:
+            if P.has(n): continue
+            c = next((x for x in P.hand if x.name == n and (x.is_instant or x.is_sorcery)), None)
+            if c is None or not s.can_cast_now(P, c): return None
+            budget -= s.cost(P, c)
+            if budget < 0: return None
+            spells.append(c)
+        return spells
+
+    def piece_ok(s, P, n):
+        """Is combo piece n in place or in hand as an instant/sorcery (cost checked later in check_combo)?"""
+        return P.has(n) or any(x.name == n and (x.is_instant or x.is_sorcery) for x in P.hand)
+
     def check_combo(s, P):
         lp = s.loop_combo(P)
         cands = list(P.combo_names) + ([tuple(lp[1])] if lp else [])
         for cb in cands:
-            if all(P.has(n) for n in cb):
+            spells = s.combo_spells(P, cb)
+            if spells is not None:
+                spell_names = {c.name for c in spells}
+                perm_names = [n for n in cb if n not in spell_names]
                 # opponents may respond with instant removal on a piece
-                pieces = [p for p in P.bf if p.name in cb and not p.neutral]
-                if len(pieces) < len(cb): continue
+                pieces = [p for p in P.bf if p.name in perm_names and not p.neutral]
+                if len(pieces) < len(perm_names): continue
+                # cast the spell pieces (CR 601.2); each can be countered like any other spell
+                fizzled = False
+                for c in spells:
+                    if not s.pay(P, s.cost(P, c)): fizzled = True; break
+                    P.hand.remove(c); P.stats['spells'] += 1; s.spell_triggers(P, c)
+                    s.log(f'{P.label} casts {c.name} (combo piece)')
+                    countered = s.try_counter(P, c)
+                    P.gy.append(c)
+                    if countered: fizzled = True; break
+                if fizzled: continue
                 broken = False
                 for Q in P.opps():
                     if any(p.name == 'Grand Abolisher' for p in P.bf): break
@@ -1842,6 +1873,7 @@ class Game:
             reserve = max(reserve, 2)
         for _ in range(12):
             if s.over or not P.alive: return
+            if s.check_combo(P): return
             opts = []
             if P.cmd_zone and s.can_cast_now(P, P.cmd_card, True):
                 opts.append((95 if not post else 80, P.cmd_card, True))
@@ -1910,8 +1942,13 @@ class Game:
             if any(sum(s.power(p) for p in q.creatures()) >= P.life for q in opps) and theirs > mine: return 115
             return 0
         if any(c.name in cb for cb in P.combo_names):
-            done = [cb for cb in P.combo_names if c.name in cb and all(P.has(n) or n == c.name for n in cb)]
-            return 200 if done else 78
+            if c.is_instant or c.is_sorcery:
+                # spell pieces are cast by check_combo when the rest is in place; a piece with no other job
+                # (Dramatic Reversal) is held, one with other uses (Crackle with Power) is scored normally below
+                if not CD.summarize(c): return 0
+            else:
+                done = [cb for cb in P.combo_names if c.name in cb and all(s.piece_ok(P, n) or n == c.name for n in cb)]
+                return 200 if done else 78
         if c.alt_win: return 85
         if c.drain_now in ('X', 'X2'):
             x = s.avail(P) - c.cmc

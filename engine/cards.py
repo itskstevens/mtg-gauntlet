@@ -168,7 +168,7 @@ COMBOS = [
     # other and Sanar for free. Sanar's "cast an instant or sorcery this turn" gate is not modelled.
     *[(SANAR, *eng, out) for eng in (('Freed from the Real', 'Xorn'), ("Pemmin's Aura", 'Xorn'),
                                      ('Ioreth of the Healing House', 'Marvin, Murderous Mimic'))
-      for out in ('Weftstalker Ardent', 'Reckless Fireweaver')],
+      for out in ('Weftstalker Ardent', 'Reckless Fireweaver', 'Crackle with Power')],
     ('Exquisite Blood', 'Marauding Blight-Priest'), ('Exquisite Blood', 'Bloodthirsty Conqueror'),
     ('Sanguine Bond', 'Bloodthirsty Conqueror'),
 ]

@@ -100,3 +100,30 @@ def test_commander_damage_counted_per_commander():  # CR 903.10a, 702.124d
     g, A, D = game(); a = tok(A, 'Cmd', 11, 11); a.is_cmd = True
     g.combat_hit(A, D, a, 11); g.combat_hit(A, D, a, 11); g.check_deaths(A)
     assert not D.alive
+
+# ---------------------------------------------------------------- combos with spell pieces (roadmap 0.1)
+def perm(P, name):
+    x = E.Perm(P, CD.get(name)); x.sick = False; P.bf.append(x); return x
+
+def test_combo_spell_piece_cast_from_hand_wins():   # CR 601.2: a combo's instant/sorcery piece is cast, not on the battlefield
+    g, A, D = game(); A.combo_names = [('Xorn', 'Crackle with Power')]
+    perm(A, 'Xorn'); A.hand = [CD.get('Crackle with Power')]; A.pool = 10; A.lands = 10; A.land_cols = [frozenset('R')] * 10
+    assert g.check_combo(A)
+    assert not D.alive and any(c.name == 'Crackle with Power' for c in A.gy)
+
+def test_combo_spell_piece_needs_mana():
+    g, A, D = game(); A.combo_names = [('Xorn', 'Crackle with Power')]
+    perm(A, 'Xorn'); A.hand = [CD.get('Crackle with Power')]; A.pool = 1; A.lands = 1; A.land_cols = [frozenset('R')]
+    assert not g.check_combo(A) and D.alive
+
+def test_combo_spell_piece_can_be_countered():      # CR 701.6
+    g, A, D = game(); A.combo_names = [('Xorn', 'Crackle with Power')]
+    perm(A, 'Xorn'); A.hand = [CD.get('Crackle with Power')]; A.pool = 10; A.lands = 10; A.land_cols = [frozenset('R')] * 10
+    D.hand = [CD.get('Counterspell')]; D.reserve = 2; D.lands = 2; D.land_cols = [frozenset('U')] * 2
+    assert not g.check_combo(A) and D.alive
+    assert any(c.name == 'Crackle with Power' for c in A.gy)
+
+def test_pure_combo_spell_is_not_cast_as_filler():
+    g, A, D = game(); A.combo_names = [('Isochron Scepter', 'Dramatic Reversal')]
+    A.hand = [CD.get('Dramatic Reversal')]; A.pool = 5
+    assert g.ai_score(A, A.hand[0], 5, False) == 0
