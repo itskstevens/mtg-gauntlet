@@ -164,3 +164,33 @@ def test_scepter_reversal_with_draw_engine_finds_finisher():
     g, A, D = scepter_setup(hand=())
     perm(A, 'Archmage Emeritus'); A.lib.append(CD.get('Grapeshot'))
     assert g.check_combo(A) and not D.alive
+
+# ---------------------------------------------------------------- combo auras (roadmap 0.3)
+SANAR_XORN = ('Sanar, Unfinished Genius', 'Freed from the Real', 'Xorn', 'Weftstalker Ardent')
+
+def test_combo_aura_enchants_its_host():       # CR 303.4a: an Aura spell targets what it will enchant
+    g, A, D = game(); A.combo_names = [SANAR_XORN]
+    big = tok(A, 'Big', 6, 6); sanar = perm(A, 'Sanar, Unfinished Genius'); perm(A, 'Xorn')
+    g.resolve(A, CD.get('Freed from the Real'))
+    aura = next(p for p in A.bf if p.name == 'Freed from the Real')
+    assert aura.attached is sanar
+
+def test_combo_needs_aura_on_host():
+    g, A, D = game(); A.combo_names = [SANAR_XORN]
+    perm(A, 'Xorn'); perm(A, 'Weftstalker Ardent'); x = perm(A, 'Sanar, Unfinished Genius')
+    a = E.Perm(A, CD.get('Freed from the Real')); a.creature = False; a.attached = next(p for p in A.bf if p.name == 'Xorn'); A.bf.append(a)
+    assert not g.check_combo(A) and D.alive
+    a.attached = x
+    assert g.check_combo(A) and not D.alive
+
+def test_aura_goes_to_graveyard_when_host_dies():   # CR 303.4c, 704.5m
+    g, A, D = game(); A.combo_names = [SANAR_XORN]
+    sanar = perm(A, 'Sanar, Unfinished Genius')
+    g.resolve(A, CD.get('Freed from the Real'))
+    g.kill(sanar)
+    assert not A.has('Freed from the Real') and any(c.name == 'Freed from the Real' for c in A.gy)
+
+def test_combo_aura_held_until_host_is_out():
+    g, A, D = game(); A.combo_names = [SANAR_XORN]
+    tok(A, 'Big', 6, 6); A.pool = 5
+    assert g.ai_score(A, CD.get('Freed from the Real'), 5, False) == 0

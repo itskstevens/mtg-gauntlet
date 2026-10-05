@@ -153,8 +153,17 @@ class Game:
         s.tox_owners = [q for q in alive if any(p.name == 'Toxrill, the Corrosive' and not p.neutral for p in q.bf)]
     def slime_on(s, p): return p.slime and any(q is not p.owner for q in s.tox_owners)
 
+    def drop_auras(s, host=None):
+        """Auras attached to a permanent that left the battlefield are put into the graveyard (CR 303.4c, 704.5m)."""
+        for q in s.players:
+            for a in [a for a in q.bf if getattr(a, 'attached', None) is not None]:
+                if a.attached is host or a.attached not in a.attached.owner.bf:
+                    q.bf.remove(a)
+                    if a.card: q.gy.append(a.card)
+
     def sba(s):
-        """State-based actions: creatures with toughness 0 or less die."""
+        """State-based actions: creatures with toughness 0 or less die; unattached Auras go to the graveyard."""
+        s.drop_auras()
         for q in s.players:
             if not q.alive: continue
             for p in [p for p in q.bf if p.creature and s.tough(p) <= 0]:
@@ -445,6 +454,7 @@ class Game:
         was_dt = s.has_dt(p) or o.has('Archetype of Finality')
         was_cre = p.creature
         o.bf.remove(p)
+        s.drop_auras(p)
         CT.on_leave(s, p)
         if p.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
         if p.is_cmd:
@@ -999,7 +1009,8 @@ class Game:
             if c.is_aura:
                 tgt = s.aura_target(P, c)
                 if tgt is None: P.gy.append(c); return
-                s.attach(P, c, tgt); P.bf.append(Perm(P, c)); P.bf[-1].creature = False
+                s.attach(P, c, tgt); a = Perm(P, c); a.creature = False; a.attached = tgt; P.bf.append(a)
+                s.log(f'{P.label} casts {c.name} on {tgt.name}')
                 return
             p = Perm(P, c, is_cmd=bool(is_cmd)); p.cmd_slot = 2 if is_cmd == 2 else 1
             if c.is_creature and s.stax_on(P, 'opp_enter_tapped'): p.tapped = True
@@ -1180,7 +1191,18 @@ class Game:
         for c in P.lib:
             if c.name == want: P.lib.remove(c); P.hand.append(c); return
 
+    def combo_host(s, P, c):
+        """For an Aura that is a combo piece, the creature it must enchant: by convention the first piece of the combo
+        (Bloom Tender + Freed from the Real, Sanar + Pemmin's Aura + Xorn). None if no such host is on the battlefield."""
+        for cb in P.combo_names:
+            if c.name in cb and cb[0] != c.name:
+                host = next((p for p in P.creatures() if p.name == cb[0] and not p.neutral), None)
+                if host is not None: return host
+        return None
+
     def aura_target(s, P, c):
+        host = s.combo_host(P, c)
+        if host is not None: return host
         cr = [p for p in P.creatures() if not p.token]
         if not cr:
             return None
@@ -1428,6 +1450,8 @@ class Game:
                 # opponents may respond with instant removal on a piece
                 pieces = [p for p in P.bf if p.name in perm_names and not p.neutral]
                 if len(pieces) < len(perm_names): continue
+                if any(p.card is not None and p.card.is_aura and (getattr(p, 'attached', None) is None
+                       or p.attached.name != cb[0] or p.attached not in P.bf) for p in pieces): continue
                 # cast the spell pieces (CR 601.2); each can be countered like any other spell
                 fizzled = False
                 for c in spells:
@@ -1982,6 +2006,7 @@ class Game:
                 # (Dramatic Reversal) is held, one with other uses (Crackle with Power) is scored normally below
                 if not CD.summarize(c): return 0
             else:
+                if c.is_aura and s.combo_host(P, c) is None: return 0   # wait for the creature it has to enchant
                 if c.name == 'Isochron Scepter' and not any(x.name == 'Dramatic Reversal' for x in P.hand) \
                    and any(x.name == 'Dramatic Reversal' for x in P.lib): return 0   # imprint happens only on entry
                 done = [cb for cb in P.combo_names if c.name in cb and all(s.piece_ok(P, n) or n == c.name for n in cb)]
