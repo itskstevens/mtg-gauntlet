@@ -13,6 +13,24 @@ def lst(d): return [l.strip().split(' ', 1) for l in open(os.path.join(ROOT, 'de
 L4, L3 = lst('laezel-counters'), lst('laezel-counters-b3')
 esc = html.escape
 
+# ---- ownership: ManaBox collection, and Kevin's other built decks (copies may already be sleeved there)
+import unicodedata, collections
+def norm(n):
+    n = unicodedata.normalize('NFKD', n).encode('ascii', 'ignore').decode().split(' // ')[0].strip().lower(); return re.sub(r'\s+', ' ', n)
+OWN = collections.Counter()
+for l in open(os.path.join(ROOT, 'collection/cards.tsv')):
+    n, q = l.rstrip('\n').rsplit('\t', 1); OWN[norm(n)] += int(q)
+MAIN = {'aziza-final': 'Aziza', 'bria': 'Bria', 'codie': 'Codie', 'doran': 'Doran', 'rankle': 'Rankle', 'serpent-society': 'Serpent Society', 'toxrill': 'Toxrill'}
+USE = collections.defaultdict(list)
+for d, lab in MAIN.items():
+    for l in open(os.path.join(ROOT, 'decks', d, 'list.txt')):
+        if l.strip(): USE[norm(l.strip().split(' ', 1)[1])].append(lab)
+BASICS = {'Plains', 'Mountain'}
+def status(n):
+    if n in BASICS: return 'have'
+    if OWN[norm(n)]: return 'shared' if USE.get(norm(n)) and OWN[norm(n)] <= len(USE[norm(n)]) else 'have'
+    return 'check' if USE.get(norm(n)) else 'buy'
+
 # ---- images
 names = sorted(set(n for _, n in L4 + L3))
 idx = {n: i for i, n in enumerate(names)}
@@ -61,7 +79,7 @@ SW = {'Enlightened Tutor': 'Idyllic Tutor', "Jeska's Will": 'Inspiring Overseer'
 def decklist(L, tag):
     cols = []
     for k, v in groups(L):
-        lis = ''.join(f'<li><span class="q num">{q}</span> {cn(n)}{" <i class=gc>GC</i>" if n in GC else ""}</li>' for q, n in v)
+        lis = ''.join(f'<li class="st-{status(n)}"><span class="q num">{q}</span> {cn(n)}{" <i class=gc>GC</i>" if n in GC else ""}</li>' for q, n in v)
         cols.append(f'<div class="dg"><h4>{k} <span class="num">{sum(q for q, _ in v)}</span></h4><ul>{lis}</ul></div>')
     mox = '\n'.join(f'{q} {n}' for q, n in L)
     return f'<div class="dl" id="dl-{tag}"{" hidden" if tag == "b3" else ""}>{"".join(cols)}<textarea id="mox-{tag}" class="mox" readonly aria-label="Moxfield import text">{esc(mox)}</textarea></div>'
@@ -148,8 +166,24 @@ preds = [('Board wipes and control would be the problem', 'Missed', 'Control was
          ('Bracket 4 edge comes from the Game Changers and the combo', 'Held', 'B4 is 2.0 points ahead overall (noise ±1.3). 54 of its kills came from Heliod + Ballista.')]
 pred_html = ''.join(f'<tr><td class="l">{esc(a)}</td><td><span class="pill {"w" if b == "Held" else "l"}">{b}</span></td><td class="l">{esc(c)}</td></tr>' for a, b, c in preds)
 
+SHORT = {'have': 'ready to use', 'shared': 'owned but in another deck', 'check': 'check your other decks', 'buy': 'to buy'}
+def own_panel(L, tag):
+    nb = [(q, n) for q, n in L if n not in BASICS]
+    cols = {'have': [], 'shared': [], 'check': [], 'buy': []}
+    for q, n in nb: cols[status(n)].append(n)
+    lab = {'have': ('In your collection', 'Free to sleeve up now.'),
+           'shared': ('Owned, but already in another deck', 'You have only as many copies as your other lists use: buy one more or move it.'),
+           'check': ('In another of your decklists, not in ManaBox', 'Probably sleeved in that deck and never scanned. Check before buying.'),
+           'buy': ('To buy', '')}
+    def item(n):
+        k = status(n); u = USE.get(norm(n))
+        tail = f' <span class="muted small">({OWN[norm(n)]} owned · {", ".join(u)})</span>' if k == 'shared' else f' <span class="muted small">({", ".join(u)})</span>' if k == 'check' else ''
+        return f'<li>{cn(n)}{" <i class=gc>GC</i>" if n in GC else ""}{tail}</li>'
+    blocks = ''.join(f'<div class="ob st-{k}"><h3>{lab[k][0]} <span class="num">{len(v)}</span></h3>{"<p class=small>" + lab[k][1] + "</p>" if lab[k][1] else ""}<ul class="hits">{"".join(item(n) for n in sorted(v))}</ul></div>' for k, v in cols.items() if v)
+    return f'<div class="own" id="own-{tag}"{" hidden" if tag == "b3" else ""}><div class="ownbar">' + ''.join(f'<span class="st-{k}"><b class="num">{len(v)}</b> {SHORT[k]}</span>' for k, v in cols.items() if v) + f'<span class="muted">+ {sum(int(q) for q, n in L if n in BASICS)} basics (you have plenty)</span></div><div class="owngrid">{blocks}</div></div>'
+
 tpl = open(os.path.join(os.path.dirname(__file__), 'page.html')).read()
-rep = dict(CORE=core_html, WINS=win_html, RULES=rule_html, SWAPS=swap_rows, DECK4=decklist(L4, 'b4'), DECK3=decklist(L3, 'b3'),
+rep = dict(OWN4=own_panel(L4, 'b4'), OWN3=own_panel(L3, 'b3'), CORE=core_html, WINS=win_html, RULES=rule_html, SWAPS=swap_rows, DECK4=decklist(L4, 'b4'), DECK3=decklist(L3, 'b3'),
            KPIS=kpi(f'{a4["game_win"]}%', 'Games won, bracket 4', 'good') + kpi(f'{a4["series_win"]}%', 'Series won, bracket 4') +
                 kpi(f'{a3["game_win"]}%', 'Games won, bracket 3', 'good') + kpi(f'{a3["series_win"]}%', 'Series won, bracket 3') +
                 kpi(f'{a4["first_out"]}%', 'Knocked out first (B4)', 'warn') + kpi(f'{a4["avg_rounds"]}', 'Average rounds per game'),
