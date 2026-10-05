@@ -1010,6 +1010,7 @@ class Game:
             if c.is_legendary:   # legend rule (CR 704.5j): keep the new one
                 for q in [q for q in P.bf if q is not p and q.name == p.name and q.card is not None]: s.kill(q, 'sba', sac=True)
             CT.on_enter(s, P, p, c)
+            if c.name == 'Isochron Scepter': s.imprint(P, p)
             if c.is_creature and getattr(c, 'prep_card', None) and c.prep_enter: p.prepared = True
             if c.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
             if c.name in ('Swiftfoot Boots', 'Lightning Greaves'):
@@ -1382,11 +1383,45 @@ class Game:
         """Is combo piece n in place or in hand as an instant/sorcery (cost checked later in check_combo)?"""
         return P.has(n) or any(x.name == n and (x.is_instant or x.is_sorcery) for x in P.hand)
 
+    def imprint(s, P, p):
+        """Isochron Scepter: as it enters, exile an instant with mana value 2 or less from hand (CR 406.6, 607.2a).
+        A combo partner is preferred, then a counterspell, instant removal, then card draw."""
+        pool = [x for x in P.hand if x.is_instant and x.cmc <= 2]
+        if not pool: return
+        partners = {n for cb in P.combo_names if 'Isochron Scepter' in cb for n in cb}
+        x = max(pool, key=lambda x: (x.name in partners, bool(x.counter), bool(x.removal), x.draw_now or 0))
+        P.hand.remove(x); p.imprint = x
+        s.log(f'{P.label} imprints {x.name} on Isochron Scepter')
+
+    def scepter_ready(s, P):
+        """Isochron Scepter with Dramatic Reversal imprinted is infinite mana and infinite cast copies when P's nonland
+        mana sources make 3+ (each loop costs {2}), and it wins only with an outlet for the mana or the storm count."""
+        if s.stax_on(P, 'no_artifact_abilities') or s.avail(P) < 2: return False
+        if not any(p.name == 'Isochron Scepter' and not p.neutral and getattr(p, 'imprint', None) is not None
+                   and p.imprint.name == 'Dramatic Reversal' for p in P.bf): return False
+        rocks = sum(p.card.rock for p in P.bf if p.card and p.card.rock and not p.card.is_land and not p.neutral
+                    and not (p.creature and p.sick and 'haste' not in s.kw(p)))
+        if rocks < 3: return False
+        finisher = lambda c: c.drain_now in ('STORM', 'X', 'X2') or c.name in ('Brain Freeze', 'Crackle with Power')
+        if any(finisher(c) for c in P.hand): return True
+        for p in P.bf:
+            st = p.card.spell_trig if p.card and not p.neutral else None
+            if st and st.get('who') in ('self', 'any') and (st.get('drain_each') or st.get('drain_one')): return True
+            # a draw-per-spell engine (Archmage Emeritus) draws the library on infinite copies and finds the finisher
+            if st and st.get('who') in ('self', 'any') and st.get('draw') and any(finisher(c) for c in P.lib): return True
+        pingers = P.has('Weftstalker Ardent') or P.has('Reckless Fireweaver')
+        treasure = P.has('Storm-Kiln Artist') or (P.cmd_card.name == CD.SANAR and P.cmd_on_bf())
+        return bool(pingers and treasure)
+
     def check_combo(s, P):
         lp = s.loop_combo(P)
         cands = list(P.combo_names) + ([tuple(lp[1])] if lp else [])
         for cb in cands:
-            spells = s.combo_spells(P, cb)
+            if 'Isochron Scepter' in cb and 'Dramatic Reversal' in cb:
+                spells = [] if s.scepter_ready(P) else None
+                if spells is not None: cb = ('Isochron Scepter',)
+            else:
+                spells = s.combo_spells(P, cb)
             if spells is not None:
                 spell_names = {c.name for c in spells}
                 perm_names = [n for n in cb if n not in spell_names]
@@ -1425,7 +1460,7 @@ class Game:
                                 broken = True; break
                     if broken: break
                 if not broken:
-                    s.win_all(P, 'combo: ' + (lp[0] if lp and tuple(lp[1]) == cb else ' + '.join(cb))); return True
+                    s.win_all(P, 'combo: ' + (lp[0] if lp and tuple(lp[1]) == cb else 'Isochron Scepter + Dramatic Reversal' if cb == ('Isochron Scepter',) else ' + '.join(cb))); return True
         return False
 
     def upkeep_altwins(s, P):
@@ -1947,6 +1982,8 @@ class Game:
                 # (Dramatic Reversal) is held, one with other uses (Crackle with Power) is scored normally below
                 if not CD.summarize(c): return 0
             else:
+                if c.name == 'Isochron Scepter' and not any(x.name == 'Dramatic Reversal' for x in P.hand) \
+                   and any(x.name == 'Dramatic Reversal' for x in P.lib): return 0   # imprint happens only on entry
                 done = [cb for cb in P.combo_names if c.name in cb and all(s.piece_ok(P, n) or n == c.name for n in cb)]
                 return 200 if done else 78
         if c.alt_win: return 85

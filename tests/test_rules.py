@@ -127,3 +127,40 @@ def test_pure_combo_spell_is_not_cast_as_filler():
     g, A, D = game(); A.combo_names = [('Isochron Scepter', 'Dramatic Reversal')]
     A.hand = [CD.get('Dramatic Reversal')]; A.pool = 5
     assert g.ai_score(A, A.hand[0], 5, False) == 0
+
+# ---------------------------------------------------------------- Isochron Scepter imprint (roadmap 0.2)
+def scepter_setup(rocks=('Sol Ring', 'Arcane Signet'), hand=('Grapeshot',)):
+    g, A, D = game(); A.combo_names = [('Isochron Scepter', 'Dramatic Reversal')]
+    for r in rocks: perm(A, r)
+    A.hand = [CD.get('Dramatic Reversal'), CD.get('Opt')] + [CD.get(h) for h in hand]
+    A.pool = 6; A.lands = 6; A.land_cols = [frozenset('UR')] * 6
+    g.resolve(A, CD.get('Isochron Scepter'))
+    return g, A, D
+
+def test_scepter_imprints_combo_partner():     # CR 406.6, 607.2a: imprint happens as it enters
+    g, A, D = scepter_setup()
+    sc = next(p for p in A.bf if p.name == 'Isochron Scepter')
+    assert sc.imprint.name == 'Dramatic Reversal' and not any(c.name == 'Dramatic Reversal' for c in A.hand)
+
+def test_scepter_reversal_wins_with_rocks_and_outlet():
+    g, A, D = scepter_setup()
+    assert g.check_combo(A) and not D.alive
+
+def test_scepter_reversal_needs_three_rock_mana():
+    g, A, D = scepter_setup(rocks=('Arcane Signet',))
+    assert not g.check_combo(A) and D.alive
+
+def test_scepter_reversal_needs_an_outlet():
+    g, A, D = scepter_setup(hand=())
+    assert not g.check_combo(A) and D.alive
+
+def test_reversal_in_hand_without_imprint_is_no_combo():
+    g, A, D = game(); A.combo_names = [('Isochron Scepter', 'Dramatic Reversal')]
+    perm(A, 'Isochron Scepter'); perm(A, 'Sol Ring'); perm(A, 'Arcane Signet')
+    A.hand = [CD.get('Dramatic Reversal'), CD.get('Grapeshot')]; A.pool = 6
+    assert not g.check_combo(A) and D.alive
+
+def test_scepter_reversal_with_draw_engine_finds_finisher():
+    g, A, D = scepter_setup(hand=())
+    perm(A, 'Archmage Emeritus'); A.lib.append(CD.get('Grapeshot'))
+    assert g.check_combo(A) and not D.alive
