@@ -225,3 +225,71 @@ def test_crackle_with_power_kills_with_enough_mana():
     assert g.special_score(A, CD.get('Crackle with Power'), 'crackle', False) == 140
     A.pool = 2; g.cost(A, CD.get('Crackle with Power'))
     assert g.special_score(A, CD.get('Crackle with Power'), 'crackle', False) == 0
+
+# --- roadmap 0.5: top blank staples
+def test_natures_lore_fetches_a_forest_onto_the_battlefield():   # CR 701.19b, 305.1
+    g, A, D = game()
+    c = CD.get("Nature's Lore")
+    assert c.ramp_lands == 1 and c.ramp_col == 'g'    # it names its basic type and never says the word "land"
+    A.lands = 0; A.land_cols = []
+    g.spell_effect(A, c)
+    assert A.lands == 1 and A.land_cols == [frozenset('g')]
+
+def test_three_visits_fetches_a_land():   # CR 701.19b; this printing names one Forest
+    g, A, D = game()
+    c = CD.get('Three Visits')
+    assert c.ramp_lands == 1 and c.ramp_col == 'g'
+    A.lands = 0; A.land_cols = []
+    g.spell_effect(A, c)
+    assert A.lands == 1 and A.land_cols == [frozenset('g')]
+
+def test_untyped_land_fetch_still_gives_any_colour():   # "up to two basic land cards": no colour named, any basic will do
+    g, A, D = game()
+    c = CD.get('Cultivate')
+    assert c.ramp_lands == 2 and c.ramp_col is None
+    A.lands = 0; A.land_cols = []
+    g.spell_effect(A, c)
+    # Cultivate's second land goes to hand, so only the first lands on the battlefield (CR 305.7)
+    assert A.land_cols == [frozenset('*')]
+
+def test_deflecting_swat_is_a_free_counter():   # CR 701.36a redirects; modelled as stopping a spell, free with a commander
+    c = CD.get('Deflecting Swat')
+    assert c.counter == dict(scope='any', cost=0, soft=0, mvmin=0)
+
+def count_etb(g):
+    """Count apply_effect calls, since individual ETB effects are probabilistic in the AI model."""
+    n = [0]; real = g.apply_effect
+    def spy(q, e, why=''):
+        n[0] += 1; return real(q, e, why=why)
+    g.apply_effect = spy
+    return n
+
+def test_panharmonicon_doubles_etb_triggers_of_artifact_creature_entry():   # CR 706.2a
+    g, A, D = game()
+    src = CD.get('Rook Turret')          # an artifact: when it enters, you draw a card
+    assert src.is_artifact and src.etb_trig
+    turret = E.Perm(A, src); turret.neutral = False; A.bf.append(turret)
+    n = count_etb(g)
+    g.etb_triggers(A, [turret])
+    assert n[0] == 1
+    ph = E.Perm(A, CD.get('Panharmonicon')); ph.neutral = False; A.bf.append(ph)
+    g.etb_triggers(A, [turret])
+    assert n[0] == 3                   # one before, then two more
+
+def test_panharmonicon_leaves_etb_triggers_alone_when_its_controller_is_not_the_one_entering():   # CR 706.2a: "you control"
+    g, A, D = game()
+    ph = E.Perm(D, CD.get('Panharmonicon')); ph.neutral = False; D.bf.append(ph)
+    turret = E.Perm(A, CD.get('Rook Turret')); turret.neutral = False; A.bf.append(turret)
+    n = count_etb(g)
+    g.etb_triggers(A, [turret])
+    assert n[0] == 1                   # D's Panharmonicon does not double A's trigger
+
+def test_panharmonicon_does_not_double_for_a_planeswalker_entry():   # CR 706.2a: only artifacts and creatures
+    g, A, D = game()
+    ph = E.Perm(A, CD.get('Panharmonicon')); ph.neutral = False; A.bf.append(ph)
+    pw = CD.get('Nissa, Who Shakes the World')
+    assert pw.is_planeswalker and not pw.is_artifact and not pw.is_creature
+    henge = E.Perm(A, CD.get('The Great Henge')); henge.neutral = False; A.bf.append(henge)
+    n = count_etb(g)
+    g.etb_triggers(A, [E.Perm(A, pw)])
+    assert n[0] == 1                   # the Henge's trigger fires once, not doubled: Nissa is a planeswalker

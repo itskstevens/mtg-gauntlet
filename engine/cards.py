@@ -236,6 +236,7 @@ def enters_tapped(o):
 def tag(c):
     o = c.oracle; n = c.name
     c.mana_land = 0; c.rock = 0; c.dork = False; c.ritual = 0; c.ramp_lands = 0; c.extra_lands = 0
+    c.ramp_col = None; c.etb_doubler = False
     c.draw_now = 0; c.draw_engine = DRAW_ENGINES.get(n, 0); c.tutor = n in TUTORS
     c.counter = None; c.removal = None; c.wipe = None; c.edict = 0
     c.tokens_now = None; c.tokens_rec = None; c.token_double = n in TOKEN_DOUBLERS
@@ -264,8 +265,17 @@ def tag(c):
     if n == 'Mana Geyser': c.ritual = 5
     if n == "Jeska's Will": c.ritual = 3; c.draw_now = 2
     # --- land ramp
-    if 'search your library for' in o and 'land' in o and 'onto the battlefield' in o and not c.is_land:
+    # "search your library for a [basic land|basic Forest, Plains, or Island] card, put it onto the battlefield".
+    # Nature's Lore and Three Visits name the land type and never say the word "land", which is why they read as
+    # blank. The plain "land" test stays as a fallback so no already-tagged card loses its ramp.
+    BASIC = 'land|forest|plains|island|swamp|mountain|desert'
+    m = re.search(r'search your library for (?:a|an|up to [\w ]+)?(?: basic)? (' + BASIC
+                  + r'(?:(?:,| or ) ' + BASIC + r')*) cards?[^.]*onto the battlefield', o, re.I)
+    if (m or ('search your library for' in o and 'land' in o and 'onto the battlefield' in o)) and not c.is_land:
         c.ramp_lands = 2 if re.search(r'(up to two|two basic land|two land|four basic)', o) else 1
+        kinds = {k.lower() for k in re.split(r',| or ', m.group(1))} if m else set()
+        c.ramp_col = ({'forest': 'g', 'plains': 'w', 'island': 'u', 'swamp': 'b', 'mountain': 'r'}.get(kinds.pop())
+                      if len(kinds) == 1 and 'land' not in kinds else None)
     if n in ('Explore', 'Growth Spiral'): c.ramp_lands = 1
     if n == 'Harrow': c.ramp_lands = 1
     if n == 'Planar Engineering': c.ramp_lands = 2
@@ -302,6 +312,11 @@ def tag(c):
         mvmin = 4 if 'mana value 4 or greater' in o else 0
         c.counter = dict(scope=scope, cost=0 if n in FREE_COUNTERS else c.cmc, soft=soft, mvmin=mvmin)
     if n in ('Sink into Stupor',): c.counter = dict(scope='any', cost=3, soft=0, mvmin=0)
+    # Deflecting Swat: a redirect, not a counter, so the counter tag misses it. In a deck that can cast it the
+    # controller always controls a commander, so its free clause always applies and stopping one spell is the
+    # value the sim can model (CR 701.36a chooses new targets).
+    if n == 'Deflecting Swat': c.counter = dict(scope='any', cost=0, soft=0, mvmin=0)
+    if n == 'Panharmonicon': c.etb_doubler = True   # artifact or creature entering triggers permanents twice
     # --- targeted removal
     rem = None
     m = re.search(r'(destroy|exile) target (nonland permanent|permanent)', o)

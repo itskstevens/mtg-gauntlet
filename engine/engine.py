@@ -284,6 +284,7 @@ class Game:
             v += 7 if c.death_trig.get('edict') else 3
         if c.life_trig: v += 5
         if c.spell_trig and c.spell_trig.get('drain_each'): v += 4
+        if c.etb_doubler: v += 4 + 2 * sum(1 for x in o.bf if x.card and x.card.etb_trig and not x.neutral)
         if c.alt_win: v += 10
         if c.free_outlet: v += 2
         if c.stax and viewer is not o:
@@ -560,8 +561,13 @@ class Game:
                 e = perm.card.etb_trig if perm.card else None
                 if not e or perm.neutral: continue
                 if e.get('own') and q is not P: continue
-                for _ in perms:
-                    s.apply_effect(q, {k: v for k, v in e.items() if k != 'edict'}, why='etb')
+                # Panharmonicon: an artifact or creature entering triggers abilities of your permanents twice (CR 706.2a)
+                dbl = any(x.card and x.card.etb_doubler and not x.neutral for x in q.bf)
+                for ent in perms:
+                    ec = ent.card
+                    times = 2 if dbl and ec is not None and (ec.is_artifact or ent.creature) else 1
+                    for _ in range(times):
+                        s.apply_effect(q, {k: v for k, v in e.items() if k != 'edict'}, why='etb')
 
     def on_draw(s, P):
         if not P.alive or not hasattr(s, 'players'): return
@@ -1084,8 +1090,10 @@ class Game:
     def fetch_lands(s, P, c):
         n = c.ramp_lands
         if c.name in ('Cultivate', "Kodama's Reach"): n = 1
+        # a fetch that names its basic type only provides that colour's mana (Nature's Lore's Forest)
+        col = frozenset(getattr(c, 'ramp_col', None) or '*')
         for _ in range(n):
-            P.lands += 1; P.land_cols.append(frozenset('*')); s.landfall(P)
+            P.lands += 1; P.land_cols.append(col); s.landfall(P)
         if c.name in ('Cultivate', "Kodama's Reach"): P.extra_land_cards = getattr(P, 'extra_land_cards', 0) + 1
 
     def spell_effect(s, P, c, copy=False):
