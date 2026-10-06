@@ -317,6 +317,28 @@ def tag(c):
     # value the sim can model (CR 701.36a chooses new targets).
     if n == 'Deflecting Swat': c.counter = dict(scope='any', cost=0, soft=0, mvmin=0)
     if n == 'Panharmonicon': c.etb_doubler = True   # artifact or creature entering triggers permanents twice
+    # --- graveyard recursion: "return target ... card from your graveyard to the battlefield" (CR 603.6b, 702.145a).
+    # 238 cards in the card DB have that wording. mv caps mana value, tapped enters tapped, sac pays a creature.
+    c.gy_rec = None
+    m = re.search(r'return ((?:up to )?(?:two|three|an |another |the chosen |that |those )*)'
+                  r'(target |another )?([a-z ]*?)cards?\b', o, re.I)
+    if m and re.search(r'(?:from|in) (?:your|a) graveyard', o) and 'to the battlefield' in o:
+        d = {}
+        mm = re.search(r'with mana value (\d+) or less', o)
+        if mm: d['mv'] = int(mm.group(1))
+        if 'tapped' in o: d['tapped'] = True
+        if 'sacrifice a creature' in o: d['sac'] = True    # Victimize pays for its two bodies with one of yours
+        kinds = m.group(3) or ''
+        if not kinds.strip() and re.search(r'return the chosen', o, re.I): kinds = o   # Victimize names them earlier
+        if re.search(r'creature|artifact|enchantment|land|instant or sorcery', kinds):
+            d['kind'] = next((k for k in ('creature', 'artifact', 'enchantment', 'land') if k in kinds),
+                              'spell' if 'instant or sorcery' in kinds else None)
+        else:
+            d['kind'] = None      # any card
+        # the count can sit in an earlier sentence (Victimize: "choose two ... return the chosen cards")
+        nn = re.search(r'\b(two|three)\b', m.group(1), re.I) or re.search(r'\b(two|three) [^.]{0,40}cards?\b', o, re.I)
+        if nn: d['n'] = num(nn.group(1))
+        c.gy_rec = d
     # --- targeted removal
     rem = None
     m = re.search(r'(destroy|exile) target (nonland permanent|permanent)', o)

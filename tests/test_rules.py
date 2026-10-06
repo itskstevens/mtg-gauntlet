@@ -293,3 +293,30 @@ def test_panharmonicon_does_not_double_for_a_planeswalker_entry():   # CR 706.2a
     n = count_etb(g)
     g.etb_triggers(A, [E.Perm(A, pw)])
     assert n[0] == 1                   # the Henge's trigger fires once, not doubled: Nissa is a planeswalker
+
+def test_victimize_sacrifices_a_creature_and_returns_two_tapped():   # CR 603.6b, 302.6 (enters tapped)
+    g, A, D = game()
+    big1, big2 = CD.get('Abzan Devotee'), CD.get('Abzan Falconer')   # both plain 2- and 3-mana bodies
+    food = tok(A, 'Sacrifice me', 1, 1)
+    A.gy += [big1, big2]; A.bf = [food]
+    n = g.gy_rec_resolve(A, CD.get('Victimize'))
+    assert n == 2 and food not in A.bf                       # paid with the cheapest body on the board
+    out = [p for p in A.bf if p.card in (big1, big2)]
+    assert len(out) == 2 and all(p.tapped for p in out)
+    assert all(p.sick for p in out)                # they enter with summoning sickness
+
+def test_victimize_needs_a_creature_to_sacrifice():   # CR 603.6b, "sacrifice a creature. If you do"
+    g, A, D = game()
+    A.gy.append(CD.get('Colossal Rattlewurm'))
+    assert g.gy_rec_resolve(A, CD.get('Victimize')) == 0
+    assert not A.bf
+
+def test_sun_titan_recurs_a_permanent_with_mana_value_3_or_less():   # CR 603.6b
+    g, A, D = game()
+    titan = CD.get('Sun Titan')
+    ok, big = CD.get('Abzan Falconer'), CD.get('Colossal Rattlewurm')
+    assert ok.is_creature and ok.cmc <= 3 < big.cmc
+    assert titan.gy_rec == dict(mv=3, kind=None)
+    A.gy += [ok, big]
+    assert g.gy_rec_resolve(A, titan) == 1
+    assert any(p.card is ok for p in A.bf) and not any(p.card is big for p in A.bf)

@@ -127,6 +127,7 @@ class Game:
         for i, p in enumerate(s.players): p.seat = i
         s.skip_first_draw = fmt == 'constructed'
         s.round = 0; s.active = None; s.winner = None; s.over = False; s.elim = []
+        s.gy_rec_busy = False
         s.death_depth = 0; s._lp = False
         s.doran = False; s.assault = set(); s.tox_owners = []
 
@@ -285,6 +286,7 @@ class Game:
         if c.life_trig: v += 5
         if c.spell_trig and c.spell_trig.get('drain_each'): v += 4
         if c.etb_doubler: v += 4 + 2 * sum(1 for x in o.bf if x.card and x.card.etb_trig and not x.neutral)
+        if c.gy_rec: v += 4 + 2 * len([x for x in o.gy if s.gy_rec_pool(o, c)])   # a permanent that recurs is worth its fodder
         if c.alt_win: v += 10
         if c.free_outlet: v += 2
         if c.stax and viewer is not o:
@@ -654,6 +656,49 @@ class Game:
                     x = max(perm, key=lambda x: x.cmc); S.hand.remove(x); s.log(f'{S.label} Kellan puts in {x.name}'); s.resolve(S, x)
         s.check_deaths(S, 'burn')
 
+    def gy_rec_pool(s, P, c, other_gy=False):
+        """Cards a gy_rec permanent or spell could return, honouring its kind, mana-value cap and token limit."""
+        d = c.gy_rec
+        gys = [q for q in s.players if q.alive] if other_gy else [P]
+        out = []
+        for q in gys:
+            for x in q.gy:
+                if x is c: continue
+                if d.get('kind') and not getattr(x, 'is_' + d['kind'], False): continue
+                if d.get('mv') and x.cmc > d['mv']: continue
+                if d.get('nontoken') and getattr(x, 'token', False): continue
+                out.append((q, x))
+        return out
+
+    def gy_rec_resolve(s, P, c, other_gy=False):
+        """Return up to c.gy_rec['n'] cards from the graveyard (CR 603.6b). A sac-paying card needs a body to pay with."""
+        d = c.gy_rec
+        # returning a card resolves it, which can enter another recur permanent and recurse; one at a time is enough
+        if s.gy_rec_busy: return 0
+        pool = s.gy_rec_pool(P, c, other_gy)
+        if not pool: return 0
+        n = d.get('n', 1)
+        if d.get('sac') and not P.creatures(): return 0
+        if d.get('sac'):
+            p = max(P.creatures(), key=lambda p: -s.value(P, p))
+            s.log(f'{P.label} {c.name} sacrifices {p.name}'); P.bf.remove(p)
+        out = []
+        s.gy_rec_busy = True
+        try:
+            # cards in a graveyard have no Perm, so value the card itself: mana value plus a little for what it does
+            worth = lambda x: x.cmc + (4 if (x.draw_now or x.removal or x.tokens_now) else 0)
+            for q, x in sorted(pool, key=lambda qx: -worth(qx[1]))[:n]:
+                if x not in q.gy: continue   # resolving an earlier card can empty a graveyard the pool listed
+                q.gy.remove(x); s.log(f'{P.label} {c.name} returns {x.name}'); s.resolve(q, x)
+                np_ = next((p for p in q.bf if p.card is x), None)
+                if np_ is not None:
+                    np_.sick = True                  # enters with summoning sickness unless it has haste (CR 603.6b)
+                    if d.get('tapped'): np_.tapped = True
+                out.append(x)
+        finally:
+            s.gy_rec_busy = False
+        return len(out)
+
     def reanimate_pool(s, P, c):
         """(owner, card) pairs a reanimation spell could return. Bind to Life is handled at resolution (it mills first)."""
         if c.name in CD.REANIMATE_ANY_GY: return [(q, x) for q in s.players for x in q.gy if x.is_creature]
@@ -736,8 +781,17 @@ class Game:
         return len(P.lib) < 2 * n + 8
 
     def gy_score(s, P, c):
-        """Cast score for reanimation and self-mill spells, or None if c is neither."""
+        """Cast score for reanimation, graveyard recursion and self-mill spells, or None if c is neither."""
         if s.draw_unsafe(P, c): return 0
+        if c.gy_rec and (c.is_instant or c.is_sorcery):
+            d = c.gy_rec
+            pool = s.gy_rec_pool(P, c)
+            if not pool: return 0
+            if d.get('sac') and not P.creatures(): return 0
+            n = d.get('n', 1)
+            best = sorted((x.cmc + (4 if (x.draw_now or x.removal or x.tokens_now) else 0) for _, x in pool), reverse=True)[:n]
+            if sum(best) < 9: return 0
+            return min(120, 40 + sum(best))
         sp = getattr(c, 'special', None)
         if sp == 'reanimate':
             if c.name == 'Bind to Life': return 58 if (s.mill_cap(P) >= 7 or s.library_win_ready(P)) else 0
@@ -1067,6 +1121,7 @@ class Game:
         """ETB / static-on-entry effects of permanent p."""
         if c.overrun and c.is_creature and not c.overrun.get('static') and not c.overrun.get('activated'):
             s.apply_overrun(P, c)
+        if c.gy_rec: s.gy_rec_resolve(P, c)   # Sun Titan recurs on entry; it recurs again on attack, below
         if c.tokens_now:
             n, pw, tg, kw = c.tokens_now
             nm = 'Plant' if c.name == 'Avenger of Zendikar' else 'Insect' if c.name == 'Hornet Queen' else 'Token'
@@ -1184,6 +1239,8 @@ class Game:
         if sp == 'regrowth':
             back = [x for x in P.gy if not x.is_land and x is not c]
             if back: x = max(back, key=lambda x: x.cmc); P.gy.remove(x); P.hand.append(x)
+        if c.gy_rec and (c.is_instant or c.is_sorcery):
+            s.gy_rec_resolve(P, c)   # Victimize and friends return bodies as they resolve
 
     def special_effect(s, P, c, sp, copy=False):
         opps = P.opps()
@@ -1737,6 +1794,8 @@ class Game:
                 if 'token' in e:
                     n, pw, tg, kw = e['token']; extra += s.make_tokens(A, n if n != 'each' else 1, pw, tg, kw, tapped=True)
                 s.apply_effect(A, {k: v for k, v in e.items() if k != 'token'}, why='attack')
+            elif p.card.gy_rec:
+                s.gy_rec_resolve(A, p.card)   # "whenever ... enters or attacks" recur, once per attacker
             if p.name == 'Hooded Blightfang':
                 for a in atk:
                     if s.has_dt(a) or A.has('Ohran Frostfang'):
