@@ -620,6 +620,39 @@ def tag(c):
         if 'protection from' in o and ('black' in o or 'green' in o): b['kw'].add('pro_bg')
         if 'for each aura' in o: b['p'] += 2; b['t'] += 2
         if b['p'] or b['kw']: c.aura_bonus = b
+    # --- roadmap 0.5 batch 3: Wild Growth, Rhythm of the Wild, Seedborn Muse, Hardened Scales, Phyrexian Metamorph
+    # land auras that make the enchanted land add extra mana (Wild Growth, Fertile Ground, Overgrowth, ...).
+    # lands are abstracted out of the sim, so an Aura is modelled as a permanent that taps for that mana itself
+    # (CR 305.7, 106.1). Oracle variants: "{G}"/"{G}{G}", "one mana of any color", "the chosen color"
+    # (Utopia Sprawl, Shimmerwilds Growth) and "two mana in any combination of colors" (Market Festival).
+    # Cards already in MANA_ENGINES keep their rock tag (Shimmerwilds Growth) to avoid double-counting.
+    m = re.search(r'enchanted (?:land|forest) is tapped for mana, its controller adds an additional (.*?)\.', o)
+    add = m.group(1) if m else ''
+    ph = re.findall(r'\{([wubrgWUBRG])\}', add)
+    c.land_aura = 0; c.land_aura_col = None
+    if not c.rock:
+        if ph:
+            c.land_aura = len(ph); c.land_aura_col = frozenset(x.upper() for x in ph)
+        elif m and ('any color' in add or 'chosen color' in add or 'combination of colors' in add):
+            c.land_aura = 1 if 'one' in add else 2; c.land_aura_col = frozenset('*')
+    # "Nontoken creatures you control have riot" (Rhythm of the Wild, Uncivil Unrest) (CR 702.105).
+    # 'riot' in c.kw is Spider-Punk's own keyword ("other Spiders you control" is too narrow to generalise).
+    c.riot = bool(re.search(r'nontoken creatures you control have riot', o))
+    # "Untap all [permanents/creatures/artifacts] you control during each other player's untap step"
+    # (Seedborn Muse, Drumbellower, Quest for Renewal, Unwinding Clock) (CR 502.1, 503.3)
+    c.untap_others = bool(re.search(r'untap all (?:permanents|creatures|artifacts) you control during each other', o))
+    # +1/+1 counter replacement effects (CR 122.1c): Hardened Scales "one more", Branching Evolution "twice".
+    # Only "would be put on ... instead" text counts: Devour ("enters with twice that many") and cards scoped to
+    # a single creature (Mowu, read as "on ~" after the name swap) or a creature type (Mauhúr) are left out.
+    m = re.search(r'one or more \+1/\+1 counters would be put on ([^,]*?),\s*(that many plus one|twice that many)',
+                  o)
+    c.repl_counter = (1 if m.group(2) == 'that many plus one' else 2) \
+        if m and ('creature' in m.group(1) or 'permanent' in m.group(1)) else 0
+    # clones: "enters as a copy of any artifact/creature/permanent/enchantment on the battlefield" (CR 707).
+    # 'card' variants (Body Double copying from a graveyard) and "becomes a copy" (Cursed Mirror) are excluded.
+    m = re.search(r'enter(?:s| the battlefield)? as a copy of (?:any|a|an) ([a-z]+(?: [a-z]+)*)', o)
+    kinds = set(m.group(1).split()) & {'artifact', 'creature', 'enchantment', 'permanent'} if m else set()
+    c.clone = kinds if kinds and 'card' not in m.group(1) else None
 
 # ---------------------------------------------------------------- prepare (Secrets of Strixhaven)
 def prep_target(raw, alt):
@@ -649,5 +682,5 @@ def summarize(c):
     keys = ['mana_land', 'rock', 'ritual', 'ramp_lands', 'extra_lands', 'draw_now', 'draw_engine', 'tutor', 'counter',
             'removal', 'wipe', 'edict', 'tokens_now', 'tokens_rec', 'anthem', 'overrun', 'death_trig', 'spell_trig',
             'etb_trig', 'life_trig', 'landfall', 'upkeep', 'attack_trig', 'alt_win', 'stax', 'drain_now', 'free_outlet',
-            'aura_bonus', 'token_double']
+            'aura_bonus', 'token_double', 'land_aura', 'riot', 'untap_others', 'repl_counter', 'clone']
     return {k: getattr(c, k) for k in keys if getattr(c, k)}

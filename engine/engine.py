@@ -297,6 +297,11 @@ class Game:
                 else: hurt += 4
             v += hurt
         if any(c.name in cb for cb in o.combo_names): v += 10
+        if getattr(c, 'land_aura', 0): v += 2
+        if getattr(c, 'riot', False): v += 3
+        if getattr(c, 'untap_others', False): v += 3
+        if getattr(c, 'repl_counter', 0): v += 4
+        if getattr(c, 'clone', None): v += 1           # a clone is only worth what it copied, handled below
         if p.is_cmd: v += 5 + p.auras * 2
         if o.cmd_card.name == 'Light-Paws, Emperor\'s Voice' and p.is_cmd: v += 6
         v += o.pilot.get('value_bonus', {}).get(c.name, 0)
@@ -354,6 +359,7 @@ class Game:
         if not totem and any(p.name in CREATURE_MANA and not p.neutral for p in P.bf):
             m += sum(1 for p in P.creatures() if not p.neutral and not (p.card and p.card.rock) and (not p.sick or 'haste' in s.kw(p)))
         if P.has('Smothering Tithe'): m += 1
+        m += sum(p.card.land_aura for p in P.bf if p.card and p.card.land_aura and not p.neutral)   # CR 305.7/106.1
         return max(0, m)
 
     def land_untapped(s, P, l, before):
@@ -386,6 +392,8 @@ class Game:
         for p in P.bf:
             if p.card and p.card.rock and not p.neutral and not (p.creature and p.sick and 'haste' not in s.kw(p)):
                 srcs += [p.card.produces or frozenset()] * max(1, min(p.card.rock, 2))
+            if p.card and p.card.land_aura and not p.neutral:
+                srcs += [p.card.land_aura_col or frozenset()] * max(1, p.card.land_aura)
         srcs += [frozenset('*')] * (P.treasure + (P.pool > s.mana_avail(P)))   # Treasure and ritual mana: any colour
         srcs = [ident if '*' in x else (x & ident if x & ident else x) for x in srcs]
         # bipartite matching of pips to sources (small, so simple augmenting paths)
@@ -437,7 +445,7 @@ class Game:
             for q in P.opps(): s.lose_life(q, 1, P, 'lifegain')
         for p in P.bf:
             if p.name in ("Ajani's Pridemate", 'Heliod, Sun-Crowned', 'Karlov of the Ghost Council', 'Exemplar of Light') and not CT.on(P):
-                p.counters += 1
+                CT.add(s, p, 1)
         CT.on_gain(s, P)
 
     # ---------------------------------------------------------------- tokens
@@ -649,7 +657,7 @@ class Game:
         for p in list(S.bf):
             if p.neutral: continue
             if p.name == 'Vega, the Watcher': S.draw(1)
-            elif p.name == 'Flaming Tyrannosaurus': s.ping(S, 3); p.counters += 1
+            elif p.name == 'Flaming Tyrannosaurus': s.ping(S, 3); CT.add(s, p, 1)
             elif p.name == 'Kellan, the Kid':
                 perm = [x for x in S.hand if not x.is_land and (x.is_creature or x.is_artifact or x.is_enchantment) and x.cmc <= c.cmc]
                 if perm:
@@ -1075,6 +1083,11 @@ class Game:
             s.spell_effect(P, c); P.gy.append(c); return   # Animate Dead / Necromancy: modeled as the reanimation itself
         if c.is_creature or c.is_artifact or c.is_enchantment or c.is_planeswalker or c.is_land:
             if c.is_aura:
+                if getattr(c, 'land_aura', 0):   # Wild Growth-style: no creature to enchant; taps for extra mana (CR 305.7)
+                    if not P.lands: P.gy.append(c); return
+                    a = Perm(P, c); a.creature = False; P.bf.append(a)
+                    s.log(f'{P.label} casts {c.name} on a land')
+                    return
                 tgt = s.aura_target(P, c)
                 if tgt is None: P.gy.append(c); return
                 s.attach(P, c, tgt); a = Perm(P, c); a.creature = False; a.attached = tgt; P.bf.append(a)
@@ -1084,6 +1097,13 @@ class Game:
             if c.is_creature and s.stax_on(P, 'opp_enter_tapped'): p.tapped = True
             if 'haste' in c.kw: p.sick = False
             P.bf.append(p)
+            if getattr(c, 'clone', None): s.clone_into(P, p)   # CR 707: enters as a copy of an artifact/creature/etc.
+            if p.creature and not p.token and not s.no_triggers() and \
+               any(x.card and getattr(x.card, 'riot', False) and not x.neutral and x is not p for x in P.bf):
+                # riot: enter with your choice of a +1/+1 counter or haste (CR 702.105). Attack if it can win
+                # a fight this turn, otherwise take the counter (which Hardened Scales then bumps).
+                if s.active is P and p.sick and s.power(p) >= 3 and 'haste' not in s.kw(p): p.sick = False
+                else: CT.add(s, p, 1)
             if c.is_planeswalker:   # enters with its printed loyalty (CR 306.5b); the counters engine may adjust it
                 p.walker = True; p.loyalty = int(getattr(c, 'loyalty_base', 0) or 3); p.acted = -1
             if c.is_legendary:   # legend rule (CR 704.5j): keep the new one
@@ -1116,6 +1136,34 @@ class Game:
             P.lib.insert(s.rng.randrange(len(P.lib) + 1), c)
         elif c.name not in ('Approach of the Second Sun',):
             P.gy.append(c)
+
+    def clone_targets(s, P, kinds):
+        """Permanents any player controls that a clone with `kinds` can copy (nonland, not itself) (CR 707.2)."""
+        out = []
+        for q in s.players:
+            if not q.alive: continue
+            for t in q.bf:
+                tc = t.card
+                if t.neutral or (tc and tc.is_land): continue
+                if 'permanent' in kinds or (t.creature and 'creature' in kinds) \
+                   or (tc and tc.is_artifact and 'artifact' in kinds) \
+                   or (tc and tc.is_enchantment and 'enchantment' in kinds):
+                    out.append(t)
+        return out
+
+    def clone_into(s, P, p):
+        """Clone (CR 707): p entered as a copy of the most valuable eligible permanent. Copying the target's card
+        carries its tags (ETB, recursion, mana, statics) across; the copy keeps its own name so the legend rule
+        (CR 704.5j) never clashes and the log still shows what was cast."""
+        kinds = getattr(p.card, 'clone', None)
+        if not kinds: return
+        cands = [t for t in s.clone_targets(P, kinds) if t is not p]
+        if not cands: return
+        t = max(cands, key=lambda x: s.value(P, x) + (s.power(x) * 0.3 if x.creature else 0))
+        p.bp, p.bt, p.creature = t.bp, t.bt, t.creature; p.kw = set(t.kw)
+        if t.card is not None: p.card = t.card
+        if p.creature and 'haste' in p.kw: p.sick = False
+        s.log(f'{P.label} {p.name} enters as a copy of {t.name}')
 
     def etb(s, P, p, c):
         """ETB / static-on-entry effects of permanent p."""
@@ -1503,7 +1551,7 @@ class Game:
                 s.apply_effect(P, {k: v for k, v in e.items() if k != 'token'}, why='landfall')
             if c.name == 'Avenger of Zendikar':
                 for q in P.creatures():
-                    if q.name == 'Plant': q.counters += 1
+                    if q.name == 'Plant': CT.add(s, q, 1)
             if c.name == 'Field of the Dead' and P.lands >= 7: s.make_tokens(P, 1, 2, 2, set())
             if c.name == 'Lotus Cobra': P.pool += 1
         if P.cmd_card.name == 'Tatyova, Benthic Druid' and P.cmd_on_bf():
@@ -1933,6 +1981,13 @@ class Game:
         for p in P.bf:
             if s.stax_on(P, 'winter_orb') and p.card and p.card.is_land: continue
             p.tapped = False; p.sick = False
+        # other players' permanents untap too if they untap during each other player's untap step
+        # (Seedborn Muse, Drumbellower, Unwinding Clock) (CR 502.1, 503.3)
+        for q in s.players:
+            if q is P or not q.alive: continue
+            if not any(getattr(x.card, 'untap_others', False) and not x.neutral
+                       for x in q.bf if x.card): continue
+            for p in q.bf: p.tapped = False; p.sick = False
         # upkeep (own)
         s.upkeep_altwins(P)
         if s.over or not P.alive: return
@@ -2140,6 +2195,13 @@ class Game:
                 done = [cb for cb in P.combo_names if c.name in cb and all(s.piece_ok(P, n) or n == c.name for n in cb)]
                 return 200 if done else 78
         if c.alt_win: return 85
+        if c.land_aura: return 84 if P.lands else 0                     # taps into a land you already have (Wild Growth)
+        if c.clone:                                                     # depends on what's already out (CR 707)
+            best = max((s.value(P, t) for t in s.clone_targets(P, c.clone)), default=0)
+            return 88 if best >= 5 else 18
+        if c.repl_counter: return 72                                    # Hardened Scales pays off on a counter deck
+        if c.untap_others: return 70                                     # Seedborn Muse-style
+        if c.riot and not c.is_creature: return 64                       # Rhythm of the Wild / Uncivil Unrest
         if c.drain_now in ('X', 'X2'):
             x = s.avail(P) - c.cmc
             return 140 if any(v.life <= x * (2 if c.drain_now == 'X2' else 1) for v in opps) or x >= 10 else 0

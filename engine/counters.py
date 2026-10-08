@@ -12,24 +12,39 @@ LAEZEL = "Lae'zel, Vlaakith's Champion"
 def on(P):
     return bool(P.pilot.get('counters_engine'))
 
+def repl(P):
+    """+1/+1 counter replacement effects: Hardened Scales adds one, Branching Evolution doubles (CR 122.1c).
+    Applies to every deck, since these are static permanents, not a counter-engine setting."""
+    a, m = 0, 1
+    for q in P.bf:
+        r = getattr(q.card, 'repl_counter', 0) if q.card else 0
+        if not r or q.neutral: continue
+        if r >= 2: m *= r
+        else: a += r
+    return a, m
+
 def laezel(P):
     return any(p.name == LAEZEL and not p.neutral for p in P.bf)
 
 def add(g, p, n, loyalty=False):
-    """Put n counters on p (a +1/+1 counter on a creature, or loyalty on a planeswalker). Lae'zel adds one."""
+    """Put n counters on p (a +1/+1 counter on a creature, or loyalty on a planeswalker). Lae'zel adds one,
+    replacement effects (Hardened Scales) apply. Exemplar/Constable triggers only fire with the counters engine."""
     P = p.owner
     if n <= 0 or p not in P.bf: return 0
     if on(P) and laezel(P) and (p.creature or getattr(p, 'walker', False)): n += 1
     if loyalty: p.loyalty += n
     else:
+        a, m = repl(P)
+        n = n * m + a
         p.counters += n
-        if p.name == 'Exemplar of Light' and getattr(p, 'ex_turn', None) != (g.round, P.idx):
-            p.ex_turn = (g.round, P.idx); P.draw(1)
-        if p.name == 'Constable of the Realm':
-            opp = [q for V in P.opps() for q in V.bf if q.card and not q.card.is_land and g.targetable(q, P)]
-            if opp and getattr(p, 'con_turn', None) != (g.round, P.idx):
-                p.con_turn = (g.round, P.idx); t = max(opp, key=lambda q: g.value(P, q))
-                g.log(f'{P.label} Constable exiles {t.name}'); g.kill(t, 'exile')
+        if on(P):
+            if p.name == 'Exemplar of Light' and getattr(p, 'ex_turn', None) != (g.round, P.idx):
+                p.ex_turn = (g.round, P.idx); P.draw(1)
+            if p.name == 'Constable of the Realm':
+                opp = [q for V in P.opps() for q in V.bf if q.card and not q.card.is_land and g.targetable(q, P)]
+                if opp and getattr(p, 'con_turn', None) != (g.round, P.idx):
+                    p.con_turn = (g.round, P.idx); t = max(opp, key=lambda q: g.value(P, q))
+                    g.log(f'{P.label} Constable exiles {t.name}'); g.kill(t, 'exile')
     return n
 
 def each(g, P, n=1, only=None):

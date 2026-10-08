@@ -2,7 +2,7 @@
 Run: python3 -m pytest tests/test_rules.py -q"""
 import os, sys, random
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from engine import engine as E, cards as CD
+from engine import engine as E, cards as CD, counters as CT
 
 def game(deck_a=None, deck_b=None, n=2):
     base = ['Plains'] * 99
@@ -320,3 +320,63 @@ def test_sun_titan_recurs_a_permanent_with_mana_value_3_or_less():   # CR 603.6b
     A.gy += [ok, big]
     assert g.gy_rec_resolve(A, titan) == 1
     assert any(p.card is ok for p in A.bf) and not any(p.card is big for p in A.bf)
+
+# ---------------------------------------------------------------- roadmap 0.5 batch 3: last named blank staples
+def test_wild_growth_aura_adds_mana_to_a_land():   # CR 305.7, 106.1: "enchanted land adds an additional {G}"
+    g, A, D = game(); c = CD.get('Wild Growth')
+    assert c.is_aura and c.land_aura == 1 and c.land_aura_col == frozenset('G')
+    A.lands = 3; A.land_cols = [frozenset('U')] * 3
+    g.resolve(A, c)
+    assert any(x.name == 'Wild Growth' for x in A.bf)              # no creature to enchant: it just stays on the land
+    assert g.mana_avail(A) == 4                                     # 3 lands + the aura's extra {G}
+    assert g.colors_ok(A, CD.get('Giant Growth'))                   # the {G} pays the pip although only U lands
+    assert g.ai_score(A, CD.get('Wild Growth'), 2, False) == 84     # the AI plays it as a mana producer
+    A.lands = 0
+    assert g.ai_score(A, CD.get('Wild Growth'), 2, False) == 0      # ... but not onto an enchanted land it doesn't have
+
+def test_rhythm_of_the_wild_makes_creature_spells_uncounterable():  # CR 101.2, static: "creature spells you control can't be countered"
+    g, A, D = game()
+    D.hand = [CD.get('Counterspell')]; D.reserve = 5
+    assert g.try_counter(A, CD.get('Rune-Scarred Demon')) is True and not D.hand   # D would counter it
+    D.hand = [CD.get('Counterspell')]; D.reserve = 5
+    perm(A, 'Rhythm of the Wild')
+    assert g.try_counter(A, CD.get('Rune-Scarred Demon')) is False and len(D.hand) == 1   # ... now it can't
+
+def test_rhythm_of_the_wild_riot_choice():   # CR 702.105: riot enters with a +1/+1 counter or haste
+    g, A, D = game(); g.active = A
+    perm(A, 'Rhythm of the Wild')
+    g.resolve(A, CD.get('Colossal Rattlewurm'))   # 6/5: swings this turn, so it chooses haste
+    adult = next(p for p in A.bf if p.name == 'Colossal Rattlewurm')
+    assert not adult.sick and adult.counters == 0
+    g.resolve(A, CD.get('Grizzly Bears'))         # 2/2: can't win a fight, so it takes the counter
+    cub = next(p for p in A.bf if p.name == 'Grizzly Bears')
+    assert cub.sick and cub.counters == 1
+
+def test_seedborn_muse_untaps_your_permanents_on_other_turns():   # CR 502.1, 503.3: "during each other player's untap step"
+    g, A, D = game()
+    perm(A, 'Seedborn Muse'); atk = tok(A, 'Guard', 3, 3); atk.tapped = True
+    g.take_turn(D)
+    assert not atk.tapped                       # tapped after A's turn, untapped during D's untap step
+
+def test_hardened_scales_adds_an_extra_counter():   # CR 122.1c: replacement effect "that many plus one"
+    g, A, D = game()
+    perm(A, 'Hardened Scales')
+    a = tok(A, 'Sentry', 1, 1); CT.add(g, a, 1)
+    assert a.counters == 2
+    b = tok(A, 'Guard', 1, 1); CT.add(g, b, 3)
+    assert b.counters == 4
+    e = tok(D, 'Enemy', 1, 1); CT.add(g, e, 1)
+    assert e.counters == 1                      # "a creature you control": only your own get the extra
+    ap = perm(A, "Ajani's Pridemate"); g.gain(A, 1)
+    assert ap.counters == 2                     # engine life-gain trigger routes through the same replacement
+
+def test_phyrexian_metamorph_copies_a_creature():   # CR 707: "enters as a copy of any artifact or creature"
+    g, A, D = game()
+    big = perm(D, 'Rune-Scarred Demon')           # 6/6 flyer waiting on the board
+    g.resolve(A, CD.get('Phyrexian Metamorph'))
+    p = next(x for x in A.bf if x.name == 'Phyrexian Metamorph')
+    assert p.creature and p.bp == 6 and p.bt == 6 and 'flying' in p.kw
+    assert p.card is big.card                     # the copy inherits the card, so its tags follow
+    g.resolve(A, CD.get('Phyrexian Metamorph'))   # with nothing new worth copying it copies the same 6/6
+    q = [x for x in A.bf if x.name == 'Phyrexian Metamorph']
+    assert len(q) == 2 and all(x.bp == 6 for x in q)
