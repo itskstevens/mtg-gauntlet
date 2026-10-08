@@ -155,9 +155,13 @@ class Game:
     def slime_on(s, p): return p.slime and any(q is not p.owner for q in s.tox_owners)
 
     def drop_auras(s, host=None):
-        """Auras attached to a permanent that left the battlefield are put into the graveyard (CR 303.4c, 704.5m)."""
+        """Auras attached to a permanent that left the battlefield are put into the graveyard (CR 303.4c, 704.5m);
+        an unattached Equipment stays on the battlefield (CR 704.5n)."""
         for q in s.players:
             for a in [a for a in q.bf if getattr(a, 'attached', None) is not None]:
+                if getattr(a.card, 'equip', None) is not None:
+                    if a.attached is host or a.attached not in a.attached.owner.bf: a.attached = None
+                    continue
                 if a.attached is host or a.attached not in a.attached.owner.bf:
                     q.bf.remove(a)
                     if a.card: q.gy.append(a.card)
@@ -302,6 +306,9 @@ class Game:
         if getattr(c, 'untap_others', False): v += 3
         if getattr(c, 'repl_counter', 0): v += 4
         if getattr(c, 'clone', None): v += 1           # a clone is only worth what it copied, handled below
+        if getattr(c, 'equip', None) is not None:
+            b = getattr(c, 'equip_bonus', None) or {}
+            v += (b.get('p', 0) + b.get('t', 0)) * 0.5 + len(b.get('kw', set())) * 2 + (6 if getattr(c, 'equip_hit', 0) else 0)
         if p.is_cmd: v += 5 + p.auras * 2
         if o.cmd_card.name == 'Light-Paws, Emperor\'s Voice' and p.is_cmd: v += 6
         v += o.pilot.get('value_bonus', {}).get(c.name, 0)
@@ -1104,6 +1111,12 @@ class Game:
                 # a fight this turn, otherwise take the counter (which Hardened Scales then bumps).
                 if s.active is P and p.sick and s.power(p) >= 3 and 'haste' not in s.kw(p): p.sick = False
                 else: CT.add(s, p, 1)
+            if getattr(c, 'equip', None) is not None and not s.no_triggers():   # Equip attaches on entry (CR 301.5c)
+                tgt = s.equip_target(P, c)
+                if tgt is not None:
+                    p.attached = tgt
+                    b = getattr(c, 'equip_bonus', None)
+                    if b: tgt.aura_p += b.get('p', 0); tgt.aura_t += b.get('t', 0); tgt.aura_kw |= b.get('kw', set())
             if c.is_planeswalker:   # enters with its printed loyalty (CR 306.5b); the counters engine may adjust it
                 p.walker = True; p.loyalty = int(getattr(c, 'loyalty_base', 0) or 3); p.acted = -1
             if c.is_legendary:   # legend rule (CR 704.5j): keep the new one
@@ -1112,9 +1125,6 @@ class Game:
             if c.name == 'Isochron Scepter': s.imprint(P, p)
             if c.is_creature and getattr(c, 'prep_card', None) and c.prep_enter: p.prepared = True
             if c.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
-            if c.name in ('Swiftfoot Boots', 'Lightning Greaves'):
-                for q in P.bf:
-                    if q.is_cmd: q.aura_kw |= {'hexproof', 'haste'}; q.sick = False
             s.log(f'{P.label} casts {c.name}')
             ec = p.card or c   # the counters engine may swap in a re-tagged copy (planeswalkers, Ballista)
             if c.is_creature and not s.no_triggers():
@@ -1391,6 +1401,17 @@ class Game:
                 x = max(pool, key=lambda a: (a.aura_bonus or {'p': 0})['p'] + len((a.aura_bonus or {'kw': set()})['kw']) * 2)
                 P.lib.remove(x); s._lp = True; s.attach(P, x, tgt); P.bf.append(Perm(P, x)); P.bf[-1].creature = False; s._lp = False
         if P.has('Sram, Senior Edificer') or P.has('Mesa Enchantress') or P.has('Kor Spiritdancer'): P.draw(1)
+
+    def equip_target(s, P, c):
+        """The creature a newly-cast Equipment attaches to (CR 301.5c): the strongest creature you control,
+        preferring the commander when the equipment grants defensive protection."""
+        cr = [x for x in P.creatures() if not x.neutral]
+        if not cr: return None
+        kw = (getattr(c, 'equip_bonus', None) or {}).get('kw', set())
+        if kw & {'hexproof', 'shroud', 'indestructible'}:
+            cm = next((x for x in cr if x.is_cmd), None)
+            if cm is not None: return cm
+        return max(cr, key=lambda x: s.power(x) + s.tough(x) + (2 if x.is_cmd else 0))
 
     # ---------------------------------------------------------------- removal & wipes
     def use_removal(s, P, c, rem, target=None):
@@ -1842,6 +1863,9 @@ class Game:
                 if 'token' in e:
                     n, pw, tg, kw = e['token']; extra += s.make_tokens(A, n if n != 'each' else 1, pw, tg, kw, tapped=True)
                 s.apply_effect(A, {k: v for k, v in e.items() if k != 'token'}, why='attack')
+            elif getattr(p.card, 'equip_hit', 0) and getattr(p, 'attached', None) in atk:
+                A.draw(1)   # Sword of X and Y: "Whenever equipped creature deals combat damage ... draw a card",
+                            # read as an attack trigger (the equipped creature is attacking this turn)
             elif p.card.gy_rec:
                 s.gy_rec_resolve(A, p.card)   # "whenever ... enters or attacks" recur, once per attacker
             if p.name == 'Hooded Blightfang':
@@ -2215,6 +2239,9 @@ class Game:
         if c.token_double: return 74
         if c.tokens_rec or (c.tokens_now and not c.is_instant): return 72
         if c.anthem: return 70 if len(P.creatures()) >= 3 else 40
+        if getattr(c, 'equip', None) is not None:
+            if not P.creatures(): return 40
+            return 78 if getattr(c, 'equip_bonus', None) else 30
         if c.is_aura:
             if not P.creatures(): return 0
             return 82 if c.aura_bonus else 30

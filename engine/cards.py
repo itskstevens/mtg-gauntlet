@@ -244,6 +244,7 @@ def tag(c):
     c.life_trig = None; c.landfall = None; c.upkeep = None; c.attack_trig = None
     c.alt_win = ALT_WINS.get(n); c.stax = STAX.get(n, {}); c.drain_now = 0; c.life_now = 0
     c.fog = n in FOGS; c.protect = n in PROTECT; c.aura_bonus = None; c.mill_win = False
+    c.equip = None; c.equip_bonus = None; c.equip_hit = None
     c.free_outlet = bool(re.search(r'sacrifice (a|another) (creature|artifact or creature)[^:]*:', o)) and not c.is_land
     c.evasive = 'flying' in c.kw or 'unblockable' in o or "can't be blocked" in o
     # --- mana
@@ -620,6 +621,25 @@ def tag(c):
         if 'protection from' in o and ('black' in o or 'green' in o): b['kw'].add('pro_bg')
         if 'for each aura' in o: b['p'] += 2; b['t'] += 2
         if b['p'] or b['kw']: c.aura_bonus = b
+    # --- roadmap 0.6: basic equipment (CR 301.5, 702.30). 'equip' in c.kw comes from the K:Equip line, so every
+    # Artifact — Equipment is caught here. It attaches to the best creature you control on entry (cast-time cost
+    # stands in for the equip activation, CR 301.5c) and grants the flat "Equipped creature" static bonus. Parsed
+    # shapes: "gets +X/+Y", "gets +X/+Y and has <kw>", bare "has <kw>" (Lightning Greaves, Swiftfoot Boots).
+    # Counted bonuses ("+2/+2 for each...") and "{T}:"-granting equipment stay untagged. The Swords' "Whenever
+    # equipped creature deals combat damage to a player ... draw a card" is read as an attack trigger per the roadmap.
+    if 'equip' in c.kw:
+        m = re.search(r'equip \{(\d+)\}', o)
+        c.equip = int(m.group(1)) if m else 1
+        b = dict(p=0, t=0, kw=set())
+        m = re.search(r'equipped creature gets \+?(\d+)/\+?(\d+)', o)
+        if m: b['p'], b['t'] = int(m.group(1)), int(m.group(2))
+        for k in ('flying', 'first strike', 'double strike', 'lifelink', 'vigilance', 'trample',
+                  'hexproof', 'indestructible', 'shroud', 'menace', 'reach', 'deathtouch', 'haste'):
+            if re.search(r'equipped creature[^.]* (?:has|gains?)[^.]*' + k, o) or \
+               re.search(r'equipped creature gets [+0-9/]+ and has [^.]*' + k, o): b['kw'].add(k)
+        if b['p'] or b['t'] or b['kw']: c.equip_bonus = b
+        if re.search(r'deals combat damage to (?:a player|an opponent)', o) and 'draw a card' in o:
+            c.equip_hit = 'draw'
     # --- roadmap 0.5 batch 3: Wild Growth, Rhythm of the Wild, Seedborn Muse, Hardened Scales, Phyrexian Metamorph
     # land auras that make the enchanted land add extra mana (Wild Growth, Fertile Ground, Overgrowth, ...).
     # lands are abstracted out of the sim, so an Aura is modelled as a permanent that taps for that mana itself
@@ -682,5 +702,6 @@ def summarize(c):
     keys = ['mana_land', 'rock', 'ritual', 'ramp_lands', 'extra_lands', 'draw_now', 'draw_engine', 'tutor', 'counter',
             'removal', 'wipe', 'edict', 'tokens_now', 'tokens_rec', 'anthem', 'overrun', 'death_trig', 'spell_trig',
             'etb_trig', 'life_trig', 'landfall', 'upkeep', 'attack_trig', 'alt_win', 'stax', 'drain_now', 'free_outlet',
-            'aura_bonus', 'token_double', 'land_aura', 'riot', 'untap_others', 'repl_counter', 'clone']
+            'aura_bonus', 'token_double', 'land_aura', 'riot', 'untap_others', 'repl_counter', 'clone',
+            'equip', 'equip_bonus', 'equip_hit']
     return {k: getattr(c, k) for k in keys if getattr(c, k)}

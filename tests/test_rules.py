@@ -380,3 +380,44 @@ def test_phyrexian_metamorph_copies_a_creature():   # CR 707: "enters as a copy 
     g.resolve(A, CD.get('Phyrexian Metamorph'))   # with nothing new worth copying it copies the same 6/6
     q = [x for x in A.bf if x.name == 'Phyrexian Metamorph']
     assert len(q) == 2 and all(x.bp == 6 for x in q)
+
+# ---------------------------------------------------------------- roadmap 0.6: basic equipment
+def test_equipment_attaches_to_the_best_creature():   # CR 301.5c, 702.30: Equip attaches to a creature you control
+    g, A, D = game()
+    c = CD.get('Bone Saw')                            # Equipped creature gets +1/+0, Equip {1}
+    assert c.equip == 1 and c.equip_bonus == {'p': 1, 't': 0, 'kw': set()}
+    bear = tok(A, 'Bear', 2, 2); hog = tok(A, 'Hog', 3, 5)
+    g.resolve(A, c)
+    saw = next(x for x in A.bf if x.name == 'Bone Saw')
+    assert saw.attached is hog and g.power(hog) == 4 and g.power(bear) == 2   # the strongest creature got the +1/+0
+    assert g.tough(hog) == 5                                                  # the bonus is static, not just for combat
+    assert g.ai_score(A, CD.get('Bone Saw'), 2, False) >= 60                  # the AI casts a useful sword
+
+def test_equipment_prefers_commander_for_defensive_bonuses():   # CR 301.5c: hexproof/haste boots go on the commander
+    g, A, D = game()
+    hog = tok(A, 'Hog', 6, 6)
+    cmd = tok(A, 'General', 2, 2); cmd.is_cmd = True
+    g.resolve(A, CD.get('Swiftfoot Boots'))          # Equipped creature has hexproof and haste
+    boots = next(x for x in A.bf if x.name == 'Swiftfoot Boots')
+    assert boots.attached is cmd                     # prefers the commander, not the 6/6
+    assert 'hexproof' in g.kw(cmd) and 'haste' in g.kw(cmd)
+
+def test_equipment_survives_its_creature():   # CR 704.5n: an unattached Equipment stays on the battlefield
+    g, A, D = game()
+    hog = tok(A, 'Hog', 3, 3)
+    g.resolve(A, CD.get('Bone Saw'))
+    saw = next(x for x in A.bf if x.name == 'Bone Saw')
+    g.kill(hog, 'combat')
+    assert hog not in A.bf and saw in A.bf and saw.attached is None
+    assert not any(x.name == 'Bone Saw' for x in A.gy)     # Equipment does not follow the creature to the graveyard
+
+def test_sword_hit_triggers_draw_when_equipped_creature_attacks():   # "Whenever equipped creature deals combat damage ... draw a card"
+    g, A, D = game(); g.active = A
+    c = CD.get('Sword of Fire and Ice')               # +2/+2, "you draw a card" on combat damage (Sword of X and Y)
+    assert c.equip == 2 and c.equip_hit == 'draw'
+    bearer = tok(A, 'Bearer', 3, 3)
+    g.resolve(A, c)
+    sword = next(x for x in A.bf if x.name == 'Sword of Fire and Ice')
+    assert sword.attached is bearer and g.power(bearer) == 5
+    g.combat(A)                                       # the equipped creature deals combat damage, read as an attack trigger
+    assert len(A.hand) == 1
