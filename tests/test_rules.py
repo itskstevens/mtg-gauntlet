@@ -421,3 +421,17 @@ def test_sword_hit_triggers_draw_when_equipped_creature_attacks():   # "Whenever
     assert sword.attached is bearer and g.power(bearer) == 5
     g.combat(A)                                       # the equipped creature deals combat damage, read as an attack trigger
     assert len(A.hand) == 1
+
+# ---------------------------------------------------------------- roadmap 0.7: fairer removal targets
+def test_removal_spares_the_commander_for_a_comparable_threat():   # CR 903: it recurs from the command zone
+    g, A, D = game()
+    cm = perm(D, 'Isamaru, Hound of Konda'); cm.is_cmd = True        # 2/1 commander (worth ~7.3 to remove)
+    wolf = perm(D, 'Zada, Hedron Grinder')                         # 3/3 non-commander, within ~4 points of it
+    assert g.pick_removal_target(A, CD.get('Murder'), {'kind': 'creature', 'how': 'destroy'}) is wolf
+    assert cm in D.bf                                                # the commander survives to be cast again
+
+def test_removal_still_targets_a_threatening_commander():   # CR 903: ... but not when it clearly outranks the board
+    g, A, D = game()
+    cm = perm(D, 'Isamaru, Hound of Konda'); cm.is_cmd = True        # 2/1 commander is the biggest threat here
+    mite = tok(D, 'Mite', 4, 4)                                      # small token is not within ~4 points of it
+    assert g.pick_removal_target(A, CD.get('Murder'), {'kind': 'creature', 'how': 'destroy'}) is cm

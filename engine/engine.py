@@ -1457,7 +1457,7 @@ class Game:
         return (w[0] == 'mana' and s.avail(P) >= w[1]) or (w[0] == 'life' and P.life > w[1] + 5) or (w[0] == 'other' and len(P.hand) > 0)
 
     def pick_removal_target(s, P, c, rem, only_from=None):
-        best = None; bv = 2.0
+        best = None; bv = 2.0; other = None; ov = 2.0
         for V in (only_from or P.opps()):
             for p in V.bf:
                 if p.card is None and not p.creature: continue
@@ -1478,6 +1478,12 @@ class Game:
                     if mv[1] == 'less' and p.card.cmc > mv[0]: continue
                 v = s.value(P, p) + 0.2 * s.threat(P, V)
                 if v > bv: best, bv = p, v
+                if not p.is_cmd and v > ov: other, ov = p, v
+        # (roadmap 0.7) a commander recurs from the command zone (CR 903), so the removal is burned.
+        # It is only worth it when the commander clearly outranks the next best permanent; a comparable
+        # threat on the same board dies first (Sanar's over-removal was "every commander, every game").
+        if best is not None and best.is_cmd and other is not None and ov >= bv - 4:
+            return other
         return best
 
     def wipe_hits(s, P, w, p):
