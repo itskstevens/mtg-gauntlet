@@ -542,6 +542,8 @@ class Game:
             for v in opps: s.force_sac(v, nontoken=False, src=q, why='pact')
         if e.get('mana'):
             q.treasure += 1
+        if e.get('counters_each'):
+            for x in q.creatures(): CT.add(s, x, e['counters_each'])
         if e.get('token'):
             n, pw, tg, kw = e['token']; s.make_tokens(q, n if n != 'each' else 1, pw, tg, kw)
 

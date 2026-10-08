@@ -35,6 +35,7 @@ def blank(c, named):
 def main():
     ap = argparse.ArgumentParser(description='blank-card coverage')
     ap.add_argument('decks', nargs='*', help='deck folder names; default: every decks/*/list.txt')
+    ap.add_argument('--top', type=int, default=15, help='how many top blank cards to list (default 15)')
     args = ap.parse_args()
     lis = sorted(glob.glob(os.path.join(ROOT, 'decks', '*', 'list.txt')))
     lis = [f for f in lis if not os.path.basename(os.path.dirname(f)).startswith('.')]
@@ -82,7 +83,7 @@ def main():
     for d, b, t in sorted(per_deck, key=lambda x: -x[1]):
         print(f'  {d:<28} {b}/{t}  ({100 * b / max(1, t):.1f}%)')
     print('\ntop blank cards by slots played:')
-    for name, n in top.most_common(15):
+    for name, n in top.most_common(args.top):
         print(f'  {name:<32} {n}')
 
 if __name__ == '__main__':

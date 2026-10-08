@@ -172,7 +172,7 @@ COMBOS = [
     ('Exquisite Blood', 'Marauding Blight-Priest'), ('Exquisite Blood', 'Bloodthirsty Conqueror'),
     ('Sanguine Bond', 'Bloodthirsty Conqueror'),
 ]
-FOGS = {'Aetherize'}
+FOGS = {'Aetherize', "Teferi's Protection"}
 # Reanimation and self-mill. Reanimate / Animate Dead / Necromancy take from any graveyard, Persist only nonlegendary.
 REANIMATE_SPELLS = {'Reanimate', 'Bind to Life', 'Restore Relic', 'Animate Dead', 'Necromancy', 'Persist',
                     'Unburial Rites', 'Dread Return', 'Exhume'}
@@ -552,6 +552,9 @@ def tag(c):
     if n == 'Tempt with Bunnies': c.tokens_now = (2, 1, 1, set())
     if n == 'Glimpse the Impossible': c.tokens_rec = None; c.draw_now = 2
     if n == 'Reckless Impulse': c.draw_now = 2
+    if n == 'Fact or Fiction': c.draw_now = 3
+    if re.search(r'whenever a (?:nontoken )?creature you control enters[^.]*\+1/\+1 counter on each creature you control', o):
+        c.etb_trig = dict(counters_each=1)
     if n in ('Valakut Awakening', 'Flashback', 'Pinnacle Monk'): c.draw_now = 1
     if n == 'Purphoros, God of the Forge': c.overrun = None
     if n == 'Weftstalker Ardent': c.etb_trig = dict(drain_each=1, own=True)
@@ -703,5 +706,12 @@ def summarize(c):
             'removal', 'wipe', 'edict', 'tokens_now', 'tokens_rec', 'anthem', 'overrun', 'death_trig', 'spell_trig',
             'etb_trig', 'life_trig', 'landfall', 'upkeep', 'attack_trig', 'alt_win', 'stax', 'drain_now', 'free_outlet',
             'aura_bonus', 'token_double', 'land_aura', 'riot', 'untap_others', 'repl_counter', 'clone',
-            'equip', 'equip_bonus', 'equip_hit']
-    return {k: getattr(c, k) for k in keys if getattr(c, k)}
+            'equip', 'equip_bonus', 'equip_hit',
+            'draw_once', 'treasure_now', 'fog', 'no_counter_static', 'cost_less', 'dork', 'protect', 'wheel',
+            'special', 'life_now', 'uncounterable', 'mob', 'dmg_boost', 'fetch_life', 'edict_self', 'charm_wipe',
+            'x_tokens']
+    out = {}
+    for k in keys:
+        v = getattr(c, k, None)
+        if v: out[k] = v
+    return out

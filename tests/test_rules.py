@@ -435,3 +435,23 @@ def test_removal_still_targets_a_threatening_commander():   # CR 903: ... but no
     cm = perm(D, 'Isamaru, Hound of Konda'); cm.is_cmd = True        # 2/1 commander is the biggest threat here
     mite = tok(D, 'Mite', 4, 4)                                      # small token is not within ~4 points of it
     assert g.pick_removal_target(A, CD.get('Murder'), {'kind': 'creature', 'how': 'destroy'}) is cm
+
+# ---------------------------------------------------------------- roadmap 0.5 batch 4: honest coverage + next-30 gaps
+def test_cathars_crusade_pumps_every_creature_as_they_enter():   # CR 122.1a just checks counters; 604.2: "Whenever a creature you control enters..."
+    g, A, D = game()
+    perm(A, "Cathars' Crusade")                                  # "put a +1/+1 counter on each creature you control"
+    soldier = tok(A, 'Soldier', 1, 1)
+    g.resolve(A, CD.get('Grizzly Bears'))                        # the entering bear counts too
+    bear = next(x for x in A.bf if x.name == 'Grizzly Bears')
+    assert soldier.counters == 1 and bear.counters == 1
+    g.resolve(A, CD.get('Runeclaw Bear'))                        # a second enter re-pumps everyone
+    rune = next(x for x in A.bf if x.name == 'Runeclaw Bear')
+    assert soldier.counters == 2 and bear.counters == 2 and rune.counters == 1
+
+def test_fact_or_fiction_is_tagged_as_a_big_draw():             # CR 701.14: revealed piles into your hand — modelled as a deep draw
+    g, A, D = game()
+    c = CD.get('Fact or Fiction')
+    assert c.draw_now == 3
+    g.resolve(A, c)
+    assert len(A.hand) == 3
+    assert any('Fact or Fiction' in x.name for x in A.gy)
