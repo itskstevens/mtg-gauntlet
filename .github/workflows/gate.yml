@@ -1,0 +1,17 @@
+name: gate
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Secret scan (gitleaks) — blocks on a leaked secret
+        uses: gitleaks/gitleaks-action@v2
+      - name: Lint shell / yaml / compose (advisory)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck yamllint
+          find . -name '*.sh' -not -path './.git/*' -print0 | xargs -0 -r shellcheck -S warning || true
+          yamllint -d relaxed . || true
+          docker compose config -q 2>/dev/null || true
