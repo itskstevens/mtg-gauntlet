@@ -455,3 +455,99 @@ def test_fact_or_fiction_is_tagged_as_a_big_draw():             # CR 701.14: rev
     g.resolve(A, c)
     assert len(A.hand) == 3
     assert any('Fact or Fiction' in x.name for x in A.gy)
+
+# ---------------------------------------------------------------- Pirates / Admiral Beckett Brass (theft + typal)
+def pgame(n=2):
+    """A game whose 'me' deck (player A) has the Pirate pilot (chosen_type: Pirate)."""
+    base = ['Plains'] * 99
+    specs = [('A', ['Isamaru, Hound of Konda'] + base, True, 'x', 3, {'chosen_type': 'Pirate'}),
+             ('B', ['Isamaru, Hound of Konda'] + base, False, 'y', 3, {})]
+    specs += [('C', ['Isamaru, Hound of Konda'] + base, False, 'z', 3, {}) for _ in range(n - 2)]
+    g = E.Game(specs, random.Random(1), on_play=0)
+    for P in g.players: P.hand = []; P.bf = []
+    g.active = g.players[0]
+    return g, g.players[0], g.players[1]
+
+def test_steal_eot_returns_at_cleanup():          # CR 613: control-change until end of turn
+    g, A, B = pgame(); t = perm(B, 'Llanowar Elves')
+    assert g.steal(A, t, 'eot', untap=True, haste=True, pirate=True)
+    assert t in A.bf and t.owner is A and 'pirate' in t.made_types
+    g.return_eot_steals()
+    assert t in B.bf and t.owner is B and t.made_types == set()
+
+def test_stolen_permanent_dies_to_owners_graveyard():   # CR 400.3, 903.9a: a card goes to its owner's zones
+    g, A, B = pgame(); t = perm(B, 'Llanowar Elves')
+    g.steal(A, t, 'permanent'); assert t in A.bf
+    g.kill(t, 'destroy')
+    assert any(c.name == 'Llanowar Elves' for c in B.gy)
+    assert not any(c.name == 'Llanowar Elves' for c in A.gy)
+
+def test_stolen_commander_returns_to_owners_command_zone():   # CR 903.9: commander goes to the command zone
+    g, A, B = pgame(); c = E.Perm(B, CD.get('Isamaru, Hound of Konda'), is_cmd=True); c.sick = False
+    B.bf.append(c); B.cmd_zone = False
+    g.steal(A, c, 'permanent'); assert c in A.bf
+    g.kill(c, 'destroy')
+    assert B.cmd_zone is True and not any(x.name == 'Isamaru, Hound of Konda' for x in A.gy)
+
+def test_beckett_steals_from_a_three_pirate_player():   # Admiral Beckett Brass end-step trigger
+    g, A, B = pgame(); g.round = 5
+    bk = E.Perm(A, CD.get('Admiral Beckett Brass'), is_cmd=True); bk.sick = False; A.bf.append(bk)
+    loot = perm(B, 'Llanowar Elves')
+    pir = [tok(A, f'P{i}', 2, 2) for i in range(3)]
+    for p in pir: p.made_types = {'pirate'}; g.combat_hit(A, B, p, 2)
+    assert len(g.pirate_dmg[B.idx]) == 3
+    g.end_step(A)
+    assert loot in A.bf and loot.owner is A            # stolen permanently
+
+def test_beckett_needs_three_pirates():
+    g, A, B = pgame(); g.round = 5
+    bk = E.Perm(A, CD.get('Admiral Beckett Brass'), is_cmd=True); bk.sick = False; A.bf.append(bk)
+    loot = perm(B, 'Llanowar Elves')
+    for i in range(2):
+        p = tok(A, f'P{i}', 2, 2); p.made_types = {'pirate'}; g.combat_hit(A, B, p, 2)
+    g.end_step(A)
+    assert loot in B.bf                                # only two Pirates: no steal
+
+def test_kindred_dominance_spares_chosen_type():   # CR 700.3: destroy creatures not of the chosen type
+    g, A, B = pgame()
+    pir = perm(A, 'Coercive Recruiter'); nonpir = perm(A, 'Llanowar Elves'); opp_pir = perm(B, 'Coercive Recruiter')
+    kd = CD.get('Kindred Dominance'); g.do_wipe(A, kd, kd.wipe)
+    assert pir in A.bf and opp_pir in B.bf and nonpir not in A.bf
+
+def test_kindred_dominance_without_chosen_type_is_unchanged():   # legacy fallback: spares the caster's board
+    g, A, D = game()                                   # plain game, no chosen_type
+    mine = perm(A, 'Grizzly Bears'); theirs = perm(D, 'Grizzly Bears')
+    kd = CD.get('Kindred Dominance'); g.do_wipe(A, kd, kd.wipe)
+    assert mine in A.bf and theirs not in D.bf
+
+def test_pirate_lord_buffs_other_pirates_only():   # Admiral Beckett Brass: other Pirates you control get +1/+1
+    g, A, B = pgame()
+    bk = E.Perm(A, CD.get('Admiral Beckett Brass'), is_cmd=True); bk.sick = False; A.bf.append(bk)
+    other = perm(A, 'Coercive Recruiter')
+    base = CD.get('Coercive Recruiter').power
+    assert g.power(other) == base + 1                  # the other Pirate is buffed
+    assert g.power(bk) == CD.get('Admiral Beckett Brass').power   # not itself
+
+def test_lords_inert_without_chosen_type():        # opponents / decks without the key are unaffected
+    g, A, D = game()
+    bk = E.Perm(A, CD.get('Admiral Beckett Brass')); bk.sick = False; A.bf.append(bk)
+    other = perm(A, 'Coercive Recruiter')
+    assert g.power(other) == CD.get('Coercive Recruiter').power   # no chosen_type -> no buff
+
+def test_cover_of_darkness_fear():                 # CR 702.36: blockable only by artifact and/or black creatures
+    g, A, B = pgame(); perm(A, 'Cover of Darkness')
+    att = tok(A, 'Pir', 3, 3); att.made_types = {'pirate'}
+    tok(B, 'White', 3, 3)                              # colourless token: cannot block
+    assert g.blockers_for(B, att, set()) == []
+
+def test_coercive_recruiter_steals_on_pirate_etb():   # Coercive Recruiter ETB-of-a-Pirate trigger
+    g, A, B = pgame()
+    rec = perm(A, 'Coercive Recruiter'); target = perm(B, 'Llanowar Elves')
+    g.etb_triggers(A, [rec])                           # a Pirate (the Recruiter) entered
+    assert target in A.bf and 'pirate' in target.made_types and target.owner is A
+
+def test_port_razer_extra_combat_is_bounded():     # CR 506/509: no infinite extra-combat loop
+    g, A, B = pgame(3); g.round = 5
+    pr = perm(A, 'Port Razer')
+    for _ in range(10): g.combat_hit(A, B, pr, 3)
+    assert A.razer_extra <= len(A.opps()) and B.idx in pr.razer_hit

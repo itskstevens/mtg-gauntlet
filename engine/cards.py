@@ -676,6 +676,60 @@ def tag(c):
     m = re.search(r'enter(?:s| the battlefield)? as a copy of (?:any|a|an) ([a-z]+(?: [a-z]+)*)', o)
     kinds = set(m.group(1).split()) & {'artifact', 'creature', 'enchantment', 'permanent'} if m else set()
     c.clone = kinds if kinds and 'card' not in m.group(1) else None
+    pirate_tags(c)
+
+# ---------------------------------------------------------------- Pirates / Admiral Beckett Brass (theft + typal)
+# All of this is curated by card name: the deck-under-test's cards. The engine only acts on these tags when the
+# controlling player's pilot sets `chosen_type` (and for the theft/combat payoffs, only for the deck under test),
+# so opponents and chosen_type-less decks are unaffected and existing results don't move.
+def pirate_tags(c):
+    n = c.name
+    # --- type-scoped static lords (read by Game.power/Game.tough). typ='*chosen*' uses the pilot's chosen_type.
+    # others=True means it does not buff itself.
+    c.type_lord = None
+    if n in ('Admiral Beckett Brass', 'Corsair Captain'):
+        c.type_lord = dict(p=1, t=1, typ='pirate', others=True)
+    elif n == "Vanquisher's Banner":
+        c.type_lord = dict(p=1, t=1, typ='*chosen*', others=True)
+    # --- attack-time typal pumps (applied as pumps in Game.combat)
+    c.type_pump = None
+    if n == 'Dire Fleet Neckbreaker': c.type_pump = 'neckbreaker'       # attacking Pirates you control get +2/+0
+    elif n == 'Dire Fleet Captain': c.type_pump = 'dire_captain'        # +1/+1 per other attacking Pirate
+    elif n == 'Shared Animosity': c.type_pump = 'shared_animosity'      # +1/+0 per other attacker sharing a type
+    # --- theft (gain control). Dispatched by Game; see STEAL handling.
+    c.steals = None
+    if n == 'Blatant Thievery': c.steals = 'blatant'                    # each opp: steal best permanent (permanent)
+    elif n == 'Mass Mutiny': c.steals = 'mass_mutiny'                   # each opp: steal one creature (eot, untap, haste)
+    elif n == 'Insurrection': c.steals = 'insurrection'                 # steal all creatures (eot, untap, haste)
+    elif n == 'Captivating Crew': c.steals = 'captivating'              # {3}{R} sorcery-speed: steal a creature (eot)
+    elif n == 'Coercive Recruiter': c.steals = 'coercive'              # pirate ETB: steal a creature (eot, as a Pirate)
+    elif n == 'Hostage Taker': c.steals = 'hostage'                     # ETB: exile; steal if affordable
+    elif n == 'Admiral Beckett Brass': c.steals = 'beckett'            # end step: steal from a 3+-Pirate-hit player
+    elif n == 'Zara, Renegade Recruiter': c.steals = 'zara'            # attack: borrow a creature from the defender's hand
+    # --- Kitesail Larcenist is removal, not a mana rock: the Treasure reminder text ("{t}, sacrifice this artifact:
+    # add one mana...") mis-tagged it as a {T}:add dork. Its rock tag is left in place globally so opponents running
+    # it keep their existing mana (the hard "don't change existing decks" constraint); the engine ignores that rock
+    # for the deck under test (Game.mana_avail / colors_ok) and plays it as removal (Game.etb).
+    c.larcenist = n == 'Kitesail Larcenist'
+    # --- combat-damage payoffs
+    c.combat_payoff = None
+    if n == 'Coastal Piracy': c.combat_payoff = 'coastal'              # per creature hitting an opponent: draw
+    elif n == 'Bident of Thassa': c.combat_payoff = 'bident'           # per creature hitting a player: draw
+    elif n == 'Malcolm, Keen-Eyed Navigator': c.combat_payoff = 'malcolm'   # Treasure per opp hit by my Pirates
+    elif n == 'Ramirez DePietro, Pillager': c.combat_payoff = 'ramirez'     # Pirates hit a player: exile+cast top
+    elif n == 'Breeches, Brazen Plunderer': c.combat_payoff = 'breeches'    # same, per opponent hit
+    elif n == 'Francisco, Fowl Marauder': c.combat_payoff = 'francisco'     # Pirates hit a player: explore
+    elif n == 'Port Razer': c.combat_payoff = 'port_razer'            # combat damage: untap + extra combat phase
+    # --- other chosen-type payoffs (gated on pilot chosen_type)
+    c.chosen_fear = n == 'Cover of Darkness'                           # chosen type has fear
+    c.chosen_cost = n == "Herald's Horn"                              # creature spells of chosen type cost {1} less + peek
+    c.chosen_draw_cast = n == "Vanquisher's Banner"                  # draw on casting a creature spell of chosen type
+    c.chosen_discovery = n == 'Kindred Discovery'                     # draw per chosen-type creature entering/attacking
+    c.pirate_wipe = n == 'Fiery Cannonade'                            # 2 damage to each non-Pirate creature
+    # --- nice-to-have
+    c.kari_zev = n == 'Kari Zev, Skyship Raider'
+    c.breeches_modes = n == 'Breeches, Eager Pillager'
+    c.brass_reanimate = n == 'Admiral Brass, Unsinkable'
 
 # ---------------------------------------------------------------- prepare (Secrets of Strixhaven)
 def prep_target(raw, alt):
@@ -709,7 +763,9 @@ def summarize(c):
             'equip', 'equip_bonus', 'equip_hit',
             'draw_once', 'treasure_now', 'fog', 'no_counter_static', 'cost_less', 'dork', 'protect', 'wheel',
             'special', 'life_now', 'uncounterable', 'mob', 'dmg_boost', 'fetch_life', 'edict_self', 'charm_wipe',
-            'x_tokens']
+            'x_tokens', 'type_lord', 'type_pump', 'steals', 'larcenist', 'combat_payoff', 'chosen_fear',
+            'chosen_cost', 'chosen_draw_cast', 'chosen_discovery', 'pirate_wipe', 'kari_zev', 'breeches_modes',
+            'brass_reanimate']
     out = {}
     for k in keys:
         v = getattr(c, k, None)

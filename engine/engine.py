@@ -20,6 +20,9 @@ BITE = {'Devouring Tendrils', 'Wolf Strike', 'Punishing Punch'}
 CODIE = 'Codie, Ravenous Codex'
 CREATURE_MANA = {'Cryptolith Rite', 'Elven Chorus', 'Enduring Vitality'}   # creatures you control tap for any color
 LOOP_PAYOFFS = {'Flaming Tyrannosaurus', 'Impending Flux', 'Stensian Sanguinist', 'Emeritus of Conflict'}
+# words in a card's subtype list that are not creature types (used for "shares a creature type" tests)
+NON_CREATURE_TYPES = {'legendary', 'creature', 'artifact', 'enchantment', 'land', 'instant', 'sorcery',
+                      'planeswalker', 'token', 'snow', 'basic', 'tribal', 'world', 'aura', 'equipment', 'vehicle'}
 
 class Perm:
     _id = 0
@@ -34,6 +37,9 @@ class Perm:
         s.tapped = False; s.sick = True; s.counters = 0; s.pump = 0; s.pumpt = 0; s.tmpkw = set()
         s.auras = 0; s.aura_p = 0; s.aura_t = 0; s.aura_kw = set(); s.neutral = False; s.infect_turn = False
         s.slime = 0; s.rankled = False; s.prepared = False; s.cmd_slot = 1
+        # theft (gain control): orig_owner is the card's real owner, set when first stolen and never changed; owner
+        # is used throughout as the controller. made_types are temporary creature types (Coercive Recruiter).
+        s.orig_owner = None; s.made_types = set()
     @property
     def c(s): return s.card
     def is_art(s): return s.card is not None and s.card.is_artifact
@@ -130,6 +136,8 @@ class Game:
         s.gy_rec_busy = False
         s.death_depth = 0; s._lp = False
         s.doran = False; s.assault = set(); s.tox_owners = []
+        s.eot_steals = []; s.zara_borrowed = []
+        s.pirate_dmg = collections.defaultdict(set); s.combat_pirate_hits = collections.defaultdict(set)
 
     def log(s, msg):
         if s.logging: s.events.append(f'T{s.round} {msg}')
@@ -153,6 +161,80 @@ class Game:
         s.assault = {q.idx for q in alive if any(p.name == 'Assault Formation' and not p.neutral for p in q.bf)}
         s.tox_owners = [q for q in alive if any(p.name == 'Toxrill, the Corrosive' and not p.neutral for p in q.bf)]
     def slime_on(s, p): return p.slime and any(q is not p.owner for q in s.tox_owners)
+
+    # ---------------------------------------------------------------- creature types (typal) + theft
+    def chosen_type(s, P):
+        """The pilot's chosen creature type (lowercased), or None. Only the deck under test sets it, so every typal
+        payoff below is inert for opponents and for decks without the key (keeps existing results unchanged)."""
+        t = P.pilot.get('chosen_type') if P.pilot else None
+        return t.lower() if t else None
+
+    def is_type(s, p, typ):
+        """Does permanent p count as creature type `typ` (CR 700.3)? Changeling is every type (CR 702.73);
+        made_types covers creatures turned into that type (Coercive Recruiter)."""
+        if not p.creature: return False
+        typ = typ.lower()
+        if typ in p.made_types: return True
+        if 'changeling' in p.kw: return True
+        return p.card is not None and typ in p.card.subtypes
+
+    def creature_types(s, p):
+        """p's creature types as a set; '*' stands in for changeling (shares a type with everything)."""
+        if 'changeling' in p.kw: return {'*'}
+        base = (p.card.subtypes - NON_CREATURE_TYPES) if p.card else set()
+        return (base | p.made_types) or set()
+
+    def shares_type(s, a, b):
+        ta, tb = s.creature_types(a), s.creature_types(b)
+        return '*' in ta or '*' in tb or bool(ta & tb)
+
+    def steal(s, thief, perm, until, untap=False, haste=False, pirate=False):
+        """Gain control of `perm` (CR 613.1b, modelled as moving it to the thief's battlefield). `until` is 'eot'
+        (returned at cleanup) or 'permanent'. The card's true owner is remembered so it dies to its owner's
+        graveyard and a stolen commander still goes to its owner's command zone (CR 903.9)."""
+        cur = perm.owner
+        if cur is thief or perm not in cur.bf: return False
+        if perm.orig_owner is None: perm.orig_owner = cur     # the real owner, fixed on first theft
+        cur.bf.remove(perm); perm.owner = thief; thief.bf.append(perm)
+        perm.sick = True                                      # new control: summoning sick unless granted haste
+        if untap: perm.tapped = False
+        if haste: perm.sick = False; perm.tmpkw.add('haste')
+        if pirate: perm.made_types = set(perm.made_types) | {'pirate'}
+        if until == 'eot':
+            perm.steal_return = cur
+            s.eot_steals.append(perm)
+        if perm.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
+        s.log(f'{thief.label} steals {cur.label}\'s {perm.name} ({until})')
+        thief.stats['stolen'] += 1
+        return True
+
+    def return_eot_steals(s):
+        """Cleanup: hand back every 'until end of turn' stolen permanent to the player it was taken from."""
+        for perm in s.eot_steals:
+            cur = perm.owner
+            if perm not in cur.bf: continue              # it died or left; nothing to return
+            back = getattr(perm, 'steal_return', perm.orig_owner)
+            cur.bf.remove(perm); perm.owner = back; back.bf.append(perm)
+            perm.made_types = set(); perm.sick = True
+            if perm.orig_owner is back: perm.orig_owner = None
+            s.log(f'{back.label} regains control of {perm.name}')
+        s.eot_steals = []
+
+    def best_steal_target(s, thief, victims, kind='perm'):
+        """Most valuable targetable, non-land permanent a given set of players controls. kind: 'perm' any permanent,
+        'creature' creatures only, 'art_cre' creatures or artifacts."""
+        best, bv = None, 0
+        for V in victims:
+            for p in V.bf:
+                if p.neutral: continue
+                if p.card is not None and p.card.is_land: continue
+                if p.card is None and not p.creature: continue
+                if kind == 'creature' and not p.creature: continue
+                if kind == 'art_cre' and not (p.creature or (p.card and p.card.is_artifact)): continue
+                if not s.targetable(p, thief): continue
+                v = s.value(thief, p)
+                if v > bv: best, bv = p, v
+        return best
 
     def drop_auras(s, host=None):
         """Auras attached to a permanent that left the battlefield are put into the graveyard (CR 303.4c, 704.5m);
@@ -226,6 +308,19 @@ class Game:
         s.log(f'{A.label} Rankle trigger')
 
     # ---------------------------------------------------------------- stats of permanents
+    def type_lord_bonus(s, o, p):
+        """Static +p/+t from type-scoped lords o controls (Admiral Beckett Brass, Corsair Captain, Vanquisher's
+        Banner). Gated on the pilot's chosen_type so only the deck under test is affected (CR 613.4)."""
+        if not p.creature: return 0, 0
+        ct = s.chosen_type(o)
+        if not ct: return 0, 0
+        dp = dt = 0
+        for q in o.bf:
+            tl = q.card.type_lord if q.card and not q.neutral else None
+            if not tl or (tl.get('others') and q is p): continue
+            typ = ct if tl['typ'] == '*chosen*' else tl['typ']
+            if s.is_type(p, typ): dp += tl['p']; dt += tl['t']
+        return dp, dt
     def power(s, p):
         o = p.owner
         if p.creature and (s.doran or o.idx in s.assault):
@@ -234,6 +329,7 @@ class Game:
         if p.slime and s.slime_on(p): v -= p.slime
         if p.creature:
             v += sum(q.card.anthem for q in o.bf if q.card and q.card.anthem and q is not p and not q.neutral)
+            v += s.type_lord_bonus(o, p)[0]
             if o.cmd_card.name == 'Jetmir, Nexus of Revels' and o.cmd_on_bf() and len(o.creatures()) >= 3: v += 1
             if p.name == 'Serra Ascendant' and o.life >= 30: v += 5
             v += CT.pump(o, p)
@@ -247,6 +343,7 @@ class Game:
         if p.creature:
             v += CT.pump(o, p)
             v += sum(q.card.anthem for q in o.bf if q.card and q.card.anthem and q is not p and not q.neutral)
+            v += s.type_lord_bonus(o, p)[1]
             m = s.stax_on(o, 'opp_minus')
             if m: v -= m
         if p.neutral: v = 1
@@ -345,6 +442,10 @@ class Game:
                or (kind == 'creature' and c.is_creature) or (kind == 'enchantment' and c.is_enchantment):
                 x -= k
         if c.name == 'Blasphemous Act': x -= sum(len(q.creatures()) for q in s.players if q.alive)
+        # Herald's Horn: creature spells of the chosen type cost {1} less (gated on the pilot's chosen_type)
+        ct = s.chosen_type(P)
+        if ct and c.is_creature and (ct in c.subtypes or 'changeling' in c.kw) \
+           and any(p.name == "Herald's Horn" and not p.neutral for p in P.bf): x -= 1
         return max(x, c.pips if c.cmc else 0, 0)
 
     def mana_avail(s, P):
@@ -354,6 +455,7 @@ class Game:
         ouphe = s.stax_on(P, 'no_artifact_abilities'); totem = s.stax_on(P, 'no_creature_abilities')
         for p in P.bf:
             if not p.card or p.neutral: continue
+            if P.is_me and getattr(p.card, 'larcenist', False): continue   # Larcenist is removal, not a dork (deck under test)
             r = p.card.rock
             if not r: continue
             if p.creature and (p.sick and 'haste' not in s.kw(p) or totem): continue
@@ -397,6 +499,7 @@ class Game:
         ident = P.identity
         srcs = [x for x in P.land_cols[:P.lands]] + [frozenset('*')] * max(0, P.lands - len(P.land_cols))
         for p in P.bf:
+            if P.is_me and getattr(p.card, 'larcenist', False): continue   # Larcenist is removal, not a mana source
             if p.card and p.card.rock and not p.neutral and not (p.creature and p.sick and 'haste' not in s.kw(p)):
                 srcs += [p.card.produces or frozenset()] * max(1, min(p.card.rock, 2))
             if p.card and p.card.land_aura and not p.neutral:
@@ -483,11 +586,12 @@ class Game:
         s.drop_auras(p)
         CT.on_leave(s, p)
         if p.name in ('Doran, the Siege Tower', 'Assault Formation', 'Toxrill, the Corrosive'): s.update_static()
+        oo = p.orig_owner or o   # a stolen permanent dies to its true owner's zones (CR 903.9a, 400.3)
         if p.is_cmd:
-            o.cmd_home(p)
+            oo.cmd_home(p)
         elif p.card:
             if s.no_dies(): pass
-            else: o.gy.append(p.card)
+            else: oo.gy.append(p.card)
         if was_cre: s.on_creature_dies(p, was_dt)
 
     def on_creature_dies(s, p, was_dt):
@@ -587,6 +691,17 @@ class Game:
                     times = 2 if dbl and ec is not None and (ec.is_artifact or ent.creature) else 1
                     for _ in range(times):
                         s.apply_effect(q, {k: v for k, v in e.items() if k != 'edict'}, why='etb')
+        # Coercive Recruiter: whenever it or another Pirate you control enters, steal a creature until EOT (untap,
+        # haste, becomes a Pirate). One trigger per entering Pirate per Recruiter (deck under test).
+        if P.is_me:
+            recruiters = [p for p in P.bf if getattr(p.card, 'steals', None) == 'coercive' and not p.neutral]
+            if recruiters:
+                pirates_in = [e for e in perms if e in P.bf and s.is_type(e, 'pirate')]
+                for _rec in recruiters:
+                    for _pir in pirates_in:
+                        t = s.best_steal_target(P, P.opps(), kind='creature')
+                        if t is None: break
+                        s.steal(P, t, 'eot', untap=True, haste=True, pirate=True)
 
     def on_draw(s, P):
         if not P.alive or not hasattr(s, 'players'): return
@@ -732,7 +847,7 @@ class Game:
             rank = lambda x: (pref.index(x.name) if x.name in pref else len(pref), -x.cmc)
             for x in sorted([x for x in P.lib if x.is_creature], key=rank)[:n]:
                 P.lib.remove(x); P.gy.append(x)
-            random.shuffle(P.lib)
+            s.rng.shuffle(P.lib)
         elif sp in ('mill3', 'mill4', 'mill10', 'millhalf'):
             n = {'mill3': 3, 'mill4': 4, 'mill10': 10}.get(sp) or (len(P.lib) + 1) // 2
             s.mill_self(P, n)
@@ -1043,6 +1158,10 @@ class Game:
             elif from_cmd: P.cmd_zone = True
             else: P.gy.append(c)
             return True
+        # Vanquisher's Banner: draw a card whenever you cast a creature spell of the chosen type (CR 601, deck under test)
+        ct = s.chosen_type(P)
+        if ct and c.is_creature and (ct in c.subtypes or 'changeling' in c.kw) \
+           and any(p.name == "Vanquisher's Banner" and not p.neutral for p in P.bf): P.draw(1)
         s.resolve(P, c, from_cmd)
         if (c.is_instant or c.is_sorcery) and P.alive and not s.over:
             s.aziza_copy(P, c)
@@ -1201,6 +1320,23 @@ class Game:
             s.do_wipe(P, c, c.wipe)
         if c.tutor and c.is_creature: s.tutor(P, c)
         if c.name == 'Light-Paws, Emperor\'s Voice': pass
+        if P.is_me:
+            st = getattr(c, 'steals', None)
+            if st == 'hostage':      # Hostage Taker: exile best opposing creature/artifact; recast (steal) if affordable
+                t = s.best_steal_target(P, P.opps(), kind='art_cre')
+                if t is not None:
+                    mv = t.card.cmc if t.card else 0
+                    if s.avail(P) >= mv:     # "spend mana as though any type": pay the mana value and take it
+                        s.pay(P, mv); s.steal(P, t, 'permanent')
+                    else:                    # can't pay yet: exile it (removed while Hostage Taker lives, CR 603.6)
+                        o = t.owner; o.bf.remove(t)
+                        if t.is_cmd: (t.orig_owner or o).cmd_home(t)
+                        s.log(f'{P.label} Hostage Taker exiles {o.label}\'s {t.name}')
+            elif getattr(c, 'larcenist', False):   # Kitesail Larcenist: each opp's best art/creature becomes a blank Treasure
+                for V in P.opps():
+                    t = s.best_steal_target(P, [V], kind='art_cre')
+                    if t is not None: t.neutral = True; s.log(f'{P.label} Larcenist neutralizes {V.label}\'s {t.name}')
+            if getattr(c, 'brass_reanimate', False): s.mill_self(P, 4)   # Admiral Brass enters: mill four
 
     def fetch_lands(s, P, c):
         n = c.ramp_lands
@@ -1215,6 +1351,27 @@ class Game:
         s.log(f'{P.label} {"copies" if copy else "casts"} {c.name}')
         if c.ritual: P.pool += c.ritual + (c.cmc if c.ritual else 0) - 0
         sp = getattr(c, 'special', None); opps = P.opps()
+        st = getattr(c, 'steals', None)
+        if P.is_me and st == 'blatant':          # Blatant Thievery: for each opponent, steal their best permanent
+            for V in opps:
+                t = s.best_steal_target(P, [V], kind='perm')
+                if t is not None: s.steal(P, t, 'permanent')
+        elif P.is_me and st == 'mass_mutiny':    # Mass Mutiny: steal one creature from each opponent until EOT
+            for V in opps:
+                t = s.best_steal_target(P, [V], kind='creature')
+                if t is not None: s.steal(P, t, 'eot', untap=True, haste=True)
+        elif P.is_me and st == 'insurrection':   # Insurrection: steal ALL creatures until EOT (untap, haste)
+            for p in P.creatures(): p.tapped = False
+            for V in list(opps):
+                for t in list(V.creatures()):
+                    s.steal(P, t, 'eot', untap=True, haste=True)
+        if P.is_me and getattr(c, 'pirate_wipe', False):   # Fiery Cannonade: 2 damage to each non-Pirate creature
+            ct = s.chosen_type(P) or 'pirate'
+            for q in s.players:
+                if not q.alive: continue
+                for p in list(q.creatures()):
+                    if not s.is_type(p, ct) and s.tough(p) <= 2: s.kill(p, 'damage')
+            s.check_deaths(P, 'burn')
         if sp == 'hymn': P.pool += len(P.creatures())
         if sp == 'jeska': P.pool += min(7, max([len(q.hand) for q in opps] or [0]))
         if sp == 'brass': P.treasure += P.lands
@@ -1498,7 +1655,13 @@ class Game:
         if w.get('mvmax') is not None and p.card and p.card.cmc > w['mvmax']: return False
         if w.get('mvmax') is not None and p.token and p.owner is P: pass
         if w.get('spare_enchanted') and p.auras: return False
-        if w.get('spare_type') and p.owner is P: return False
+        if w.get('spare_type'):
+            # Kindred Dominance "destroy all creatures that aren't of the chosen type": with a pilot chosen_type,
+            # spare that type on every board (CR 700.3); otherwise keep the legacy "spare the caster's board".
+            ct = s.chosen_type(P)
+            if ct:
+                if s.is_type(p, ct): return False
+            elif p.owner is P: return False
         if w.get('spare_subtype') and p.card and w['spare_subtype'] in p.card.types: return False
         if w.get('minus') is not None and p.creature and s.tough(p) > w['minus']: return False
         return True
@@ -1699,12 +1862,18 @@ class Game:
     # ---------------------------------------------------------------- combat
     def blockers_for(s, D, att, used):
         k = s.kw(att)
+        A = att.owner
+        # Cover of Darkness: creatures of the chosen type have fear — only artifact and/or black creatures can block
+        # (CR 702.36). Gated on the attacker's controller's chosen_type.
+        act = s.chosen_type(A)
+        fear = bool(act and s.is_type(att, act) and any(p.name == 'Cover of Darkness' and not p.neutral for p in A.bf))
         out = []
         for b in D.creatures():
             if b in used or b.tapped or b.neutral: continue
             if 'flying' in k and not ({'flying', 'reach'} & s.kw(b)): continue
             if 'pro_bg' in k and b.card is not None and (b.card.colors & {'B', 'G'}) or ('pro_bg' in k and b.token and (D.cmd_card.colors & {'B', 'G'})): continue
             if "can't be blocked" in (att.card.oracle if att.card else '') or 'unblockable' in k: continue
+            if fear and not ((b.card and (b.card.is_artifact or 'B' in b.card.colors))): continue
             out.append(b)
         return out
 
@@ -1798,7 +1967,7 @@ class Game:
             if not lethal_mode: cand = [p for p in cand if p.name not in keep]
         best = None
         for D in A.opps():
-            atk = list(cand)
+            atk = [p for p in cand if not (p.name == 'Port Razer' and D.idx in getattr(p, 'razer_hit', ()))]
             tax = s.attack_tax(A, D)
             if tax:
                 n = int(s.avail(A) // tax) if tax else len(atk)
@@ -1854,8 +2023,10 @@ class Game:
         return plan
 
     def combat(s, A):
+        s.combat_pirate_hits = collections.defaultdict(set)   # distinct Pirate attackers that hit each player, this phase
         D, atk = s.plan_attack(A)
         if not D or not atk: return
+        act = s.chosen_type(A)
         # attack triggers
         for p in atk:
             if 'vigilance' not in s.kw(p): p.tapped = True
@@ -1866,7 +2037,16 @@ class Game:
             if n is not None:
                 n = len(A.opps()) if n == 'opps' else (len(atk) if n == 'attackers' else n)
                 extra += s.make_tokens(A, n, 1, 1, set(), tapped=True)
-            elif p.card.attack_trig and p.name != 'Hooded Blightfang':
+            elif getattr(p.card, 'steals', None) == 'zara' and p in atk and A.is_me:
+                # Zara, Renegade Recruiter: put a creature card from the defender's hand onto the battlefield tapped
+                # and attacking; it returns to its owner's hand at end of turn (CR 701.* control; handled in cleanup)
+                cands = [x for x in D.hand if x.is_creature]
+                if cands:
+                    x = max(cands, key=lambda c: c.power + c.cmc); D.hand.remove(x)
+                    bp = Perm(A, x); bp.orig_owner = D; bp.sick = False; bp.tapped = True
+                    A.bf.append(bp); extra.append(bp); s.zara_borrowed.append(bp)
+                    s.log(f'{A.label} Zara puts {D.label}\'s {x.name} onto the battlefield attacking')
+            elif p.card.attack_trig and p.name != 'Hooded Blightfang' and not (getattr(p.card, 'chosen_discovery', False) and act):
                 e = p.card.attack_trig
                 if 'token' in e:
                     n, pw, tg, kw = e['token']; extra += s.make_tokens(A, n if n != 'each' else 1, pw, tg, kw, tapped=True)
@@ -1888,11 +2068,40 @@ class Game:
                 x = sum(1 for p in A.creatures() if s.power(p) <= 2)
                 for v in A.opps(): s.lose_life(v, x, A, 'arabella')
                 s.gain(A, x)
+        if A.is_me:
+            # Kari Zev, Skyship Raider: when she attacks, a 2/1 Ragavan enters tapped and attacking (exiled end of combat)
+            for a in [a for a in atk if getattr(a.card, 'kari_zev', False)]:
+                rag = s.make_tokens(A, 1, 2, 1, set(), name='Ragavan', tapped=True)
+                for r in rag: r.sick = False; extra.append(r); s.zara_borrowed.append(r)   # reuse the end-of-turn exile sweep
+            # Breeches, Eager Pillager: whenever a Pirate attacks, choose an unused mode (Treasure / can't block / exile top)
+            if any(getattr(p.card, 'breeches_modes', False) and not p.neutral for p in A.bf):
+                npir = sum(1 for a in atk if s.is_type(a, 'pirate'))
+                for mode in range(min(3, npir)):
+                    if mode == 0: A.treasure += 1
+                    elif mode == 1:
+                        if A.lib: A.hand.append(A.lib.pop())   # exile the top card; you may play it this turn
+                    # mode 2 ("target creature can't block") has no lasting state to model; left as the unused third mode
         if A.has('Beastmaster Ascension'):
             A.quest += len(atk)
             if A.quest >= 7:
                 for a in atk: a.pump += 5; a.pumpt += 5
         atk = atk + [e for e in extra if e.creature]
+        if act:   # attack-time typal pumps + Kindred Discovery (deck under test only, via chosen_type)
+            for src in A.bf:
+                tp = src.card.type_pump if src.card and not src.neutral else None
+                if tp == 'neckbreaker':          # attacking Pirates you control get +2/+0
+                    for a in atk:
+                        if s.is_type(a, 'pirate'): a.pump += 2
+                elif tp == 'dire_captain' and src in atk:   # +1/+1 per other attacking Pirate
+                    k = sum(1 for a in atk if a is not src and s.is_type(a, 'pirate'))
+                    src.pump += k; src.pumpt += k
+                elif tp == 'shared_animosity':   # +1/+0 per other attacker sharing a creature type
+                    for a in atk:
+                        a.pump += sum(1 for b in atk if b is not a and s.shares_type(a, b))
+            for p in A.bf:   # Kindred Discovery: draw per attacking creature of the chosen type
+                if getattr(p.card, 'chosen_discovery', False) and not p.neutral:
+                    for a in atk:
+                        if s.is_type(a, act): A.draw(1)
         CT.on_attack(s, A, D, atk)
         A.stats['attacks'] += 1
         s.log(f'{A.label} attacks {D.label} with {len(atk)} ({sum(s.power(a) for a in atk)} power)')
@@ -1914,7 +2123,29 @@ class Game:
             if not grp or not Dg.alive or s.over: continue
             if tgt is not None: s.log(f'{A.label} attacks {Dg.label}\'s {tgt.name} (loyalty {tgt.loyalty}) with {len(grp)}')
             s.resolve_combat(A, Dg, tgt, grp, s.assign_blocks(Dg, grp, A))
+        if not s.over: s.pirate_combat_payoffs(A)
         s.check_deaths(A, 'combat')
+
+    def pirate_combat_payoffs(s, A):
+        """Batched 'whenever one or more Pirates you control deal combat damage to a player' payoffs, fired once per
+        combat phase from s.combat_pirate_hits (deck under test only). Malcolm makes Treasure per opponent hit;
+        Ramirez/Breeches exile+let-you-play the top of each hit opponent's library; Francisco explores."""
+        if not A.is_me: return
+        hit_idx = {i for i, pirates in s.combat_pirate_hits.items() if pirates}
+        if not hit_idx: return
+        victims = [q for q in A.opps() if q.idx in hit_idx]
+        for p in A.bf:
+            cp = p.card.combat_payoff if p.card and not p.neutral else None
+            if cp == 'malcolm':          # a Treasure for each opponent dealt damage by my Pirates
+                A.treasure += len(victims); s.log(f'{A.label} Malcolm makes {len(victims)} Treasure')
+            elif cp in ('ramirez', 'breeches'):   # exile the top of each hit opponent's library; you may play it
+                for v in victims:
+                    if v.lib: A.hand.append(v.lib.pop()); A.stats['pirate_steal_cards'] += 1
+                s.log(f'{A.label} {p.name} plunders {len(victims)} card(s)')
+            elif cp == 'francisco':      # Francisco explores (approximate: draw on a land-ish hit, else +1/+1)
+                if p.card.is_creature and p in A.bf:
+                    if s.rng.random() < .4: A.draw(1)
+                    else: CT.add(s, p, 1)
 
     def resolve_combat(s, A, D, tgt, atk, blocks):
         """Combat damage (CR 510): a first-strike step when any attacker or blocker has first or double strike
@@ -2001,14 +2232,33 @@ class Game:
         if A.cmd_card.name == 'Lathril, Blade of the Elves' and a.is_cmd: s.make_tokens(A, n, 1, 1, set())
         if any(A.has(x) for x in COMBAT_DRAW_ALL): A.draw(1)
         if a.name in ('Ragavan, Nimble Pilferer', 'Professional Face-Breaker'): A.treasure += 1
+        # --- Pirate combat-damage bookkeeping + payoffs (deck under test only; see pirate_combat_payoffs)
+        if A.is_me and D.alive:
+            if s.is_type(a, 'pirate'):
+                s.pirate_dmg[D.idx].add(a.id)          # per-turn: Admiral Beckett Brass' end-step steal
+                s.combat_pirate_hits[D.idx].add(a.id)  # per-combat: Malcolm / Ramirez / Breeches / Francisco
+            # Coastal Piracy / Bident of Thassa: draw once per creature that connects (CR 603.2d batched per creature)
+            if any(p.name in ('Coastal Piracy', 'Bident of Thassa') and not p.neutral for p in A.bf): A.draw(1)
+            # Port Razer: untap my creatures and take one additional combat phase; it can't re-attack a player it
+            # already hit this turn, and the per-turn grant cap stops any loop (CR 506.1, 509).
+            if a.name == 'Port Razer':
+                if getattr(a, 'razer_turn', -1) != s.round: a.razer_turn = s.round; a.razer_hit = set()
+                a.razer_hit.add(D.idx)
+                if getattr(A, 'razer_turn', -1) != s.round: A.razer_turn = s.round; A.razer_extra = 0
+                if A.razer_extra < len(A.opps()):
+                    A.razer_extra += 1; A.extra_combats = getattr(A, 'extra_combats', 0) + 1
+                    for p in A.creatures(): p.tapped = False
+                    s.log(f'{A.label} Port Razer untaps and takes an extra combat phase')
 
     # ---------------------------------------------------------------- turn
     def take_turn(s, P):
         s.active = P
         s.update_static()
+        s.pirate_dmg = collections.defaultdict(set)   # reset the per-turn Pirate-damage tracking (Beckett's trigger)
         for p in P.bf: p.rankled = False
         P.spells_turn = 0; P.noncre_turn = 0; P.stats['cre_cast_turn'] = 0; P.flashback = False
         P.nonhand_turn = 0; P.codie_acts = 0; P.asc_mana = 0
+        P.extra_combats = 0; P.razer_extra = 0
         P.reserve = 0
         for p in P.bf:
             if s.stax_on(P, 'winter_orb') and p.card and p.card.is_land: continue
@@ -2033,6 +2283,10 @@ class Game:
                 if c.upkeep.get('lose'): s.lose_life(P, c.upkeep['lose'])
                 s.apply_effect(P, {k: v for k, v in c.upkeep.items() if k not in ('lose', 'token')}, why='upkeep')
         if P.cmd_card.name == 'Oloro, Ageless Ascetic': s.gain(P, 2)
+        ct = s.chosen_type(P)   # Herald's Horn: pull the top card if it's a creature of the chosen type
+        if ct and P.lib and P.lib[-1].is_creature and (ct in P.lib[-1].subtypes or 'changeling' in P.lib[-1].kw) \
+           and any(p.name == "Herald's Horn" and not p.neutral for p in P.bf):
+            P.hand.append(P.lib.pop()); s.log(f'{P.label} Herald\'s Horn reveals a {ct} into hand')
         s.prep_upkeep(P)
         s.each_upkeep(P)
         s.check_deaths(None, 'life')
@@ -2072,16 +2326,55 @@ class Game:
         CT.precombat(s, P)
         s.walker_tick(P)
         if s.over or not P.alive: return
+        if P.is_me: s.pre_combat_steals(P)       # Captivating Crew etc.: sorcery-speed theft before attacking
+        s.begin_combat(P)                        # Admiral Brass, Unsinkable: beginning-of-combat reanimation
         s.combat(P)
+        combats = 1
+        while getattr(P, 'extra_combats', 0) > 0 and P.alive and not s.over and combats <= 1 + len(s.players):
+            P.extra_combats -= 1; combats += 1; s.log(f'{P.label} additional combat phase'); s.combat(P)
+        P.extra_combats = 0
         if s.over or not P.alive: return
         if P.is_me: s.my_main(P, post=True)
         else: s.ai_main(P, post=True)
         if s.check_combo(P): return
         s.end_step(P)
+        s.return_eot_steals()                    # hand back 'until end of turn' stolen permanents (CR 613)
+        s.return_zara_borrowed()                 # Zara's borrowed creatures go back to their owners' hands
         P.reserve = s.avail(P)  # untapped mana stays available for instants on others' turns
         for q in s.players:
             for p in q.bf: p.pump = 0; p.pumpt = 0; p.tmpkw = set(); p.infect_turn = False
         s.check_deaths(None, 'life')
+
+    def return_zara_borrowed(s):
+        for bp in s.zara_borrowed:
+            owner = bp.orig_owner
+            if bp in bp.owner.bf:
+                bp.owner.bf.remove(bp)
+                if owner is not None and bp.card is not None: owner.hand.append(bp.card)
+        s.zara_borrowed = []
+
+    def begin_combat(s, P):
+        """Admiral Brass, Unsinkable: at beginning of combat, return a Pirate creature card from the graveyard with a
+        finality counter as a 4/4 with haste (deck under test; CR 122)."""
+        if not P.is_me: return
+        for p in list(P.bf):
+            if not (p.card and getattr(p.card, 'brass_reanimate', False) and not p.neutral): continue
+            pool = [x for x in P.gy if x.is_creature and 'pirate' in x.subtypes]
+            if not pool: continue
+            x = max(pool, key=lambda c: c.cmc); P.gy.remove(x)
+            np_ = Perm(P, x); np_.bp, np_.bt = 4, 4; np_.sick = False; np_.finality = True
+            P.bf.append(np_); s.log(f'{P.label} Admiral Brass returns {x.name} as a 4/4 with haste')
+            s.etb(P, np_, x); s.etb_triggers(P, [np_])
+
+    def pre_combat_steals(s, P):
+        """Captivating Crew: {3}{R}, sorcery speed, gain control of a creature until end of turn (untap, haste).
+        Used before combat when mana allows and a worthwhile creature is available (deck under test)."""
+        for p in list(P.bf):
+            if not (p.card and getattr(p.card, 'steals', None) == 'captivating' and not p.neutral): continue
+            if s.avail(P) < 4: break
+            t = s.best_steal_target(P, P.opps(), kind='creature')
+            if t is None or s.power(t) < 2: continue
+            s.pay(P, 4); s.steal(P, t, 'eot', untap=True, haste=True)
 
     def walker_tick(s, P):
         """Planeswalkers without a detailed model use a plus ability each turn (+1 loyalty)."""
@@ -2104,6 +2397,7 @@ class Game:
 
     def end_step(s, P):
         s.update_static(); s.toxrill_end_step()
+        s.beckett_end_step(P)
         if any(q is P for q in s.tox_owners) and not s.stax_on(P, 'no_creature_abilities'):
             slugs = [p for p in P.creatures() if p.name == 'Slug']
             while len(slugs) > 1 and s.avail(P) >= 2:
@@ -2125,6 +2419,15 @@ class Game:
         if not P.is_me: s.ai_sac(P)
         if any(p.name == 'Song of Creation' and not p.neutral for p in P.bf): P.gy += P.hand; P.hand = []
         while len(P.hand) > 7: P.gy.append(P.hand.pop(0))   # maximum hand size seven (CR 402.2, 514.1)
+
+    def beckett_end_step(s, P):
+        """Admiral Beckett Brass: at the beginning of your end step, gain control (permanently) of the best nonland
+        permanent controlled by a player dealt combat damage by three or more of your Pirates this turn."""
+        if not P.is_me or not any(p.name == 'Admiral Beckett Brass' and not p.neutral for p in P.bf): return
+        victims = [V for V in P.opps() if len(s.pirate_dmg.get(V.idx, ())) >= 3]
+        if not victims: return
+        t = s.best_steal_target(P, victims, kind='perm')
+        if t is not None: s.steal(P, t, 'permanent')
 
     def ai_sac(s, P):
         outlets = [p for p in P.bf if p.card and p.card.free_outlet and not p.neutral]
@@ -2379,6 +2682,25 @@ class Game:
         g_ = s.gy_score(P, c)
         if g_ is not None: return g_
         opps = P.opps(); n = c.name; pr = P.pilot.get('priorities', {}); o = c.oracle
+        st = getattr(c, 'steals', None)
+        if st in ('blatant', 'mass_mutiny', 'insurrection'):
+            tgts = [t for V in opps for t in V.bf if not t.neutral and not (t.card and t.card.is_land)
+                    and (st != 'insurrection' or t.creature) and s.targetable(t, P)]
+            if st == 'insurrection':   # finisher: cast when the stolen army is a big/likely-lethal swing
+                steal_pow = sum(s.power(t) for V in opps for t in V.creatures() if not t.neutral)
+                if post: return 0
+                if any(steal_pow + sum(s.power(p) for p in P.creatures()) >= v.life for v in opps): return 150
+                return 120 if steal_pow >= 12 else 0
+            if not tgts: return 0
+            best = max(s.value(P, t) for t in tgts)
+            if st == 'mass_mutiny':    # pre-combat tempo swing
+                return 0 if post else (95 if best >= 5 else 60)
+            return 70 + best * 2       # Blatant Thievery: permanent gain, always worth it with a target
+        if getattr(c, 'pirate_wipe', False):   # Fiery Cannonade: cast when it kills more of theirs than mine
+            ct = s.chosen_type(P) or 'pirate'
+            theirs = sum(1 for q in opps for p in q.creatures() if not s.is_type(p, ct) and s.tough(p) <= 2 and not p.neutral)
+            mine = sum(1 for p in P.creatures() if not s.is_type(p, ct) and s.tough(p) <= 2 and not p.neutral)
+            return 90 if theirs >= 2 and theirs > mine else 0
         stax_bad = [p for q in opps for p in q.bf if p.card and p.card.stax and set(p.card.stax) & {'no_triggers', 'no_dies', 'no_creature_abilities', 'no_artifact_abilities', 'no_cmd_cast', 'opp_minus'} and not p.neutral]
         if getattr(c, 'charm_wipe', False):
             small = sum(1 for q in opps for p in q.creatures() if s.tough(p) <= 1 and not p.neutral)
