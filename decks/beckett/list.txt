@@ -1,0 +1,97 @@
+1 Admiral Beckett Brass
+1 Ragavan, Nimble Pilferer
+1 Siren Stormtamer
+1 Spectral Sailor
+1 Changeling Outcast
+1 Dire Fleet Poisoner
+1 Storm Fleet Aerialist
+1 Kitesail Freebooter
+1 Kitesail Corsair
+1 Warkite Marauder
+1 Malcolm, Alluring Scoundrel
+1 Departed Deckhand
+1 Dire Fleet Daredevil
+1 Kitesail Larcenist
+1 Fathom Fleet Captain
+1 Dire Fleet Captain
+1 Kari Zev, Skyship Raider
+1 Malcolm, Keen-Eyed Navigator
+1 Corsair Captain
+1 Captain Lannery Storm
+1 Breeches, Brazen Plunderer
+1 Breeches, Eager Pillager
+1 Coercive Recruiter
+1 Forerunner of the Coalition
+1 Francisco, Fowl Marauder
+1 Hostage Taker
+1 Ramirez DePietro, Pillager
+1 Captivating Crew
+1 Dire Fleet Neckbreaker
+1 Admiral Brass, Unsinkable
+1 Pitiless Plunderer
+1 Port Razer
+1 Zara, Renegade Recruiter
+1 Sol Ring
+1 Arcane Signet
+1 Talisman of Dominance
+1 Talisman of Creativity
+1 Talisman of Indulgence
+1 Fellwar Stone
+1 Dimir Signet
+1 Coastal Piracy
+1 Bident of Thassa
+1 Kindred Discovery
+1 Black Market Connections
+1 Shared Animosity
+1 Vanquisher's Banner
+1 Herald's Horn
+1 Cover of Darkness
+1 Lightning Greaves
+1 Mass Mutiny
+1 Blatant Thievery
+1 Insurrection
+1 Terminate
+1 Infernal Grasp
+1 Chaos Warp
+1 Bedevil
+1 Feed the Swarm
+1 Counterspell
+1 Fierce Guardianship
+1 Lookout's Dispersal
+1 Fiery Cannonade
+1 Kindred Dominance
+1 Cyclonic Rift
+1 Demonic Tutor
+1 Command Tower
+1 Path of Ancestry
+1 Unclaimed Territory
+1 Cavern of Souls
+1 Rogue's Passage
+1 Volcanic Island
+1 Underground Sea
+1 Badlands
+1 Watery Grave
+1 Steam Vents
+1 Blood Crypt
+1 Polluted Delta
+1 Scalding Tarn
+1 Bloodstained Mire
+1 Sulfur Falls
+1 Drowned Catacomb
+1 Dragonskull Summit
+1 Sunken Hollow
+1 Smoldering Marsh
+1 Xander's Lounge
+1 Underground River
+1 Sulfurous Springs
+1 Shivan Reef
+1 Morphic Pool
+1 Luxury Suite
+1 Choked Estuary
+1 Training Center
+1 Haunted Ridge
+1 Shipwreck Marsh
+1 Stormcarved Coast
+2 Island
+2 Swamp
+2 Mountain
